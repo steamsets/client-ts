@@ -175,7 +175,7 @@ export function resolveGlobalSecurity(
 ): SecurityState | null {
     return resolveSecurity([
         {
-            fieldName: "x-api-key",
+            fieldName: "api-key",
             type: "apiKey:header",
             value: security?.apiKey,
         },
