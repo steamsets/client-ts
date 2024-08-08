@@ -1,0 +1,32 @@
+speakeasyVersion: 1.358.0
+sources:
+    SteamSets-OAS:
+        sourceNamespace: steam-sets-oas
+        sourceRevisionDigest: sha256:2550a925973fe886e18a90e9f93dcdf509fd562738f96b678954518b94e992ef
+        sourceBlobDigest: sha256:93b3bb0627a937112d522b3954ace82c5de151ae5174c4980015f6299fd11925
+        tags:
+            - latest
+            - main
+targets:
+    steam-sets:
+        source: SteamSets-OAS
+        sourceNamespace: steam-sets-oas
+        sourceRevisionDigest: sha256:2550a925973fe886e18a90e9f93dcdf509fd562738f96b678954518b94e992ef
+        sourceBlobDigest: sha256:93b3bb0627a937112d522b3954ace82c5de151ae5174c4980015f6299fd11925
+        outLocation: /github/workspace/repo
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        SteamSets-OAS:
+            inputs:
+                - location: ./openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/steamsets/steamsets/steam-sets-oas
+    targets:
+        steam-sets:
+            target: typescript
+            source: SteamSets-OAS
+            publish:
+                npm:
+                    token: $npm_token

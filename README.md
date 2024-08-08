@@ -22,25 +22,25 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add steamsets-api
 ```
 
 ### PNPM
 
 ```bash
-pnpm add <UNSET>
+pnpm add steamsets-api
 ```
 
 ### Bun
 
 ```bash
-bun add <UNSET>
+bun add steamsets-api
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET> zod
+yarn add steamsets-api zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.

@@ -1,12 +1,15 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0925ef22739d8a604871b605a2a71acb
+  docChecksum: 4bdcc7ff47af84393a6fa05fd169612e
   docVersion: 1.0.0
-  speakeasyVersion: 1.357.4
+  speakeasyVersion: 1.358.0
   generationVersion: 2.390.6
-  releaseVersion: 0.1.0
-  configChecksum: 70ed969616f1dabb03a655165a0d60eb
+  releaseVersion: 0.1.1
+  configChecksum: b16158a2c0e1c4377562831803d370a4
+  repoURL: https://github.com/steamsets/node-steamsets.git
+  installationURL: https://github.com/steamsets/node-steamsets
+  published: true
 features:
   go:
     additionalDependencies: 0.1.0
