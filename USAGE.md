@@ -1,6 +1,6 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     security: {

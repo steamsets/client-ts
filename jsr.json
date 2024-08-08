@@ -1,8 +1,8 @@
 
 
 {
-  "name": "steamsets-api",
-  "version": "0.1.1",
+  "name": "@steamsets/client-ts",
+  "version": "0.1.2",
   "exports": {
     ".": "./src/index.ts",    
     "./models/errors": "./src/models/errors/index.ts",    

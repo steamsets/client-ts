@@ -36,7 +36,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.1.1
+  version: 0.1.2
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -59,7 +59,7 @@ typescript:
   methodArguments: require-security-and-request
   moduleFormat: commonjs
   outputModelSuffix: output
-  packageName: "@steamsets/client-ts"
+  packageName: '@steamsets/client-ts'
   responseFormat: flat
   templateVersion: v2
   useIndexModules: true

@@ -12,7 +12,7 @@ This endpoint checks if the service is alive.
 ### Example Usage
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   security: {

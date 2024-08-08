@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.358.0
   generationVersion: 2.390.6
-  releaseVersion: 0.1.1
-  configChecksum: b16158a2c0e1c4377562831803d370a4
+  releaseVersion: 0.1.2
+  configChecksum: 123f3ce3ca44230d59939aa8f47a1368
   repoURL: https://github.com/steamsets/node-steamsets.git
   installationURL: https://github.com/steamsets/node-steamsets
   published: true
