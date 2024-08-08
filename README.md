@@ -22,25 +22,25 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ### NPM
 
 ```bash
-npm add steamsets-api
+npm add @steamsets/client-ts
 ```
 
 ### PNPM
 
 ```bash
-pnpm add steamsets-api
+pnpm add @steamsets/client-ts
 ```
 
 ### Bun
 
 ```bash
-bun add steamsets-api
+bun add @steamsets/client-ts
 ```
 
 ### Yarn
 
 ```bash
-yarn add steamsets-api zod
+yarn add @steamsets/client-ts zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -53,7 +53,7 @@ yarn add steamsets-api zod
 ### Example
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     security: {
@@ -94,7 +94,7 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     security: {
@@ -127,7 +127,7 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     retryConfig: {
@@ -172,8 +172,8 @@ Validation errors can also occur when either method arguments or data returned f
 
 
 ```typescript
-import { SteamSets } from "steamsets-api";
-import { SDKValidationError } from "steamsets-api/models/errors";
+import { SteamSets } from "@steamsets/client-ts";
+import { SDKValidationError } from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
     security: {
@@ -226,7 +226,7 @@ You can override the default server globally by passing a server index to the `s
 | 0 | `https://api.steamsets.com` | None |
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverIdx: 0,
@@ -253,7 +253,7 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverURL: "https://api.steamsets.com",
@@ -293,8 +293,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { SteamSets } from "steamsets-api";
-import { HTTPClient } from "steamsets-api/lib/http";
+import { SteamSets } from "@steamsets/client-ts";
+import { HTTPClient } from "@steamsets/client-ts/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -338,7 +338,7 @@ This SDK supports the following security schemes globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     security: {

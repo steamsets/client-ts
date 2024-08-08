@@ -13,7 +13,7 @@ Get Account Apps
 ### Example Usage
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   security: {
@@ -58,7 +58,7 @@ Get Account Badges
 ### Example Usage
 
 ```typescript
-import { SteamSets } from "steamsets-api";
+import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   security: {
