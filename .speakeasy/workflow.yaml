@@ -1,0 +1,12 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    SteamSets-OAS:
+        inputs:
+            - location: ../../openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/steamsets/steamsets/steam-sets-oas
+targets:
+    steam-sets:
+        target: typescript
+        source: SteamSets-OAS
