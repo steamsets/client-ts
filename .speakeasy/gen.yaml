@@ -59,7 +59,7 @@ typescript:
   methodArguments: require-security-and-request
   moduleFormat: commonjs
   outputModelSuffix: output
-  packageName: steamsets-api
+  packageName: "@steamsets/client-ts"
   responseFormat: flat
   templateVersion: v2
   useIndexModules: true
