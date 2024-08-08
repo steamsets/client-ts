@@ -2,7 +2,7 @@ configVersion: 2.0.0
 generation:
   devContainers:
     enabled: true
-    schemaPath: ../../openapi.yaml
+    schemaPath: ./openapi.yaml
   baseServerUrl: https://api.steamsets.com
   sdkClassName: SteamSets
   maintainOpenAPIOrder: true
