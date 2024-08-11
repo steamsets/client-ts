@@ -161,12 +161,12 @@ components:
         - price
         - publicId
       type: object
-    V1BadgesAppsResponseBody:
+    V1BadgesResponseBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1BadgesAppsResponseBody.json
+          example: https://api.steamsets.com/schemas/V1BadgesResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -199,10 +199,6 @@ components:
       in: header
       name: api-key
       type: apiKey
-    session:
-      bearerFormat: String
-      scheme: bearer
-      type: http
 info:
   title: SteamSets API
   version: 1.0.0
@@ -210,7 +206,7 @@ openapi: 3.0.3
 paths:
   /account.v1.AccountService/GetApps:
     post:
-      operationId: account.v1.apps
+      operationId: account.v1.getApps
       responses:
         "200":
           content:
@@ -238,13 +234,13 @@ paths:
         - account
   /account.v1.AccountService/GetBadges:
     post:
-      operationId: account.v1.badge
+      operationId: account.v1.getBadges
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/V1BadgesAppsResponseBody"
+                $ref: "#/components/schemas/V1BadgesResponseBody"
           description: OK
         "400":
           content:
@@ -258,6 +254,8 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
+      security:
+        - apiKey: []
       summary: Get Account Badges
       tags:
         - account
