@@ -178,6 +178,56 @@ components:
       required:
         - badges
       type: object
+    V1ConnectRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1ConnectRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        code:
+          description: The code from the oauth2 provider to verify
+          example: "123456"
+          type: string
+        provider:
+          description: The provider to connect with
+          enum:
+            - discord
+            - patreon
+            - kick
+            - reddit
+            - twitch
+            - youtube
+            - x
+            - domain
+          example: discord
+          type: string
+      required:
+        - provider
+        - code
+      type: object
+    V1ConnectResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1ConnectResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        code:
+          description: Code that has to be used to verify domain connections
+          example: ABC123
+          type: string
+        success:
+          description: Always true
+          example: true
+          type: boolean
+      required:
+        - success
+      type: object
     V1LivenessResponseBody:
       additionalProperties: false
       properties:
@@ -194,16 +244,169 @@ components:
       required:
         - message
       type: object
+    V1UpdateConnectionRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1UpdateConnectionRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        connectionId:
+          description: The connection id to update
+          example: "123456"
+          type: string
+        hiddem:
+          description: Whether the connection should be hidden or not
+          example: true
+          type: boolean
+      required:
+        - connectionId
+        - hiddem
+      type: object
+    V1UpdateConnectionResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        success:
+          description: Always true
+          example: true
+          type: boolean
+      required:
+        - success
+      type: object
+    V1VerifyConnectionRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1VerifyConnectionRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        connectionId:
+          description: The connection id to verify
+          example: "123456"
+          type: string
+      required:
+        - connectionId
+      type: object
+    V1VerifyConnectionResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        success:
+          description: Always true
+          example: true
+          type: boolean
+      required:
+        - success
+      type: object
   securitySchemes:
     apiKey:
       in: header
       name: api-key
       type: apiKey
+    session:
+      name: Authorization
+      scheme: bearer
+      type: http
 info:
   title: SteamSets API
   version: 1.0.0
 openapi: 3.0.3
 paths:
+  /account.v1.AccountService/Connect:
+    post:
+      operationId: account.v1.connection.connect
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1ConnectRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1ConnectResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Connect a new Social Provider
+      tags:
+        - account
+        - connection
+  /account.v1.AccountService/DeleteConnection:
+    post:
+      operationId: account.v1.connection.deleteConnection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1UpdateConnectionRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1UpdateConnectionResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Remove a connection
+      tags:
+        - account
+        - connection
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
@@ -227,8 +430,7 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - apiKey: []
-          session: []
+        - session: []
       summary: Get Account Apps
       tags:
         - account
@@ -255,10 +457,96 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - apiKey: []
+        - session: []
       summary: Get Account Badges
       tags:
         - account
+  /account.v1.AccountService/UpdateConnection:
+    post:
+      operationId: account.v1.connection.updateConnection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1UpdateConnectionRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1UpdateConnectionResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Make a connection visible/invisible
+      tags:
+        - account
+        - connection
+  /account.v1.AccountService/VerifyConnection:
+    post:
+      operationId: account.v1.connection.verifyConnection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1VerifyConnectionRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1VerifyConnectionResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Verify a domain connection only atm
+      tags:
+        - account
+        - connection
   /v1/liveness:
     get:
       description: This endpoint checks if the service is alive.
