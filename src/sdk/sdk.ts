@@ -4,12 +4,30 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
+import { Connection } from "./connection.js";
 import { Liveness } from "./liveness.js";
+import { Session } from "./session.js";
+import { Settings } from "./settings.js";
 
 export class SteamSets extends ClientSDK {
     private _account?: Account;
     get account(): Account {
         return (this._account ??= new Account(this.options$));
+    }
+
+    private _connection?: Connection;
+    get connection(): Connection {
+        return (this._connection ??= new Connection(this.options$));
+    }
+
+    private _session?: Session;
+    get session(): Session {
+        return (this._session ??= new Session(this.options$));
+    }
+
+    private _settings?: Settings;
+    get settings(): Settings {
+        return (this._settings ??= new Settings(this.options$));
     }
 
     private _liveness?: Liveness;

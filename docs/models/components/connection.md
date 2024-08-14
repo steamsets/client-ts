@@ -1,0 +1,29 @@
+# Connection
+
+## Example Usage
+
+```typescript
+import { Connection } from "@steamsets/client-ts/models/components";
+
+let value: Connection = {
+    avatar: "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+    externalId: "123456",
+    hide: true,
+    name: "steamsets",
+    provider: "discord",
+    publicId: "123456",
+    verified: true,
+};
+```
+
+## Fields
+
+| Field                                                                                                               | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         | Example                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `avatar`                                                                                                            | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The avatar of the connected user                                                                                    | https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg |
+| `externalId`                                                                                                        | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The external id of the connected user                                                                               | 123456                                                                                                              |
+| `hide`                                                                                                              | *boolean*                                                                                                           | :heavy_check_mark:                                                                                                  | Whether the connection should be hidden or not                                                                      | true                                                                                                                |
+| `name`                                                                                                              | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The name of the connected user                                                                                      | steamsets                                                                                                           |
+| `provider`                                                                                                          | [components.ConnectionProvider](../../models/components/connectionprovider.md)                                      | :heavy_check_mark:                                                                                                  | The provider to connect with                                                                                        | discord                                                                                                             |
+| `publicId`                                                                                                          | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The public id of the connection                                                                                     | 123456                                                                                                              |
+| `verified`                                                                                                          | *boolean*                                                                                                           | :heavy_check_mark:                                                                                                  | Whether the connection has been verified or not                                                                     | true                                                                                                                |

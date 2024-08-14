@@ -1,5 +1,12 @@
 # ErrorDetail
 
+## Example Usage
+
+```typescript
+import { ErrorDetail } from "@steamsets/client-ts/models/components";
+
+let value: ErrorDetail = {};
+```
 
 ## Fields
 

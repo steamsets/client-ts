@@ -5,26 +5,22 @@
 import * as z from "zod";
 
 export type Security = {
-    apiKey: string;
     session: string;
 };
 
 /** @internal */
 export const Security$inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z.object({
-    apiKey: z.string(),
     session: z.string(),
 });
 
 /** @internal */
 export type Security$Outbound = {
-    apiKey: string;
     session: string;
 };
 
 /** @internal */
 export const Security$outboundSchema: z.ZodType<Security$Outbound, z.ZodTypeDef, Security> =
     z.object({
-        apiKey: z.string(),
         session: z.string(),
     });
 

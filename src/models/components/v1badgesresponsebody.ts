@@ -11,7 +11,7 @@ import {
 } from "./v1badge.js";
 import * as z from "zod";
 
-export type V1BadgesAppsResponseBody = {
+export type V1BadgesResponseBody = {
     /**
      * A URL to the JSON Schema for this object.
      */
@@ -20,8 +20,8 @@ export type V1BadgesAppsResponseBody = {
 };
 
 /** @internal */
-export const V1BadgesAppsResponseBody$inboundSchema: z.ZodType<
-    V1BadgesAppsResponseBody,
+export const V1BadgesResponseBody$inboundSchema: z.ZodType<
+    V1BadgesResponseBody,
     z.ZodTypeDef,
     unknown
 > = z
@@ -36,16 +36,16 @@ export const V1BadgesAppsResponseBody$inboundSchema: z.ZodType<
     });
 
 /** @internal */
-export type V1BadgesAppsResponseBody$Outbound = {
+export type V1BadgesResponseBody$Outbound = {
     $schema?: string | undefined;
     badges: Array<V1Badge$Outbound> | null;
 };
 
 /** @internal */
-export const V1BadgesAppsResponseBody$outboundSchema: z.ZodType<
-    V1BadgesAppsResponseBody$Outbound,
+export const V1BadgesResponseBody$outboundSchema: z.ZodType<
+    V1BadgesResponseBody$Outbound,
     z.ZodTypeDef,
-    V1BadgesAppsResponseBody
+    V1BadgesResponseBody
 > = z
     .object({
         dollarSchema: z.string().optional(),
@@ -61,11 +61,11 @@ export const V1BadgesAppsResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1BadgesAppsResponseBody$ {
-    /** @deprecated use `V1BadgesAppsResponseBody$inboundSchema` instead. */
-    export const inboundSchema = V1BadgesAppsResponseBody$inboundSchema;
-    /** @deprecated use `V1BadgesAppsResponseBody$outboundSchema` instead. */
-    export const outboundSchema = V1BadgesAppsResponseBody$outboundSchema;
-    /** @deprecated use `V1BadgesAppsResponseBody$Outbound` instead. */
-    export type Outbound = V1BadgesAppsResponseBody$Outbound;
+export namespace V1BadgesResponseBody$ {
+    /** @deprecated use `V1BadgesResponseBody$inboundSchema` instead. */
+    export const inboundSchema = V1BadgesResponseBody$inboundSchema;
+    /** @deprecated use `V1BadgesResponseBody$outboundSchema` instead. */
+    export const outboundSchema = V1BadgesResponseBody$outboundSchema;
+    /** @deprecated use `V1BadgesResponseBody$Outbound` instead. */
+    export type Outbound = V1BadgesResponseBody$Outbound;
 }

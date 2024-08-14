@@ -2,6 +2,13 @@
 
 Bad Request
 
+## Example Usage
+
+```typescript
+import { ErrorModel } from "@steamsets/client-ts/models/errors";
+
+// No examples available for this model
+```
 
 ## Fields
 
