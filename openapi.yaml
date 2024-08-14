@@ -1,5 +1,70 @@
 components:
   schemas:
+    Connection:
+      additionalProperties: false
+      properties:
+        avatar:
+          description: The avatar of the connected user
+          example: https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
+          type: string
+        externalId:
+          description: The external id of the connected user
+          example: "123456"
+          type: string
+        hide:
+          description: Whether the connection should be hidden or not
+          example: true
+          type: boolean
+        name:
+          description: The name of the connected user
+          example: steamsets
+          type: string
+        provider:
+          description: The provider to connect with
+          enum:
+            - discord
+            - patreon
+            - kick
+            - reddit
+            - twitch
+            - youtube
+            - x
+            - domain
+          example: discord
+          type: string
+        publicId:
+          description: The public id of the connection
+          example: "123456"
+          type: string
+        verified:
+          description: Whether the connection has been verified or not
+          example: true
+          type: boolean
+      required:
+        - provider
+        - name
+        - avatar
+        - externalId
+        - hide
+        - publicId
+        - verified
+      type: object
+    EmailNotification:
+      additionalProperties: false
+      properties:
+        enabled:
+          description: Whether the email notifications are enabled or not
+          example: true
+          type: boolean
+        type:
+          description: The type of email notifications
+          enum:
+            - login
+          type: string
+      required:
+        - enabled
+        - type
+      type: object
     ErrorDetail:
       additionalProperties: false
       properties:
@@ -51,6 +116,140 @@ components:
           example: https://example.com/errors/example
           format: uri
           type: string
+      type: object
+    Image:
+      additionalProperties: false
+      properties:
+        active:
+          description: Whether the image is active or not
+          example: true
+          type: boolean
+        fileId:
+          description: The id of the file
+          example: "123456"
+          type: string
+        fileName:
+          description: The name of the file
+          example: avatar.png
+          type: string
+        imageId:
+          description: The id of the image
+          example: "123456"
+          type: string
+        imageType:
+          description: The type of the image
+          example: avatar
+          type: string
+        mimeType:
+          description: The mime type of the file
+          example: image/png
+          type: string
+      required:
+        - fileName
+        - imageId
+        - fileId
+        - mimeType
+        - imageType
+        - active
+      type: object
+    LoginRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/LoginRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        openid_assoc_handle:
+          description: The assoc handle of the login
+          example: "123456"
+          type: string
+        openid_claimed_id:
+          description: The claimed id of the login
+          example: "76561198842603734"
+          type: string
+        openid_identity:
+          description: The identity of the login
+          example: https://steamsets.com/api/v1/openid/login
+          type: string
+        openid_mode:
+          description: The mode of the login
+          example: checkid_setup
+          type: string
+        openid_ns:
+          description: The namespace of the login
+          example: http://specs.openid.net/auth/2.0
+          type: string
+        openid_op_endpoint:
+          description: The endpoint of the login
+          example: https://steamsets.com/api/v1/openid/login
+          type: string
+        openid_response_nonce:
+          description: The response nonce of the login
+          example: "123456"
+          type: string
+        openid_return_to:
+          description: The return to of the login
+          example: https://steamsets.com/api/v1/openid/login
+          type: string
+        openid_sig:
+          description: The sig of the login
+          example: "123456"
+          type: string
+        openid_signed:
+          description: The signed of the login
+          example: "123456"
+          type: string
+      required:
+        - openid_ns
+        - openid_mode
+        - openid_op_endpoint
+        - openid_claimed_id
+        - openid_identity
+        - openid_return_to
+        - openid_response_nonce
+        - openid_assoc_handle
+        - openid_signed
+        - openid_sig
+      type: object
+    Session:
+      additionalProperties: false
+      properties:
+        createdAt:
+          description: The time the session was created
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        expiresAt:
+          description: The time the session expires
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        ip:
+          description: The ip of the session
+          example: 127.0.0.1
+          type: string
+        lastSeen:
+          description: The time the session was last seen
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        sessionId:
+          description: The session id
+          example: "123456"
+          type: string
+        userAgent:
+          description: The user agent of the session
+          example: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+          type: string
+      required:
+        - createdAt
+        - expiresAt
+        - lastSeen
+        - sessionId
+        - userAgent
+        - ip
       type: object
     V1AccountsAppsResponseBody:
       additionalProperties: false
@@ -228,6 +427,197 @@ components:
       required:
         - success
       type: object
+    V1DeleteConnectionRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1DeleteConnectionRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        connectionId:
+          description: The connection id to delete
+          example: "123456"
+          type: string
+      required:
+        - connectionId
+      type: object
+    V1DeleteConnectionResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        success:
+          description: Always true
+          example: true
+          type: boolean
+      required:
+        - success
+      type: object
+    V1DeleteSessionRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1DeleteSessionRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        sessionId:
+          description: The session id to delete
+          example: "123456"
+          type: string
+      required:
+        - sessionId
+      type: object
+    V1DeleteSessionResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        success:
+          description: Always true
+          example: true
+          type: boolean
+      required:
+        - success
+      type: object
+    V1GetSessionBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1GetSessionBody.json
+          format: uri
+          readOnly: true
+          type: string
+        accountId:
+          description: The account id
+          example: 123456
+          format: int32
+          type: integer
+        resources:
+          description: The resources the user has (permissions)
+          items:
+            $ref: "#/components/schemas/V1Resource"
+          nullable: true
+          type: array
+        roles:
+          description: The roles the user has
+          items:
+            $ref: "#/components/schemas/V1Role"
+          nullable: true
+          type: array
+        sessionData:
+          $ref: "#/components/schemas/Session"
+          description: The session data
+        steamId:
+          description: The steam id
+          example: "76561198842603734"
+          type: string
+      required:
+        - accountId
+        - steamId
+        - sessionData
+        - roles
+        - resources
+      type: object
+    V1GetSettingsBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1GetSettingsBody.json
+          format: uri
+          readOnly: true
+          type: string
+        apiKey:
+          description: The Generated API Key for this account
+          example: api_key
+          type: string
+        color:
+          description: The color the account is using
+          example: "#7652c9"
+          type: string
+        colors:
+          description: The colors the account is using
+          example: "#7652c9"
+          type: string
+        connections:
+          description: The connections the account has
+          items:
+            $ref: "#/components/schemas/Connection"
+          nullable: true
+          type: array
+        email:
+          description: The email the account is using
+          example: steamsets@example.com
+          type: string
+        emailNotifications:
+          description: The email notifications the account has
+          items:
+            $ref: "#/components/schemas/EmailNotification"
+          nullable: true
+          type: array
+        emailVerified:
+          description: Whether the account has verified their email
+          example: true
+          type: boolean
+        hidden:
+          description: Whether the account is hidden in the leaderboards
+          example: true
+          type: boolean
+        images:
+          description: The images the account has
+          items:
+            $ref: "#/components/schemas/Image"
+          nullable: true
+          type: array
+        language:
+          description: The language the account is using
+          example: en
+          type: string
+        sessions:
+          description: The sessions the account has
+          items:
+            $ref: "#/components/schemas/Session"
+          nullable: true
+          type: array
+        theme:
+          description: The theme the account is using
+          enum:
+            - dark
+            - light
+          example: dark
+          type: string
+        vanity:
+          description: The vanity the account is using
+          example: flo
+          type: string
+      required:
+        - hidden
+        - language
+        - colors
+        - color
+        - theme
+        - vanity
+        - email
+        - emailVerified
+        - apiKey
+        - sessions
+        - connections
+        - images
+        - emailNotifications
+      type: object
     V1LivenessResponseBody:
       additionalProperties: false
       properties:
@@ -243,6 +633,72 @@ components:
           type: string
       required:
         - message
+      type: object
+    V1LoginResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1LoginResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        avatar:
+          description: The avatar of the user
+          example: https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
+          type: string
+        name:
+          description: The name of the user
+          example: SteamSets
+          type: string
+        sessionToken:
+          description: The session token
+          example: "123456"
+          type: string
+        steamId:
+          description: The steam id
+          example: "76561198842603734"
+          type: string
+      required:
+        - steamId
+        - avatar
+        - name
+        - sessionToken
+      type: object
+    V1Resource:
+      additionalProperties: false
+      properties:
+        resource:
+          type: string
+        value:
+          description: The value of the resource, this can be a string, number, boolean or even a cron expression
+          type: string
+      required:
+        - resource
+        - value
+      type: object
+    V1Role:
+      additionalProperties: false
+      properties:
+        Color:
+          description: The role color
+          example: "#ff0000"
+          type: string
+        icon:
+          description: The role icon
+          example: tier_1.svg
+          type: string
+        name:
+          description: The Group name
+          example: Tier 1
+          type: string
+        role:
+          type: string
+      required:
+        - role
+        - Color
+        - icon
+        - name
       type: object
     V1UpdateConnectionRequestBody:
       additionalProperties: false
@@ -277,6 +733,21 @@ components:
         success:
           description: Always true
           example: true
+          type: boolean
+      required:
+        - success
+      type: object
+    V1UpdateSettingsResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        success:
+          description: Whether the settings were updated successfully
           type: boolean
       required:
         - success
@@ -319,9 +790,9 @@ components:
       name: api-key
       type: apiKey
     session:
-      name: Authorization
-      scheme: bearer
-      type: http
+      in: header
+      name: session
+      type: apiKey
 info:
   title: SteamSets API
   version: 1.0.0
@@ -374,14 +845,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/V1UpdateConnectionRequestBody"
+              $ref: "#/components/schemas/V1DeleteConnectionRequestBody"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/V1UpdateConnectionResponseBody"
+                $ref: "#/components/schemas/V1DeleteConnectionResponseBody"
           description: OK
         "400":
           content:
@@ -407,6 +878,46 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/DeleteSession:
+    post:
+      operationId: account.v1.session.delete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1DeleteSessionRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1DeleteSessionResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Deletes a session, can also be used to logout
+      tags:
+        - account
+        - session
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
@@ -461,6 +972,93 @@ paths:
       summary: Get Account Badges
       tags:
         - account
+  /account.v1.AccountService/GetSession:
+    post:
+      operationId: account.v1.session.get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1GetSessionBody"
+          description: OK
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Gets all session data
+      tags:
+        - account
+        - session
+  /account.v1.AccountService/GetSettings:
+    post:
+      operationId: account.v1.settings.get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1GetSettingsBody"
+          description: OK
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Gets all settings for the account
+      tags:
+        - account
+        - settings
+  /account.v1.AccountService/Login:
+    post:
+      operationId: account.v1.session.login
+      parameters:
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1LoginResponseBody"
+          description: OK
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Logs a user in and creates a new session
+      tags:
+        - account
+        - session
   /account.v1.AccountService/UpdateConnection:
     post:
       operationId: account.v1.connection.updateConnection
@@ -507,6 +1105,45 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/UpdateSettings:
+    post:
+      operationId: account.v1.settings.update
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1UpdateSettingsResponseBody"
+          description: OK
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Update settings for the logged in account
+      tags:
+        - account
+        - settings
   /account.v1.AccountService/VerifyConnection:
     post:
       operationId: account.v1.connection.verifyConnection
@@ -569,3 +1206,14 @@ paths:
         - liveness
 servers:
   - url: https://api.steamsets.com
+tags:
+  - description: Account related operations
+    name: account
+  - description: Operations related to oauth2/custom connections.
+    name: connection
+  - description: App related operations
+    name: app
+  - description: Group related operations
+    name: group
+  - description: Liveness check
+    name: liveness

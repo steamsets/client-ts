@@ -4,7 +4,10 @@ permissions:
   contents: write
   pull-requests: write
   statuses: write
-"on":
+on:
+  push:
+    paths:
+      - "openapi.yaml"
   workflow_dispatch:
     inputs:
       force:
