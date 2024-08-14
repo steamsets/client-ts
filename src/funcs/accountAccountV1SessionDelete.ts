@@ -3,7 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
+import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -21,14 +23,15 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get Account Apps
+ * Deletes a session, can also be used to logout
  */
-export async function accountAccountV1Apps(
+export async function accountAccountV1SessionDelete(
     client$: SteamSetsCore,
+    request: components.V1DeleteSessionRequestBody,
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1AccountsAppsResponseBody,
+        components.V1DeleteSessionResponseBody,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -39,17 +42,32 @@ export async function accountAccountV1Apps(
         | ConnectionError
     >
 > {
-    const path$ = pathToFunc("/account.v1.AccountService/GetApps")();
+    const input$ = request;
+
+    const parsed$ = schemas$.safeParse(
+        input$,
+        (value$) => components.V1DeleteSessionRequestBody$outboundSchema.parse(value$),
+        "Input validation failed"
+    );
+    if (!parsed$.ok) {
+        return parsed$;
+    }
+    const payload$ = parsed$.value;
+    const body$ = encodeJSON$("body", payload$, { explode: true });
+
+    const path$ = pathToFunc("/account.v1.AccountService/DeleteSession")();
 
     const headers$ = new Headers({
+        "Content-Type": "application/json",
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const session$ = await extractSecurity(client$.options$.session);
+    const security$ = session$ == null ? {} : { session: session$ };
     const context = {
-        operationID: "account.v1.apps",
+        operationID: "account.v1.session.delete",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.session,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -60,6 +78,8 @@ export async function accountAccountV1Apps(
             method: "POST",
             path: path$,
             headers: headers$,
+            body: body$,
+            uaHeader: "x-speakeasy-user-agent",
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },
         options
@@ -71,7 +91,7 @@ export async function accountAccountV1Apps(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "4XX", "500", "5XX"],
+        errorCodes: ["404", "422", "4XX", "500", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -85,7 +105,7 @@ export async function accountAccountV1Apps(
     };
 
     const [result$] = await m$.match<
-        components.V1AccountsAppsResponseBody,
+        components.V1DeleteSessionResponseBody,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -95,8 +115,8 @@ export async function accountAccountV1Apps(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1AccountsAppsResponseBody$inboundSchema),
-        m$.jsonErr([400, 500], errors.ErrorModel$inboundSchema, {
+        m$.json(200, components.V1DeleteSessionResponseBody$inboundSchema),
+        m$.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])

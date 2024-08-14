@@ -1,12 +1,12 @@
 {
   "name": "@steamsets/client-ts",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Speakeasy",
   "main": "./index.js",
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/steamsets/node-steamsets.git"
+    "url": "https://github.com/steamsets/client-ts.git"
   },
   "scripts": {
     "lint": "eslint --max-warnings=0 src",

@@ -1,6 +1,10 @@
 # Liveness
 (*liveness*)
 
+## Overview
+
+Liveness check
+
 ### Available Operations
 
 * [liveness](#liveness) - Liveness check
@@ -15,14 +19,42 @@ This endpoint checks if the service is alive.
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
   const result = await steamSets.liveness.liveness();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { livenessLiveness } from "@steamsets/client-ts/funcs/livenessLiveness.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_API_KEY_HERE>",
+});
+
+async function run() {
+  const res = await livenessLiveness(steamSets);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
 
   // Handle the result
   console.log(result)

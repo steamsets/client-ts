@@ -1,5 +1,15 @@
 # V1LivenessResponseBody
 
+## Example Usage
+
+```typescript
+import { V1LivenessResponseBody } from "@steamsets/client-ts/models/components";
+
+let value: V1LivenessResponseBody = {
+    dollarSchema: "https://api.steamsets.com/schemas/V1LivenessResponseBody.json",
+    message: "OK",
+};
+```
 
 ## Fields
 

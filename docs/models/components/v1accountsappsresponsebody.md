@@ -1,5 +1,24 @@
 # V1AccountsAppsResponseBody
 
+## Example Usage
+
+```typescript
+import { V1AccountsAppsResponseBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AccountsAppsResponseBody = {
+    dollarSchema: "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json",
+    apps: [
+        {
+            id: 730,
+            image: "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+            name: "Counter-Strike: Global Offensive",
+            playtime: 123456,
+            price: 1200,
+            shortName: "csgo",
+        },
+    ],
+};
+```
 
 ## Fields
 

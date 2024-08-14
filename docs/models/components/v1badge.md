@@ -1,5 +1,27 @@
 # V1Badge
 
+## Example Usage
+
+```typescript
+import { V1Badge } from "@steamsets/client-ts/models/components";
+
+let value: V1Badge = {
+    appId: 847252,
+    appImage: "<value>",
+    appName: "<value>",
+    appShortName: "<value>",
+    badgeImage: "<value>",
+    completedAt: new Date("2023-04-10T07:48:56.789Z"),
+    isFoil: false,
+    level: 623564,
+    name: "<value>",
+    price: 645894,
+    publicId: "<value>",
+    scarcity: 384382,
+    steamId: 437587,
+    xp: 297534,
+};
+```
 
 ## Fields
 

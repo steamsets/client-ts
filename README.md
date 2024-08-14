@@ -56,14 +56,14 @@ yarn add @steamsets/client-ts zod
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps();
+    const result = await steamSets.account.accountV1ConnectionConnect({
+        code: "123456",
+        provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
@@ -79,8 +79,35 @@ run();
 
 ### [account](docs/sdks/account/README.md)
 
-* [accountV1Apps](docs/sdks/account/README.md#accountv1apps) - Get Account Apps
-* [accountV1Badge](docs/sdks/account/README.md#accountv1badge) - Get Account Badges
+* [accountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect) - Connect a new Social Provider
+* [accountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection) - Remove a connection
+* [accountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+* [accountV1GetApps](docs/sdks/account/README.md#accountv1getapps) - Get Account Apps
+* [accountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
+* [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
+* [accountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
+* [accountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate) - Update settings for the logged in account
+* [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+
+### [connection](docs/sdks/connection/README.md)
+
+* [accountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect) - Connect a new Social Provider
+* [accountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection) - Remove a connection
+* [accountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
+* [accountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+
+### [session](docs/sdks/session/README.md)
+
+* [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+* [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
+* [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+
+### [settings](docs/sdks/settings/README.md)
+
+* [accountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget) - Gets all settings for the account
+* [accountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate) - Update settings for the logged in account
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -97,25 +124,28 @@ To change the default retry strategy for a single API call, simply provide a ret
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps({
-        retries: {
-            strategy: "backoff",
-            backoff: {
-                initialInterval: 1,
-                maxInterval: 50,
-                exponent: 1.1,
-                maxElapsedTime: 100,
-            },
-            retryConnectionErrors: false,
+    const result = await steamSets.account.accountV1ConnectionConnect(
+        {
+            code: "123456",
+            provider: "discord",
         },
-    });
+        {
+            retries: {
+                strategy: "backoff",
+                backoff: {
+                    initialInterval: 1,
+                    maxInterval: 50,
+                    exponent: 1.1,
+                    maxElapsedTime: 100,
+                },
+                retryConnectionErrors: false,
+            },
+        }
+    );
 
     // Handle the result
     console.log(result);
@@ -140,14 +170,14 @@ const steamSets = new SteamSets({
         },
         retryConnectionErrors: false,
     },
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps();
+    const result = await steamSets.account.accountV1ConnectionConnect({
+        code: "123456",
+        provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
@@ -165,7 +195,7 @@ All SDK methods return a response object or throw an error. If Error objects are
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,500                  | application/problem+json |
+| errors.ErrorModel        | 400,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted string since validation errors can list many issues and the plain error string may be difficult read when debugging. 
@@ -176,16 +206,16 @@ import { SteamSets } from "@steamsets/client-ts";
 import { SDKValidationError } from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
     let result;
     try {
-        result = await steamSets.account.accountV1Apps();
+        result = await steamSets.account.accountV1ConnectionConnect({
+            code: "123456",
+            provider: "discord",
+        });
     } catch (err) {
         switch (true) {
             case err instanceof SDKValidationError: {
@@ -230,14 +260,14 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverIdx: 0,
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps();
+    const result = await steamSets.account.accountV1ConnectionConnect({
+        code: "123456",
+        provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
@@ -257,14 +287,14 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverURL: "https://api.steamsets.com",
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps();
+    const result = await steamSets.account.accountV1ConnectionConnect({
+        code: "123456",
+        provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
@@ -329,26 +359,25 @@ const sdk = new SteamSets({ httpClient });
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security schemes globally:
+This SDK supports the following security scheme globally:
 
-| Name        | Type        | Scheme      |
-| ----------- | ----------- | ----------- |
-| `apiKey`    | apiKey      | API key     |
-| `session`   | http        | HTTP Bearer |
+| Name      | Type      | Scheme    |
+| --------- | --------- | --------- |
+| `session` | apiKey    | API key   |
 
-You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+To authenticate with the API the `session` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    security: {
-        apiKey: "<YOUR_API_KEY_HERE>",
-        session: "<YOUR_BEARER_TOKEN_HERE>",
-    },
+    session: "<YOUR_API_KEY_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1Apps();
+    const result = await steamSets.account.accountV1ConnectionConnect({
+        code: "123456",
+        provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
@@ -370,6 +399,62 @@ run();
 
 For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 <!-- End Requirements [requirements] -->
+
+<!-- Start Standalone functions [standalone-funcs] -->
+## Standalone functions
+
+All the methods listed above are available as standalone functions. These
+functions are ideal for use in applications running in the browser, serverless
+runtimes or other environments where application bundle size is a primary
+concern. When using a bundler to build your application, all unused
+functionality will be either excluded from the final bundle or tree-shaken away.
+
+To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
+
+<details>
+
+<summary>Available standalone functions</summary>
+
+- [accountAccountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect)
+- [accountAccountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection)
+- [accountAccountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection)
+- [accountAccountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
+- [accountAccountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
+- [accountAccountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
+- [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
+- [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
+- [accountAccountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin)
+- [accountAccountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget)
+- [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
+- [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
+- [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
+- [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
+- [connectionAccountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
+- [livenessLiveness](docs/sdks/liveness/README.md#liveness)
+- [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
+- [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
+- [sessionAccountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin)
+- [settingsAccountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget)
+- [settingsAccountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate)
+
+
+</details>
+<!-- End Standalone functions [standalone-funcs] -->
+
+<!-- Start Debugging [debug] -->
+## Debugging
+
+To log HTTP requests and responses, you can pass a logger that matches `console`'s interface as an SDK option.
+
+> [!WARNING]
+> Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const sdk = new SteamSets({ debugLogger: console });
+```
+<!-- End Debugging [debug] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

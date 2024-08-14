@@ -48,11 +48,12 @@ export async function livenessLiveness(
         Accept: "application/json",
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const session$ = await extractSecurity(client$.options$.session);
+    const security$ = session$ == null ? {} : { session: session$ };
     const context = {
         operationID: "liveness",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.session,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -63,6 +64,7 @@ export async function livenessLiveness(
             method: "GET",
             path: path$,
             headers: headers$,
+            uaHeader: "x-speakeasy-user-agent",
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },
         options

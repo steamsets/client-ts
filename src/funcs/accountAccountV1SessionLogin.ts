@@ -3,7 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON as encodeJSON$, encodeSimple as encodeSimple$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
+import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -18,17 +20,19 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get Account Badges
+ * Logs a user in and creates a new session
  */
-export async function accountAccountV1Badge(
+export async function accountAccountV1SessionLogin(
     client$: SteamSetsCore,
+    request: operations.AccountV1SessionLoginRequest,
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1BadgesAppsResponseBody,
+        components.V1LoginResponseBody,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -39,17 +43,40 @@ export async function accountAccountV1Badge(
         | ConnectionError
     >
 > {
-    const path$ = pathToFunc("/account.v1.AccountService/GetBadges")();
+    const input$ = request;
+
+    const parsed$ = schemas$.safeParse(
+        input$,
+        (value$) => operations.AccountV1SessionLoginRequest$outboundSchema.parse(value$),
+        "Input validation failed"
+    );
+    if (!parsed$.ok) {
+        return parsed$;
+    }
+    const payload$ = parsed$.value;
+    const body$ = encodeJSON$("body", payload$.LoginRequestBody, { explode: true });
+
+    const path$ = pathToFunc("/account.v1.AccountService/Login")();
 
     const headers$ = new Headers({
+        "Content-Type": "application/json",
         Accept: "application/json",
+        "User-Agent": encodeSimple$("User-Agent", payload$["User-Agent"], {
+            explode: false,
+            charEncoding: "none",
+        }),
+        "X-Forwarded-For": encodeSimple$("X-Forwarded-For", payload$["X-Forwarded-For"], {
+            explode: false,
+            charEncoding: "none",
+        }),
     });
 
-    const security$ = await extractSecurity(client$.options$.security);
+    const session$ = await extractSecurity(client$.options$.session);
+    const security$ = session$ == null ? {} : { session: session$ };
     const context = {
-        operationID: "account.v1.badge",
+        operationID: "account.v1.session.login",
         oAuth2Scopes: [],
-        securitySource: client$.options$.security,
+        securitySource: client$.options$.session,
     };
     const securitySettings$ = resolveGlobalSecurity(security$);
 
@@ -60,6 +87,8 @@ export async function accountAccountV1Badge(
             method: "POST",
             path: path$,
             headers: headers$,
+            body: body$,
+            uaHeader: "x-speakeasy-user-agent",
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },
         options
@@ -71,7 +100,7 @@ export async function accountAccountV1Badge(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "4XX", "500", "5XX"],
+        errorCodes: ["422", "4XX", "500", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -85,7 +114,7 @@ export async function accountAccountV1Badge(
     };
 
     const [result$] = await m$.match<
-        components.V1BadgesAppsResponseBody,
+        components.V1LoginResponseBody,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -95,8 +124,8 @@ export async function accountAccountV1Badge(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1BadgesAppsResponseBody$inboundSchema),
-        m$.jsonErr([400, 500], errors.ErrorModel$inboundSchema, {
+        m$.json(200, components.V1LoginResponseBody$inboundSchema),
+        m$.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
