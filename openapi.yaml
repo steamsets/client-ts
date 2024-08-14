@@ -790,9 +790,8 @@ components:
       name: api-key
       type: apiKey
     session:
-      in: header
-      name: session
-      type: apiKey
+      scheme: bearer
+      type: http
 info:
   title: SteamSets API
   version: 1.0.0
