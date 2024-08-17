@@ -17,7 +17,7 @@ Deletes a session, can also be used to logout
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -44,7 +44,7 @@ import { sessionAccountV1SessionDelete } from "@steamsets/client-ts/funcs/sessio
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -95,7 +95,7 @@ Gets all session data
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -120,7 +120,7 @@ import { sessionAccountV1SessionGet } from "@steamsets/client-ts/funcs/sessionAc
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -168,7 +168,7 @@ Logs a user in and creates a new session
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -206,7 +206,7 @@ import { sessionAccountV1SessionLogin } from "@steamsets/client-ts/funcs/session
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

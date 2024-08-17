@@ -174,8 +174,8 @@ export function resolveGlobalSecurity(
 ): SecurityState | null {
     return resolveSecurity([
         {
-            fieldName: "session",
-            type: "apiKey:header",
+            fieldName: "Authorization",
+            type: "http:bearer",
             value: security?.session,
         },
     ]);

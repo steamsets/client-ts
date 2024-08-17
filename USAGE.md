@@ -3,7 +3,7 @@
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

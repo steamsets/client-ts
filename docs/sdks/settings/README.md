@@ -16,7 +16,7 @@ Gets all settings for the account
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -41,7 +41,7 @@ import { settingsAccountV1SettingsGet } from "@steamsets/client-ts/funcs/setting
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -89,7 +89,7 @@ Update settings for the logged in account
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -114,7 +114,7 @@ import { settingsAccountV1SettingsUpdate } from "@steamsets/client-ts/funcs/sett
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

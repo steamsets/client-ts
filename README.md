@@ -56,7 +56,7 @@ yarn add @steamsets/client-ts zod
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -124,7 +124,7 @@ To change the default retry strategy for a single API call, simply provide a ret
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -170,7 +170,7 @@ const steamSets = new SteamSets({
         },
         retryConnectionErrors: false,
     },
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -206,7 +206,7 @@ import { SteamSets } from "@steamsets/client-ts";
 import { SDKValidationError } from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -260,7 +260,7 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverIdx: 0,
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -287,7 +287,7 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
     serverURL: "https://api.steamsets.com",
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -361,16 +361,16 @@ const sdk = new SteamSets({ httpClient });
 
 This SDK supports the following security scheme globally:
 
-| Name      | Type      | Scheme    |
-| --------- | --------- | --------- |
-| `session` | apiKey    | API key   |
+| Name        | Type        | Scheme      |
+| ----------- | ----------- | ----------- |
+| `session`   | http        | HTTP Bearer |
 
 To authenticate with the API the `session` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
