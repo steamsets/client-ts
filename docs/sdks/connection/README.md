@@ -22,7 +22,7 @@ Connect a new Social Provider
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -50,7 +50,7 @@ import { connectionAccountV1ConnectionConnect } from "@steamsets/client-ts/funcs
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -102,7 +102,7 @@ Remove a connection
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -129,7 +129,7 @@ import { connectionAccountV1ConnectionDeleteConnection } from "@steamsets/client
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -180,7 +180,7 @@ Make a connection visible/invisible
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -208,7 +208,7 @@ import { connectionAccountV1ConnectionUpdateConnection } from "@steamsets/client
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -260,7 +260,7 @@ Verify a domain connection only atm
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -287,7 +287,7 @@ import { connectionAccountV1ConnectionVerifyConnection } from "@steamsets/client
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_API_KEY_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
