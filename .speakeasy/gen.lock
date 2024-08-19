@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 2c8be6d8919eb62b6ad49a815b83a74f
+  docChecksum: 76946c019571ee4f772682e9e5498a2b
   docVersion: 1.0.0
-  speakeasyVersion: 1.374.2
-  generationVersion: 2.401.2
-  releaseVersion: 0.2.1
-  configChecksum: 06358f0258c294be28752dcdb2cfd1c1
+  speakeasyVersion: 1.376.0
+  generationVersion: 2.402.5
+  releaseVersion: 0.3.0
+  configChecksum: 4cee4892ef3be57f55f8fd51317ef2e7
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.10
-    core: 3.13.2
+    core: 3.14.1
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     envVarSecurityUsage: 0.1.1
@@ -45,29 +45,39 @@ features:
 generatedFiles:
   - src/funcs/accountAccountV1ConnectionConnect.ts
   - src/funcs/accountAccountV1ConnectionDeleteConnection.ts
+  - src/funcs/accountAccountV1SettingsDeleteImages.ts
   - src/funcs/accountAccountV1SessionDelete.ts
+  - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
   - src/funcs/accountAccountV1GetApps.ts
   - src/funcs/accountAccountV1GetBadges.ts
   - src/funcs/accountAccountV1SessionGet.ts
   - src/funcs/accountAccountV1SettingsGet.ts
   - src/funcs/accountAccountV1SessionLogin.ts
+  - src/funcs/accountAccountV1SettingsSendEmailVerification.ts
   - src/funcs/accountAccountV1ConnectionUpdateConnection.ts
+  - src/funcs/accountAccountV1SettingsUpdateImage.ts
   - src/funcs/accountAccountV1SettingsUpdate.ts
   - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
+  - src/funcs/accountAccountV1SettingsVerfyEmail.ts
   - src/funcs/connectionAccountV1ConnectionConnect.ts
   - src/funcs/connectionAccountV1ConnectionDeleteConnection.ts
   - src/funcs/connectionAccountV1ConnectionUpdateConnection.ts
   - src/funcs/connectionAccountV1ConnectionVerifyConnection.ts
+  - src/funcs/settingsAccountV1SettingsDeleteImages.ts
+  - src/funcs/settingsAccountV1SettingsGenerateApiKey.ts
+  - src/funcs/settingsAccountV1SettingsGet.ts
+  - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
+  - src/funcs/settingsAccountV1SettingsUpdateImage.ts
+  - src/funcs/settingsAccountV1SettingsUpdate.ts
+  - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
   - src/funcs/sessionAccountV1SessionDelete.ts
   - src/funcs/sessionAccountV1SessionGet.ts
   - src/funcs/sessionAccountV1SessionLogin.ts
-  - src/funcs/settingsAccountV1SettingsGet.ts
-  - src/funcs/settingsAccountV1SettingsUpdate.ts
   - src/funcs/livenessLiveness.ts
   - src/sdk/account.ts
   - src/sdk/connection.ts
-  - src/sdk/session.ts
   - src/sdk/settings.ts
+  - src/sdk/session.ts
   - src/sdk/liveness.ts
   - src/sdk/sdk.ts
   - .eslintrc.cjs
@@ -109,16 +119,20 @@ generatedFiles:
   - src/models/components/v1connectrequestbody.ts
   - src/models/components/v1deleteconnectionresponsebody.ts
   - src/models/components/v1deleteconnectionrequestbody.ts
+  - src/models/components/v1deleteimagesresponsebody.ts
+  - src/models/components/v1deleteimagesrequestbody.ts
+  - src/models/components/item.ts
   - src/models/components/v1deletesessionresponsebody.ts
   - src/models/components/v1deletesessionrequestbody.ts
+  - src/models/components/v1generateapikeyresponsebody.ts
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1app.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badge.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/session.ts
-  - src/models/components/v1role.ts
-  - src/models/components/v1resource.ts
+  - src/models/components/role.ts
+  - src/models/components/resource.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/image.ts
   - src/models/components/emailnotification.ts
@@ -127,13 +141,19 @@ generatedFiles:
   - src/models/components/loginrequestbody.ts
   - src/models/components/v1updateconnectionresponsebody.ts
   - src/models/components/v1updateconnectionrequestbody.ts
+  - src/models/components/v1updateimageresponsebody.ts
+  - src/models/components/v1updateimagerequestbody.ts
   - src/models/components/v1updatesettingsresponsebody.ts
+  - src/models/components/v1updatesettingsrequestbody.ts
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyconnectionrequestbody.ts
+  - src/models/components/v1verifyemailresponsebody.ts
+  - src/models/components/v1verifyemailrequestbody.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/security.ts
   - src/models/errors/errormodel.ts
   - src/models/operations/accountv1sessionlogin.ts
+  - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts
   - src/models/errors/index.ts
   - src/models/components/index.ts
@@ -144,16 +164,20 @@ generatedFiles:
   - docs/models/components/v1connectrequestbody.md
   - docs/models/components/v1deleteconnectionresponsebody.md
   - docs/models/components/v1deleteconnectionrequestbody.md
+  - docs/models/components/v1deleteimagesresponsebody.md
+  - docs/models/components/v1deleteimagesrequestbody.md
+  - docs/models/components/item.md
   - docs/models/components/v1deletesessionresponsebody.md
   - docs/models/components/v1deletesessionrequestbody.md
+  - docs/models/components/v1generateapikeyresponsebody.md
   - docs/models/components/v1accountsappsresponsebody.md
   - docs/models/components/v1app.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badge.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/session.md
-  - docs/models/components/v1role.md
-  - docs/models/components/v1resource.md
+  - docs/models/components/role.md
+  - docs/models/components/resource.md
   - docs/models/components/theme.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/image.md
@@ -165,20 +189,27 @@ generatedFiles:
   - docs/models/components/loginrequestbody.md
   - docs/models/components/v1updateconnectionresponsebody.md
   - docs/models/components/v1updateconnectionrequestbody.md
+  - docs/models/components/v1updateimageresponsebody.md
+  - docs/models/components/v1updateimagerequestbody.md
   - docs/models/components/v1updatesettingsresponsebody.md
+  - docs/models/components/v1updatesettingsrequestbodytheme.md
+  - docs/models/components/v1updatesettingsrequestbody.md
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyconnectionrequestbody.md
+  - docs/models/components/v1verifyemailresponsebody.md
+  - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/security.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1sessionloginrequest.md
+  - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/sdks/steamsets/README.md
   - docs/lib/utils/retryconfig.md
   - docs/sdks/account/README.md
   - docs/sdks/connection/README.md
-  - docs/sdks/session/README.md
   - docs/sdks/settings/README.md
+  - docs/sdks/session/README.md
   - docs/sdks/liveness/README.md
   - USAGE.md
   - .gitattributes

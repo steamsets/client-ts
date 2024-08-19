@@ -1,11 +1,11 @@
-# V1Role
+# Role
 
 ## Example Usage
 
 ```typescript
-import { V1Role } from "@steamsets/client-ts/models/components";
+import { Role } from "@steamsets/client-ts/models/components";
 
-let value: V1Role = {
+let value: Role = {
     color: "#ff0000",
     icon: "tier_1.svg",
     name: "Tier 1",

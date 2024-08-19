@@ -6,14 +6,12 @@
 import { V1VerifyConnectionResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1VerifyConnectionResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json",
-    success: true,
+    dollarSchema: "http://localhost:8080/schemas/V1VerifyConnectionResponseBody.json",
 };
 ```
 
 ## Fields
 
-| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `dollarSchema`                                                        | *string*                                                              | :heavy_minus_sign:                                                    | A URL to the JSON Schema for this object.                             | https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json |
-| `success`                                                             | *boolean*                                                             | :heavy_check_mark:                                                    | Always true                                                           | true                                                                  |
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `dollarSchema`                                                    | *string*                                                          | :heavy_minus_sign:                                                | A URL to the JSON Schema for this object.                         | http://localhost:8080/schemas/V1VerifyConnectionResponseBody.json |

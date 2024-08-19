@@ -186,7 +186,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionUpdateConnection({
     connectionId: "123456",
-    hiddem: true,
+    hidden: true,
   });
 
   // Handle the result
@@ -214,7 +214,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await connectionAccountV1ConnectionUpdateConnection(steamSets, {
     connectionId: "123456",
-    hiddem: true,
+    hidden: true,
   });
 
   if (!res.ok) {

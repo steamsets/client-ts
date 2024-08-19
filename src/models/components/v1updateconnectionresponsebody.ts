@@ -10,10 +10,6 @@ export type V1UpdateConnectionResponseBody = {
      * A URL to the JSON Schema for this object.
      */
     dollarSchema?: string | undefined;
-    /**
-     * Always true
-     */
-    success: boolean;
 };
 
 /** @internal */
@@ -24,7 +20,6 @@ export const V1UpdateConnectionResponseBody$inboundSchema: z.ZodType<
 > = z
     .object({
         $schema: z.string().optional(),
-        success: z.boolean(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -35,7 +30,6 @@ export const V1UpdateConnectionResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1UpdateConnectionResponseBody$Outbound = {
     $schema?: string | undefined;
-    success: boolean;
 };
 
 /** @internal */
@@ -46,7 +40,6 @@ export const V1UpdateConnectionResponseBody$outboundSchema: z.ZodType<
 > = z
     .object({
         dollarSchema: z.string().optional(),
-        success: z.boolean(),
     })
     .transform((v) => {
         return remap$(v, {

@@ -1,11 +1,11 @@
-# V1Resource
+# Resource
 
 ## Example Usage
 
 ```typescript
-import { V1Resource } from "@steamsets/client-ts/models/components";
+import { Resource } from "@steamsets/client-ts/models/components";
 
-let value: V1Resource = {
+let value: Resource = {
     resource: "<value>",
     value: "<value>",
 };

@@ -20,14 +20,14 @@ export class SteamSets extends ClientSDK {
         return (this._connection ??= new Connection(this.options$));
     }
 
-    private _session?: Session;
-    get session(): Session {
-        return (this._session ??= new Session(this.options$));
-    }
-
     private _settings?: Settings;
     get settings(): Settings {
         return (this._settings ??= new Settings(this.options$));
+    }
+
+    private _session?: Session;
+    get session(): Session {
+        return (this._session ??= new Session(this.options$));
     }
 
     private _liveness?: Liveness;

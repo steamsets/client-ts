@@ -81,15 +81,20 @@ run();
 
 * [accountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect) - Connect a new Social Provider
 * [accountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection) - Remove a connection
+* [accountV1SettingsDeleteImages](docs/sdks/account/README.md#accountv1settingsdeleteimages) - Delete mulitple imagest
 * [accountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+* [accountV1SettingsGenerateApiKey](docs/sdks/account/README.md#accountv1settingsgenerateapikey) - Generate a new API key for the account
 * [accountV1GetApps](docs/sdks/account/README.md#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges) - Get Account Badges
 * [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
 * [accountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
+* [accountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
 * [accountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate) - Update settings for the logged in account
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+* [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
 ### [connection](docs/sdks/connection/README.md)
 
@@ -98,16 +103,21 @@ run();
 * [accountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
 * [accountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 
+### [settings](docs/sdks/settings/README.md)
+
+* [accountV1SettingsDeleteImages](docs/sdks/settings/README.md#accountv1settingsdeleteimages) - Delete mulitple imagest
+* [accountV1SettingsGenerateApiKey](docs/sdks/settings/README.md#accountv1settingsgenerateapikey) - Generate a new API key for the account
+* [accountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget) - Gets all settings for the account
+* [accountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
+* [accountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
+* [accountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate) - Update settings for the logged in account
+* [accountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
+
 ### [session](docs/sdks/session/README.md)
 
 * [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
 * [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
-
-### [settings](docs/sdks/settings/README.md)
-
-* [accountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget) - Gets all settings for the account
-* [accountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate) - Update settings for the logged in account
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -253,13 +263,14 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `https://api.steamsets.com` | None |
+| 0 | `http://localhost:8080` | None |
+| 1 | `https://api.steamsets.com` | None |
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    serverIdx: 0,
+    serverIdx: 1,
     session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
@@ -286,7 +297,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    serverURL: "https://api.steamsets.com",
+    serverURL: "http://localhost:8080",
     session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
@@ -424,8 +435,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
 - [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
 - [accountAccountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin)
+- [accountAccountV1SettingsDeleteImages](docs/sdks/account/README.md#accountv1settingsdeleteimages)
+- [accountAccountV1SettingsGenerateApiKey](docs/sdks/account/README.md#accountv1settingsgenerateapikey)
 - [accountAccountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget)
+- [accountAccountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification)
+- [accountAccountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage)
 - [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
+- [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
 - [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
 - [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
@@ -434,8 +450,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
 - [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
 - [sessionAccountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin)
+- [settingsAccountV1SettingsDeleteImages](docs/sdks/settings/README.md#accountv1settingsdeleteimages)
+- [settingsAccountV1SettingsGenerateApiKey](docs/sdks/settings/README.md#accountv1settingsgenerateapikey)
 - [settingsAccountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget)
+- [settingsAccountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification)
+- [settingsAccountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage)
 - [settingsAccountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate)
+- [settingsAccountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail)
 
 
 </details>
@@ -444,7 +465,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To log HTTP requests and responses, you can pass a logger that matches `console`'s interface as an SDK option.
+You can setup your SDK to emit debug logs for SDK requests and responses.
+
+You can pass a logger that matches `console`'s interface as an SDK option.
 
 > [!WARNING]
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.

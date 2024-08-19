@@ -3,10 +3,12 @@
  */
 
 import { remap as remap$ } from "../../lib/primitives.js";
+import * as components from "../components/index.js";
 import * as z from "zod";
 
 export type AccountV1SettingsUpdateRequest = {
     xForwardedFor?: string | undefined;
+    v1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody;
 };
 
 /** @internal */
@@ -17,16 +19,19 @@ export const AccountV1SettingsUpdateRequest$inboundSchema: z.ZodType<
 > = z
     .object({
         "X-Forwarded-For": z.string().optional(),
+        V1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody$inboundSchema,
     })
     .transform((v) => {
         return remap$(v, {
             "X-Forwarded-For": "xForwardedFor",
+            V1UpdateSettingsRequestBody: "v1UpdateSettingsRequestBody",
         });
     });
 
 /** @internal */
 export type AccountV1SettingsUpdateRequest$Outbound = {
     "X-Forwarded-For"?: string | undefined;
+    V1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody$Outbound;
 };
 
 /** @internal */
@@ -37,10 +42,12 @@ export const AccountV1SettingsUpdateRequest$outboundSchema: z.ZodType<
 > = z
     .object({
         xForwardedFor: z.string().optional(),
+        v1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody$outboundSchema,
     })
     .transform((v) => {
         return remap$(v, {
             xForwardedFor: "X-Forwarded-For",
+            v1UpdateSettingsRequestBody: "V1UpdateSettingsRequestBody",
         });
     });
 

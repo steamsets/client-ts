@@ -3,4 +3,5 @@
  */
 
 export * from "./accountv1sessionlogin.js";
+export * from "./accountv1settingssendemailverification.js";
 export * from "./accountv1settingsupdate.js";

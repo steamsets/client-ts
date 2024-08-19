@@ -4,18 +4,18 @@
 
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
+    Resource,
+    Resource$inboundSchema,
+    Resource$Outbound,
+    Resource$outboundSchema,
+} from "./resource.js";
+import { Role, Role$inboundSchema, Role$Outbound, Role$outboundSchema } from "./role.js";
+import {
     Session,
     Session$inboundSchema,
     Session$Outbound,
     Session$outboundSchema,
 } from "./session.js";
-import {
-    V1Resource,
-    V1Resource$inboundSchema,
-    V1Resource$Outbound,
-    V1Resource$outboundSchema,
-} from "./v1resource.js";
-import { V1Role, V1Role$inboundSchema, V1Role$Outbound, V1Role$outboundSchema } from "./v1role.js";
 import * as z from "zod";
 
 export type V1GetSessionBody = {
@@ -30,11 +30,11 @@ export type V1GetSessionBody = {
     /**
      * The resources the user has (permissions)
      */
-    resources: Array<V1Resource> | null;
+    resources: Array<Resource> | null;
     /**
      * The roles the user has
      */
-    roles: Array<V1Role> | null;
+    roles: Array<Role> | null;
     sessionData: Session;
     /**
      * The steam id
@@ -47,8 +47,8 @@ export const V1GetSessionBody$inboundSchema: z.ZodType<V1GetSessionBody, z.ZodTy
     .object({
         $schema: z.string().optional(),
         accountId: z.number().int(),
-        resources: z.nullable(z.array(V1Resource$inboundSchema)),
-        roles: z.nullable(z.array(V1Role$inboundSchema)),
+        resources: z.nullable(z.array(Resource$inboundSchema)),
+        roles: z.nullable(z.array(Role$inboundSchema)),
         sessionData: Session$inboundSchema,
         steamId: z.string(),
     })
@@ -62,8 +62,8 @@ export const V1GetSessionBody$inboundSchema: z.ZodType<V1GetSessionBody, z.ZodTy
 export type V1GetSessionBody$Outbound = {
     $schema?: string | undefined;
     accountId: number;
-    resources: Array<V1Resource$Outbound> | null;
-    roles: Array<V1Role$Outbound> | null;
+    resources: Array<Resource$Outbound> | null;
+    roles: Array<Role$Outbound> | null;
     sessionData: Session$Outbound;
     steamId: string;
 };
@@ -77,8 +77,8 @@ export const V1GetSessionBody$outboundSchema: z.ZodType<
     .object({
         dollarSchema: z.string().optional(),
         accountId: z.number().int(),
-        resources: z.nullable(z.array(V1Resource$outboundSchema)),
-        roles: z.nullable(z.array(V1Role$outboundSchema)),
+        resources: z.nullable(z.array(Resource$outboundSchema)),
+        roles: z.nullable(z.array(Role$outboundSchema)),
         sessionData: Session$outboundSchema,
         steamId: z.string(),
     })

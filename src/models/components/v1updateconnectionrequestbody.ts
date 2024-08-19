@@ -12,7 +12,7 @@ export type V1UpdateConnectionRequestBody = {
     /**
      * Whether the connection should be hidden or not
      */
-    hiddem: boolean;
+    hidden: boolean;
 };
 
 /** @internal */
@@ -22,13 +22,13 @@ export const V1UpdateConnectionRequestBody$inboundSchema: z.ZodType<
     unknown
 > = z.object({
     connectionId: z.string(),
-    hiddem: z.boolean(),
+    hidden: z.boolean(),
 });
 
 /** @internal */
 export type V1UpdateConnectionRequestBody$Outbound = {
     connectionId: string;
-    hiddem: boolean;
+    hidden: boolean;
 };
 
 /** @internal */
@@ -38,7 +38,7 @@ export const V1UpdateConnectionRequestBody$outboundSchema: z.ZodType<
     V1UpdateConnectionRequestBody
 > = z.object({
     connectionId: z.string(),
-    hiddem: z.boolean(),
+    hidden: z.boolean(),
 });
 
 /**
