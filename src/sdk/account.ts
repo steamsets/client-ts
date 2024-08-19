@@ -11,8 +11,13 @@ import { accountAccountV1GetBadges } from "../funcs/accountAccountV1GetBadges.js
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
 import { accountAccountV1SessionGet } from "../funcs/accountAccountV1SessionGet.js";
 import { accountAccountV1SessionLogin } from "../funcs/accountAccountV1SessionLogin.js";
+import { accountAccountV1SettingsDeleteImages } from "../funcs/accountAccountV1SettingsDeleteImages.js";
+import { accountAccountV1SettingsGenerateApiKey } from "../funcs/accountAccountV1SettingsGenerateApiKey.js";
 import { accountAccountV1SettingsGet } from "../funcs/accountAccountV1SettingsGet.js";
+import { accountAccountV1SettingsSendEmailVerification } from "../funcs/accountAccountV1SettingsSendEmailVerification.js";
 import { accountAccountV1SettingsUpdate } from "../funcs/accountAccountV1SettingsUpdate.js";
+import { accountAccountV1SettingsUpdateImage } from "../funcs/accountAccountV1SettingsUpdateImage.js";
+import { accountAccountV1SettingsVerfyEmail } from "../funcs/accountAccountV1SettingsVerfyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -40,6 +45,16 @@ export class Account extends ClientSDK {
     }
 
     /**
+     * Delete mulitple imagest
+     */
+    async accountV1SettingsDeleteImages(
+        request: components.V1DeleteImagesRequestBody,
+        options?: RequestOptions
+    ): Promise<components.V1DeleteImagesResponseBody> {
+        return unwrapAsync(accountAccountV1SettingsDeleteImages(this, request, options));
+    }
+
+    /**
      * Deletes a session, can also be used to logout
      */
     async accountV1SessionDelete(
@@ -47,6 +62,15 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<components.V1DeleteSessionResponseBody> {
         return unwrapAsync(accountAccountV1SessionDelete(this, request, options));
+    }
+
+    /**
+     * Generate a new API key for the account
+     */
+    async accountV1SettingsGenerateApiKey(
+        options?: RequestOptions
+    ): Promise<components.V1GenerateApiKeyResponseBody> {
+        return unwrapAsync(accountAccountV1SettingsGenerateApiKey(this, options));
     }
 
     /**
@@ -90,6 +114,16 @@ export class Account extends ClientSDK {
     }
 
     /**
+     * Resend the verification code for an email
+     */
+    async accountV1SettingsSendEmailVerification(
+        request: operations.AccountV1SettingsSendEmailVerificationRequest,
+        options?: RequestOptions
+    ): Promise<void> {
+        return unwrapAsync(accountAccountV1SettingsSendEmailVerification(this, request, options));
+    }
+
+    /**
      * Make a connection visible/invisible
      */
     async accountV1ConnectionUpdateConnection(
@@ -97,6 +131,16 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<components.V1UpdateConnectionResponseBody> {
         return unwrapAsync(accountAccountV1ConnectionUpdateConnection(this, request, options));
+    }
+
+    /**
+     * Update one of the uploaded images
+     */
+    async accountV1SettingsUpdateImage(
+        request: components.V1UpdateImageRequestBody,
+        options?: RequestOptions
+    ): Promise<components.V1UpdateImageResponseBody> {
+        return unwrapAsync(accountAccountV1SettingsUpdateImage(this, request, options));
     }
 
     /**
@@ -117,5 +161,15 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<components.V1VerifyConnectionResponseBody> {
         return unwrapAsync(accountAccountV1ConnectionVerifyConnection(this, request, options));
+    }
+
+    /**
+     * Verify the email by passing in the code the user should've gotten
+     */
+    async accountV1SettingsVerfyEmail(
+        request: components.V1VerifyEmailRequestBody,
+        options?: RequestOptions
+    ): Promise<components.V1VerifyEmailResponseBody> {
+        return unwrapAsync(accountAccountV1SettingsVerfyEmail(this, request, options));
     }
 }

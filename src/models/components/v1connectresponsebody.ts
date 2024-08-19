@@ -14,10 +14,6 @@ export type V1ConnectResponseBody = {
      * Code that has to be used to verify domain connections
      */
     code?: string | undefined;
-    /**
-     * Always true
-     */
-    success: boolean;
 };
 
 /** @internal */
@@ -29,7 +25,6 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
     .object({
         $schema: z.string().optional(),
         code: z.string().optional(),
-        success: z.boolean(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -41,7 +36,6 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
 export type V1ConnectResponseBody$Outbound = {
     $schema?: string | undefined;
     code?: string | undefined;
-    success: boolean;
 };
 
 /** @internal */
@@ -53,7 +47,6 @@ export const V1ConnectResponseBody$outboundSchema: z.ZodType<
     .object({
         dollarSchema: z.string().optional(),
         code: z.string().optional(),
-        success: z.boolean(),
     })
     .transform((v) => {
         return remap$(v, {

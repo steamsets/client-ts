@@ -4,7 +4,7 @@
 
 import * as z from "zod";
 
-export type V1Resource = {
+export type Resource = {
     resource: string;
     /**
      * The value of the resource, this can be a string, number, boolean or even a cron expression
@@ -13,19 +13,19 @@ export type V1Resource = {
 };
 
 /** @internal */
-export const V1Resource$inboundSchema: z.ZodType<V1Resource, z.ZodTypeDef, unknown> = z.object({
+export const Resource$inboundSchema: z.ZodType<Resource, z.ZodTypeDef, unknown> = z.object({
     resource: z.string(),
     value: z.string(),
 });
 
 /** @internal */
-export type V1Resource$Outbound = {
+export type Resource$Outbound = {
     resource: string;
     value: string;
 };
 
 /** @internal */
-export const V1Resource$outboundSchema: z.ZodType<V1Resource$Outbound, z.ZodTypeDef, V1Resource> =
+export const Resource$outboundSchema: z.ZodType<Resource$Outbound, z.ZodTypeDef, Resource> =
     z.object({
         resource: z.string(),
         value: z.string(),
@@ -35,11 +35,11 @@ export const V1Resource$outboundSchema: z.ZodType<V1Resource$Outbound, z.ZodType
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1Resource$ {
-    /** @deprecated use `V1Resource$inboundSchema` instead. */
-    export const inboundSchema = V1Resource$inboundSchema;
-    /** @deprecated use `V1Resource$outboundSchema` instead. */
-    export const outboundSchema = V1Resource$outboundSchema;
-    /** @deprecated use `V1Resource$Outbound` instead. */
-    export type Outbound = V1Resource$Outbound;
+export namespace Resource$ {
+    /** @deprecated use `Resource$inboundSchema` instead. */
+    export const inboundSchema = Resource$inboundSchema;
+    /** @deprecated use `Resource$outboundSchema` instead. */
+    export const outboundSchema = Resource$outboundSchema;
+    /** @deprecated use `Resource$Outbound` instead. */
+    export type Outbound = Resource$Outbound;
 }

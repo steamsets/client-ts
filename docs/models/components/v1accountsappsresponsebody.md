@@ -6,7 +6,7 @@
 import { V1AccountsAppsResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountsAppsResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json",
+    dollarSchema: "http://localhost:8080/schemas/V1AccountsAppsResponseBody.json",
     apps: [
         {
             id: 730,
@@ -22,7 +22,7 @@ let value: V1AccountsAppsResponseBody = {
 
 ## Fields
 
-| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `dollarSchema`                                                    | *string*                                                          | :heavy_minus_sign:                                                | A URL to the JSON Schema for this object.                         | https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json |
-| `apps`                                                            | [components.V1App](../../models/components/v1app.md)[]            | :heavy_check_mark:                                                | N/A                                                               |                                                                   |
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   | Example                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `dollarSchema`                                                | *string*                                                      | :heavy_minus_sign:                                            | A URL to the JSON Schema for this object.                     | http://localhost:8080/schemas/V1AccountsAppsResponseBody.json |
+| `apps`                                                        | [components.V1App](../../models/components/v1app.md)[]        | :heavy_check_mark:                                            | N/A                                                           |                                                               |

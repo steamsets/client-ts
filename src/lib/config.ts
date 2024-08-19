@@ -10,7 +10,7 @@ import { Params, pathToFunc } from "./url.js";
 /**
  * Contains the list of servers available to the SDK
  */
-export const ServerList = ["https://api.steamsets.com"] as const;
+export const ServerList = ["http://localhost:8080", "https://api.steamsets.com"] as const;
 
 export type SDKOptions = {
     session?: string | (() => Promise<string>);
@@ -52,7 +52,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
     language: "typescript",
     openapiDocVersion: "1.0.0",
-    sdkVersion: "0.2.1",
-    genVersion: "2.401.2",
-    userAgent: "speakeasy-sdk/typescript 0.2.1 2.401.2 1.0.0 @steamsets/client-ts",
+    sdkVersion: "0.3.0",
+    genVersion: "2.402.5",
+    userAgent: "speakeasy-sdk/typescript 0.3.0 2.402.5 1.0.0 @steamsets/client-ts",
 } as const;

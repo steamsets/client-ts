@@ -5,7 +5,7 @@
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as z from "zod";
 
-export type V1Role = {
+export type Role = {
     /**
      * The role color
      */
@@ -22,7 +22,7 @@ export type V1Role = {
 };
 
 /** @internal */
-export const V1Role$inboundSchema: z.ZodType<V1Role, z.ZodTypeDef, unknown> = z
+export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
     .object({
         Color: z.string(),
         icon: z.string(),
@@ -36,7 +36,7 @@ export const V1Role$inboundSchema: z.ZodType<V1Role, z.ZodTypeDef, unknown> = z
     });
 
 /** @internal */
-export type V1Role$Outbound = {
+export type Role$Outbound = {
     Color: string;
     icon: string;
     name: string;
@@ -44,7 +44,7 @@ export type V1Role$Outbound = {
 };
 
 /** @internal */
-export const V1Role$outboundSchema: z.ZodType<V1Role$Outbound, z.ZodTypeDef, V1Role> = z
+export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> = z
     .object({
         color: z.string(),
         icon: z.string(),
@@ -61,11 +61,11 @@ export const V1Role$outboundSchema: z.ZodType<V1Role$Outbound, z.ZodTypeDef, V1R
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1Role$ {
-    /** @deprecated use `V1Role$inboundSchema` instead. */
-    export const inboundSchema = V1Role$inboundSchema;
-    /** @deprecated use `V1Role$outboundSchema` instead. */
-    export const outboundSchema = V1Role$outboundSchema;
-    /** @deprecated use `V1Role$Outbound` instead. */
-    export type Outbound = V1Role$Outbound;
+export namespace Role$ {
+    /** @deprecated use `Role$inboundSchema` instead. */
+    export const inboundSchema = Role$inboundSchema;
+    /** @deprecated use `Role$outboundSchema` instead. */
+    export const outboundSchema = Role$outboundSchema;
+    /** @deprecated use `Role$Outbound` instead. */
+    export type Outbound = Role$Outbound;
 }

@@ -9,15 +9,20 @@ Account related operations
 
 * [accountV1ConnectionConnect](#accountv1connectionconnect) - Connect a new Social Provider
 * [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection) - Remove a connection
+* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages) - Delete mulitple imagest
 * [accountV1SessionDelete](#accountv1sessiondelete) - Deletes a session, can also be used to logout
+* [accountV1SettingsGenerateApiKey](#accountv1settingsgenerateapikey) - Generate a new API key for the account
 * [accountV1GetApps](#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](#accountv1getbadges) - Get Account Badges
 * [accountV1SessionGet](#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](#accountv1settingsget) - Gets all settings for the account
 * [accountV1SessionLogin](#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection) - Make a connection visible/invisible
+* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage) - Update one of the uploaded images
 * [accountV1SettingsUpdate](#accountv1settingsupdate) - Update settings for the logged in account
 * [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection) - Verify a domain connection only atm
+* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
 ## accountV1ConnectionConnect
 
@@ -177,6 +182,94 @@ run();
 | errors.ErrorModel        | 400,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
+## accountV1SettingsDeleteImages
+
+Delete mulitple imagest
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1SettingsDeleteImages({
+    images: [
+      {
+        fileId: "123456",
+        imageId: "123456",
+      },
+    ],
+  });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SettingsDeleteImages } from "@steamsets/client-ts/funcs/accountAccountV1SettingsDeleteImages.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SettingsDeleteImages(steamSets, {
+    images: [
+      {
+        fileId: "123456",
+        imageId: "123456",
+      },
+    ],
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1DeleteImagesRequestBody](../../models/components/v1deleteimagesrequestbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<[components.V1DeleteImagesResponseBody](../../models/components/v1deleteimagesresponsebody.md)\>**
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
 ## accountV1SessionDelete
 
 Deletes a session, can also be used to logout
@@ -253,6 +346,79 @@ run();
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+## accountV1SettingsGenerateApiKey
+
+Generate a new API key for the account
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1SettingsGenerateApiKey();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SettingsGenerateApiKey } from "@steamsets/client-ts/funcs/accountAccountV1SettingsGenerateApiKey.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SettingsGenerateApiKey(steamSets);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<[components.V1GenerateApiKeyResponseBody](../../models/components/v1generateapikeyresponsebody.md)\>**
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,429,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 ## accountV1GetApps
@@ -647,6 +813,78 @@ run();
 | errors.ErrorModel        | 422,500                  | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
+## accountV1SettingsSendEmailVerification
+
+Resend the verification code for an email
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  await steamSets.account.accountV1SettingsSendEmailVerification({});
+
+  
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SettingsSendEmailVerification } from "@steamsets/client-ts/funcs/accountAccountV1SettingsSendEmailVerification.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SettingsSendEmailVerification(steamSets, {});
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountV1SettingsSendEmailVerificationRequest](../../models/operations/accountv1settingssendemailverificationrequest.md)                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<void\>**
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
 ## accountV1ConnectionUpdateConnection
 
 Make a connection visible/invisible
@@ -663,7 +901,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.accountV1ConnectionUpdateConnection({
     connectionId: "123456",
-    hiddem: true,
+    hidden: true,
   });
 
   // Handle the result
@@ -691,7 +929,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await accountAccountV1ConnectionUpdateConnection(steamSets, {
     connectionId: "123456",
-    hiddem: true,
+    hidden: true,
   });
 
   if (!res.ok) {
@@ -727,6 +965,86 @@ run();
 | errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
+## accountV1SettingsUpdateImage
+
+Update one of the uploaded images
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1SettingsUpdateImage({
+    active: true,
+    imageId: "123456",
+  });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SettingsUpdateImage } from "@steamsets/client-ts/funcs/accountAccountV1SettingsUpdateImage.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SettingsUpdateImage(steamSets, {
+    active: true,
+    imageId: "123456",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1UpdateImageRequestBody](../../models/components/v1updateimagerequestbody.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<[components.V1UpdateImageResponseBody](../../models/components/v1updateimageresponsebody.md)\>**
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
 ## accountV1SettingsUpdate
 
 Update settings for the logged in account
@@ -741,7 +1059,23 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1SettingsUpdate({});
+  const result = await steamSets.account.accountV1SettingsUpdate({
+    v1UpdateSettingsRequestBody: {
+      color: "#7652c9",
+      colors: "#7652c9",
+      email: "steamsets@example.com",
+      emailNotifications: [
+        {
+          enabled: true,
+          type: "login",
+        },
+      ],
+      hidden: true,
+      language: "en",
+      theme: "dark",
+      vanity: "flo",
+    },
+  });
 
   // Handle the result
   console.log(result)
@@ -766,7 +1100,23 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountV1SettingsUpdate(steamSets, {});
+  const res = await accountAccountV1SettingsUpdate(steamSets, {
+    v1UpdateSettingsRequestBody: {
+      color: "#7652c9",
+      colors: "#7652c9",
+      email: "steamsets@example.com",
+      emailNotifications: [
+        {
+          enabled: true,
+          type: "login",
+        },
+      ],
+      hidden: true,
+      language: "en",
+      theme: "dark",
+      vanity: "flo",
+    },
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -877,4 +1227,82 @@ run();
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+## accountV1SettingsVerfyEmail
+
+Verify the email by passing in the code the user should've gotten
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1SettingsVerfyEmail({
+    code: "123456",
+  });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SettingsVerfyEmail } from "@steamsets/client-ts/funcs/accountAccountV1SettingsVerfyEmail.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SettingsVerfyEmail(steamSets, {
+    code: "123456",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1VerifyEmailRequestBody](../../models/components/v1verifyemailrequestbody.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+
+### Response
+
+**Promise\<[components.V1VerifyEmailResponseBody](../../models/components/v1verifyemailresponsebody.md)\>**
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |

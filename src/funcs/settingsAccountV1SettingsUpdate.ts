@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeSimple as encodeSimple$ } from "../lib/encodings.js";
+import { encodeJSON as encodeJSON$, encodeSimple as encodeSimple$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -43,7 +43,7 @@ export async function settingsAccountV1SettingsUpdate(
         | ConnectionError
     >
 > {
-    const input$ = typeof request === "undefined" ? {} : request;
+    const input$ = request;
 
     const parsed$ = schemas$.safeParse(
         input$,
@@ -54,11 +54,12 @@ export async function settingsAccountV1SettingsUpdate(
         return parsed$;
     }
     const payload$ = parsed$.value;
-    const body$ = null;
+    const body$ = encodeJSON$("body", payload$.V1UpdateSettingsRequestBody, { explode: true });
 
     const path$ = pathToFunc("/account.v1.AccountService/UpdateSettings")();
 
     const headers$ = new Headers({
+        "Content-Type": "application/json",
         Accept: "application/json",
         "X-Forwarded-For": encodeSimple$("X-Forwarded-For", payload$["X-Forwarded-For"], {
             explode: false,
