@@ -82,7 +82,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/ErrorModel.json
+          example: http://localhost:8080/schemas/ErrorModel.json
           format: uri
           readOnly: true
           type: string
@@ -152,12 +152,27 @@ components:
         - imageType
         - active
       type: object
+    Item:
+      additionalProperties: false
+      properties:
+        fileId:
+          description: The file id to delete
+          example: "123456"
+          type: string
+        imageId:
+          description: The image id to delete
+          example: "123456"
+          type: string
+      required:
+        - imageId
+        - fileId
+      type: object
     LoginRequestBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/LoginRequestBody.json
+          example: http://localhost:8080/schemas/LoginRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -213,6 +228,41 @@ components:
         - openid_signed
         - openid_sig
       type: object
+    Resource:
+      additionalProperties: false
+      properties:
+        resource:
+          type: string
+        value:
+          description: The value of the resource, this can be a string, number, boolean or even a cron expression
+          type: string
+      required:
+        - resource
+        - value
+      type: object
+    Role:
+      additionalProperties: false
+      properties:
+        Color:
+          description: The role color
+          example: "#ff0000"
+          type: string
+        icon:
+          description: The role icon
+          example: tier_1.svg
+          type: string
+        name:
+          description: The Group name
+          example: Tier 1
+          type: string
+        role:
+          type: string
+      required:
+        - role
+        - Color
+        - icon
+        - name
+      type: object
     Session:
       additionalProperties: false
       properties:
@@ -256,7 +306,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json
+          example: http://localhost:8080/schemas/V1AccountsAppsResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -365,7 +415,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1BadgesResponseBody.json
+          example: http://localhost:8080/schemas/V1BadgesResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -382,7 +432,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1ConnectRequestBody.json
+          example: http://localhost:8080/schemas/V1ConnectRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -412,7 +462,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1ConnectResponseBody.json
+          example: http://localhost:8080/schemas/V1ConnectResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -420,19 +470,13 @@ components:
           description: Code that has to be used to verify domain connections
           example: ABC123
           type: string
-        success:
-          description: Always true
-          example: true
-          type: boolean
-      required:
-        - success
       type: object
     V1DeleteConnectionRequestBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteConnectionRequestBody.json
+          example: http://localhost:8080/schemas/V1DeleteConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -448,23 +492,45 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json
+          example: http://localhost:8080/schemas/V1DeleteConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
-        success:
-          description: Always true
-          example: true
-          type: boolean
+      type: object
+    V1DeleteImagesRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1DeleteImagesRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        images:
+          description: The images to delete
+          items:
+            $ref: "#/components/schemas/Item"
+          nullable: true
+          type: array
       required:
-        - success
+        - images
+      type: object
+    V1DeleteImagesResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1DeleteImagesResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
       type: object
     V1DeleteSessionRequestBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteSessionRequestBody.json
+          example: http://localhost:8080/schemas/V1DeleteSessionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -480,23 +546,33 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json
+          example: http://localhost:8080/schemas/V1DeleteSessionResponseBody.json
           format: uri
           readOnly: true
           type: string
-        success:
-          description: Always true
-          example: true
-          type: boolean
+      type: object
+    V1GenerateApiKeyResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1GenerateApiKeyResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        key:
+          description: The generated API Key
+          example: api_123
+          type: string
       required:
-        - success
+        - key
       type: object
     V1GetSessionBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1GetSessionBody.json
+          example: http://localhost:8080/schemas/V1GetSessionBody.json
           format: uri
           readOnly: true
           type: string
@@ -508,13 +584,13 @@ components:
         resources:
           description: The resources the user has (permissions)
           items:
-            $ref: "#/components/schemas/V1Resource"
+            $ref: "#/components/schemas/Resource"
           nullable: true
           type: array
         roles:
           description: The roles the user has
           items:
-            $ref: "#/components/schemas/V1Role"
+            $ref: "#/components/schemas/Role"
           nullable: true
           type: array
         sessionData:
@@ -536,7 +612,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1GetSettingsBody.json
+          example: http://localhost:8080/schemas/V1GetSettingsBody.json
           format: uri
           readOnly: true
           type: string
@@ -623,7 +699,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1LivenessResponseBody.json
+          example: http://localhost:8080/schemas/V1LivenessResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -639,7 +715,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1LoginResponseBody.json
+          example: http://localhost:8080/schemas/V1LoginResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -665,47 +741,12 @@ components:
         - name
         - sessionToken
       type: object
-    V1Resource:
-      additionalProperties: false
-      properties:
-        resource:
-          type: string
-        value:
-          description: The value of the resource, this can be a string, number, boolean or even a cron expression
-          type: string
-      required:
-        - resource
-        - value
-      type: object
-    V1Role:
-      additionalProperties: false
-      properties:
-        Color:
-          description: The role color
-          example: "#ff0000"
-          type: string
-        icon:
-          description: The role icon
-          example: tier_1.svg
-          type: string
-        name:
-          description: The Group name
-          example: Tier 1
-          type: string
-        role:
-          type: string
-      required:
-        - role
-        - Color
-        - icon
-        - name
-      type: object
     V1UpdateConnectionRequestBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateConnectionRequestBody.json
+          example: http://localhost:8080/schemas/V1UpdateConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -713,51 +754,133 @@ components:
           description: The connection id to update
           example: "123456"
           type: string
-        hiddem:
+        hidden:
           description: Whether the connection should be hidden or not
           example: true
           type: boolean
       required:
         - connectionId
-        - hiddem
+        - hidden
       type: object
     V1UpdateConnectionResponseBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json
+          example: http://localhost:8080/schemas/V1UpdateConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
-        success:
-          description: Always true
+      type: object
+    V1UpdateImageRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1UpdateImageRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        active:
+          description: Whether the image is active or not, only one of each type can be active
           example: true
           type: boolean
+        imageId:
+          description: The image id to update
+          example: "123456"
+          type: string
       required:
-        - success
+        - imageId
+        - active
+      type: object
+    V1UpdateImageResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1UpdateImageResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        key:
+          description: The generated API Key
+          example: api_123
+          type: string
+      required:
+        - key
+      type: object
+    V1UpdateSettingsRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1UpdateSettingsRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        color:
+          description: The color the account should use, only if the account is private
+          example: "#7652c9"
+          type: string
+        colors:
+          description: The colors the account should use, only if the account is private
+          example: "#7652c9"
+          type: string
+        email:
+          description: The email the account should use, only if the account is private
+          example: steamsets@example.com
+          type: string
+        emailNotifications:
+          description: The email notifications the account wants
+          items:
+            $ref: "#/components/schemas/EmailNotification"
+          nullable: true
+          type: array
+        hidden:
+          description: Whether the account should be hidden in the leaderboards, only possible if the account is private
+          example: true
+          type: boolean
+        language:
+          description: The language the account should use, only if the account is private
+          example: en
+          type: string
+        theme:
+          description: The theme the account should use, only if the account is private
+          enum:
+            - dark
+            - light
+          example: dark
+          type: string
+        vanity:
+          description: The vanity the account should use, only if the account is private
+          example: flo
+          type: string
+      required:
+        - hidden
+        - language
+        - colors
+        - color
+        - theme
+        - vanity
+        - email
+        - emailNotifications
       type: object
     V1UpdateSettingsResponseBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json
+          example: http://localhost:8080/schemas/V1UpdateSettingsResponseBody.json
           format: uri
           readOnly: true
           type: string
-        success:
-          description: Whether the settings were updated successfully
-          type: boolean
-      required:
-        - success
       type: object
     V1VerifyConnectionRequestBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyConnectionRequestBody.json
+          example: http://localhost:8080/schemas/V1VerifyConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -773,16 +896,36 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json
+          example: http://localhost:8080/schemas/V1VerifyConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
-        success:
-          description: Always true
-          example: true
-          type: boolean
+      type: object
+    V1VerifyEmailRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1VerifyEmailRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        code:
+          description: The code to verify
+          example: "123456"
+          type: string
       required:
-        - success
+        - code
+      type: object
+    V1VerifyEmailResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1VerifyEmailResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
       type: object
   securitySchemes:
     apiKey:
@@ -877,6 +1020,46 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/DeleteImages:
+    post:
+      operationId: account.v1.settings.delete-images
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1DeleteImagesRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1DeleteImagesResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Delete mulitple imagest
+      tags:
+        - account
+        - settings
   /account.v1.AccountService/DeleteSession:
     post:
       operationId: account.v1.session.delete
@@ -917,6 +1100,40 @@ paths:
       tags:
         - account
         - session
+  /account.v1.AccountService/GenerateApiKey:
+    post:
+      operationId: account.v1.settings.generate-api-key
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1GenerateApiKeyResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Generate a new API key for the account
+      tags:
+        - account
+        - settings
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
@@ -1058,6 +1275,47 @@ paths:
       tags:
         - account
         - session
+  /account.v1.AccountService/SendEmailVerification:
+    post:
+      operationId: account.v1.settings.send-email-verification
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+      responses:
+        "204":
+          description: No Content
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Resend the verification code for an email
+      tags:
+        - account
+        - settings
   /account.v1.AccountService/UpdateConnection:
     post:
       operationId: account.v1.connection.updateConnection
@@ -1104,6 +1362,46 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/UpdateImage:
+    post:
+      operationId: account.v1.settings.update-image
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1UpdateImageRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1UpdateImageResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Update one of the uploaded images
+      tags:
+        - account
+        - settings
   /account.v1.AccountService/UpdateSettings:
     post:
       operationId: account.v1.settings.update
@@ -1112,6 +1410,12 @@ paths:
           name: X-Forwarded-For
           schema:
             type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1UpdateSettingsRequestBody"
+        required: true
       responses:
         "200":
           content:
@@ -1183,6 +1487,52 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/VerifyEmail:
+    post:
+      operationId: account.v1.settings.verfy-email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1VerifyEmailRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1VerifyEmailResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Verify the email by passing in the code the user should've gotten
+      tags:
+        - account
+        - settings
   /v1/liveness:
     get:
       description: This endpoint checks if the service is alive.
@@ -1204,6 +1554,7 @@ paths:
       tags:
         - liveness
 servers:
+  - url: http://localhost:8080
   - url: https://api.steamsets.com
 tags:
   - description: Account related operations
