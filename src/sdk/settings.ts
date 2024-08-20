@@ -8,6 +8,7 @@ import { settingsAccountV1SettingsGet } from "../funcs/settingsAccountV1Settings
 import { settingsAccountV1SettingsSendEmailVerification } from "../funcs/settingsAccountV1SettingsSendEmailVerification.js";
 import { settingsAccountV1SettingsUpdate } from "../funcs/settingsAccountV1SettingsUpdate.js";
 import { settingsAccountV1SettingsUpdateImage } from "../funcs/settingsAccountV1SettingsUpdateImage.js";
+import { settingsAccountV1SettingsUploadImages } from "../funcs/settingsAccountV1SettingsUploadImages.js";
 import { settingsAccountV1SettingsVerfyEmail } from "../funcs/settingsAccountV1SettingsVerfyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -69,6 +70,16 @@ export class Settings extends ClientSDK {
         options?: RequestOptions
     ): Promise<components.V1UpdateSettingsResponseBody> {
         return unwrapAsync(settingsAccountV1SettingsUpdate(this, request, options));
+    }
+
+    /**
+     * Multi Upload Endpoint for images
+     */
+    async accountV1SettingsUploadImages(
+        request: components.V1UploadImagesRequestBody,
+        options?: RequestOptions
+    ): Promise<void> {
+        return unwrapAsync(settingsAccountV1SettingsUploadImages(this, request, options));
     }
 
     /**

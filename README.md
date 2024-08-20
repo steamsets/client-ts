@@ -93,6 +93,7 @@ run();
 * [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
 * [accountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
 * [accountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate) - Update settings for the logged in account
+* [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
@@ -111,6 +112,7 @@ run();
 * [accountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
 * [accountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate) - Update settings for the logged in account
+* [accountV1SettingsUploadImages](docs/sdks/settings/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
 ### [session](docs/sdks/session/README.md)
@@ -441,6 +443,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification)
 - [accountAccountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage)
 - [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
+- [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
 - [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
 - [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
@@ -456,6 +459,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [settingsAccountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification)
 - [settingsAccountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage)
 - [settingsAccountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate)
+- [settingsAccountV1SettingsUploadImages](docs/sdks/settings/README.md#accountv1settingsuploadimages)
 - [settingsAccountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail)
 
 

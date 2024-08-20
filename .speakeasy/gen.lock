@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 8ff5793f76d444cfe47f1e0a60382c89
+  docChecksum: 930336259d045b6e1198d698ae851cd0
   docVersion: 1.0.0
   speakeasyVersion: 1.376.1
   generationVersion: 2.402.5
-  releaseVersion: 0.3.1
-  configChecksum: 3e606e37e768d697be33d9608b3cd4a1
+  releaseVersion: 0.3.2
+  configChecksum: b1923b36bf29a01e110aa94252fdf2b3
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -57,6 +57,7 @@ generatedFiles:
   - src/funcs/accountAccountV1ConnectionUpdateConnection.ts
   - src/funcs/accountAccountV1SettingsUpdateImage.ts
   - src/funcs/accountAccountV1SettingsUpdate.ts
+  - src/funcs/accountAccountV1SettingsUploadImages.ts
   - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
   - src/funcs/accountAccountV1SettingsVerfyEmail.ts
   - src/funcs/connectionAccountV1ConnectionConnect.ts
@@ -69,6 +70,7 @@ generatedFiles:
   - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
   - src/funcs/settingsAccountV1SettingsUpdateImage.ts
   - src/funcs/settingsAccountV1SettingsUpdate.ts
+  - src/funcs/settingsAccountV1SettingsUploadImages.ts
   - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
   - src/funcs/sessionAccountV1SessionDelete.ts
   - src/funcs/sessionAccountV1SessionGet.ts
@@ -145,6 +147,8 @@ generatedFiles:
   - src/models/components/v1updateimagerequestbody.ts
   - src/models/components/v1updatesettingsresponsebody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
+  - src/models/components/v1uploadimagesrequestbody.ts
+  - src/models/components/v1uploaedimage.ts
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyconnectionrequestbody.ts
   - src/models/components/v1verifyemailresponsebody.ts
@@ -194,6 +198,9 @@ generatedFiles:
   - docs/models/components/v1updatesettingsresponsebody.md
   - docs/models/components/v1updatesettingsrequestbodytheme.md
   - docs/models/components/v1updatesettingsrequestbody.md
+  - docs/models/components/v1uploadimagesrequestbody.md
+  - docs/models/components/v1uploaedimagetype.md
+  - docs/models/components/v1uploaedimage.md
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyconnectionrequestbody.md
   - docs/models/components/v1verifyemailresponsebody.md
