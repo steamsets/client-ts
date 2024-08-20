@@ -35,6 +35,8 @@ export * from "./v1updateimagerequestbody.js";
 export * from "./v1updateimageresponsebody.js";
 export * from "./v1updatesettingsrequestbody.js";
 export * from "./v1updatesettingsresponsebody.js";
+export * from "./v1uploadimagesrequestbody.js";
+export * from "./v1uploaedimage.js";
 export * from "./v1verifyconnectionrequestbody.js";
 export * from "./v1verifyconnectionresponsebody.js";
 export * from "./v1verifyemailrequestbody.js";
