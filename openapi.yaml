@@ -325,6 +325,7 @@ components:
           description: The Steam App ID
           example: 730
           format: int32
+          minimum: 0
           type: integer
         image:
           description: The App's image URL
@@ -338,6 +339,7 @@ components:
           description: The Account's playtime in the App
           example: 123456
           format: int32
+          minimum: 0
           type: integer
         price:
           description: How much the app costs
@@ -361,6 +363,7 @@ components:
       properties:
         appId:
           format: int32
+          minimum: 0
           type: integer
         appImage:
           type: string
@@ -377,6 +380,7 @@ components:
           type: boolean
         level:
           format: int32
+          minimum: 0
           type: integer
         name:
           type: string
@@ -390,9 +394,11 @@ components:
           type: integer
         steamId:
           format: int32
+          minimum: 0
           type: integer
         xp:
           format: int32
+          minimum: 0
           type: integer
       required:
         - appId
@@ -580,6 +586,7 @@ components:
           description: The account id
           example: 123456
           format: int32
+          minimum: 0
           type: integer
         resources:
           description: The resources the user has (permissions)
