@@ -399,6 +399,43 @@ async function run() {
 run();
 
 ```
+
+### Per-Operation Security Schemes
+
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets();
+
+async function run() {
+    const result = await steamSets.account.accountV1SessionLogin(
+        {
+            loginRequestBody: {
+                openidAssocHandle: "123456",
+                openidClaimedId: "76561198842603734",
+                openidIdentity: "https://steamsets.com/api/v1/openid/login",
+                openidMode: "checkid_setup",
+                openidNs: "http://specs.openid.net/auth/2.0",
+                openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
+                openidResponseNonce: "123456",
+                openidReturnTo: "https://steamsets.com/api/v1/openid/login",
+                openidSig: "123456",
+                openidSigned: "123456",
+            },
+        },
+        {
+            anonymous: "<YOUR_BEARER_TOKEN_HERE>",
+        }
+    );
+
+    // Handle the result
+    console.log(result);
+}
+
+run();
+
+```
 <!-- End Authentication [security] -->
 
 <!-- Start Special Types [types] -->

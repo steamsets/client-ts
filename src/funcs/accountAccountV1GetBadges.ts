@@ -3,7 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
+import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -25,6 +27,7 @@ import { Result } from "../types/fp.js";
  */
 export async function accountAccountV1GetBadges(
     client$: SteamSetsCore,
+    request: components.AccountSearch,
     options?: RequestOptions
 ): Promise<
     Result<
@@ -39,9 +42,23 @@ export async function accountAccountV1GetBadges(
         | ConnectionError
     >
 > {
+    const input$ = request;
+
+    const parsed$ = schemas$.safeParse(
+        input$,
+        (value$) => components.AccountSearch$outboundSchema.parse(value$),
+        "Input validation failed"
+    );
+    if (!parsed$.ok) {
+        return parsed$;
+    }
+    const payload$ = parsed$.value;
+    const body$ = encodeJSON$("body", payload$, { explode: true });
+
     const path$ = pathToFunc("/account.v1.AccountService/GetBadges")();
 
     const headers$ = new Headers({
+        "Content-Type": "application/json",
         Accept: "application/json",
     });
 
@@ -61,6 +78,7 @@ export async function accountAccountV1GetBadges(
             method: "POST",
             path: path$,
             headers: headers$,
+            body: body$,
             uaHeader: "x-speakeasy-user-agent",
             timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
         },
@@ -73,7 +91,7 @@ export async function accountAccountV1GetBadges(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "4XX", "500", "5XX"],
+        errorCodes: ["400", "422", "4XX", "500", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -98,7 +116,7 @@ export async function accountAccountV1GetBadges(
         | ConnectionError
     >(
         m$.json(200, components.V1BadgesResponseBody$inboundSchema),
-        m$.jsonErr([400, 500], errors.ErrorModel$inboundSchema, {
+        m$.jsonErr([400, 422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])

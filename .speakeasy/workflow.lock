@@ -1,9 +1,9 @@
-speakeasyVersion: 1.376.1
+speakeasyVersion: 1.378.0
 sources:
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
-        sourceRevisionDigest: sha256:9dbe2048dabf7ec3b38dcbdca31b14737b15b820a19bef5efa88232c324903c4
-        sourceBlobDigest: sha256:80ce2ddcd03d6be2aaefafa879d20347472978026042dbf83517692cdcda922a
+        sourceRevisionDigest: sha256:13a28e3c8150378880440c6c407b2505824579376fbbb558509b5d4a59e6f070
+        sourceBlobDigest: sha256:3828b25702741df446bf2c2336b0257e436bfe79442fa6b0db15498c560decd5
         tags:
             - latest
             - main
@@ -11,8 +11,8 @@ targets:
     steam-sets:
         source: SteamSets-OAS
         sourceNamespace: steam-sets-oas
-        sourceRevisionDigest: sha256:9dbe2048dabf7ec3b38dcbdca31b14737b15b820a19bef5efa88232c324903c4
-        sourceBlobDigest: sha256:80ce2ddcd03d6be2aaefafa879d20347472978026042dbf83517692cdcda922a
+        sourceRevisionDigest: sha256:13a28e3c8150378880440c6c407b2505824579376fbbb558509b5d4a59e6f070
+        sourceBlobDigest: sha256:3828b25702741df446bf2c2336b0257e436bfe79442fa6b0db15498c560decd5
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0

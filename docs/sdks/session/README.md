@@ -1,6 +1,8 @@
 # Session
 (*session*)
 
+## Overview
+
 ### Available Operations
 
 * [accountV1SessionDelete](#accountv1sessiondelete) - Deletes a session, can also be used to logout
@@ -31,7 +33,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -74,16 +75,17 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1DeleteSessionResponseBody](../../models/components/v1deletesessionresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
+
 
 ## accountV1SessionGet
 
@@ -107,7 +109,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -147,16 +148,17 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1GetSessionBody](../../models/components/v1getsessionbody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
+
 
 ## accountV1SessionLogin
 
@@ -167,9 +169,7 @@ Logs a user in and creates a new session
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.session.accountV1SessionLogin({
@@ -185,6 +185,8 @@ async function run() {
       openidSig: "123456",
       openidSigned: "123456",
     },
+  }, {
+    anonymous: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result
@@ -193,7 +195,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -205,9 +206,7 @@ import { sessionAccountV1SessionLogin } from "@steamsets/client-ts/funcs/session
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await sessionAccountV1SessionLogin(steamSets, {
@@ -223,6 +222,8 @@ async function run() {
       openidSig: "123456",
       openidSigned: "123456",
     },
+  }, {
+    anonymous: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -243,14 +244,15 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1SessionLoginRequest](../../models/operations/accountv1sessionloginrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1SessionLoginSecurity](../../models/operations/accountv1sessionloginsecurity.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1LoginResponseBody](../../models/components/v1loginresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |

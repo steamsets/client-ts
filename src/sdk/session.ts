@@ -33,8 +33,9 @@ export class Session extends ClientSDK {
      */
     async accountV1SessionLogin(
         request: operations.AccountV1SessionLoginRequest,
+        security: operations.AccountV1SessionLoginSecurity,
         options?: RequestOptions
     ): Promise<components.V1LoginResponseBody> {
-        return unwrapAsync(sessionAccountV1SessionLogin(this, request, options));
+        return unwrapAsync(sessionAccountV1SessionLogin(this, request, security, options));
     }
 }

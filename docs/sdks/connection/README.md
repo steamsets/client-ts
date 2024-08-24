@@ -38,7 +38,6 @@ async function run() {
 run();
 ```
 
-
 ### Standalone function
 
 The standalone function version of this method:
@@ -81,16 +80,17 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1ConnectResponseBody](../../models/components/v1connectresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
+
 
 ## accountV1ConnectionDeleteConnection
 
@@ -116,7 +116,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -159,16 +158,17 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1DeleteConnectionResponseBody](../../models/components/v1deleteconnectionresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
+
 
 ## accountV1ConnectionUpdateConnection
 
@@ -195,7 +195,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -239,16 +238,17 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1UpdateConnectionResponseBody](../../models/components/v1updateconnectionresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
+
 
 ## accountV1ConnectionVerifyConnection
 
@@ -274,7 +274,6 @@ async function run() {
 
 run();
 ```
-
 
 ### Standalone function
 
@@ -317,10 +316,10 @@ run();
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
-
 ### Response
 
 **Promise\<[components.V1VerifyConnectionResponseBody](../../models/components/v1verifyconnectionresponsebody.md)\>**
+
 ### Errors
 
 | Error Object             | Status Code              | Content Type             |
