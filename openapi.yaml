@@ -1,5 +1,49 @@
 components:
   schemas:
+    AccountSearch:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/AccountSearch.json
+          format: uri
+          readOnly: true
+          type: string
+        id:
+          $ref: "#/components/schemas/AccountSearchIDStruct"
+        vanity:
+          $ref: "#/components/schemas/AccountSearchVanityStruct"
+      type: object
+    AccountSearchIDStruct:
+      additionalProperties: false
+      properties:
+        accountId:
+          description: Account ID to search for
+          format: int32
+          minLength: 7
+          minimum: 0
+          type: integer
+        steamId64:
+          description: SteamID64 to search for
+          maxLength: 17
+          minLength: 17
+          type: string
+      type: object
+    AccountSearchVanityStruct:
+      additionalProperties: false
+      properties:
+        type:
+          description: Which type of vanity to search for
+          enum:
+            - steam
+            - internal
+          type: string
+        value:
+          description: Vanity to search for
+          minLength: 2
+          pattern: ^[a-zA-Z0-9]+$
+          type: string
+      type: object
     Connection:
       additionalProperties: false
       properties:
@@ -974,6 +1018,9 @@ components:
           type: string
       type: object
   securitySchemes:
+    anonymous:
+      scheme: bearer
+      type: http
     apiKey:
       in: header
       name: api-key
@@ -1183,6 +1230,12 @@ paths:
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccountSearch"
+        required: true
       responses:
         "200":
           content:
@@ -1196,6 +1249,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorModel"
           description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
         "500":
           content:
             application/problem+json:
@@ -1210,6 +1269,12 @@ paths:
   /account.v1.AccountService/GetBadges:
     post:
       operationId: account.v1.getBadges
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccountSearch"
+        required: true
       responses:
         "200":
           content:
@@ -1223,6 +1288,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorModel"
           description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
         "500":
           content:
             application/problem+json:
@@ -1316,7 +1387,7 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - anonymous: []
       summary: Logs a user in and creates a new session
       tags:
         - account
