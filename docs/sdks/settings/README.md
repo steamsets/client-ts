@@ -92,7 +92,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteImagesResponseBody](../../models/components/v1deleteimagesresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsDeleteImagesResponse](../../models/operations/accountv1settingsdeleteimagesresponse.md)\>**
 
 ### Errors
 
@@ -165,7 +165,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GenerateApiKeyResponseBody](../../models/components/v1generateapikeyresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsGenerateApiKeyResponse](../../models/operations/accountv1settingsgenerateapikeyresponse.md)\>**
 
 ### Errors
 
@@ -238,7 +238,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GetSettingsBody](../../models/components/v1getsettingsbody.md)\>**
+**Promise\<[operations.AccountV1SettingsGetResponse](../../models/operations/accountv1settingsgetresponse.md)\>**
 
 ### Errors
 
@@ -262,9 +262,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  await steamSets.settings.accountV1SettingsSendEmailVerification({});
+  const result = await steamSets.settings.accountV1SettingsSendEmailVerification({});
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -293,7 +294,8 @@ async function run() {
 
   const { value: result } = res;
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -310,7 +312,7 @@ run();
 
 ### Response
 
-**Promise\<void\>**
+**Promise\<[operations.AccountV1SettingsSendEmailVerificationResponse](../../models/operations/accountv1settingssendemailverificationresponse.md)\>**
 
 ### Errors
 
@@ -390,7 +392,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateImageResponseBody](../../models/components/v1updateimageresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsUpdateImageResponse](../../models/operations/accountv1settingsupdateimageresponse.md)\>**
 
 ### Errors
 
@@ -496,7 +498,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateSettingsResponseBody](../../models/components/v1updatesettingsresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsUpdateResponse](../../models/operations/accountv1settingsupdateresponse.md)\>**
 
 ### Errors
 
@@ -520,7 +522,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  await steamSets.settings.accountV1SettingsUploadImages({
+  const result = await steamSets.settings.accountV1SettingsUploadImages({
     images: [
       {
         data: "base64_encoded_image",
@@ -529,7 +531,8 @@ async function run() {
     ],
   });
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -565,7 +568,8 @@ async function run() {
 
   const { value: result } = res;
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -582,7 +586,7 @@ run();
 
 ### Response
 
-**Promise\<void\>**
+**Promise\<[operations.AccountV1SettingsUploadImagesResponse](../../models/operations/accountv1settingsuploadimagesresponse.md)\>**
 
 ### Errors
 
@@ -660,7 +664,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1VerifyEmailResponseBody](../../models/components/v1verifyemailresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsVerfyEmailResponse](../../models/operations/accountv1settingsverfyemailresponse.md)\>**
 
 ### Errors
 

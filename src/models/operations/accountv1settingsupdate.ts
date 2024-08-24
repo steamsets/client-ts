@@ -11,6 +11,14 @@ export type AccountV1SettingsUpdateRequest = {
     v1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody;
 };
 
+export type AccountV1SettingsUpdateResponse = {
+    httpMeta: components.HTTPMetadata;
+    /**
+     * OK
+     */
+    v1UpdateSettingsResponseBody?: components.V1UpdateSettingsResponseBody | undefined;
+};
+
 /** @internal */
 export const AccountV1SettingsUpdateRequest$inboundSchema: z.ZodType<
     AccountV1SettingsUpdateRequest,
@@ -62,4 +70,59 @@ export namespace AccountV1SettingsUpdateRequest$ {
     export const outboundSchema = AccountV1SettingsUpdateRequest$outboundSchema;
     /** @deprecated use `AccountV1SettingsUpdateRequest$Outbound` instead. */
     export type Outbound = AccountV1SettingsUpdateRequest$Outbound;
+}
+
+/** @internal */
+export const AccountV1SettingsUpdateResponse$inboundSchema: z.ZodType<
+    AccountV1SettingsUpdateResponse,
+    z.ZodTypeDef,
+    unknown
+> = z
+    .object({
+        HttpMeta: components.HTTPMetadata$inboundSchema,
+        V1UpdateSettingsResponseBody:
+            components.V1UpdateSettingsResponseBody$inboundSchema.optional(),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            HttpMeta: "httpMeta",
+            V1UpdateSettingsResponseBody: "v1UpdateSettingsResponseBody",
+        });
+    });
+
+/** @internal */
+export type AccountV1SettingsUpdateResponse$Outbound = {
+    HttpMeta: components.HTTPMetadata$Outbound;
+    V1UpdateSettingsResponseBody?: components.V1UpdateSettingsResponseBody$Outbound | undefined;
+};
+
+/** @internal */
+export const AccountV1SettingsUpdateResponse$outboundSchema: z.ZodType<
+    AccountV1SettingsUpdateResponse$Outbound,
+    z.ZodTypeDef,
+    AccountV1SettingsUpdateResponse
+> = z
+    .object({
+        httpMeta: components.HTTPMetadata$outboundSchema,
+        v1UpdateSettingsResponseBody:
+            components.V1UpdateSettingsResponseBody$outboundSchema.optional(),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            httpMeta: "HttpMeta",
+            v1UpdateSettingsResponseBody: "V1UpdateSettingsResponseBody",
+        });
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsUpdateResponse$ {
+    /** @deprecated use `AccountV1SettingsUpdateResponse$inboundSchema` instead. */
+    export const inboundSchema = AccountV1SettingsUpdateResponse$inboundSchema;
+    /** @deprecated use `AccountV1SettingsUpdateResponse$outboundSchema` instead. */
+    export const outboundSchema = AccountV1SettingsUpdateResponse$outboundSchema;
+    /** @deprecated use `AccountV1SettingsUpdateResponse$Outbound` instead. */
+    export type Outbound = AccountV1SettingsUpdateResponse$Outbound;
 }

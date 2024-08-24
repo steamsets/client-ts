@@ -8,6 +8,7 @@ import { connectionAccountV1ConnectionUpdateConnection } from "../funcs/connecti
 import { connectionAccountV1ConnectionVerifyConnection } from "../funcs/connectionAccountV1ConnectionVerifyConnection.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
+import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Connection extends ClientSDK {
@@ -17,7 +18,7 @@ export class Connection extends ClientSDK {
     async accountV1ConnectionConnect(
         request: components.V1ConnectRequestBody,
         options?: RequestOptions
-    ): Promise<components.V1ConnectResponseBody> {
+    ): Promise<operations.AccountV1ConnectionConnectResponse> {
         return unwrapAsync(connectionAccountV1ConnectionConnect(this, request, options));
     }
 
@@ -27,7 +28,7 @@ export class Connection extends ClientSDK {
     async accountV1ConnectionDeleteConnection(
         request: components.V1DeleteConnectionRequestBody,
         options?: RequestOptions
-    ): Promise<components.V1DeleteConnectionResponseBody> {
+    ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
         return unwrapAsync(connectionAccountV1ConnectionDeleteConnection(this, request, options));
     }
 
@@ -37,7 +38,7 @@ export class Connection extends ClientSDK {
     async accountV1ConnectionUpdateConnection(
         request: components.V1UpdateConnectionRequestBody,
         options?: RequestOptions
-    ): Promise<components.V1UpdateConnectionResponseBody> {
+    ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
         return unwrapAsync(connectionAccountV1ConnectionUpdateConnection(this, request, options));
     }
 
@@ -47,7 +48,7 @@ export class Connection extends ClientSDK {
     async accountV1ConnectionVerifyConnection(
         request: components.V1VerifyConnectionRequestBody,
         options?: RequestOptions
-    ): Promise<components.V1VerifyConnectionResponseBody> {
+    ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
         return unwrapAsync(connectionAccountV1ConnectionVerifyConnection(this, request, options));
     }
 }

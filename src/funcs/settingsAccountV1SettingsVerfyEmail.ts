@@ -20,6 +20,7 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -31,7 +32,7 @@ export async function settingsAccountV1SettingsVerfyEmail(
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1VerifyEmailResponseBody,
+        operations.AccountV1SettingsVerfyEmailResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -105,7 +106,7 @@ export async function settingsAccountV1SettingsVerfyEmail(
     };
 
     const [result$] = await m$.match<
-        components.V1VerifyEmailResponseBody,
+        operations.AccountV1SettingsVerfyEmailResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -115,12 +116,14 @@ export async function settingsAccountV1SettingsVerfyEmail(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1VerifyEmailResponseBody$inboundSchema),
+        m$.json(200, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
+            key: "V1VerifyEmailResponseBody",
+        }),
         m$.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }

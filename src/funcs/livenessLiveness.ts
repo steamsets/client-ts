@@ -7,7 +7,6 @@ import * as m$ from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
     ConnectionError,
     InvalidRequestError,
@@ -18,6 +17,7 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -31,7 +31,7 @@ export async function livenessLiveness(
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1LivenessResponseBody,
+        operations.LivenessResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -90,7 +90,7 @@ export async function livenessLiveness(
     };
 
     const [result$] = await m$.match<
-        components.V1LivenessResponseBody,
+        operations.LivenessResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -100,10 +100,10 @@ export async function livenessLiveness(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1LivenessResponseBody$inboundSchema),
+        m$.json(200, operations.LivenessResponse$inboundSchema, { key: "V1LivenessResponseBody" }),
         m$.jsonErr(500, errors.ErrorModel$inboundSchema, { ctype: "application/problem+json" }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }

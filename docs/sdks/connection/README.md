@@ -82,7 +82,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1ConnectResponseBody](../../models/components/v1connectresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionConnectResponse](../../models/operations/accountv1connectionconnectresponse.md)\>**
 
 ### Errors
 
@@ -160,7 +160,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteConnectionResponseBody](../../models/components/v1deleteconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionDeleteConnectionResponse](../../models/operations/accountv1connectiondeleteconnectionresponse.md)\>**
 
 ### Errors
 
@@ -240,7 +240,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateConnectionResponseBody](../../models/components/v1updateconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionUpdateConnectionResponse](../../models/operations/accountv1connectionupdateconnectionresponse.md)\>**
 
 ### Errors
 
@@ -318,7 +318,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1VerifyConnectionResponseBody](../../models/components/v1verifyconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionVerifyConnectionResponse](../../models/operations/accountv1connectionverifyconnectionresponse.md)\>**
 
 ### Errors
 

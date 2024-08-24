@@ -20,8 +20,8 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
-import * as z from "zod";
 
 /**
  * Multi Upload Endpoint for images
@@ -32,7 +32,7 @@ export async function accountAccountV1SettingsUploadImages(
     options?: RequestOptions
 ): Promise<
     Result<
-        void,
+        operations.AccountV1SettingsUploadImagesResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -106,7 +106,7 @@ export async function accountAccountV1SettingsUploadImages(
     };
 
     const [result$] = await m$.match<
-        void,
+        operations.AccountV1SettingsUploadImagesResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -116,12 +116,12 @@ export async function accountAccountV1SettingsUploadImages(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.nil(204, z.void()),
+        m$.nil(204, operations.AccountV1SettingsUploadImagesResponse$inboundSchema),
         m$.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }

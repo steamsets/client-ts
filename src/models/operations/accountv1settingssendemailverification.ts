@@ -3,10 +3,15 @@
  */
 
 import { remap as remap$ } from "../../lib/primitives.js";
+import * as components from "../components/index.js";
 import * as z from "zod";
 
 export type AccountV1SettingsSendEmailVerificationRequest = {
     xForwardedFor?: string | undefined;
+};
+
+export type AccountV1SettingsSendEmailVerificationResponse = {
+    httpMeta: components.HTTPMetadata;
 };
 
 /** @internal */
@@ -55,4 +60,52 @@ export namespace AccountV1SettingsSendEmailVerificationRequest$ {
     export const outboundSchema = AccountV1SettingsSendEmailVerificationRequest$outboundSchema;
     /** @deprecated use `AccountV1SettingsSendEmailVerificationRequest$Outbound` instead. */
     export type Outbound = AccountV1SettingsSendEmailVerificationRequest$Outbound;
+}
+
+/** @internal */
+export const AccountV1SettingsSendEmailVerificationResponse$inboundSchema: z.ZodType<
+    AccountV1SettingsSendEmailVerificationResponse,
+    z.ZodTypeDef,
+    unknown
+> = z
+    .object({
+        HttpMeta: components.HTTPMetadata$inboundSchema,
+    })
+    .transform((v) => {
+        return remap$(v, {
+            HttpMeta: "httpMeta",
+        });
+    });
+
+/** @internal */
+export type AccountV1SettingsSendEmailVerificationResponse$Outbound = {
+    HttpMeta: components.HTTPMetadata$Outbound;
+};
+
+/** @internal */
+export const AccountV1SettingsSendEmailVerificationResponse$outboundSchema: z.ZodType<
+    AccountV1SettingsSendEmailVerificationResponse$Outbound,
+    z.ZodTypeDef,
+    AccountV1SettingsSendEmailVerificationResponse
+> = z
+    .object({
+        httpMeta: components.HTTPMetadata$outboundSchema,
+    })
+    .transform((v) => {
+        return remap$(v, {
+            httpMeta: "HttpMeta",
+        });
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsSendEmailVerificationResponse$ {
+    /** @deprecated use `AccountV1SettingsSendEmailVerificationResponse$inboundSchema` instead. */
+    export const inboundSchema = AccountV1SettingsSendEmailVerificationResponse$inboundSchema;
+    /** @deprecated use `AccountV1SettingsSendEmailVerificationResponse$outboundSchema` instead. */
+    export const outboundSchema = AccountV1SettingsSendEmailVerificationResponse$outboundSchema;
+    /** @deprecated use `AccountV1SettingsSendEmailVerificationResponse$Outbound` instead. */
+    export type Outbound = AccountV1SettingsSendEmailVerificationResponse$Outbound;
 }

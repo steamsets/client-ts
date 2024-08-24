@@ -16,6 +16,14 @@ export type AccountV1SessionLoginRequest = {
     loginRequestBody: components.LoginRequestBody;
 };
 
+export type AccountV1SessionLoginResponse = {
+    httpMeta: components.HTTPMetadata;
+    /**
+     * OK
+     */
+    v1LoginResponseBody?: components.V1LoginResponseBody | undefined;
+};
+
 /** @internal */
 export const AccountV1SessionLoginSecurity$inboundSchema: z.ZodType<
     AccountV1SessionLoginSecurity,
@@ -108,4 +116,57 @@ export namespace AccountV1SessionLoginRequest$ {
     export const outboundSchema = AccountV1SessionLoginRequest$outboundSchema;
     /** @deprecated use `AccountV1SessionLoginRequest$Outbound` instead. */
     export type Outbound = AccountV1SessionLoginRequest$Outbound;
+}
+
+/** @internal */
+export const AccountV1SessionLoginResponse$inboundSchema: z.ZodType<
+    AccountV1SessionLoginResponse,
+    z.ZodTypeDef,
+    unknown
+> = z
+    .object({
+        HttpMeta: components.HTTPMetadata$inboundSchema,
+        V1LoginResponseBody: components.V1LoginResponseBody$inboundSchema.optional(),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            HttpMeta: "httpMeta",
+            V1LoginResponseBody: "v1LoginResponseBody",
+        });
+    });
+
+/** @internal */
+export type AccountV1SessionLoginResponse$Outbound = {
+    HttpMeta: components.HTTPMetadata$Outbound;
+    V1LoginResponseBody?: components.V1LoginResponseBody$Outbound | undefined;
+};
+
+/** @internal */
+export const AccountV1SessionLoginResponse$outboundSchema: z.ZodType<
+    AccountV1SessionLoginResponse$Outbound,
+    z.ZodTypeDef,
+    AccountV1SessionLoginResponse
+> = z
+    .object({
+        httpMeta: components.HTTPMetadata$outboundSchema,
+        v1LoginResponseBody: components.V1LoginResponseBody$outboundSchema.optional(),
+    })
+    .transform((v) => {
+        return remap$(v, {
+            httpMeta: "HttpMeta",
+            v1LoginResponseBody: "V1LoginResponseBody",
+        });
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SessionLoginResponse$ {
+    /** @deprecated use `AccountV1SessionLoginResponse$inboundSchema` instead. */
+    export const inboundSchema = AccountV1SessionLoginResponse$inboundSchema;
+    /** @deprecated use `AccountV1SessionLoginResponse$outboundSchema` instead. */
+    export const outboundSchema = AccountV1SessionLoginResponse$outboundSchema;
+    /** @deprecated use `AccountV1SessionLoginResponse$Outbound` instead. */
+    export type Outbound = AccountV1SessionLoginResponse$Outbound;
 }

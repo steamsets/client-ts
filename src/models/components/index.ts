@@ -8,6 +8,7 @@ export * from "./accountsearchvanitystruct.js";
 export * from "./connection.js";
 export * from "./emailnotification.js";
 export * from "./errordetail.js";
+export * from "./httpmetadata.js";
 export * from "./image.js";
 export * from "./item.js";
 export * from "./loginrequestbody.js";

@@ -9,7 +9,6 @@ import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
     ConnectionError,
     InvalidRequestError,
@@ -33,7 +32,7 @@ export async function accountAccountV1SessionLogin(
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1LoginResponseBody,
+        operations.AccountV1SessionLoginResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -122,7 +121,7 @@ export async function accountAccountV1SessionLogin(
     };
 
     const [result$] = await m$.match<
-        components.V1LoginResponseBody,
+        operations.AccountV1SessionLoginResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -132,12 +131,14 @@ export async function accountAccountV1SessionLogin(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1LoginResponseBody$inboundSchema),
+        m$.json(200, operations.AccountV1SessionLoginResponse$inboundSchema, {
+            key: "V1LoginResponseBody",
+        }),
         m$.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }
