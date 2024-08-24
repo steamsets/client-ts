@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 930336259d045b6e1198d698ae851cd0
+  docChecksum: ba3ba572728d729218fccc7b093146e1
   docVersion: 1.0.0
-  speakeasyVersion: 1.376.1
-  generationVersion: 2.402.5
-  releaseVersion: 0.3.2
-  configChecksum: b1923b36bf29a01e110aa94252fdf2b3
+  speakeasyVersion: 1.378.0
+  generationVersion: 2.404.3
+  releaseVersion: 0.4.0
+  configChecksum: 7ea5886e89c6c9963d890b112eddd3c3
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -28,7 +28,7 @@ features:
     sdkHooks: 0.1.0
   typescript:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.10
+    constsAndDefaults: 0.1.11
     core: 3.14.1
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
@@ -38,6 +38,7 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     inputOutputModels: 2.82.0
+    methodSecurity: 2.82.4
     nullables: 0.1.0
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -129,6 +130,9 @@ generatedFiles:
   - src/models/components/v1generateapikeyresponsebody.ts
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1app.ts
+  - src/models/components/accountsearch.ts
+  - src/models/components/accountsearchvanitystruct.ts
+  - src/models/components/accountsearchidstruct.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badge.ts
   - src/models/components/v1getsessionbody.ts
@@ -176,6 +180,10 @@ generatedFiles:
   - docs/models/components/v1generateapikeyresponsebody.md
   - docs/models/components/v1accountsappsresponsebody.md
   - docs/models/components/v1app.md
+  - docs/models/components/accountsearch.md
+  - docs/models/components/type.md
+  - docs/models/components/accountsearchvanitystruct.md
+  - docs/models/components/accountsearchidstruct.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badge.md
   - docs/models/components/v1getsessionbody.md
@@ -185,7 +193,7 @@ generatedFiles:
   - docs/models/components/theme.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/image.md
-  - docs/models/components/type.md
+  - docs/models/components/emailnotificationtype.md
   - docs/models/components/emailnotification.md
   - docs/models/components/connectionprovider.md
   - docs/models/components/connection.md
@@ -208,6 +216,7 @@ generatedFiles:
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/security.md
   - docs/models/errors/errormodel.md
+  - docs/models/operations/accountv1sessionloginsecurity.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingsupdaterequest.md

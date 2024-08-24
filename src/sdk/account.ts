@@ -78,16 +78,20 @@ export class Account extends ClientSDK {
      * Get Account Apps
      */
     async accountV1GetApps(
+        request: components.AccountSearch,
         options?: RequestOptions
     ): Promise<components.V1AccountsAppsResponseBody> {
-        return unwrapAsync(accountAccountV1GetApps(this, options));
+        return unwrapAsync(accountAccountV1GetApps(this, request, options));
     }
 
     /**
      * Get Account Badges
      */
-    async accountV1GetBadges(options?: RequestOptions): Promise<components.V1BadgesResponseBody> {
-        return unwrapAsync(accountAccountV1GetBadges(this, options));
+    async accountV1GetBadges(
+        request: components.AccountSearch,
+        options?: RequestOptions
+    ): Promise<components.V1BadgesResponseBody> {
+        return unwrapAsync(accountAccountV1GetBadges(this, request, options));
     }
 
     /**
@@ -109,9 +113,10 @@ export class Account extends ClientSDK {
      */
     async accountV1SessionLogin(
         request: operations.AccountV1SessionLoginRequest,
+        security: operations.AccountV1SessionLoginSecurity,
         options?: RequestOptions
     ): Promise<components.V1LoginResponseBody> {
-        return unwrapAsync(accountAccountV1SessionLogin(this, request, options));
+        return unwrapAsync(accountAccountV1SessionLogin(this, request, security, options));
     }
 
     /**

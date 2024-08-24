@@ -8,13 +8,13 @@ import * as z from "zod";
 /**
  * The type of email notifications
  */
-export const Type = {
+export const EmailNotificationType = {
     Login: "login",
 } as const;
 /**
  * The type of email notifications
  */
-export type Type = ClosedEnum<typeof Type>;
+export type EmailNotificationType = ClosedEnum<typeof EmailNotificationType>;
 
 export type EmailNotification = {
     /**
@@ -24,31 +24,33 @@ export type EmailNotification = {
     /**
      * The type of email notifications
      */
-    type: Type;
+    type: EmailNotificationType;
 };
 
 /** @internal */
-export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
+export const EmailNotificationType$inboundSchema: z.ZodNativeEnum<typeof EmailNotificationType> =
+    z.nativeEnum(EmailNotificationType);
 
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = Type$inboundSchema;
+export const EmailNotificationType$outboundSchema: z.ZodNativeEnum<typeof EmailNotificationType> =
+    EmailNotificationType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Type$ {
-    /** @deprecated use `Type$inboundSchema` instead. */
-    export const inboundSchema = Type$inboundSchema;
-    /** @deprecated use `Type$outboundSchema` instead. */
-    export const outboundSchema = Type$outboundSchema;
+export namespace EmailNotificationType$ {
+    /** @deprecated use `EmailNotificationType$inboundSchema` instead. */
+    export const inboundSchema = EmailNotificationType$inboundSchema;
+    /** @deprecated use `EmailNotificationType$outboundSchema` instead. */
+    export const outboundSchema = EmailNotificationType$outboundSchema;
 }
 
 /** @internal */
 export const EmailNotification$inboundSchema: z.ZodType<EmailNotification, z.ZodTypeDef, unknown> =
     z.object({
         enabled: z.boolean(),
-        type: Type$inboundSchema,
+        type: EmailNotificationType$inboundSchema,
     });
 
 /** @internal */
@@ -64,7 +66,7 @@ export const EmailNotification$outboundSchema: z.ZodType<
     EmailNotification
 > = z.object({
     enabled: z.boolean(),
-    type: Type$outboundSchema,
+    type: EmailNotificationType$outboundSchema,
 });
 
 /**

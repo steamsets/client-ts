@@ -7,7 +7,7 @@ import { encodeJSON as encodeJSON$, encodeSimple as encodeSimple$ } from "../lib
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
+import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
 import {
@@ -29,6 +29,7 @@ import { Result } from "../types/fp.js";
 export async function accountAccountV1SessionLogin(
     client$: SteamSetsCore,
     request: operations.AccountV1SessionLoginRequest,
+    security: operations.AccountV1SessionLoginSecurity,
     options?: RequestOptions
 ): Promise<
     Result<
@@ -71,14 +72,21 @@ export async function accountAccountV1SessionLogin(
         }),
     });
 
-    const session$ = await extractSecurity(client$.options$.session);
-    const security$ = session$ == null ? {} : { session: session$ };
+    const security$: SecurityInput[][] = [
+        [
+            {
+                fieldName: "Authorization",
+                type: "http:bearer",
+                value: security?.anonymous,
+            },
+        ],
+    ];
+    const securitySettings$ = resolveSecurity(...security$);
     const context = {
         operationID: "account.v1.session.login",
         oAuth2Scopes: [],
-        securitySource: client$.options$.session,
+        securitySource: security$,
     };
-    const securitySettings$ = resolveGlobalSecurity(security$);
 
     const requestRes = client$.createRequest$(
         context,
