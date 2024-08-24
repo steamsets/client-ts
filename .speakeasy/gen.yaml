@@ -59,7 +59,7 @@ typescript:
   methodArguments: require-security-and-request
   moduleFormat: commonjs
   outputModelSuffix: output
-  packageName: '@steamsets/client-ts'
-  responseFormat: flat
+  packageName: "@steamsets/client-ts"
+  responseFormat: envelope-http
   templateVersion: v2
   useIndexModules: true
