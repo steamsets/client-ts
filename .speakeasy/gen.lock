@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.378.0
   generationVersion: 2.404.3
-  releaseVersion: 0.4.0
-  configChecksum: 7ea5886e89c6c9963d890b112eddd3c3
+  releaseVersion: 0.4.1
+  configChecksum: 83921550107e3cbc059b6a3bf1acdbdb
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -117,7 +117,26 @@ generatedFiles:
   - src/types/operations.ts
   - src/types/rfcdate.ts
   - tsconfig.json
+  - src/models/operations/accountv1connectionconnect.ts
+  - src/models/operations/accountv1connectiondeleteconnection.ts
+  - src/models/operations/accountv1settingsdeleteimages.ts
+  - src/models/operations/accountv1sessiondelete.ts
+  - src/models/operations/accountv1settingsgenerateapikey.ts
+  - src/models/operations/accountv1getapps.ts
+  - src/models/operations/accountv1getbadges.ts
+  - src/models/operations/accountv1sessionget.ts
+  - src/models/operations/accountv1settingsget.ts
+  - src/models/operations/accountv1sessionlogin.ts
+  - src/models/operations/accountv1settingssendemailverification.ts
+  - src/models/operations/accountv1connectionupdateconnection.ts
+  - src/models/operations/accountv1settingsupdateimage.ts
+  - src/models/operations/accountv1settingsupdate.ts
+  - src/models/operations/accountv1settingsuploadimages.ts
+  - src/models/operations/accountv1connectionverifyconnection.ts
+  - src/models/operations/accountv1settingsverfyemail.ts
+  - src/models/operations/liveness.ts
   - src/models/components/v1connectresponsebody.ts
+  - src/models/components/httpmetadata.ts
   - src/models/components/errordetail.ts
   - src/models/components/v1connectrequestbody.ts
   - src/models/components/v1deleteconnectionresponsebody.ts
@@ -160,13 +179,33 @@ generatedFiles:
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/security.ts
   - src/models/errors/errormodel.ts
-  - src/models/operations/accountv1sessionlogin.ts
-  - src/models/operations/accountv1settingssendemailverification.ts
-  - src/models/operations/accountv1settingsupdate.ts
   - src/models/errors/index.ts
-  - src/models/components/index.ts
   - src/models/operations/index.ts
+  - src/models/components/index.ts
+  - docs/models/operations/accountv1connectionconnectresponse.md
+  - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
+  - docs/models/operations/accountv1settingsdeleteimagesresponse.md
+  - docs/models/operations/accountv1sessiondeleteresponse.md
+  - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
+  - docs/models/operations/accountv1getappsresponse.md
+  - docs/models/operations/accountv1getbadgesresponse.md
+  - docs/models/operations/accountv1sessiongetresponse.md
+  - docs/models/operations/accountv1settingsgetresponse.md
+  - docs/models/operations/accountv1sessionloginsecurity.md
+  - docs/models/operations/accountv1sessionloginrequest.md
+  - docs/models/operations/accountv1sessionloginresponse.md
+  - docs/models/operations/accountv1settingssendemailverificationrequest.md
+  - docs/models/operations/accountv1settingssendemailverificationresponse.md
+  - docs/models/operations/accountv1connectionupdateconnectionresponse.md
+  - docs/models/operations/accountv1settingsupdateimageresponse.md
+  - docs/models/operations/accountv1settingsupdaterequest.md
+  - docs/models/operations/accountv1settingsupdateresponse.md
+  - docs/models/operations/accountv1settingsuploadimagesresponse.md
+  - docs/models/operations/accountv1connectionverifyconnectionresponse.md
+  - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/livenessresponse.md
   - docs/models/components/v1connectresponsebody.md
+  - docs/models/components/httpmetadata.md
   - docs/models/components/errordetail.md
   - docs/models/components/provider.md
   - docs/models/components/v1connectrequestbody.md
@@ -216,10 +255,6 @@ generatedFiles:
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/security.md
   - docs/models/errors/errormodel.md
-  - docs/models/operations/accountv1sessionloginsecurity.md
-  - docs/models/operations/accountv1sessionloginrequest.md
-  - docs/models/operations/accountv1settingssendemailverificationrequest.md
-  - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/sdks/steamsets/README.md
   - docs/lib/utils/retryconfig.md
   - docs/sdks/account/README.md

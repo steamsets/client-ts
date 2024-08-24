@@ -4,7 +4,7 @@
 
 import { livenessLiveness } from "../funcs/livenessLiveness.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as components from "../models/components/index.js";
+import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Liveness extends ClientSDK {
@@ -14,7 +14,7 @@ export class Liveness extends ClientSDK {
      * @remarks
      * This endpoint checks if the service is alive.
      */
-    async liveness(options?: RequestOptions): Promise<components.V1LivenessResponseBody> {
+    async liveness(options?: RequestOptions): Promise<operations.LivenessResponse> {
         return unwrapAsync(livenessLiveness(this, options));
     }
 }

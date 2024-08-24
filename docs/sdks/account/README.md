@@ -95,7 +95,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1ConnectResponseBody](../../models/components/v1connectresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionConnectResponse](../../models/operations/accountv1connectionconnectresponse.md)\>**
 
 ### Errors
 
@@ -173,7 +173,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteConnectionResponseBody](../../models/components/v1deleteconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionDeleteConnectionResponse](../../models/operations/accountv1connectiondeleteconnectionresponse.md)\>**
 
 ### Errors
 
@@ -261,7 +261,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteImagesResponseBody](../../models/components/v1deleteimagesresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsDeleteImagesResponse](../../models/operations/accountv1settingsdeleteimagesresponse.md)\>**
 
 ### Errors
 
@@ -339,7 +339,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteSessionResponseBody](../../models/components/v1deletesessionresponsebody.md)\>**
+**Promise\<[operations.AccountV1SessionDeleteResponse](../../models/operations/accountv1sessiondeleteresponse.md)\>**
 
 ### Errors
 
@@ -412,7 +412,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GenerateApiKeyResponseBody](../../models/components/v1generateapikeyresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsGenerateApiKeyResponse](../../models/operations/accountv1settingsgenerateapikeyresponse.md)\>**
 
 ### Errors
 
@@ -486,7 +486,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1AccountsAppsResponseBody](../../models/components/v1accountsappsresponsebody.md)\>**
+**Promise\<[operations.AccountV1GetAppsResponse](../../models/operations/accountv1getappsresponse.md)\>**
 
 ### Errors
 
@@ -560,7 +560,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1BadgesResponseBody](../../models/components/v1badgesresponsebody.md)\>**
+**Promise\<[operations.AccountV1GetBadgesResponse](../../models/operations/accountv1getbadgesresponse.md)\>**
 
 ### Errors
 
@@ -633,7 +633,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GetSessionBody](../../models/components/v1getsessionbody.md)\>**
+**Promise\<[operations.AccountV1SessionGetResponse](../../models/operations/accountv1sessiongetresponse.md)\>**
 
 ### Errors
 
@@ -706,7 +706,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GetSettingsBody](../../models/components/v1getsettingsbody.md)\>**
+**Promise\<[operations.AccountV1SettingsGetResponse](../../models/operations/accountv1settingsgetresponse.md)\>**
 
 ### Errors
 
@@ -807,7 +807,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1LoginResponseBody](../../models/components/v1loginresponsebody.md)\>**
+**Promise\<[operations.AccountV1SessionLoginResponse](../../models/operations/accountv1sessionloginresponse.md)\>**
 
 ### Errors
 
@@ -831,9 +831,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  await steamSets.account.accountV1SettingsSendEmailVerification({});
+  const result = await steamSets.account.accountV1SettingsSendEmailVerification({});
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -862,7 +863,8 @@ async function run() {
 
   const { value: result } = res;
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -879,7 +881,7 @@ run();
 
 ### Response
 
-**Promise\<void\>**
+**Promise\<[operations.AccountV1SettingsSendEmailVerificationResponse](../../models/operations/accountv1settingssendemailverificationresponse.md)\>**
 
 ### Errors
 
@@ -959,7 +961,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateConnectionResponseBody](../../models/components/v1updateconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionUpdateConnectionResponse](../../models/operations/accountv1connectionupdateconnectionresponse.md)\>**
 
 ### Errors
 
@@ -1039,7 +1041,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateImageResponseBody](../../models/components/v1updateimageresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsUpdateImageResponse](../../models/operations/accountv1settingsupdateimageresponse.md)\>**
 
 ### Errors
 
@@ -1145,7 +1147,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1UpdateSettingsResponseBody](../../models/components/v1updatesettingsresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsUpdateResponse](../../models/operations/accountv1settingsupdateresponse.md)\>**
 
 ### Errors
 
@@ -1169,7 +1171,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  await steamSets.account.accountV1SettingsUploadImages({
+  const result = await steamSets.account.accountV1SettingsUploadImages({
     images: [
       {
         data: "base64_encoded_image",
@@ -1178,7 +1180,8 @@ async function run() {
     ],
   });
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1214,7 +1217,8 @@ async function run() {
 
   const { value: result } = res;
 
-  
+  // Handle the result
+  console.log(result)
 }
 
 run();
@@ -1231,7 +1235,7 @@ run();
 
 ### Response
 
-**Promise\<void\>**
+**Promise\<[operations.AccountV1SettingsUploadImagesResponse](../../models/operations/accountv1settingsuploadimagesresponse.md)\>**
 
 ### Errors
 
@@ -1309,7 +1313,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1VerifyConnectionResponseBody](../../models/components/v1verifyconnectionresponsebody.md)\>**
+**Promise\<[operations.AccountV1ConnectionVerifyConnectionResponse](../../models/operations/accountv1connectionverifyconnectionresponse.md)\>**
 
 ### Errors
 
@@ -1387,7 +1391,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1VerifyEmailResponseBody](../../models/components/v1verifyemailresponsebody.md)\>**
+**Promise\<[operations.AccountV1SettingsVerfyEmailResponse](../../models/operations/accountv1settingsverfyemailresponse.md)\>**
 
 ### Errors
 

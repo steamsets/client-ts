@@ -17,14 +17,16 @@ export class Session extends ClientSDK {
     async accountV1SessionDelete(
         request: components.V1DeleteSessionRequestBody,
         options?: RequestOptions
-    ): Promise<components.V1DeleteSessionResponseBody> {
+    ): Promise<operations.AccountV1SessionDeleteResponse> {
         return unwrapAsync(sessionAccountV1SessionDelete(this, request, options));
     }
 
     /**
      * Gets all session data
      */
-    async accountV1SessionGet(options?: RequestOptions): Promise<components.V1GetSessionBody> {
+    async accountV1SessionGet(
+        options?: RequestOptions
+    ): Promise<operations.AccountV1SessionGetResponse> {
         return unwrapAsync(sessionAccountV1SessionGet(this, options));
     }
 
@@ -35,7 +37,7 @@ export class Session extends ClientSDK {
         request: operations.AccountV1SessionLoginRequest,
         security: operations.AccountV1SessionLoginSecurity,
         options?: RequestOptions
-    ): Promise<components.V1LoginResponseBody> {
+    ): Promise<operations.AccountV1SessionLoginResponse> {
         return unwrapAsync(sessionAccountV1SessionLogin(this, request, security, options));
     }
 }

@@ -77,7 +77,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1DeleteSessionResponseBody](../../models/components/v1deletesessionresponsebody.md)\>**
+**Promise\<[operations.AccountV1SessionDeleteResponse](../../models/operations/accountv1sessiondeleteresponse.md)\>**
 
 ### Errors
 
@@ -150,7 +150,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1GetSessionBody](../../models/components/v1getsessionbody.md)\>**
+**Promise\<[operations.AccountV1SessionGetResponse](../../models/operations/accountv1sessiongetresponse.md)\>**
 
 ### Errors
 
@@ -251,7 +251,7 @@ run();
 
 ### Response
 
-**Promise\<[components.V1LoginResponseBody](../../models/components/v1loginresponsebody.md)\>**
+**Promise\<[operations.AccountV1SessionLoginResponse](../../models/operations/accountv1sessionloginresponse.md)\>**
 
 ### Errors
 

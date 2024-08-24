@@ -21,7 +21,6 @@ import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
-import * as z from "zod";
 
 /**
  * Resend the verification code for an email
@@ -32,7 +31,7 @@ export async function accountAccountV1SettingsSendEmailVerification(
     options?: RequestOptions
 ): Promise<
     Result<
-        void,
+        operations.AccountV1SettingsSendEmailVerificationResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -110,7 +109,7 @@ export async function accountAccountV1SettingsSendEmailVerification(
     };
 
     const [result$] = await m$.match<
-        void,
+        operations.AccountV1SettingsSendEmailVerificationResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -120,12 +119,12 @@ export async function accountAccountV1SettingsSendEmailVerification(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.nil(204, z.void()),
+        m$.nil(204, operations.AccountV1SettingsSendEmailVerificationResponse$inboundSchema),
         m$.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }

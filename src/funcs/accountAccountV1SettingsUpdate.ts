@@ -9,7 +9,6 @@ import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
     ConnectionError,
     InvalidRequestError,
@@ -32,7 +31,7 @@ export async function accountAccountV1SettingsUpdate(
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1UpdateSettingsResponseBody,
+        operations.AccountV1SettingsUpdateResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -110,7 +109,7 @@ export async function accountAccountV1SettingsUpdate(
     };
 
     const [result$] = await m$.match<
-        components.V1UpdateSettingsResponseBody,
+        operations.AccountV1SettingsUpdateResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -120,12 +119,14 @@ export async function accountAccountV1SettingsUpdate(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1UpdateSettingsResponseBody$inboundSchema),
+        m$.json(200, operations.AccountV1SettingsUpdateResponse$inboundSchema, {
+            key: "V1UpdateSettingsResponseBody",
+        }),
         m$.jsonErr([422, 429, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }

@@ -2,7 +2,7 @@ speakeasyVersion: 1.378.0
 sources:
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
-        sourceRevisionDigest: sha256:13a28e3c8150378880440c6c407b2505824579376fbbb558509b5d4a59e6f070
+        sourceRevisionDigest: sha256:81c2c21e7a012fee9d41993aca814e486528e217caad0fcca4b472202b6fc782
         sourceBlobDigest: sha256:3828b25702741df446bf2c2336b0257e436bfe79442fa6b0db15498c560decd5
         tags:
             - latest
@@ -11,7 +11,7 @@ targets:
     steam-sets:
         source: SteamSets-OAS
         sourceNamespace: steam-sets-oas
-        sourceRevisionDigest: sha256:13a28e3c8150378880440c6c407b2505824579376fbbb558509b5d4a59e6f070
+        sourceRevisionDigest: sha256:81c2c21e7a012fee9d41993aca814e486528e217caad0fcca4b472202b6fc782
         sourceBlobDigest: sha256:3828b25702741df446bf2c2336b0257e436bfe79442fa6b0db15498c560decd5
         outLocation: /github/workspace/repo
 workflow:

@@ -20,6 +20,7 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
@@ -31,7 +32,7 @@ export async function settingsAccountV1SettingsDeleteImages(
     options?: RequestOptions
 ): Promise<
     Result<
-        components.V1DeleteImagesResponseBody,
+        operations.AccountV1SettingsDeleteImagesResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -105,7 +106,7 @@ export async function settingsAccountV1SettingsDeleteImages(
     };
 
     const [result$] = await m$.match<
-        components.V1DeleteImagesResponseBody,
+        operations.AccountV1SettingsDeleteImagesResponse,
         | errors.ErrorModel
         | SDKError
         | SDKValidationError
@@ -115,12 +116,14 @@ export async function settingsAccountV1SettingsDeleteImages(
         | RequestTimeoutError
         | ConnectionError
     >(
-        m$.json(200, components.V1DeleteImagesResponseBody$inboundSchema),
+        m$.json(200, operations.AccountV1SettingsDeleteImagesResponse$inboundSchema, {
+            key: "V1DeleteImagesResponseBody",
+        }),
         m$.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
-    )(response, { extraFields: responseFields$ });
+    )(response, request$, { extraFields: responseFields$ });
     if (!result$.ok) {
         return result$;
     }
