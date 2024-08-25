@@ -5,11 +5,13 @@
 ```typescript
 import { Security } from "@steamsets/client-ts/models/components";
 
-let value: Security = {};
+let value: Security = {
+    session: "<value>",
+};
 ```
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `session`          | *string*           | :heavy_minus_sign: | N/A                |
+| `session`          | *string*           | :heavy_check_mark: | N/A                |

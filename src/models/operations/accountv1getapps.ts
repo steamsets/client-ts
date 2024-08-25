@@ -6,6 +6,11 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 import * as z from "zod";
 
+export type AccountV1GetAppsRequest = {
+    xForwardedFor?: string | undefined;
+    accountSearch: components.AccountSearch;
+};
+
 export type AccountV1GetAppsResponse = {
     httpMeta: components.HTTPMetadata;
     /**
@@ -13,6 +18,59 @@ export type AccountV1GetAppsResponse = {
      */
     v1AccountsAppsResponseBody?: components.V1AccountsAppsResponseBody | undefined;
 };
+
+/** @internal */
+export const AccountV1GetAppsRequest$inboundSchema: z.ZodType<
+    AccountV1GetAppsRequest,
+    z.ZodTypeDef,
+    unknown
+> = z
+    .object({
+        "X-Forwarded-For": z.string().optional(),
+        AccountSearch: components.AccountSearch$inboundSchema,
+    })
+    .transform((v) => {
+        return remap$(v, {
+            "X-Forwarded-For": "xForwardedFor",
+            AccountSearch: "accountSearch",
+        });
+    });
+
+/** @internal */
+export type AccountV1GetAppsRequest$Outbound = {
+    "X-Forwarded-For"?: string | undefined;
+    AccountSearch: components.AccountSearch$Outbound;
+};
+
+/** @internal */
+export const AccountV1GetAppsRequest$outboundSchema: z.ZodType<
+    AccountV1GetAppsRequest$Outbound,
+    z.ZodTypeDef,
+    AccountV1GetAppsRequest
+> = z
+    .object({
+        xForwardedFor: z.string().optional(),
+        accountSearch: components.AccountSearch$outboundSchema,
+    })
+    .transform((v) => {
+        return remap$(v, {
+            xForwardedFor: "X-Forwarded-For",
+            accountSearch: "AccountSearch",
+        });
+    });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1GetAppsRequest$ {
+    /** @deprecated use `AccountV1GetAppsRequest$inboundSchema` instead. */
+    export const inboundSchema = AccountV1GetAppsRequest$inboundSchema;
+    /** @deprecated use `AccountV1GetAppsRequest$outboundSchema` instead. */
+    export const outboundSchema = AccountV1GetAppsRequest$outboundSchema;
+    /** @deprecated use `AccountV1GetAppsRequest$Outbound` instead. */
+    export type Outbound = AccountV1GetAppsRequest$Outbound;
+}
 
 /** @internal */
 export const AccountV1GetAppsResponse$inboundSchema: z.ZodType<

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: ba3ba572728d729218fccc7b093146e1
+  docChecksum: 013ca96f541308bf605f4cc64f9cac82
   docVersion: 1.0.0
-  speakeasyVersion: 1.378.0
+  speakeasyVersion: 1.378.1
   generationVersion: 2.404.3
-  releaseVersion: 0.4.1
-  configChecksum: 83921550107e3cbc059b6a3bf1acdbdb
+  releaseVersion: 0.5.0
+  configChecksum: 53fc21b4b4fce85ac7f6b05589c120fe
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -38,7 +38,6 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     inputOutputModels: 2.82.0
-    methodSecurity: 2.82.4
     nullables: 0.1.0
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -61,6 +60,7 @@ generatedFiles:
   - src/funcs/accountAccountV1SettingsUploadImages.ts
   - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
   - src/funcs/accountAccountV1SettingsVerfyEmail.ts
+  - src/funcs/accountAccountV1SessionCreate.ts
   - src/funcs/connectionAccountV1ConnectionConnect.ts
   - src/funcs/connectionAccountV1ConnectionDeleteConnection.ts
   - src/funcs/connectionAccountV1ConnectionUpdateConnection.ts
@@ -76,6 +76,7 @@ generatedFiles:
   - src/funcs/sessionAccountV1SessionDelete.ts
   - src/funcs/sessionAccountV1SessionGet.ts
   - src/funcs/sessionAccountV1SessionLogin.ts
+  - src/funcs/sessionAccountV1SessionCreate.ts
   - src/funcs/livenessLiveness.ts
   - src/sdk/account.ts
   - src/sdk/connection.ts
@@ -134,6 +135,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1connectionverifyconnection.ts
   - src/models/operations/accountv1settingsverfyemail.ts
+  - src/models/operations/accountv1sessioncreate.ts
   - src/models/operations/liveness.ts
   - src/models/components/v1connectresponsebody.ts
   - src/models/components/httpmetadata.ts
@@ -176,6 +178,7 @@ generatedFiles:
   - src/models/components/v1verifyconnectionrequestbody.ts
   - src/models/components/v1verifyemailresponsebody.ts
   - src/models/components/v1verifyemailrequestbody.ts
+  - src/models/components/v1createsessionbody.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/security.ts
   - src/models/errors/errormodel.ts
@@ -187,11 +190,12 @@ generatedFiles:
   - docs/models/operations/accountv1settingsdeleteimagesresponse.md
   - docs/models/operations/accountv1sessiondeleteresponse.md
   - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
+  - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
+  - docs/models/operations/accountv1getbadgesrequest.md
   - docs/models/operations/accountv1getbadgesresponse.md
   - docs/models/operations/accountv1sessiongetresponse.md
   - docs/models/operations/accountv1settingsgetresponse.md
-  - docs/models/operations/accountv1sessionloginsecurity.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
@@ -203,6 +207,8 @@ generatedFiles:
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/accountv1sessioncreaterequest.md
+  - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/components/v1connectresponsebody.md
   - docs/models/components/httpmetadata.md
@@ -252,6 +258,7 @@ generatedFiles:
   - docs/models/components/v1verifyconnectionrequestbody.md
   - docs/models/components/v1verifyemailresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
+  - docs/models/components/v1createsessionbody.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/security.md
   - docs/models/errors/errormodel.md

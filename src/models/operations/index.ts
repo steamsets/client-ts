@@ -8,6 +8,7 @@ export * from "./accountv1connectionupdateconnection.js";
 export * from "./accountv1connectionverifyconnection.js";
 export * from "./accountv1getapps.js";
 export * from "./accountv1getbadges.js";
+export * from "./accountv1sessioncreate.js";
 export * from "./accountv1sessiondelete.js";
 export * from "./accountv1sessionget.js";
 export * from "./accountv1sessionlogin.js";

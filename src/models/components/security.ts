@@ -5,23 +5,23 @@
 import * as z from "zod";
 
 export type Security = {
-    session?: string | undefined;
+    session: string;
 };
 
 /** @internal */
 export const Security$inboundSchema: z.ZodType<Security, z.ZodTypeDef, unknown> = z.object({
-    session: z.string().optional(),
+    session: z.string(),
 });
 
 /** @internal */
 export type Security$Outbound = {
-    session?: string | undefined;
+    session: string;
 };
 
 /** @internal */
 export const Security$outboundSchema: z.ZodType<Security$Outbound, z.ZodTypeDef, Security> =
     z.object({
-        session: z.string().optional(),
+        session: z.string(),
     });
 
 /**
