@@ -1413,8 +1413,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
-      security:
-        - anonymous: []
       summary: Logs a user in and creates a new session
       tags:
         - account
