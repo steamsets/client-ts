@@ -21,11 +21,11 @@ export type AccountSearchVanityStruct = {
     /**
      * Which type of vanity to search for
      */
-    type?: Type | undefined;
+    type: Type;
     /**
      * Vanity to search for
      */
-    value?: string | undefined;
+    value: string;
 };
 
 /** @internal */
@@ -51,14 +51,14 @@ export const AccountSearchVanityStruct$inboundSchema: z.ZodType<
     z.ZodTypeDef,
     unknown
 > = z.object({
-    type: Type$inboundSchema.optional(),
-    value: z.string().optional(),
+    type: Type$inboundSchema,
+    value: z.string(),
 });
 
 /** @internal */
 export type AccountSearchVanityStruct$Outbound = {
-    type?: string | undefined;
-    value?: string | undefined;
+    type: string;
+    value: string;
 };
 
 /** @internal */
@@ -67,8 +67,8 @@ export const AccountSearchVanityStruct$outboundSchema: z.ZodType<
     z.ZodTypeDef,
     AccountSearchVanityStruct
 > = z.object({
-    type: Type$outboundSchema.optional(),
-    value: z.string().optional(),
+    type: Type$outboundSchema,
+    value: z.string(),
 });
 
 /**

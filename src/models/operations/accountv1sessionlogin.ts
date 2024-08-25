@@ -6,10 +6,6 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 import * as z from "zod";
 
-export type AccountV1SessionLoginSecurity = {
-    anonymous: string;
-};
-
 export type AccountV1SessionLoginRequest = {
     userAgent?: string | undefined;
     xForwardedFor?: string | undefined;
@@ -23,42 +19,6 @@ export type AccountV1SessionLoginResponse = {
      */
     v1LoginResponseBody?: components.V1LoginResponseBody | undefined;
 };
-
-/** @internal */
-export const AccountV1SessionLoginSecurity$inboundSchema: z.ZodType<
-    AccountV1SessionLoginSecurity,
-    z.ZodTypeDef,
-    unknown
-> = z.object({
-    anonymous: z.string(),
-});
-
-/** @internal */
-export type AccountV1SessionLoginSecurity$Outbound = {
-    anonymous: string;
-};
-
-/** @internal */
-export const AccountV1SessionLoginSecurity$outboundSchema: z.ZodType<
-    AccountV1SessionLoginSecurity$Outbound,
-    z.ZodTypeDef,
-    AccountV1SessionLoginSecurity
-> = z.object({
-    anonymous: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1SessionLoginSecurity$ {
-    /** @deprecated use `AccountV1SessionLoginSecurity$inboundSchema` instead. */
-    export const inboundSchema = AccountV1SessionLoginSecurity$inboundSchema;
-    /** @deprecated use `AccountV1SessionLoginSecurity$outboundSchema` instead. */
-    export const outboundSchema = AccountV1SessionLoginSecurity$outboundSchema;
-    /** @deprecated use `AccountV1SessionLoginSecurity$Outbound` instead. */
-    export type Outbound = AccountV1SessionLoginSecurity$Outbound;
-}
 
 /** @internal */
 export const AccountV1SessionLoginRequest$inboundSchema: z.ZodType<

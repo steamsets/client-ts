@@ -96,6 +96,7 @@ run();
 * [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
+* [accountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate) - Create a new session for non logged in users
 
 ### [connection](docs/sdks/connection/README.md)
 
@@ -120,6 +121,7 @@ run();
 * [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
 * [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate) - Create a new session for non logged in users
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -399,43 +401,6 @@ async function run() {
 run();
 
 ```
-
-### Per-Operation Security Schemes
-
-Some operations in this SDK require the security scheme to be specified at the request level. For example:
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets();
-
-async function run() {
-    const result = await steamSets.account.accountV1SessionLogin(
-        {
-            loginRequestBody: {
-                openidAssocHandle: "123456",
-                openidClaimedId: "76561198842603734",
-                openidIdentity: "https://steamsets.com/api/v1/openid/login",
-                openidMode: "checkid_setup",
-                openidNs: "http://specs.openid.net/auth/2.0",
-                openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
-                openidResponseNonce: "123456",
-                openidReturnTo: "https://steamsets.com/api/v1/openid/login",
-                openidSig: "123456",
-                openidSigned: "123456",
-            },
-        },
-        {
-            anonymous: "<YOUR_BEARER_TOKEN_HERE>",
-        }
-    );
-
-    // Handle the result
-    console.log(result);
-}
-
-run();
-
-```
 <!-- End Authentication [security] -->
 
 <!-- Start Special Types [types] -->
@@ -471,6 +436,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
 - [accountAccountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
 - [accountAccountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
+- [accountAccountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate)
 - [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
 - [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
 - [accountAccountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin)
@@ -487,6 +453,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
 - [connectionAccountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
+- [sessionAccountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
 - [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
 - [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
 - [sessionAccountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin)

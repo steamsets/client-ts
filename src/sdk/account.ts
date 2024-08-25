@@ -8,6 +8,7 @@ import { accountAccountV1ConnectionUpdateConnection } from "../funcs/accountAcco
 import { accountAccountV1ConnectionVerifyConnection } from "../funcs/accountAccountV1ConnectionVerifyConnection.js";
 import { accountAccountV1GetApps } from "../funcs/accountAccountV1GetApps.js";
 import { accountAccountV1GetBadges } from "../funcs/accountAccountV1GetBadges.js";
+import { accountAccountV1SessionCreate } from "../funcs/accountAccountV1SessionCreate.js";
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
 import { accountAccountV1SessionGet } from "../funcs/accountAccountV1SessionGet.js";
 import { accountAccountV1SessionLogin } from "../funcs/accountAccountV1SessionLogin.js";
@@ -78,7 +79,7 @@ export class Account extends ClientSDK {
      * Get Account Apps
      */
     async accountV1GetApps(
-        request: components.AccountSearch,
+        request: operations.AccountV1GetAppsRequest,
         options?: RequestOptions
     ): Promise<operations.AccountV1GetAppsResponse> {
         return unwrapAsync(accountAccountV1GetApps(this, request, options));
@@ -88,7 +89,7 @@ export class Account extends ClientSDK {
      * Get Account Badges
      */
     async accountV1GetBadges(
-        request: components.AccountSearch,
+        request: operations.AccountV1GetBadgesRequest,
         options?: RequestOptions
     ): Promise<operations.AccountV1GetBadgesResponse> {
         return unwrapAsync(accountAccountV1GetBadges(this, request, options));
@@ -117,10 +118,9 @@ export class Account extends ClientSDK {
      */
     async accountV1SessionLogin(
         request: operations.AccountV1SessionLoginRequest,
-        security: operations.AccountV1SessionLoginSecurity,
         options?: RequestOptions
     ): Promise<operations.AccountV1SessionLoginResponse> {
-        return unwrapAsync(accountAccountV1SessionLogin(this, request, security, options));
+        return unwrapAsync(accountAccountV1SessionLogin(this, request, options));
     }
 
     /**
@@ -191,5 +191,15 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
         return unwrapAsync(accountAccountV1SettingsVerfyEmail(this, request, options));
+    }
+
+    /**
+     * Create a new session for non logged in users
+     */
+    async accountV1SessionCreate(
+        request: operations.AccountV1SessionCreateRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1SessionCreateResponse> {
+        return unwrapAsync(accountAccountV1SessionCreate(this, request, options));
     }
 }
