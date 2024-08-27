@@ -1090,6 +1090,49 @@ paths:
       tags:
         - account
         - connection
+  /account.v1.AccountService/CreateSession:
+    post:
+      operationId: account.v1.session.create
+      parameters:
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: X-Fingerprint
+          schema:
+            type: string
+        - in: header
+          name: X-Signed
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1CreateSessionBody"
+          description: OK
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      summary: Create a new session for non logged in users
+      tags:
+        - account
+        - session
   /account.v1.AccountService/DeleteConnection:
     post:
       operationId: account.v1.connection.deleteConnection
@@ -1252,6 +1295,10 @@ paths:
           name: X-Forwarded-For
           schema:
             type: string
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -1294,6 +1341,10 @@ paths:
       parameters:
         - in: header
           name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: User-Agent
           schema:
             type: string
       requestBody:
@@ -1705,49 +1756,6 @@ paths:
       tags:
         - account
         - settings
-  /account.v1.AccountService/createSession:
-    post:
-      operationId: account.v1.session.create
-      parameters:
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: X-Fingerprint
-          schema:
-            type: string
-        - in: header
-          name: X-Signed
-          schema:
-            type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/V1CreateSessionBody"
-          description: OK
-        "422":
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/ErrorModel"
-          description: Unprocessable Entity
-        "500":
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/ErrorModel"
-          description: Internal Server Error
-      summary: Create a new session for non logged in users
-      tags:
-        - account
-        - session
   /v1/liveness:
     get:
       description: This endpoint checks if the service is alive.
