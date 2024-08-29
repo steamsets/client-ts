@@ -148,6 +148,10 @@ components:
           description: The number of game bans
           format: int32
           type: integer
+        hidden:
+          description: Whether the account is hidden in the leaderboards
+          example: true
+          type: boolean
         images:
           description: The images of the account
           items:
@@ -259,6 +263,7 @@ components:
         - createdAt
         - steamVanity
         - steamSetsVanity
+        - hidden
         - privacy
         - appPrivacy
         - friendPrivacy
@@ -378,6 +383,15 @@ components:
         - ranks
         - leaderboard
       type: object
+    City:
+      additionalProperties: false
+      properties:
+        name:
+          description: The name of the city
+          type: string
+      required:
+        - name
+      type: object
     Connection:
       additionalProperties: false
       properties:
@@ -426,6 +440,25 @@ components:
         - hide
         - publicId
         - verified
+      type: object
+    Country:
+      additionalProperties: false
+      properties:
+        code:
+          description: The code of the country
+          type: string
+        name:
+          description: The name of the country
+          type: string
+        states:
+          additionalProperties:
+            $ref: "#/components/schemas/State"
+          description: The states of the country
+          type: object
+      required:
+        - name
+        - code
+        - states
       type: object
     EmailNotification:
       additionalProperties: false
@@ -545,6 +578,224 @@ components:
         - imageId
         - fileId
       type: object
+    LeaderboardAccount:
+      additionalProperties: false
+      properties:
+        appCost:
+          description: The cost of an app
+          example: 123456
+          format: int32
+          type: integer
+        appPlaytime:
+          description: The playtime of the account, incase of an app leaderboard
+          format: int32
+          minimum: 0
+          nullable: true
+          type: integer
+        apps:
+          description: The number of apps the account has
+          example: 123456
+          format: int32
+          type: integer
+        avatar:
+          description: The avatar hash of the account
+          example: f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
+          type: string
+        averagePlaytime:
+          description: The average playtime of the account
+          example: 123456
+          format: int32
+          type: integer
+        awardsGiven:
+          description: The number of awards the account has
+          example: 123456
+          format: int32
+          type: integer
+        awardsReceived:
+          description: The number of awards the account has
+          example: 123456
+          format: int32
+          type: integer
+        badgeInfo:
+          $ref: "#/components/schemas/LeaderboardBadgeInfo"
+          description: The badge info of the account, incase of a badge leaderboard
+        badges:
+          description: The number of badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        bans:
+          description: The number of bans
+          format: int32
+          type: integer
+        city:
+          $ref: "#/components/schemas/Location"
+          description: The city of the account
+        country:
+          $ref: "#/components/schemas/Location"
+          description: The country of the account
+        createdAt:
+          description: The time the account was created
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        economyBan:
+          description: The economy ban of the account
+          example: steam
+          type: string
+        foilBadgeCost:
+          description: The cost of a foil badge
+          example: 123456
+          format: int32
+          type: integer
+        foilBadges:
+          description: The number of foil badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        friends:
+          description: The number of friends the account has
+          example: 123456
+          format: int32
+          type: integer
+        gameBans:
+          description: The number of game bans
+          format: int32
+          type: integer
+        hidden:
+          description: Whether the account is hidden in the leaderboards
+          example: true
+          type: boolean
+        level:
+          description: The level of the account
+          example: 123456
+          format: int32
+          type: integer
+        limitedApps:
+          description: The number of limited apps the account has
+          example: 123456
+          format: int32
+          type: integer
+        name:
+          description: The name of the account
+          example: steamsets
+          type: string
+        normalBadgeCost:
+          description: The cost of a normal badge
+          example: 123456
+          format: int32
+          type: integer
+        normalBadges:
+          description: The number of normal badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        playtime:
+          description: The playtime of the account
+          example: 123456
+          format: int32
+          type: integer
+        pointsGiven:
+          description: The number of points the account has
+          example: 123456
+          format: int32
+          type: integer
+        pointsReceived:
+          description: The number of points the account has
+          example: 123456
+          format: int32
+          type: integer
+        privacy:
+          description: The privacy of the account
+          example: public
+          type: string
+        region:
+          $ref: "#/components/schemas/Location"
+          description: The region of the account
+        roles:
+          description: The roles of the account
+          items:
+            $ref: "#/components/schemas/Role"
+          nullable: true
+          type: array
+        state:
+          $ref: "#/components/schemas/Location"
+          description: The state of the account
+        steamId:
+          description: The steam id
+          example: "76561198842603734"
+          type: string
+        steamSetsScore:
+          description: The steam sets score
+          format: int32
+          type: integer
+        steamSetsVanity:
+          description: The vanity of the account
+          example: steamsets
+          type: string
+        steamVanity:
+          description: The vanity of the account
+          example: steamsets
+          type: string
+        vacBans:
+          description: The number of vac bans
+          format: int32
+          type: integer
+        xp:
+          description: The number of xp the account has
+          example: 123456
+          format: int32
+          type: integer
+      required:
+        - steamId
+        - name
+        - avatar
+        - privacy
+        - createdAt
+        - steamVanity
+        - steamSetsVanity
+        - hidden
+        - apps
+        - limitedApps
+        - playtime
+        - averagePlaytime
+        - friends
+        - badges
+        - normalBadges
+        - foilBadges
+        - awardsGiven
+        - awardsReceived
+        - pointsGiven
+        - pointsReceived
+        - xp
+        - level
+        - steamSetsScore
+        - vacBans
+        - gameBans
+        - bans
+        - economyBan
+        - foilBadgeCost
+        - normalBadgeCost
+        - appCost
+        - roles
+      type: object
+    LeaderboardBadgeInfo:
+      additionalProperties: false
+      properties:
+        completionTime:
+          description: The time the badge was completed
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        level:
+          description: The level of the badge
+          example: 123456
+          format: int32
+          type: integer
+      required:
+        - completionTime
+        - level
+      type: object
     Location:
       additionalProperties: false
       properties:
@@ -627,6 +878,22 @@ components:
         - openid_signed
         - openid_sig
       type: object
+    Region:
+      additionalProperties: false
+      properties:
+        countries:
+          additionalProperties:
+            $ref: "#/components/schemas/Country"
+          description: The countries of the region
+          type: object
+        name:
+          description: The name of the region
+          example: Europe
+          type: string
+      required:
+        - name
+        - countries
+      type: object
     Resource:
       additionalProperties: false
       properties:
@@ -634,6 +901,7 @@ components:
           type: string
         value:
           description: The value of the resource, this can be a string, number, boolean or even a cron expression
+          example: "1"
           type: string
       required:
         - resource
@@ -642,7 +910,7 @@ components:
     Role:
       additionalProperties: false
       properties:
-        Color:
+        colorr:
           description: The role color
           example: "#ff0000"
           type: string
@@ -658,7 +926,7 @@ components:
           type: string
       required:
         - role
-        - Color
+        - colorr
         - icon
         - name
       type: object
@@ -699,6 +967,25 @@ components:
         - sessionId
         - userAgent
         - ip
+      type: object
+    State:
+      additionalProperties: false
+      properties:
+        cities:
+          additionalProperties:
+            $ref: "#/components/schemas/City"
+          description: The cities of the state
+          type: object
+        code:
+          description: The code of the state
+          type: string
+        name:
+          description: The name of the state
+          type: string
+      required:
+        - name
+        - code
+        - cities
       type: object
     V1AccountsAppsResponseBody:
       additionalProperties: false
@@ -1830,6 +2117,43 @@ paths:
       tags:
         - account
         - settings
+  /account.v1.AccountService/GetStaff:
+    post:
+      operationId: account.v1.getStaff
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/LeaderboardAccount"
+                nullable: true
+                type: array
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Get Staff Members and their info
+      tags:
+        - account
+        - data
   /account.v1.AccountService/Login:
     post:
       operationId: account.v1.session.login
@@ -1855,12 +2179,24 @@ paths:
               schema:
                 $ref: "#/components/schemas/V1LoginResponseBody"
           description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
         "422":
           content:
             application/problem+json:
               schema:
                 $ref: "#/components/schemas/ErrorModel"
           description: Unprocessable Entity
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
         "500":
           content:
             application/problem+json:
@@ -2179,6 +2515,37 @@ paths:
       summary: Liveness check
       tags:
         - liveness
+  /v1/location:
+    get:
+      description: Get all of our available locations
+      operationId: location
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Region"
+                nullable: true
+                type: array
+          description: OK
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unauthorized
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Location List
+      tags:
+        - location
 servers:
   - url: http://localhost:8080
   - url: https://api.steamsets.com
