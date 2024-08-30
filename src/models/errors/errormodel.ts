@@ -7,7 +7,7 @@ import * as components from "../components/index.js";
 import * as z from "zod";
 
 /**
- * Bad Request
+ * Unprocessable Entity
  */
 export type ErrorModelData = {
     /**
@@ -37,11 +37,11 @@ export type ErrorModelData = {
     /**
      * A URI reference to human-readable documentation for the error.
      */
-    type: string;
+    type?: string;
 };
 
 /**
- * Bad Request
+ * Unprocessable Entity
  */
 export class ErrorModel extends Error {
     /**
@@ -71,7 +71,7 @@ export class ErrorModel extends Error {
     /**
      * A URI reference to human-readable documentation for the error.
      */
-    type: string;
+    type?: string;
 
     /** The original data that was passed to this error instance. */
     data$: ErrorModelData;
@@ -102,7 +102,9 @@ export class ErrorModel extends Error {
         if (err.title != null) {
             this.title = err.title;
         }
-        this.type = err.type;
+        if (err.type != null) {
+            this.type = err.type;
+        }
 
         this.name = "ErrorModel";
     }
@@ -135,7 +137,7 @@ export type ErrorModel$Outbound = {
     instance?: string | undefined;
     status?: number | undefined;
     title?: string | undefined;
-    type: string;
+    type?: string;
 };
 
 /** @internal */

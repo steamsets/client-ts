@@ -8,14 +8,17 @@ Account related operations
 ### Available Operations
 
 * [accountV1ConnectionConnect](#accountv1connectionconnect) - Connect a new Social Provider
+* [accountV1SessionCreate](#accountv1sessioncreate) - Create a new session for non logged in users
 * [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection) - Remove a connection
 * [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages) - Delete mulitple imagest
 * [accountV1SessionDelete](#accountv1sessiondelete) - Deletes a session, can also be used to logout
 * [accountV1SettingsGenerateApiKey](#accountv1settingsgenerateapikey) - Generate a new API key for the account
 * [accountV1GetApps](#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](#accountv1getbadges) - Get Account Badges
+* [accountV1GetInfo](#accountv1getinfo) - Get Account Info
 * [accountV1SessionGet](#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](#accountv1settingsget) - Gets all settings for the account
+* [accountV1GetStaff](#accountv1getstaff) - Get Staff Members and their info
 * [accountV1SessionLogin](#accountv1sessionlogin) - Logs a user in and creates a new session
 * [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection) - Make a connection visible/invisible
@@ -24,7 +27,6 @@ Account related operations
 * [accountV1SettingsUploadImages](#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
-* [accountV1SessionCreate](#accountv1sessioncreate) - Create a new session for non logged in users
 
 ## accountV1ConnectionConnect
 
@@ -103,6 +105,80 @@ run();
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+
+## accountV1SessionCreate
+
+Create a new session for non logged in users
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1SessionCreate({});
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1SessionCreate } from "@steamsets/client-ts/funcs/accountAccountV1SessionCreate.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1SessionCreate(steamSets, {});
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountV1SessionCreateRequest](../../models/operations/accountv1sessioncreaterequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1SessionCreateResponse](../../models/operations/accountv1sessioncreateresponse.md)\>**
+
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 422,500                  | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
@@ -579,6 +655,80 @@ run();
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
+## accountV1GetInfo
+
+Get Account Info
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1GetInfo({});
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1GetInfo } from "@steamsets/client-ts/funcs/accountAccountV1GetInfo.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1GetInfo(steamSets, {});
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1GetInfoResponse](../../models/operations/accountv1getinforesponse.md)\>**
+
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+
 ## accountV1SessionGet
 
 Gets all session data
@@ -725,6 +875,79 @@ run();
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
+## accountV1GetStaff
+
+Get Staff Members and their info
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1GetStaff();
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1GetStaff } from "@steamsets/client-ts/funcs/accountAccountV1GetStaff.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1GetStaff(steamSets);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1GetStaffResponse](../../models/operations/accountv1getstaffresponse.md)\>**
+
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404,429,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+
 ## accountV1SessionLogin
 
 Logs a user in and creates a new session
@@ -821,7 +1044,7 @@ run();
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,500                  | application/problem+json |
+| errors.ErrorModel        | 400,422,429,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
@@ -1406,78 +1629,4 @@ run();
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
-
-## accountV1SessionCreate
-
-Create a new session for non logged in users
-
-### Example Usage
-
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.accountV1SessionCreate({});
-
-  // Handle the result
-  console.log(result)
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountV1SessionCreate } from "@steamsets/client-ts/funcs/accountAccountV1SessionCreate.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountAccountV1SessionCreate(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result)
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AccountV1SessionCreateRequest](../../models/operations/accountv1sessioncreaterequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountV1SessionCreateResponse](../../models/operations/accountv1sessioncreateresponse.md)\>**
-
-### Errors
-
-| Error Object             | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,500                  | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |

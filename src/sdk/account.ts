@@ -8,6 +8,8 @@ import { accountAccountV1ConnectionUpdateConnection } from "../funcs/accountAcco
 import { accountAccountV1ConnectionVerifyConnection } from "../funcs/accountAccountV1ConnectionVerifyConnection.js";
 import { accountAccountV1GetApps } from "../funcs/accountAccountV1GetApps.js";
 import { accountAccountV1GetBadges } from "../funcs/accountAccountV1GetBadges.js";
+import { accountAccountV1GetInfo } from "../funcs/accountAccountV1GetInfo.js";
+import { accountAccountV1GetStaff } from "../funcs/accountAccountV1GetStaff.js";
 import { accountAccountV1SessionCreate } from "../funcs/accountAccountV1SessionCreate.js";
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
 import { accountAccountV1SessionGet } from "../funcs/accountAccountV1SessionGet.js";
@@ -34,6 +36,16 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1ConnectionConnectResponse> {
         return unwrapAsync(accountAccountV1ConnectionConnect(this, request, options));
+    }
+
+    /**
+     * Create a new session for non logged in users
+     */
+    async accountV1SessionCreate(
+        request: operations.AccountV1SessionCreateRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1SessionCreateResponse> {
+        return unwrapAsync(accountAccountV1SessionCreate(this, request, options));
     }
 
     /**
@@ -96,6 +108,16 @@ export class Account extends ClientSDK {
     }
 
     /**
+     * Get Account Info
+     */
+    async accountV1GetInfo(
+        request: components.AccountSearch,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetInfoResponse> {
+        return unwrapAsync(accountAccountV1GetInfo(this, request, options));
+    }
+
+    /**
      * Gets all session data
      */
     async accountV1SessionGet(
@@ -111,6 +133,15 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1SettingsGetResponse> {
         return unwrapAsync(accountAccountV1SettingsGet(this, options));
+    }
+
+    /**
+     * Get Staff Members and their info
+     */
+    async accountV1GetStaff(
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetStaffResponse> {
+        return unwrapAsync(accountAccountV1GetStaff(this, options));
     }
 
     /**
@@ -191,15 +222,5 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
         return unwrapAsync(accountAccountV1SettingsVerfyEmail(this, request, options));
-    }
-
-    /**
-     * Create a new session for non logged in users
-     */
-    async accountV1SessionCreate(
-        request: operations.AccountV1SessionCreateRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionCreateResponse> {
-        return unwrapAsync(accountAccountV1SessionCreate(this, request, options));
     }
 }

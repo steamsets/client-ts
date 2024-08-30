@@ -1,6 +1,6 @@
 # ErrorModel
 
-Bad Request
+Unprocessable Entity
 
 ## Example Usage
 

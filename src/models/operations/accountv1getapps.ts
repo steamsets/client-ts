@@ -8,6 +8,7 @@ import * as z from "zod";
 
 export type AccountV1GetAppsRequest = {
     xForwardedFor?: string | undefined;
+    userAgent?: string | undefined;
     accountSearch: components.AccountSearch;
 };
 
@@ -27,11 +28,13 @@ export const AccountV1GetAppsRequest$inboundSchema: z.ZodType<
 > = z
     .object({
         "X-Forwarded-For": z.string().optional(),
+        "User-Agent": z.string().optional(),
         AccountSearch: components.AccountSearch$inboundSchema,
     })
     .transform((v) => {
         return remap$(v, {
             "X-Forwarded-For": "xForwardedFor",
+            "User-Agent": "userAgent",
             AccountSearch: "accountSearch",
         });
     });
@@ -39,6 +42,7 @@ export const AccountV1GetAppsRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountV1GetAppsRequest$Outbound = {
     "X-Forwarded-For"?: string | undefined;
+    "User-Agent"?: string | undefined;
     AccountSearch: components.AccountSearch$Outbound;
 };
 
@@ -50,11 +54,13 @@ export const AccountV1GetAppsRequest$outboundSchema: z.ZodType<
 > = z
     .object({
         xForwardedFor: z.string().optional(),
+        userAgent: z.string().optional(),
         accountSearch: components.AccountSearch$outboundSchema,
     })
     .transform((v) => {
         return remap$(v, {
             xForwardedFor: "X-Forwarded-For",
+            userAgent: "User-Agent",
             accountSearch: "AccountSearch",
         });
     });

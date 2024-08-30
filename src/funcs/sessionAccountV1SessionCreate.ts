@@ -55,7 +55,7 @@ export async function sessionAccountV1SessionCreate(
     const payload$ = parsed$.value;
     const body$ = null;
 
-    const path$ = pathToFunc("/account.v1.AccountService/createSession")();
+    const path$ = pathToFunc("/account.v1.AccountService/CreateSession")();
 
     const headers$ = new Headers({
         Accept: "application/json",

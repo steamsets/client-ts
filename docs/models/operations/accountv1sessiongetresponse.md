@@ -18,12 +18,12 @@ let value: AccountV1SessionGetResponse = {
         resources: [
             {
                 resource: "<value>",
-                value: "<value>",
+                value: "1",
             },
         ],
         roles: [
             {
-                color: "#ff0000",
+                colorr: "#ff0000",
                 icon: "tier_1.svg",
                 name: "Tier 1",
                 role: "<value>",
