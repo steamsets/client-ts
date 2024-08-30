@@ -4,7 +4,9 @@
 
 import { publicAccountV1GetApps } from "../funcs/publicAccountV1GetApps.js";
 import { publicAccountV1GetBadges } from "../funcs/publicAccountV1GetBadges.js";
+import { publicAccountV1GetFriends } from "../funcs/publicAccountV1GetFriends.js";
 import { publicAccountV1GetInfo } from "../funcs/publicAccountV1GetInfo.js";
+import { publicAccountV1GetLeaderboardHistory } from "../funcs/publicAccountV1GetLeaderboardHistory.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -32,6 +34,16 @@ export class Public extends ClientSDK {
     }
 
     /**
+     * Get Account Friends
+     */
+    async accountV1GetFriends(
+        request: operations.AccountV1GetFriendsRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetFriendsResponse> {
+        return unwrapAsync(publicAccountV1GetFriends(this, request, options));
+    }
+
+    /**
      * Get Account Info
      */
     async accountV1GetInfo(
@@ -39,5 +51,15 @@ export class Public extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1GetInfoResponse> {
         return unwrapAsync(publicAccountV1GetInfo(this, request, options));
+    }
+
+    /**
+     * Get Account Leaderboard History
+     */
+    async accountV1GetLeaderboardHistory(
+        request: operations.AccountV1GetLeaderboardHistoryRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
+        return unwrapAsync(publicAccountV1GetLeaderboardHistory(this, request, options));
     }
 }

@@ -1,11 +1,11 @@
-# LeaderboardAccount
+# V1AccountFriend
 
 ## Example Usage
 
 ```typescript
-import { LeaderboardAccount } from "@steamsets/client-ts/models/components";
+import { V1AccountFriend } from "@steamsets/client-ts/models/components";
 
-let value: LeaderboardAccount = {
+let value: V1AccountFriend = {
     appCost: 123456,
     apps: 123456,
     avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
@@ -17,7 +17,7 @@ let value: LeaderboardAccount = {
         level: 123456,
     },
     badges: 123456,
-    bans: 758616,
+    bans: 368241,
     city: {
         code: "DE",
         id: 1,
@@ -33,7 +33,8 @@ let value: LeaderboardAccount = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 521848,
+    friendsSince: new Date("2024-07-01T13:13:56.446Z"),
+    gameBans: 957156,
     hidden: true,
     level: 123456,
     limitedApps: 123456,
@@ -63,10 +64,10 @@ let value: LeaderboardAccount = {
         name: "Germany",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 105907,
+    steamSetsScore: 778157,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 414662,
+    vacBans: 140350,
     xp: 123456,
 };
 ```
@@ -92,6 +93,7 @@ let value: LeaderboardAccount = {
 | `foilBadgeCost`                                                                               | *number*                                                                                      | :heavy_check_mark:                                                                            | The cost of a foil badge                                                                      | 123456                                                                                        |
 | `foilBadges`                                                                                  | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of foil badges the account has                                                     | 123456                                                                                        |
 | `friends`                                                                                     | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of friends the account has                                                         | 123456                                                                                        |
+| `friendsSince`                                                                                | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `gameBans`                                                                                    | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of game bans                                                                       |                                                                                               |
 | `hidden`                                                                                      | *boolean*                                                                                     | :heavy_check_mark:                                                                            | Whether the account is hidden in the leaderboards                                             | true                                                                                          |
 | `level`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | The level of the account                                                                      | 123456                                                                                        |

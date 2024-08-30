@@ -4,7 +4,9 @@
 
 import { dataAccountV1GetApps } from "../funcs/dataAccountV1GetApps.js";
 import { dataAccountV1GetBadges } from "../funcs/dataAccountV1GetBadges.js";
+import { dataAccountV1GetFriends } from "../funcs/dataAccountV1GetFriends.js";
 import { dataAccountV1GetInfo } from "../funcs/dataAccountV1GetInfo.js";
+import { dataAccountV1GetLeaderboardHistory } from "../funcs/dataAccountV1GetLeaderboardHistory.js";
 import { dataAccountV1GetStaff } from "../funcs/dataAccountV1GetStaff.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -33,6 +35,16 @@ export class Data extends ClientSDK {
     }
 
     /**
+     * Get Account Friends
+     */
+    async accountV1GetFriends(
+        request: operations.AccountV1GetFriendsRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetFriendsResponse> {
+        return unwrapAsync(dataAccountV1GetFriends(this, request, options));
+    }
+
+    /**
      * Get Account Info
      */
     async accountV1GetInfo(
@@ -40,6 +52,16 @@ export class Data extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1GetInfoResponse> {
         return unwrapAsync(dataAccountV1GetInfo(this, request, options));
+    }
+
+    /**
+     * Get Account Leaderboard History
+     */
+    async accountV1GetLeaderboardHistory(
+        request: operations.AccountV1GetLeaderboardHistoryRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
+        return unwrapAsync(dataAccountV1GetLeaderboardHistory(this, request, options));
     }
 
     /**

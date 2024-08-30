@@ -8,7 +8,9 @@ import { accountAccountV1ConnectionUpdateConnection } from "../funcs/accountAcco
 import { accountAccountV1ConnectionVerifyConnection } from "../funcs/accountAccountV1ConnectionVerifyConnection.js";
 import { accountAccountV1GetApps } from "../funcs/accountAccountV1GetApps.js";
 import { accountAccountV1GetBadges } from "../funcs/accountAccountV1GetBadges.js";
+import { accountAccountV1GetFriends } from "../funcs/accountAccountV1GetFriends.js";
 import { accountAccountV1GetInfo } from "../funcs/accountAccountV1GetInfo.js";
+import { accountAccountV1GetLeaderboardHistory } from "../funcs/accountAccountV1GetLeaderboardHistory.js";
 import { accountAccountV1GetStaff } from "../funcs/accountAccountV1GetStaff.js";
 import { accountAccountV1SessionCreate } from "../funcs/accountAccountV1SessionCreate.js";
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
@@ -108,6 +110,16 @@ export class Account extends ClientSDK {
     }
 
     /**
+     * Get Account Friends
+     */
+    async accountV1GetFriends(
+        request: operations.AccountV1GetFriendsRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetFriendsResponse> {
+        return unwrapAsync(accountAccountV1GetFriends(this, request, options));
+    }
+
+    /**
      * Get Account Info
      */
     async accountV1GetInfo(
@@ -115,6 +127,16 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1GetInfoResponse> {
         return unwrapAsync(accountAccountV1GetInfo(this, request, options));
+    }
+
+    /**
+     * Get Account Leaderboard History
+     */
+    async accountV1GetLeaderboardHistory(
+        request: operations.AccountV1GetLeaderboardHistoryRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
+        return unwrapAsync(accountAccountV1GetLeaderboardHistory(this, request, options));
     }
 
     /**

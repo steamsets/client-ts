@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 594033bbf37fe2a3e1908a73c22bf281
+  docChecksum: 4530f282720e4c5e6a51e5b11653bfec
   docVersion: 1.0.0
   speakeasyVersion: 1.383.2
   generationVersion: 2.407.0
-  releaseVersion: 0.5.1
-  configChecksum: 4179eeabb2a49522aae5c4f4b059a796
+  releaseVersion: 0.5.2
+  configChecksum: 9bffd740f1eabd3400ecc5ac9f74de59
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -51,7 +51,9 @@ generatedFiles:
   - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
   - src/funcs/accountAccountV1GetApps.ts
   - src/funcs/accountAccountV1GetBadges.ts
+  - src/funcs/accountAccountV1GetFriends.ts
   - src/funcs/accountAccountV1GetInfo.ts
+  - src/funcs/accountAccountV1GetLeaderboardHistory.ts
   - src/funcs/accountAccountV1SessionGet.ts
   - src/funcs/accountAccountV1SettingsGet.ts
   - src/funcs/accountAccountV1GetStaff.ts
@@ -81,11 +83,15 @@ generatedFiles:
   - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
   - src/funcs/dataAccountV1GetApps.ts
   - src/funcs/dataAccountV1GetBadges.ts
+  - src/funcs/dataAccountV1GetFriends.ts
   - src/funcs/dataAccountV1GetInfo.ts
+  - src/funcs/dataAccountV1GetLeaderboardHistory.ts
   - src/funcs/dataAccountV1GetStaff.ts
   - src/funcs/publicAccountV1GetApps.ts
   - src/funcs/publicAccountV1GetBadges.ts
+  - src/funcs/publicAccountV1GetFriends.ts
   - src/funcs/publicAccountV1GetInfo.ts
+  - src/funcs/publicAccountV1GetLeaderboardHistory.ts
   - src/funcs/livenessLiveness.ts
   - src/funcs/locationLocation.ts
   - src/sdk/account.ts
@@ -139,7 +145,9 @@ generatedFiles:
   - src/models/operations/accountv1settingsgenerateapikey.ts
   - src/models/operations/accountv1getapps.ts
   - src/models/operations/accountv1getbadges.ts
+  - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
+  - src/models/operations/accountv1getleaderboardhistory.ts
   - src/models/operations/accountv1sessionget.ts
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1getstaff.ts
@@ -167,25 +175,29 @@ generatedFiles:
   - src/models/components/v1deletesessionrequestbody.ts
   - src/models/components/v1generateapikeyresponsebody.ts
   - src/models/components/v1accountsappsresponsebody.ts
-  - src/models/components/v1app.ts
+  - src/models/components/v1accountapp.ts
   - src/models/components/accountsearch.ts
   - src/models/components/accountsearchvanitystruct.ts
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badge.ts
-  - src/models/components/accountinfobody.ts
+  - src/models/components/v1accountfriendsresponsebody.ts
+  - src/models/components/v1accountfriend.ts
   - src/models/components/location.ts
   - src/models/components/role.ts
+  - src/models/components/leaderboardbadgeinfo.ts
+  - src/models/components/accountinfobody.ts
   - src/models/components/image.ts
   - src/models/components/bestleaderboardrank.ts
   - src/models/components/connection.ts
+  - src/models/components/v1accountleaderboardhistoryresponsebody.ts
+  - src/models/components/accountleaderboardhistory.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/session.ts
   - src/models/components/resource.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/emailnotification.ts
   - src/models/components/leaderboardaccount.ts
-  - src/models/components/leaderboardbadgeinfo.ts
   - src/models/components/v1loginresponsebody.ts
   - src/models/components/loginrequestbody.ts
   - src/models/components/v1updateconnectionresponsebody.ts
@@ -221,7 +233,11 @@ generatedFiles:
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getbadgesrequest.md
   - docs/models/operations/accountv1getbadgesresponse.md
+  - docs/models/operations/accountv1getfriendsrequest.md
+  - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
+  - docs/models/operations/accountv1getleaderboardhistoryrequest.md
+  - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1sessiongetresponse.md
   - docs/models/operations/accountv1settingsgetresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
@@ -253,24 +269,30 @@ generatedFiles:
   - docs/models/components/v1deletesessionrequestbody.md
   - docs/models/components/v1generateapikeyresponsebody.md
   - docs/models/components/v1accountsappsresponsebody.md
-  - docs/models/components/v1app.md
+  - docs/models/components/v1accountapp.md
   - docs/models/components/accountsearch.md
   - docs/models/components/type.md
   - docs/models/components/accountsearchvanitystruct.md
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badge.md
+  - docs/models/components/v1accountfriendsresponsebody.md
+  - docs/models/components/v1accountfriend.md
+  - docs/models/components/location.md
+  - docs/models/components/role.md
+  - docs/models/components/leaderboardbadgeinfo.md
   - docs/models/components/appprivacy.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/privacy.md
   - docs/models/components/accountinfobody.md
-  - docs/models/components/location.md
-  - docs/models/components/role.md
   - docs/models/components/image.md
   - docs/models/components/leaderboard.md
   - docs/models/components/bestleaderboardrank.md
   - docs/models/components/connectionprovider.md
   - docs/models/components/connection.md
+  - docs/models/components/v1accountleaderboardhistoryresponsebody.md
+  - docs/models/components/accountleaderboardhistoryleaderboard.md
+  - docs/models/components/accountleaderboardhistory.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/session.md
   - docs/models/components/resource.md
@@ -279,7 +301,6 @@ generatedFiles:
   - docs/models/components/emailnotificationtype.md
   - docs/models/components/emailnotification.md
   - docs/models/components/leaderboardaccount.md
-  - docs/models/components/leaderboardbadgeinfo.md
   - docs/models/components/v1loginresponsebody.md
   - docs/models/components/loginrequestbody.md
   - docs/models/components/v1updateconnectionresponsebody.md

@@ -21,7 +21,7 @@ let value: AccountInfoBody = {
     background: "steamsets",
     badges: 123456,
     badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-    bans: 337396,
+    bans: 870013,
     city: {
         code: "DE",
         id: 1,
@@ -46,13 +46,13 @@ let value: AccountInfoBody = {
     createdAt: new Date("2023-01-01T00:00:00Z"),
     currentBestRanks: [
         {
-            leaderboard: "limited_apps",
+            leaderboard: "points_received",
             ranks: "1,1,1,1,1",
         },
     ],
     currentRanks: [
         {
-            leaderboard: "badges",
+            leaderboard: "xp",
             ranks: "1,1,1,1,1",
         },
     ],
@@ -62,7 +62,7 @@ let value: AccountInfoBody = {
     friendPrivacy: "public",
     friends: 123456,
     friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-    gameBans: 20218,
+    gameBans: 473608,
     hidden: true,
     images: [
         {
@@ -103,12 +103,12 @@ let value: AccountInfoBody = {
         name: "Germany",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 368241,
+    steamSetsScore: 799159,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     theme: "steamsets",
     updatedAt: new Date("2023-01-01T00:00:00Z"),
-    vacBans: 832620,
+    vacBans: 800911,
     xp: 123456,
 };
 ```
