@@ -3,7 +3,12 @@
  */
 
 import { remap as remap$ } from "../../lib/primitives.js";
-import { V1App, V1App$inboundSchema, V1App$Outbound, V1App$outboundSchema } from "./v1app.js";
+import {
+    V1AccountApp,
+    V1AccountApp$inboundSchema,
+    V1AccountApp$Outbound,
+    V1AccountApp$outboundSchema,
+} from "./v1accountapp.js";
 import * as z from "zod";
 
 export type V1AccountsAppsResponseBody = {
@@ -11,7 +16,7 @@ export type V1AccountsAppsResponseBody = {
      * A URL to the JSON Schema for this object.
      */
     dollarSchema?: string | undefined;
-    apps: Array<V1App> | null;
+    apps: Array<V1AccountApp> | null;
 };
 
 /** @internal */
@@ -22,7 +27,7 @@ export const V1AccountsAppsResponseBody$inboundSchema: z.ZodType<
 > = z
     .object({
         $schema: z.string().optional(),
-        apps: z.nullable(z.array(V1App$inboundSchema)),
+        apps: z.nullable(z.array(V1AccountApp$inboundSchema)),
     })
     .transform((v) => {
         return remap$(v, {
@@ -33,7 +38,7 @@ export const V1AccountsAppsResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountsAppsResponseBody$Outbound = {
     $schema?: string | undefined;
-    apps: Array<V1App$Outbound> | null;
+    apps: Array<V1AccountApp$Outbound> | null;
 };
 
 /** @internal */
@@ -44,7 +49,7 @@ export const V1AccountsAppsResponseBody$outboundSchema: z.ZodType<
 > = z
     .object({
         dollarSchema: z.string().optional(),
-        apps: z.nullable(z.array(V1App$outboundSchema)),
+        apps: z.nullable(z.array(V1AccountApp$outboundSchema)),
     })
     .transform((v) => {
         return remap$(v, {

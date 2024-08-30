@@ -9,7 +9,9 @@ This is actual data seen by others then yourself
 
 * [accountV1GetApps](#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](#accountv1getbadges) - Get Account Badges
+* [accountV1GetFriends](#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](#accountv1getinfo) - Get Account Info
+* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory) - Get Account Leaderboard History
 * [accountV1GetStaff](#accountv1getstaff) - Get Staff Members and their info
 
 ## accountV1GetApps
@@ -168,6 +170,84 @@ run();
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
+## accountV1GetFriends
+
+Get Account Friends
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.data.accountV1GetFriends({
+    accountSearch: {},
+  });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { dataAccountV1GetFriends } from "@steamsets/client-ts/funcs/dataAccountV1GetFriends.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dataAccountV1GetFriends(steamSets, {
+    accountSearch: {},
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountV1GetFriendsRequest](../../models/operations/accountv1getfriendsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1GetFriendsResponse](../../models/operations/accountv1getfriendsresponse.md)\>**
+
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+
 ## accountV1GetInfo
 
 Get Account Info
@@ -239,6 +319,84 @@ run();
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404,422,429,500          | application/problem+json |
+| errors.SDKError          | 4xx-5xx                  | */*                      |
+
+
+## accountV1GetLeaderboardHistory
+
+Get Account Leaderboard History
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.data.accountV1GetLeaderboardHistory({
+    accountSearch: {},
+  });
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { dataAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs/dataAccountV1GetLeaderboardHistory.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await dataAccountV1GetLeaderboardHistory(steamSets, {
+    accountSearch: {},
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result)
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountV1GetLeaderboardHistoryRequest](../../models/operations/accountv1getleaderboardhistoryrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1GetLeaderboardHistoryResponse](../../models/operations/accountv1getleaderboardhistoryresponse.md)\>**
+
+### Errors
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400,422,500              | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 

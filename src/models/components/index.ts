@@ -3,6 +3,7 @@
  */
 
 export * from "./accountinfobody.js";
+export * from "./accountleaderboardhistory.js";
 export * from "./accountsearch.js";
 export * from "./accountsearchidstruct.js";
 export * from "./accountsearchvanitystruct.js";
@@ -25,8 +26,11 @@ export * from "./role.js";
 export * from "./security.js";
 export * from "./session.js";
 export * from "./state.js";
+export * from "./v1accountapp.js";
+export * from "./v1accountfriend.js";
+export * from "./v1accountfriendsresponsebody.js";
+export * from "./v1accountleaderboardhistoryresponsebody.js";
 export * from "./v1accountsappsresponsebody.js";
-export * from "./v1app.js";
 export * from "./v1badge.js";
 export * from "./v1badgesresponsebody.js";
 export * from "./v1connectrequestbody.js";
