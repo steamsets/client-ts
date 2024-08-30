@@ -2401,7 +2401,7 @@ paths:
         - public
   /account.v1.AccountService/GetLeaderboardHistory:
     post:
-      operationId: account.v1.getFriends
+      operationId: account.v1.getLeaderboardHistory
       parameters:
         - in: header
           name: X-Forwarded-For
