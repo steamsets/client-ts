@@ -304,6 +304,42 @@ components:
         - connections
         - images
       type: object
+    AccountLeaderboardHistory:
+      additionalProperties: false
+      properties:
+        date:
+          format: date-time
+          type: string
+        leaderboard:
+          enum:
+            - apps
+            - limited_apps
+            - awards_given
+            - awards_received
+            - bans
+            - game_bans
+            - vac_bans
+            - foil_badges
+            - normal_badges
+            - badges
+            - playtime
+            - points_given
+            - points_received
+            - steam_sets
+            - xp
+          type: string
+        rank:
+          format: int32
+          type: integer
+        score:
+          format: int32
+          type: integer
+      required:
+        - date
+        - rank
+        - score
+        - leaderboard
+      type: object
     AccountSearch:
       additionalProperties: false
       properties:
@@ -987,24 +1023,7 @@ components:
         - code
         - cities
       type: object
-    V1AccountsAppsResponseBody:
-      additionalProperties: false
-      properties:
-        $schema:
-          description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1AccountsAppsResponseBody.json
-          format: uri
-          readOnly: true
-          type: string
-        apps:
-          items:
-            $ref: "#/components/schemas/V1App"
-          nullable: true
-          type: array
-      required:
-        - apps
-      type: object
-    V1App:
+    V1AccountApp:
       additionalProperties: false
       properties:
         id:
@@ -1043,6 +1062,263 @@ components:
         - playtime
         - price
         - shortName
+      type: object
+    V1AccountFriend:
+      additionalProperties: false
+      properties:
+        appCost:
+          description: The cost of an app
+          example: 123456
+          format: int32
+          type: integer
+        appPlaytime:
+          description: The playtime of the account, incase of an app leaderboard
+          format: int32
+          minimum: 0
+          nullable: true
+          type: integer
+        apps:
+          description: The number of apps the account has
+          example: 123456
+          format: int32
+          type: integer
+        avatar:
+          description: The avatar hash of the account
+          example: f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
+          type: string
+        averagePlaytime:
+          description: The average playtime of the account
+          example: 123456
+          format: int32
+          type: integer
+        awardsGiven:
+          description: The number of awards the account has
+          example: 123456
+          format: int32
+          type: integer
+        awardsReceived:
+          description: The number of awards the account has
+          example: 123456
+          format: int32
+          type: integer
+        badgeInfo:
+          $ref: "#/components/schemas/LeaderboardBadgeInfo"
+          description: The badge info of the account, incase of a badge leaderboard
+        badges:
+          description: The number of badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        bans:
+          description: The number of bans
+          format: int32
+          type: integer
+        city:
+          $ref: "#/components/schemas/Location"
+          description: The city of the account
+        country:
+          $ref: "#/components/schemas/Location"
+          description: The country of the account
+        createdAt:
+          description: The time the account was created
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        economyBan:
+          description: The economy ban of the account
+          example: steam
+          type: string
+        foilBadgeCost:
+          description: The cost of a foil badge
+          example: 123456
+          format: int32
+          type: integer
+        foilBadges:
+          description: The number of foil badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        friends:
+          description: The number of friends the account has
+          example: 123456
+          format: int32
+          type: integer
+        friendsSince:
+          format: date-time
+          nullable: true
+          type: string
+        gameBans:
+          description: The number of game bans
+          format: int32
+          type: integer
+        hidden:
+          description: Whether the account is hidden in the leaderboards
+          example: true
+          type: boolean
+        level:
+          description: The level of the account
+          example: 123456
+          format: int32
+          type: integer
+        limitedApps:
+          description: The number of limited apps the account has
+          example: 123456
+          format: int32
+          type: integer
+        name:
+          description: The name of the account
+          example: steamsets
+          type: string
+        normalBadgeCost:
+          description: The cost of a normal badge
+          example: 123456
+          format: int32
+          type: integer
+        normalBadges:
+          description: The number of normal badges the account has
+          example: 123456
+          format: int32
+          type: integer
+        playtime:
+          description: The playtime of the account
+          example: 123456
+          format: int32
+          type: integer
+        pointsGiven:
+          description: The number of points the account has
+          example: 123456
+          format: int32
+          type: integer
+        pointsReceived:
+          description: The number of points the account has
+          example: 123456
+          format: int32
+          type: integer
+        privacy:
+          description: The privacy of the account
+          example: public
+          type: string
+        region:
+          $ref: "#/components/schemas/Location"
+          description: The region of the account
+        roles:
+          description: The roles of the account
+          items:
+            $ref: "#/components/schemas/Role"
+          nullable: true
+          type: array
+        state:
+          $ref: "#/components/schemas/Location"
+          description: The state of the account
+        steamId:
+          description: The steam id
+          example: "76561198842603734"
+          type: string
+        steamSetsScore:
+          description: The steam sets score
+          format: int32
+          type: integer
+        steamSetsVanity:
+          description: The vanity of the account
+          example: steamsets
+          type: string
+        steamVanity:
+          description: The vanity of the account
+          example: steamsets
+          type: string
+        vacBans:
+          description: The number of vac bans
+          format: int32
+          type: integer
+        xp:
+          description: The number of xp the account has
+          example: 123456
+          format: int32
+          type: integer
+      required:
+        - friendsSince
+        - steamId
+        - name
+        - avatar
+        - privacy
+        - createdAt
+        - steamVanity
+        - steamSetsVanity
+        - hidden
+        - apps
+        - limitedApps
+        - playtime
+        - averagePlaytime
+        - friends
+        - badges
+        - normalBadges
+        - foilBadges
+        - awardsGiven
+        - awardsReceived
+        - pointsGiven
+        - pointsReceived
+        - xp
+        - level
+        - steamSetsScore
+        - vacBans
+        - gameBans
+        - bans
+        - economyBan
+        - foilBadgeCost
+        - normalBadgeCost
+        - appCost
+        - roles
+      type: object
+    V1AccountFriendsResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1AccountFriendsResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        friends:
+          items:
+            $ref: "#/components/schemas/V1AccountFriend"
+          nullable: true
+          type: array
+      required:
+        - friends
+      type: object
+    V1AccountLeaderboardHistoryResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1AccountLeaderboardHistoryResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        histories:
+          items:
+            $ref: "#/components/schemas/AccountLeaderboardHistory"
+          nullable: true
+          type: array
+      required:
+        - histories
+      type: object
+    V1AccountsAppsResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: http://localhost:8080/schemas/V1AccountsAppsResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        apps:
+          items:
+            $ref: "#/components/schemas/V1AccountApp"
+          nullable: true
+          type: array
+      required:
+        - apps
       type: object
     V1Badge:
       additionalProperties: false
@@ -2026,6 +2302,56 @@ paths:
         - account
         - data
         - public
+  /account.v1.AccountService/GetFriends:
+    post:
+      operationId: account.v1.getFriends
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccountSearch"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1AccountFriendsResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Get Account Friends
+      tags:
+        - account
+        - data
+        - public
   /account.v1.AccountService/GetInfo:
     post:
       operationId: account.v1.getInfo
@@ -2069,6 +2395,56 @@ paths:
       security:
         - session: []
       summary: Get Account Info
+      tags:
+        - account
+        - data
+        - public
+  /account.v1.AccountService/GetLeaderboardHistory:
+    post:
+      operationId: account.v1.getFriends
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccountSearch"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1AccountLeaderboardHistoryResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Get Account Leaderboard History
       tags:
         - account
         - data
