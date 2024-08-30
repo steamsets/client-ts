@@ -13,6 +13,16 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Session extends ClientSDK {
     /**
+     * Create a new session for non logged in users
+     */
+    async accountV1SessionCreate(
+        request: operations.AccountV1SessionCreateRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1SessionCreateResponse> {
+        return unwrapAsync(sessionAccountV1SessionCreate(this, request, options));
+    }
+
+    /**
      * Deletes a session, can also be used to logout
      */
     async accountV1SessionDelete(
@@ -39,15 +49,5 @@ export class Session extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1SessionLoginResponse> {
         return unwrapAsync(sessionAccountV1SessionLogin(this, request, options));
-    }
-
-    /**
-     * Create a new session for non logged in users
-     */
-    async accountV1SessionCreate(
-        request: operations.AccountV1SessionCreateRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionCreateResponse> {
-        return unwrapAsync(sessionAccountV1SessionCreate(this, request, options));
     }
 }

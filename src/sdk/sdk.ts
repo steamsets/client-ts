@@ -5,7 +5,10 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Connection } from "./connection.js";
+import { Data } from "./data.js";
 import { Liveness } from "./liveness.js";
+import { Location } from "./location.js";
+import { Public } from "./public.js";
 import { Session } from "./session.js";
 import { Settings } from "./settings.js";
 
@@ -20,18 +23,33 @@ export class SteamSets extends ClientSDK {
         return (this._connection ??= new Connection(this.options$));
     }
 
-    private _settings?: Settings;
-    get settings(): Settings {
-        return (this._settings ??= new Settings(this.options$));
-    }
-
     private _session?: Session;
     get session(): Session {
         return (this._session ??= new Session(this.options$));
     }
 
+    private _settings?: Settings;
+    get settings(): Settings {
+        return (this._settings ??= new Settings(this.options$));
+    }
+
+    private _data?: Data;
+    get data(): Data {
+        return (this._data ??= new Data(this.options$));
+    }
+
+    private _public?: Public;
+    get public(): Public {
+        return (this._public ??= new Public(this.options$));
+    }
+
     private _liveness?: Liveness;
     get liveness(): Liveness {
         return (this._liveness ??= new Liveness(this.options$));
+    }
+
+    private _location?: Location;
+    get location(): Location {
+        return (this._location ??= new Location(this.options$));
     }
 }

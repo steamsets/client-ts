@@ -19,6 +19,8 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
+The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
+
 ### NPM
 
 ```bash
@@ -80,14 +82,17 @@ run();
 ### [account](docs/sdks/account/README.md)
 
 * [accountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect) - Connect a new Social Provider
+* [accountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate) - Create a new session for non logged in users
 * [accountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection) - Remove a connection
 * [accountV1SettingsDeleteImages](docs/sdks/account/README.md#accountv1settingsdeleteimages) - Delete mulitple imagest
 * [accountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
 * [accountV1SettingsGenerateApiKey](docs/sdks/account/README.md#accountv1settingsgenerateapikey) - Generate a new API key for the account
 * [accountV1GetApps](docs/sdks/account/README.md#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
 * [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
+* [accountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff) - Get Staff Members and their info
 * [accountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
 * [accountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
@@ -96,7 +101,6 @@ run();
 * [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
-* [accountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate) - Create a new session for non logged in users
 
 ### [connection](docs/sdks/connection/README.md)
 
@@ -104,6 +108,13 @@ run();
 * [accountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection) - Remove a connection
 * [accountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
 * [accountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+
+### [session](docs/sdks/session/README.md)
+
+* [accountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate) - Create a new session for non logged in users
+* [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+* [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
+* [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
 
 ### [settings](docs/sdks/settings/README.md)
 
@@ -116,16 +127,26 @@ run();
 * [accountV1SettingsUploadImages](docs/sdks/settings/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
-### [session](docs/sdks/session/README.md)
+### [data](docs/sdks/data/README.md)
 
-* [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
-* [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
-* [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
-* [accountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate) - Create a new session for non logged in users
+* [accountV1GetApps](docs/sdks/data/README.md#accountv1getapps) - Get Account Apps
+* [accountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
+* [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
+
+### [public](docs/sdks/public/README.md)
+
+* [accountV1GetApps](docs/sdks/public/README.md#accountv1getapps) - Get Account Apps
+* [accountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo) - Get Account Info
 
 ### [liveness](docs/sdks/liveness/README.md)
 
 * [liveness](docs/sdks/liveness/README.md#liveness) - Liveness check
+
+### [location](docs/sdks/location/README.md)
+
+* [location](docs/sdks/location/README.md#location) - Location List
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -217,7 +238,7 @@ Validation errors can also occur when either method arguments or data returned f
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { SDKValidationError } from "@steamsets/client-ts/models/errors";
+import { ErrorModel, SDKValidationError } from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
     session: "<YOUR_BEARER_TOKEN_HERE>",
@@ -239,8 +260,9 @@ async function run() {
                 console.error(err.rawValue);
                 return;
             }
-            case err instanceof errors.ErrorModel: {
-                console.error(err); // handle exception
+            case err instanceof ErrorModel: {
+                // Handle err.data$: ErrorModelData
+                console.error(err);
                 return;
             }
             default: {
@@ -436,6 +458,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
 - [accountAccountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
 - [accountAccountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
+- [accountAccountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo)
+- [accountAccountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff)
 - [accountAccountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate)
 - [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
 - [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
@@ -452,7 +476,15 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
 - [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
 - [connectionAccountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
+- [dataAccountV1GetApps](docs/sdks/data/README.md#accountv1getapps)
+- [dataAccountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges)
+- [dataAccountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo)
+- [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
+- [locationLocation](docs/sdks/location/README.md#location)
+- [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)
+- [publicAccountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges)
+- [publicAccountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
 - [sessionAccountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
 - [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
 - [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
@@ -486,6 +518,28 @@ import { SteamSets } from "@steamsets/client-ts";
 const sdk = new SteamSets({ debugLogger: console });
 ```
 <!-- End Debugging [debug] -->
+
+<!-- Start Summary [summary] -->
+## Summary
+
+
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [Requirements](#requirements)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Standalone functions](#standalone-functions)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
