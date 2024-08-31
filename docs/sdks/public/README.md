@@ -87,7 +87,7 @@ run();
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
@@ -165,7 +165,7 @@ run();
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
@@ -243,7 +243,7 @@ run();
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
@@ -395,5 +395,5 @@ run();
 
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
+| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
 | errors.SDKError          | 4xx-5xx                  | */*                      |

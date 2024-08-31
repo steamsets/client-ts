@@ -99,7 +99,7 @@ export async function accountAccountV1GetBadges(
 
     const doResult = await client$.do$(request$, {
         context,
-        errorCodes: ["400", "422", "4XX", "500", "5XX"],
+        errorCodes: ["400", "404", "422", "4XX", "500", "5XX"],
         retryConfig: options?.retries || client$.options$.retryConfig,
         retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
     });
@@ -126,7 +126,7 @@ export async function accountAccountV1GetBadges(
         m$.json(200, operations.AccountV1GetBadgesResponse$inboundSchema, {
             key: "V1BadgesResponseBody",
         }),
-        m$.jsonErr([400, 422, 500], errors.ErrorModel$inboundSchema, {
+        m$.jsonErr([400, 404, 422, 500], errors.ErrorModel$inboundSchema, {
             ctype: "application/problem+json",
         }),
         m$.fail(["4XX", "5XX"])
