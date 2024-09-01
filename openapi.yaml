@@ -5,7 +5,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/AccountInfoBody.json
+          example: https://api.steamsets.com/schemas/AccountInfoBody.json
           format: uri
           readOnly: true
           type: string
@@ -345,7 +345,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/AccountSearch.json
+          example: https://api.steamsets.com/schemas/AccountSearch.json
           format: uri
           readOnly: true
           type: string
@@ -529,7 +529,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/ErrorModel.json
+          example: https://api.steamsets.com/schemas/ErrorModel.json
           format: uri
           readOnly: true
           type: string
@@ -571,48 +571,23 @@ components:
           description: Whether the image is active or not
           example: true
           type: boolean
-        fileId:
-          description: The id of the file
-          example: "123456"
-          type: string
         fileName:
           description: The name of the file
           example: avatar.png
           type: string
         imageId:
           description: The id of the image
-          example: "123456"
+          example: img_wasd123
           type: string
         imageType:
           description: The type of the image
           example: avatar
           type: string
-        mimeType:
-          description: The mime type of the file
-          example: image/png
-          type: string
       required:
         - fileName
         - imageId
-        - fileId
-        - mimeType
         - imageType
         - active
-      type: object
-    Item:
-      additionalProperties: false
-      properties:
-        fileId:
-          description: The file id to delete
-          example: "123456"
-          type: string
-        imageId:
-          description: The image id to delete
-          example: "123456"
-          type: string
-      required:
-        - imageId
-        - fileId
       type: object
     LeaderboardAccount:
       additionalProperties: false
@@ -858,7 +833,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/LoginRequestBody.json
+          example: https://api.steamsets.com/schemas/LoginRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1274,7 +1249,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1AccountFriendsResponseBody.json
+          example: https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1291,7 +1266,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1AccountLeaderboardHistoryResponseBody.json
+          example: https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1308,7 +1283,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1AccountsAppsResponseBody.json
+          example: https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1383,7 +1358,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1BadgesResponseBody.json
+          example: https://api.steamsets.com/schemas/V1BadgesResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1400,7 +1375,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1ConnectRequestBody.json
+          example: https://api.steamsets.com/schemas/V1ConnectRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1430,7 +1405,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1ConnectResponseBody.json
+          example: https://api.steamsets.com/schemas/V1ConnectResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1444,7 +1419,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1CreateSessionBody.json
+          example: https://api.steamsets.com/schemas/V1CreateSessionBody.json
           format: uri
           readOnly: true
           type: string
@@ -1460,7 +1435,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteConnectionRequestBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1476,7 +1451,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteConnectionResponseBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1486,25 +1461,25 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteImagesRequestBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteImagesRequestBody.json
           format: uri
           readOnly: true
           type: string
-        images:
-          description: The images to delete
+        imageIds:
+          description: The images ids to delete
           items:
-            $ref: "#/components/schemas/Item"
+            type: string
           nullable: true
           type: array
       required:
-        - images
+        - imageIds
       type: object
     V1DeleteImagesResponseBody:
       additionalProperties: false
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteImagesResponseBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1514,7 +1489,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteSessionRequestBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteSessionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1530,7 +1505,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1DeleteSessionResponseBody.json
+          example: https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1540,7 +1515,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1GenerateApiKeyResponseBody.json
+          example: https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1556,7 +1531,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1GetSessionBody.json
+          example: https://api.steamsets.com/schemas/V1GetSessionBody.json
           format: uri
           readOnly: true
           type: string
@@ -1597,7 +1572,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1GetSettingsBody.json
+          example: https://api.steamsets.com/schemas/V1GetSettingsBody.json
           format: uri
           readOnly: true
           type: string
@@ -1685,7 +1660,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1LivenessResponseBody.json
+          example: https://api.steamsets.com/schemas/V1LivenessResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1701,7 +1676,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1LoginResponseBody.json
+          example: https://api.steamsets.com/schemas/V1LoginResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1732,7 +1707,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateConnectionRequestBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1753,7 +1728,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateConnectionResponseBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1763,7 +1738,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateImageRequestBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateImageRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1784,7 +1759,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateImageResponseBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1800,7 +1775,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateSettingsRequestBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateSettingsRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1856,7 +1831,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UpdateSettingsResponseBody.json
+          example: https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1866,7 +1841,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1UploadImagesRequestBody.json
+          example: https://api.steamsets.com/schemas/V1UploadImagesRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1905,7 +1880,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1VerifyConnectionRequestBody.json
+          example: https://api.steamsets.com/schemas/V1VerifyConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1921,7 +1896,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1VerifyConnectionResponseBody.json
+          example: https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1931,7 +1906,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1VerifyEmailRequestBody.json
+          example: https://api.steamsets.com/schemas/V1VerifyEmailRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1947,7 +1922,7 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: http://localhost:8080/schemas/V1VerifyEmailResponseBody.json
+          example: https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -2947,8 +2922,8 @@ paths:
       tags:
         - location
 servers:
-  - url: http://localhost:8080
   - url: https://api.steamsets.com
+  - url: http://localhost:8080
 tags:
   - description: Account related operations
     name: account
