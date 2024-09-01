@@ -9,10 +9,10 @@ let value: V1AccountLeaderboardHistoryResponseBody = {
     dollarSchema: "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
     histories: [
         {
-            date: new Date("2024-05-05T11:02:21.971Z"),
+            date: new Date("2022-05-10T15:05:25.593Z"),
             leaderboard: "playtime",
-            rank: 118274,
-            score: 720633,
+            rank: 639921,
+            score: 582020,
         },
     ],
 };

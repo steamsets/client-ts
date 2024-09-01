@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4231c580ea6c10c6073103c5ae46bdf1
+  docChecksum: 9a18230f1a5facbb768a0229dfa583d3
   docVersion: 1.0.0
   speakeasyVersion: 1.385.0
   generationVersion: 2.407.2
-  releaseVersion: 0.5.4
-  configChecksum: dfa5a26c0864e8cff7f18fe739fe3c11
+  releaseVersion: 0.5.5
+  configChecksum: bd0c9470a420ac9cfdbf757b0eaa06ee
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -51,6 +51,7 @@ generatedFiles:
   - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
   - src/funcs/accountAccountV1GetApps.ts
   - src/funcs/accountAccountV1GetBadges.ts
+  - src/funcs/accountAccountV1GetDataPoints.ts
   - src/funcs/accountAccountV1GetFriends.ts
   - src/funcs/accountAccountV1GetInfo.ts
   - src/funcs/accountAccountV1GetLeaderboardHistory.ts
@@ -83,12 +84,14 @@ generatedFiles:
   - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
   - src/funcs/dataAccountV1GetApps.ts
   - src/funcs/dataAccountV1GetBadges.ts
+  - src/funcs/dataAccountV1GetDataPoints.ts
   - src/funcs/dataAccountV1GetFriends.ts
   - src/funcs/dataAccountV1GetInfo.ts
   - src/funcs/dataAccountV1GetLeaderboardHistory.ts
   - src/funcs/dataAccountV1GetStaff.ts
   - src/funcs/publicAccountV1GetApps.ts
   - src/funcs/publicAccountV1GetBadges.ts
+  - src/funcs/publicAccountV1GetDataPoints.ts
   - src/funcs/publicAccountV1GetFriends.ts
   - src/funcs/publicAccountV1GetInfo.ts
   - src/funcs/publicAccountV1GetLeaderboardHistory.ts
@@ -145,6 +148,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsgenerateapikey.ts
   - src/models/operations/accountv1getapps.ts
   - src/models/operations/accountv1getbadges.ts
+  - src/models/operations/accountv1getdatapoints.ts
   - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
@@ -180,6 +184,10 @@ generatedFiles:
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badge.ts
+  - src/models/components/v1accountdatapointsresponsebody.ts
+  - src/models/components/accountbadgescarcitydatapoint.ts
+  - src/models/components/accountplaytimedatapoint.ts
+  - src/models/components/accountbadgemostxpdatapoint.ts
   - src/models/components/v1accountfriendsresponsebody.ts
   - src/models/components/v1accountfriend.ts
   - src/models/components/location.ts
@@ -232,6 +240,8 @@ generatedFiles:
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getbadgesrequest.md
   - docs/models/operations/accountv1getbadgesresponse.md
+  - docs/models/operations/accountv1getdatapointsrequest.md
+  - docs/models/operations/accountv1getdatapointsresponse.md
   - docs/models/operations/accountv1getfriendsrequest.md
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
@@ -274,6 +284,10 @@ generatedFiles:
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badge.md
+  - docs/models/components/v1accountdatapointsresponsebody.md
+  - docs/models/components/accountbadgescarcitydatapoint.md
+  - docs/models/components/accountplaytimedatapoint.md
+  - docs/models/components/accountbadgemostxpdatapoint.md
   - docs/models/components/v1accountfriendsresponsebody.md
   - docs/models/components/v1accountfriend.md
   - docs/models/components/location.md
