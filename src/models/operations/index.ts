@@ -8,6 +8,7 @@ export * from "./accountv1connectionupdateconnection.js";
 export * from "./accountv1connectionverifyconnection.js";
 export * from "./accountv1getapps.js";
 export * from "./accountv1getbadges.js";
+export * from "./accountv1getdatapoints.js";
 export * from "./accountv1getfriends.js";
 export * from "./accountv1getinfo.js";
 export * from "./accountv1getleaderboardhistory.js";

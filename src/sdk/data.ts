@@ -4,6 +4,7 @@
 
 import { dataAccountV1GetApps } from "../funcs/dataAccountV1GetApps.js";
 import { dataAccountV1GetBadges } from "../funcs/dataAccountV1GetBadges.js";
+import { dataAccountV1GetDataPoints } from "../funcs/dataAccountV1GetDataPoints.js";
 import { dataAccountV1GetFriends } from "../funcs/dataAccountV1GetFriends.js";
 import { dataAccountV1GetInfo } from "../funcs/dataAccountV1GetInfo.js";
 import { dataAccountV1GetLeaderboardHistory } from "../funcs/dataAccountV1GetLeaderboardHistory.js";
@@ -32,6 +33,16 @@ export class Data extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1GetBadgesResponse> {
         return unwrapAsync(dataAccountV1GetBadges(this, request, options));
+    }
+
+    /**
+     * Get Account DataPoints
+     */
+    async accountV1GetDataPoints(
+        request: operations.AccountV1GetDataPointsRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetDataPointsResponse> {
+        return unwrapAsync(dataAccountV1GetDataPoints(this, request, options));
     }
 
     /**

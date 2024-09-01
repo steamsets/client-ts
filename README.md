@@ -89,6 +89,7 @@ run();
 * [accountV1SettingsGenerateApiKey](docs/sdks/account/README.md#accountv1settingsgenerateapikey) - Generate a new API key for the account
 * [accountV1GetApps](docs/sdks/account/README.md#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetDataPoints](docs/sdks/account/README.md#accountv1getdatapoints) - Get Account DataPoints
 * [accountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
@@ -133,6 +134,7 @@ run();
 
 * [accountV1GetApps](docs/sdks/data/README.md#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetDataPoints](docs/sdks/data/README.md#accountv1getdatapoints) - Get Account DataPoints
 * [accountV1GetFriends](docs/sdks/data/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
@@ -142,6 +144,7 @@ run();
 
 * [accountV1GetApps](docs/sdks/public/README.md#accountv1getapps) - Get Account Apps
 * [accountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges) - Get Account Badges
+* [accountV1GetDataPoints](docs/sdks/public/README.md#accountv1getdatapoints) - Get Account DataPoints
 * [accountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
@@ -464,6 +467,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
 - [accountAccountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
 - [accountAccountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
+- [accountAccountV1GetDataPoints](docs/sdks/account/README.md#accountv1getdatapoints)
 - [accountAccountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends)
 - [accountAccountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo)
 - [accountAccountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory)
@@ -486,6 +490,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [connectionAccountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
 - [dataAccountV1GetApps](docs/sdks/data/README.md#accountv1getapps)
 - [dataAccountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges)
+- [dataAccountV1GetDataPoints](docs/sdks/data/README.md#accountv1getdatapoints)
 - [dataAccountV1GetFriends](docs/sdks/data/README.md#accountv1getfriends)
 - [dataAccountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo)
 - [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
@@ -494,6 +499,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [locationLocation](docs/sdks/location/README.md#location)
 - [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)
 - [publicAccountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges)
+- [publicAccountV1GetDataPoints](docs/sdks/public/README.md#accountv1getdatapoints)
 - [publicAccountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends)
 - [publicAccountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
 - [publicAccountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory)

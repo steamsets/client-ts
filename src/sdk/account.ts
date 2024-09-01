@@ -8,6 +8,7 @@ import { accountAccountV1ConnectionUpdateConnection } from "../funcs/accountAcco
 import { accountAccountV1ConnectionVerifyConnection } from "../funcs/accountAccountV1ConnectionVerifyConnection.js";
 import { accountAccountV1GetApps } from "../funcs/accountAccountV1GetApps.js";
 import { accountAccountV1GetBadges } from "../funcs/accountAccountV1GetBadges.js";
+import { accountAccountV1GetDataPoints } from "../funcs/accountAccountV1GetDataPoints.js";
 import { accountAccountV1GetFriends } from "../funcs/accountAccountV1GetFriends.js";
 import { accountAccountV1GetInfo } from "../funcs/accountAccountV1GetInfo.js";
 import { accountAccountV1GetLeaderboardHistory } from "../funcs/accountAccountV1GetLeaderboardHistory.js";
@@ -107,6 +108,16 @@ export class Account extends ClientSDK {
         options?: RequestOptions
     ): Promise<operations.AccountV1GetBadgesResponse> {
         return unwrapAsync(accountAccountV1GetBadges(this, request, options));
+    }
+
+    /**
+     * Get Account DataPoints
+     */
+    async accountV1GetDataPoints(
+        request: operations.AccountV1GetDataPointsRequest,
+        options?: RequestOptions
+    ): Promise<operations.AccountV1GetDataPointsResponse> {
+        return unwrapAsync(accountAccountV1GetDataPoints(this, request, options));
     }
 
     /**

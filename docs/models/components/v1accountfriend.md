@@ -17,7 +17,7 @@ let value: V1AccountFriend = {
         level: 123456,
     },
     badges: 123456,
-    bans: 368241,
+    bans: 957156,
     city: {
         code: "DE",
         id: 1,
@@ -33,8 +33,8 @@ let value: V1AccountFriend = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    friendsSince: new Date("2024-07-01T13:13:56.446Z"),
-    gameBans: 957156,
+    friendsSince: new Date("2024-05-02T20:38:07.200Z"),
+    gameBans: 140350,
     hidden: true,
     level: 123456,
     limitedApps: 123456,
@@ -64,10 +64,10 @@ let value: V1AccountFriend = {
         name: "Germany",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 778157,
+    steamSetsScore: 870013,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 140350,
+    vacBans: 870088,
     xp: 123456,
 };
 ```
