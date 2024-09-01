@@ -1,5 +1,133 @@
 components:
   schemas:
+    AccountBadgeMostXpDataPoint:
+      additionalProperties: false
+      properties:
+        appId:
+          description: The app id
+          example: 123456
+          format: int32
+          minimum: 0
+          type: integer
+        badgeCompletedAt:
+          description: The badge completed at
+          example: "2023-01-01T00:00:00Z"
+          format: date-time
+          type: string
+        badgeId:
+          description: The badge id
+          example: "123456"
+          type: string
+        badgeImage:
+          description: The badge image
+          example: steamsets
+          type: string
+        badgeIsFoil:
+          description: Whether the badge is foil
+          example: true
+          type: boolean
+        badgeLevel:
+          description: The badge level
+          example: 123456
+          format: int32
+          minimum: 0
+          type: integer
+        badgeName:
+          description: The badge name
+          example: steamsets
+          type: string
+        badgeScarcity:
+          description: The badge scarcity
+          example: 123456
+          format: int32
+          type: integer
+        badgeSteamID:
+          description: The badge steam id
+          example: 123456
+          format: int32
+          type: integer
+        badgeXP:
+          description: The badge xp
+          example: 123456
+          format: int32
+          type: integer
+        image:
+          description: The image of the app
+          example: steamsets
+          type: string
+        name:
+          description: The name of the app
+          example: steamsets
+          type: string
+      required:
+        - appId
+        - name
+        - image
+        - badgeScarcity
+        - badgeId
+        - badgeName
+        - badgeImage
+        - badgeIsFoil
+        - badgeXP
+        - badgeLevel
+        - badgeSteamID
+        - badgeCompletedAt
+      type: object
+    AccountBadgeScarcityDataPoint:
+      additionalProperties: false
+      properties:
+        appId:
+          description: The app id
+          example: 730
+          format: int32
+          minimum: 0
+          type: integer
+        badgeId:
+          description: The badge id
+          example: bdg_123
+          type: string
+        badgeImage:
+          description: The badge image
+          example: someHash.idk
+          type: string
+        badgeIsFoil:
+          description: Whether the badge is foil
+          example: true
+          type: boolean
+        badgeLevel:
+          description: The badge level
+          example: 15
+          format: int32
+          minimum: 0
+          type: integer
+        badgeName:
+          description: The badge name
+          example: Sommer Sale 2024 Foil 1+
+          type: string
+        badgeScarcity:
+          description: The badge scarcity
+          example: 15
+          format: int32
+          type: integer
+        image:
+          description: The image of the app
+          example: someHash.idk
+          type: string
+        name:
+          description: The name of the app
+          example: CS2
+          type: string
+      required:
+        - appId
+        - name
+        - image
+        - badgeScarcity
+        - badgeId
+        - badgeName
+        - badgeImage
+        - badgeIsFoil
+        - badgeLevel
+      type: object
     AccountInfoBody:
       additionalProperties: false
       properties:
@@ -339,6 +467,35 @@ components:
         - rank
         - score
         - leaderboard
+      type: object
+    AccountPlaytimeDataPoint:
+      additionalProperties: false
+      properties:
+        appId:
+          description: The app id
+          example: 730
+          format: int32
+          minimum: 0
+          type: integer
+        image:
+          description: The image of the app
+          example: someHash.idk
+          type: string
+        name:
+          description: The name of the app
+          example: CS2
+          type: string
+        playtime:
+          description: The playtime of the app
+          example: 15
+          format: int32
+          minimum: 0
+          type: integer
+      required:
+        - appId
+        - name
+        - image
+        - playtime
       type: object
     AccountSearch:
       additionalProperties: false
@@ -1037,6 +1194,44 @@ components:
         - playtime
         - price
         - shortName
+      type: object
+    V1AccountDataPointsResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        mostXp:
+          items:
+            $ref: "#/components/schemas/AccountBadgeMostXpDataPoint"
+          nullable: true
+          type: array
+        playtime:
+          items:
+            $ref: "#/components/schemas/AccountPlaytimeDataPoint"
+          nullable: true
+          type: array
+        scarcity:
+          items:
+            $ref: "#/components/schemas/AccountBadgeScarcityDataPoint"
+          nullable: true
+          type: array
+        xp:
+          additionalProperties:
+            additionalProperties:
+              format: int32
+              minimum: 0
+              type: integer
+            type: object
+          type: object
+      required:
+        - playtime
+        - scarcity
+        - xp
+        - mostXp
       type: object
     V1AccountFriend:
       additionalProperties: false
@@ -2285,6 +2480,62 @@ paths:
       security:
         - session: []
       summary: Get Account Badges
+      tags:
+        - account
+        - data
+        - public
+  /account.v1.AccountService/GetDataPoints:
+    post:
+      operationId: account.v1.getDataPoints
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccountSearch"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1AccountDataPointsResponseBody"
+          description: OK
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Get Account DataPoints
       tags:
         - account
         - data
