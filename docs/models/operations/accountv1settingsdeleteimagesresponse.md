@@ -13,7 +13,7 @@ let value: AccountV1SettingsDeleteImagesResponse = {
         request: new Request("https://example.com"),
     },
     v1DeleteImagesResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1DeleteImagesResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json",
     },
 };
 ```

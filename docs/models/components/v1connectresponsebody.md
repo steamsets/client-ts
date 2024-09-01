@@ -6,14 +6,14 @@
 import { V1ConnectResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1ConnectResponseBody = {
-    dollarSchema: "http://localhost:8080/schemas/V1ConnectResponseBody.json",
+    dollarSchema: "https://api.steamsets.com/schemas/V1ConnectResponseBody.json",
     code: "ABC123",
 };
 ```
 
 ## Fields
 
-| Field                                                    | Type                                                     | Required                                                 | Description                                              | Example                                                  |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `dollarSchema`                                           | *string*                                                 | :heavy_minus_sign:                                       | A URL to the JSON Schema for this object.                | http://localhost:8080/schemas/V1ConnectResponseBody.json |
-| `code`                                                   | *string*                                                 | :heavy_minus_sign:                                       | Code that has to be used to verify domain connections    | ABC123                                                   |
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `dollarSchema`                                               | *string*                                                     | :heavy_minus_sign:                                           | A URL to the JSON Schema for this object.                    | https://api.steamsets.com/schemas/V1ConnectResponseBody.json |
+| `code`                                                       | *string*                                                     | :heavy_minus_sign:                                           | Code that has to be used to verify domain connections        | ABC123                                                       |

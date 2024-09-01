@@ -6,7 +6,7 @@
 import { AccountInfoBody } from "@steamsets/client-ts/models/components";
 
 let value: AccountInfoBody = {
-    dollarSchema: "http://localhost:8080/schemas/AccountInfoBody.json",
+    dollarSchema: "https://api.steamsets.com/schemas/AccountInfoBody.json",
     accountId: 123456,
     animatedAvatar: "steamsets",
     appCost: 123456,
@@ -67,11 +67,9 @@ let value: AccountInfoBody = {
     images: [
         {
             active: true,
-            fileId: "123456",
             fileName: "avatar.png",
-            imageId: "123456",
+            imageId: "img_wasd123",
             imageType: "avatar",
-            mimeType: "image/png",
         },
     ],
     level: 123456,
@@ -117,7 +115,7 @@ let value: AccountInfoBody = {
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | http://localhost:8080/schemas/AccountInfoBody.json                                            |
+| `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | https://api.steamsets.com/schemas/AccountInfoBody.json                                        |
 | `accountId`                                                                                   | *number*                                                                                      | :heavy_check_mark:                                                                            | The account id                                                                                | 123456                                                                                        |
 | `animatedAvatar`                                                                              | *string*                                                                                      | :heavy_check_mark:                                                                            | The animated avatar of the account                                                            | steamsets                                                                                     |
 | `appCost`                                                                                     | *number*                                                                                      | :heavy_check_mark:                                                                            | The cost of an app                                                                            | 123456                                                                                        |

@@ -13,7 +13,7 @@ let value: AccountV1ConnectionUpdateConnectionResponse = {
         request: new Request("https://example.com"),
     },
     v1UpdateConnectionResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1UpdateConnectionResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json",
     },
 };
 ```

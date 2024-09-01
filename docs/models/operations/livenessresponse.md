@@ -13,7 +13,7 @@ let value: LivenessResponse = {
         request: new Request("https://example.com"),
     },
     v1LivenessResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1LivenessResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1LivenessResponseBody.json",
         message: "OK",
     },
 };

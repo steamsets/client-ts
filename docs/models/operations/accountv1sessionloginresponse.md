@@ -13,7 +13,7 @@ let value: AccountV1SessionLoginResponse = {
         request: new Request("https://example.com"),
     },
     v1LoginResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1LoginResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1LoginResponseBody.json",
         avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
         name: "SteamSets",
         sessionToken: "123456",

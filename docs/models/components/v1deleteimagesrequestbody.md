@@ -6,17 +6,12 @@
 import { V1DeleteImagesRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteImagesRequestBody = {
-    images: [
-        {
-            fileId: "123456",
-            imageId: "123456",
-        },
-    ],
+    imageIds: ["<value>"],
 };
 ```
 
 ## Fields
 
-| Field                                                | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `images`                                             | [components.Item](../../models/components/item.md)[] | :heavy_check_mark:                                   | The images to delete                                 |
+| Field                    | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `imageIds`               | *string*[]               | :heavy_check_mark:       | The images ids to delete |

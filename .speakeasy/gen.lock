@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: fc2b84fa7a6a93886f5fcd33c3711883
+  docChecksum: 4231c580ea6c10c6073103c5ae46bdf1
   docVersion: 1.0.0
   speakeasyVersion: 1.385.0
   generationVersion: 2.407.2
-  releaseVersion: 0.5.3
-  configChecksum: 674e8c81b12daf1fb182e666cd5904b7
+  releaseVersion: 0.5.4
+  configChecksum: dfa5a26c0864e8cff7f18fe739fe3c11
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -170,7 +170,6 @@ generatedFiles:
   - src/models/components/v1deleteconnectionrequestbody.ts
   - src/models/components/v1deleteimagesresponsebody.ts
   - src/models/components/v1deleteimagesrequestbody.ts
-  - src/models/components/item.ts
   - src/models/components/v1deletesessionresponsebody.ts
   - src/models/components/v1deletesessionrequestbody.ts
   - src/models/components/v1generateapikeyresponsebody.ts
@@ -264,7 +263,6 @@ generatedFiles:
   - docs/models/components/v1deleteconnectionrequestbody.md
   - docs/models/components/v1deleteimagesresponsebody.md
   - docs/models/components/v1deleteimagesrequestbody.md
-  - docs/models/components/item.md
   - docs/models/components/v1deletesessionresponsebody.md
   - docs/models/components/v1deletesessionrequestbody.md
   - docs/models/components/v1generateapikeyresponsebody.md
