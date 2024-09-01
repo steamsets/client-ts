@@ -13,7 +13,7 @@ let value: AccountV1SettingsVerfyEmailResponse = {
         request: new Request("https://example.com"),
     },
     v1VerifyEmailResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1VerifyEmailResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json",
     },
 };
 ```

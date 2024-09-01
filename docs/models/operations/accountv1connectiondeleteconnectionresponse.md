@@ -13,7 +13,7 @@ let value: AccountV1ConnectionDeleteConnectionResponse = {
         request: new Request("https://example.com"),
     },
     v1DeleteConnectionResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1DeleteConnectionResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json",
     },
 };
 ```

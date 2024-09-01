@@ -13,7 +13,7 @@ let value: AccountV1SessionCreateResponse = {
         request: new Request("https://example.com"),
     },
     v1CreateSessionBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1CreateSessionBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
         sessionId: "ABC123",
     },
 };

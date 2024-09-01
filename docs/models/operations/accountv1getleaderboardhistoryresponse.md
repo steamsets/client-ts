@@ -13,7 +13,8 @@ let value: AccountV1GetLeaderboardHistoryResponse = {
         request: new Request("https://example.com"),
     },
     v1AccountLeaderboardHistoryResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1AccountLeaderboardHistoryResponseBody.json",
+        dollarSchema:
+            "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
         histories: [
             {
                 date: new Date("2022-11-23T02:21:00.924Z"),

@@ -6,7 +6,7 @@
 import { V1GetSessionBody } from "@steamsets/client-ts/models/components";
 
 let value: V1GetSessionBody = {
-    dollarSchema: "http://localhost:8080/schemas/V1GetSessionBody.json",
+    dollarSchema: "https://api.steamsets.com/schemas/V1GetSessionBody.json",
     accountId: 123456,
     resources: [
         {
@@ -39,7 +39,7 @@ let value: V1GetSessionBody = {
 
 | Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `dollarSchema`                                               | *string*                                                     | :heavy_minus_sign:                                           | A URL to the JSON Schema for this object.                    | http://localhost:8080/schemas/V1GetSessionBody.json          |
+| `dollarSchema`                                               | *string*                                                     | :heavy_minus_sign:                                           | A URL to the JSON Schema for this object.                    | https://api.steamsets.com/schemas/V1GetSessionBody.json      |
 | `accountId`                                                  | *number*                                                     | :heavy_check_mark:                                           | The account id                                               | 123456                                                       |
 | `resources`                                                  | [components.Resource](../../models/components/resource.md)[] | :heavy_check_mark:                                           | The resources the user has (permissions)                     |                                                              |
 | `roles`                                                      | [components.Role](../../models/components/role.md)[]         | :heavy_check_mark:                                           | The roles the user has                                       |                                                              |

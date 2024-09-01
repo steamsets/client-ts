@@ -13,7 +13,7 @@ let value: AccountV1GetAppsResponse = {
         request: new Request("https://example.com"),
     },
     v1AccountsAppsResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1AccountsAppsResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json",
         apps: [
             {
                 id: 730,

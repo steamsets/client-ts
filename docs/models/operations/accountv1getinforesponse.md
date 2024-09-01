@@ -13,7 +13,7 @@ let value: AccountV1GetInfoResponse = {
         request: new Request("https://example.com"),
     },
     accountInfoBody: {
-        dollarSchema: "http://localhost:8080/schemas/AccountInfoBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/AccountInfoBody.json",
         accountId: 123456,
         animatedAvatar: "steamsets",
         appCost: 123456,
@@ -74,11 +74,9 @@ let value: AccountV1GetInfoResponse = {
         images: [
             {
                 active: true,
-                fileId: "123456",
                 fileName: "avatar.png",
-                imageId: "123456",
+                imageId: "img_wasd123",
                 imageType: "avatar",
-                mimeType: "image/png",
             },
         ],
         level: 123456,

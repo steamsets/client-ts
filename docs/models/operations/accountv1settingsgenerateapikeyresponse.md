@@ -13,7 +13,7 @@ let value: AccountV1SettingsGenerateApiKeyResponse = {
         request: new Request("https://example.com"),
     },
     v1GenerateApiKeyResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1GenerateApiKeyResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json",
         key: "api_123",
     },
 };

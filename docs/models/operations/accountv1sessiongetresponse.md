@@ -13,7 +13,7 @@ let value: AccountV1SessionGetResponse = {
         request: new Request("https://example.com"),
     },
     v1GetSessionBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1GetSessionBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1GetSessionBody.json",
         accountId: 123456,
         resources: [
             {

@@ -13,7 +13,7 @@ let value: AccountV1SettingsGetResponse = {
         request: new Request("https://example.com"),
     },
     v1GetSettingsBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1GetSettingsBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
         apiKey: "api_key",
         color: "#7652c9",
         colors: "#7652c9",
@@ -40,11 +40,9 @@ let value: AccountV1SettingsGetResponse = {
         images: [
             {
                 active: true,
-                fileId: "123456",
                 fileName: "avatar.png",
-                imageId: "123456",
+                imageId: "img_wasd123",
                 imageType: "avatar",
-                mimeType: "image/png",
             },
         ],
         language: "en",

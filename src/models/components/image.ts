@@ -10,10 +10,6 @@ export type Image = {
      */
     active: boolean;
     /**
-     * The id of the file
-     */
-    fileId: string;
-    /**
      * The name of the file
      */
     fileName: string;
@@ -25,40 +21,30 @@ export type Image = {
      * The type of the image
      */
     imageType: string;
-    /**
-     * The mime type of the file
-     */
-    mimeType: string;
 };
 
 /** @internal */
 export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z.object({
     active: z.boolean(),
-    fileId: z.string(),
     fileName: z.string(),
     imageId: z.string(),
     imageType: z.string(),
-    mimeType: z.string(),
 });
 
 /** @internal */
 export type Image$Outbound = {
     active: boolean;
-    fileId: string;
     fileName: string;
     imageId: string;
     imageType: string;
-    mimeType: string;
 };
 
 /** @internal */
 export const Image$outboundSchema: z.ZodType<Image$Outbound, z.ZodTypeDef, Image> = z.object({
     active: z.boolean(),
-    fileId: z.string(),
     fileName: z.string(),
     imageId: z.string(),
     imageType: z.string(),
-    mimeType: z.string(),
 });
 
 /**

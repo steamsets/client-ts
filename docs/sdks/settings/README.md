@@ -29,11 +29,8 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsDeleteImages({
-    images: [
-      {
-        fileId: "123456",
-        imageId: "123456",
-      },
+    imageIds: [
+      "<value>",
     ],
   });
 
@@ -60,11 +57,8 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await settingsAccountV1SettingsDeleteImages(steamSets, {
-    images: [
-      {
-        fileId: "123456",
-        imageId: "123456",
-      },
+    imageIds: [
+      "<value>",
     ],
   });
 

@@ -13,7 +13,7 @@ let value: AccountV1GetBadgesResponse = {
         request: new Request("https://example.com"),
     },
     v1BadgesResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1BadgesResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1BadgesResponseBody.json",
         badges: [
             {
                 appId: 548814,

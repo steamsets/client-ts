@@ -13,7 +13,7 @@ let value: AccountV1SettingsUpdateImageResponse = {
         request: new Request("https://example.com"),
     },
     v1UpdateImageResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1UpdateImageResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
         key: "api_123",
     },
 };

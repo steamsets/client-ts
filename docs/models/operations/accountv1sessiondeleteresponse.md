@@ -13,7 +13,7 @@ let value: AccountV1SessionDeleteResponse = {
         request: new Request("https://example.com"),
     },
     v1DeleteSessionResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1DeleteSessionResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json",
     },
 };
 ```

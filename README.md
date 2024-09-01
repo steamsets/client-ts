@@ -295,8 +295,8 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `http://localhost:8080` | None |
-| 1 | `https://api.steamsets.com` | None |
+| 0 | `https://api.steamsets.com` | None |
+| 1 | `http://localhost:8080` | None |
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
@@ -329,7 +329,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    serverURL: "http://localhost:8080",
+    serverURL: "https://api.steamsets.com",
     session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 

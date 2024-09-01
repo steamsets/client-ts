@@ -6,7 +6,7 @@
 import { V1GetSettingsBody } from "@steamsets/client-ts/models/components";
 
 let value: V1GetSettingsBody = {
-    dollarSchema: "http://localhost:8080/schemas/V1GetSettingsBody.json",
+    dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
     apiKey: "api_key",
     color: "#7652c9",
     colors: "#7652c9",
@@ -33,11 +33,9 @@ let value: V1GetSettingsBody = {
     images: [
         {
             active: true,
-            fileId: "123456",
             fileName: "avatar.png",
-            imageId: "123456",
+            imageId: "img_wasd123",
             imageType: "avatar",
-            mimeType: "image/png",
         },
     ],
     language: "en",
@@ -61,7 +59,7 @@ let value: V1GetSettingsBody = {
 
 | Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `dollarSchema`                                                                 | *string*                                                                       | :heavy_minus_sign:                                                             | A URL to the JSON Schema for this object.                                      | http://localhost:8080/schemas/V1GetSettingsBody.json                           |
+| `dollarSchema`                                                                 | *string*                                                                       | :heavy_minus_sign:                                                             | A URL to the JSON Schema for this object.                                      | https://api.steamsets.com/schemas/V1GetSettingsBody.json                       |
 | `apiKey`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | The Generated API Key for this account                                         | api_key                                                                        |
 | `color`                                                                        | *string*                                                                       | :heavy_check_mark:                                                             | The color the account is using                                                 | #7652c9                                                                        |
 | `colors`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | The colors the account is using                                                | #7652c9                                                                        |

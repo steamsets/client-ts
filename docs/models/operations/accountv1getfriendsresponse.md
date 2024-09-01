@@ -13,7 +13,7 @@ let value: AccountV1GetFriendsResponse = {
         request: new Request("https://example.com"),
     },
     v1AccountFriendsResponseBody: {
-        dollarSchema: "http://localhost:8080/schemas/V1AccountFriendsResponseBody.json",
+        dollarSchema: "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json",
         friends: [],
     },
 };
