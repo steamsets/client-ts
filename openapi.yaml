@@ -544,6 +544,24 @@ components:
         - value
         - type
       type: object
+    AppSearch:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/AppSearch.json
+          format: uri
+          readOnly: true
+          type: string
+        id:
+          description: The app id to search for
+          example: 730
+          format: int32
+          minimum: 0
+          type: integer
+      required:
+        - id
+      type: object
     BestLeaderboardRank:
       additionalProperties: false
       properties:
@@ -1066,6 +1084,24 @@ components:
       additionalProperties: false
       properties:
         resource:
+          enum:
+            - animated_avatar
+            - auto_refresh
+            - avatar_frame
+            - background
+            - beta_access
+            - custom_vanity
+            - go_to_leaderboard_entry
+            - max_leaderboard_entries
+            - mini_background
+            - account_colors
+            - account_refresh_rate
+            - queue_priority
+            - site_color
+            - social_links
+            - theme
+            - vanity_length
+            - social_link_amount
           type: string
         value:
           description: The value of the resource, this can be a string, number, boolean or even a cron expression
@@ -1091,6 +1127,23 @@ components:
           example: Tier 1
           type: string
         role:
+          enum:
+            - user
+            - donator
+            - staff
+            - developer
+            - partner
+            - owner
+            - amethyst
+            - amber
+            - emerald
+            - sapphire
+            - ruby
+            - diamond
+            - contributor
+            - early_supporter
+            - beta
+            - translator
           type: string
       required:
         - role
@@ -1194,6 +1247,83 @@ components:
         - playtime
         - price
         - shortName
+      type: object
+    V1AccountAppBadge:
+      additionalProperties: false
+      properties:
+        appId:
+          format: int32
+          minimum: 0
+          type: integer
+        appImage:
+          type: string
+        appName:
+          type: string
+        appShortName:
+          type: string
+        badgeImage:
+          type: string
+        completedAt:
+          format: date-time
+          type: string
+        isFoil:
+          type: boolean
+        level:
+          format: int32
+          minimum: 0
+          type: integer
+        name:
+          type: string
+        price:
+          format: int32
+          type: integer
+        publicId:
+          type: string
+        scarcity:
+          format: int32
+          type: integer
+        steamId:
+          format: int32
+          minimum: 0
+          type: integer
+        xp:
+          format: int32
+          minimum: 0
+          type: integer
+      required:
+        - appId
+        - appImage
+        - appName
+        - appShortName
+        - badgeImage
+        - completedAt
+        - xp
+        - isFoil
+        - level
+        - name
+        - scarcity
+        - steamId
+        - price
+        - publicId
+      type: object
+    V1AccountBadgeCompletion:
+      additionalProperties: false
+      properties:
+        completedAt:
+          format: date-time
+          type: string
+        level:
+          format: int32
+          minimum: 0
+          type: integer
+        xp:
+          format: int32
+          minimum: 0
+          type: integer
+      required:
+        - level
+        - xp
+        - completedAt
       type: object
     V1AccountDataPointsResponseBody:
       additionalProperties: false
@@ -1490,26 +1620,26 @@ components:
       required:
         - apps
       type: object
-    V1Badge:
+    V1AppBadge:
       additionalProperties: false
       properties:
-        appId:
-          format: int32
-          minimum: 0
-          type: integer
-        appImage:
-          type: string
-        appName:
-          type: string
-        appShortName:
-          type: string
+        accountBadge:
+          $ref: "#/components/schemas/V1AccountBadgeCompletion"
         badgeImage:
           type: string
-        completedAt:
+        firstCompletion:
           format: date-time
+          nullable: true
           type: string
+        highestLevel:
+          format: int32
+          type: integer
         isFoil:
           type: boolean
+        lastCompletion:
+          format: date-time
+          nullable: true
+          type: string
         level:
           format: int32
           minimum: 0
@@ -1533,12 +1663,10 @@ components:
           minimum: 0
           type: integer
       required:
-        - appId
-        - appImage
-        - appName
-        - appShortName
         - badgeImage
-        - completedAt
+        - firstCompletion
+        - lastCompletion
+        - highestLevel
         - xp
         - isFoil
         - level
@@ -1547,6 +1675,153 @@ components:
         - steamId
         - price
         - publicId
+        - accountBadge
+      type: object
+    V1AppDetail:
+      additionalProperties: false
+      properties:
+        appId:
+          description: The app id
+          example: 730
+          format: int32
+          minimum: 0
+          type: integer
+        image:
+          description: The app image hash
+          example: a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg
+          type: string
+        isEvent:
+          description: Whether the app is an event
+          example: true
+          type: boolean
+        isSale:
+          description: Whether the app is a sale
+          example: true
+          type: boolean
+        name:
+          description: The app name
+          example: CS2
+          type: string
+        price:
+          description: The app price
+          example: 1200
+          format: int32
+          type: integer
+        shortName:
+          description: The app short name
+          example: csgo
+          type: string
+        type:
+          description: The app type
+          enum:
+            - invalid
+            - game
+            - application
+            - tool
+            - demo
+            - deprecated
+            - dlc
+            - guide
+            - driver
+            - config
+            - hardware
+            - franchise
+            - video
+            - plugin
+            - music
+            - series
+            - comic
+            - beta
+            - shortcut
+            - depot_only
+          example: game
+          type: string
+      required:
+        - appId
+        - image
+        - name
+        - shortName
+        - price
+        - isEvent
+        - isSale
+        - type
+      type: object
+    V1AppItem:
+      additionalProperties: false
+      properties:
+        cost:
+          format: int32
+          type: integer
+        description:
+          type: string
+        largeImage:
+          type: string
+        name:
+          type: string
+        publicId:
+          type: string
+        smallImage:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+      required:
+        - type
+        - cost
+        - description
+        - largeImage
+        - name
+        - smallImage
+        - title
+        - publicId
+      type: object
+    V1AppRequestBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1AppRequestBody.json
+          format: uri
+          readOnly: true
+          type: string
+        appId:
+          description: The app id
+          example: 123456
+          format: int32
+          minimum: 0
+          type: integer
+      required:
+        - appId
+      type: object
+    V1AppResponseBody:
+      additionalProperties: false
+      properties:
+        $schema:
+          description: A URL to the JSON Schema for this object.
+          example: https://api.steamsets.com/schemas/V1AppResponseBody.json
+          format: uri
+          readOnly: true
+          type: string
+        badges:
+          description: The badges
+          items:
+            $ref: "#/components/schemas/V1AppBadge"
+          nullable: true
+          type: array
+        detail:
+          $ref: "#/components/schemas/V1AppDetail"
+          description: The app detail
+        items:
+          description: The items
+          items:
+            $ref: "#/components/schemas/V1AppItem"
+          nullable: true
+          type: array
+      required:
+        - detail
+        - badges
+        - items
       type: object
     V1BadgesResponseBody:
       additionalProperties: false
@@ -1559,7 +1834,7 @@ components:
           type: string
         badges:
           items:
-            $ref: "#/components/schemas/V1Badge"
+            $ref: "#/components/schemas/V1AccountAppBadge"
           nullable: true
           type: array
       required:
@@ -3121,6 +3396,102 @@ paths:
       tags:
         - account
         - settings
+  /app.v1.AppService/GetApp:
+    post:
+      operationId: app.v1.get
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/V1AppRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/V1AppResponseBody"
+          description: OK
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Not Found
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Get details about an app
+      tags:
+        - app
+  /app.v1.AppService/Queue:
+    post:
+      operationId: account.v1.queue
+      parameters:
+        - in: header
+          name: X-Forwarded-For
+          schema:
+            type: string
+        - in: header
+          name: User-Agent
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppSearch"
+        required: true
+      responses:
+        "204":
+          description: No Content
+          headers:
+            X-RateLimit-Reset:
+              schema:
+                format: int64
+                type: integer
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Bad Request
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Unprocessable Entity
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/ErrorModel"
+          description: Internal Server Error
+      security:
+        - session: []
+      summary: Queue a app for processing
+      tags:
+        - app
+        - data
+        - public
   /v1/liveness:
     get:
       description: This endpoint checks if the service is alive.
