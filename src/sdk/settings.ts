@@ -16,81 +16,111 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Settings extends ClientSDK {
-    /**
-     * Delete mulitple imagest
-     */
-    async accountV1SettingsDeleteImages(
-        request: components.V1DeleteImagesRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
-        return unwrapAsync(settingsAccountV1SettingsDeleteImages(this, request, options));
-    }
+  /**
+   * Delete mulitple imagest
+   */
+  async accountV1SettingsDeleteImages(
+    request: components.V1DeleteImagesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
+    return unwrapAsync(settingsAccountV1SettingsDeleteImages(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Generate a new API key for the account
-     */
-    async accountV1SettingsGenerateApiKey(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsGenerateApiKeyResponse> {
-        return unwrapAsync(settingsAccountV1SettingsGenerateApiKey(this, options));
-    }
+  /**
+   * Generate a new API key for the account
+   */
+  async accountV1SettingsGenerateApiKey(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsGenerateApiKeyResponse> {
+    return unwrapAsync(settingsAccountV1SettingsGenerateApiKey(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Gets all settings for the account
-     */
-    async accountV1SettingsGet(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsGetResponse> {
-        return unwrapAsync(settingsAccountV1SettingsGet(this, options));
-    }
+  /**
+   * Gets all settings for the account
+   */
+  async accountV1SettingsGet(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsGetResponse> {
+    return unwrapAsync(settingsAccountV1SettingsGet(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Resend the verification code for an email
-     */
-    async accountV1SettingsSendEmailVerification(
-        request: operations.AccountV1SettingsSendEmailVerificationRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
-        return unwrapAsync(settingsAccountV1SettingsSendEmailVerification(this, request, options));
-    }
+  /**
+   * Resend the verification code for an email
+   */
+  async accountV1SettingsSendEmailVerification(
+    request: operations.AccountV1SettingsSendEmailVerificationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
+    return unwrapAsync(settingsAccountV1SettingsSendEmailVerification(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update one of the uploaded images
-     */
-    async accountV1SettingsUpdateImage(
-        request: components.V1UpdateImageRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
-        return unwrapAsync(settingsAccountV1SettingsUpdateImage(this, request, options));
-    }
+  /**
+   * Update one of the uploaded images
+   */
+  async accountV1SettingsUpdateImage(
+    request: components.V1UpdateImageRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
+    return unwrapAsync(settingsAccountV1SettingsUpdateImage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update settings for the logged in account
-     */
-    async accountV1SettingsUpdate(
-        request: operations.AccountV1SettingsUpdateRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUpdateResponse> {
-        return unwrapAsync(settingsAccountV1SettingsUpdate(this, request, options));
-    }
+  /**
+   * Update settings for the logged in account
+   */
+  async accountV1SettingsUpdate(
+    request: operations.AccountV1SettingsUpdateRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateResponse> {
+    return unwrapAsync(settingsAccountV1SettingsUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Multi Upload Endpoint for images
-     */
-    async accountV1SettingsUploadImages(
-        request: components.V1UploadImagesRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
-        return unwrapAsync(settingsAccountV1SettingsUploadImages(this, request, options));
-    }
+  /**
+   * Multi Upload Endpoint for images
+   */
+  async accountV1SettingsUploadImages(
+    request: components.V1UploadImagesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
+    return unwrapAsync(settingsAccountV1SettingsUploadImages(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Verify the email by passing in the code the user should've gotten
-     */
-    async accountV1SettingsVerfyEmail(
-        request: components.V1VerifyEmailRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
-        return unwrapAsync(settingsAccountV1SettingsVerfyEmail(this, request, options));
-    }
+  /**
+   * Verify the email by passing in the code the user should've gotten
+   */
+  async accountV1SettingsVerfyEmail(
+    request: components.V1VerifyEmailRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
+    return unwrapAsync(settingsAccountV1SettingsVerfyEmail(
+      this,
+      request,
+      options,
+    ));
+  }
 }

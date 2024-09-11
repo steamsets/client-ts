@@ -6,7 +6,7 @@
 import { V1DeleteSessionRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteSessionRequestBody = {
-    sessionId: "123456",
+  sessionId: "123456",
 };
 ```
 

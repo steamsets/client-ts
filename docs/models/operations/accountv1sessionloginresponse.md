@@ -6,19 +6,20 @@
 import { AccountV1SessionLoginResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SessionLoginResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1LoginResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1LoginResponseBody.json",
-        avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
-        name: "SteamSets",
-        sessionToken: "123456",
-        steamId: "76561198842603734",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1LoginResponseBody: {
+    dollarSchema: "https://api.steamsets.com/schemas/V1LoginResponseBody.json",
+    avatar:
+      "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+    name: "SteamSets",
+    sessionToken: "123456",
+    steamId: "76561198842603734",
+  },
 };
 ```
 

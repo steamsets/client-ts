@@ -6,8 +6,8 @@
 import { V1CreateSessionBody } from "@steamsets/client-ts/models/components";
 
 let value: V1CreateSessionBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
-    sessionId: "ABC123",
+  dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
+  sessionId: "ABC123",
 };
 ```
 

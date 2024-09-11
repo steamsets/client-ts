@@ -6,19 +6,19 @@
 import { V1UpdateSettingsRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UpdateSettingsRequestBody = {
-    color: "#7652c9",
-    colors: "#7652c9",
-    email: "steamsets@example.com",
-    emailNotifications: [
-        {
-            enabled: true,
-            type: "login",
-        },
-    ],
-    hidden: true,
-    language: "en",
-    theme: "dark",
-    vanity: "flo",
+  color: "#7652c9",
+  colors: "#7652c9",
+  email: "steamsets@example.com",
+  emailNotifications: [
+    {
+      enabled: true,
+      type: "login",
+    },
+  ],
+  hidden: true,
+  language: "en",
+  theme: "dark",
+  vanity: "flo",
 };
 ```
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9a18230f1a5facbb768a0229dfa583d3
+  docChecksum: 93843eb042164a62f8869cdabc0184a5
   docVersion: 1.0.0
-  speakeasyVersion: 1.385.0
-  generationVersion: 2.407.2
-  releaseVersion: 0.5.5
-  configChecksum: bd0c9470a420ac9cfdbf757b0eaa06ee
+  speakeasyVersion: 1.395.1
+  generationVersion: 2.415.0
+  releaseVersion: 0.6.0
+  configChecksum: bb08d1be261f3d7efc0dd7a6cc2a07b4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.14.2
+    core: 3.17.0
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     envVarSecurityUsage: 0.1.1
@@ -43,199 +43,104 @@ features:
     retries: 2.83.0
     sdkHooks: 0.1.0
 generatedFiles:
-  - src/funcs/accountAccountV1ConnectionConnect.ts
-  - src/funcs/accountAccountV1SessionCreate.ts
-  - src/funcs/accountAccountV1ConnectionDeleteConnection.ts
-  - src/funcs/accountAccountV1SettingsDeleteImages.ts
-  - src/funcs/accountAccountV1SessionDelete.ts
-  - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
-  - src/funcs/accountAccountV1GetApps.ts
-  - src/funcs/accountAccountV1GetBadges.ts
-  - src/funcs/accountAccountV1GetDataPoints.ts
-  - src/funcs/accountAccountV1GetFriends.ts
-  - src/funcs/accountAccountV1GetInfo.ts
-  - src/funcs/accountAccountV1GetLeaderboardHistory.ts
-  - src/funcs/accountAccountV1SessionGet.ts
-  - src/funcs/accountAccountV1SettingsGet.ts
-  - src/funcs/accountAccountV1GetStaff.ts
-  - src/funcs/accountAccountV1SessionLogin.ts
-  - src/funcs/accountAccountV1SettingsSendEmailVerification.ts
-  - src/funcs/accountAccountV1ConnectionUpdateConnection.ts
-  - src/funcs/accountAccountV1SettingsUpdateImage.ts
-  - src/funcs/accountAccountV1SettingsUpdate.ts
-  - src/funcs/accountAccountV1SettingsUploadImages.ts
-  - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
-  - src/funcs/accountAccountV1SettingsVerfyEmail.ts
-  - src/funcs/connectionAccountV1ConnectionConnect.ts
-  - src/funcs/connectionAccountV1ConnectionDeleteConnection.ts
-  - src/funcs/connectionAccountV1ConnectionUpdateConnection.ts
-  - src/funcs/connectionAccountV1ConnectionVerifyConnection.ts
-  - src/funcs/sessionAccountV1SessionCreate.ts
-  - src/funcs/sessionAccountV1SessionDelete.ts
-  - src/funcs/sessionAccountV1SessionGet.ts
-  - src/funcs/sessionAccountV1SessionLogin.ts
-  - src/funcs/settingsAccountV1SettingsDeleteImages.ts
-  - src/funcs/settingsAccountV1SettingsGenerateApiKey.ts
-  - src/funcs/settingsAccountV1SettingsGet.ts
-  - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
-  - src/funcs/settingsAccountV1SettingsUpdateImage.ts
-  - src/funcs/settingsAccountV1SettingsUpdate.ts
-  - src/funcs/settingsAccountV1SettingsUploadImages.ts
-  - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
-  - src/funcs/dataAccountV1GetApps.ts
-  - src/funcs/dataAccountV1GetBadges.ts
-  - src/funcs/dataAccountV1GetDataPoints.ts
-  - src/funcs/dataAccountV1GetFriends.ts
-  - src/funcs/dataAccountV1GetInfo.ts
-  - src/funcs/dataAccountV1GetLeaderboardHistory.ts
-  - src/funcs/dataAccountV1GetStaff.ts
-  - src/funcs/publicAccountV1GetApps.ts
-  - src/funcs/publicAccountV1GetBadges.ts
-  - src/funcs/publicAccountV1GetDataPoints.ts
-  - src/funcs/publicAccountV1GetFriends.ts
-  - src/funcs/publicAccountV1GetInfo.ts
-  - src/funcs/publicAccountV1GetLeaderboardHistory.ts
-  - src/funcs/livenessLiveness.ts
-  - src/funcs/locationLocation.ts
-  - src/sdk/account.ts
-  - src/sdk/connection.ts
-  - src/sdk/session.ts
-  - src/sdk/settings.ts
-  - src/sdk/data.ts
-  - src/sdk/public.ts
-  - src/sdk/liveness.ts
-  - src/sdk/location.ts
-  - src/sdk/sdk.ts
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
   - .eslintrc.cjs
+  - .gitattributes
   - .npmignore
+  - CONTRIBUTING.md
   - FUNCTIONS.md
   - RUNTIMES.md
-  - jsr.json
-  - package.json
-  - src/core.ts
-  - src/index.ts
-  - src/lib/base64.ts
-  - src/lib/config.ts
-  - src/lib/dlv.ts
-  - src/lib/encodings.ts
-  - src/lib/http.ts
-  - src/lib/is-plain-object.ts
-  - src/lib/logger.ts
-  - src/lib/matchers.ts
-  - src/lib/primitives.ts
-  - src/lib/retries.ts
-  - src/lib/schemas.ts
-  - src/lib/sdks.ts
-  - src/lib/security.ts
-  - src/lib/url.ts
-  - src/sdk/index.ts
-  - src/models/errors/httpclienterrors.ts
-  - src/models/errors/sdkerror.ts
-  - src/models/errors/sdkvalidationerror.ts
-  - src/types/blobs.ts
-  - src/types/constdatetime.ts
-  - src/types/enums.ts
-  - src/types/fp.ts
-  - src/types/index.ts
-  - src/types/operations.ts
-  - src/types/rfcdate.ts
-  - tsconfig.json
-  - src/models/operations/accountv1connectionconnect.ts
-  - src/models/operations/accountv1sessioncreate.ts
-  - src/models/operations/accountv1connectiondeleteconnection.ts
-  - src/models/operations/accountv1settingsdeleteimages.ts
-  - src/models/operations/accountv1sessiondelete.ts
-  - src/models/operations/accountv1settingsgenerateapikey.ts
-  - src/models/operations/accountv1getapps.ts
-  - src/models/operations/accountv1getbadges.ts
-  - src/models/operations/accountv1getdatapoints.ts
-  - src/models/operations/accountv1getfriends.ts
-  - src/models/operations/accountv1getinfo.ts
-  - src/models/operations/accountv1getleaderboardhistory.ts
-  - src/models/operations/accountv1sessionget.ts
-  - src/models/operations/accountv1settingsget.ts
-  - src/models/operations/accountv1getstaff.ts
-  - src/models/operations/accountv1sessionlogin.ts
-  - src/models/operations/accountv1settingssendemailverification.ts
-  - src/models/operations/accountv1connectionupdateconnection.ts
-  - src/models/operations/accountv1settingsupdateimage.ts
-  - src/models/operations/accountv1settingsupdate.ts
-  - src/models/operations/accountv1settingsuploadimages.ts
-  - src/models/operations/accountv1connectionverifyconnection.ts
-  - src/models/operations/accountv1settingsverfyemail.ts
-  - src/models/operations/liveness.ts
-  - src/models/operations/location.ts
-  - src/models/components/v1connectresponsebody.ts
-  - src/models/components/httpmetadata.ts
-  - src/models/components/errordetail.ts
-  - src/models/components/v1connectrequestbody.ts
-  - src/models/components/v1createsessionbody.ts
-  - src/models/components/v1deleteconnectionresponsebody.ts
-  - src/models/components/v1deleteconnectionrequestbody.ts
-  - src/models/components/v1deleteimagesresponsebody.ts
-  - src/models/components/v1deleteimagesrequestbody.ts
-  - src/models/components/v1deletesessionresponsebody.ts
-  - src/models/components/v1deletesessionrequestbody.ts
-  - src/models/components/v1generateapikeyresponsebody.ts
-  - src/models/components/v1accountsappsresponsebody.ts
-  - src/models/components/v1accountapp.ts
-  - src/models/components/accountsearch.ts
-  - src/models/components/accountsearchvanitystruct.ts
-  - src/models/components/accountsearchidstruct.ts
-  - src/models/components/v1badgesresponsebody.ts
-  - src/models/components/v1badge.ts
-  - src/models/components/v1accountdatapointsresponsebody.ts
-  - src/models/components/accountbadgescarcitydatapoint.ts
-  - src/models/components/accountplaytimedatapoint.ts
-  - src/models/components/accountbadgemostxpdatapoint.ts
-  - src/models/components/v1accountfriendsresponsebody.ts
-  - src/models/components/v1accountfriend.ts
-  - src/models/components/location.ts
-  - src/models/components/role.ts
-  - src/models/components/leaderboardbadgeinfo.ts
-  - src/models/components/accountinfobody.ts
-  - src/models/components/image.ts
-  - src/models/components/bestleaderboardrank.ts
-  - src/models/components/connection.ts
-  - src/models/components/v1accountleaderboardhistoryresponsebody.ts
-  - src/models/components/accountleaderboardhistory.ts
-  - src/models/components/v1getsessionbody.ts
-  - src/models/components/session.ts
-  - src/models/components/resource.ts
-  - src/models/components/v1getsettingsbody.ts
-  - src/models/components/emailnotification.ts
-  - src/models/components/leaderboardaccount.ts
-  - src/models/components/v1loginresponsebody.ts
-  - src/models/components/loginrequestbody.ts
-  - src/models/components/v1updateconnectionresponsebody.ts
-  - src/models/components/v1updateconnectionrequestbody.ts
-  - src/models/components/v1updateimageresponsebody.ts
-  - src/models/components/v1updateimagerequestbody.ts
-  - src/models/components/v1updatesettingsresponsebody.ts
-  - src/models/components/v1updatesettingsrequestbody.ts
-  - src/models/components/v1uploadimagesrequestbody.ts
-  - src/models/components/v1uploaedimage.ts
-  - src/models/components/v1verifyconnectionresponsebody.ts
-  - src/models/components/v1verifyconnectionrequestbody.ts
-  - src/models/components/v1verifyemailresponsebody.ts
-  - src/models/components/v1verifyemailrequestbody.ts
-  - src/models/components/v1livenessresponsebody.ts
-  - src/models/components/region.ts
-  - src/models/components/country.ts
-  - src/models/components/state.ts
-  - src/models/components/city.ts
-  - src/models/components/security.ts
-  - src/models/errors/errormodel.ts
-  - src/models/errors/index.ts
-  - src/models/operations/index.ts
-  - src/models/components/index.ts
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/accountbadgemostxpdatapoint.md
+  - docs/models/components/accountbadgescarcitydatapoint.md
+  - docs/models/components/accountinfobody.md
+  - docs/models/components/accountleaderboardhistory.md
+  - docs/models/components/accountleaderboardhistoryleaderboard.md
+  - docs/models/components/accountplaytimedatapoint.md
+  - docs/models/components/accountsearch.md
+  - docs/models/components/accountsearchidstruct.md
+  - docs/models/components/accountsearchvanitystruct.md
+  - docs/models/components/appprivacy.md
+  - docs/models/components/appsearch.md
+  - docs/models/components/bestleaderboardrank.md
+  - docs/models/components/city.md
+  - docs/models/components/connection.md
+  - docs/models/components/connectionprovider.md
+  - docs/models/components/country.md
+  - docs/models/components/emailnotification.md
+  - docs/models/components/emailnotificationtype.md
+  - docs/models/components/errordetail.md
+  - docs/models/components/friendprivacy.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/image.md
+  - docs/models/components/leaderboard.md
+  - docs/models/components/leaderboardaccount.md
+  - docs/models/components/leaderboardbadgeinfo.md
+  - docs/models/components/location.md
+  - docs/models/components/loginrequestbody.md
+  - docs/models/components/privacy.md
+  - docs/models/components/provider.md
+  - docs/models/components/region.md
+  - docs/models/components/resource.md
+  - docs/models/components/resourceresource.md
+  - docs/models/components/role.md
+  - docs/models/components/rolerole.md
+  - docs/models/components/security.md
+  - docs/models/components/session.md
+  - docs/models/components/state.md
+  - docs/models/components/theme.md
+  - docs/models/components/type.md
+  - docs/models/components/v1accountapp.md
+  - docs/models/components/v1accountappbadge.md
+  - docs/models/components/v1accountbadgecompletion.md
+  - docs/models/components/v1accountdatapointsresponsebody.md
+  - docs/models/components/v1accountfriend.md
+  - docs/models/components/v1accountfriendsresponsebody.md
+  - docs/models/components/v1accountleaderboardhistoryresponsebody.md
+  - docs/models/components/v1accountsappsresponsebody.md
+  - docs/models/components/v1appbadge.md
+  - docs/models/components/v1appdetail.md
+  - docs/models/components/v1appdetailtype.md
+  - docs/models/components/v1appitem.md
+  - docs/models/components/v1apprequestbody.md
+  - docs/models/components/v1appresponsebody.md
+  - docs/models/components/v1badgesresponsebody.md
+  - docs/models/components/v1connectrequestbody.md
+  - docs/models/components/v1connectresponsebody.md
+  - docs/models/components/v1createsessionbody.md
+  - docs/models/components/v1deleteconnectionrequestbody.md
+  - docs/models/components/v1deleteconnectionresponsebody.md
+  - docs/models/components/v1deleteimagesrequestbody.md
+  - docs/models/components/v1deleteimagesresponsebody.md
+  - docs/models/components/v1deletesessionrequestbody.md
+  - docs/models/components/v1deletesessionresponsebody.md
+  - docs/models/components/v1generateapikeyresponsebody.md
+  - docs/models/components/v1getsessionbody.md
+  - docs/models/components/v1getsettingsbody.md
+  - docs/models/components/v1livenessresponsebody.md
+  - docs/models/components/v1loginresponsebody.md
+  - docs/models/components/v1updateconnectionrequestbody.md
+  - docs/models/components/v1updateconnectionresponsebody.md
+  - docs/models/components/v1updateimagerequestbody.md
+  - docs/models/components/v1updateimageresponsebody.md
+  - docs/models/components/v1updatesettingsrequestbody.md
+  - docs/models/components/v1updatesettingsrequestbodytheme.md
+  - docs/models/components/v1updatesettingsresponsebody.md
+  - docs/models/components/v1uploadimagesrequestbody.md
+  - docs/models/components/v1uploaedimage.md
+  - docs/models/components/v1uploaedimagetype.md
+  - docs/models/components/v1verifyconnectionrequestbody.md
+  - docs/models/components/v1verifyconnectionresponsebody.md
+  - docs/models/components/v1verifyemailrequestbody.md
+  - docs/models/components/v1verifyemailresponsebody.md
+  - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1connectionconnectresponse.md
-  - docs/models/operations/accountv1sessioncreaterequest.md
-  - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
-  - docs/models/operations/accountv1settingsdeleteimagesresponse.md
-  - docs/models/operations/accountv1sessiondeleteresponse.md
-  - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
+  - docs/models/operations/accountv1connectionupdateconnectionresponse.md
+  - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getbadgesrequest.md
@@ -247,111 +152,446 @@ generatedFiles:
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryrequest.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
-  - docs/models/operations/accountv1sessiongetresponse.md
-  - docs/models/operations/accountv1settingsgetresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
+  - docs/models/operations/accountv1queuerequest.md
+  - docs/models/operations/accountv1queueresponse.md
+  - docs/models/operations/accountv1sessioncreaterequest.md
+  - docs/models/operations/accountv1sessioncreateresponse.md
+  - docs/models/operations/accountv1sessiondeleteresponse.md
+  - docs/models/operations/accountv1sessiongetresponse.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
+  - docs/models/operations/accountv1settingsdeleteimagesresponse.md
+  - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
+  - docs/models/operations/accountv1settingsgetresponse.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
-  - docs/models/operations/accountv1connectionupdateconnectionresponse.md
   - docs/models/operations/accountv1settingsupdateimageresponse.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
-  - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/appv1getresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationresponse.md
-  - docs/models/components/v1connectresponsebody.md
-  - docs/models/components/httpmetadata.md
-  - docs/models/components/errordetail.md
-  - docs/models/components/provider.md
-  - docs/models/components/v1connectrequestbody.md
-  - docs/models/components/v1createsessionbody.md
-  - docs/models/components/v1deleteconnectionresponsebody.md
-  - docs/models/components/v1deleteconnectionrequestbody.md
-  - docs/models/components/v1deleteimagesresponsebody.md
-  - docs/models/components/v1deleteimagesrequestbody.md
-  - docs/models/components/v1deletesessionresponsebody.md
-  - docs/models/components/v1deletesessionrequestbody.md
-  - docs/models/components/v1generateapikeyresponsebody.md
-  - docs/models/components/v1accountsappsresponsebody.md
-  - docs/models/components/v1accountapp.md
-  - docs/models/components/accountsearch.md
-  - docs/models/components/type.md
-  - docs/models/components/accountsearchvanitystruct.md
-  - docs/models/components/accountsearchidstruct.md
-  - docs/models/components/v1badgesresponsebody.md
-  - docs/models/components/v1badge.md
-  - docs/models/components/v1accountdatapointsresponsebody.md
-  - docs/models/components/accountbadgescarcitydatapoint.md
-  - docs/models/components/accountplaytimedatapoint.md
-  - docs/models/components/accountbadgemostxpdatapoint.md
-  - docs/models/components/v1accountfriendsresponsebody.md
-  - docs/models/components/v1accountfriend.md
-  - docs/models/components/location.md
-  - docs/models/components/role.md
-  - docs/models/components/leaderboardbadgeinfo.md
-  - docs/models/components/appprivacy.md
-  - docs/models/components/friendprivacy.md
-  - docs/models/components/privacy.md
-  - docs/models/components/accountinfobody.md
-  - docs/models/components/image.md
-  - docs/models/components/leaderboard.md
-  - docs/models/components/bestleaderboardrank.md
-  - docs/models/components/connectionprovider.md
-  - docs/models/components/connection.md
-  - docs/models/components/v1accountleaderboardhistoryresponsebody.md
-  - docs/models/components/accountleaderboardhistoryleaderboard.md
-  - docs/models/components/accountleaderboardhistory.md
-  - docs/models/components/v1getsessionbody.md
-  - docs/models/components/session.md
-  - docs/models/components/resource.md
-  - docs/models/components/theme.md
-  - docs/models/components/v1getsettingsbody.md
-  - docs/models/components/emailnotificationtype.md
-  - docs/models/components/emailnotification.md
-  - docs/models/components/leaderboardaccount.md
-  - docs/models/components/v1loginresponsebody.md
-  - docs/models/components/loginrequestbody.md
-  - docs/models/components/v1updateconnectionresponsebody.md
-  - docs/models/components/v1updateconnectionrequestbody.md
-  - docs/models/components/v1updateimageresponsebody.md
-  - docs/models/components/v1updateimagerequestbody.md
-  - docs/models/components/v1updatesettingsresponsebody.md
-  - docs/models/components/v1updatesettingsrequestbodytheme.md
-  - docs/models/components/v1updatesettingsrequestbody.md
-  - docs/models/components/v1uploadimagesrequestbody.md
-  - docs/models/components/v1uploaedimagetype.md
-  - docs/models/components/v1uploaedimage.md
-  - docs/models/components/v1verifyconnectionresponsebody.md
-  - docs/models/components/v1verifyconnectionrequestbody.md
-  - docs/models/components/v1verifyemailresponsebody.md
-  - docs/models/components/v1verifyemailrequestbody.md
-  - docs/models/components/v1livenessresponsebody.md
-  - docs/models/components/region.md
-  - docs/models/components/country.md
-  - docs/models/components/state.md
-  - docs/models/components/city.md
-  - docs/models/components/security.md
-  - docs/models/errors/errormodel.md
-  - docs/sdks/steamsets/README.md
-  - docs/lib/utils/retryconfig.md
   - docs/sdks/account/README.md
+  - docs/sdks/app/README.md
   - docs/sdks/connection/README.md
-  - docs/sdks/session/README.md
-  - docs/sdks/settings/README.md
   - docs/sdks/data/README.md
-  - docs/sdks/public/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/location/README.md
-  - USAGE.md
-  - .gitattributes
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
+  - docs/sdks/public/README.md
+  - docs/sdks/session/README.md
+  - docs/sdks/settings/README.md
+  - docs/sdks/steamsets/README.md
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/accountAccountV1ConnectionConnect.ts
+  - src/funcs/accountAccountV1ConnectionDeleteConnection.ts
+  - src/funcs/accountAccountV1ConnectionUpdateConnection.ts
+  - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
+  - src/funcs/accountAccountV1GetApps.ts
+  - src/funcs/accountAccountV1GetBadges.ts
+  - src/funcs/accountAccountV1GetDataPoints.ts
+  - src/funcs/accountAccountV1GetFriends.ts
+  - src/funcs/accountAccountV1GetInfo.ts
+  - src/funcs/accountAccountV1GetLeaderboardHistory.ts
+  - src/funcs/accountAccountV1GetStaff.ts
+  - src/funcs/accountAccountV1SessionCreate.ts
+  - src/funcs/accountAccountV1SessionDelete.ts
+  - src/funcs/accountAccountV1SessionGet.ts
+  - src/funcs/accountAccountV1SessionLogin.ts
+  - src/funcs/accountAccountV1SettingsDeleteImages.ts
+  - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
+  - src/funcs/accountAccountV1SettingsGet.ts
+  - src/funcs/accountAccountV1SettingsSendEmailVerification.ts
+  - src/funcs/accountAccountV1SettingsUpdate.ts
+  - src/funcs/accountAccountV1SettingsUpdateImage.ts
+  - src/funcs/accountAccountV1SettingsUploadImages.ts
+  - src/funcs/accountAccountV1SettingsVerfyEmail.ts
+  - src/funcs/appAccountV1Queue.ts
+  - src/funcs/appAppV1Get.ts
+  - src/funcs/connectionAccountV1ConnectionConnect.ts
+  - src/funcs/connectionAccountV1ConnectionDeleteConnection.ts
+  - src/funcs/connectionAccountV1ConnectionUpdateConnection.ts
+  - src/funcs/connectionAccountV1ConnectionVerifyConnection.ts
+  - src/funcs/dataAccountV1GetApps.ts
+  - src/funcs/dataAccountV1GetBadges.ts
+  - src/funcs/dataAccountV1GetDataPoints.ts
+  - src/funcs/dataAccountV1GetFriends.ts
+  - src/funcs/dataAccountV1GetInfo.ts
+  - src/funcs/dataAccountV1GetLeaderboardHistory.ts
+  - src/funcs/dataAccountV1GetStaff.ts
+  - src/funcs/dataAccountV1Queue.ts
+  - src/funcs/livenessLiveness.ts
+  - src/funcs/locationLocation.ts
+  - src/funcs/publicAccountV1GetApps.ts
+  - src/funcs/publicAccountV1GetBadges.ts
+  - src/funcs/publicAccountV1GetDataPoints.ts
+  - src/funcs/publicAccountV1GetFriends.ts
+  - src/funcs/publicAccountV1GetInfo.ts
+  - src/funcs/publicAccountV1GetLeaderboardHistory.ts
+  - src/funcs/publicAccountV1Queue.ts
+  - src/funcs/sessionAccountV1SessionCreate.ts
+  - src/funcs/sessionAccountV1SessionDelete.ts
+  - src/funcs/sessionAccountV1SessionGet.ts
+  - src/funcs/sessionAccountV1SessionLogin.ts
+  - src/funcs/settingsAccountV1SettingsDeleteImages.ts
+  - src/funcs/settingsAccountV1SettingsGenerateApiKey.ts
+  - src/funcs/settingsAccountV1SettingsGet.ts
+  - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
+  - src/funcs/settingsAccountV1SettingsUpdate.ts
+  - src/funcs/settingsAccountV1SettingsUpdateImage.ts
+  - src/funcs/settingsAccountV1SettingsUploadImages.ts
+  - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
   - src/hooks/hooks.ts
-  - src/hooks/types.ts
   - src/hooks/index.ts
-  - CONTRIBUTING.md
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/models/components/accountbadgemostxpdatapoint.ts
+  - src/models/components/accountbadgescarcitydatapoint.ts
+  - src/models/components/accountinfobody.ts
+  - src/models/components/accountleaderboardhistory.ts
+  - src/models/components/accountplaytimedatapoint.ts
+  - src/models/components/accountsearch.ts
+  - src/models/components/accountsearchidstruct.ts
+  - src/models/components/accountsearchvanitystruct.ts
+  - src/models/components/appsearch.ts
+  - src/models/components/bestleaderboardrank.ts
+  - src/models/components/city.ts
+  - src/models/components/connection.ts
+  - src/models/components/country.ts
+  - src/models/components/emailnotification.ts
+  - src/models/components/errordetail.ts
+  - src/models/components/httpmetadata.ts
+  - src/models/components/image.ts
+  - src/models/components/index.ts
+  - src/models/components/leaderboardaccount.ts
+  - src/models/components/leaderboardbadgeinfo.ts
+  - src/models/components/location.ts
+  - src/models/components/loginrequestbody.ts
+  - src/models/components/region.ts
+  - src/models/components/resource.ts
+  - src/models/components/role.ts
+  - src/models/components/security.ts
+  - src/models/components/session.ts
+  - src/models/components/state.ts
+  - src/models/components/v1accountapp.ts
+  - src/models/components/v1accountappbadge.ts
+  - src/models/components/v1accountbadgecompletion.ts
+  - src/models/components/v1accountdatapointsresponsebody.ts
+  - src/models/components/v1accountfriend.ts
+  - src/models/components/v1accountfriendsresponsebody.ts
+  - src/models/components/v1accountleaderboardhistoryresponsebody.ts
+  - src/models/components/v1accountsappsresponsebody.ts
+  - src/models/components/v1appbadge.ts
+  - src/models/components/v1appdetail.ts
+  - src/models/components/v1appitem.ts
+  - src/models/components/v1apprequestbody.ts
+  - src/models/components/v1appresponsebody.ts
+  - src/models/components/v1badgesresponsebody.ts
+  - src/models/components/v1connectrequestbody.ts
+  - src/models/components/v1connectresponsebody.ts
+  - src/models/components/v1createsessionbody.ts
+  - src/models/components/v1deleteconnectionrequestbody.ts
+  - src/models/components/v1deleteconnectionresponsebody.ts
+  - src/models/components/v1deleteimagesrequestbody.ts
+  - src/models/components/v1deleteimagesresponsebody.ts
+  - src/models/components/v1deletesessionrequestbody.ts
+  - src/models/components/v1deletesessionresponsebody.ts
+  - src/models/components/v1generateapikeyresponsebody.ts
+  - src/models/components/v1getsessionbody.ts
+  - src/models/components/v1getsettingsbody.ts
+  - src/models/components/v1livenessresponsebody.ts
+  - src/models/components/v1loginresponsebody.ts
+  - src/models/components/v1updateconnectionrequestbody.ts
+  - src/models/components/v1updateconnectionresponsebody.ts
+  - src/models/components/v1updateimagerequestbody.ts
+  - src/models/components/v1updateimageresponsebody.ts
+  - src/models/components/v1updatesettingsrequestbody.ts
+  - src/models/components/v1updatesettingsresponsebody.ts
+  - src/models/components/v1uploadimagesrequestbody.ts
+  - src/models/components/v1uploaedimage.ts
+  - src/models/components/v1verifyconnectionrequestbody.ts
+  - src/models/components/v1verifyconnectionresponsebody.ts
+  - src/models/components/v1verifyemailrequestbody.ts
+  - src/models/components/v1verifyemailresponsebody.ts
+  - src/models/errors/errormodel.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkerror.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/accountv1connectionconnect.ts
+  - src/models/operations/accountv1connectiondeleteconnection.ts
+  - src/models/operations/accountv1connectionupdateconnection.ts
+  - src/models/operations/accountv1connectionverifyconnection.ts
+  - src/models/operations/accountv1getapps.ts
+  - src/models/operations/accountv1getbadges.ts
+  - src/models/operations/accountv1getdatapoints.ts
+  - src/models/operations/accountv1getfriends.ts
+  - src/models/operations/accountv1getinfo.ts
+  - src/models/operations/accountv1getleaderboardhistory.ts
+  - src/models/operations/accountv1getstaff.ts
+  - src/models/operations/accountv1queue.ts
+  - src/models/operations/accountv1sessioncreate.ts
+  - src/models/operations/accountv1sessiondelete.ts
+  - src/models/operations/accountv1sessionget.ts
+  - src/models/operations/accountv1sessionlogin.ts
+  - src/models/operations/accountv1settingsdeleteimages.ts
+  - src/models/operations/accountv1settingsgenerateapikey.ts
+  - src/models/operations/accountv1settingsget.ts
+  - src/models/operations/accountv1settingssendemailverification.ts
+  - src/models/operations/accountv1settingsupdate.ts
+  - src/models/operations/accountv1settingsupdateimage.ts
+  - src/models/operations/accountv1settingsuploadimages.ts
+  - src/models/operations/accountv1settingsverfyemail.ts
+  - src/models/operations/appv1get.ts
+  - src/models/operations/index.ts
+  - src/models/operations/liveness.ts
+  - src/models/operations/location.ts
+  - src/sdk/account.ts
+  - src/sdk/app.ts
+  - src/sdk/connection.ts
+  - src/sdk/data.ts
+  - src/sdk/index.ts
+  - src/sdk/liveness.ts
+  - src/sdk/location.ts
+  - src/sdk/public.ts
+  - src/sdk/sdk.ts
+  - src/sdk/session.ts
+  - src/sdk/settings.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  account.v1.connection.connect:
+    speakeasy-default-account-v1-connection-connect:
+      requestBody:
+        application/json: {"code": "123456", "provider": "discord"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.create:
+    speakeasy-default-account-v1-session-create:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "sessionId": "ABC123"}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.connection.deleteConnection:
+    speakeasy-default-account-v1-connection-delete-connection:
+      requestBody:
+        application/json: {"connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.delete-images:
+    speakeasy-default-account-v1-settings-delete-images:
+      requestBody:
+        application/json: {"imageIds": []}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.delete:
+    speakeasy-default-account-v1-session-delete:
+      requestBody:
+        application/json: {"sessionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.generate-api-key:
+    speakeasy-default-account-v1-settings-generate-api-key:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json", "key": "api_123"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getApps:
+    speakeasy-default-account-v1-get-apps:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getBadges:
+    speakeasy-default-account-v1-get-badges:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgesResponseBody.json", "badges": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getDataPoints:
+    speakeasy-default-account-v1-get-data-points:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json", "mostXp": [], "playtime": [], "scarcity": [], "xp": {"key": {}, "key1": {}, "key2": {"key": 71683}}}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getFriends:
+    speakeasy-default-account-v1-get-friends:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json", "friends": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getInfo:
+    speakeasy-default-account-v1-get-info:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/AccountInfoBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "appsUpdatedAt": "2023-01-01T00:00:00Z", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "badgesUpdatedAt": "2023-01-01T00:00:00Z", "bans": 44244, "city": {"code": "DE", "id": 1, "name": "Germany"}, "connections": [], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [], "currentRanks": [], "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "friendsUpdatedAt": "2023-01-01T00:00:00Z", "gameBans": 154594, "hidden": true, "images": [], "level": 123456, "limitedApps": 123456, "miniBackground": "steamsets", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 451463, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 768684, "xp": 123456}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getLeaderboardHistory:
+    speakeasy-default-account-v1-get-leaderboard-history:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json", "histories": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.get:
+    speakeasy-default-account-v1-session-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "resources": [], "roles": [], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.get:
+    speakeasy-default-account-v1-settings-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "apiKey": "api_key", "color": "#7652c9", "colors": "#7652c9", "connections": [], "email": "steamsets@example.com", "emailNotifications": [], "emailVerified": true, "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getStaff:
+    speakeasy-default-account-v1-get-staff:
+      responses:
+        "200":
+          application/json: []
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.login:
+    speakeasy-default-account-v1-session-login:
+      requestBody:
+        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://steamsets.com/api/v1/openid/login", "openid_sig": "123456", "openid_signed": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "sessionToken": "123456", "steamId": "76561198842603734"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.send-email-verification:
+    speakeasy-default-account-v1-settings-send-email-verification:
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.connection.updateConnection:
+    speakeasy-default-account-v1-connection-update-connection:
+      requestBody:
+        application/json: {"connectionId": "123456", "hidden": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update-image:
+    speakeasy-default-account-v1-settings-update-image:
+      requestBody:
+        application/json: {"active": true, "imageId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json", "key": "api_123"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update:
+    speakeasy-default-account-v1-settings-update:
+      requestBody:
+        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "emailNotifications": [], "hidden": true, "language": "en", "theme": "dark", "vanity": "flo"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json"}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.upload-images:
+    speakeasy-default-account-v1-settings-upload-images:
+      requestBody:
+        application/json: {"images": []}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.connection.verifyConnection:
+    speakeasy-default-account-v1-connection-verify-connection:
+      requestBody:
+        application/json: {"connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.verfy-email:
+    speakeasy-default-account-v1-settings-verfy-email:
+      requestBody:
+        application/json: {"code": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.queue:
+    speakeasy-default-account-v1-queue:
+      requestBody:
+        application/json: {"id": 730}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  app.v1.get:
+    speakeasy-default-app-v1-get:
+      requestBody:
+        application/json: {"appId": 123456}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppResponseBody.json", "badges": [], "detail": {"appId": 730, "image": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isEvent": true, "isSale": true, "name": "CS2", "price": 1200, "shortName": "csgo", "type": "game"}, "items": []}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  liveness:
+    speakeasy-default-liveness:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  location:
+    speakeasy-default-location:
+      responses:
+        "200":
+          application/json: []
+        "401":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

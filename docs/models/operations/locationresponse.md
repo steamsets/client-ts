@@ -6,34 +6,34 @@
 import { LocationResponse } from "@steamsets/client-ts/models/operations";
 
 let value: LocationResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    regions: [
-        {
-            countries: {
-                key: {
-                    code: "<value>",
-                    name: "<value>",
-                    states: {
-                        key: {
-                            cities: {
-                                key: {
-                                    name: "<value>",
-                                },
-                            },
-                            code: "<value>",
-                            name: "<value>",
-                        },
-                    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  regions: [
+    {
+      countries: {
+        "key": {
+          code: "<value>",
+          name: "<value>",
+          states: {
+            "key": {
+              cities: {
+                "key": {
+                  name: "<value>",
                 },
+              },
+              code: "<value>",
+              name: "<value>",
             },
-            name: "Europe",
+          },
         },
-    ],
+      },
+      name: "Europe",
+    },
+  ],
 };
 ```
 

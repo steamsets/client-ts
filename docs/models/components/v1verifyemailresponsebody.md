@@ -6,7 +6,8 @@
 import { V1VerifyEmailResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1VerifyEmailResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json",
 };
 ```
 

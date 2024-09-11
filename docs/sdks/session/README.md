@@ -25,7 +25,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.session.accountV1SessionCreate({});
-
+  
   // Handle the result
   console.log(result)
 }
@@ -101,7 +101,7 @@ async function run() {
   const result = await steamSets.session.accountV1SessionDelete({
     sessionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -177,7 +177,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.session.accountV1SessionGet();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -263,7 +263,7 @@ async function run() {
       openidSigned: "123456",
     },
   });
-
+  
   // Handle the result
   console.log(result)
 }

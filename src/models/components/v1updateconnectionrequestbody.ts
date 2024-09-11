@@ -5,40 +5,40 @@
 import * as z from "zod";
 
 export type V1UpdateConnectionRequestBody = {
-    /**
-     * The connection id to update
-     */
-    connectionId: string;
-    /**
-     * Whether the connection should be hidden or not
-     */
-    hidden: boolean;
+  /**
+   * The connection id to update
+   */
+  connectionId: string;
+  /**
+   * Whether the connection should be hidden or not
+   */
+  hidden: boolean;
 };
 
 /** @internal */
 export const V1UpdateConnectionRequestBody$inboundSchema: z.ZodType<
-    V1UpdateConnectionRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1UpdateConnectionRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    connectionId: z.string(),
-    hidden: z.boolean(),
+  connectionId: z.string(),
+  hidden: z.boolean(),
 });
 
 /** @internal */
 export type V1UpdateConnectionRequestBody$Outbound = {
-    connectionId: string;
-    hidden: boolean;
+  connectionId: string;
+  hidden: boolean;
 };
 
 /** @internal */
 export const V1UpdateConnectionRequestBody$outboundSchema: z.ZodType<
-    V1UpdateConnectionRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1UpdateConnectionRequestBody
+  V1UpdateConnectionRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1UpdateConnectionRequestBody
 > = z.object({
-    connectionId: z.string(),
-    hidden: z.boolean(),
+  connectionId: z.string(),
+  hidden: z.boolean(),
 });
 
 /**
@@ -46,10 +46,10 @@ export const V1UpdateConnectionRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1UpdateConnectionRequestBody$ {
-    /** @deprecated use `V1UpdateConnectionRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1UpdateConnectionRequestBody$inboundSchema;
-    /** @deprecated use `V1UpdateConnectionRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1UpdateConnectionRequestBody$outboundSchema;
-    /** @deprecated use `V1UpdateConnectionRequestBody$Outbound` instead. */
-    export type Outbound = V1UpdateConnectionRequestBody$Outbound;
+  /** @deprecated use `V1UpdateConnectionRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1UpdateConnectionRequestBody$inboundSchema;
+  /** @deprecated use `V1UpdateConnectionRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1UpdateConnectionRequestBody$outboundSchema;
+  /** @deprecated use `V1UpdateConnectionRequestBody$Outbound` instead. */
+  export type Outbound = V1UpdateConnectionRequestBody$Outbound;
 }

@@ -6,10 +6,10 @@
 import { Image } from "@steamsets/client-ts/models/components";
 
 let value: Image = {
-    active: true,
-    fileName: "avatar.png",
-    imageId: "img_wasd123",
-    imageType: "avatar",
+  active: true,
+  fileName: "avatar.png",
+  imageId: "img_wasd123",
+  imageType: "avatar",
 };
 ```
 

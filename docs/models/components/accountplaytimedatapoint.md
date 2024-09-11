@@ -6,10 +6,10 @@
 import { AccountPlaytimeDataPoint } from "@steamsets/client-ts/models/components";
 
 let value: AccountPlaytimeDataPoint = {
-    appId: 730,
-    image: "someHash.idk",
-    name: "CS2",
-    playtime: 15,
+  appId: 730,
+  image: "someHash.idk",
+  name: "CS2",
+  playtime: 15,
 };
 ```
 

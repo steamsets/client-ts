@@ -6,16 +6,17 @@
 import { AccountV1GetFriendsResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetFriendsResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1AccountFriendsResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json",
-        friends: [],
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1AccountFriendsResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json",
+    friends: [],
+  },
 };
 ```
 

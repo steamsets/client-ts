@@ -49,7 +49,7 @@ async function run() {
     code: "123456",
     provider: "discord",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -126,7 +126,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SessionCreate({});
-
+  
   // Handle the result
   console.log(result)
 }
@@ -202,7 +202,7 @@ async function run() {
   const result = await steamSets.account.accountV1ConnectionDeleteConnection({
     connectionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -282,7 +282,7 @@ async function run() {
       "<value>",
     ],
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -362,7 +362,7 @@ async function run() {
   const result = await steamSets.account.accountV1SessionDelete({
     sessionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -438,7 +438,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsGenerateApiKey();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -513,7 +513,7 @@ async function run() {
   const result = await steamSets.account.accountV1GetApps({
     accountSearch: {},
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -591,7 +591,7 @@ async function run() {
   const result = await steamSets.account.accountV1GetBadges({
     accountSearch: {},
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -669,7 +669,7 @@ async function run() {
   const result = await steamSets.account.accountV1GetDataPoints({
     accountSearch: {},
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -747,7 +747,7 @@ async function run() {
   const result = await steamSets.account.accountV1GetFriends({
     accountSearch: {},
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -823,7 +823,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetInfo({});
-
+  
   // Handle the result
   console.log(result)
 }
@@ -899,7 +899,7 @@ async function run() {
   const result = await steamSets.account.accountV1GetLeaderboardHistory({
     accountSearch: {},
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -975,7 +975,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SessionGet();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1048,7 +1048,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsGet();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1121,7 +1121,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetStaff();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1207,7 +1207,7 @@ async function run() {
       openidSigned: "123456",
     },
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1294,7 +1294,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsSendEmailVerification({});
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1371,7 +1371,7 @@ async function run() {
     connectionId: "123456",
     hidden: true,
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1451,7 +1451,7 @@ async function run() {
     active: true,
     imageId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1544,7 +1544,7 @@ async function run() {
       vanity: "flo",
     },
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1641,7 +1641,7 @@ async function run() {
       },
     ],
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1724,7 +1724,7 @@ async function run() {
   const result = await steamSets.account.accountV1ConnectionVerifyConnection({
     connectionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -1802,7 +1802,7 @@ async function run() {
   const result = await steamSets.account.accountV1SettingsVerfyEmail({
     code: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }

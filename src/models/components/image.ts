@@ -5,46 +5,51 @@
 import * as z from "zod";
 
 export type Image = {
-    /**
-     * Whether the image is active or not
-     */
-    active: boolean;
-    /**
-     * The name of the file
-     */
-    fileName: string;
-    /**
-     * The id of the image
-     */
-    imageId: string;
-    /**
-     * The type of the image
-     */
-    imageType: string;
+  /**
+   * Whether the image is active or not
+   */
+  active: boolean;
+  /**
+   * The name of the file
+   */
+  fileName: string;
+  /**
+   * The id of the image
+   */
+  imageId: string;
+  /**
+   * The type of the image
+   */
+  imageType: string;
 };
 
 /** @internal */
-export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z.object({
+export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z
+  .object({
     active: z.boolean(),
     fileName: z.string(),
     imageId: z.string(),
     imageType: z.string(),
-});
+  });
 
 /** @internal */
 export type Image$Outbound = {
-    active: boolean;
-    fileName: string;
-    imageId: string;
-    imageType: string;
+  active: boolean;
+  fileName: string;
+  imageId: string;
+  imageType: string;
 };
 
 /** @internal */
-export const Image$outboundSchema: z.ZodType<Image$Outbound, z.ZodTypeDef, Image> = z.object({
-    active: z.boolean(),
-    fileName: z.string(),
-    imageId: z.string(),
-    imageType: z.string(),
+export const Image$outboundSchema: z.ZodType<
+  Image$Outbound,
+  z.ZodTypeDef,
+  Image
+> = z.object({
+  active: z.boolean(),
+  fileName: z.string(),
+  imageId: z.string(),
+  imageType: z.string(),
 });
 
 /**
@@ -52,10 +57,10 @@ export const Image$outboundSchema: z.ZodType<Image$Outbound, z.ZodTypeDef, Image
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace Image$ {
-    /** @deprecated use `Image$inboundSchema` instead. */
-    export const inboundSchema = Image$inboundSchema;
-    /** @deprecated use `Image$outboundSchema` instead. */
-    export const outboundSchema = Image$outboundSchema;
-    /** @deprecated use `Image$Outbound` instead. */
-    export type Outbound = Image$Outbound;
+  /** @deprecated use `Image$inboundSchema` instead. */
+  export const inboundSchema = Image$inboundSchema;
+  /** @deprecated use `Image$outboundSchema` instead. */
+  export const outboundSchema = Image$outboundSchema;
+  /** @deprecated use `Image$Outbound` instead. */
+  export type Outbound = Image$Outbound;
 }

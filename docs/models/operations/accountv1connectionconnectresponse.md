@@ -6,16 +6,17 @@
 import { AccountV1ConnectionConnectResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1ConnectionConnectResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1ConnectResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1ConnectResponseBody.json",
-        code: "ABC123",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1ConnectResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1ConnectResponseBody.json",
+    code: "ABC123",
+  },
 };
 ```
 

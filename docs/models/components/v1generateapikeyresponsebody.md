@@ -6,8 +6,9 @@
 import { V1GenerateApiKeyResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1GenerateApiKeyResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json",
-    key: "api_123",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json",
+  key: "api_123",
 };
 ```
 

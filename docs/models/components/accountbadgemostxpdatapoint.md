@@ -6,18 +6,18 @@
 import { AccountBadgeMostXpDataPoint } from "@steamsets/client-ts/models/components";
 
 let value: AccountBadgeMostXpDataPoint = {
-    appId: 123456,
-    badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
-    badgeId: "123456",
-    badgeImage: "steamsets",
-    badgeIsFoil: true,
-    badgeLevel: 123456,
-    badgeName: "steamsets",
-    badgeScarcity: 123456,
-    badgeSteamID: 123456,
-    badgeXP: 123456,
-    image: "steamsets",
-    name: "steamsets",
+  appId: 123456,
+  badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
+  badgeId: "123456",
+  badgeImage: "steamsets",
+  badgeIsFoil: true,
+  badgeLevel: 123456,
+  badgeName: "steamsets",
+  badgeScarcity: 123456,
+  badgeSteamID: 123456,
+  badgeXP: 123456,
+  image: "steamsets",
+  name: "steamsets",
 };
 ```
 

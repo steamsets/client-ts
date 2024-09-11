@@ -6,8 +6,9 @@
 import { V1AccountFriendsResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountFriendsResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json",
-    friends: [],
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json",
+  friends: [],
 };
 ```
 

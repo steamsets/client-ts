@@ -6,12 +6,12 @@
 import { V1UploadImagesRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UploadImagesRequestBody = {
-    images: [
-        {
-            data: "base64_encoded_image",
-            type: "avatar",
-        },
-    ],
+  images: [
+    {
+      data: "base64_encoded_image",
+      type: "avatar",
+    },
+  ],
 };
 ```
 

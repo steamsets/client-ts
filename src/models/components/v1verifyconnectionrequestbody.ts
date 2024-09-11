@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type V1VerifyConnectionRequestBody = {
-    /**
-     * The connection id to verify
-     */
-    connectionId: string;
+  /**
+   * The connection id to verify
+   */
+  connectionId: string;
 };
 
 /** @internal */
 export const V1VerifyConnectionRequestBody$inboundSchema: z.ZodType<
-    V1VerifyConnectionRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1VerifyConnectionRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    connectionId: z.string(),
+  connectionId: z.string(),
 });
 
 /** @internal */
 export type V1VerifyConnectionRequestBody$Outbound = {
-    connectionId: string;
+  connectionId: string;
 };
 
 /** @internal */
 export const V1VerifyConnectionRequestBody$outboundSchema: z.ZodType<
-    V1VerifyConnectionRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1VerifyConnectionRequestBody
+  V1VerifyConnectionRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1VerifyConnectionRequestBody
 > = z.object({
-    connectionId: z.string(),
+  connectionId: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const V1VerifyConnectionRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1VerifyConnectionRequestBody$ {
-    /** @deprecated use `V1VerifyConnectionRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1VerifyConnectionRequestBody$inboundSchema;
-    /** @deprecated use `V1VerifyConnectionRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1VerifyConnectionRequestBody$outboundSchema;
-    /** @deprecated use `V1VerifyConnectionRequestBody$Outbound` instead. */
-    export type Outbound = V1VerifyConnectionRequestBody$Outbound;
+  /** @deprecated use `V1VerifyConnectionRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1VerifyConnectionRequestBody$inboundSchema;
+  /** @deprecated use `V1VerifyConnectionRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1VerifyConnectionRequestBody$outboundSchema;
+  /** @deprecated use `V1VerifyConnectionRequestBody$Outbound` instead. */
+  export type Outbound = V1VerifyConnectionRequestBody$Outbound;
 }

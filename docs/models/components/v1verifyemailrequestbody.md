@@ -6,7 +6,7 @@
 import { V1VerifyEmailRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1VerifyEmailRequestBody = {
-    code: "123456",
+  code: "123456",
 };
 ```
 

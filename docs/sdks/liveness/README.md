@@ -24,7 +24,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.liveness.liveness();
-
+  
   // Handle the result
   console.log(result)
 }

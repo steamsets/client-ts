@@ -6,7 +6,7 @@
 import { AccountV1GetLeaderboardHistoryRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetLeaderboardHistoryRequest = {
-    accountSearch: {},
+  accountSearch: {},
 };
 ```
 

@@ -31,229 +31,317 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Account extends ClientSDK {
-    /**
-     * Connect a new Social Provider
-     */
-    async accountV1ConnectionConnect(
-        request: components.V1ConnectRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionConnectResponse> {
-        return unwrapAsync(accountAccountV1ConnectionConnect(this, request, options));
-    }
+  /**
+   * Connect a new Social Provider
+   */
+  async accountV1ConnectionConnect(
+    request: components.V1ConnectRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionConnectResponse> {
+    return unwrapAsync(accountAccountV1ConnectionConnect(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a new session for non logged in users
-     */
-    async accountV1SessionCreate(
-        request: operations.AccountV1SessionCreateRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionCreateResponse> {
-        return unwrapAsync(accountAccountV1SessionCreate(this, request, options));
-    }
+  /**
+   * Create a new session for non logged in users
+   */
+  async accountV1SessionCreate(
+    request: operations.AccountV1SessionCreateRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SessionCreateResponse> {
+    return unwrapAsync(accountAccountV1SessionCreate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a connection
-     */
-    async accountV1ConnectionDeleteConnection(
-        request: components.V1DeleteConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
-        return unwrapAsync(accountAccountV1ConnectionDeleteConnection(this, request, options));
-    }
+  /**
+   * Remove a connection
+   */
+  async accountV1ConnectionDeleteConnection(
+    request: components.V1DeleteConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
+    return unwrapAsync(accountAccountV1ConnectionDeleteConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Delete mulitple imagest
-     */
-    async accountV1SettingsDeleteImages(
-        request: components.V1DeleteImagesRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
-        return unwrapAsync(accountAccountV1SettingsDeleteImages(this, request, options));
-    }
+  /**
+   * Delete mulitple imagest
+   */
+  async accountV1SettingsDeleteImages(
+    request: components.V1DeleteImagesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
+    return unwrapAsync(accountAccountV1SettingsDeleteImages(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Deletes a session, can also be used to logout
-     */
-    async accountV1SessionDelete(
-        request: components.V1DeleteSessionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionDeleteResponse> {
-        return unwrapAsync(accountAccountV1SessionDelete(this, request, options));
-    }
+  /**
+   * Deletes a session, can also be used to logout
+   */
+  async accountV1SessionDelete(
+    request: components.V1DeleteSessionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SessionDeleteResponse> {
+    return unwrapAsync(accountAccountV1SessionDelete(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Generate a new API key for the account
-     */
-    async accountV1SettingsGenerateApiKey(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsGenerateApiKeyResponse> {
-        return unwrapAsync(accountAccountV1SettingsGenerateApiKey(this, options));
-    }
+  /**
+   * Generate a new API key for the account
+   */
+  async accountV1SettingsGenerateApiKey(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsGenerateApiKeyResponse> {
+    return unwrapAsync(accountAccountV1SettingsGenerateApiKey(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account Apps
-     */
-    async accountV1GetApps(
-        request: operations.AccountV1GetAppsRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetAppsResponse> {
-        return unwrapAsync(accountAccountV1GetApps(this, request, options));
-    }
+  /**
+   * Get Account Apps
+   */
+  async accountV1GetApps(
+    request: operations.AccountV1GetAppsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetAppsResponse> {
+    return unwrapAsync(accountAccountV1GetApps(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account Badges
-     */
-    async accountV1GetBadges(
-        request: operations.AccountV1GetBadgesRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetBadgesResponse> {
-        return unwrapAsync(accountAccountV1GetBadges(this, request, options));
-    }
+  /**
+   * Get Account Badges
+   */
+  async accountV1GetBadges(
+    request: operations.AccountV1GetBadgesRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetBadgesResponse> {
+    return unwrapAsync(accountAccountV1GetBadges(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account DataPoints
-     */
-    async accountV1GetDataPoints(
-        request: operations.AccountV1GetDataPointsRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetDataPointsResponse> {
-        return unwrapAsync(accountAccountV1GetDataPoints(this, request, options));
-    }
+  /**
+   * Get Account DataPoints
+   */
+  async accountV1GetDataPoints(
+    request: operations.AccountV1GetDataPointsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetDataPointsResponse> {
+    return unwrapAsync(accountAccountV1GetDataPoints(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account Friends
-     */
-    async accountV1GetFriends(
-        request: operations.AccountV1GetFriendsRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetFriendsResponse> {
-        return unwrapAsync(accountAccountV1GetFriends(this, request, options));
-    }
+  /**
+   * Get Account Friends
+   */
+  async accountV1GetFriends(
+    request: operations.AccountV1GetFriendsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetFriendsResponse> {
+    return unwrapAsync(accountAccountV1GetFriends(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account Info
-     */
-    async accountV1GetInfo(
-        request: components.AccountSearch,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetInfoResponse> {
-        return unwrapAsync(accountAccountV1GetInfo(this, request, options));
-    }
+  /**
+   * Get Account Info
+   */
+  async accountV1GetInfo(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetInfoResponse> {
+    return unwrapAsync(accountAccountV1GetInfo(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Get Account Leaderboard History
-     */
-    async accountV1GetLeaderboardHistory(
-        request: operations.AccountV1GetLeaderboardHistoryRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
-        return unwrapAsync(accountAccountV1GetLeaderboardHistory(this, request, options));
-    }
+  /**
+   * Get Account Leaderboard History
+   */
+  async accountV1GetLeaderboardHistory(
+    request: operations.AccountV1GetLeaderboardHistoryRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
+    return unwrapAsync(accountAccountV1GetLeaderboardHistory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Gets all session data
-     */
-    async accountV1SessionGet(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionGetResponse> {
-        return unwrapAsync(accountAccountV1SessionGet(this, options));
-    }
+  /**
+   * Gets all session data
+   */
+  async accountV1SessionGet(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SessionGetResponse> {
+    return unwrapAsync(accountAccountV1SessionGet(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Gets all settings for the account
-     */
-    async accountV1SettingsGet(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsGetResponse> {
-        return unwrapAsync(accountAccountV1SettingsGet(this, options));
-    }
+  /**
+   * Gets all settings for the account
+   */
+  async accountV1SettingsGet(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsGetResponse> {
+    return unwrapAsync(accountAccountV1SettingsGet(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Get Staff Members and their info
-     */
-    async accountV1GetStaff(
-        options?: RequestOptions
-    ): Promise<operations.AccountV1GetStaffResponse> {
-        return unwrapAsync(accountAccountV1GetStaff(this, options));
-    }
+  /**
+   * Get Staff Members and their info
+   */
+  async accountV1GetStaff(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetStaffResponse> {
+    return unwrapAsync(accountAccountV1GetStaff(
+      this,
+      options,
+    ));
+  }
 
-    /**
-     * Logs a user in and creates a new session
-     */
-    async accountV1SessionLogin(
-        request: operations.AccountV1SessionLoginRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SessionLoginResponse> {
-        return unwrapAsync(accountAccountV1SessionLogin(this, request, options));
-    }
+  /**
+   * Logs a user in and creates a new session
+   */
+  async accountV1SessionLogin(
+    request: operations.AccountV1SessionLoginRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SessionLoginResponse> {
+    return unwrapAsync(accountAccountV1SessionLogin(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Resend the verification code for an email
-     */
-    async accountV1SettingsSendEmailVerification(
-        request: operations.AccountV1SettingsSendEmailVerificationRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
-        return unwrapAsync(accountAccountV1SettingsSendEmailVerification(this, request, options));
-    }
+  /**
+   * Resend the verification code for an email
+   */
+  async accountV1SettingsSendEmailVerification(
+    request: operations.AccountV1SettingsSendEmailVerificationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
+    return unwrapAsync(accountAccountV1SettingsSendEmailVerification(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Make a connection visible/invisible
-     */
-    async accountV1ConnectionUpdateConnection(
-        request: components.V1UpdateConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
-        return unwrapAsync(accountAccountV1ConnectionUpdateConnection(this, request, options));
-    }
+  /**
+   * Make a connection visible/invisible
+   */
+  async accountV1ConnectionUpdateConnection(
+    request: components.V1UpdateConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
+    return unwrapAsync(accountAccountV1ConnectionUpdateConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update one of the uploaded images
-     */
-    async accountV1SettingsUpdateImage(
-        request: components.V1UpdateImageRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
-        return unwrapAsync(accountAccountV1SettingsUpdateImage(this, request, options));
-    }
+  /**
+   * Update one of the uploaded images
+   */
+  async accountV1SettingsUpdateImage(
+    request: components.V1UpdateImageRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
+    return unwrapAsync(accountAccountV1SettingsUpdateImage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update settings for the logged in account
-     */
-    async accountV1SettingsUpdate(
-        request: operations.AccountV1SettingsUpdateRequest,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUpdateResponse> {
-        return unwrapAsync(accountAccountV1SettingsUpdate(this, request, options));
-    }
+  /**
+   * Update settings for the logged in account
+   */
+  async accountV1SettingsUpdate(
+    request: operations.AccountV1SettingsUpdateRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateResponse> {
+    return unwrapAsync(accountAccountV1SettingsUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Multi Upload Endpoint for images
-     */
-    async accountV1SettingsUploadImages(
-        request: components.V1UploadImagesRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
-        return unwrapAsync(accountAccountV1SettingsUploadImages(this, request, options));
-    }
+  /**
+   * Multi Upload Endpoint for images
+   */
+  async accountV1SettingsUploadImages(
+    request: components.V1UploadImagesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
+    return unwrapAsync(accountAccountV1SettingsUploadImages(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Verify a domain connection only atm
-     */
-    async accountV1ConnectionVerifyConnection(
-        request: components.V1VerifyConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
-        return unwrapAsync(accountAccountV1ConnectionVerifyConnection(this, request, options));
-    }
+  /**
+   * Verify a domain connection only atm
+   */
+  async accountV1ConnectionVerifyConnection(
+    request: components.V1VerifyConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
+    return unwrapAsync(accountAccountV1ConnectionVerifyConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Verify the email by passing in the code the user should've gotten
-     */
-    async accountV1SettingsVerfyEmail(
-        request: components.V1VerifyEmailRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
-        return unwrapAsync(accountAccountV1SettingsVerfyEmail(this, request, options));
-    }
+  /**
+   * Verify the email by passing in the code the user should've gotten
+   */
+  async accountV1SettingsVerfyEmail(
+    request: components.V1VerifyEmailRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
+    return unwrapAsync(accountAccountV1SettingsVerfyEmail(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -6,16 +6,16 @@
 import { LoginRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: LoginRequestBody = {
-    openidAssocHandle: "123456",
-    openidClaimedId: "76561198842603734",
-    openidIdentity: "https://steamsets.com/api/v1/openid/login",
-    openidMode: "checkid_setup",
-    openidNs: "http://specs.openid.net/auth/2.0",
-    openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
-    openidResponseNonce: "123456",
-    openidReturnTo: "https://steamsets.com/api/v1/openid/login",
-    openidSig: "123456",
-    openidSigned: "123456",
+  openidAssocHandle: "123456",
+  openidClaimedId: "76561198842603734",
+  openidIdentity: "https://steamsets.com/api/v1/openid/login",
+  openidMode: "checkid_setup",
+  openidNs: "http://specs.openid.net/auth/2.0",
+  openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
+  openidResponseNonce: "123456",
+  openidReturnTo: "https://steamsets.com/api/v1/openid/login",
+  openidSig: "123456",
+  openidSigned: "123456",
 };
 ```
 

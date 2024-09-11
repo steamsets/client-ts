@@ -6,8 +6,8 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-    resource: "<value>",
-    value: "1",
+  resource: "max_leaderboard_entries",
+  value: "1",
 };
 ```
 
@@ -15,5 +15,5 @@ let value: Resource = {
 
 | Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                | Example                                                                                    |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `resource`                                                                                 | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |                                                                                            |
+| `resource`                                                                                 | [components.ResourceResource](../../models/components/resourceresource.md)                 | :heavy_check_mark:                                                                         | N/A                                                                                        |                                                                                            |
 | `value`                                                                                    | *string*                                                                                   | :heavy_check_mark:                                                                         | The value of the resource, this can be a string, number, boolean or even a cron expression | 1                                                                                          |

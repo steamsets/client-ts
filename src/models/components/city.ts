@@ -5,36 +5,38 @@
 import * as z from "zod";
 
 export type City = {
-    /**
-     * The name of the city
-     */
-    name: string;
+  /**
+   * The name of the city
+   */
+  name: string;
 };
 
 /** @internal */
-export const City$inboundSchema: z.ZodType<City, z.ZodTypeDef, unknown> = z.object({
+export const City$inboundSchema: z.ZodType<City, z.ZodTypeDef, unknown> = z
+  .object({
     name: z.string(),
-});
+  });
 
 /** @internal */
 export type City$Outbound = {
-    name: string;
+  name: string;
 };
 
 /** @internal */
-export const City$outboundSchema: z.ZodType<City$Outbound, z.ZodTypeDef, City> = z.object({
+export const City$outboundSchema: z.ZodType<City$Outbound, z.ZodTypeDef, City> =
+  z.object({
     name: z.string(),
-});
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace City$ {
-    /** @deprecated use `City$inboundSchema` instead. */
-    export const inboundSchema = City$inboundSchema;
-    /** @deprecated use `City$outboundSchema` instead. */
-    export const outboundSchema = City$outboundSchema;
-    /** @deprecated use `City$Outbound` instead. */
-    export type Outbound = City$Outbound;
+  /** @deprecated use `City$inboundSchema` instead. */
+  export const inboundSchema = City$inboundSchema;
+  /** @deprecated use `City$outboundSchema` instead. */
+  export const outboundSchema = City$outboundSchema;
+  /** @deprecated use `City$Outbound` instead. */
+  export type Outbound = City$Outbound;
 }

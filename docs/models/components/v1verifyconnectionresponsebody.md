@@ -6,7 +6,8 @@
 import { V1VerifyConnectionResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1VerifyConnectionResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json",
 };
 ```
 

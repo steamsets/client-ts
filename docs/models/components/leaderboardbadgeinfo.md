@@ -6,8 +6,8 @@
 import { LeaderboardBadgeInfo } from "@steamsets/client-ts/models/components";
 
 let value: LeaderboardBadgeInfo = {
-    completionTime: new Date("2023-01-01T00:00:00Z"),
-    level: 123456,
+  completionTime: new Date("2023-01-01T00:00:00Z"),
+  level: 123456,
 };
 ```
 

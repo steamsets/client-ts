@@ -6,13 +6,13 @@
 import { State } from "@steamsets/client-ts/models/components";
 
 let value: State = {
-    cities: {
-        key: {
-            name: "<value>",
-        },
+  cities: {
+    "key": {
+      name: "<value>",
     },
-    code: "<value>",
-    name: "<value>",
+  },
+  code: "<value>",
+  name: "<value>",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { AccountV1GetDataPointsRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetDataPointsRequest = {
-    accountSearch: {},
+  accountSearch: {},
 };
 ```
 

@@ -6,16 +6,16 @@
 import { AccountV1SessionCreateResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SessionCreateResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1CreateSessionBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
-        sessionId: "ABC123",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1CreateSessionBody: {
+    dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
+    sessionId: "ABC123",
+  },
 };
 ```
 

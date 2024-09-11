@@ -6,7 +6,7 @@
 import { V1DeleteConnectionRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteConnectionRequestBody = {
-    connectionId: "123456",
+  connectionId: "123456",
 };
 ```
 

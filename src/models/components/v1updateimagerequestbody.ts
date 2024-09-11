@@ -5,40 +5,40 @@
 import * as z from "zod";
 
 export type V1UpdateImageRequestBody = {
-    /**
-     * Whether the image is active or not, only one of each type can be active
-     */
-    active: boolean;
-    /**
-     * The image id to update
-     */
-    imageId: string;
+  /**
+   * Whether the image is active or not, only one of each type can be active
+   */
+  active: boolean;
+  /**
+   * The image id to update
+   */
+  imageId: string;
 };
 
 /** @internal */
 export const V1UpdateImageRequestBody$inboundSchema: z.ZodType<
-    V1UpdateImageRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1UpdateImageRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    active: z.boolean(),
-    imageId: z.string(),
+  active: z.boolean(),
+  imageId: z.string(),
 });
 
 /** @internal */
 export type V1UpdateImageRequestBody$Outbound = {
-    active: boolean;
-    imageId: string;
+  active: boolean;
+  imageId: string;
 };
 
 /** @internal */
 export const V1UpdateImageRequestBody$outboundSchema: z.ZodType<
-    V1UpdateImageRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1UpdateImageRequestBody
+  V1UpdateImageRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1UpdateImageRequestBody
 > = z.object({
-    active: z.boolean(),
-    imageId: z.string(),
+  active: z.boolean(),
+  imageId: z.string(),
 });
 
 /**
@@ -46,10 +46,10 @@ export const V1UpdateImageRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1UpdateImageRequestBody$ {
-    /** @deprecated use `V1UpdateImageRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1UpdateImageRequestBody$inboundSchema;
-    /** @deprecated use `V1UpdateImageRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1UpdateImageRequestBody$outboundSchema;
-    /** @deprecated use `V1UpdateImageRequestBody$Outbound` instead. */
-    export type Outbound = V1UpdateImageRequestBody$Outbound;
+  /** @deprecated use `V1UpdateImageRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1UpdateImageRequestBody$inboundSchema;
+  /** @deprecated use `V1UpdateImageRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1UpdateImageRequestBody$outboundSchema;
+  /** @deprecated use `V1UpdateImageRequestBody$Outbound` instead. */
+  export type Outbound = V1UpdateImageRequestBody$Outbound;
 }

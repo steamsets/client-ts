@@ -3,56 +3,98 @@
  */
 
 import * as z from "zod";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const RoleRole = {
+  User: "user",
+  Donator: "donator",
+  Staff: "staff",
+  Developer: "developer",
+  Partner: "partner",
+  Owner: "owner",
+  Amethyst: "amethyst",
+  Amber: "amber",
+  Emerald: "emerald",
+  Sapphire: "sapphire",
+  Ruby: "ruby",
+  Diamond: "diamond",
+  Contributor: "contributor",
+  EarlySupporter: "early_supporter",
+  Beta: "beta",
+  Translator: "translator",
+} as const;
+export type RoleRole = ClosedEnum<typeof RoleRole>;
 
 export type Role = {
-    /**
-     * The role color
-     */
-    colorr: string;
-    /**
-     * The role icon
-     */
-    icon: string;
-    /**
-     * The Group name
-     */
-    name: string;
-    role: string;
+  /**
+   * The role color
+   */
+  colorr: string;
+  /**
+   * The role icon
+   */
+  icon: string;
+  /**
+   * The Group name
+   */
+  name: string;
+  role: RoleRole;
 };
 
 /** @internal */
-export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z.object({
+export const RoleRole$inboundSchema: z.ZodNativeEnum<typeof RoleRole> = z
+  .nativeEnum(RoleRole);
+
+/** @internal */
+export const RoleRole$outboundSchema: z.ZodNativeEnum<typeof RoleRole> =
+  RoleRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RoleRole$ {
+  /** @deprecated use `RoleRole$inboundSchema` instead. */
+  export const inboundSchema = RoleRole$inboundSchema;
+  /** @deprecated use `RoleRole$outboundSchema` instead. */
+  export const outboundSchema = RoleRole$outboundSchema;
+}
+
+/** @internal */
+export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
+  .object({
     colorr: z.string(),
     icon: z.string(),
     name: z.string(),
-    role: z.string(),
-});
+    role: RoleRole$inboundSchema,
+  });
 
 /** @internal */
 export type Role$Outbound = {
-    colorr: string;
-    icon: string;
-    name: string;
-    role: string;
+  colorr: string;
+  icon: string;
+  name: string;
+  role: string;
 };
 
 /** @internal */
-export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> = z.object({
+export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> =
+  z.object({
     colorr: z.string(),
     icon: z.string(),
     name: z.string(),
-    role: z.string(),
-});
+    role: RoleRole$outboundSchema,
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace Role$ {
-    /** @deprecated use `Role$inboundSchema` instead. */
-    export const inboundSchema = Role$inboundSchema;
-    /** @deprecated use `Role$outboundSchema` instead. */
-    export const outboundSchema = Role$outboundSchema;
-    /** @deprecated use `Role$Outbound` instead. */
-    export type Outbound = Role$Outbound;
+  /** @deprecated use `Role$inboundSchema` instead. */
+  export const inboundSchema = Role$inboundSchema;
+  /** @deprecated use `Role$outboundSchema` instead. */
+  export const outboundSchema = Role$outboundSchema;
+  /** @deprecated use `Role$Outbound` instead. */
+  export type Outbound = Role$Outbound;
 }

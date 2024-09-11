@@ -6,15 +6,15 @@
 import { AccountBadgeScarcityDataPoint } from "@steamsets/client-ts/models/components";
 
 let value: AccountBadgeScarcityDataPoint = {
-    appId: 730,
-    badgeId: "bdg_123",
-    badgeImage: "someHash.idk",
-    badgeIsFoil: true,
-    badgeLevel: 15,
-    badgeName: "Sommer Sale 2024 Foil 1+",
-    badgeScarcity: 15,
-    image: "someHash.idk",
-    name: "CS2",
+  appId: 730,
+  badgeId: "bdg_123",
+  badgeImage: "someHash.idk",
+  badgeIsFoil: true,
+  badgeLevel: 15,
+  badgeName: "Sommer Sale 2024 Foil 1+",
+  badgeScarcity: 15,
+  image: "someHash.idk",
+  name: "CS2",
 };
 ```
 

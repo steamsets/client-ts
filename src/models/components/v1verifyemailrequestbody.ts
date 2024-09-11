@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type V1VerifyEmailRequestBody = {
-    /**
-     * The code to verify
-     */
-    code: string;
+  /**
+   * The code to verify
+   */
+  code: string;
 };
 
 /** @internal */
 export const V1VerifyEmailRequestBody$inboundSchema: z.ZodType<
-    V1VerifyEmailRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1VerifyEmailRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    code: z.string(),
+  code: z.string(),
 });
 
 /** @internal */
 export type V1VerifyEmailRequestBody$Outbound = {
-    code: string;
+  code: string;
 };
 
 /** @internal */
 export const V1VerifyEmailRequestBody$outboundSchema: z.ZodType<
-    V1VerifyEmailRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1VerifyEmailRequestBody
+  V1VerifyEmailRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1VerifyEmailRequestBody
 > = z.object({
-    code: z.string(),
+  code: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const V1VerifyEmailRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1VerifyEmailRequestBody$ {
-    /** @deprecated use `V1VerifyEmailRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1VerifyEmailRequestBody$inboundSchema;
-    /** @deprecated use `V1VerifyEmailRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1VerifyEmailRequestBody$outboundSchema;
-    /** @deprecated use `V1VerifyEmailRequestBody$Outbound` instead. */
-    export type Outbound = V1VerifyEmailRequestBody$Outbound;
+  /** @deprecated use `V1VerifyEmailRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1VerifyEmailRequestBody$inboundSchema;
+  /** @deprecated use `V1VerifyEmailRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1VerifyEmailRequestBody$outboundSchema;
+  /** @deprecated use `V1VerifyEmailRequestBody$Outbound` instead. */
+  export type Outbound = V1VerifyEmailRequestBody$Outbound;
 }

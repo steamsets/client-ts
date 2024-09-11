@@ -58,17 +58,17 @@ yarn add @steamsets/client-ts zod
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect({
-        code: "123456",
-        provider: "discord",
-    });
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -139,6 +139,7 @@ run();
 * [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 * [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
+* [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue a app for processing
 
 ### [public](docs/sdks/public/README.md)
 
@@ -148,6 +149,12 @@ run();
 * [accountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
+* [accountV1Queue](docs/sdks/public/README.md#accountv1queue) - Queue a app for processing
+
+### [app](docs/sdks/app/README.md)
+
+* [appV1Get](docs/sdks/app/README.md#appv1get) - Get details about an app
+* [accountV1Queue](docs/sdks/app/README.md#accountv1queue) - Queue a app for processing
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -168,31 +175,28 @@ To change the default retry strategy for a single API call, simply provide a ret
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect(
-        {
-            code: "123456",
-            provider: "discord",
-        },
-        {
-            retries: {
-                strategy: "backoff",
-                backoff: {
-                    initialInterval: 1,
-                    maxInterval: 50,
-                    exponent: 1.1,
-                    maxElapsedTime: 100,
-                },
-                retryConnectionErrors: false,
-            },
-        }
-    );
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  }, {
+    retries: {
+      strategy: "backoff",
+      backoff: {
+        initialInterval: 1,
+        maxInterval: 50,
+        exponent: 1.1,
+        maxElapsedTime: 100,
+      },
+      retryConnectionErrors: false,
+    },
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -204,27 +208,27 @@ If you'd like to override the default retry strategy for all operations that sup
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    retryConfig: {
-        strategy: "backoff",
-        backoff: {
-            initialInterval: 1,
-            maxInterval: 50,
-            exponent: 1.1,
-            maxElapsedTime: 100,
-        },
-        retryConnectionErrors: false,
+  retryConfig: {
+    strategy: "backoff",
+    backoff: {
+      initialInterval: 1,
+      maxInterval: 50,
+      exponent: 1.1,
+      maxElapsedTime: 100,
     },
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+    retryConnectionErrors: false,
+  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect({
-        code: "123456",
-        provider: "discord",
-    });
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -247,41 +251,44 @@ Validation errors can also occur when either method arguments or data returned f
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { ErrorModel, SDKValidationError } from "@steamsets/client-ts/models/errors";
+import {
+  ErrorModel,
+  SDKValidationError,
+} from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    let result;
-    try {
-        result = await steamSets.account.accountV1ConnectionConnect({
-            code: "123456",
-            provider: "discord",
-        });
-    } catch (err) {
-        switch (true) {
-            case err instanceof SDKValidationError: {
-                // Validation errors can be pretty-printed
-                console.error(err.pretty());
-                // Raw value may also be inspected
-                console.error(err.rawValue);
-                return;
-            }
-            case err instanceof ErrorModel: {
-                // Handle err.data$: ErrorModelData
-                console.error(err);
-                return;
-            }
-            default: {
-                throw err;
-            }
-        }
-    }
+  let result;
+  try {
+    result = await steamSets.account.accountV1ConnectionConnect({
+      code: "123456",
+      provider: "discord",
+    });
 
     // Handle the result
     console.log(result);
+  } catch (err) {
+    switch (true) {
+      case (err instanceof SDKValidationError): {
+        // Validation errors can be pretty-printed
+        console.error(err.pretty());
+        // Raw value may also be inspected
+        console.error(err.rawValue);
+        return;
+      }
+      case (err instanceof ErrorModel): {
+        // Handle err.data$: ErrorModelData
+        console.error(err);
+        return;
+      }
+      default: {
+        throw err;
+      }
+    }
+  }
 }
 
 run();
@@ -305,18 +312,18 @@ You can override the default server globally by passing a server index to the `s
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    serverIdx: 1,
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  serverIdx: 1,
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect({
-        code: "123456",
-        provider: "discord",
-    });
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -332,18 +339,18 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    serverURL: "https://api.steamsets.com",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  serverURL: "https://api.steamsets.com",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect({
-        code: "123456",
-        provider: "discord",
-    });
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -416,17 +423,17 @@ To authenticate with the API the `session` parameter must be set when initializi
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-    session: "<YOUR_BEARER_TOKEN_HERE>",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-    const result = await steamSets.account.accountV1ConnectionConnect({
-        code: "123456",
-        provider: "discord",
-    });
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -484,6 +491,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
 - [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
 - [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
+- [appAccountV1Queue](docs/sdks/app/README.md#accountv1queue)
+- [appAppV1Get](docs/sdks/app/README.md#appv1get)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
 - [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
 - [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
@@ -495,6 +504,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [dataAccountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo)
 - [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
 - [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
+- [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)
 - [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)
@@ -503,6 +513,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [publicAccountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends)
 - [publicAccountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
 - [publicAccountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory)
+- [publicAccountV1Queue](docs/sdks/public/README.md#accountv1queue)
 - [sessionAccountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
 - [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
 - [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)

@@ -12,43 +12,59 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Connection extends ClientSDK {
-    /**
-     * Connect a new Social Provider
-     */
-    async accountV1ConnectionConnect(
-        request: components.V1ConnectRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionConnectResponse> {
-        return unwrapAsync(connectionAccountV1ConnectionConnect(this, request, options));
-    }
+  /**
+   * Connect a new Social Provider
+   */
+  async accountV1ConnectionConnect(
+    request: components.V1ConnectRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionConnectResponse> {
+    return unwrapAsync(connectionAccountV1ConnectionConnect(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a connection
-     */
-    async accountV1ConnectionDeleteConnection(
-        request: components.V1DeleteConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
-        return unwrapAsync(connectionAccountV1ConnectionDeleteConnection(this, request, options));
-    }
+  /**
+   * Remove a connection
+   */
+  async accountV1ConnectionDeleteConnection(
+    request: components.V1DeleteConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
+    return unwrapAsync(connectionAccountV1ConnectionDeleteConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Make a connection visible/invisible
-     */
-    async accountV1ConnectionUpdateConnection(
-        request: components.V1UpdateConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
-        return unwrapAsync(connectionAccountV1ConnectionUpdateConnection(this, request, options));
-    }
+  /**
+   * Make a connection visible/invisible
+   */
+  async accountV1ConnectionUpdateConnection(
+    request: components.V1UpdateConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
+    return unwrapAsync(connectionAccountV1ConnectionUpdateConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Verify a domain connection only atm
-     */
-    async accountV1ConnectionVerifyConnection(
-        request: components.V1VerifyConnectionRequestBody,
-        options?: RequestOptions
-    ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
-        return unwrapAsync(connectionAccountV1ConnectionVerifyConnection(this, request, options));
-    }
+  /**
+   * Verify a domain connection only atm
+   */
+  async accountV1ConnectionVerifyConnection(
+    request: components.V1VerifyConnectionRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
+    return unwrapAsync(connectionAccountV1ConnectionVerifyConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 }

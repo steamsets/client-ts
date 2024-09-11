@@ -6,15 +6,16 @@
 import { V1AccountLeaderboardHistoryResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountLeaderboardHistoryResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
-    histories: [
-        {
-            date: new Date("2022-05-10T15:05:25.593Z"),
-            leaderboard: "playtime",
-            rank: 639921,
-            score: 582020,
-        },
-    ],
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
+  histories: [
+    {
+      date: new Date("2023-11-08T22:17:03.172Z"),
+      leaderboard: "awards_given",
+      rank: 612096,
+      score: 222321,
+    },
+  ],
 };
 ```
 
