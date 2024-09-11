@@ -6,8 +6,8 @@
 import { V1UploaedImage } from "@steamsets/client-ts/models/components";
 
 let value: V1UploaedImage = {
-    data: "base64_encoded_image",
-    type: "avatar",
+  data: "base64_encoded_image",
+  type: "avatar",
 };
 ```
 

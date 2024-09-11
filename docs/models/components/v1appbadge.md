@@ -1,25 +1,28 @@
-# V1Badge
+# V1AppBadge
 
 ## Example Usage
 
 ```typescript
-import { V1Badge } from "@steamsets/client-ts/models/components";
+import { V1AppBadge } from "@steamsets/client-ts/models/components";
 
-let value: V1Badge = {
-    appId: 836079,
-    appImage: "<value>",
-    appName: "<value>",
-    appShortName: "<value>",
-    badgeImage: "<value>",
-    completedAt: new Date("2022-03-19T20:31:56.958Z"),
-    isFoil: false,
-    level: 337396,
-    name: "<value>",
-    price: 87129,
-    publicId: "<value>",
-    scarcity: 648172,
-    steamId: 20218,
-    xp: 368241,
+let value: V1AppBadge = {
+  accountBadge: {
+    completedAt: new Date("2023-12-17T10:59:47.578Z"),
+    level: 208876,
+    xp: 635059,
+  },
+  badgeImage: "<value>",
+  firstCompletion: new Date("2022-06-26T19:05:07.374Z"),
+  highestLevel: 995300,
+  isFoil: false,
+  lastCompletion: new Date("2023-12-17T19:21:40.693Z"),
+  level: 581850,
+  name: "<value>",
+  price: 253291,
+  publicId: "<value>",
+  scarcity: 414369,
+  steamId: 466311,
+  xp: 474697,
 };
 ```
 
@@ -27,13 +30,12 @@ let value: V1Badge = {
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `appId`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `appImage`                                                                                    | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `appName`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `appShortName`                                                                                | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `accountBadge`                                                                                | [components.V1AccountBadgeCompletion](../../models/components/v1accountbadgecompletion.md)    | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `badgeImage`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `completedAt`                                                                                 | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `firstCompletion`                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `highestLevel`                                                                                | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `isFoil`                                                                                      | *boolean*                                                                                     | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `lastCompletion`                                                                              | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `level`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `price`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |

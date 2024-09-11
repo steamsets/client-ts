@@ -6,7 +6,8 @@
 import { V1DeleteConnectionResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteConnectionResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json",
 };
 ```
 

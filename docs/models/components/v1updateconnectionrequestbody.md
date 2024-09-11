@@ -6,8 +6,8 @@
 import { V1UpdateConnectionRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UpdateConnectionRequestBody = {
-    connectionId: "123456",
-    hidden: true,
+  connectionId: "123456",
+  hidden: true,
 };
 ```
 

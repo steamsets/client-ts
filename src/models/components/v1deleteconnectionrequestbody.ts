@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type V1DeleteConnectionRequestBody = {
-    /**
-     * The connection id to delete
-     */
-    connectionId: string;
+  /**
+   * The connection id to delete
+   */
+  connectionId: string;
 };
 
 /** @internal */
 export const V1DeleteConnectionRequestBody$inboundSchema: z.ZodType<
-    V1DeleteConnectionRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1DeleteConnectionRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    connectionId: z.string(),
+  connectionId: z.string(),
 });
 
 /** @internal */
 export type V1DeleteConnectionRequestBody$Outbound = {
-    connectionId: string;
+  connectionId: string;
 };
 
 /** @internal */
 export const V1DeleteConnectionRequestBody$outboundSchema: z.ZodType<
-    V1DeleteConnectionRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1DeleteConnectionRequestBody
+  V1DeleteConnectionRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1DeleteConnectionRequestBody
 > = z.object({
-    connectionId: z.string(),
+  connectionId: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const V1DeleteConnectionRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1DeleteConnectionRequestBody$ {
-    /** @deprecated use `V1DeleteConnectionRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1DeleteConnectionRequestBody$inboundSchema;
-    /** @deprecated use `V1DeleteConnectionRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1DeleteConnectionRequestBody$outboundSchema;
-    /** @deprecated use `V1DeleteConnectionRequestBody$Outbound` instead. */
-    export type Outbound = V1DeleteConnectionRequestBody$Outbound;
+  /** @deprecated use `V1DeleteConnectionRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1DeleteConnectionRequestBody$inboundSchema;
+  /** @deprecated use `V1DeleteConnectionRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1DeleteConnectionRequestBody$outboundSchema;
+  /** @deprecated use `V1DeleteConnectionRequestBody$Outbound` instead. */
+  export type Outbound = V1DeleteConnectionRequestBody$Outbound;
 }

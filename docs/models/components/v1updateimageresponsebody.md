@@ -6,8 +6,9 @@
 import { V1UpdateImageResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UpdateImageResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
-    key: "api_123",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
+  key: "api_123",
 };
 ```
 

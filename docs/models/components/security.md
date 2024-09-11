@@ -6,7 +6,7 @@
 import { Security } from "@steamsets/client-ts/models/components";
 
 let value: Security = {
-    session: "<value>",
+  session: "<value>",
 };
 ```
 

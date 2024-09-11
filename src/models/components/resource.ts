@@ -3,43 +3,93 @@
  */
 
 import * as z from "zod";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const ResourceResource = {
+  AnimatedAvatar: "animated_avatar",
+  AutoRefresh: "auto_refresh",
+  AvatarFrame: "avatar_frame",
+  Background: "background",
+  BetaAccess: "beta_access",
+  CustomVanity: "custom_vanity",
+  GoToLeaderboardEntry: "go_to_leaderboard_entry",
+  MaxLeaderboardEntries: "max_leaderboard_entries",
+  MiniBackground: "mini_background",
+  AccountColors: "account_colors",
+  AccountRefreshRate: "account_refresh_rate",
+  QueuePriority: "queue_priority",
+  SiteColor: "site_color",
+  SocialLinks: "social_links",
+  Theme: "theme",
+  VanityLength: "vanity_length",
+  SocialLinkAmount: "social_link_amount",
+} as const;
+export type ResourceResource = ClosedEnum<typeof ResourceResource>;
 
 export type Resource = {
-    resource: string;
-    /**
-     * The value of the resource, this can be a string, number, boolean or even a cron expression
-     */
-    value: string;
+  resource: ResourceResource;
+  /**
+   * The value of the resource, this can be a string, number, boolean or even a cron expression
+   */
+  value: string;
 };
 
 /** @internal */
-export const Resource$inboundSchema: z.ZodType<Resource, z.ZodTypeDef, unknown> = z.object({
-    resource: z.string(),
-    value: z.string(),
+export const ResourceResource$inboundSchema: z.ZodNativeEnum<
+  typeof ResourceResource
+> = z.nativeEnum(ResourceResource);
+
+/** @internal */
+export const ResourceResource$outboundSchema: z.ZodNativeEnum<
+  typeof ResourceResource
+> = ResourceResource$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ResourceResource$ {
+  /** @deprecated use `ResourceResource$inboundSchema` instead. */
+  export const inboundSchema = ResourceResource$inboundSchema;
+  /** @deprecated use `ResourceResource$outboundSchema` instead. */
+  export const outboundSchema = ResourceResource$outboundSchema;
+}
+
+/** @internal */
+export const Resource$inboundSchema: z.ZodType<
+  Resource,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  resource: ResourceResource$inboundSchema,
+  value: z.string(),
 });
 
 /** @internal */
 export type Resource$Outbound = {
-    resource: string;
-    value: string;
+  resource: string;
+  value: string;
 };
 
 /** @internal */
-export const Resource$outboundSchema: z.ZodType<Resource$Outbound, z.ZodTypeDef, Resource> =
-    z.object({
-        resource: z.string(),
-        value: z.string(),
-    });
+export const Resource$outboundSchema: z.ZodType<
+  Resource$Outbound,
+  z.ZodTypeDef,
+  Resource
+> = z.object({
+  resource: ResourceResource$outboundSchema,
+  value: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace Resource$ {
-    /** @deprecated use `Resource$inboundSchema` instead. */
-    export const inboundSchema = Resource$inboundSchema;
-    /** @deprecated use `Resource$outboundSchema` instead. */
-    export const outboundSchema = Resource$outboundSchema;
-    /** @deprecated use `Resource$Outbound` instead. */
-    export type Outbound = Resource$Outbound;
+  /** @deprecated use `Resource$inboundSchema` instead. */
+  export const inboundSchema = Resource$inboundSchema;
+  /** @deprecated use `Resource$outboundSchema` instead. */
+  export const outboundSchema = Resource$outboundSchema;
+  /** @deprecated use `Resource$Outbound` instead. */
+  export type Outbound = Resource$Outbound;
 }

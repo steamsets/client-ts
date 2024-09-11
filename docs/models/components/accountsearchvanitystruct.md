@@ -6,8 +6,8 @@
 import { AccountSearchVanityStruct } from "@steamsets/client-ts/models/components";
 
 let value: AccountSearchVanityStruct = {
-    type: "steam",
-    value: "<value>",
+  type: "steam",
+  value: "<value>",
 };
 ```
 

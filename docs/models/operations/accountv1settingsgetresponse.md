@@ -6,60 +6,61 @@
 import { AccountV1SettingsGetResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SettingsGetResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1GetSettingsBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
-        apiKey: "api_key",
-        color: "#7652c9",
-        colors: "#7652c9",
-        connections: [
-            {
-                avatar: "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
-                externalId: "123456",
-                hide: true,
-                name: "steamsets",
-                provider: "discord",
-                publicId: "123456",
-                verified: true,
-            },
-        ],
-        email: "steamsets@example.com",
-        emailNotifications: [
-            {
-                enabled: true,
-                type: "login",
-            },
-        ],
-        emailVerified: true,
-        hidden: true,
-        images: [
-            {
-                active: true,
-                fileName: "avatar.png",
-                imageId: "img_wasd123",
-                imageType: "avatar",
-            },
-        ],
-        language: "en",
-        sessions: [
-            {
-                createdAt: new Date("2023-01-01T00:00:00Z"),
-                expiresAt: new Date("2023-01-01T00:00:00Z"),
-                ip: "127.0.0.1",
-                lastSeen: new Date("2023-01-01T00:00:00Z"),
-                sessionId: "123456",
-                userAgent:
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-            },
-        ],
-        theme: "dark",
-        vanity: "flo",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1GetSettingsBody: {
+    dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
+    apiKey: "api_key",
+    color: "#7652c9",
+    colors: "#7652c9",
+    connections: [
+      {
+        avatar:
+          "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+        externalId: "123456",
+        hide: true,
+        name: "steamsets",
+        provider: "discord",
+        publicId: "123456",
+        verified: true,
+      },
+    ],
+    email: "steamsets@example.com",
+    emailNotifications: [
+      {
+        enabled: true,
+        type: "login",
+      },
+    ],
+    emailVerified: true,
+    hidden: true,
+    images: [
+      {
+        active: true,
+        fileName: "avatar.png",
+        imageId: "img_wasd123",
+        imageType: "avatar",
+      },
+    ],
+    language: "en",
+    sessions: [
+      {
+        createdAt: new Date("2023-01-01T00:00:00Z"),
+        expiresAt: new Date("2023-01-01T00:00:00Z"),
+        ip: "127.0.0.1",
+        lastSeen: new Date("2023-01-01T00:00:00Z"),
+        sessionId: "123456",
+        userAgent:
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      },
+    ],
+    theme: "dark",
+    vanity: "flo",
+  },
 };
 ```
 

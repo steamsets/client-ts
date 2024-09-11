@@ -5,40 +5,40 @@
 import * as z from "zod";
 
 export type AccountSearchIDStruct = {
-    /**
-     * Account ID to search for
-     */
-    accountId?: number | undefined;
-    /**
-     * SteamID64 to search for
-     */
-    steamId64?: string | undefined;
+  /**
+   * Account ID to search for
+   */
+  accountId?: number | undefined;
+  /**
+   * SteamID64 to search for
+   */
+  steamId64?: string | undefined;
 };
 
 /** @internal */
 export const AccountSearchIDStruct$inboundSchema: z.ZodType<
-    AccountSearchIDStruct,
-    z.ZodTypeDef,
-    unknown
+  AccountSearchIDStruct,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    accountId: z.number().int().optional(),
-    steamId64: z.string().optional(),
+  accountId: z.number().int().optional(),
+  steamId64: z.string().optional(),
 });
 
 /** @internal */
 export type AccountSearchIDStruct$Outbound = {
-    accountId?: number | undefined;
-    steamId64?: string | undefined;
+  accountId?: number | undefined;
+  steamId64?: string | undefined;
 };
 
 /** @internal */
 export const AccountSearchIDStruct$outboundSchema: z.ZodType<
-    AccountSearchIDStruct$Outbound,
-    z.ZodTypeDef,
-    AccountSearchIDStruct
+  AccountSearchIDStruct$Outbound,
+  z.ZodTypeDef,
+  AccountSearchIDStruct
 > = z.object({
-    accountId: z.number().int().optional(),
-    steamId64: z.string().optional(),
+  accountId: z.number().int().optional(),
+  steamId64: z.string().optional(),
 });
 
 /**
@@ -46,10 +46,10 @@ export const AccountSearchIDStruct$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace AccountSearchIDStruct$ {
-    /** @deprecated use `AccountSearchIDStruct$inboundSchema` instead. */
-    export const inboundSchema = AccountSearchIDStruct$inboundSchema;
-    /** @deprecated use `AccountSearchIDStruct$outboundSchema` instead. */
-    export const outboundSchema = AccountSearchIDStruct$outboundSchema;
-    /** @deprecated use `AccountSearchIDStruct$Outbound` instead. */
-    export type Outbound = AccountSearchIDStruct$Outbound;
+  /** @deprecated use `AccountSearchIDStruct$inboundSchema` instead. */
+  export const inboundSchema = AccountSearchIDStruct$inboundSchema;
+  /** @deprecated use `AccountSearchIDStruct$outboundSchema` instead. */
+  export const outboundSchema = AccountSearchIDStruct$outboundSchema;
+  /** @deprecated use `AccountSearchIDStruct$Outbound` instead. */
+  export type Outbound = AccountSearchIDStruct$Outbound;
 }

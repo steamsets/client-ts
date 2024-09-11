@@ -6,7 +6,7 @@
 import { AccountV1GetBadgesRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetBadgesRequest = {
-    accountSearch: {},
+  accountSearch: {},
 };
 ```
 

@@ -6,16 +6,17 @@
 import { AccountV1SettingsGenerateApiKeyResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SettingsGenerateApiKeyResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1GenerateApiKeyResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json",
-        key: "api_123",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1GenerateApiKeyResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json",
+    key: "api_123",
+  },
 };
 ```
 

@@ -33,7 +33,7 @@ async function run() {
       "<value>",
     ],
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -111,7 +111,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsGenerateApiKey();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -184,7 +184,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsGet();
-
+  
   // Handle the result
   console.log(result)
 }
@@ -257,7 +257,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsSendEmailVerification({});
-
+  
   // Handle the result
   console.log(result)
 }
@@ -334,7 +334,7 @@ async function run() {
     active: true,
     imageId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -427,7 +427,7 @@ async function run() {
       vanity: "flo",
     },
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -524,7 +524,7 @@ async function run() {
       },
     ],
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -607,7 +607,7 @@ async function run() {
   const result = await steamSets.settings.accountV1SettingsVerfyEmail({
     code: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }

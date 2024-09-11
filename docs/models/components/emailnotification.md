@@ -6,8 +6,8 @@
 import { EmailNotification } from "@steamsets/client-ts/models/components";
 
 let value: EmailNotification = {
-    enabled: true,
-    type: "login",
+  enabled: true,
+  type: "login",
 };
 ```
 

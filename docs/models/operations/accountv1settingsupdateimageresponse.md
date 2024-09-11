@@ -6,16 +6,17 @@
 import { AccountV1SettingsUpdateImageResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SettingsUpdateImageResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1UpdateImageResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
-        key: "api_123",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1UpdateImageResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
+    key: "api_123",
+  },
 };
 ```
 

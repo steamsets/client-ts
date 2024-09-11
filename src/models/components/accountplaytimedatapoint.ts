@@ -5,54 +5,54 @@
 import * as z from "zod";
 
 export type AccountPlaytimeDataPoint = {
-    /**
-     * The app id
-     */
-    appId: number;
-    /**
-     * The image of the app
-     */
-    image: string;
-    /**
-     * The name of the app
-     */
-    name: string;
-    /**
-     * The playtime of the app
-     */
-    playtime: number;
+  /**
+   * The app id
+   */
+  appId: number;
+  /**
+   * The image of the app
+   */
+  image: string;
+  /**
+   * The name of the app
+   */
+  name: string;
+  /**
+   * The playtime of the app
+   */
+  playtime: number;
 };
 
 /** @internal */
 export const AccountPlaytimeDataPoint$inboundSchema: z.ZodType<
-    AccountPlaytimeDataPoint,
-    z.ZodTypeDef,
-    unknown
+  AccountPlaytimeDataPoint,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    appId: z.number().int(),
-    image: z.string(),
-    name: z.string(),
-    playtime: z.number().int(),
+  appId: z.number().int(),
+  image: z.string(),
+  name: z.string(),
+  playtime: z.number().int(),
 });
 
 /** @internal */
 export type AccountPlaytimeDataPoint$Outbound = {
-    appId: number;
-    image: string;
-    name: string;
-    playtime: number;
+  appId: number;
+  image: string;
+  name: string;
+  playtime: number;
 };
 
 /** @internal */
 export const AccountPlaytimeDataPoint$outboundSchema: z.ZodType<
-    AccountPlaytimeDataPoint$Outbound,
-    z.ZodTypeDef,
-    AccountPlaytimeDataPoint
+  AccountPlaytimeDataPoint$Outbound,
+  z.ZodTypeDef,
+  AccountPlaytimeDataPoint
 > = z.object({
-    appId: z.number().int(),
-    image: z.string(),
-    name: z.string(),
-    playtime: z.number().int(),
+  appId: z.number().int(),
+  image: z.string(),
+  name: z.string(),
+  playtime: z.number().int(),
 });
 
 /**
@@ -60,10 +60,10 @@ export const AccountPlaytimeDataPoint$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace AccountPlaytimeDataPoint$ {
-    /** @deprecated use `AccountPlaytimeDataPoint$inboundSchema` instead. */
-    export const inboundSchema = AccountPlaytimeDataPoint$inboundSchema;
-    /** @deprecated use `AccountPlaytimeDataPoint$outboundSchema` instead. */
-    export const outboundSchema = AccountPlaytimeDataPoint$outboundSchema;
-    /** @deprecated use `AccountPlaytimeDataPoint$Outbound` instead. */
-    export type Outbound = AccountPlaytimeDataPoint$Outbound;
+  /** @deprecated use `AccountPlaytimeDataPoint$inboundSchema` instead. */
+  export const inboundSchema = AccountPlaytimeDataPoint$inboundSchema;
+  /** @deprecated use `AccountPlaytimeDataPoint$outboundSchema` instead. */
+  export const outboundSchema = AccountPlaytimeDataPoint$outboundSchema;
+  /** @deprecated use `AccountPlaytimeDataPoint$Outbound` instead. */
+  export type Outbound = AccountPlaytimeDataPoint$Outbound;
 }

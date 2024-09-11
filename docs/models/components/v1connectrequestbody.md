@@ -6,8 +6,8 @@
 import { V1ConnectRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1ConnectRequestBody = {
-    code: "123456",
-    provider: "discord",
+  code: "123456",
+  provider: "discord",
 };
 ```
 

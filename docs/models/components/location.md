@@ -6,9 +6,9 @@
 import { Location } from "@steamsets/client-ts/models/components";
 
 let value: Location = {
-    code: "DE",
-    id: 1,
-    name: "Germany",
+  code: "DE",
+  id: 1,
+  name: "Germany",
 };
 ```
 

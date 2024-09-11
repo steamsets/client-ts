@@ -6,7 +6,7 @@
 import { City } from "@steamsets/client-ts/models/components";
 
 let value: City = {
-    name: "<value>",
+  name: "<value>",
 };
 ```
 

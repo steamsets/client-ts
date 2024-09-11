@@ -5,69 +5,69 @@
 import * as z from "zod";
 
 export type Session = {
-    /**
-     * The time the session was created
-     */
-    createdAt: Date;
-    /**
-     * The time the session expires
-     */
-    expiresAt: Date;
-    /**
-     * The ip of the session
-     */
-    ip: string;
-    /**
-     * The time the session was last seen
-     */
-    lastSeen: Date;
-    /**
-     * The session id
-     */
-    sessionId: string;
-    /**
-     * The user agent of the session
-     */
-    userAgent: string;
+  /**
+   * The time the session was created
+   */
+  createdAt: Date;
+  /**
+   * The time the session expires
+   */
+  expiresAt: Date;
+  /**
+   * The ip of the session
+   */
+  ip: string;
+  /**
+   * The time the session was last seen
+   */
+  lastSeen: Date;
+  /**
+   * The session id
+   */
+  sessionId: string;
+  /**
+   * The user agent of the session
+   */
+  userAgent: string;
 };
 
 /** @internal */
-export const Session$inboundSchema: z.ZodType<Session, z.ZodTypeDef, unknown> = z.object({
-    createdAt: z
-        .string()
-        .datetime({ offset: true })
-        .transform((v) => new Date(v)),
-    expiresAt: z
-        .string()
-        .datetime({ offset: true })
-        .transform((v) => new Date(v)),
+export const Session$inboundSchema: z.ZodType<Session, z.ZodTypeDef, unknown> =
+  z.object({
+    createdAt: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ),
+    expiresAt: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ),
     ip: z.string(),
-    lastSeen: z
-        .string()
-        .datetime({ offset: true })
-        .transform((v) => new Date(v)),
+    lastSeen: z.string().datetime({ offset: true }).transform(v => new Date(v)),
     sessionId: z.string(),
     userAgent: z.string(),
-});
+  });
 
 /** @internal */
 export type Session$Outbound = {
-    createdAt: string;
-    expiresAt: string;
-    ip: string;
-    lastSeen: string;
-    sessionId: string;
-    userAgent: string;
+  createdAt: string;
+  expiresAt: string;
+  ip: string;
+  lastSeen: string;
+  sessionId: string;
+  userAgent: string;
 };
 
 /** @internal */
-export const Session$outboundSchema: z.ZodType<Session$Outbound, z.ZodTypeDef, Session> = z.object({
-    createdAt: z.date().transform((v) => v.toISOString()),
-    expiresAt: z.date().transform((v) => v.toISOString()),
-    ip: z.string(),
-    lastSeen: z.date().transform((v) => v.toISOString()),
-    sessionId: z.string(),
-    userAgent: z.string(),
+export const Session$outboundSchema: z.ZodType<
+  Session$Outbound,
+  z.ZodTypeDef,
+  Session
+> = z.object({
+  createdAt: z.date().transform(v => v.toISOString()),
+  expiresAt: z.date().transform(v => v.toISOString()),
+  ip: z.string(),
+  lastSeen: z.date().transform(v => v.toISOString()),
+  sessionId: z.string(),
+  userAgent: z.string(),
 });
 
 /**
@@ -75,10 +75,10 @@ export const Session$outboundSchema: z.ZodType<Session$Outbound, z.ZodTypeDef, S
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace Session$ {
-    /** @deprecated use `Session$inboundSchema` instead. */
-    export const inboundSchema = Session$inboundSchema;
-    /** @deprecated use `Session$outboundSchema` instead. */
-    export const outboundSchema = Session$outboundSchema;
-    /** @deprecated use `Session$Outbound` instead. */
-    export type Outbound = Session$Outbound;
+  /** @deprecated use `Session$inboundSchema` instead. */
+  export const inboundSchema = Session$inboundSchema;
+  /** @deprecated use `Session$outboundSchema` instead. */
+  export const outboundSchema = Session$outboundSchema;
+  /** @deprecated use `Session$Outbound` instead. */
+  export type Outbound = Session$Outbound;
 }

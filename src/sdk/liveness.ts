@@ -8,13 +8,18 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Liveness extends ClientSDK {
-    /**
-     * Liveness check
-     *
-     * @remarks
-     * This endpoint checks if the service is alive.
-     */
-    async liveness(options?: RequestOptions): Promise<operations.LivenessResponse> {
-        return unwrapAsync(livenessLiveness(this, options));
-    }
+  /**
+   * Liveness check
+   *
+   * @remarks
+   * This endpoint checks if the service is alive.
+   */
+  async liveness(
+    options?: RequestOptions,
+  ): Promise<operations.LivenessResponse> {
+    return unwrapAsync(livenessLiveness(
+      this,
+      options,
+    ));
+  }
 }

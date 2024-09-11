@@ -6,7 +6,7 @@
 import { AccountV1GetAppsRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetAppsRequest = {
-    accountSearch: {},
+  accountSearch: {},
 };
 ```
 

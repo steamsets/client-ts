@@ -6,13 +6,13 @@
 import { AccountV1GetStaffResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetStaffResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    leaderboardAccounts: [],
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  leaderboardAccounts: [],
 };
 ```
 

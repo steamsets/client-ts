@@ -6,12 +6,12 @@
 import { AccountV1SettingsSendEmailVerificationResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SettingsSendEmailVerificationResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
 };
 ```
 

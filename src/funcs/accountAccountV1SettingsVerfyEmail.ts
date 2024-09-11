@@ -11,11 +11,11 @@ import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
 import {
-    ConnectionError,
-    InvalidRequestError,
-    RequestAbortedError,
-    RequestTimeoutError,
-    UnexpectedClientError,
+  ConnectionError,
+  InvalidRequestError,
+  RequestAbortedError,
+  RequestTimeoutError,
+  UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
@@ -27,106 +27,104 @@ import { Result } from "../types/fp.js";
  * Verify the email by passing in the code the user should've gotten
  */
 export async function accountAccountV1SettingsVerfyEmail(
-    client$: SteamSetsCore,
-    request: components.V1VerifyEmailRequestBody,
-    options?: RequestOptions
+  client$: SteamSetsCore,
+  request: components.V1VerifyEmailRequestBody,
+  options?: RequestOptions,
 ): Promise<
-    Result<
-        operations.AccountV1SettingsVerfyEmailResponse,
-        | errors.ErrorModel
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >
+  Result<
+    operations.AccountV1SettingsVerfyEmailResponse,
+    | errors.ErrorModel
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
 > {
-    const input$ = request;
+  const input$ = request;
 
-    const parsed$ = schemas$.safeParse(
-        input$,
-        (value$) => components.V1VerifyEmailRequestBody$outboundSchema.parse(value$),
-        "Input validation failed"
-    );
-    if (!parsed$.ok) {
-        return parsed$;
-    }
-    const payload$ = parsed$.value;
-    const body$ = encodeJSON$("body", payload$, { explode: true });
+  const parsed$ = schemas$.safeParse(
+    input$,
+    (value$) =>
+      components.V1VerifyEmailRequestBody$outboundSchema.parse(value$),
+    "Input validation failed",
+  );
+  if (!parsed$.ok) {
+    return parsed$;
+  }
+  const payload$ = parsed$.value;
+  const body$ = encodeJSON$("body", payload$, { explode: true });
 
-    const path$ = pathToFunc("/account.v1.AccountService/VerifyEmail")();
+  const path$ = pathToFunc("/account.v1.AccountService/VerifyEmail")();
 
-    const headers$ = new Headers({
-        "Content-Type": "application/json",
-        Accept: "application/json",
-    });
+  const headers$ = new Headers({
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  });
 
-    const session$ = await extractSecurity(client$.options$.session);
-    const security$ = session$ == null ? {} : { session: session$ };
-    const context = {
-        operationID: "account.v1.settings.verfy-email",
-        oAuth2Scopes: [],
-        securitySource: client$.options$.session,
-    };
-    const securitySettings$ = resolveGlobalSecurity(security$);
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
+  const context = {
+    operationID: "account.v1.settings.verfy-email",
+    oAuth2Scopes: [],
+    securitySource: client$.options$.session,
+  };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
-    const requestRes = client$.createRequest$(
-        context,
-        {
-            security: securitySettings$,
-            method: "POST",
-            path: path$,
-            headers: headers$,
-            body: body$,
-            uaHeader: "x-speakeasy-user-agent",
-            timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
-        },
-        options
-    );
-    if (!requestRes.ok) {
-        return requestRes;
-    }
-    const request$ = requestRes.value;
+  const requestRes = client$.createRequest$(context, {
+    security: securitySettings$,
+    method: "POST",
+    path: path$,
+    headers: headers$,
+    body: body$,
+    uaHeader: "x-speakeasy-user-agent",
+    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+  }, options);
+  if (!requestRes.ok) {
+    return requestRes;
+  }
+  const request$ = requestRes.value;
 
-    const doResult = await client$.do$(request$, {
-        context,
-        errorCodes: ["404", "422", "429", "4XX", "500", "5XX"],
-        retryConfig: options?.retries || client$.options$.retryConfig,
-        retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
-    });
-    if (!doResult.ok) {
-        return doResult;
-    }
-    const response = doResult.value;
+  const doResult = await client$.do$(request$, {
+    context,
+    errorCodes: ["404", "422", "429", "4XX", "500", "5XX"],
+    retryConfig: options?.retries
+      || client$.options$.retryConfig,
+    retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
+  });
+  if (!doResult.ok) {
+    return doResult;
+  }
+  const response = doResult.value;
 
-    const responseFields$ = {
-        HttpMeta: { Response: response, Request: request$ },
-    };
+  const responseFields$ = {
+    HttpMeta: { Response: response, Request: request$ },
+  };
 
-    const [result$] = await m$.match<
-        operations.AccountV1SettingsVerfyEmailResponse,
-        | errors.ErrorModel
-        | SDKError
-        | SDKValidationError
-        | UnexpectedClientError
-        | InvalidRequestError
-        | RequestAbortedError
-        | RequestTimeoutError
-        | ConnectionError
-    >(
-        m$.json(200, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
-            key: "V1VerifyEmailResponseBody",
-        }),
-        m$.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
-            ctype: "application/problem+json",
-        }),
-        m$.fail(["4XX", "5XX"])
-    )(response, request$, { extraFields: responseFields$ });
-    if (!result$.ok) {
-        return result$;
-    }
-
+  const [result$] = await m$.match<
+    operations.AccountV1SettingsVerfyEmailResponse,
+    | errors.ErrorModel
+    | SDKError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >(
+    m$.json(200, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
+      key: "V1VerifyEmailResponseBody",
+    }),
+    m$.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    m$.fail(["4XX", "5XX"]),
+  )(response, request$, { extraFields: responseFields$ });
+  if (!result$.ok) {
     return result$;
+  }
+
+  return result$;
 }

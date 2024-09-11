@@ -5,43 +5,42 @@
 import * as z from "zod";
 
 export type LeaderboardBadgeInfo = {
-    /**
-     * The time the badge was completed
-     */
-    completionTime: Date;
-    /**
-     * The level of the badge
-     */
-    level: number;
+  /**
+   * The time the badge was completed
+   */
+  completionTime: Date;
+  /**
+   * The level of the badge
+   */
+  level: number;
 };
 
 /** @internal */
 export const LeaderboardBadgeInfo$inboundSchema: z.ZodType<
-    LeaderboardBadgeInfo,
-    z.ZodTypeDef,
-    unknown
+  LeaderboardBadgeInfo,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    completionTime: z
-        .string()
-        .datetime({ offset: true })
-        .transform((v) => new Date(v)),
-    level: z.number().int(),
+  completionTime: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ),
+  level: z.number().int(),
 });
 
 /** @internal */
 export type LeaderboardBadgeInfo$Outbound = {
-    completionTime: string;
-    level: number;
+  completionTime: string;
+  level: number;
 };
 
 /** @internal */
 export const LeaderboardBadgeInfo$outboundSchema: z.ZodType<
-    LeaderboardBadgeInfo$Outbound,
-    z.ZodTypeDef,
-    LeaderboardBadgeInfo
+  LeaderboardBadgeInfo$Outbound,
+  z.ZodTypeDef,
+  LeaderboardBadgeInfo
 > = z.object({
-    completionTime: z.date().transform((v) => v.toISOString()),
-    level: z.number().int(),
+  completionTime: z.date().transform(v => v.toISOString()),
+  level: z.number().int(),
 });
 
 /**
@@ -49,10 +48,10 @@ export const LeaderboardBadgeInfo$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace LeaderboardBadgeInfo$ {
-    /** @deprecated use `LeaderboardBadgeInfo$inboundSchema` instead. */
-    export const inboundSchema = LeaderboardBadgeInfo$inboundSchema;
-    /** @deprecated use `LeaderboardBadgeInfo$outboundSchema` instead. */
-    export const outboundSchema = LeaderboardBadgeInfo$outboundSchema;
-    /** @deprecated use `LeaderboardBadgeInfo$Outbound` instead. */
-    export type Outbound = LeaderboardBadgeInfo$Outbound;
+  /** @deprecated use `LeaderboardBadgeInfo$inboundSchema` instead. */
+  export const inboundSchema = LeaderboardBadgeInfo$inboundSchema;
+  /** @deprecated use `LeaderboardBadgeInfo$outboundSchema` instead. */
+  export const outboundSchema = LeaderboardBadgeInfo$outboundSchema;
+  /** @deprecated use `LeaderboardBadgeInfo$Outbound` instead. */
+  export type Outbound = LeaderboardBadgeInfo$Outbound;
 }

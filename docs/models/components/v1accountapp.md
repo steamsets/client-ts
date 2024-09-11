@@ -6,12 +6,13 @@
 import { V1AccountApp } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountApp = {
-    id: 730,
-    image: "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
-    name: "Counter-Strike: Global Offensive",
-    playtime: 123456,
-    price: 1200,
-    shortName: "csgo",
+  id: 730,
+  image:
+    "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+  name: "Counter-Strike: Global Offensive",
+  playtime: 123456,
+  price: 1200,
+  shortName: "csgo",
 };
 ```
 

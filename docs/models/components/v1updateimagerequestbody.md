@@ -6,8 +6,8 @@
 import { V1UpdateImageRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UpdateImageRequestBody = {
-    active: true,
-    imageId: "123456",
+  active: true,
+  imageId: "123456",
 };
 ```
 

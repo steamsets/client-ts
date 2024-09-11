@@ -6,18 +6,18 @@
 import { Role } from "@steamsets/client-ts/models/components";
 
 let value: Role = {
-    colorr: "#ff0000",
-    icon: "tier_1.svg",
-    name: "Tier 1",
-    role: "<value>",
+  colorr: "#ff0000",
+  icon: "tier_1.svg",
+  name: "Tier 1",
+  role: "partner",
 };
 ```
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `colorr`           | *string*           | :heavy_check_mark: | The role color     | #ff0000            |
-| `icon`             | *string*           | :heavy_check_mark: | The role icon      | tier_1.svg         |
-| `name`             | *string*           | :heavy_check_mark: | The Group name     | Tier 1             |
-| `role`             | *string*           | :heavy_check_mark: | N/A                |                    |
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `colorr`                                                   | *string*                                                   | :heavy_check_mark:                                         | The role color                                             | #ff0000                                                    |
+| `icon`                                                     | *string*                                                   | :heavy_check_mark:                                         | The role icon                                              | tier_1.svg                                                 |
+| `name`                                                     | *string*                                                   | :heavy_check_mark:                                         | The Group name                                             | Tier 1                                                     |
+| `role`                                                     | [components.RoleRole](../../models/components/rolerole.md) | :heavy_check_mark:                                         | N/A                                                        |                                                            |

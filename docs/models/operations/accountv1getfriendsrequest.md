@@ -6,7 +6,7 @@
 import { AccountV1GetFriendsRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetFriendsRequest = {
-    accountSearch: {},
+  accountSearch: {},
 };
 ```
 

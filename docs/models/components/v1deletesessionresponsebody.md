@@ -6,7 +6,8 @@
 import { V1DeleteSessionResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteSessionResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json",
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json",
 };
 ```
 

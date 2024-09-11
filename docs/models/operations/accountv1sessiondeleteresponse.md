@@ -6,15 +6,16 @@
 import { AccountV1SessionDeleteResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1SessionDeleteResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1DeleteSessionResponseBody: {
-        dollarSchema: "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json",
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1DeleteSessionResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json",
+  },
 };
 ```
 

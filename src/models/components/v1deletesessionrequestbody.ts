@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type V1DeleteSessionRequestBody = {
-    /**
-     * The session id to delete
-     */
-    sessionId: string;
+  /**
+   * The session id to delete
+   */
+  sessionId: string;
 };
 
 /** @internal */
 export const V1DeleteSessionRequestBody$inboundSchema: z.ZodType<
-    V1DeleteSessionRequestBody,
-    z.ZodTypeDef,
-    unknown
+  V1DeleteSessionRequestBody,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    sessionId: z.string(),
+  sessionId: z.string(),
 });
 
 /** @internal */
 export type V1DeleteSessionRequestBody$Outbound = {
-    sessionId: string;
+  sessionId: string;
 };
 
 /** @internal */
 export const V1DeleteSessionRequestBody$outboundSchema: z.ZodType<
-    V1DeleteSessionRequestBody$Outbound,
-    z.ZodTypeDef,
-    V1DeleteSessionRequestBody
+  V1DeleteSessionRequestBody$Outbound,
+  z.ZodTypeDef,
+  V1DeleteSessionRequestBody
 > = z.object({
-    sessionId: z.string(),
+  sessionId: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const V1DeleteSessionRequestBody$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace V1DeleteSessionRequestBody$ {
-    /** @deprecated use `V1DeleteSessionRequestBody$inboundSchema` instead. */
-    export const inboundSchema = V1DeleteSessionRequestBody$inboundSchema;
-    /** @deprecated use `V1DeleteSessionRequestBody$outboundSchema` instead. */
-    export const outboundSchema = V1DeleteSessionRequestBody$outboundSchema;
-    /** @deprecated use `V1DeleteSessionRequestBody$Outbound` instead. */
-    export type Outbound = V1DeleteSessionRequestBody$Outbound;
+  /** @deprecated use `V1DeleteSessionRequestBody$inboundSchema` instead. */
+  export const inboundSchema = V1DeleteSessionRequestBody$inboundSchema;
+  /** @deprecated use `V1DeleteSessionRequestBody$outboundSchema` instead. */
+  export const outboundSchema = V1DeleteSessionRequestBody$outboundSchema;
+  /** @deprecated use `V1DeleteSessionRequestBody$Outbound` instead. */
+  export type Outbound = V1DeleteSessionRequestBody$Outbound;
 }

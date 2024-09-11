@@ -6,7 +6,9 @@
 import { V1DeleteImagesRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1DeleteImagesRequestBody = {
-    imageIds: ["<value>"],
+  imageIds: [
+    "<value>",
+  ],
 };
 ```
 

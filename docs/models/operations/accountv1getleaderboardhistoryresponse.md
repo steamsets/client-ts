@@ -6,24 +6,24 @@
 import { AccountV1GetLeaderboardHistoryResponse } from "@steamsets/client-ts/models/operations";
 
 let value: AccountV1GetLeaderboardHistoryResponse = {
-    httpMeta: {
-        response: new Response('{"message": "hello world"}', {
-            headers: { "Content-Type": "application/json" },
-        }),
-        request: new Request("https://example.com"),
-    },
-    v1AccountLeaderboardHistoryResponseBody: {
-        dollarSchema:
-            "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
-        histories: [
-            {
-                date: new Date("2024-09-04T09:11:49.338Z"),
-                leaderboard: "apps",
-                rank: 963663,
-                score: 272656,
-            },
-        ],
-    },
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1AccountLeaderboardHistoryResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
+    histories: [
+      {
+        date: new Date("2022-03-04T03:46:41.208Z"),
+        leaderboard: "xp",
+        rank: 272656,
+        score: 383441,
+      },
+    ],
+  },
 };
 ```
 

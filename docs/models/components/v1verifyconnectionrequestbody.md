@@ -6,7 +6,7 @@
 import { V1VerifyConnectionRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1VerifyConnectionRequestBody = {
-    connectionId: "123456",
+  connectionId: "123456",
 };
 ```
 

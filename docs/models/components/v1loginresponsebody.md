@@ -6,11 +6,12 @@
 import { V1LoginResponseBody } from "@steamsets/client-ts/models/components";
 
 let value: V1LoginResponseBody = {
-    dollarSchema: "https://api.steamsets.com/schemas/V1LoginResponseBody.json",
-    avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
-    name: "SteamSets",
-    sessionToken: "123456",
-    steamId: "76561198842603734",
+  dollarSchema: "https://api.steamsets.com/schemas/V1LoginResponseBody.json",
+  avatar:
+    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+  name: "SteamSets",
+  sessionToken: "123456",
+  steamId: "76561198842603734",
 };
 ```
 

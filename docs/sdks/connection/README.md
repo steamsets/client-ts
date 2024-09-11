@@ -30,7 +30,7 @@ async function run() {
     code: "123456",
     provider: "discord",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -109,7 +109,7 @@ async function run() {
   const result = await steamSets.connection.accountV1ConnectionDeleteConnection({
     connectionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -188,7 +188,7 @@ async function run() {
     connectionId: "123456",
     hidden: true,
   });
-
+  
   // Handle the result
   console.log(result)
 }
@@ -267,7 +267,7 @@ async function run() {
   const result = await steamSets.connection.accountV1ConnectionVerifyConnection({
     connectionId: "123456",
   });
-
+  
   // Handle the result
   console.log(result)
 }
