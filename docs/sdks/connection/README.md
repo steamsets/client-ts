@@ -21,9 +21,7 @@ Connect a new Social Provider
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionConnect({
@@ -48,9 +46,7 @@ import { connectionAccountV1ConnectionConnect } from "@steamsets/client-ts/funcs
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await connectionAccountV1ConnectionConnect(steamSets, {
@@ -101,9 +97,7 @@ Remove a connection
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionDeleteConnection({
@@ -127,9 +121,7 @@ import { connectionAccountV1ConnectionDeleteConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await connectionAccountV1ConnectionDeleteConnection(steamSets, {
@@ -179,9 +171,7 @@ Make a connection visible/invisible
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionUpdateConnection({
@@ -206,9 +196,7 @@ import { connectionAccountV1ConnectionUpdateConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await connectionAccountV1ConnectionUpdateConnection(steamSets, {
@@ -259,9 +247,7 @@ Verify a domain connection only atm
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionVerifyConnection({
@@ -285,9 +271,7 @@ import { connectionAccountV1ConnectionVerifyConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await connectionAccountV1ConnectionVerifyConnection(steamSets, {
