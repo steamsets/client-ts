@@ -25,9 +25,7 @@ Get Account Apps
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetApps({
@@ -51,9 +49,7 @@ import { dataAccountV1GetApps } from "@steamsets/client-ts/funcs/dataAccountV1Ge
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetApps(steamSets, {
@@ -103,9 +99,7 @@ Get Account Badges
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetBadges({
@@ -129,9 +123,7 @@ import { dataAccountV1GetBadges } from "@steamsets/client-ts/funcs/dataAccountV1
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetBadges(steamSets, {
@@ -181,9 +173,7 @@ Get Account DataPoints
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetDataPoints({
@@ -207,9 +197,7 @@ import { dataAccountV1GetDataPoints } from "@steamsets/client-ts/funcs/dataAccou
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetDataPoints(steamSets, {
@@ -259,9 +247,7 @@ Get Account Friends
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetFriends({
@@ -285,9 +271,7 @@ import { dataAccountV1GetFriends } from "@steamsets/client-ts/funcs/dataAccountV
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetFriends(steamSets, {
@@ -337,9 +321,7 @@ Get Account Info
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetInfo({});
@@ -361,9 +343,7 @@ import { dataAccountV1GetInfo } from "@steamsets/client-ts/funcs/dataAccountV1Ge
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetInfo(steamSets, {});
@@ -411,9 +391,7 @@ Get Account Leaderboard History
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetLeaderboardHistory({
@@ -437,9 +415,7 @@ import { dataAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs/d
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetLeaderboardHistory(steamSets, {
@@ -489,9 +465,7 @@ Get Staff Members and their info
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1GetStaff();
@@ -513,9 +487,7 @@ import { dataAccountV1GetStaff } from "@steamsets/client-ts/funcs/dataAccountV1G
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1GetStaff(steamSets);
@@ -562,9 +534,7 @@ Queue a app for processing
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.data.accountV1Queue({
@@ -590,9 +560,7 @@ import { dataAccountV1Queue } from "@steamsets/client-ts/funcs/dataAccountV1Queu
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await dataAccountV1Queue(steamSets, {

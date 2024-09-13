@@ -10,6 +10,7 @@ let value: V1AppDetail = {
   image: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
   isEvent: true,
   isSale: true,
+  itadId: "<value>",
   name: "CS2",
   price: 1200,
   shortName: "csgo",
@@ -25,6 +26,7 @@ let value: V1AppDetail = {
 | `image`                                                                  | *string*                                                                 | :heavy_check_mark:                                                       | The app image hash                                                       | a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg                                     |
 | `isEvent`                                                                | *boolean*                                                                | :heavy_check_mark:                                                       | Whether the app is an event                                              | true                                                                     |
 | `isSale`                                                                 | *boolean*                                                                | :heavy_check_mark:                                                       | Whether the app is a sale                                                | true                                                                     |
+| `itadId`                                                                 | *string*                                                                 | :heavy_check_mark:                                                       | The apps id on itad                                                      |                                                                          |
 | `name`                                                                   | *string*                                                                 | :heavy_check_mark:                                                       | The app name                                                             | CS2                                                                      |
 | `price`                                                                  | *number*                                                                 | :heavy_check_mark:                                                       | The app price                                                            | 1200                                                                     |
 | `shortName`                                                              | *string*                                                                 | :heavy_check_mark:                                                       | The app short name                                                       | csgo                                                                     |

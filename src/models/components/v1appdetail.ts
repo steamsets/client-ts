@@ -53,6 +53,10 @@ export type V1AppDetail = {
    */
   isSale: boolean;
   /**
+   * The apps id on itad
+   */
+  itadId: string;
+  /**
    * The app name
    */
   name: string;
@@ -101,6 +105,7 @@ export const V1AppDetail$inboundSchema: z.ZodType<
   image: z.string(),
   isEvent: z.boolean(),
   isSale: z.boolean(),
+  itadId: z.string(),
   name: z.string(),
   price: z.number().int(),
   shortName: z.string(),
@@ -113,6 +118,7 @@ export type V1AppDetail$Outbound = {
   image: string;
   isEvent: boolean;
   isSale: boolean;
+  itadId: string;
   name: string;
   price: number;
   shortName: string;
@@ -129,6 +135,7 @@ export const V1AppDetail$outboundSchema: z.ZodType<
   image: z.string(),
   isEvent: z.boolean(),
   isSale: z.boolean(),
+  itadId: z.string(),
   name: z.string(),
   price: z.number().int(),
   shortName: z.string(),

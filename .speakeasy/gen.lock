@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 93843eb042164a62f8869cdabc0184a5
+  docChecksum: a0d67d692c733c91f52de6ea477e74cf
   docVersion: 1.0.0
-  speakeasyVersion: 1.395.1
-  generationVersion: 2.415.0
-  releaseVersion: 0.6.0
-  configChecksum: bb08d1be261f3d7efc0dd7a6cc2a07b4
+  speakeasyVersion: 1.396.8
+  generationVersion: 2.415.6
+  releaseVersion: 0.7.0
+  configChecksum: 432614f81b987a69e528f1c7fde47ca6
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,9 +29,10 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.17.0
+    core: 3.17.2
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
@@ -578,7 +579,7 @@ examples:
         application/json: {"appId": 123456}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppResponseBody.json", "badges": [], "detail": {"appId": 730, "image": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isEvent": true, "isSale": true, "name": "CS2", "price": 1200, "shortName": "csgo", "type": "game"}, "items": []}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppResponseBody.json", "badges": [], "detail": {"appId": 730, "image": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isEvent": true, "isSale": true, "itadId": "<value>", "name": "CS2", "price": 1200, "shortName": "csgo", "type": "game"}, "items": []}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   liveness:
