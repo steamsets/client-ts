@@ -15,11 +15,13 @@ export class App extends ClientSDK {
    */
   async appV1Get(
     request: components.V1AppRequestBody,
+    security: operations.AppV1GetSecurity,
     options?: RequestOptions,
   ): Promise<operations.AppV1GetResponse> {
     return unwrapAsync(appAppV1Get(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -29,11 +31,13 @@ export class App extends ClientSDK {
    */
   async accountV1Queue(
     request: operations.AccountV1QueueRequest,
+    security: operations.AccountV1QueueSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(appAccountV1Queue(
       this,
       request,
+      security,
       options,
     ));
   }

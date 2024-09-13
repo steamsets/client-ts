@@ -29,6 +29,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.public.accountV1GetApps({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -53,6 +56,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await publicAccountV1GetApps(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -73,6 +79,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetAppsRequest](../../models/operations/accountv1getappsrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetAppsSecurity](../../models/operations/accountv1getappssecurity.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -103,6 +110,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.public.accountV1GetBadges({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -127,6 +137,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await publicAccountV1GetBadges(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -147,6 +160,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetBadgesRequest](../../models/operations/accountv1getbadgesrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetBadgesSecurity](../../models/operations/accountv1getbadgessecurity.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -177,6 +191,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.public.accountV1GetDataPoints({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -201,6 +218,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await publicAccountV1GetDataPoints(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -221,6 +241,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetDataPointsRequest](../../models/operations/accountv1getdatapointsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetDataPointsSecurity](../../models/operations/accountv1getdatapointssecurity.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -251,6 +272,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.public.accountV1GetFriends({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -275,6 +299,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await publicAccountV1GetFriends(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -295,6 +322,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetFriendsRequest](../../models/operations/accountv1getfriendsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetFriendsSecurity](../../models/operations/accountv1getfriendssecurity.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -323,7 +351,10 @@ import { SteamSets } from "@steamsets/client-ts";
 const steamSets = new SteamSets();
 
 async function run() {
-  const result = await steamSets.public.accountV1GetInfo({});
+  const result = await steamSets.public.accountV1GetInfo({}, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  });
   
   // Handle the result
   console.log(result)
@@ -345,7 +376,10 @@ import { publicAccountV1GetInfo } from "@steamsets/client-ts/funcs/publicAccount
 const steamSets = new SteamSetsCore();
 
 async function run() {
-  const res = await publicAccountV1GetInfo(steamSets, {});
+  const res = await publicAccountV1GetInfo(steamSets, {}, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -365,6 +399,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetInfoSecurity](../../models/operations/accountv1getinfosecurity.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -395,6 +430,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.public.accountV1GetLeaderboardHistory({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -419,6 +457,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await publicAccountV1GetLeaderboardHistory(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -439,6 +480,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetLeaderboardHistoryRequest](../../models/operations/accountv1getleaderboardhistoryrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetLeaderboardHistorySecurity](../../models/operations/accountv1getleaderboardhistorysecurity.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -471,6 +513,9 @@ async function run() {
     appSearch: {
       id: 730,
     },
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -497,6 +542,9 @@ async function run() {
     appSearch: {
       id: 730,
     },
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -517,6 +565,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1QueueRequest](../../models/operations/accountv1queuerequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1QueueSecurity](../../models/operations/accountv1queuesecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

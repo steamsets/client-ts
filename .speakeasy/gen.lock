@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: a6afb22a8b636f8413e15003fdcb703e
+  docChecksum: 49e130b57baeec78df665b7372cebed1
   docVersion: 1.0.0
   speakeasyVersion: 1.396.8
   generationVersion: 2.415.6
-  releaseVersion: 0.7.1
-  configChecksum: f7dc9a708ab0119844d51f54ee6ccddb
+  releaseVersion: 0.8.0
+  configChecksum: e610af73de1260b32ec0f1f8ed3dc846
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -39,6 +39,7 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     inputOutputModels: 2.82.0
+    methodSecurity: 2.82.4
     nullables: 0.1.0
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -144,18 +145,25 @@ generatedFiles:
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
+  - docs/models/operations/accountv1getappssecurity.md
   - docs/models/operations/accountv1getbadgesrequest.md
   - docs/models/operations/accountv1getbadgesresponse.md
+  - docs/models/operations/accountv1getbadgessecurity.md
   - docs/models/operations/accountv1getdatapointsrequest.md
   - docs/models/operations/accountv1getdatapointsresponse.md
+  - docs/models/operations/accountv1getdatapointssecurity.md
   - docs/models/operations/accountv1getfriendsrequest.md
   - docs/models/operations/accountv1getfriendsresponse.md
+  - docs/models/operations/accountv1getfriendssecurity.md
   - docs/models/operations/accountv1getinforesponse.md
+  - docs/models/operations/accountv1getinfosecurity.md
   - docs/models/operations/accountv1getleaderboardhistoryrequest.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
+  - docs/models/operations/accountv1getleaderboardhistorysecurity.md
   - docs/models/operations/accountv1getstaffresponse.md
   - docs/models/operations/accountv1queuerequest.md
   - docs/models/operations/accountv1queueresponse.md
+  - docs/models/operations/accountv1queuesecurity.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/accountv1sessiondeleteresponse.md
@@ -173,6 +181,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/appv1getresponse.md
+  - docs/models/operations/appv1getsecurity.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationresponse.md
   - docs/sdks/account/README.md

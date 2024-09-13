@@ -6,6 +6,11 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1GetLeaderboardHistorySecurity = {
+  apiKey: string;
+  session: string;
+};
+
 export type AccountV1GetLeaderboardHistoryRequest = {
   xForwardedFor?: string | undefined;
   userAgent?: string | undefined;
@@ -21,6 +26,47 @@ export type AccountV1GetLeaderboardHistoryResponse = {
     | components.V1AccountLeaderboardHistoryResponseBody
     | undefined;
 };
+
+/** @internal */
+export const AccountV1GetLeaderboardHistorySecurity$inboundSchema: z.ZodType<
+  AccountV1GetLeaderboardHistorySecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string(),
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1GetLeaderboardHistorySecurity$Outbound = {
+  apiKey: string;
+  session: string;
+};
+
+/** @internal */
+export const AccountV1GetLeaderboardHistorySecurity$outboundSchema: z.ZodType<
+  AccountV1GetLeaderboardHistorySecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1GetLeaderboardHistorySecurity
+> = z.object({
+  apiKey: z.string(),
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1GetLeaderboardHistorySecurity$ {
+  /** @deprecated use `AccountV1GetLeaderboardHistorySecurity$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountV1GetLeaderboardHistorySecurity$inboundSchema;
+  /** @deprecated use `AccountV1GetLeaderboardHistorySecurity$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountV1GetLeaderboardHistorySecurity$outboundSchema;
+  /** @deprecated use `AccountV1GetLeaderboardHistorySecurity$Outbound` instead. */
+  export type Outbound = AccountV1GetLeaderboardHistorySecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1GetLeaderboardHistoryRequest$inboundSchema: z.ZodType<
