@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 49e130b57baeec78df665b7372cebed1
+  docChecksum: 0f825807eed9bdd731f6c438e0f05e41
   docVersion: 1.0.0
   speakeasyVersion: 1.396.8
   generationVersion: 2.415.6
-  releaseVersion: 0.8.0
-  configChecksum: e610af73de1260b32ec0f1f8ed3dc846
+  releaseVersion: 0.8.1
+  configChecksum: 28736f64f8c47fda80bdc8b826148d61
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -140,9 +140,13 @@ generatedFiles:
   - docs/models/components/v1verifyemailresponsebody.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1connectionconnectresponse.md
+  - docs/models/operations/accountv1connectionconnectsecurity.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
+  - docs/models/operations/accountv1connectiondeleteconnectionsecurity.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
+  - docs/models/operations/accountv1connectionupdateconnectionsecurity.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
+  - docs/models/operations/accountv1connectionverifyconnectionsecurity.md
   - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getappssecurity.md
@@ -161,29 +165,41 @@ generatedFiles:
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1getleaderboardhistorysecurity.md
   - docs/models/operations/accountv1getstaffresponse.md
+  - docs/models/operations/accountv1getstaffsecurity.md
   - docs/models/operations/accountv1queuerequest.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1queuesecurity.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/accountv1sessiondeleteresponse.md
+  - docs/models/operations/accountv1sessiondeletesecurity.md
   - docs/models/operations/accountv1sessiongetresponse.md
+  - docs/models/operations/accountv1sessiongetsecurity.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
   - docs/models/operations/accountv1settingsdeleteimagesresponse.md
+  - docs/models/operations/accountv1settingsdeleteimagessecurity.md
   - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
+  - docs/models/operations/accountv1settingsgenerateapikeysecurity.md
   - docs/models/operations/accountv1settingsgetresponse.md
+  - docs/models/operations/accountv1settingsgetsecurity.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
+  - docs/models/operations/accountv1settingssendemailverificationsecurity.md
   - docs/models/operations/accountv1settingsupdateimageresponse.md
+  - docs/models/operations/accountv1settingsupdateimagesecurity.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
+  - docs/models/operations/accountv1settingsupdatesecurity.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
+  - docs/models/operations/accountv1settingsuploadimagessecurity.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/accountv1settingsverfyemailsecurity.md
   - docs/models/operations/appv1getresponse.md
   - docs/models/operations/appv1getsecurity.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationresponse.md
+  - docs/models/operations/locationsecurity.md
   - docs/sdks/account/README.md
   - docs/sdks/app/README.md
   - docs/sdks/connection/README.md
