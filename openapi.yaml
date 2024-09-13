@@ -1698,6 +1698,9 @@ components:
           description: Whether the app is a sale
           example: true
           type: boolean
+        itadId:
+          description: The apps id on itad
+          type: string
         name:
           description: The app name
           example: CS2
@@ -1742,6 +1745,7 @@ components:
         - name
         - shortName
         - price
+        - itadId
         - isEvent
         - isSale
         - type
