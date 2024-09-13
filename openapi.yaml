@@ -2449,7 +2449,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - session:
+            - security
       summary: Connect a new Social Provider
       tags:
         - account
@@ -3547,6 +3548,8 @@ paths:
       summary: Location List
       tags:
         - location
+security:
+  - {}
 servers:
   - url: https://api.steamsets.com
   - url: http://localhost:8080
