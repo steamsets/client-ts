@@ -2701,7 +2701,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account Apps
       tags:
         - account
@@ -2757,7 +2758,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account Badges
       tags:
         - account
@@ -2813,7 +2815,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account DataPoints
       tags:
         - account
@@ -2869,7 +2872,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account Friends
       tags:
         - account
@@ -2916,7 +2920,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account Info
       tags:
         - account
@@ -2972,7 +2977,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get Account Leaderboard History
       tags:
         - account
@@ -3435,7 +3441,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Get details about an app
       tags:
         - app
@@ -3490,7 +3497,8 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session: []
+        - apiKey: []
+          session: []
       summary: Queue a app for processing
       tags:
         - app
