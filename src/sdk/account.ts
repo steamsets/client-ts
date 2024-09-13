@@ -118,11 +118,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetApps(
     request: operations.AccountV1GetAppsRequest,
+    security: operations.AccountV1GetAppsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
     return unwrapAsync(accountAccountV1GetApps(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -132,11 +134,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetBadges(
     request: operations.AccountV1GetBadgesRequest,
+    security: operations.AccountV1GetBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
     return unwrapAsync(accountAccountV1GetBadges(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -146,11 +150,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetDataPoints(
     request: operations.AccountV1GetDataPointsRequest,
+    security: operations.AccountV1GetDataPointsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetDataPointsResponse> {
     return unwrapAsync(accountAccountV1GetDataPoints(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -160,11 +166,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetFriends(
     request: operations.AccountV1GetFriendsRequest,
+    security: operations.AccountV1GetFriendsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetFriendsResponse> {
     return unwrapAsync(accountAccountV1GetFriends(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -174,11 +182,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetInfo(
     request: components.AccountSearch,
+    security: operations.AccountV1GetInfoSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetInfoResponse> {
     return unwrapAsync(accountAccountV1GetInfo(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -188,11 +198,13 @@ export class Account extends ClientSDK {
    */
   async accountV1GetLeaderboardHistory(
     request: operations.AccountV1GetLeaderboardHistoryRequest,
+    security: operations.AccountV1GetLeaderboardHistorySecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
     return unwrapAsync(accountAccountV1GetLeaderboardHistory(
       this,
       request,
+      security,
       options,
     ));
   }

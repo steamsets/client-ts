@@ -23,7 +23,9 @@ Delete mulitple imagest
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsDeleteImages({
@@ -49,7 +51,9 @@ import { settingsAccountV1SettingsDeleteImages } from "@steamsets/client-ts/func
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsDeleteImages(steamSets, {
@@ -101,7 +105,9 @@ Generate a new API key for the account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsGenerateApiKey();
@@ -123,7 +129,9 @@ import { settingsAccountV1SettingsGenerateApiKey } from "@steamsets/client-ts/fu
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsGenerateApiKey(steamSets);
@@ -170,7 +178,9 @@ Gets all settings for the account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsGet();
@@ -192,7 +202,9 @@ import { settingsAccountV1SettingsGet } from "@steamsets/client-ts/funcs/setting
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsGet(steamSets);
@@ -239,7 +251,9 @@ Resend the verification code for an email
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsSendEmailVerification({});
@@ -261,7 +275,9 @@ import { settingsAccountV1SettingsSendEmailVerification } from "@steamsets/clien
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsSendEmailVerification(steamSets, {});
@@ -309,7 +325,9 @@ Update one of the uploaded images
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsUpdateImage({
@@ -334,7 +352,9 @@ import { settingsAccountV1SettingsUpdateImage } from "@steamsets/client-ts/funcs
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsUpdateImage(steamSets, {
@@ -385,7 +405,9 @@ Update settings for the logged in account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsUpdate({
@@ -423,7 +445,9 @@ import { settingsAccountV1SettingsUpdate } from "@steamsets/client-ts/funcs/sett
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsUpdate(steamSets, {
@@ -487,7 +511,9 @@ Multi Upload Endpoint for images
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsUploadImages({
@@ -516,7 +542,9 @@ import { settingsAccountV1SettingsUploadImages } from "@steamsets/client-ts/func
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsUploadImages(steamSets, {
@@ -571,7 +599,9 @@ Verify the email by passing in the code the user should've gotten
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.settings.accountV1SettingsVerfyEmail({
@@ -595,7 +625,9 @@ import { settingsAccountV1SettingsVerfyEmail } from "@steamsets/client-ts/funcs/
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await settingsAccountV1SettingsVerfyEmail(steamSets, {

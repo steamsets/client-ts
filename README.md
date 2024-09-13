@@ -48,7 +48,9 @@ yarn add @steamsets/client-ts zod
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
@@ -169,7 +171,9 @@ To change the default retry strategy for a single API call, simply provide a ret
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
@@ -211,6 +215,7 @@ const steamSets = new SteamSets({
     },
     retryConnectionErrors: false,
   },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -248,7 +253,9 @@ import {
   SDKValidationError,
 } from "@steamsets/client-ts/models/errors";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   let result;
@@ -303,6 +310,7 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   serverIdx: 1,
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -329,6 +337,7 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   serverURL: "https://api.steamsets.com",
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -418,6 +427,30 @@ async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
+
+### Per-Operation Security Schemes
+
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets();
+
+async function run() {
+  const result = await steamSets.account.accountV1GetApps({
+    accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result

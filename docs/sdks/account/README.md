@@ -40,7 +40,9 @@ Connect a new Social Provider
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
@@ -65,7 +67,9 @@ import { accountAccountV1ConnectionConnect } from "@steamsets/client-ts/funcs/ac
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1ConnectionConnect(steamSets, {
@@ -116,7 +120,9 @@ Create a new session for non logged in users
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SessionCreate({});
@@ -138,7 +144,9 @@ import { accountAccountV1SessionCreate } from "@steamsets/client-ts/funcs/accoun
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SessionCreate(steamSets, {});
@@ -186,7 +194,9 @@ Remove a connection
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionDeleteConnection({
@@ -210,7 +220,9 @@ import { accountAccountV1ConnectionDeleteConnection } from "@steamsets/client-ts
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1ConnectionDeleteConnection(steamSets, {
@@ -260,7 +272,9 @@ Delete mulitple imagest
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsDeleteImages({
@@ -286,7 +300,9 @@ import { accountAccountV1SettingsDeleteImages } from "@steamsets/client-ts/funcs
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsDeleteImages(steamSets, {
@@ -338,7 +354,9 @@ Deletes a session, can also be used to logout
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SessionDelete({
@@ -362,7 +380,9 @@ import { accountAccountV1SessionDelete } from "@steamsets/client-ts/funcs/accoun
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SessionDelete(steamSets, {
@@ -412,7 +432,9 @@ Generate a new API key for the account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsGenerateApiKey();
@@ -434,7 +456,9 @@ import { accountAccountV1SettingsGenerateApiKey } from "@steamsets/client-ts/fun
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsGenerateApiKey(steamSets);
@@ -486,6 +510,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.account.accountV1GetApps({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -510,6 +537,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await accountAccountV1GetApps(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -530,6 +560,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetAppsRequest](../../models/operations/accountv1getappsrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetAppsSecurity](../../models/operations/accountv1getappssecurity.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -560,6 +591,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.account.accountV1GetBadges({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -584,6 +618,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await accountAccountV1GetBadges(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -604,6 +641,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetBadgesRequest](../../models/operations/accountv1getbadgesrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetBadgesSecurity](../../models/operations/accountv1getbadgessecurity.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -634,6 +672,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.account.accountV1GetDataPoints({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -658,6 +699,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await accountAccountV1GetDataPoints(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -678,6 +722,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetDataPointsRequest](../../models/operations/accountv1getdatapointsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetDataPointsSecurity](../../models/operations/accountv1getdatapointssecurity.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -708,6 +753,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.account.accountV1GetFriends({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -732,6 +780,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await accountAccountV1GetFriends(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -752,6 +803,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetFriendsRequest](../../models/operations/accountv1getfriendsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetFriendsSecurity](../../models/operations/accountv1getfriendssecurity.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -780,7 +832,10 @@ import { SteamSets } from "@steamsets/client-ts";
 const steamSets = new SteamSets();
 
 async function run() {
-  const result = await steamSets.account.accountV1GetInfo({});
+  const result = await steamSets.account.accountV1GetInfo({}, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  });
   
   // Handle the result
   console.log(result)
@@ -802,7 +857,10 @@ import { accountAccountV1GetInfo } from "@steamsets/client-ts/funcs/accountAccou
 const steamSets = new SteamSetsCore();
 
 async function run() {
-  const res = await accountAccountV1GetInfo(steamSets, {});
+  const res = await accountAccountV1GetInfo(steamSets, {}, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -822,6 +880,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetInfoSecurity](../../models/operations/accountv1getinfosecurity.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -852,6 +911,9 @@ const steamSets = new SteamSets();
 async function run() {
   const result = await steamSets.account.accountV1GetLeaderboardHistory({
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -876,6 +938,9 @@ const steamSets = new SteamSetsCore();
 async function run() {
   const res = await accountAccountV1GetLeaderboardHistory(steamSets, {
     accountSearch: {},
+  }, {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -896,6 +961,7 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [operations.AccountV1GetLeaderboardHistoryRequest](../../models/operations/accountv1getleaderboardhistoryrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `security`                                                                                                                                                                     | [operations.AccountV1GetLeaderboardHistorySecurity](../../models/operations/accountv1getleaderboardhistorysecurity.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -921,7 +987,9 @@ Gets all session data
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SessionGet();
@@ -943,7 +1011,9 @@ import { accountAccountV1SessionGet } from "@steamsets/client-ts/funcs/accountAc
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SessionGet(steamSets);
@@ -990,7 +1060,9 @@ Gets all settings for the account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsGet();
@@ -1012,7 +1084,9 @@ import { accountAccountV1SettingsGet } from "@steamsets/client-ts/funcs/accountA
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsGet(steamSets);
@@ -1059,7 +1133,9 @@ Get Staff Members and their info
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1GetStaff();
@@ -1081,7 +1157,9 @@ import { accountAccountV1GetStaff } from "@steamsets/client-ts/funcs/accountAcco
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1GetStaff(steamSets);
@@ -1128,7 +1206,9 @@ Logs a user in and creates a new session
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SessionLogin({
@@ -1163,7 +1243,9 @@ import { accountAccountV1SessionLogin } from "@steamsets/client-ts/funcs/account
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SessionLogin(steamSets, {
@@ -1224,7 +1306,9 @@ Resend the verification code for an email
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsSendEmailVerification({});
@@ -1246,7 +1330,9 @@ import { accountAccountV1SettingsSendEmailVerification } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsSendEmailVerification(steamSets, {});
@@ -1294,7 +1380,9 @@ Make a connection visible/invisible
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionUpdateConnection({
@@ -1319,7 +1407,9 @@ import { accountAccountV1ConnectionUpdateConnection } from "@steamsets/client-ts
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1ConnectionUpdateConnection(steamSets, {
@@ -1370,7 +1460,9 @@ Update one of the uploaded images
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsUpdateImage({
@@ -1395,7 +1487,9 @@ import { accountAccountV1SettingsUpdateImage } from "@steamsets/client-ts/funcs/
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsUpdateImage(steamSets, {
@@ -1446,7 +1540,9 @@ Update settings for the logged in account
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsUpdate({
@@ -1484,7 +1580,9 @@ import { accountAccountV1SettingsUpdate } from "@steamsets/client-ts/funcs/accou
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsUpdate(steamSets, {
@@ -1548,7 +1646,9 @@ Multi Upload Endpoint for images
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsUploadImages({
@@ -1577,7 +1677,9 @@ import { accountAccountV1SettingsUploadImages } from "@steamsets/client-ts/funcs
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsUploadImages(steamSets, {
@@ -1632,7 +1734,9 @@ Verify a domain connection only atm
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionVerifyConnection({
@@ -1656,7 +1760,9 @@ import { accountAccountV1ConnectionVerifyConnection } from "@steamsets/client-ts
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1ConnectionVerifyConnection(steamSets, {
@@ -1706,7 +1812,9 @@ Verify the email by passing in the code the user should've gotten
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsVerfyEmail({
@@ -1730,7 +1838,9 @@ import { accountAccountV1SettingsVerfyEmail } from "@steamsets/client-ts/funcs/a
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await accountAccountV1SettingsVerfyEmail(steamSets, {

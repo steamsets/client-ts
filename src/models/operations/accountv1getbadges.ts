@@ -6,6 +6,11 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1GetBadgesSecurity = {
+  apiKey: string;
+  session: string;
+};
+
 export type AccountV1GetBadgesRequest = {
   xForwardedFor?: string | undefined;
   userAgent?: string | undefined;
@@ -19,6 +24,45 @@ export type AccountV1GetBadgesResponse = {
    */
   v1BadgesResponseBody?: components.V1BadgesResponseBody | undefined;
 };
+
+/** @internal */
+export const AccountV1GetBadgesSecurity$inboundSchema: z.ZodType<
+  AccountV1GetBadgesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  apiKey: z.string(),
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1GetBadgesSecurity$Outbound = {
+  apiKey: string;
+  session: string;
+};
+
+/** @internal */
+export const AccountV1GetBadgesSecurity$outboundSchema: z.ZodType<
+  AccountV1GetBadgesSecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1GetBadgesSecurity
+> = z.object({
+  apiKey: z.string(),
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1GetBadgesSecurity$ {
+  /** @deprecated use `AccountV1GetBadgesSecurity$inboundSchema` instead. */
+  export const inboundSchema = AccountV1GetBadgesSecurity$inboundSchema;
+  /** @deprecated use `AccountV1GetBadgesSecurity$outboundSchema` instead. */
+  export const outboundSchema = AccountV1GetBadgesSecurity$outboundSchema;
+  /** @deprecated use `AccountV1GetBadgesSecurity$Outbound` instead. */
+  export type Outbound = AccountV1GetBadgesSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1GetBadgesRequest$inboundSchema: z.ZodType<

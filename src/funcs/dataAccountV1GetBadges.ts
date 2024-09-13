@@ -10,7 +10,7 @@ import {
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
+import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
   ConnectionError,
@@ -31,6 +31,7 @@ import { Result } from "../types/fp.js";
 export async function dataAccountV1GetBadges(
   client$: SteamSetsCore,
   request: operations.AccountV1GetBadgesRequest,
+  security: operations.AccountV1GetBadgesSecurity,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -75,14 +76,26 @@ export async function dataAccountV1GetBadges(
     ),
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const security$: SecurityInput[][] = [
+    [
+      {
+        fieldName: "api-key",
+        type: "apiKey:header",
+        value: security?.apiKey,
+      },
+      {
+        fieldName: "Authorization",
+        type: "http:bearer",
+        value: security?.session,
+      },
+    ],
+  ];
+  const securitySettings$ = resolveSecurity(...security$);
   const context = {
     operationID: "account.v1.getBadges",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: security,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
 
   const requestRes = client$.createRequest$(context, {
     security: securitySettings$,
