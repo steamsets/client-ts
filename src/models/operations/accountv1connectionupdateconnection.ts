@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1ConnectionUpdateConnectionSecurity = {
+  session: string;
+};
+
 export type AccountV1ConnectionUpdateConnectionResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -15,6 +19,46 @@ export type AccountV1ConnectionUpdateConnectionResponse = {
     | components.V1UpdateConnectionResponseBody
     | undefined;
 };
+
+/** @internal */
+export const AccountV1ConnectionUpdateConnectionSecurity$inboundSchema:
+  z.ZodType<
+    AccountV1ConnectionUpdateConnectionSecurity,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    session: z.string(),
+  });
+
+/** @internal */
+export type AccountV1ConnectionUpdateConnectionSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1ConnectionUpdateConnectionSecurity$outboundSchema:
+  z.ZodType<
+    AccountV1ConnectionUpdateConnectionSecurity$Outbound,
+    z.ZodTypeDef,
+    AccountV1ConnectionUpdateConnectionSecurity
+  > = z.object({
+    session: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1ConnectionUpdateConnectionSecurity$ {
+  /** @deprecated use `AccountV1ConnectionUpdateConnectionSecurity$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountV1ConnectionUpdateConnectionSecurity$inboundSchema;
+  /** @deprecated use `AccountV1ConnectionUpdateConnectionSecurity$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountV1ConnectionUpdateConnectionSecurity$outboundSchema;
+  /** @deprecated use `AccountV1ConnectionUpdateConnectionSecurity$Outbound` instead. */
+  export type Outbound = AccountV1ConnectionUpdateConnectionSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1ConnectionUpdateConnectionResponse$inboundSchema:

@@ -48,12 +48,12 @@ export async function livenessLiveness(
     Accept: "application/json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const apiKey$ = await extractSecurity(client$.options$.apiKey);
+  const security$ = apiKey$ == null ? {} : { apiKey: apiKey$ };
   const context = {
     operationID: "liveness",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client$.options$.apiKey,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

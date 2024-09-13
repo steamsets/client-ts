@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type LocationSecurity = {
+  session: string;
+};
+
 export type LocationResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -13,6 +17,42 @@ export type LocationResponse = {
    */
   regions?: Array<components.Region> | null | undefined;
 };
+
+/** @internal */
+export const LocationSecurity$inboundSchema: z.ZodType<
+  LocationSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  session: z.string(),
+});
+
+/** @internal */
+export type LocationSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const LocationSecurity$outboundSchema: z.ZodType<
+  LocationSecurity$Outbound,
+  z.ZodTypeDef,
+  LocationSecurity
+> = z.object({
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace LocationSecurity$ {
+  /** @deprecated use `LocationSecurity$inboundSchema` instead. */
+  export const inboundSchema = LocationSecurity$inboundSchema;
+  /** @deprecated use `LocationSecurity$outboundSchema` instead. */
+  export const outboundSchema = LocationSecurity$outboundSchema;
+  /** @deprecated use `LocationSecurity$Outbound` instead. */
+  export type Outbound = LocationSecurity$Outbound;
+}
 
 /** @internal */
 export const LocationResponse$inboundSchema: z.ZodType<

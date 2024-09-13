@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1SettingsUpdateSecurity = {
+  session: string;
+};
+
 export type AccountV1SettingsUpdateRequest = {
   xForwardedFor?: string | undefined;
   v1UpdateSettingsRequestBody: components.V1UpdateSettingsRequestBody;
@@ -20,6 +24,42 @@ export type AccountV1SettingsUpdateResponse = {
     | components.V1UpdateSettingsResponseBody
     | undefined;
 };
+
+/** @internal */
+export const AccountV1SettingsUpdateSecurity$inboundSchema: z.ZodType<
+  AccountV1SettingsUpdateSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1SettingsUpdateSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1SettingsUpdateSecurity$outboundSchema: z.ZodType<
+  AccountV1SettingsUpdateSecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1SettingsUpdateSecurity
+> = z.object({
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsUpdateSecurity$ {
+  /** @deprecated use `AccountV1SettingsUpdateSecurity$inboundSchema` instead. */
+  export const inboundSchema = AccountV1SettingsUpdateSecurity$inboundSchema;
+  /** @deprecated use `AccountV1SettingsUpdateSecurity$outboundSchema` instead. */
+  export const outboundSchema = AccountV1SettingsUpdateSecurity$outboundSchema;
+  /** @deprecated use `AccountV1SettingsUpdateSecurity$Outbound` instead. */
+  export type Outbound = AccountV1SettingsUpdateSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1SettingsUpdateRequest$inboundSchema: z.ZodType<

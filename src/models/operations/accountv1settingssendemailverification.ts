@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1SettingsSendEmailVerificationSecurity = {
+  session: string;
+};
+
 export type AccountV1SettingsSendEmailVerificationRequest = {
   xForwardedFor?: string | undefined;
 };
@@ -13,6 +17,47 @@ export type AccountV1SettingsSendEmailVerificationRequest = {
 export type AccountV1SettingsSendEmailVerificationResponse = {
   httpMeta: components.HTTPMetadata;
 };
+
+/** @internal */
+export const AccountV1SettingsSendEmailVerificationSecurity$inboundSchema:
+  z.ZodType<
+    AccountV1SettingsSendEmailVerificationSecurity,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    session: z.string(),
+  });
+
+/** @internal */
+export type AccountV1SettingsSendEmailVerificationSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1SettingsSendEmailVerificationSecurity$outboundSchema:
+  z.ZodType<
+    AccountV1SettingsSendEmailVerificationSecurity$Outbound,
+    z.ZodTypeDef,
+    AccountV1SettingsSendEmailVerificationSecurity
+  > = z.object({
+    session: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsSendEmailVerificationSecurity$ {
+  /** @deprecated use `AccountV1SettingsSendEmailVerificationSecurity$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountV1SettingsSendEmailVerificationSecurity$inboundSchema;
+  /** @deprecated use `AccountV1SettingsSendEmailVerificationSecurity$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountV1SettingsSendEmailVerificationSecurity$outboundSchema;
+  /** @deprecated use `AccountV1SettingsSendEmailVerificationSecurity$Outbound` instead. */
+  export type Outbound =
+    AccountV1SettingsSendEmailVerificationSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1SettingsSendEmailVerificationRequest$inboundSchema:

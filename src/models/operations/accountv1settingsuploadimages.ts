@@ -6,9 +6,51 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1SettingsUploadImagesSecurity = {
+  session: string;
+};
+
 export type AccountV1SettingsUploadImagesResponse = {
   httpMeta: components.HTTPMetadata;
 };
+
+/** @internal */
+export const AccountV1SettingsUploadImagesSecurity$inboundSchema: z.ZodType<
+  AccountV1SettingsUploadImagesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1SettingsUploadImagesSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1SettingsUploadImagesSecurity$outboundSchema: z.ZodType<
+  AccountV1SettingsUploadImagesSecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1SettingsUploadImagesSecurity
+> = z.object({
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsUploadImagesSecurity$ {
+  /** @deprecated use `AccountV1SettingsUploadImagesSecurity$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountV1SettingsUploadImagesSecurity$inboundSchema;
+  /** @deprecated use `AccountV1SettingsUploadImagesSecurity$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountV1SettingsUploadImagesSecurity$outboundSchema;
+  /** @deprecated use `AccountV1SettingsUploadImagesSecurity$Outbound` instead. */
+  export type Outbound = AccountV1SettingsUploadImagesSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1SettingsUploadImagesResponse$inboundSchema: z.ZodType<
