@@ -2449,8 +2449,7 @@ paths:
                 $ref: "#/components/schemas/ErrorModel"
           description: Internal Server Error
       security:
-        - session:
-            - security
+        - session: []
       summary: Connect a new Social Provider
       tags:
         - account
