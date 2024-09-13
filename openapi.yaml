@@ -3556,7 +3556,7 @@ paths:
       tags:
         - location
 security:
-  - {}
+  - apiKey: []
 servers:
   - url: https://api.steamsets.com
   - url: http://localhost:8080
