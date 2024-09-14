@@ -30,7 +30,7 @@ export class App extends ClientSDK {
    * Queue a app for processing
    */
   async accountV1Queue(
-    request: operations.AccountV1QueueRequest,
+    request: components.AppSearch,
     security: operations.AccountV1QueueSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {

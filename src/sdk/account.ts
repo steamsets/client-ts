@@ -104,7 +104,7 @@ export class Account extends ClientSDK {
    * Get Account Apps
    */
   async accountV1GetApps(
-    request: operations.AccountV1GetAppsRequest,
+    request: components.AccountSearch,
     security: operations.AccountV1GetAppsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
@@ -120,7 +120,7 @@ export class Account extends ClientSDK {
    * Get Account Badges
    */
   async accountV1GetBadges(
-    request: operations.AccountV1GetBadgesRequest,
+    request: components.AccountSearch,
     security: operations.AccountV1GetBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
@@ -136,7 +136,7 @@ export class Account extends ClientSDK {
    * Get Account DataPoints
    */
   async accountV1GetDataPoints(
-    request: operations.AccountV1GetDataPointsRequest,
+    request: components.AccountSearch,
     security: operations.AccountV1GetDataPointsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetDataPointsResponse> {
@@ -152,7 +152,7 @@ export class Account extends ClientSDK {
    * Get Account Friends
    */
   async accountV1GetFriends(
-    request: operations.AccountV1GetFriendsRequest,
+    request: components.AccountSearch,
     security: operations.AccountV1GetFriendsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetFriendsResponse> {
@@ -184,7 +184,7 @@ export class Account extends ClientSDK {
    * Get Account Leaderboard History
    */
   async accountV1GetLeaderboardHistory(
-    request: operations.AccountV1GetLeaderboardHistoryRequest,
+    request: components.AccountSearch,
     security: operations.AccountV1GetLeaderboardHistorySecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 85503637db0c99db7b637986ed868215
+  docChecksum: 62bbe413dda52281a6e888871f3a4155
   docVersion: 1.0.0
   speakeasyVersion: 1.396.9
   generationVersion: 2.415.7
-  releaseVersion: 0.8.2
-  configChecksum: ad27421b8d649d88dea9feae147166ad
+  releaseVersion: 0.8.3
+  configChecksum: caf62c218d1b612f305a1bc94b0d7c80
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -142,25 +142,19 @@ generatedFiles:
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
-  - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getappssecurity.md
-  - docs/models/operations/accountv1getbadgesrequest.md
   - docs/models/operations/accountv1getbadgesresponse.md
   - docs/models/operations/accountv1getbadgessecurity.md
-  - docs/models/operations/accountv1getdatapointsrequest.md
   - docs/models/operations/accountv1getdatapointsresponse.md
   - docs/models/operations/accountv1getdatapointssecurity.md
-  - docs/models/operations/accountv1getfriendsrequest.md
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getfriendssecurity.md
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getinfosecurity.md
-  - docs/models/operations/accountv1getleaderboardhistoryrequest.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1getleaderboardhistorysecurity.md
   - docs/models/operations/accountv1getstaffresponse.md
-  - docs/models/operations/accountv1queuerequest.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1queuesecurity.md
   - docs/models/operations/accountv1sessioncreaterequest.md

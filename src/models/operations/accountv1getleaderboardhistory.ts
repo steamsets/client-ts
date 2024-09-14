@@ -11,12 +11,6 @@ export type AccountV1GetLeaderboardHistorySecurity = {
   session: string;
 };
 
-export type AccountV1GetLeaderboardHistoryRequest = {
-  xForwardedFor?: string | undefined;
-  userAgent?: string | undefined;
-  accountSearch: components.AccountSearch;
-};
-
 export type AccountV1GetLeaderboardHistoryResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -66,62 +60,6 @@ export namespace AccountV1GetLeaderboardHistorySecurity$ {
     AccountV1GetLeaderboardHistorySecurity$outboundSchema;
   /** @deprecated use `AccountV1GetLeaderboardHistorySecurity$Outbound` instead. */
   export type Outbound = AccountV1GetLeaderboardHistorySecurity$Outbound;
-}
-
-/** @internal */
-export const AccountV1GetLeaderboardHistoryRequest$inboundSchema: z.ZodType<
-  AccountV1GetLeaderboardHistoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "X-Forwarded-For": z.string().optional(),
-  "User-Agent": z.string().optional(),
-  AccountSearch: components.AccountSearch$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "X-Forwarded-For": "xForwardedFor",
-    "User-Agent": "userAgent",
-    "AccountSearch": "accountSearch",
-  });
-});
-
-/** @internal */
-export type AccountV1GetLeaderboardHistoryRequest$Outbound = {
-  "X-Forwarded-For"?: string | undefined;
-  "User-Agent"?: string | undefined;
-  AccountSearch: components.AccountSearch$Outbound;
-};
-
-/** @internal */
-export const AccountV1GetLeaderboardHistoryRequest$outboundSchema: z.ZodType<
-  AccountV1GetLeaderboardHistoryRequest$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetLeaderboardHistoryRequest
-> = z.object({
-  xForwardedFor: z.string().optional(),
-  userAgent: z.string().optional(),
-  accountSearch: components.AccountSearch$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    xForwardedFor: "X-Forwarded-For",
-    userAgent: "User-Agent",
-    accountSearch: "AccountSearch",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetLeaderboardHistoryRequest$ {
-  /** @deprecated use `AccountV1GetLeaderboardHistoryRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    AccountV1GetLeaderboardHistoryRequest$inboundSchema;
-  /** @deprecated use `AccountV1GetLeaderboardHistoryRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountV1GetLeaderboardHistoryRequest$outboundSchema;
-  /** @deprecated use `AccountV1GetLeaderboardHistoryRequest$Outbound` instead. */
-  export type Outbound = AccountV1GetLeaderboardHistoryRequest$Outbound;
 }
 
 /** @internal */

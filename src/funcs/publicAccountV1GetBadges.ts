@@ -3,15 +3,13 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import {
-  encodeJSON as encodeJSON$,
-  encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
+import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -30,7 +28,7 @@ import { Result } from "../types/fp.js";
  */
 export async function publicAccountV1GetBadges(
   client$: SteamSetsCore,
-  request: operations.AccountV1GetBadgesRequest,
+  request: components.AccountSearch,
   security: operations.AccountV1GetBadgesSecurity,
   options?: RequestOptions,
 ): Promise<
@@ -50,30 +48,20 @@ export async function publicAccountV1GetBadges(
 
   const parsed$ = schemas$.safeParse(
     input$,
-    (value$) =>
-      operations.AccountV1GetBadgesRequest$outboundSchema.parse(value$),
+    (value$) => components.AccountSearch$outboundSchema.parse(value$),
     "Input validation failed",
   );
   if (!parsed$.ok) {
     return parsed$;
   }
   const payload$ = parsed$.value;
-  const body$ = encodeJSON$("body", payload$.AccountSearch, { explode: true });
+  const body$ = encodeJSON$("body", payload$, { explode: true });
 
   const path$ = pathToFunc("/account.v1.AccountService/GetBadges")();
 
   const headers$ = new Headers({
     "Content-Type": "application/json",
     Accept: "application/json",
-    "User-Agent": encodeSimple$("User-Agent", payload$["User-Agent"], {
-      explode: false,
-      charEncoding: "none",
-    }),
-    "X-Forwarded-For": encodeSimple$(
-      "X-Forwarded-For",
-      payload$["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
   });
 
   const security$: SecurityInput[][] = [

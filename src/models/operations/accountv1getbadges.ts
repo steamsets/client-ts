@@ -11,12 +11,6 @@ export type AccountV1GetBadgesSecurity = {
   session: string;
 };
 
-export type AccountV1GetBadgesRequest = {
-  xForwardedFor?: string | undefined;
-  userAgent?: string | undefined;
-  accountSearch: components.AccountSearch;
-};
-
 export type AccountV1GetBadgesResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -62,60 +56,6 @@ export namespace AccountV1GetBadgesSecurity$ {
   export const outboundSchema = AccountV1GetBadgesSecurity$outboundSchema;
   /** @deprecated use `AccountV1GetBadgesSecurity$Outbound` instead. */
   export type Outbound = AccountV1GetBadgesSecurity$Outbound;
-}
-
-/** @internal */
-export const AccountV1GetBadgesRequest$inboundSchema: z.ZodType<
-  AccountV1GetBadgesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "X-Forwarded-For": z.string().optional(),
-  "User-Agent": z.string().optional(),
-  AccountSearch: components.AccountSearch$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "X-Forwarded-For": "xForwardedFor",
-    "User-Agent": "userAgent",
-    "AccountSearch": "accountSearch",
-  });
-});
-
-/** @internal */
-export type AccountV1GetBadgesRequest$Outbound = {
-  "X-Forwarded-For"?: string | undefined;
-  "User-Agent"?: string | undefined;
-  AccountSearch: components.AccountSearch$Outbound;
-};
-
-/** @internal */
-export const AccountV1GetBadgesRequest$outboundSchema: z.ZodType<
-  AccountV1GetBadgesRequest$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetBadgesRequest
-> = z.object({
-  xForwardedFor: z.string().optional(),
-  userAgent: z.string().optional(),
-  accountSearch: components.AccountSearch$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    xForwardedFor: "X-Forwarded-For",
-    userAgent: "User-Agent",
-    accountSearch: "AccountSearch",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetBadgesRequest$ {
-  /** @deprecated use `AccountV1GetBadgesRequest$inboundSchema` instead. */
-  export const inboundSchema = AccountV1GetBadgesRequest$inboundSchema;
-  /** @deprecated use `AccountV1GetBadgesRequest$outboundSchema` instead. */
-  export const outboundSchema = AccountV1GetBadgesRequest$outboundSchema;
-  /** @deprecated use `AccountV1GetBadgesRequest$Outbound` instead. */
-  export type Outbound = AccountV1GetBadgesRequest$Outbound;
 }
 
 /** @internal */
