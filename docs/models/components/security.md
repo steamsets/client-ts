@@ -12,4 +12,4 @@ let value: Security = {};
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_minus_sign: | N/A                |
+| `session`          | *string*           | :heavy_minus_sign: | N/A                |

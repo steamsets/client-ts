@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0f825807eed9bdd731f6c438e0f05e41
+  docChecksum: 85503637db0c99db7b637986ed868215
   docVersion: 1.0.0
-  speakeasyVersion: 1.396.8
-  generationVersion: 2.415.6
-  releaseVersion: 0.8.1
-  configChecksum: 28736f64f8c47fda80bdc8b826148d61
+  speakeasyVersion: 1.396.9
+  generationVersion: 2.415.7
+  releaseVersion: 0.8.2
+  configChecksum: ad27421b8d649d88dea9feae147166ad
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.17.2
+    core: 3.17.3
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -119,7 +119,6 @@ generatedFiles:
   - docs/models/components/v1deleteimagesresponsebody.md
   - docs/models/components/v1deletesessionrequestbody.md
   - docs/models/components/v1deletesessionresponsebody.md
-  - docs/models/components/v1generateapikeyresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1livenessresponsebody.md
@@ -140,13 +139,9 @@ generatedFiles:
   - docs/models/components/v1verifyemailresponsebody.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1connectionconnectresponse.md
-  - docs/models/operations/accountv1connectionconnectsecurity.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
-  - docs/models/operations/accountv1connectiondeleteconnectionsecurity.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
-  - docs/models/operations/accountv1connectionupdateconnectionsecurity.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
-  - docs/models/operations/accountv1connectionverifyconnectionsecurity.md
   - docs/models/operations/accountv1getappsrequest.md
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getappssecurity.md
@@ -165,41 +160,28 @@ generatedFiles:
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1getleaderboardhistorysecurity.md
   - docs/models/operations/accountv1getstaffresponse.md
-  - docs/models/operations/accountv1getstaffsecurity.md
   - docs/models/operations/accountv1queuerequest.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1queuesecurity.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/accountv1sessiondeleteresponse.md
-  - docs/models/operations/accountv1sessiondeletesecurity.md
   - docs/models/operations/accountv1sessiongetresponse.md
-  - docs/models/operations/accountv1sessiongetsecurity.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
   - docs/models/operations/accountv1settingsdeleteimagesresponse.md
-  - docs/models/operations/accountv1settingsdeleteimagessecurity.md
-  - docs/models/operations/accountv1settingsgenerateapikeyresponse.md
-  - docs/models/operations/accountv1settingsgenerateapikeysecurity.md
   - docs/models/operations/accountv1settingsgetresponse.md
-  - docs/models/operations/accountv1settingsgetsecurity.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
-  - docs/models/operations/accountv1settingssendemailverificationsecurity.md
   - docs/models/operations/accountv1settingsupdateimageresponse.md
-  - docs/models/operations/accountv1settingsupdateimagesecurity.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
-  - docs/models/operations/accountv1settingsupdatesecurity.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
-  - docs/models/operations/accountv1settingsuploadimagessecurity.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
-  - docs/models/operations/accountv1settingsverfyemailsecurity.md
   - docs/models/operations/appv1getresponse.md
   - docs/models/operations/appv1getsecurity.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationresponse.md
-  - docs/models/operations/locationsecurity.md
   - docs/sdks/account/README.md
   - docs/sdks/app/README.md
   - docs/sdks/connection/README.md
@@ -229,7 +211,6 @@ generatedFiles:
   - src/funcs/accountAccountV1SessionGet.ts
   - src/funcs/accountAccountV1SessionLogin.ts
   - src/funcs/accountAccountV1SettingsDeleteImages.ts
-  - src/funcs/accountAccountV1SettingsGenerateApiKey.ts
   - src/funcs/accountAccountV1SettingsGet.ts
   - src/funcs/accountAccountV1SettingsSendEmailVerification.ts
   - src/funcs/accountAccountV1SettingsUpdate.ts
@@ -264,7 +245,6 @@ generatedFiles:
   - src/funcs/sessionAccountV1SessionGet.ts
   - src/funcs/sessionAccountV1SessionLogin.ts
   - src/funcs/settingsAccountV1SettingsDeleteImages.ts
-  - src/funcs/settingsAccountV1SettingsGenerateApiKey.ts
   - src/funcs/settingsAccountV1SettingsGet.ts
   - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
   - src/funcs/settingsAccountV1SettingsUpdate.ts
@@ -341,7 +321,6 @@ generatedFiles:
   - src/models/components/v1deleteimagesresponsebody.ts
   - src/models/components/v1deletesessionrequestbody.ts
   - src/models/components/v1deletesessionresponsebody.ts
-  - src/models/components/v1generateapikeyresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/v1livenessresponsebody.ts
@@ -380,7 +359,6 @@ generatedFiles:
   - src/models/operations/accountv1sessionget.ts
   - src/models/operations/accountv1sessionlogin.ts
   - src/models/operations/accountv1settingsdeleteimages.ts
-  - src/models/operations/accountv1settingsgenerateapikey.ts
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts

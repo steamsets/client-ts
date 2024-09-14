@@ -52,7 +52,6 @@ export * from "./v1deleteimagesrequestbody.js";
 export * from "./v1deleteimagesresponsebody.js";
 export * from "./v1deletesessionrequestbody.js";
 export * from "./v1deletesessionresponsebody.js";
-export * from "./v1generateapikeyresponsebody.js";
 export * from "./v1getsessionbody.js";
 export * from "./v1getsettingsbody.js";
 export * from "./v1livenessresponsebody.js";

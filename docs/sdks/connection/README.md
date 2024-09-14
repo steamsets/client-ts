@@ -21,14 +21,14 @@ Connect a new Social Provider
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -48,14 +48,14 @@ import { connectionAccountV1ConnectionConnect } from "@steamsets/client-ts/funcs
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await connectionAccountV1ConnectionConnect(steamSets, {
     code: "123456",
     provider: "discord",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -76,7 +76,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.V1ConnectRequestBody](../../models/components/v1connectrequestbody.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AccountV1ConnectionConnectSecurity](../../models/operations/accountv1connectionconnectsecurity.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -102,13 +101,13 @@ Remove a connection
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionDeleteConnection({
     connectionId: "123456",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -128,13 +127,13 @@ import { connectionAccountV1ConnectionDeleteConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await connectionAccountV1ConnectionDeleteConnection(steamSets, {
     connectionId: "123456",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -155,7 +154,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.V1DeleteConnectionRequestBody](../../models/components/v1deleteconnectionrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AccountV1ConnectionDeleteConnectionSecurity](../../models/operations/accountv1connectiondeleteconnectionsecurity.md)                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -181,14 +179,14 @@ Make a connection visible/invisible
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionUpdateConnection({
     connectionId: "123456",
     hidden: true,
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -208,14 +206,14 @@ import { connectionAccountV1ConnectionUpdateConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await connectionAccountV1ConnectionUpdateConnection(steamSets, {
     connectionId: "123456",
     hidden: true,
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -236,7 +234,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.V1UpdateConnectionRequestBody](../../models/components/v1updateconnectionrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AccountV1ConnectionUpdateConnectionSecurity](../../models/operations/accountv1connectionupdateconnectionsecurity.md)                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -262,13 +259,13 @@ Verify a domain connection only atm
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const result = await steamSets.connection.accountV1ConnectionVerifyConnection({
     connectionId: "123456",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -288,13 +285,13 @@ import { connectionAccountV1ConnectionVerifyConnection } from "@steamsets/client
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  session: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
 async function run() {
   const res = await connectionAccountV1ConnectionVerifyConnection(steamSets, {
     connectionId: "123456",
-  }, {
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -315,7 +312,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.V1VerifyConnectionRequestBody](../../models/components/v1verifyconnectionrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AccountV1ConnectionVerifyConnectionSecurity](../../models/operations/accountv1connectionverifyconnectionsecurity.md)                                               | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
