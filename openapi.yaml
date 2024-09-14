@@ -2604,15 +2604,6 @@ paths:
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -2661,15 +2652,6 @@ paths:
   /account.v1.AccountService/GetBadges:
     post:
       operationId: account.v1.getBadges
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -2718,15 +2700,6 @@ paths:
   /account.v1.AccountService/GetDataPoints:
     post:
       operationId: account.v1.getDataPoints
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -2775,15 +2748,6 @@ paths:
   /account.v1.AccountService/GetFriends:
     post:
       operationId: account.v1.getFriends
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -2880,15 +2844,6 @@ paths:
   /account.v1.AccountService/GetLeaderboardHistory:
     post:
       operationId: account.v1.getLeaderboardHistory
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
@@ -3399,15 +3354,6 @@ paths:
   /app.v1.AppService/Queue:
     post:
       operationId: account.v1.queue
-      parameters:
-        - in: header
-          name: X-Forwarded-For
-          schema:
-            type: string
-        - in: header
-          name: User-Agent
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
