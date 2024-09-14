@@ -11,12 +11,6 @@ export type AccountV1GetDataPointsSecurity = {
   session: string;
 };
 
-export type AccountV1GetDataPointsRequest = {
-  xForwardedFor?: string | undefined;
-  userAgent?: string | undefined;
-  accountSearch: components.AccountSearch;
-};
-
 export type AccountV1GetDataPointsResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -64,60 +58,6 @@ export namespace AccountV1GetDataPointsSecurity$ {
   export const outboundSchema = AccountV1GetDataPointsSecurity$outboundSchema;
   /** @deprecated use `AccountV1GetDataPointsSecurity$Outbound` instead. */
   export type Outbound = AccountV1GetDataPointsSecurity$Outbound;
-}
-
-/** @internal */
-export const AccountV1GetDataPointsRequest$inboundSchema: z.ZodType<
-  AccountV1GetDataPointsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "X-Forwarded-For": z.string().optional(),
-  "User-Agent": z.string().optional(),
-  AccountSearch: components.AccountSearch$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "X-Forwarded-For": "xForwardedFor",
-    "User-Agent": "userAgent",
-    "AccountSearch": "accountSearch",
-  });
-});
-
-/** @internal */
-export type AccountV1GetDataPointsRequest$Outbound = {
-  "X-Forwarded-For"?: string | undefined;
-  "User-Agent"?: string | undefined;
-  AccountSearch: components.AccountSearch$Outbound;
-};
-
-/** @internal */
-export const AccountV1GetDataPointsRequest$outboundSchema: z.ZodType<
-  AccountV1GetDataPointsRequest$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetDataPointsRequest
-> = z.object({
-  xForwardedFor: z.string().optional(),
-  userAgent: z.string().optional(),
-  accountSearch: components.AccountSearch$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    xForwardedFor: "X-Forwarded-For",
-    userAgent: "User-Agent",
-    accountSearch: "AccountSearch",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetDataPointsRequest$ {
-  /** @deprecated use `AccountV1GetDataPointsRequest$inboundSchema` instead. */
-  export const inboundSchema = AccountV1GetDataPointsRequest$inboundSchema;
-  /** @deprecated use `AccountV1GetDataPointsRequest$outboundSchema` instead. */
-  export const outboundSchema = AccountV1GetDataPointsRequest$outboundSchema;
-  /** @deprecated use `AccountV1GetDataPointsRequest$Outbound` instead. */
-  export type Outbound = AccountV1GetDataPointsRequest$Outbound;
 }
 
 /** @internal */

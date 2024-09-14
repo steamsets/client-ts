@@ -104,9 +104,7 @@ const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.app.accountV1Queue({
-    appSearch: {
-      id: 730,
-    },
+    id: 730,
   }, {
     apiKey: "<YOUR_API_KEY_HERE>",
     session: "<YOUR_BEARER_TOKEN_HERE>",
@@ -133,9 +131,7 @@ const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await appAccountV1Queue(steamSets, {
-    appSearch: {
-      id: 730,
-    },
+    id: 730,
   }, {
     apiKey: "<YOUR_API_KEY_HERE>",
     session: "<YOUR_BEARER_TOKEN_HERE>",
@@ -158,7 +154,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AccountV1QueueRequest](../../models/operations/accountv1queuerequest.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.AppSearch](../../models/components/appsearch.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `security`                                                                                                                                                                     | [operations.AccountV1QueueSecurity](../../models/operations/accountv1queuesecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |

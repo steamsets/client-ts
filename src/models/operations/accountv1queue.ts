@@ -11,12 +11,6 @@ export type AccountV1QueueSecurity = {
   session: string;
 };
 
-export type AccountV1QueueRequest = {
-  xForwardedFor?: string | undefined;
-  userAgent?: string | undefined;
-  appSearch: components.AppSearch;
-};
-
 export type AccountV1QueueResponse = {
   httpMeta: components.HTTPMetadata;
   headers: { [k: string]: Array<string> };
@@ -59,60 +53,6 @@ export namespace AccountV1QueueSecurity$ {
   export const outboundSchema = AccountV1QueueSecurity$outboundSchema;
   /** @deprecated use `AccountV1QueueSecurity$Outbound` instead. */
   export type Outbound = AccountV1QueueSecurity$Outbound;
-}
-
-/** @internal */
-export const AccountV1QueueRequest$inboundSchema: z.ZodType<
-  AccountV1QueueRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "X-Forwarded-For": z.string().optional(),
-  "User-Agent": z.string().optional(),
-  AppSearch: components.AppSearch$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "X-Forwarded-For": "xForwardedFor",
-    "User-Agent": "userAgent",
-    "AppSearch": "appSearch",
-  });
-});
-
-/** @internal */
-export type AccountV1QueueRequest$Outbound = {
-  "X-Forwarded-For"?: string | undefined;
-  "User-Agent"?: string | undefined;
-  AppSearch: components.AppSearch$Outbound;
-};
-
-/** @internal */
-export const AccountV1QueueRequest$outboundSchema: z.ZodType<
-  AccountV1QueueRequest$Outbound,
-  z.ZodTypeDef,
-  AccountV1QueueRequest
-> = z.object({
-  xForwardedFor: z.string().optional(),
-  userAgent: z.string().optional(),
-  appSearch: components.AppSearch$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    xForwardedFor: "X-Forwarded-For",
-    userAgent: "User-Agent",
-    appSearch: "AppSearch",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1QueueRequest$ {
-  /** @deprecated use `AccountV1QueueRequest$inboundSchema` instead. */
-  export const inboundSchema = AccountV1QueueRequest$inboundSchema;
-  /** @deprecated use `AccountV1QueueRequest$outboundSchema` instead. */
-  export const outboundSchema = AccountV1QueueRequest$outboundSchema;
-  /** @deprecated use `AccountV1QueueRequest$Outbound` instead. */
-  export type Outbound = AccountV1QueueRequest$Outbound;
 }
 
 /** @internal */

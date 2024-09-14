@@ -444,9 +444,7 @@ import { SteamSets } from "@steamsets/client-ts";
 const steamSets = new SteamSets();
 
 async function run() {
-  const result = await steamSets.account.accountV1GetApps({
-    accountSearch: {},
-  }, {
+  const result = await steamSets.account.accountV1GetApps({}, {
     apiKey: "<YOUR_API_KEY_HERE>",
     session: "<YOUR_BEARER_TOKEN_HERE>",
   });

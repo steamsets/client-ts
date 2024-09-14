@@ -3,15 +3,13 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import {
-  encodeJSON as encodeJSON$,
-  encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
+import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -30,7 +28,7 @@ import { Result } from "../types/fp.js";
  */
 export async function dataAccountV1Queue(
   client$: SteamSetsCore,
-  request: operations.AccountV1QueueRequest,
+  request: components.AppSearch,
   security: operations.AccountV1QueueSecurity,
   options?: RequestOptions,
 ): Promise<
@@ -50,29 +48,20 @@ export async function dataAccountV1Queue(
 
   const parsed$ = schemas$.safeParse(
     input$,
-    (value$) => operations.AccountV1QueueRequest$outboundSchema.parse(value$),
+    (value$) => components.AppSearch$outboundSchema.parse(value$),
     "Input validation failed",
   );
   if (!parsed$.ok) {
     return parsed$;
   }
   const payload$ = parsed$.value;
-  const body$ = encodeJSON$("body", payload$.AppSearch, { explode: true });
+  const body$ = encodeJSON$("body", payload$, { explode: true });
 
   const path$ = pathToFunc("/app.v1.AppService/Queue")();
 
   const headers$ = new Headers({
     "Content-Type": "application/json",
     Accept: "application/problem+json",
-    "User-Agent": encodeSimple$("User-Agent", payload$["User-Agent"], {
-      explode: false,
-      charEncoding: "none",
-    }),
-    "X-Forwarded-For": encodeSimple$(
-      "X-Forwarded-For",
-      payload$["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
   });
 
   const security$: SecurityInput[][] = [

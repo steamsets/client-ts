@@ -11,12 +11,6 @@ export type AccountV1GetFriendsSecurity = {
   session: string;
 };
 
-export type AccountV1GetFriendsRequest = {
-  xForwardedFor?: string | undefined;
-  userAgent?: string | undefined;
-  accountSearch: components.AccountSearch;
-};
-
 export type AccountV1GetFriendsResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -64,60 +58,6 @@ export namespace AccountV1GetFriendsSecurity$ {
   export const outboundSchema = AccountV1GetFriendsSecurity$outboundSchema;
   /** @deprecated use `AccountV1GetFriendsSecurity$Outbound` instead. */
   export type Outbound = AccountV1GetFriendsSecurity$Outbound;
-}
-
-/** @internal */
-export const AccountV1GetFriendsRequest$inboundSchema: z.ZodType<
-  AccountV1GetFriendsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  "X-Forwarded-For": z.string().optional(),
-  "User-Agent": z.string().optional(),
-  AccountSearch: components.AccountSearch$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "X-Forwarded-For": "xForwardedFor",
-    "User-Agent": "userAgent",
-    "AccountSearch": "accountSearch",
-  });
-});
-
-/** @internal */
-export type AccountV1GetFriendsRequest$Outbound = {
-  "X-Forwarded-For"?: string | undefined;
-  "User-Agent"?: string | undefined;
-  AccountSearch: components.AccountSearch$Outbound;
-};
-
-/** @internal */
-export const AccountV1GetFriendsRequest$outboundSchema: z.ZodType<
-  AccountV1GetFriendsRequest$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetFriendsRequest
-> = z.object({
-  xForwardedFor: z.string().optional(),
-  userAgent: z.string().optional(),
-  accountSearch: components.AccountSearch$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    xForwardedFor: "X-Forwarded-For",
-    userAgent: "User-Agent",
-    accountSearch: "AccountSearch",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetFriendsRequest$ {
-  /** @deprecated use `AccountV1GetFriendsRequest$inboundSchema` instead. */
-  export const inboundSchema = AccountV1GetFriendsRequest$inboundSchema;
-  /** @deprecated use `AccountV1GetFriendsRequest$outboundSchema` instead. */
-  export const outboundSchema = AccountV1GetFriendsRequest$outboundSchema;
-  /** @deprecated use `AccountV1GetFriendsRequest$Outbound` instead. */
-  export type Outbound = AccountV1GetFriendsRequest$Outbound;
 }
 
 /** @internal */
