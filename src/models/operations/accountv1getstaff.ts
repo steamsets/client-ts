@@ -6,10 +6,6 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
-export type AccountV1GetStaffSecurity = {
-  session: string;
-};
-
 export type AccountV1GetStaffResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -17,42 +13,6 @@ export type AccountV1GetStaffResponse = {
    */
   leaderboardAccounts?: Array<components.LeaderboardAccount> | null | undefined;
 };
-
-/** @internal */
-export const AccountV1GetStaffSecurity$inboundSchema: z.ZodType<
-  AccountV1GetStaffSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  session: z.string(),
-});
-
-/** @internal */
-export type AccountV1GetStaffSecurity$Outbound = {
-  session: string;
-};
-
-/** @internal */
-export const AccountV1GetStaffSecurity$outboundSchema: z.ZodType<
-  AccountV1GetStaffSecurity$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetStaffSecurity
-> = z.object({
-  session: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetStaffSecurity$ {
-  /** @deprecated use `AccountV1GetStaffSecurity$inboundSchema` instead. */
-  export const inboundSchema = AccountV1GetStaffSecurity$inboundSchema;
-  /** @deprecated use `AccountV1GetStaffSecurity$outboundSchema` instead. */
-  export const outboundSchema = AccountV1GetStaffSecurity$outboundSchema;
-  /** @deprecated use `AccountV1GetStaffSecurity$Outbound` instead. */
-  export type Outbound = AccountV1GetStaffSecurity$Outbound;
-}
 
 /** @internal */
 export const AccountV1GetStaffResponse$inboundSchema: z.ZodType<

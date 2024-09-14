@@ -77,12 +77,12 @@ export async function accountAccountV1SessionLogin(
     ),
   });
 
-  const apiKey$ = await extractSecurity(client$.options$.apiKey);
-  const security$ = apiKey$ == null ? {} : { apiKey: apiKey$ };
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
   const context = {
     operationID: "account.v1.session.login",
     oAuth2Scopes: [],
-    securitySource: client$.options$.apiKey,
+    securitySource: client$.options$.session,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

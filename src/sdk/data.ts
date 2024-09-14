@@ -116,12 +116,10 @@ export class Data extends ClientSDK {
    * Get Staff Members and their info
    */
   async accountV1GetStaff(
-    security: operations.AccountV1GetStaffSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetStaffResponse> {
     return unwrapAsync(dataAccountV1GetStaff(
       this,
-      security,
       options,
     ));
   }
