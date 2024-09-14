@@ -1984,22 +1984,6 @@ components:
           readOnly: true
           type: string
       type: object
-    V1GenerateApiKeyResponseBody:
-      additionalProperties: false
-      properties:
-        $schema:
-          description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1GenerateApiKeyResponseBody.json
-          format: uri
-          readOnly: true
-          type: string
-        key:
-          description: The generated API Key
-          example: api_123
-          type: string
-      required:
-        - key
-      type: object
     V1GetSessionBody:
       additionalProperties: false
       properties:
@@ -2617,40 +2601,6 @@ paths:
       tags:
         - account
         - session
-  /account.v1.AccountService/GenerateApiKey:
-    post:
-      operationId: account.v1.settings.generate-api-key
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/V1GenerateApiKeyResponseBody"
-          description: OK
-        "404":
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/ErrorModel"
-          description: Not Found
-        "429":
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/ErrorModel"
-          description: Too Many Requests
-        "500":
-          content:
-            application/problem+json:
-              schema:
-                $ref: "#/components/schemas/ErrorModel"
-          description: Internal Server Error
-      security:
-        - session: []
-      summary: Generate a new API key for the account
-      tags:
-        - account
-        - settings
   /account.v1.AccountService/GetApps:
     post:
       operationId: account.v1.getApps
@@ -3555,8 +3505,6 @@ paths:
       summary: Location List
       tags:
         - location
-security:
-  - apiKey: []
 servers:
   - url: https://api.steamsets.com
   - url: http://localhost:8080
