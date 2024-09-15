@@ -5,59 +5,71 @@ components:
       properties:
         appId:
           description: The app id
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
         badgeCompletedAt:
           description: The badge completed at
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         badgeId:
           description: The badge id
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         badgeImage:
           description: The badge image
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         badgeIsFoil:
           description: Whether the badge is foil
-          example: true
+          examples:
+            - true
           type: boolean
         badgeLevel:
           description: The badge level
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
         badgeName:
           description: The badge name
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         badgeScarcity:
           description: The badge scarcity
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         badgeSteamID:
           description: The badge steam id
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         badgeXP:
           description: The badge xp
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         image:
           description: The image of the app
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         name:
           description: The name of the app
-          example: steamsets
+          examples:
+            - steamsets
           type: string
       required:
         - appId
@@ -78,44 +90,53 @@ components:
       properties:
         appId:
           description: The app id
-          example: 730
+          examples:
+            - 730
           format: int32
           minimum: 0
           type: integer
         badgeId:
           description: The badge id
-          example: bdg_123
+          examples:
+            - bdg_123
           type: string
         badgeImage:
           description: The badge image
-          example: someHash.idk
+          examples:
+            - someHash.idk
           type: string
         badgeIsFoil:
           description: Whether the badge is foil
-          example: true
+          examples:
+            - true
           type: boolean
         badgeLevel:
           description: The badge level
-          example: 15
+          examples:
+            - 15
           format: int32
           minimum: 0
           type: integer
         badgeName:
           description: The badge name
-          example: Sommer Sale 2024 Foil 1+
+          examples:
+            - Sommer Sale 2024 Foil 1+
           type: string
         badgeScarcity:
           description: The badge scarcity
-          example: 15
+          examples:
+            - 15
           format: int32
           type: integer
         image:
           description: The image of the app
-          example: someHash.idk
+          examples:
+            - someHash.idk
           type: string
         name:
           description: The name of the app
-          example: CS2
+          examples:
+            - CS2
           type: string
       required:
         - appId
@@ -133,23 +154,27 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/AccountInfoBody.json
+          examples:
+            - https://api.steamsets.com/schemas/AccountInfoBody.json
           format: uri
           readOnly: true
           type: string
         accountId:
           description: The account id
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
         animatedAvatar:
           description: The animated avatar of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         appCost:
           description: The cost of an app
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         appPrivacy:
@@ -158,53 +183,64 @@ components:
             - private
             - public
             - friends_only
-          example: public
+          examples:
+            - public
           type: string
         apps:
           description: The number of apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         appsUpdatedAt:
           description: The time the apps were updated
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         avatar:
           description: The avatar hash of the account
-          example: f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
+          examples:
+            - f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
           type: string
         avatarFrame:
           description: The avatar frame of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         averagePlaytime:
           description: The average playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsGiven:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsReceived:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         background:
           description: The background of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         badges:
           description: The number of badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         badgesUpdatedAt:
           description: The time the badges were updated
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         bans:
@@ -218,40 +254,47 @@ components:
           description: The connections of the account
           items:
             $ref: "#/components/schemas/Connection"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         country:
           $ref: "#/components/schemas/Location"
           description: The country of the account
         createdAt:
           description: The time the account was created
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         currentBestRanks:
           description: The current best ranks
           items:
             $ref: "#/components/schemas/BestLeaderboardRank"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         currentRanks:
           description: The current ranks
           items:
             $ref: "#/components/schemas/BestLeaderboardRank"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         economyBan:
           description: The economy ban of the account
-          example: steam
+          examples:
+            - steam
           type: string
         foilBadgeCost:
           description: The cost of a foil badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         foilBadges:
           description: The number of foil badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         friendPrivacy:
@@ -260,16 +303,19 @@ components:
             - private
             - public
             - friends_only
-          example: public
+          examples:
+            - public
           type: string
         friends:
           description: The number of friends the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         friendsUpdatedAt:
           description: The time the friends were updated
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         gameBans:
@@ -278,55 +324,66 @@ components:
           type: integer
         hidden:
           description: Whether the account is hidden in the leaderboards
-          example: true
+          examples:
+            - true
           type: boolean
         images:
           description: The images of the account
           items:
             $ref: "#/components/schemas/Image"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         level:
           description: The level of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         limitedApps:
           description: The number of limited apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         miniBackground:
           description: The mini background of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         name:
           description: The name of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         normalBadgeCost:
           description: The cost of a normal badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         normalBadges:
           description: The number of normal badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         playtime:
           description: The playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsGiven:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsReceived:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         privacy:
@@ -335,7 +392,8 @@ components:
             - private
             - public
             - friends_only
-          example: public
+          examples:
+            - public
           type: string
         region:
           $ref: "#/components/schemas/Location"
@@ -344,14 +402,16 @@ components:
           description: The roles of the account
           items:
             $ref: "#/components/schemas/Role"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         state:
           $ref: "#/components/schemas/Location"
           description: The state of the account
         steamId:
           description: The steam id
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
         steamSetsScore:
           description: The steam sets score
@@ -359,19 +419,23 @@ components:
           type: integer
         steamSetsVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         steamVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         theme:
           description: The theme of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         updatedAt:
           description: The time the account was updated
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         vacBans:
@@ -380,7 +444,8 @@ components:
           type: integer
         xp:
           description: The number of xp the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
       required:
@@ -473,21 +538,25 @@ components:
       properties:
         appId:
           description: The app id
-          example: 730
+          examples:
+            - 730
           format: int32
           minimum: 0
           type: integer
         image:
           description: The image of the app
-          example: someHash.idk
+          examples:
+            - someHash.idk
           type: string
         name:
           description: The name of the app
-          example: CS2
+          examples:
+            - CS2
           type: string
         playtime:
           description: The playtime of the app
-          example: 15
+          examples:
+            - 15
           format: int32
           minimum: 0
           type: integer
@@ -502,7 +571,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/AccountSearch.json
+          examples:
+            - https://api.steamsets.com/schemas/AccountSearch.json
           format: uri
           readOnly: true
           type: string
@@ -549,13 +619,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/AppSearch.json
+          examples:
+            - https://api.steamsets.com/schemas/AppSearch.json
           format: uri
           readOnly: true
           type: string
         id:
           description: The app id to search for
-          example: 730
+          examples:
+            - 730
           format: int32
           minimum: 0
           type: integer
@@ -588,7 +660,8 @@ components:
           type: string
         ranks:
           description: The ranks in the leaderboard in csv global,regional,country,state,city
-          example: 1,1,1,1,1
+          examples:
+            - 1,1,1,1,1
           type: string
       required:
         - ranks
@@ -608,19 +681,23 @@ components:
       properties:
         avatar:
           description: The avatar of the connected user
-          example: https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
+          examples:
+            - https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
           type: string
         externalId:
           description: The external id of the connected user
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         hide:
           description: Whether the connection should be hidden or not
-          example: true
+          examples:
+            - true
           type: boolean
         name:
           description: The name of the connected user
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         provider:
           description: The provider to connect with
@@ -633,15 +710,18 @@ components:
             - youtube
             - x
             - domain
-          example: discord
+          examples:
+            - discord
           type: string
         publicId:
           description: The public id of the connection
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         verified:
           description: Whether the connection has been verified or not
-          example: true
+          examples:
+            - true
           type: boolean
       required:
         - provider
@@ -676,7 +756,8 @@ components:
       properties:
         enabled:
           description: Whether the email notifications are enabled or not
-          example: true
+          examples:
+            - true
           type: boolean
         type:
           description: The type of email notifications
@@ -704,38 +785,45 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/ErrorModel.json
+          examples:
+            - https://api.steamsets.com/schemas/ErrorModel.json
           format: uri
           readOnly: true
           type: string
         detail:
           description: A human-readable explanation specific to this occurrence of the problem.
-          example: Property foo is required but is missing.
+          examples:
+            - Property foo is required but is missing.
           type: string
         errors:
           description: Optional list of individual error details
           items:
             $ref: "#/components/schemas/ErrorDetail"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         instance:
           description: A URI reference that identifies the specific occurrence of the problem.
-          example: https://example.com/error-log/abc123
+          examples:
+            - https://example.com/error-log/abc123
           format: uri
           type: string
         status:
           description: HTTP status code
-          example: 400
+          examples:
+            - 400
           format: int64
           type: integer
         title:
           description: A short, human-readable summary of the problem type. This value should not change between occurrences of the error.
-          example: Bad Request
+          examples:
+            - Bad Request
           type: string
         type:
           default: about:blank
           description: A URI reference to human-readable documentation for the error.
-          example: https://example.com/errors/example
+          examples:
+            - https://example.com/errors/example
           format: uri
           type: string
       type: object
@@ -744,19 +832,23 @@ components:
       properties:
         active:
           description: Whether the image is active or not
-          example: true
+          examples:
+            - true
           type: boolean
         fileName:
           description: The name of the file
-          example: avatar.png
+          examples:
+            - avatar.png
           type: string
         imageId:
           description: The id of the image
-          example: img_wasd123
+          examples:
+            - img_wasd123
           type: string
         imageType:
           description: The type of the image
-          example: avatar
+          examples:
+            - avatar
           type: string
       required:
         - fileName
@@ -769,37 +861,44 @@ components:
       properties:
         appCost:
           description: The cost of an app
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         appPlaytime:
           description: The playtime of the account, incase of an app leaderboard
           format: int32
           minimum: 0
-          nullable: true
-          type: integer
+          type:
+            - integer
+            - "null"
         apps:
           description: The number of apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         avatar:
           description: The avatar hash of the account
-          example: f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
+          examples:
+            - f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
           type: string
         averagePlaytime:
           description: The average playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsGiven:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsReceived:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         badgeInfo:
@@ -807,7 +906,8 @@ components:
           description: The badge info of the account, incase of a badge leaderboard
         badges:
           description: The number of badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         bans:
@@ -822,26 +922,31 @@ components:
           description: The country of the account
         createdAt:
           description: The time the account was created
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         economyBan:
           description: The economy ban of the account
-          example: steam
+          examples:
+            - steam
           type: string
         foilBadgeCost:
           description: The cost of a foil badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         foilBadges:
           description: The number of foil badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         friends:
           description: The number of friends the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         gameBans:
@@ -850,50 +955,60 @@ components:
           type: integer
         hidden:
           description: Whether the account is hidden in the leaderboards
-          example: true
+          examples:
+            - true
           type: boolean
         level:
           description: The level of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         limitedApps:
           description: The number of limited apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         name:
           description: The name of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         normalBadgeCost:
           description: The cost of a normal badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         normalBadges:
           description: The number of normal badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         playtime:
           description: The playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsGiven:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsReceived:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         privacy:
           description: The privacy of the account
-          example: public
+          examples:
+            - public
           type: string
         region:
           $ref: "#/components/schemas/Location"
@@ -902,14 +1017,16 @@ components:
           description: The roles of the account
           items:
             $ref: "#/components/schemas/Role"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         state:
           $ref: "#/components/schemas/Location"
           description: The state of the account
         steamId:
           description: The steam id
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
         steamSetsScore:
           description: The steam sets score
@@ -917,11 +1034,13 @@ components:
           type: integer
         steamSetsVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         steamVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         vacBans:
           description: The number of vac bans
@@ -929,7 +1048,8 @@ components:
           type: integer
         xp:
           description: The number of xp the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
       required:
@@ -970,12 +1090,14 @@ components:
       properties:
         completionTime:
           description: The time the badge was completed
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         level:
           description: The level of the badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
       required:
@@ -987,17 +1109,21 @@ components:
       properties:
         code:
           description: The code of the location
-          example: DE
-          nullable: true
-          type: string
+          examples:
+            - DE
+          type:
+            - string
+            - "null"
         id:
           description: The id of the location
-          example: 1
+          examples:
+            - 1
           format: int32
           type: integer
         name:
           description: The name of the location
-          example: Germany
+          examples:
+            - Germany
           type: string
       required:
         - name
@@ -1008,49 +1134,60 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/LoginRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/LoginRequestBody.json
           format: uri
           readOnly: true
           type: string
         openid_assoc_handle:
           description: The assoc handle of the login
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         openid_claimed_id:
           description: The claimed id of the login
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
         openid_identity:
           description: The identity of the login
-          example: https://steamsets.com/api/v1/openid/login
+          examples:
+            - https://steamsets.com/api/v1/openid/login
           type: string
         openid_mode:
           description: The mode of the login
-          example: checkid_setup
+          examples:
+            - checkid_setup
           type: string
         openid_ns:
           description: The namespace of the login
-          example: http://specs.openid.net/auth/2.0
+          examples:
+            - http://specs.openid.net/auth/2.0
           type: string
         openid_op_endpoint:
           description: The endpoint of the login
-          example: https://steamsets.com/api/v1/openid/login
+          examples:
+            - https://steamsets.com/api/v1/openid/login
           type: string
         openid_response_nonce:
           description: The response nonce of the login
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         openid_return_to:
           description: The return to of the login
-          example: https://steamsets.com/api/v1/openid/login
+          examples:
+            - https://steamsets.com/api/v1/openid/login
           type: string
         openid_sig:
           description: The sig of the login
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         openid_signed:
           description: The signed of the login
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - openid_ns
@@ -1074,7 +1211,8 @@ components:
           type: object
         name:
           description: The name of the region
-          example: Europe
+          examples:
+            - Europe
           type: string
       required:
         - name
@@ -1105,7 +1243,8 @@ components:
           type: string
         value:
           description: The value of the resource, this can be a string, number, boolean or even a cron expression
-          example: "1"
+          examples:
+            - "1"
           type: string
       required:
         - resource
@@ -1116,15 +1255,18 @@ components:
       properties:
         colorr:
           description: The role color
-          example: "#ff0000"
+          examples:
+            - "#ff0000"
           type: string
         icon:
           description: The role icon
-          example: tier_1.svg
+          examples:
+            - tier_1.svg
           type: string
         name:
           description: The Group name
-          example: Tier 1
+          examples:
+            - Tier 1
           type: string
         role:
           enum:
@@ -1156,30 +1298,36 @@ components:
       properties:
         createdAt:
           description: The time the session was created
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         expiresAt:
           description: The time the session expires
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         ip:
           description: The ip of the session
-          example: 127.0.0.1
+          examples:
+            - 127.0.0.1
           type: string
         lastSeen:
           description: The time the session was last seen
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         sessionId:
           description: The session id
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         userAgent:
           description: The user agent of the session
-          example: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+          examples:
+            - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
           type: string
       required:
         - createdAt
@@ -1213,32 +1361,38 @@ components:
       properties:
         id:
           description: The Steam App ID
-          example: 730
+          examples:
+            - 730
           format: int32
           minimum: 0
           type: integer
         image:
           description: The App's image URL
-          example: https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg
+          examples:
+            - https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg
           type: string
         name:
           description: The App's name
-          example: "Counter-Strike: Global Offensive"
+          examples:
+            - "Counter-Strike: Global Offensive"
           type: string
         playtime:
           description: The Account's playtime in the App
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
         price:
           description: How much the app costs
-          example: 1200
+          examples:
+            - 1200
           format: int32
           type: integer
         shortName:
           description: The App's short name
-          example: csgo
+          examples:
+            - csgo
           type: string
       required:
         - id
@@ -1330,25 +1484,29 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json
           format: uri
           readOnly: true
           type: string
         mostXp:
           items:
             $ref: "#/components/schemas/AccountBadgeMostXpDataPoint"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         playtime:
           items:
             $ref: "#/components/schemas/AccountPlaytimeDataPoint"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         scarcity:
           items:
             $ref: "#/components/schemas/AccountBadgeScarcityDataPoint"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         xp:
           additionalProperties:
             additionalProperties:
@@ -1368,37 +1526,44 @@ components:
       properties:
         appCost:
           description: The cost of an app
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         appPlaytime:
           description: The playtime of the account, incase of an app leaderboard
           format: int32
           minimum: 0
-          nullable: true
-          type: integer
+          type:
+            - integer
+            - "null"
         apps:
           description: The number of apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         avatar:
           description: The avatar hash of the account
-          example: f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
+          examples:
+            - f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9
           type: string
         averagePlaytime:
           description: The average playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsGiven:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         awardsReceived:
           description: The number of awards the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         badgeInfo:
@@ -1406,7 +1571,8 @@ components:
           description: The badge info of the account, incase of a badge leaderboard
         badges:
           description: The number of badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         bans:
@@ -1421,82 +1587,98 @@ components:
           description: The country of the account
         createdAt:
           description: The time the account was created
-          example: "2023-01-01T00:00:00Z"
+          examples:
+            - "2023-01-01T00:00:00Z"
           format: date-time
           type: string
         economyBan:
           description: The economy ban of the account
-          example: steam
+          examples:
+            - steam
           type: string
         foilBadgeCost:
           description: The cost of a foil badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         foilBadges:
           description: The number of foil badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         friends:
           description: The number of friends the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         friendsSince:
           format: date-time
-          nullable: true
-          type: string
+          type:
+            - string
+            - "null"
         gameBans:
           description: The number of game bans
           format: int32
           type: integer
         hidden:
           description: Whether the account is hidden in the leaderboards
-          example: true
+          examples:
+            - true
           type: boolean
         level:
           description: The level of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         limitedApps:
           description: The number of limited apps the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         name:
           description: The name of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         normalBadgeCost:
           description: The cost of a normal badge
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         normalBadges:
           description: The number of normal badges the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         playtime:
           description: The playtime of the account
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsGiven:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         pointsReceived:
           description: The number of points the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
         privacy:
           description: The privacy of the account
-          example: public
+          examples:
+            - public
           type: string
         region:
           $ref: "#/components/schemas/Location"
@@ -1505,14 +1687,16 @@ components:
           description: The roles of the account
           items:
             $ref: "#/components/schemas/Role"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         state:
           $ref: "#/components/schemas/Location"
           description: The state of the account
         steamId:
           description: The steam id
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
         steamSetsScore:
           description: The steam sets score
@@ -1520,11 +1704,13 @@ components:
           type: integer
         steamSetsVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         steamVanity:
           description: The vanity of the account
-          example: steamsets
+          examples:
+            - steamsets
           type: string
         vacBans:
           description: The number of vac bans
@@ -1532,7 +1718,8 @@ components:
           type: integer
         xp:
           description: The number of xp the account has
-          example: 123456
+          examples:
+            - 123456
           format: int32
           type: integer
       required:
@@ -1574,15 +1761,17 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json
           format: uri
           readOnly: true
           type: string
         friends:
           items:
             $ref: "#/components/schemas/V1AccountFriend"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - friends
       type: object
@@ -1591,15 +1780,17 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json
           format: uri
           readOnly: true
           type: string
         histories:
           items:
             $ref: "#/components/schemas/AccountLeaderboardHistory"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - histories
       type: object
@@ -1608,15 +1799,17 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json
           format: uri
           readOnly: true
           type: string
         apps:
           items:
             $ref: "#/components/schemas/V1AccountApp"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - apps
       type: object
@@ -1629,8 +1822,9 @@ components:
           type: string
         firstCompletion:
           format: date-time
-          nullable: true
-          type: string
+          type:
+            - string
+            - "null"
         highestLevel:
           format: int32
           type: integer
@@ -1638,8 +1832,9 @@ components:
           type: boolean
         lastCompletion:
           format: date-time
-          nullable: true
-          type: string
+          type:
+            - string
+            - "null"
         level:
           format: int32
           minimum: 0
@@ -1682,37 +1877,44 @@ components:
       properties:
         appId:
           description: The app id
-          example: 730
+          examples:
+            - 730
           format: int32
           minimum: 0
           type: integer
         image:
           description: The app image hash
-          example: a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg
+          examples:
+            - a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg
           type: string
         isEvent:
           description: Whether the app is an event
-          example: true
+          examples:
+            - true
           type: boolean
         isSale:
           description: Whether the app is a sale
-          example: true
+          examples:
+            - true
           type: boolean
         itadId:
           description: The apps id on itad
           type: string
         name:
           description: The app name
-          example: CS2
+          examples:
+            - CS2
           type: string
         price:
           description: The app price
-          example: 1200
+          examples:
+            - 1200
           format: int32
           type: integer
         shortName:
           description: The app short name
-          example: csgo
+          examples:
+            - csgo
           type: string
         type:
           description: The app type
@@ -1737,7 +1939,8 @@ components:
             - beta
             - shortcut
             - depot_only
-          example: game
+          examples:
+            - game
           type: string
       required:
         - appId
@@ -1785,13 +1988,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AppRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AppRequestBody.json
           format: uri
           readOnly: true
           type: string
         appId:
           description: The app id
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
@@ -1803,7 +2008,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1AppResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1AppResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1811,8 +2017,9 @@ components:
           description: The badges
           items:
             $ref: "#/components/schemas/V1AppBadge"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         detail:
           $ref: "#/components/schemas/V1AppDetail"
           description: The app detail
@@ -1820,8 +2027,9 @@ components:
           description: The items
           items:
             $ref: "#/components/schemas/V1AppItem"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - detail
         - badges
@@ -1832,15 +2040,17 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1BadgesResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1BadgesResponseBody.json
           format: uri
           readOnly: true
           type: string
         badges:
           items:
             $ref: "#/components/schemas/V1AccountAppBadge"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - badges
       type: object
@@ -1849,13 +2059,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1ConnectRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1ConnectRequestBody.json
           format: uri
           readOnly: true
           type: string
         code:
           description: The code from the oauth2 provider to verify
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         provider:
           description: The provider to connect with
@@ -1868,7 +2080,8 @@ components:
             - youtube
             - x
             - domain
-          example: discord
+          examples:
+            - discord
           type: string
       required:
         - provider
@@ -1879,13 +2092,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1ConnectResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1ConnectResponseBody.json
           format: uri
           readOnly: true
           type: string
         code:
           description: Code that has to be used to verify domain connections
-          example: ABC123
+          examples:
+            - ABC123
           type: string
       type: object
     V1CreateSessionBody:
@@ -1893,13 +2108,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1CreateSessionBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1CreateSessionBody.json
           format: uri
           readOnly: true
           type: string
         sessionId:
           description: The session id
-          example: ABC123
+          examples:
+            - ABC123
           type: string
       required:
         - sessionId
@@ -1909,13 +2126,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteConnectionRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
         connectionId:
           description: The connection id to delete
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - connectionId
@@ -1925,7 +2144,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1935,7 +2155,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteImagesRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteImagesRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -1943,8 +2164,9 @@ components:
           description: The images ids to delete
           items:
             type: string
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - imageIds
       type: object
@@ -1953,7 +2175,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1963,13 +2186,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteSessionRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteSessionRequestBody.json
           format: uri
           readOnly: true
           type: string
         sessionId:
           description: The session id to delete
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - sessionId
@@ -1979,7 +2204,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1DeleteSessionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -1989,13 +2215,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1GetSessionBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1GetSessionBody.json
           format: uri
           readOnly: true
           type: string
         accountId:
           description: The account id
-          example: 123456
+          examples:
+            - 123456
           format: int32
           minimum: 0
           type: integer
@@ -2003,20 +2231,23 @@ components:
           description: The resources the user has (permissions)
           items:
             $ref: "#/components/schemas/Resource"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         roles:
           description: The roles the user has
           items:
             $ref: "#/components/schemas/Role"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         sessionData:
           $ref: "#/components/schemas/Session"
           description: The session data
         steamId:
           description: The steam id
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
       required:
         - accountId
@@ -2030,73 +2261,87 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1GetSettingsBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1GetSettingsBody.json
           format: uri
           readOnly: true
           type: string
         apiKey:
           description: The Generated API Key for this account
-          example: api_key
+          examples:
+            - api_key
           type: string
         color:
           description: The color the account is using
-          example: "#7652c9"
+          examples:
+            - "#7652c9"
           type: string
         colors:
           description: The colors the account is using
-          example: "#7652c9"
+          examples:
+            - "#7652c9"
           type: string
         connections:
           description: The connections the account has
           items:
             $ref: "#/components/schemas/Connection"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         email:
           description: The email the account is using
-          example: steamsets@example.com
+          examples:
+            - steamsets@example.com
           format: email
           type: string
         emailNotifications:
           description: The email notifications the account has
           items:
             $ref: "#/components/schemas/EmailNotification"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         emailVerified:
           description: Whether the account has verified their email
-          example: true
+          examples:
+            - true
           type: boolean
         hidden:
           description: Whether the account is hidden in the leaderboards
-          example: true
+          examples:
+            - true
           type: boolean
         images:
           description: The images the account has
           items:
             $ref: "#/components/schemas/Image"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         language:
           description: The language the account is using
-          example: en
+          examples:
+            - en
           type: string
         sessions:
           description: The sessions the account has
           items:
             $ref: "#/components/schemas/Session"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         theme:
           description: The theme the account is using
           enum:
             - dark
             - light
-          example: dark
+          examples:
+            - dark
           type: string
         vanity:
           description: The vanity the account is using
-          example: flo
+          examples:
+            - flo
           type: string
       required:
         - hidden
@@ -2118,13 +2363,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1LivenessResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1LivenessResponseBody.json
           format: uri
           readOnly: true
           type: string
         message:
           description: Whether we're alive or not
-          example: OK
+          examples:
+            - OK
           type: string
       required:
         - message
@@ -2134,25 +2381,30 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1LoginResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1LoginResponseBody.json
           format: uri
           readOnly: true
           type: string
         avatar:
           description: The avatar of the user
-          example: https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
+          examples:
+            - https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg
           type: string
         name:
           description: The name of the user
-          example: SteamSets
+          examples:
+            - SteamSets
           type: string
         sessionToken:
           description: The session token
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         steamId:
           description: The steam id
-          example: "76561198842603734"
+          examples:
+            - "76561198842603734"
           type: string
       required:
         - steamId
@@ -2165,17 +2417,20 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateConnectionRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
         connectionId:
           description: The connection id to update
-          example: "123456"
+          examples:
+            - "123456"
           type: string
         hidden:
           description: Whether the connection should be hidden or not
-          example: true
+          examples:
+            - true
           type: boolean
       required:
         - connectionId
@@ -2186,7 +2441,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -2196,17 +2452,20 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateImageRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateImageRequestBody.json
           format: uri
           readOnly: true
           type: string
         active:
           description: Whether the image is active or not, only one of each type can be active
-          example: true
+          examples:
+            - true
           type: boolean
         imageId:
           description: The image id to update
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - imageId
@@ -2217,13 +2476,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json
           format: uri
           readOnly: true
           type: string
         key:
           description: The generated API Key
-          example: api_123
+          examples:
+            - api_123
           type: string
       required:
         - key
@@ -2233,46 +2494,55 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateSettingsRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateSettingsRequestBody.json
           format: uri
           readOnly: true
           type: string
         color:
           description: The color the account should use, only if the account is private
-          example: "#7652c9"
+          examples:
+            - "#7652c9"
           type: string
         colors:
           description: The colors the account should use, only if the account is private
-          example: "#7652c9"
+          examples:
+            - "#7652c9"
           type: string
         email:
           description: The email the account should use, only if the account is private
-          example: steamsets@example.com
+          examples:
+            - steamsets@example.com
           type: string
         emailNotifications:
           description: The email notifications the account wants
           items:
             $ref: "#/components/schemas/EmailNotification"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
         hidden:
           description: Whether the account should be hidden in the leaderboards, only possible if the account is private
-          example: true
+          examples:
+            - true
           type: boolean
         language:
           description: The language the account should use, only if the account is private
-          example: en
+          examples:
+            - en
           type: string
         theme:
           description: The theme the account should use, only if the account is private
           enum:
             - dark
             - light
-          example: dark
+          examples:
+            - dark
           type: string
         vanity:
           description: The vanity the account should use, only if the account is private
-          example: flo
+          examples:
+            - flo
           type: string
       required:
         - hidden
@@ -2289,7 +2559,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -2299,7 +2570,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1UploadImagesRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1UploadImagesRequestBody.json
           format: uri
           readOnly: true
           type: string
@@ -2307,8 +2579,9 @@ components:
           description: The images to upload
           items:
             $ref: "#/components/schemas/V1UploaedImage"
-          nullable: true
-          type: array
+          type:
+            - array
+            - "null"
       required:
         - images
       type: object
@@ -2317,7 +2590,8 @@ components:
       properties:
         data:
           description: The image data aka base64 encoded image
-          example: base64_encoded_image
+          examples:
+            - base64_encoded_image
           type: string
         type:
           description: The Image Type
@@ -2327,7 +2601,8 @@ components:
             - mini_background
             - animated_avatar
             - avatar_frame
-          example: avatar
+          examples:
+            - avatar
           type: string
       required:
         - data
@@ -2338,13 +2613,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyConnectionRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1VerifyConnectionRequestBody.json
           format: uri
           readOnly: true
           type: string
         connectionId:
           description: The connection id to verify
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - connectionId
@@ -2354,7 +2631,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -2364,13 +2642,15 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyEmailRequestBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1VerifyEmailRequestBody.json
           format: uri
           readOnly: true
           type: string
         code:
           description: The code to verify
-          example: "123456"
+          examples:
+            - "123456"
           type: string
       required:
         - code
@@ -2380,7 +2660,8 @@ components:
       properties:
         $schema:
           description: A URL to the JSON Schema for this object.
-          example: https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json
+          examples:
+            - https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json
           format: uri
           readOnly: true
           type: string
@@ -2396,7 +2677,7 @@ components:
 info:
   title: SteamSets API
   version: 1.0.0
-openapi: 3.0.3
+openapi: 3.1.0
 paths:
   /account.v1.AccountService/Connect:
     post:
@@ -2943,8 +3224,9 @@ paths:
               schema:
                 items:
                   $ref: "#/components/schemas/LeaderboardAccount"
-                nullable: true
-                type: array
+                type:
+                  - array
+                  - "null"
           description: OK
         "404":
           content:
@@ -3431,8 +3713,9 @@ paths:
               schema:
                 items:
                   $ref: "#/components/schemas/Region"
-                nullable: true
-                type: array
+                type:
+                  - array
+                  - "null"
           description: OK
         "401":
           content:
