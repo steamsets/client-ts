@@ -1,15 +1,13 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-  SteamSets-OAS:
-    inputs:
-      - location: ./openapi.yaml
-    registry:
-      location: registry.speakeasyapi.dev/steamsets/steamsets/steam-sets-oas
+    API:
+        inputs:
+            - location: https://api.steamsets.com/openapi.json
 targets:
-  steam-sets:
-    target: typescript
-    source: SteamSets-OAS
-    publish:
-      npm:
-        token: $npm_token
+    steam-sets:
+        target: typescript
+        source: API
+        publish:
+            npm:
+                token: $npm_token
