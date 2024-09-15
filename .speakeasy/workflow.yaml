@@ -4,6 +4,8 @@ sources:
     API:
         inputs:
             - location: https://api.steamsets.com/openapi.json
+        registry:
+            location: registry.speakeasyapi.dev/steamsets/steamsets/api
 targets:
     steam-sets:
         target: typescript

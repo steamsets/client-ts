@@ -1,5 +1,12 @@
 speakeasyVersion: 1.396.9
 sources:
+    API:
+        sourceNamespace: api
+        sourceRevisionDigest: sha256:70cb7a076f82f73f6f7b13e984352008e4b81e553cd095ec2c50495e7ade73f0
+        sourceBlobDigest: sha256:06db7d409ef6f78a693ee18d30c56b8b61fd1093b86afe175fe89f850fce111c
+        tags:
+            - latest
+            - main
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
         sourceRevisionDigest: sha256:30a9312dee5e350dcebe7a8d25d7040cdd39d7f9e02c75a183b6fd046a69e405
@@ -9,23 +16,23 @@ sources:
             - main
 targets:
     steam-sets:
-        source: SteamSets-OAS
-        sourceNamespace: steam-sets-oas
-        sourceRevisionDigest: sha256:30a9312dee5e350dcebe7a8d25d7040cdd39d7f9e02c75a183b6fd046a69e405
-        sourceBlobDigest: sha256:03933ec3a90b90df96e20eca224352beede47e134bcac9237ce1a37d028ec88d
+        source: API
+        sourceNamespace: api
+        sourceRevisionDigest: sha256:70cb7a076f82f73f6f7b13e984352008e4b81e553cd095ec2c50495e7ade73f0
+        sourceBlobDigest: sha256:06db7d409ef6f78a693ee18d30c56b8b61fd1093b86afe175fe89f850fce111c
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        SteamSets-OAS:
+        API:
             inputs:
-                - location: ./openapi.yaml
+                - location: https://api.steamsets.com/openapi.json
             registry:
-                location: registry.speakeasyapi.dev/steamsets/steamsets/steam-sets-oas
+                location: registry.speakeasyapi.dev/steamsets/steamsets/api
     targets:
         steam-sets:
             target: typescript
-            source: SteamSets-OAS
+            source: API
             publish:
                 npm:
                     token: $npm_token
