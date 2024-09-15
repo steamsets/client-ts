@@ -5,7 +5,7 @@
 import { SteamSetsCore } from "../core.js";
 import * as m$ from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { resolveSecurity, SecurityInput } from "../lib/security.js";
+import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
   ConnectionError,
@@ -25,7 +25,6 @@ import { Result } from "../types/fp.js";
  */
 export async function dataAccountV1GetStaff(
   client$: SteamSetsCore,
-  security: operations.AccountV1GetStaffSecurity,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -46,21 +45,14 @@ export async function dataAccountV1GetStaff(
     Accept: "application/json",
   });
 
-  const security$: SecurityInput[][] = [
-    [
-      {
-        fieldName: "Authorization",
-        type: "http:bearer",
-        value: security?.session,
-      },
-    ],
-  ];
-  const securitySettings$ = resolveSecurity(...security$);
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
   const context = {
     operationID: "account.v1.getStaff",
     oAuth2Scopes: [],
-    securitySource: security,
+    securitySource: client$.options$.session,
   };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
   const requestRes = client$.createRequest$(context, {
     security: securitySettings$,

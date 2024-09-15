@@ -6,7 +6,6 @@
 import { Security } from "@steamsets/client-ts/models/components";
 
 let value: Security = {
-  apiKey: "<value>",
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: Security = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |
