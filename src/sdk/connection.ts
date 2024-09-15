@@ -17,11 +17,13 @@ export class Connection extends ClientSDK {
    */
   async accountV1ConnectionConnect(
     request: components.V1ConnectRequestBody,
+    security: operations.AccountV1ConnectionConnectSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionConnectResponse> {
     return unwrapAsync(connectionAccountV1ConnectionConnect(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -31,11 +33,13 @@ export class Connection extends ClientSDK {
    */
   async accountV1ConnectionDeleteConnection(
     request: components.V1DeleteConnectionRequestBody,
+    security: operations.AccountV1ConnectionDeleteConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
     return unwrapAsync(connectionAccountV1ConnectionDeleteConnection(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -45,11 +49,13 @@ export class Connection extends ClientSDK {
    */
   async accountV1ConnectionUpdateConnection(
     request: components.V1UpdateConnectionRequestBody,
+    security: operations.AccountV1ConnectionUpdateConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
     return unwrapAsync(connectionAccountV1ConnectionUpdateConnection(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -59,11 +65,13 @@ export class Connection extends ClientSDK {
    */
   async accountV1ConnectionVerifyConnection(
     request: components.V1VerifyConnectionRequestBody,
+    security: operations.AccountV1ConnectionVerifyConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
     return unwrapAsync(connectionAccountV1ConnectionVerifyConnection(
       this,
       request,
+      security,
       options,
     ));
   }

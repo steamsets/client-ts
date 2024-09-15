@@ -1,12 +1,11 @@
-# Security
+# AccountV1GetStaffSecurity
 
 ## Example Usage
 
 ```typescript
-import { Security } from "@steamsets/client-ts/models/components";
+import { AccountV1GetStaffSecurity } from "@steamsets/client-ts/models/operations";
 
-let value: Security = {
-  apiKey: "<value>",
+let value: AccountV1GetStaffSecurity = {
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: Security = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |

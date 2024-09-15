@@ -21,13 +21,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetApps(
     request: components.AccountSearch,
-    security: operations.AccountV1GetAppsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
     return unwrapAsync(dataAccountV1GetApps(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -37,13 +35,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetBadges(
     request: components.AccountSearch,
-    security: operations.AccountV1GetBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
     return unwrapAsync(dataAccountV1GetBadges(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -53,13 +49,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetDataPoints(
     request: components.AccountSearch,
-    security: operations.AccountV1GetDataPointsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetDataPointsResponse> {
     return unwrapAsync(dataAccountV1GetDataPoints(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -69,13 +63,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetFriends(
     request: components.AccountSearch,
-    security: operations.AccountV1GetFriendsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetFriendsResponse> {
     return unwrapAsync(dataAccountV1GetFriends(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -85,13 +77,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetInfo(
     request: components.AccountSearch,
-    security: operations.AccountV1GetInfoSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetInfoResponse> {
     return unwrapAsync(dataAccountV1GetInfo(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -101,13 +91,11 @@ export class Data extends ClientSDK {
    */
   async accountV1GetLeaderboardHistory(
     request: components.AccountSearch,
-    security: operations.AccountV1GetLeaderboardHistorySecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
     return unwrapAsync(dataAccountV1GetLeaderboardHistory(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -116,10 +104,12 @@ export class Data extends ClientSDK {
    * Get Staff Members and their info
    */
   async accountV1GetStaff(
+    security: operations.AccountV1GetStaffSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetStaffResponse> {
     return unwrapAsync(dataAccountV1GetStaff(
       this,
+      security,
       options,
     ));
   }
@@ -129,13 +119,11 @@ export class Data extends ClientSDK {
    */
   async accountV1Queue(
     request: components.AppSearch,
-    security: operations.AccountV1QueueSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(dataAccountV1Queue(
       this,
       request,
-      security,
       options,
     ));
   }

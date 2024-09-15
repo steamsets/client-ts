@@ -79,12 +79,11 @@ export async function accountAccountV1SessionCreate(
     }),
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const security$ = await extractSecurity(client$.options$.security);
   const context = {
     operationID: "account.v1.session.create",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client$.options$.security,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

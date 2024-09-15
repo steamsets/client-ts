@@ -7,7 +7,7 @@ import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
 import * as m$ from "../lib/matchers.js";
 import * as schemas$ from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { resolveSecurity, SecurityInput } from "../lib/security.js";
+import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
 import {
@@ -29,7 +29,6 @@ import { Result } from "../types/fp.js";
 export async function dataAccountV1GetApps(
   client$: SteamSetsCore,
   request: components.AccountSearch,
-  security: operations.AccountV1GetAppsSecurity,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -64,26 +63,13 @@ export async function dataAccountV1GetApps(
     Accept: "application/json",
   });
 
-  const security$: SecurityInput[][] = [
-    [
-      {
-        fieldName: "api-key",
-        type: "apiKey:header",
-        value: security?.apiKey,
-      },
-      {
-        fieldName: "Authorization",
-        type: "http:bearer",
-        value: security?.session,
-      },
-    ],
-  ];
-  const securitySettings$ = resolveSecurity(...security$);
+  const security$ = await extractSecurity(client$.options$.security);
   const context = {
     operationID: "account.v1.getApps",
     oAuth2Scopes: [],
-    securitySource: security,
+    securitySource: client$.options$.security,
   };
+  const securitySettings$ = resolveGlobalSecurity(security$);
 
   const requestRes = client$.createRequest$(context, {
     security: securitySettings$,

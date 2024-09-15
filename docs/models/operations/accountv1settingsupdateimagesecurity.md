@@ -1,12 +1,11 @@
-# AccountV1GetBadgesSecurity
+# AccountV1SettingsUpdateImageSecurity
 
 ## Example Usage
 
 ```typescript
-import { AccountV1GetBadgesSecurity } from "@steamsets/client-ts/models/operations";
+import { AccountV1SettingsUpdateImageSecurity } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1GetBadgesSecurity = {
-  apiKey: "<value>",
+let value: AccountV1SettingsUpdateImageSecurity = {
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: AccountV1GetBadgesSecurity = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |

@@ -1,12 +1,11 @@
-# AccountV1GetDataPointsSecurity
+# AccountV1SettingsDeleteImagesSecurity
 
 ## Example Usage
 
 ```typescript
-import { AccountV1GetDataPointsSecurity } from "@steamsets/client-ts/models/operations";
+import { AccountV1SettingsDeleteImagesSecurity } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1GetDataPointsSecurity = {
-  apiKey: "<value>",
+let value: AccountV1SettingsDeleteImagesSecurity = {
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: AccountV1GetDataPointsSecurity = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |

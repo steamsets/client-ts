@@ -35,11 +35,13 @@ export class Account extends ClientSDK {
    */
   async accountV1ConnectionConnect(
     request: components.V1ConnectRequestBody,
+    security: operations.AccountV1ConnectionConnectSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionConnectResponse> {
     return unwrapAsync(accountAccountV1ConnectionConnect(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -63,11 +65,13 @@ export class Account extends ClientSDK {
    */
   async accountV1ConnectionDeleteConnection(
     request: components.V1DeleteConnectionRequestBody,
+    security: operations.AccountV1ConnectionDeleteConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionDeleteConnectionResponse> {
     return unwrapAsync(accountAccountV1ConnectionDeleteConnection(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -77,11 +81,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsDeleteImages(
     request: components.V1DeleteImagesRequestBody,
+    security: operations.AccountV1SettingsDeleteImagesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
     return unwrapAsync(accountAccountV1SettingsDeleteImages(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -91,11 +97,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SessionDelete(
     request: components.V1DeleteSessionRequestBody,
+    security: operations.AccountV1SessionDeleteSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionDeleteResponse> {
     return unwrapAsync(accountAccountV1SessionDelete(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -105,13 +113,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetApps(
     request: components.AccountSearch,
-    security: operations.AccountV1GetAppsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
     return unwrapAsync(accountAccountV1GetApps(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -121,13 +127,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetBadges(
     request: components.AccountSearch,
-    security: operations.AccountV1GetBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
     return unwrapAsync(accountAccountV1GetBadges(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -137,13 +141,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetDataPoints(
     request: components.AccountSearch,
-    security: operations.AccountV1GetDataPointsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetDataPointsResponse> {
     return unwrapAsync(accountAccountV1GetDataPoints(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -153,13 +155,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetFriends(
     request: components.AccountSearch,
-    security: operations.AccountV1GetFriendsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetFriendsResponse> {
     return unwrapAsync(accountAccountV1GetFriends(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -169,13 +169,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetInfo(
     request: components.AccountSearch,
-    security: operations.AccountV1GetInfoSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetInfoResponse> {
     return unwrapAsync(accountAccountV1GetInfo(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -185,13 +183,11 @@ export class Account extends ClientSDK {
    */
   async accountV1GetLeaderboardHistory(
     request: components.AccountSearch,
-    security: operations.AccountV1GetLeaderboardHistorySecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
     return unwrapAsync(accountAccountV1GetLeaderboardHistory(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -200,10 +196,12 @@ export class Account extends ClientSDK {
    * Gets all session data
    */
   async accountV1SessionGet(
+    security: operations.AccountV1SessionGetSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionGetResponse> {
     return unwrapAsync(accountAccountV1SessionGet(
       this,
+      security,
       options,
     ));
   }
@@ -212,10 +210,12 @@ export class Account extends ClientSDK {
    * Gets all settings for the account
    */
   async accountV1SettingsGet(
+    security: operations.AccountV1SettingsGetSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsGetResponse> {
     return unwrapAsync(accountAccountV1SettingsGet(
       this,
+      security,
       options,
     ));
   }
@@ -224,10 +224,12 @@ export class Account extends ClientSDK {
    * Get Staff Members and their info
    */
   async accountV1GetStaff(
+    security: operations.AccountV1GetStaffSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetStaffResponse> {
     return unwrapAsync(accountAccountV1GetStaff(
       this,
+      security,
       options,
     ));
   }
@@ -251,11 +253,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsSendEmailVerification(
     request: operations.AccountV1SettingsSendEmailVerificationRequest,
+    security: operations.AccountV1SettingsSendEmailVerificationSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
     return unwrapAsync(accountAccountV1SettingsSendEmailVerification(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -265,11 +269,13 @@ export class Account extends ClientSDK {
    */
   async accountV1ConnectionUpdateConnection(
     request: components.V1UpdateConnectionRequestBody,
+    security: operations.AccountV1ConnectionUpdateConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionUpdateConnectionResponse> {
     return unwrapAsync(accountAccountV1ConnectionUpdateConnection(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -279,11 +285,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsUpdateImage(
     request: components.V1UpdateImageRequestBody,
+    security: operations.AccountV1SettingsUpdateImageSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
     return unwrapAsync(accountAccountV1SettingsUpdateImage(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -293,11 +301,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsUpdate(
     request: operations.AccountV1SettingsUpdateRequest,
+    security: operations.AccountV1SettingsUpdateSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUpdateResponse> {
     return unwrapAsync(accountAccountV1SettingsUpdate(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -307,11 +317,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsUploadImages(
     request: components.V1UploadImagesRequestBody,
+    security: operations.AccountV1SettingsUploadImagesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
     return unwrapAsync(accountAccountV1SettingsUploadImages(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -321,11 +333,13 @@ export class Account extends ClientSDK {
    */
   async accountV1ConnectionVerifyConnection(
     request: components.V1VerifyConnectionRequestBody,
+    security: operations.AccountV1ConnectionVerifyConnectionSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionVerifyConnectionResponse> {
     return unwrapAsync(accountAccountV1ConnectionVerifyConnection(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -335,11 +349,13 @@ export class Account extends ClientSDK {
    */
   async accountV1SettingsVerfyEmail(
     request: components.V1VerifyEmailRequestBody,
+    security: operations.AccountV1SettingsVerfyEmailSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
     return unwrapAsync(accountAccountV1SettingsVerfyEmail(
       this,
       request,
+      security,
       options,
     ));
   }

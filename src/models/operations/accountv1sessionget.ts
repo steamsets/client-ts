@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1SessionGetSecurity = {
+  session: string;
+};
+
 export type AccountV1SessionGetResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -13,6 +17,42 @@ export type AccountV1SessionGetResponse = {
    */
   v1GetSessionBody?: components.V1GetSessionBody | undefined;
 };
+
+/** @internal */
+export const AccountV1SessionGetSecurity$inboundSchema: z.ZodType<
+  AccountV1SessionGetSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1SessionGetSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1SessionGetSecurity$outboundSchema: z.ZodType<
+  AccountV1SessionGetSecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1SessionGetSecurity
+> = z.object({
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SessionGetSecurity$ {
+  /** @deprecated use `AccountV1SessionGetSecurity$inboundSchema` instead. */
+  export const inboundSchema = AccountV1SessionGetSecurity$inboundSchema;
+  /** @deprecated use `AccountV1SessionGetSecurity$outboundSchema` instead. */
+  export const outboundSchema = AccountV1SessionGetSecurity$outboundSchema;
+  /** @deprecated use `AccountV1SessionGetSecurity$Outbound` instead. */
+  export type Outbound = AccountV1SessionGetSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1SessionGetResponse$inboundSchema: z.ZodType<

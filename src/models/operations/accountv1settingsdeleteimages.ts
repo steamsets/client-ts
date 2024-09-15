@@ -6,6 +6,10 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
+export type AccountV1SettingsDeleteImagesSecurity = {
+  session: string;
+};
+
 export type AccountV1SettingsDeleteImagesResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -15,6 +19,44 @@ export type AccountV1SettingsDeleteImagesResponse = {
     | components.V1DeleteImagesResponseBody
     | undefined;
 };
+
+/** @internal */
+export const AccountV1SettingsDeleteImagesSecurity$inboundSchema: z.ZodType<
+  AccountV1SettingsDeleteImagesSecurity,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  session: z.string(),
+});
+
+/** @internal */
+export type AccountV1SettingsDeleteImagesSecurity$Outbound = {
+  session: string;
+};
+
+/** @internal */
+export const AccountV1SettingsDeleteImagesSecurity$outboundSchema: z.ZodType<
+  AccountV1SettingsDeleteImagesSecurity$Outbound,
+  z.ZodTypeDef,
+  AccountV1SettingsDeleteImagesSecurity
+> = z.object({
+  session: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountV1SettingsDeleteImagesSecurity$ {
+  /** @deprecated use `AccountV1SettingsDeleteImagesSecurity$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountV1SettingsDeleteImagesSecurity$inboundSchema;
+  /** @deprecated use `AccountV1SettingsDeleteImagesSecurity$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountV1SettingsDeleteImagesSecurity$outboundSchema;
+  /** @deprecated use `AccountV1SettingsDeleteImagesSecurity$Outbound` instead. */
+  export type Outbound = AccountV1SettingsDeleteImagesSecurity$Outbound;
+}
 
 /** @internal */
 export const AccountV1SettingsDeleteImagesResponse$inboundSchema: z.ZodType<

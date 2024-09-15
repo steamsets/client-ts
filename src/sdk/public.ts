@@ -20,13 +20,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetApps(
     request: components.AccountSearch,
-    security: operations.AccountV1GetAppsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
     return unwrapAsync(publicAccountV1GetApps(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -36,13 +34,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetBadges(
     request: components.AccountSearch,
-    security: operations.AccountV1GetBadgesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
     return unwrapAsync(publicAccountV1GetBadges(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -52,13 +48,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetDataPoints(
     request: components.AccountSearch,
-    security: operations.AccountV1GetDataPointsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetDataPointsResponse> {
     return unwrapAsync(publicAccountV1GetDataPoints(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -68,13 +62,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetFriends(
     request: components.AccountSearch,
-    security: operations.AccountV1GetFriendsSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetFriendsResponse> {
     return unwrapAsync(publicAccountV1GetFriends(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -84,13 +76,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetInfo(
     request: components.AccountSearch,
-    security: operations.AccountV1GetInfoSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetInfoResponse> {
     return unwrapAsync(publicAccountV1GetInfo(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -100,13 +90,11 @@ export class Public extends ClientSDK {
    */
   async accountV1GetLeaderboardHistory(
     request: components.AccountSearch,
-    security: operations.AccountV1GetLeaderboardHistorySecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
     return unwrapAsync(publicAccountV1GetLeaderboardHistory(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -116,13 +104,11 @@ export class Public extends ClientSDK {
    */
   async accountV1Queue(
     request: components.AppSearch,
-    security: operations.AccountV1QueueSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(publicAccountV1Queue(
       this,
       request,
-      security,
       options,
     ));
   }

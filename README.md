@@ -48,14 +48,14 @@ yarn add @steamsets/client-ts zod
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result
@@ -169,14 +169,14 @@ To change the default retry strategy for a single API call, simply provide a ret
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   }, {
     retries: {
       strategy: "backoff",
@@ -213,13 +213,14 @@ const steamSets = new SteamSets({
     },
     retryConnectionErrors: false,
   },
-  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result
@@ -251,9 +252,7 @@ import {
   SDKValidationError,
 } from "@steamsets/client-ts/models/errors";
 
-const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSets();
 
 async function run() {
   let result;
@@ -261,6 +260,8 @@ async function run() {
     result = await steamSets.account.accountV1ConnectionConnect({
       code: "123456",
       provider: "discord",
+    }, {
+      session: "<YOUR_BEARER_TOKEN_HERE>",
     });
 
     // Handle the result
@@ -308,13 +309,14 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   serverIdx: 1,
-  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result
@@ -335,13 +337,14 @@ import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
   serverURL: "https://api.steamsets.com",
-  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
   const result = await steamSets.account.accountV1ConnectionConnect({
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   // Handle the result
@@ -407,25 +410,26 @@ const sdk = new SteamSets({ httpClient });
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security scheme globally:
+This SDK supports the following security schemes globally:
 
 | Name        | Type        | Scheme      |
 | ----------- | ----------- | ----------- |
+| `apiKey`    | apiKey      | API key     |
 | `session`   | http        | HTTP Bearer |
 
-To authenticate with the API the `session` parameter must be set when initializing the SDK client instance. For example:
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  security: {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  },
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.account.accountV1SessionCreate({});
 
   // Handle the result
   console.log(result);
@@ -444,8 +448,10 @@ import { SteamSets } from "@steamsets/client-ts";
 const steamSets = new SteamSets();
 
 async function run() {
-  const result = await steamSets.account.accountV1GetApps({}, {
-    apiKey: "<YOUR_API_KEY_HERE>",
+  const result = await steamSets.account.accountV1ConnectionConnect({
+    code: "123456",
+    provider: "discord",
+  }, {
     session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
