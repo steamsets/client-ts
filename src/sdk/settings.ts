@@ -20,13 +20,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsDeleteImages(
     request: components.V1DeleteImagesRequestBody,
-    security: operations.AccountV1SettingsDeleteImagesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
     return unwrapAsync(settingsAccountV1SettingsDeleteImages(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -35,12 +33,10 @@ export class Settings extends ClientSDK {
    * Gets all settings for the account
    */
   async accountV1SettingsGet(
-    security: operations.AccountV1SettingsGetSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsGetResponse> {
     return unwrapAsync(settingsAccountV1SettingsGet(
       this,
-      security,
       options,
     ));
   }
@@ -50,13 +46,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsSendEmailVerification(
     request: operations.AccountV1SettingsSendEmailVerificationRequest,
-    security: operations.AccountV1SettingsSendEmailVerificationSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
     return unwrapAsync(settingsAccountV1SettingsSendEmailVerification(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -66,13 +60,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsUpdateImage(
     request: components.V1UpdateImageRequestBody,
-    security: operations.AccountV1SettingsUpdateImageSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
     return unwrapAsync(settingsAccountV1SettingsUpdateImage(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -82,13 +74,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsUpdate(
     request: operations.AccountV1SettingsUpdateRequest,
-    security: operations.AccountV1SettingsUpdateSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUpdateResponse> {
     return unwrapAsync(settingsAccountV1SettingsUpdate(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -98,13 +88,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsUploadImages(
     request: components.V1UploadImagesRequestBody,
-    security: operations.AccountV1SettingsUploadImagesSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
     return unwrapAsync(settingsAccountV1SettingsUploadImages(
       this,
       request,
-      security,
       options,
     ));
   }
@@ -114,13 +102,11 @@ export class Settings extends ClientSDK {
    */
   async accountV1SettingsVerfyEmail(
     request: components.V1VerifyEmailRequestBody,
-    security: operations.AccountV1SettingsVerfyEmailSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
     return unwrapAsync(settingsAccountV1SettingsVerfyEmail(
       this,
       request,
-      security,
       options,
     ));
   }

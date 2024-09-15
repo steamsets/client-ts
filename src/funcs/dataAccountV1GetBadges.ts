@@ -63,11 +63,12 @@ export async function dataAccountV1GetBadges(
     Accept: "application/json",
   });
 
-  const security$ = await extractSecurity(client$.options$.security);
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
   const context = {
     operationID: "account.v1.getBadges",
     oAuth2Scopes: [],
-    securitySource: client$.options$.security,
+    securitySource: client$.options$.session,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

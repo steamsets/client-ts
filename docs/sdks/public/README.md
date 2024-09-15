@@ -25,10 +25,7 @@ Get Account Apps
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -52,10 +49,7 @@ import { publicAccountV1GetApps } from "@steamsets/client-ts/funcs/publicAccount
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -105,10 +99,7 @@ Get Account Badges
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -132,10 +123,7 @@ import { publicAccountV1GetBadges } from "@steamsets/client-ts/funcs/publicAccou
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -185,10 +173,7 @@ Get Account DataPoints
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -212,10 +197,7 @@ import { publicAccountV1GetDataPoints } from "@steamsets/client-ts/funcs/publicA
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -265,10 +247,7 @@ Get Account Friends
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -292,10 +271,7 @@ import { publicAccountV1GetFriends } from "@steamsets/client-ts/funcs/publicAcco
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -345,10 +321,7 @@ Get Account Info
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -372,10 +345,7 @@ import { publicAccountV1GetInfo } from "@steamsets/client-ts/funcs/publicAccount
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -425,10 +395,7 @@ Get Account Leaderboard History
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -452,10 +419,7 @@ import { publicAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -505,10 +469,7 @@ Queue a app for processing
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -534,10 +495,7 @@ import { publicAccountV1Queue } from "@steamsets/client-ts/funcs/publicAccountV1
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

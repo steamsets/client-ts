@@ -63,11 +63,12 @@ export async function appAppV1Get(
     Accept: "application/json",
   });
 
-  const security$ = await extractSecurity(client$.options$.security);
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
   const context = {
     operationID: "app.v1.get",
     oAuth2Scopes: [],
-    securitySource: client$.options$.security,
+    securitySource: client$.options$.session,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

@@ -63,11 +63,12 @@ export async function publicAccountV1Queue(
     Accept: "application/problem+json",
   });
 
-  const security$ = await extractSecurity(client$.options$.security);
+  const session$ = await extractSecurity(client$.options$.session);
+  const security$ = session$ == null ? {} : { session: session$ };
   const context = {
     operationID: "account.v1.queue",
     oAuth2Scopes: [],
-    securitySource: client$.options$.security,
+    securitySource: client$.options$.session,
   };
   const securitySettings$ = resolveGlobalSecurity(security$);
 

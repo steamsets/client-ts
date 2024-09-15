@@ -19,10 +19,7 @@ This endpoint checks if the service is alive.
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -46,10 +43,7 @@ import { livenessLiveness } from "@steamsets/client-ts/funcs/livenessLiveness.js
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  security: {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
-  },
+  session: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
