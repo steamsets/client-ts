@@ -5,7 +5,7 @@
 import { SteamSetsCore } from "../core.js";
 import * as m$ from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
-import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
+import { resolveSecurity, SecurityInput } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import {
   ConnectionError,
@@ -28,6 +28,7 @@ import { Result } from "../types/fp.js";
  */
 export async function locationLocation(
   client$: SteamSetsCore,
+  security: operations.LocationSecurity,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -48,14 +49,21 @@ export async function locationLocation(
     Accept: "application/json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const security$: SecurityInput[][] = [
+    [
+      {
+        fieldName: "Authorization",
+        type: "http:bearer",
+        value: security?.session,
+      },
+    ],
+  ];
+  const securitySettings$ = resolveSecurity(...security$);
   const context = {
     operationID: "location",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: security,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
 
   const requestRes = client$.createRequest$(context, {
     security: securitySettings$,

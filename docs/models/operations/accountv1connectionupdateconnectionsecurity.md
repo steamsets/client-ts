@@ -1,12 +1,11 @@
-# AccountV1GetLeaderboardHistorySecurity
+# AccountV1ConnectionUpdateConnectionSecurity
 
 ## Example Usage
 
 ```typescript
-import { AccountV1GetLeaderboardHistorySecurity } from "@steamsets/client-ts/models/operations";
+import { AccountV1ConnectionUpdateConnectionSecurity } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1GetLeaderboardHistorySecurity = {
-  apiKey: "<value>",
+let value: AccountV1ConnectionUpdateConnectionSecurity = {
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: AccountV1GetLeaderboardHistorySecurity = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |

@@ -25,14 +25,14 @@ import { SDKValidationError } from "@steamsets/client-ts/models/errors/sdkvalida
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
-});
+const steamSets = new SteamSetsCore();
 
 async function run() {
   const res = await accountAccountV1ConnectionConnect(steamSets, {
     code: "123456",
     provider: "discord",
+  }, {
+    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   switch (true) {

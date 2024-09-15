@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: c43df3acf653a4194bcc9ee42dd01e69
+  docChecksum: 22c75f61b26d8af3ff3037ee42f24d97
   docVersion: 1.0.0
   speakeasyVersion: 1.396.9
   generationVersion: 2.415.7
-  releaseVersion: 0.8.5
-  configChecksum: b13f352cd5750a5ca6b5153d22b53b7e
+  releaseVersion: 0.9.0
+  configChecksum: c73fa1b5c097dfcebe42c7cfef9b0ef4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -36,7 +36,6 @@ features:
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
-    globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     inputOutputModels: 2.82.0
     methodSecurity: 2.82.4
@@ -139,43 +138,50 @@ generatedFiles:
   - docs/models/components/v1verifyemailresponsebody.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1connectionconnectresponse.md
+  - docs/models/operations/accountv1connectionconnectsecurity.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
+  - docs/models/operations/accountv1connectiondeleteconnectionsecurity.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
+  - docs/models/operations/accountv1connectionupdateconnectionsecurity.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
+  - docs/models/operations/accountv1connectionverifyconnectionsecurity.md
   - docs/models/operations/accountv1getappsresponse.md
-  - docs/models/operations/accountv1getappssecurity.md
   - docs/models/operations/accountv1getbadgesresponse.md
-  - docs/models/operations/accountv1getbadgessecurity.md
   - docs/models/operations/accountv1getdatapointsresponse.md
-  - docs/models/operations/accountv1getdatapointssecurity.md
   - docs/models/operations/accountv1getfriendsresponse.md
-  - docs/models/operations/accountv1getfriendssecurity.md
   - docs/models/operations/accountv1getinforesponse.md
-  - docs/models/operations/accountv1getinfosecurity.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
-  - docs/models/operations/accountv1getleaderboardhistorysecurity.md
   - docs/models/operations/accountv1getstaffresponse.md
+  - docs/models/operations/accountv1getstaffsecurity.md
   - docs/models/operations/accountv1queueresponse.md
-  - docs/models/operations/accountv1queuesecurity.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
   - docs/models/operations/accountv1sessiondeleteresponse.md
+  - docs/models/operations/accountv1sessiondeletesecurity.md
   - docs/models/operations/accountv1sessiongetresponse.md
+  - docs/models/operations/accountv1sessiongetsecurity.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
   - docs/models/operations/accountv1settingsdeleteimagesresponse.md
+  - docs/models/operations/accountv1settingsdeleteimagessecurity.md
   - docs/models/operations/accountv1settingsgetresponse.md
+  - docs/models/operations/accountv1settingsgetsecurity.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
+  - docs/models/operations/accountv1settingssendemailverificationsecurity.md
   - docs/models/operations/accountv1settingsupdateimageresponse.md
+  - docs/models/operations/accountv1settingsupdateimagesecurity.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
+  - docs/models/operations/accountv1settingsupdatesecurity.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
+  - docs/models/operations/accountv1settingsuploadimagessecurity.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/accountv1settingsverfyemailsecurity.md
   - docs/models/operations/appv1getresponse.md
-  - docs/models/operations/appv1getsecurity.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationresponse.md
+  - docs/models/operations/locationsecurity.md
   - docs/sdks/account/README.md
   - docs/sdks/app/README.md
   - docs/sdks/connection/README.md

@@ -15,10 +15,12 @@ export class Location extends ClientSDK {
    * Get all of our available locations
    */
   async location(
+    security: operations.LocationSecurity,
     options?: RequestOptions,
   ): Promise<operations.LocationResponse> {
     return unwrapAsync(locationLocation(
       this,
+      security,
       options,
     ));
   }

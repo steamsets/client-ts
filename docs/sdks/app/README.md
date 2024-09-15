@@ -19,14 +19,16 @@ Get details about an app
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  security: {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  },
+});
 
 async function run() {
   const result = await steamSets.app.appV1Get({
     appId: 123456,
-  }, {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -46,14 +48,16 @@ import { appAppV1Get } from "@steamsets/client-ts/funcs/appAppV1Get.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  security: {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  },
+});
 
 async function run() {
   const res = await appAppV1Get(steamSets, {
     appId: 123456,
-  }, {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -74,7 +78,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.V1AppRequestBody](../../models/components/v1apprequestbody.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AppV1GetSecurity](../../models/operations/appv1getsecurity.md)                                                                                                     | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -100,14 +103,16 @@ Queue a app for processing
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
-const steamSets = new SteamSets();
+const steamSets = new SteamSets({
+  security: {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  },
+});
 
 async function run() {
   const result = await steamSets.app.accountV1Queue({
     id: 730,
-  }, {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
   
   // Handle the result
@@ -127,14 +132,16 @@ import { appAccountV1Queue } from "@steamsets/client-ts/funcs/appAccountV1Queue.
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore();
+const steamSets = new SteamSetsCore({
+  security: {
+    apiKey: "<YOUR_API_KEY_HERE>",
+    session: "<YOUR_BEARER_TOKEN_HERE>",
+  },
+});
 
 async function run() {
   const res = await appAccountV1Queue(steamSets, {
     id: 730,
-  }, {
-    apiKey: "<YOUR_API_KEY_HERE>",
-    session: "<YOUR_BEARER_TOKEN_HERE>",
   });
 
   if (!res.ok) {
@@ -155,7 +162,6 @@ run();
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                                                                                                      | [components.AppSearch](../../models/components/appsearch.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `security`                                                                                                                                                                     | [operations.AccountV1QueueSecurity](../../models/operations/accountv1queuesecurity.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The security requirements to use for the request.                                                                                                                              |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

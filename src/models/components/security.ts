@@ -5,7 +5,8 @@
 import * as z from "zod";
 
 export type Security = {
-  session?: string | undefined;
+  apiKey: string;
+  session: string;
 };
 
 /** @internal */
@@ -14,12 +15,14 @@ export const Security$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  session: z.string().optional(),
+  apiKey: z.string(),
+  session: z.string(),
 });
 
 /** @internal */
 export type Security$Outbound = {
-  session?: string | undefined;
+  apiKey: string;
+  session: string;
 };
 
 /** @internal */
@@ -28,7 +31,8 @@ export const Security$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Security
 > = z.object({
-  session: z.string().optional(),
+  apiKey: z.string(),
+  session: z.string(),
 });
 
 /**

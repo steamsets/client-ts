@@ -6,11 +6,6 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
-export type AccountV1GetDataPointsSecurity = {
-  apiKey: string;
-  session: string;
-};
-
 export type AccountV1GetDataPointsResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -20,45 +15,6 @@ export type AccountV1GetDataPointsResponse = {
     | components.V1AccountDataPointsResponseBody
     | undefined;
 };
-
-/** @internal */
-export const AccountV1GetDataPointsSecurity$inboundSchema: z.ZodType<
-  AccountV1GetDataPointsSecurity,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  apiKey: z.string(),
-  session: z.string(),
-});
-
-/** @internal */
-export type AccountV1GetDataPointsSecurity$Outbound = {
-  apiKey: string;
-  session: string;
-};
-
-/** @internal */
-export const AccountV1GetDataPointsSecurity$outboundSchema: z.ZodType<
-  AccountV1GetDataPointsSecurity$Outbound,
-  z.ZodTypeDef,
-  AccountV1GetDataPointsSecurity
-> = z.object({
-  apiKey: z.string(),
-  session: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountV1GetDataPointsSecurity$ {
-  /** @deprecated use `AccountV1GetDataPointsSecurity$inboundSchema` instead. */
-  export const inboundSchema = AccountV1GetDataPointsSecurity$inboundSchema;
-  /** @deprecated use `AccountV1GetDataPointsSecurity$outboundSchema` instead. */
-  export const outboundSchema = AccountV1GetDataPointsSecurity$outboundSchema;
-  /** @deprecated use `AccountV1GetDataPointsSecurity$Outbound` instead. */
-  export type Outbound = AccountV1GetDataPointsSecurity$Outbound;
-}
 
 /** @internal */
 export const AccountV1GetDataPointsResponse$inboundSchema: z.ZodType<

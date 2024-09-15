@@ -31,11 +31,13 @@ export class Session extends ClientSDK {
    */
   async accountV1SessionDelete(
     request: components.V1DeleteSessionRequestBody,
+    security: operations.AccountV1SessionDeleteSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionDeleteResponse> {
     return unwrapAsync(sessionAccountV1SessionDelete(
       this,
       request,
+      security,
       options,
     ));
   }
@@ -44,10 +46,12 @@ export class Session extends ClientSDK {
    * Gets all session data
    */
   async accountV1SessionGet(
+    security: operations.AccountV1SessionGetSecurity,
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionGetResponse> {
     return unwrapAsync(sessionAccountV1SessionGet(
       this,
+      security,
       options,
     ));
   }

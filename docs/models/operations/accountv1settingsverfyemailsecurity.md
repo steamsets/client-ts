@@ -1,12 +1,11 @@
-# AccountV1QueueSecurity
+# AccountV1SettingsVerfyEmailSecurity
 
 ## Example Usage
 
 ```typescript
-import { AccountV1QueueSecurity } from "@steamsets/client-ts/models/operations";
+import { AccountV1SettingsVerfyEmailSecurity } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1QueueSecurity = {
-  apiKey: "<value>",
+let value: AccountV1SettingsVerfyEmailSecurity = {
   session: "<value>",
 };
 ```
@@ -15,5 +14,4 @@ let value: AccountV1QueueSecurity = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |
 | `session`          | *string*           | :heavy_check_mark: | N/A                |

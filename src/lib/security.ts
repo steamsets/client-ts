@@ -73,8 +73,10 @@ type SecurityInputOAuth2 = {
 
 type SecurityInputOAuth2ClientCredentials = {
   type: "oauth2:client_credentials";
-  value: string | null | undefined;
-  fieldName: string;
+  value:
+    | { clientID?: string | undefined; clientSecret?: string | undefined }
+    | null
+    | undefined;
 };
 
 type SecurityInputCustom = {
@@ -110,6 +112,8 @@ export function resolveSecurity(
         return o.value.username != null || o.value.password != null;
       } else if (o.type === "http:custom") {
         return null;
+      } else if (o.type === "oauth2:client_credentials") {
+        return o.value.clientID != null || o.value.clientSecret != null;
       } else if (typeof o.value === "string") {
         return !!o.value;
       } else {
@@ -197,6 +201,11 @@ export function resolveGlobalSecurity(
 ): SecurityState | null {
   return resolveSecurity(
     [
+      {
+        fieldName: "api-key",
+        type: "apiKey:header",
+        value: security?.apiKey,
+      },
       {
         fieldName: "Authorization",
         type: "http:bearer",
