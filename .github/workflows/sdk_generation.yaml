@@ -18,7 +18,7 @@ on:
         description: optionally set a specific SDK version
         type: string
   schedule:
-    - cron: 0 0 * * *
+    - cron: */5 * * * *
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
