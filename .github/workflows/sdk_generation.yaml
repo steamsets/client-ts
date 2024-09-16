@@ -5,9 +5,6 @@ permissions:
   pull-requests: write
   statuses: write
 on:
-  push:
-    paths:
-      - "openapi.yaml"
   workflow_dispatch:
     inputs:
       force:
@@ -18,7 +15,7 @@ on:
         description: optionally set a specific SDK version
         type: string
   schedule:
-    - cron: */5 * * * *
+    - cron: "*/5 * * * *"
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
