@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "account_refresh_rate";
+let value: ResourceResource = "go_to_leaderboard_entry";
 ```
 
 ## Values

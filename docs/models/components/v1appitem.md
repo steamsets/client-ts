@@ -6,8 +6,8 @@
 import { V1AppItem } from "@steamsets/client-ts/models/components";
 
 let value: V1AppItem = {
-  cost: 634274,
-  description: "Visionary web-enabled artificial intelligence",
+  cost: 158969,
+  description: "Fundamental background neural-net",
   largeImage: "<value>",
   name: "<value>",
   publicId: "<value>",

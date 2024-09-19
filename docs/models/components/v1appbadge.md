@@ -7,22 +7,22 @@ import { V1AppBadge } from "@steamsets/client-ts/models/components";
 
 let value: V1AppBadge = {
   accountBadge: {
-    completedAt: new Date("2023-12-17T10:59:47.578Z"),
-    level: 208876,
-    xp: 635059,
+    completedAt: new Date("2023-12-21T08:05:36.916Z"),
+    level: 317202,
+    xp: 138183,
   },
   badgeImage: "<value>",
-  firstCompletion: new Date("2022-06-26T19:05:07.374Z"),
-  highestLevel: 995300,
+  firstCompletion: new Date("2024-05-03T01:35:58.385Z"),
+  highestLevel: 196582,
   isFoil: false,
-  lastCompletion: new Date("2023-12-17T19:21:40.693Z"),
-  level: 581850,
+  lastCompletion: new Date("2024-11-06T17:31:00.970Z"),
+  level: 368725,
   name: "<value>",
-  price: 253291,
+  price: 662527,
   publicId: "<value>",
-  scarcity: 414369,
-  steamId: 466311,
-  xp: 474697,
+  scarcity: 820994,
+  steamId: 13571,
+  xp: 97101,
 };
 ```
 

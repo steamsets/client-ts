@@ -10,7 +10,7 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "max_leaderboard_entries",
+      resource: "custom_vanity",
       value: "1",
     },
   ],
@@ -19,7 +19,7 @@ let value: V1GetSessionBody = {
       colorr: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
-      role: "owner",
+      role: "sapphire",
     },
   ],
   sessionData: {

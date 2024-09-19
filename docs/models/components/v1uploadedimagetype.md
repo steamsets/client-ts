@@ -1,13 +1,13 @@
-# V1UploaedImageType
+# V1UploadedImageType
 
 The Image Type
 
 ## Example Usage
 
 ```typescript
-import { V1UploaedImageType } from "@steamsets/client-ts/models/components";
+import { V1UploadedImageType } from "@steamsets/client-ts/models/components";
 
-let value: V1UploaedImageType = "avatar";
+let value: V1UploadedImageType = "avatar";
 ```
 
 ## Values

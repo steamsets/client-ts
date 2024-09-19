@@ -4,17 +4,17 @@
 
 import * as z from "zod";
 import {
-  V1UploaedImage,
-  V1UploaedImage$inboundSchema,
-  V1UploaedImage$Outbound,
-  V1UploaedImage$outboundSchema,
-} from "./v1uploaedimage.js";
+  V1UploadedImage,
+  V1UploadedImage$inboundSchema,
+  V1UploadedImage$Outbound,
+  V1UploadedImage$outboundSchema,
+} from "./v1uploadedimage.js";
 
 export type V1UploadImagesRequestBody = {
   /**
    * The images to upload
    */
-  images: Array<V1UploaedImage> | null;
+  images: Array<V1UploadedImage> | null;
 };
 
 /** @internal */
@@ -23,12 +23,12 @@ export const V1UploadImagesRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  images: z.nullable(z.array(V1UploaedImage$inboundSchema)),
+  images: z.nullable(z.array(V1UploadedImage$inboundSchema)),
 });
 
 /** @internal */
 export type V1UploadImagesRequestBody$Outbound = {
-  images: Array<V1UploaedImage$Outbound> | null;
+  images: Array<V1UploadedImage$Outbound> | null;
 };
 
 /** @internal */
@@ -37,7 +37,7 @@ export const V1UploadImagesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1UploadImagesRequestBody
 > = z.object({
-  images: z.nullable(z.array(V1UploaedImage$outboundSchema)),
+  images: z.nullable(z.array(V1UploadedImage$outboundSchema)),
 });
 
 /**
