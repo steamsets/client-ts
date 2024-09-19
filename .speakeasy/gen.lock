@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 69921ee687300e81148a7d764868c420
+  docChecksum: 9254b822c9c803e2b75e5f6ff566af06
   docVersion: 1.0.0
-  speakeasyVersion: 1.396.9
-  generationVersion: 2.415.7
-  releaseVersion: 0.10.0
-  configChecksum: c714826cf6bbbf8d8918d45961cf8945
+  speakeasyVersion: 1.399.5
+  generationVersion: 2.420.2
+  releaseVersion: 0.10.1
+  configChecksum: 46424b09b1f58e726c156d99ac395de3
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.17.3
+    core: 3.17.5
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -129,9 +129,9 @@ generatedFiles:
   - docs/models/components/v1updatesettingsrequestbody.md
   - docs/models/components/v1updatesettingsrequestbodytheme.md
   - docs/models/components/v1updatesettingsresponsebody.md
+  - docs/models/components/v1uploadedimage.md
+  - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
-  - docs/models/components/v1uploaedimage.md
-  - docs/models/components/v1uploaedimagetype.md
   - docs/models/components/v1verifyconnectionrequestbody.md
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
@@ -316,8 +316,8 @@ generatedFiles:
   - src/models/components/v1updateimageresponsebody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
   - src/models/components/v1updatesettingsresponsebody.ts
+  - src/models/components/v1uploadedimage.ts
   - src/models/components/v1uploadimagesrequestbody.ts
-  - src/models/components/v1uploaedimage.ts
   - src/models/components/v1verifyconnectionrequestbody.ts
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyemailrequestbody.ts

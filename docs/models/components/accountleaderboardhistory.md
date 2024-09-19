@@ -6,10 +6,10 @@
 import { AccountLeaderboardHistory } from "@steamsets/client-ts/models/components";
 
 let value: AccountLeaderboardHistory = {
-  date: new Date("2023-02-28T14:12:21.883Z"),
-  leaderboard: "xp",
-  rank: 902599,
-  score: 681820,
+  date: new Date("2022-08-19T13:54:10.447Z"),
+  leaderboard: "game_bans",
+  rank: 128926,
+  score: 750686,
 };
 ```
 

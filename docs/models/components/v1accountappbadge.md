@@ -6,20 +6,20 @@
 import { V1AccountAppBadge } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountAppBadge = {
-  appId: 520478,
+  appId: 521848,
   appImage: "<value>",
   appName: "<value>",
   appShortName: "<value>",
   badgeImage: "<value>",
-  completedAt: new Date("2024-05-05T11:02:21.971Z"),
+  completedAt: new Date("2022-04-27T01:47:37.246Z"),
   isFoil: false,
-  level: 678880,
+  level: 414662,
   name: "<value>",
-  price: 118274,
+  price: 473600,
   publicId: "<value>",
-  scarcity: 720633,
-  steamId: 639921,
-  xp: 582020,
+  scarcity: 264555,
+  steamId: 186332,
+  xp: 774234,
 };
 ```
 

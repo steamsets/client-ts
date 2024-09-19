@@ -17,7 +17,7 @@ let value: AccountV1SessionGetResponse = {
     accountId: 123456,
     resources: [
       {
-        resource: "mini_background",
+        resource: "go_to_leaderboard_entry",
         value: "1",
       },
     ],
@@ -26,7 +26,7 @@ let value: AccountV1SessionGetResponse = {
         colorr: "#ff0000",
         icon: "tier_1.svg",
         name: "Tier 1",
-        role: "contributor",
+        role: "beta",
       },
     ],
     sessionData: {
