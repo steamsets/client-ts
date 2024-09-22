@@ -10,7 +10,7 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "custom_vanity",
+      resource: "account_refresh_rate",
       value: "1",
     },
   ],

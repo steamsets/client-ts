@@ -24,6 +24,7 @@ import { accountAccountV1SettingsUpdate } from "../funcs/accountAccountV1Setting
 import { accountAccountV1SettingsUpdateImage } from "../funcs/accountAccountV1SettingsUpdateImage.js";
 import { accountAccountV1SettingsUploadImages } from "../funcs/accountAccountV1SettingsUploadImages.js";
 import { accountAccountV1SettingsVerfyEmail } from "../funcs/accountAccountV1SettingsVerfyEmail.js";
+import { accountLeaderboardV1GetAccount } from "../funcs/accountLeaderboardV1GetAccount.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -326,6 +327,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
     return unwrapAsync(accountAccountV1SettingsVerfyEmail(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get an leaderboard for accounts
+   */
+  async leaderboardV1GetAccount(
+    request: components.V1AccountLeaderboardRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetAccountResponse> {
+    return unwrapAsync(accountLeaderboardV1GetAccount(
       this,
       request,
       options,

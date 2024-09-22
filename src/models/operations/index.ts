@@ -26,5 +26,6 @@ export * from "./accountv1settingsupdateimage.js";
 export * from "./accountv1settingsuploadimages.js";
 export * from "./accountv1settingsverfyemail.js";
 export * from "./appv1get.js";
+export * from "./leaderboardv1getaccount.js";
 export * from "./liveness.js";
 export * from "./location.js";

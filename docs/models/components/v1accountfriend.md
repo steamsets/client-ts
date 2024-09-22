@@ -17,7 +17,7 @@ let value: V1AccountFriend = {
     level: 123456,
   },
   badges: 123456,
-  bans: 617636,
+  bans: 317983,
   city: {
     code: "DE",
     id: 1,
@@ -33,8 +33,8 @@ let value: V1AccountFriend = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  friendsSince: new Date("2022-06-14T01:02:51.421Z"),
-  gameBans: 612096,
+  friendsSince: new Date("2023-03-31T00:46:25.708Z"),
+  gameBans: 64147,
   hidden: true,
   level: 123456,
   limitedApps: 123456,
@@ -55,7 +55,7 @@ let value: V1AccountFriend = {
       colorr: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
-      role: "developer",
+      role: "diamond",
     },
   ],
   state: {
@@ -64,10 +64,10 @@ let value: V1AccountFriend = {
     name: "Germany",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 616934,
+  steamSetsScore: 566602,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 386489,
+  vacBans: 265389,
   xp: 123456,
 };
 ```

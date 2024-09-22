@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import * as m$ from "../lib/matchers.js";
+import * as M from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -27,7 +27,7 @@ import { Result } from "../types/fp.js";
  * Get all of our available locations
  */
 export async function locationLocation(
-  client$: SteamSetsCore,
+  client: SteamSetsCore,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -42,39 +42,39 @@ export async function locationLocation(
     | ConnectionError
   >
 > {
-  const path$ = pathToFunc("/v1/location")();
+  const path = pathToFunc("/v1/location")();
 
-  const headers$ = new Headers({
+  const headers = new Headers({
     Accept: "application/json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const secConfig = await extractSecurity(client._options.session);
+  const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
     operationID: "location",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client._options.session,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
-  const requestRes = client$.createRequest$(context, {
-    security: securitySettings$,
+  const requestRes = client._createRequest(context, {
+    security: requestSecurity,
     method: "GET",
-    path: path$,
-    headers: headers$,
+    path: path,
+    headers: headers,
     uaHeader: "x-speakeasy-user-agent",
-    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
     return requestRes;
   }
-  const request$ = requestRes.value;
+  const req = requestRes.value;
 
-  const doResult = await client$.do$(request$, {
+  const doResult = await client._do(req, {
     context,
     errorCodes: ["401", "4XX", "500", "5XX"],
     retryConfig: options?.retries
-      || client$.options$.retryConfig,
+      || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
   });
   if (!doResult.ok) {
@@ -82,11 +82,11 @@ export async function locationLocation(
   }
   const response = doResult.value;
 
-  const responseFields$ = {
-    HttpMeta: { Response: response, Request: request$ },
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
   };
 
-  const [result$] = await m$.match<
+  const [result] = await M.match<
     operations.LocationResponse,
     | errors.ErrorModel
     | SDKError
@@ -97,15 +97,15 @@ export async function locationLocation(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.json(200, operations.LocationResponse$inboundSchema, { key: "Regions" }),
-    m$.jsonErr([401, 500], errors.ErrorModel$inboundSchema, {
+    M.json(200, operations.LocationResponse$inboundSchema, { key: "Regions" }),
+    M.jsonErr([401, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    m$.fail(["4XX", "5XX"]),
-  )(response, request$, { extraFields: responseFields$ });
-  if (!result$.ok) {
-    return result$;
+    M.fail(["4XX", "5XX"]),
+  )(response, req, { extraFields: responseFields });
+  if (!result.ok) {
+    return result;
   }
 
-  return result$;
+  return result;
 }

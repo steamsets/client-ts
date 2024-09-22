@@ -97,6 +97,7 @@ run();
 * [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
+* [leaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
 
 ### [app](docs/sdks/app/README.md)
 
@@ -120,6 +121,10 @@ run();
 * [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 * [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
 * [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue a app for processing
+
+### [leaderboard](docs/sdks/leaderboard/README.md)
+
+* [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -518,6 +523,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
 - [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
 - [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
+- [accountLeaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
 - [appAccountV1Queue](docs/sdks/app/README.md#accountv1queue)
 - [appAppV1Get](docs/sdks/app/README.md#appv1get)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
@@ -532,6 +538,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
 - [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
 - [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
+- [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)
 - [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)

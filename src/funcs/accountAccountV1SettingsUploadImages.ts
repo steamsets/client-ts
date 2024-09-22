@@ -3,9 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
-import * as m$ from "../lib/matchers.js";
-import * as schemas$ from "../lib/schemas.js";
+import { encodeJSON } from "../lib/encodings.js";
+import * as M from "../lib/matchers.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -27,7 +27,7 @@ import { Result } from "../types/fp.js";
  * Multi Upload Endpoint for images
  */
 export async function accountAccountV1SettingsUploadImages(
-  client$: SteamSetsCore,
+  client: SteamSetsCore,
   request: components.V1UploadImagesRequestBody,
   options?: RequestOptions,
 ): Promise<
@@ -43,55 +43,54 @@ export async function accountAccountV1SettingsUploadImages(
     | ConnectionError
   >
 > {
-  const input$ = request;
+  const input = request;
 
-  const parsed$ = schemas$.safeParse(
-    input$,
-    (value$) =>
-      components.V1UploadImagesRequestBody$outboundSchema.parse(value$),
+  const parsed = safeParse(
+    input,
+    (value) => components.V1UploadImagesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
-  if (!parsed$.ok) {
-    return parsed$;
+  if (!parsed.ok) {
+    return parsed;
   }
-  const payload$ = parsed$.value;
-  const body$ = encodeJSON$("body", payload$, { explode: true });
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path$ = pathToFunc("/account.v1.AccountService/UploadImages")();
+  const path = pathToFunc("/account.v1.AccountService/UploadImages")();
 
-  const headers$ = new Headers({
+  const headers = new Headers({
     "Content-Type": "application/json",
     Accept: "application/problem+json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const secConfig = await extractSecurity(client._options.session);
+  const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
     operationID: "account.v1.settings.upload-images",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client._options.session,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
-  const requestRes = client$.createRequest$(context, {
-    security: securitySettings$,
+  const requestRes = client._createRequest(context, {
+    security: requestSecurity,
     method: "POST",
-    path: path$,
-    headers: headers$,
-    body: body$,
+    path: path,
+    headers: headers,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
-    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
     return requestRes;
   }
-  const request$ = requestRes.value;
+  const req = requestRes.value;
 
-  const doResult = await client$.do$(request$, {
+  const doResult = await client._do(req, {
     context,
     errorCodes: ["422", "4XX", "500", "5XX"],
     retryConfig: options?.retries
-      || client$.options$.retryConfig,
+      || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
   });
   if (!doResult.ok) {
@@ -99,11 +98,11 @@ export async function accountAccountV1SettingsUploadImages(
   }
   const response = doResult.value;
 
-  const responseFields$ = {
-    HttpMeta: { Response: response, Request: request$ },
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
   };
 
-  const [result$] = await m$.match<
+  const [result] = await M.match<
     operations.AccountV1SettingsUploadImagesResponse,
     | errors.ErrorModel
     | SDKError
@@ -114,15 +113,15 @@ export async function accountAccountV1SettingsUploadImages(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.nil(204, operations.AccountV1SettingsUploadImagesResponse$inboundSchema),
-    m$.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
+    M.nil(204, operations.AccountV1SettingsUploadImagesResponse$inboundSchema),
+    M.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    m$.fail(["4XX", "5XX"]),
-  )(response, request$, { extraFields: responseFields$ });
-  if (!result$.ok) {
-    return result$;
+    M.fail(["4XX", "5XX"]),
+  )(response, req, { extraFields: responseFields });
+  if (!result.ok) {
+    return result;
   }
 
-  return result$;
+  return result;
 }
