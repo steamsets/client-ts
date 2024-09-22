@@ -17,7 +17,7 @@ let value: LeaderboardAccount = {
     level: 123456,
   },
   badges: 123456,
-  bans: 570197,
+  bans: 447125,
   city: {
     code: "DE",
     id: 1,
@@ -33,7 +33,7 @@ let value: LeaderboardAccount = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  gameBans: 38425,
+  gameBans: 846409,
   hidden: true,
   level: 123456,
   limitedApps: 123456,
@@ -54,7 +54,7 @@ let value: LeaderboardAccount = {
       colorr: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
-      role: "amber",
+      role: "diamond",
     },
   ],
   state: {
@@ -63,10 +63,10 @@ let value: LeaderboardAccount = {
     name: "Germany",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 634274,
+  steamSetsScore: 297437,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 988374,
+  vacBans: 813798,
   xp: 123456,
 };
 ```

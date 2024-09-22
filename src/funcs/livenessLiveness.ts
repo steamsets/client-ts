@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import * as m$ from "../lib/matchers.js";
+import * as M from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -27,7 +27,7 @@ import { Result } from "../types/fp.js";
  * This endpoint checks if the service is alive.
  */
 export async function livenessLiveness(
-  client$: SteamSetsCore,
+  client: SteamSetsCore,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -42,39 +42,39 @@ export async function livenessLiveness(
     | ConnectionError
   >
 > {
-  const path$ = pathToFunc("/v1/liveness")();
+  const path = pathToFunc("/v1/liveness")();
 
-  const headers$ = new Headers({
+  const headers = new Headers({
     Accept: "application/json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const secConfig = await extractSecurity(client._options.session);
+  const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
     operationID: "liveness",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client._options.session,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
-  const requestRes = client$.createRequest$(context, {
-    security: securitySettings$,
+  const requestRes = client._createRequest(context, {
+    security: requestSecurity,
     method: "GET",
-    path: path$,
-    headers: headers$,
+    path: path,
+    headers: headers,
     uaHeader: "x-speakeasy-user-agent",
-    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
     return requestRes;
   }
-  const request$ = requestRes.value;
+  const req = requestRes.value;
 
-  const doResult = await client$.do$(request$, {
+  const doResult = await client._do(req, {
     context,
     errorCodes: ["4XX", "500", "5XX"],
     retryConfig: options?.retries
-      || client$.options$.retryConfig,
+      || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
   });
   if (!doResult.ok) {
@@ -82,11 +82,11 @@ export async function livenessLiveness(
   }
   const response = doResult.value;
 
-  const responseFields$ = {
-    HttpMeta: { Response: response, Request: request$ },
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
   };
 
-  const [result$] = await m$.match<
+  const [result] = await M.match<
     operations.LivenessResponse,
     | errors.ErrorModel
     | SDKError
@@ -97,17 +97,17 @@ export async function livenessLiveness(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.json(200, operations.LivenessResponse$inboundSchema, {
+    M.json(200, operations.LivenessResponse$inboundSchema, {
       key: "V1LivenessResponseBody",
     }),
-    m$.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    m$.fail(["4XX", "5XX"]),
-  )(response, request$, { extraFields: responseFields$ });
-  if (!result$.ok) {
-    return result$;
+    M.fail(["4XX", "5XX"]),
+  )(response, req, { extraFields: responseFields });
+  if (!result.ok) {
+    return result;
   }
 
-  return result$;
+  return result;
 }

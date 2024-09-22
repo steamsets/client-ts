@@ -3,9 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON as encodeJSON$ } from "../lib/encodings.js";
-import * as m$ from "../lib/matchers.js";
-import * as schemas$ from "../lib/schemas.js";
+import { encodeJSON } from "../lib/encodings.js";
+import * as M from "../lib/matchers.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -27,7 +27,7 @@ import { Result } from "../types/fp.js";
  * Remove a connection
  */
 export async function accountAccountV1ConnectionDeleteConnection(
-  client$: SteamSetsCore,
+  client: SteamSetsCore,
   request: components.V1DeleteConnectionRequestBody,
   options?: RequestOptions,
 ): Promise<
@@ -43,55 +43,55 @@ export async function accountAccountV1ConnectionDeleteConnection(
     | ConnectionError
   >
 > {
-  const input$ = request;
+  const input = request;
 
-  const parsed$ = schemas$.safeParse(
-    input$,
-    (value$) =>
-      components.V1DeleteConnectionRequestBody$outboundSchema.parse(value$),
+  const parsed = safeParse(
+    input,
+    (value) =>
+      components.V1DeleteConnectionRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
-  if (!parsed$.ok) {
-    return parsed$;
+  if (!parsed.ok) {
+    return parsed;
   }
-  const payload$ = parsed$.value;
-  const body$ = encodeJSON$("body", payload$, { explode: true });
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path$ = pathToFunc("/account.v1.AccountService/DeleteConnection")();
+  const path = pathToFunc("/account.v1.AccountService/DeleteConnection")();
 
-  const headers$ = new Headers({
+  const headers = new Headers({
     "Content-Type": "application/json",
     Accept: "application/json",
   });
 
-  const session$ = await extractSecurity(client$.options$.session);
-  const security$ = session$ == null ? {} : { session: session$ };
+  const secConfig = await extractSecurity(client._options.session);
+  const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
     operationID: "account.v1.connection.deleteConnection",
     oAuth2Scopes: [],
-    securitySource: client$.options$.session,
+    securitySource: client._options.session,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
-  const requestRes = client$.createRequest$(context, {
-    security: securitySettings$,
+  const requestRes = client._createRequest(context, {
+    security: requestSecurity,
     method: "POST",
-    path: path$,
-    headers: headers$,
-    body: body$,
+    path: path,
+    headers: headers,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
-    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
     return requestRes;
   }
-  const request$ = requestRes.value;
+  const req = requestRes.value;
 
-  const doResult = await client$.do$(request$, {
+  const doResult = await client._do(req, {
     context,
     errorCodes: ["400", "422", "4XX", "500", "5XX"],
     retryConfig: options?.retries
-      || client$.options$.retryConfig,
+      || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
   });
   if (!doResult.ok) {
@@ -99,11 +99,11 @@ export async function accountAccountV1ConnectionDeleteConnection(
   }
   const response = doResult.value;
 
-  const responseFields$ = {
-    HttpMeta: { Response: response, Request: request$ },
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
   };
 
-  const [result$] = await m$.match<
+  const [result] = await M.match<
     operations.AccountV1ConnectionDeleteConnectionResponse,
     | errors.ErrorModel
     | SDKError
@@ -114,19 +114,19 @@ export async function accountAccountV1ConnectionDeleteConnection(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.json(
+    M.json(
       200,
       operations.AccountV1ConnectionDeleteConnectionResponse$inboundSchema,
       { key: "V1DeleteConnectionResponseBody" },
     ),
-    m$.jsonErr([400, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    m$.fail(["4XX", "5XX"]),
-  )(response, request$, { extraFields: responseFields$ });
-  if (!result$.ok) {
-    return result$;
+    M.fail(["4XX", "5XX"]),
+  )(response, req, { extraFields: responseFields });
+  if (!result.ok) {
+    return result;
   }
 
-  return result$;
+  return result;
 }
