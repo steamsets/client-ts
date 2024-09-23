@@ -28,10 +28,10 @@ async function run() {
     end: 10,
     leaderboard: "xp",
     location: {
-      city: "berlin",
-      country: "germany",
-      region: "europe",
-      state: "berlin",
+      city: "Bad Krozingen",
+      country: "Germany",
+      region: "Europe",
+      state: "Baden-Wurttemberg",
     },
     start: 1,
   });
@@ -65,10 +65,10 @@ async function run() {
     end: 10,
     leaderboard: "xp",
     location: {
-      city: "berlin",
-      country: "germany",
-      region: "europe",
-      state: "berlin",
+      city: "Bad Krozingen",
+      country: "Germany",
+      region: "Europe",
+      state: "Baden-Wurttemberg",
     },
     start: 1,
   });

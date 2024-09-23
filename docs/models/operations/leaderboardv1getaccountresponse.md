@@ -147,10 +147,10 @@ let value: LeaderboardV1GetAccountResponse = {
       xp: 123456,
     },
     location: {
-      city: "berlin",
-      country: "germany",
-      region: "europe",
-      state: "berlin",
+      city: "Bad Krozingen",
+      country: "Germany",
+      region: "Europe",
+      state: "Baden-Wurttemberg",
     },
   },
 };
