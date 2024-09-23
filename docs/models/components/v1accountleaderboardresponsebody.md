@@ -140,10 +140,10 @@ let value: V1AccountLeaderboardResponseBody = {
     xp: 123456,
   },
   location: {
-    city: "berlin",
-    country: "germany",
-    region: "europe",
-    state: "berlin",
+    city: "Bad Krozingen",
+    country: "Germany",
+    region: "Europe",
+    state: "Baden-Wurttemberg",
   },
 };
 ```
