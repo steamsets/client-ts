@@ -49,9 +49,9 @@ async function run() {
     code: "123456",
     provider: "discord",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -84,7 +84,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -126,9 +126,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SessionCreate({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -158,7 +158,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -202,9 +202,9 @@ async function run() {
   const result = await steamSets.account.accountV1ConnectionDeleteConnection({
     connectionId: "123456",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -236,7 +236,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -282,9 +282,9 @@ async function run() {
       "<value>",
     ],
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -318,7 +318,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -362,9 +362,9 @@ async function run() {
   const result = await steamSets.account.accountV1SessionDelete({
     sessionId: "123456",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -396,7 +396,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -438,9 +438,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetApps({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -470,7 +470,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -512,9 +512,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetBadges({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -544,7 +544,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -586,9 +586,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetDataPoints({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -618,7 +618,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -660,9 +660,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetFriends({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -692,7 +692,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -734,9 +734,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetInfo({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -766,7 +766,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -808,9 +808,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetLeaderboardHistory({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -840,7 +840,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -882,9 +882,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SessionGet();
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -914,7 +914,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -955,9 +955,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsGet();
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -987,7 +987,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1028,9 +1028,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1GetStaff();
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1060,7 +1060,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1114,9 +1114,9 @@ async function run() {
       openidSigned: "123456",
     },
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1159,7 +1159,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1201,9 +1201,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1SettingsSendEmailVerification({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1233,7 +1233,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1278,9 +1278,9 @@ async function run() {
     connectionId: "123456",
     hidden: true,
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1313,7 +1313,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1358,9 +1358,9 @@ async function run() {
     active: true,
     imageId: "123456",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1393,7 +1393,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1451,9 +1451,9 @@ async function run() {
       vanity: "flo",
     },
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1499,7 +1499,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1548,9 +1548,9 @@ async function run() {
       },
     ],
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1587,7 +1587,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1631,9 +1631,9 @@ async function run() {
   const result = await steamSets.account.accountV1ConnectionVerifyConnection({
     connectionId: "123456",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1665,7 +1665,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1709,9 +1709,9 @@ async function run() {
   const result = await steamSets.account.accountV1SettingsVerfyEmail({
     code: "123456",
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1743,7 +1743,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1798,9 +1798,9 @@ async function run() {
     },
     start: 1,
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -1843,7 +1843,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();

@@ -21,12 +21,13 @@ let value: AccountInfoBody = {
   background: "steamsets",
   badges: 123456,
   badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-  bans: 575947,
+  bans: 606393,
   city: {
     code: "DE",
     id: 1,
     name: "Germany",
   },
+  communityBan: false,
   connections: [
     {
       avatar:
@@ -47,7 +48,7 @@ let value: AccountInfoBody = {
   createdAt: new Date("2023-01-01T00:00:00Z"),
   currentBestRanks: [
     {
-      leaderboard: "steam_sets",
+      leaderboard: "apps",
       ranks: "1,1,1,1,1",
     },
   ],
@@ -63,7 +64,7 @@ let value: AccountInfoBody = {
   friendPrivacy: "public",
   friends: 123456,
   friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-  gameBans: 667411,
+  gameBans: 660174,
   hidden: true,
   images: [
     {
@@ -73,6 +74,7 @@ let value: AccountInfoBody = {
       imageType: "avatar",
     },
   ],
+  lastBanDate: new Date("2024-03-07 07:31:46"),
   level: 123456,
   limitedApps: 123456,
   miniBackground: "steamsets",
@@ -93,7 +95,8 @@ let value: AccountInfoBody = {
       colorr: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
-      role: "staff",
+      rating: 290077,
+      role: "sapphire",
     },
   ],
   state: {
@@ -102,12 +105,12 @@ let value: AccountInfoBody = {
     name: "Germany",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 716327,
+  steamSetsScore: 428769,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   theme: "steamsets",
   updatedAt: new Date("2023-01-01T00:00:00Z"),
-  vacBans: 289406,
+  vacBans: 135474,
   xp: 123456,
 };
 ```
@@ -133,6 +136,7 @@ let value: AccountInfoBody = {
 | `badgesUpdatedAt`                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The time the badges were updated                                                              | 2023-01-01T00:00:00Z                                                                          |
 | `bans`                                                                                        | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of bans                                                                            |                                                                                               |
 | `city`                                                                                        | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `communityBan`                                                                                | *boolean*                                                                                     | :heavy_check_mark:                                                                            | If the account is community banned or not                                                     | false                                                                                         |
 | `connections`                                                                                 | [components.Connection](../../models/components/connection.md)[]                              | :heavy_check_mark:                                                                            | The connections of the account                                                                |                                                                                               |
 | `country`                                                                                     | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The time the account was created                                                              | 2023-01-01T00:00:00Z                                                                          |
@@ -147,6 +151,7 @@ let value: AccountInfoBody = {
 | `gameBans`                                                                                    | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of game bans                                                                       |                                                                                               |
 | `hidden`                                                                                      | *boolean*                                                                                     | :heavy_check_mark:                                                                            | Whether the account is hidden in the leaderboards                                             | true                                                                                          |
 | `images`                                                                                      | [components.Image](../../models/components/image.md)[]                                        | :heavy_check_mark:                                                                            | The images of the account                                                                     |                                                                                               |
+| `lastBanDate`                                                                                 | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The Last date the account got a ban on                                                        | 2024-03-07 07:31:46                                                                           |
 | `level`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | The level of the account                                                                      | 123456                                                                                        |
 | `limitedApps`                                                                                 | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of limited apps the account has                                                    | 123456                                                                                        |
 | `miniBackground`                                                                              | *string*                                                                                      | :heavy_check_mark:                                                                            | The mini background of the account                                                            | steamsets                                                                                     |

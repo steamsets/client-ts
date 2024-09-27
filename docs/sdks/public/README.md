@@ -30,9 +30,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetApps({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -62,7 +62,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -104,9 +104,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetBadges({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -136,7 +136,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -178,9 +178,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetDataPoints({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -210,7 +210,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -252,9 +252,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetFriends({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -284,7 +284,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -326,9 +326,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetInfo({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -358,7 +358,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -400,9 +400,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.public.accountV1GetLeaderboardHistory({});
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -432,7 +432,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -476,9 +476,9 @@ async function run() {
   const result = await steamSets.public.accountV1Queue({
     id: 730,
   });
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -510,7 +510,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();

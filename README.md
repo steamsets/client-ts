@@ -104,6 +104,12 @@ run();
 * [appV1Get](docs/sdks/app/README.md#appv1get) - Get details about an app
 * [accountV1Queue](docs/sdks/app/README.md#accountv1queue) - Queue a app for processing
 
+### [badge](docs/sdks/badge/README.md)
+
+* [badgeV1Tags](docs/sdks/badge/README.md#badgev1tags) - Get all availiable badge tags
+* [badgeV1Search](docs/sdks/badge/README.md#badgev1search) - Search for badges
+* [badgeV1Tag](docs/sdks/badge/README.md#badgev1tag) - Tag a badge
+
 ### [connection](docs/sdks/connection/README.md)
 
 * [accountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect) - Connect a new Social Provider
@@ -526,6 +532,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountLeaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
 - [appAccountV1Queue](docs/sdks/app/README.md#accountv1queue)
 - [appAppV1Get](docs/sdks/app/README.md#appv1get)
+- [badgeBadgeV1Search](docs/sdks/badge/README.md#badgev1search)
+- [badgeBadgeV1Tag](docs/sdks/badge/README.md#badgev1tag)
+- [badgeBadgeV1Tags](docs/sdks/badge/README.md#badgev1tags)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
 - [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
 - [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
