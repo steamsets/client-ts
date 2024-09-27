@@ -17,7 +17,7 @@ let value: AccountV1SessionGetResponse = {
     accountId: 123456,
     resources: [
       {
-        resource: "account_refresh_rate",
+        resource: "social_link_amount",
         value: "1",
       },
     ],
@@ -26,7 +26,8 @@ let value: AccountV1SessionGetResponse = {
         colorr: "#ff0000",
         icon: "tier_1.svg",
         name: "Tier 1",
-        role: "staff",
+        rating: 521848,
+        role: "amethyst",
       },
     ],
     sessionData: {

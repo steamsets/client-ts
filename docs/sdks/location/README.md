@@ -22,9 +22,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.location.location();
-  
+
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();
@@ -54,7 +54,7 @@ async function run() {
   const { value: result } = res;
 
   // Handle the result
-  console.log(result)
+  console.log(result);
 }
 
 run();

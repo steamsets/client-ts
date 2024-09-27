@@ -1,7 +1,5 @@
 # ErrorModel
 
-Unprocessable Entity
-
 ## Example Usage
 
 ```typescript

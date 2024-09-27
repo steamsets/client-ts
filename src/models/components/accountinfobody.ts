@@ -142,6 +142,10 @@ export type AccountInfoBody = {
   bans: number;
   city?: Location | null | undefined;
   /**
+   * If the account is community banned or not
+   */
+  communityBan: boolean;
+  /**
    * The connections of the account
    */
   connections: Array<Connection> | null;
@@ -194,6 +198,10 @@ export type AccountInfoBody = {
    * The images of the account
    */
   images: Array<Image> | null;
+  /**
+   * The Last date the account got a ban on
+   */
+  lastBanDate: Date | null;
   /**
    * The level of the account
    */
@@ -360,6 +368,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   ),
   bans: z.number().int(),
   city: z.nullable(Location$inboundSchema).optional(),
+  communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
   country: z.nullable(Location$inboundSchema).optional(),
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
@@ -376,6 +385,9 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   gameBans: z.number().int(),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$inboundSchema)),
+  lastBanDate: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   level: z.number().int(),
   limitedApps: z.number().int(),
   miniBackground: z.string(),
@@ -422,6 +434,7 @@ export type AccountInfoBody$Outbound = {
   badgesUpdatedAt: string;
   bans: number;
   city?: Location$Outbound | null | undefined;
+  communityBan: boolean;
   connections: Array<Connection$Outbound> | null;
   country?: Location$Outbound | null | undefined;
   createdAt: string;
@@ -436,6 +449,7 @@ export type AccountInfoBody$Outbound = {
   gameBans: number;
   hidden: boolean;
   images: Array<Image$Outbound> | null;
+  lastBanDate: string | null;
   level: number;
   limitedApps: number;
   miniBackground: string;
@@ -482,6 +496,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   badgesUpdatedAt: z.date().transform(v => v.toISOString()),
   bans: z.number().int(),
   city: z.nullable(Location$outboundSchema).optional(),
+  communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
   country: z.nullable(Location$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()),
@@ -496,6 +511,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   gameBans: z.number().int(),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),
+  lastBanDate: z.nullable(z.date().transform(v => v.toISOString())),
   level: z.number().int(),
   limitedApps: z.number().int(),
   miniBackground: z.string(),

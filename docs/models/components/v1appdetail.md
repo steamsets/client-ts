@@ -10,7 +10,7 @@ let value: V1AppDetail = {
   image: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
   isEvent: true,
   isSale: true,
-  itadId: "<value>",
+  itadId: "<id>",
   name: "CS2",
   price: 1200,
   shortName: "csgo",
