@@ -27,7 +27,7 @@ let value: AccountV1SessionGetResponse = {
         icon: "tier_1.svg",
         name: "Tier 1",
         rating: 521848,
-        role: "amethyst",
+        role: "amber",
       },
     ],
     sessionData: {

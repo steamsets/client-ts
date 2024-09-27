@@ -63,7 +63,7 @@ let value: AccountV1GetStaffResponse = {
           icon: "tier_1.svg",
           name: "Tier 1",
           rating: 456150,
-          role: "sapphire",
+          role: "ruby",
         },
       ],
       state: {

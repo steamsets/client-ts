@@ -67,7 +67,7 @@ let value: AccountV1GetFriendsResponse = {
             icon: "tier_1.svg",
             name: "Tier 1",
             rating: 528895,
-            role: "sapphire",
+            role: "ruby",
           },
         ],
         state: {

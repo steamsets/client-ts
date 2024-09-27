@@ -103,7 +103,7 @@ let value: AccountV1GetInfoResponse = {
         icon: "tier_1.svg",
         name: "Tier 1",
         rating: 870013,
-        role: "translator",
+        role: "badge_scout",
       },
     ],
     state: {

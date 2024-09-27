@@ -56,7 +56,7 @@ let value: V1AccountLeaderboardAccount = {
       icon: "tier_1.svg",
       name: "Tier 1",
       rating: 171629,
-      role: "emerald",
+      role: "sapphire",
     },
   ],
   state: {
