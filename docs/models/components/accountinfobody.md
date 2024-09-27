@@ -96,7 +96,7 @@ let value: AccountInfoBody = {
       icon: "tier_1.svg",
       name: "Tier 1",
       rating: 290077,
-      role: "sapphire",
+      role: "diamond",
     },
   ],
   state: {

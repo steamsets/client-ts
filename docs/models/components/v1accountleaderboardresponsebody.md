@@ -60,7 +60,7 @@ let value: V1AccountLeaderboardResponseBody = {
           icon: "tier_1.svg",
           name: "Tier 1",
           rating: 569101,
-          role: "amethyst",
+          role: "amber",
         },
       ],
       state: {
@@ -126,7 +126,7 @@ let value: V1AccountLeaderboardResponseBody = {
         icon: "tier_1.svg",
         name: "Tier 1",
         rating: 866383,
-        role: "translator",
+        role: "badge_scout",
       },
     ],
     state: {

@@ -22,6 +22,8 @@ export const RoleRole = {
   EarlySupporter: "early_supporter",
   Beta: "beta",
   Translator: "translator",
+  Top100: "top_100",
+  BadgeScout: "badge_scout",
 } as const;
 export type RoleRole = ClosedEnum<typeof RoleRole>;
 

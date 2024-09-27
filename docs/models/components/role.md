@@ -10,7 +10,7 @@ let value: Role = {
   icon: "tier_1.svg",
   name: "Tier 1",
   rating: 643990,
-  role: "amethyst",
+  role: "amber",
 };
 ```
 

@@ -67,7 +67,7 @@ let value: LeaderboardV1GetAccountResponse = {
             icon: "tier_1.svg",
             name: "Tier 1",
             rating: 943749,
-            role: "ruby",
+            role: "contributor",
           },
         ],
         state: {
@@ -133,7 +133,7 @@ let value: LeaderboardV1GetAccountResponse = {
           icon: "tier_1.svg",
           name: "Tier 1",
           rating: 666767,
-          role: "ruby",
+          role: "contributor",
         },
       ],
       state: {
