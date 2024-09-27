@@ -26,7 +26,7 @@ let value: AccountV1GetBadgesResponse = {
         level: 602763,
         name: "<value>",
         price: 544883,
-        publicId: "<value>",
+        publicId: "<id>",
         scarcity: 423655,
         steamId: 645894,
         xp: 437587,

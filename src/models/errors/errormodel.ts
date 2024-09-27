@@ -6,9 +6,6 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
-/**
- * Unprocessable Entity
- */
 export type ErrorModelData = {
   /**
    * A URL to the JSON Schema for this object.
@@ -40,9 +37,6 @@ export type ErrorModelData = {
   type?: string;
 };
 
-/**
- * Unprocessable Entity
- */
 export class ErrorModel extends Error {
   /**
    * A URL to the JSON Schema for this object.

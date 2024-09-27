@@ -28,12 +28,13 @@ let value: AccountV1GetInfoResponse = {
     background: "steamsets",
     badges: 123456,
     badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-    bans: 71036,
+    bans: 87129,
     city: {
       code: "DE",
       id: 1,
       name: "Germany",
     },
+    communityBan: false,
     connections: [
       {
         avatar:
@@ -54,13 +55,13 @@ let value: AccountV1GetInfoResponse = {
     createdAt: new Date("2023-01-01T00:00:00Z"),
     currentBestRanks: [
       {
-        leaderboard: "limited_apps",
+        leaderboard: "apps",
         ranks: "1,1,1,1,1",
       },
     ],
     currentRanks: [
       {
-        leaderboard: "apps",
+        leaderboard: "points_received",
         ranks: "1,1,1,1,1",
       },
     ],
@@ -70,7 +71,7 @@ let value: AccountV1GetInfoResponse = {
     friendPrivacy: "public",
     friends: 123456,
     friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-    gameBans: 832620,
+    gameBans: 778157,
     hidden: true,
     images: [
       {
@@ -80,6 +81,7 @@ let value: AccountV1GetInfoResponse = {
         imageType: "avatar",
       },
     ],
+    lastBanDate: new Date("2024-03-07 07:31:46"),
     level: 123456,
     limitedApps: 123456,
     miniBackground: "steamsets",
@@ -100,7 +102,8 @@ let value: AccountV1GetInfoResponse = {
         colorr: "#ff0000",
         icon: "tier_1.svg",
         name: "Tier 1",
-        role: "contributor",
+        rating: 870013,
+        role: "translator",
       },
     ],
     state: {
@@ -109,12 +112,12 @@ let value: AccountV1GetInfoResponse = {
       name: "Germany",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 870013,
+    steamSetsScore: 799159,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     theme: "steamsets",
     updatedAt: new Date("2023-01-01T00:00:00Z"),
-    vacBans: 978619,
+    vacBans: 461479,
     xp: 123456,
   },
 };

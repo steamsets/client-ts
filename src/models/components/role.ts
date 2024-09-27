@@ -38,6 +38,10 @@ export type Role = {
    * The Group name
    */
   name: string;
+  /**
+   * The higher the more presedence it has
+   */
+  rating: number;
   role: RoleRole;
 };
 
@@ -66,6 +70,7 @@ export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
     colorr: z.string(),
     icon: z.string(),
     name: z.string(),
+    rating: z.number().int(),
     role: RoleRole$inboundSchema,
   });
 
@@ -74,6 +79,7 @@ export type Role$Outbound = {
   colorr: string;
   icon: string;
   name: string;
+  rating: number;
   role: string;
 };
 
@@ -83,6 +89,7 @@ export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> =
     colorr: z.string(),
     icon: z.string(),
     name: z.string(),
+    rating: z.number().int(),
     role: RoleRole$outboundSchema,
   });
 
