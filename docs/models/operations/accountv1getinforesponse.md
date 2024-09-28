@@ -29,6 +29,7 @@ let value: AccountV1GetInfoResponse = {
     badges: 123456,
     badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     bans: 87129,
+    bansUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     city: {
       code: "DE",
       id: 1,

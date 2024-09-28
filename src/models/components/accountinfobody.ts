@@ -103,7 +103,7 @@ export type AccountInfoBody = {
   /**
    * The time the apps were updated
    */
-  appsUpdatedAt: Date;
+  appsUpdatedAt: Date | null;
   /**
    * The avatar hash of the account
    */
@@ -135,11 +135,15 @@ export type AccountInfoBody = {
   /**
    * The time the badges were updated
    */
-  badgesUpdatedAt: Date;
+  badgesUpdatedAt: Date | null;
   /**
    * The number of bans
    */
   bans: number;
+  /**
+   * The time the bans were updated
+   */
+  bansUpdatedAt: Date | null;
   city?: Location | null | undefined;
   /**
    * If the account is community banned or not
@@ -153,7 +157,7 @@ export type AccountInfoBody = {
   /**
    * The time the account was created
    */
-  createdAt: Date;
+  createdAt: Date | null;
   /**
    * The current best ranks
    */
@@ -185,7 +189,7 @@ export type AccountInfoBody = {
   /**
    * The time the friends were updated
    */
-  friendsUpdatedAt: Date;
+  friendsUpdatedAt: Date | null;
   /**
    * The number of game bans
    */
@@ -271,7 +275,7 @@ export type AccountInfoBody = {
   /**
    * The time the account was updated
    */
-  updatedAt: Date;
+  updatedAt: Date | null;
   /**
    * The number of vac bans
    */
@@ -353,8 +357,8 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   appCost: z.number().int(),
   appPrivacy: AppPrivacy$inboundSchema,
   apps: z.number().int(),
-  appsUpdatedAt: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
+  appsUpdatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   avatar: z.string(),
   avatarFrame: z.string(),
@@ -363,15 +367,20 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   awardsReceived: z.number().int(),
   background: z.string(),
   badges: z.number().int(),
-  badgesUpdatedAt: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
+  badgesUpdatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   bans: z.number().int(),
+  bansUpdatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   city: z.nullable(Location$inboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
   country: z.nullable(Location$inboundSchema).optional(),
-  createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  createdAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
   currentRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
   economyBan: z.string(),
@@ -379,8 +388,8 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friendPrivacy: FriendPrivacy$inboundSchema,
   friends: z.number().int(),
-  friendsUpdatedAt: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
+  friendsUpdatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   gameBans: z.number().int(),
   hidden: z.boolean(),
@@ -406,7 +415,9 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
   theme: z.string(),
-  updatedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  updatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   vacBans: z.number().int(),
   xp: z.number().int(),
 }).transform((v) => {
@@ -423,7 +434,7 @@ export type AccountInfoBody$Outbound = {
   appCost: number;
   appPrivacy: string;
   apps: number;
-  appsUpdatedAt: string;
+  appsUpdatedAt: string | null;
   avatar: string;
   avatarFrame: string;
   averagePlaytime: number;
@@ -431,13 +442,14 @@ export type AccountInfoBody$Outbound = {
   awardsReceived: number;
   background: string;
   badges: number;
-  badgesUpdatedAt: string;
+  badgesUpdatedAt: string | null;
   bans: number;
+  bansUpdatedAt: string | null;
   city?: Location$Outbound | null | undefined;
   communityBan: boolean;
   connections: Array<Connection$Outbound> | null;
   country?: Location$Outbound | null | undefined;
-  createdAt: string;
+  createdAt: string | null;
   currentBestRanks: Array<BestLeaderboardRank$Outbound> | null;
   currentRanks: Array<BestLeaderboardRank$Outbound> | null;
   economyBan: string;
@@ -445,7 +457,7 @@ export type AccountInfoBody$Outbound = {
   foilBadges: number;
   friendPrivacy: string;
   friends: number;
-  friendsUpdatedAt: string;
+  friendsUpdatedAt: string | null;
   gameBans: number;
   hidden: boolean;
   images: Array<Image$Outbound> | null;
@@ -468,7 +480,7 @@ export type AccountInfoBody$Outbound = {
   steamSetsVanity: string;
   steamVanity: string;
   theme: string;
-  updatedAt: string;
+  updatedAt: string | null;
   vacBans: number;
   xp: number;
 };
@@ -485,7 +497,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   appCost: z.number().int(),
   appPrivacy: AppPrivacy$outboundSchema,
   apps: z.number().int(),
-  appsUpdatedAt: z.date().transform(v => v.toISOString()),
+  appsUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   avatar: z.string(),
   avatarFrame: z.string(),
   averagePlaytime: z.number().int(),
@@ -493,13 +505,14 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   awardsReceived: z.number().int(),
   background: z.string(),
   badges: z.number().int(),
-  badgesUpdatedAt: z.date().transform(v => v.toISOString()),
+  badgesUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   bans: z.number().int(),
+  bansUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   city: z.nullable(Location$outboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
   country: z.nullable(Location$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()),
+  createdAt: z.nullable(z.date().transform(v => v.toISOString())),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
   currentRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
   economyBan: z.string(),
@@ -507,7 +520,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friendPrivacy: FriendPrivacy$outboundSchema,
   friends: z.number().int(),
-  friendsUpdatedAt: z.date().transform(v => v.toISOString()),
+  friendsUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   gameBans: z.number().int(),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),
@@ -530,7 +543,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
   theme: z.string(),
-  updatedAt: z.date().transform(v => v.toISOString()),
+  updatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   vacBans: z.number().int(),
   xp: z.number().int(),
 }).transform((v) => {
