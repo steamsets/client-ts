@@ -11,7 +11,6 @@ export * from "./accountsearch.js";
 export * from "./accountsearchidstruct.js";
 export * from "./accountsearchvanitystruct.js";
 export * from "./appsearch.js";
-export * from "./badgesearch.js";
 export * from "./bestleaderboardrank.js";
 export * from "./city.js";
 export * from "./colortag.js";
