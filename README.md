@@ -131,7 +131,7 @@ run();
 
 * [accountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
 * [accountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
-* [accountV1SettingsDeveloperAppGenerateKey](docs/sdks/developer/README.md#accountv1settingsdeveloperappgeneratekey) - Generate a new API key for the developer app
+* [accountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
@@ -553,7 +553,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
 - [developerAccountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
 - [developerAccountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
-- [developerAccountV1SettingsDeveloperAppGenerateKey](docs/sdks/developer/README.md#accountv1settingsdeveloperappgeneratekey)
+- [developerAccountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
 - [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)

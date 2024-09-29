@@ -9,7 +9,7 @@ Developer App related operations
 
 * [accountV1SettingsDeveloperAppCreate](#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
 * [accountV1SettingsDeveloperAppDelete](#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
-* [accountV1SettingsDeveloperAppGenerateKey](#accountv1settingsdeveloperappgeneratekey) - Generate a new API key for the developer app
+* [accountV1SettingsDeveloperAppUpdate](#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
 
 ## accountV1SettingsDeveloperAppCreate
 
@@ -175,9 +175,9 @@ run();
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
-## accountV1SettingsDeveloperAppGenerateKey
+## accountV1SettingsDeveloperAppUpdate
 
-Generate a new API key for the developer app
+Update the developer app/re-generate the api key
 
 ### Example Usage
 
@@ -189,8 +189,12 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.developer.accountV1SettingsDeveloperAppGenerateKey({
+  const result = await steamSets.developer.accountV1SettingsDeveloperAppUpdate({
+    description: "My App Description",
+    icon: "https://yoururl.com/icon.png",
+    name: "My App",
     publicId: "da_123456",
+    regenerate: true,
   });
 
   // Handle the result
@@ -206,7 +210,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { developerAccountV1SettingsDeveloperAppGenerateKey } from "@steamsets/client-ts/funcs/developerAccountV1SettingsDeveloperAppGenerateKey.js";
+import { developerAccountV1SettingsDeveloperAppUpdate } from "@steamsets/client-ts/funcs/developerAccountV1SettingsDeveloperAppUpdate.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,8 +219,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await developerAccountV1SettingsDeveloperAppGenerateKey(steamSets, {
+  const res = await developerAccountV1SettingsDeveloperAppUpdate(steamSets, {
+    description: "My App Description",
+    icon: "https://yoururl.com/icon.png",
+    name: "My App",
     publicId: "da_123456",
+    regenerate: true,
   });
 
   if (!res.ok) {
@@ -236,14 +244,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountDeveloperAppGenerateKeyRequestBody](../../models/components/v1accountdeveloperappgeneratekeyrequestbody.md)                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.V1AccountDeveloperAppUpdateRequestBody](../../models/components/v1accountdeveloperappupdaterequestbody.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.AccountV1SettingsDeveloperAppGenerateKeyResponse](../../models/operations/accountv1settingsdeveloperappgeneratekeyresponse.md)\>**
+**Promise\<[operations.AccountV1SettingsDeveloperAppUpdateResponse](../../models/operations/accountv1settingsdeveloperappupdateresponse.md)\>**
 
 ### Errors
 
