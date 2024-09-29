@@ -13,6 +13,8 @@ import { accountAccountV1GetFriends } from "../funcs/accountAccountV1GetFriends.
 import { accountAccountV1GetInfo } from "../funcs/accountAccountV1GetInfo.js";
 import { accountAccountV1GetLeaderboardHistory } from "../funcs/accountAccountV1GetLeaderboardHistory.js";
 import { accountAccountV1GetStaff } from "../funcs/accountAccountV1GetStaff.js";
+import { accountAccountV1LeaderboardPreview } from "../funcs/accountAccountV1LeaderboardPreview.js";
+import { accountAccountV1Queue } from "../funcs/accountAccountV1Queue.js";
 import { accountAccountV1SessionCreate } from "../funcs/accountAccountV1SessionCreate.js";
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
 import { accountAccountV1SessionGet } from "../funcs/accountAccountV1SessionGet.js";
@@ -186,6 +188,20 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * Preview what a given score would result in
+   */
+  async accountV1LeaderboardPreview(
+    request: components.V1AccountLeaderboardPreviewRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1LeaderboardPreviewResponse> {
+    return unwrapAsync(accountAccountV1LeaderboardPreview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Gets all session data
    */
   async accountV1SessionGet(
@@ -229,6 +245,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionLoginResponse> {
     return unwrapAsync(accountAccountV1SessionLogin(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Queue an account for processing
+   */
+  async accountV1Queue(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1QueueResponse> {
+    return unwrapAsync(accountAccountV1Queue(
       this,
       request,
       options,

@@ -26,13 +26,13 @@ import { Result } from "../types/fp.js";
 /**
  * Queue a app for processing
  */
-export async function appAccountV1Queue(
+export async function appAppV1Queue(
   client: SteamSetsCore,
   request: components.AppSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1QueueResponse,
+    operations.AppV1QueueResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -66,7 +66,7 @@ export async function appAccountV1Queue(
   const secConfig = await extractSecurity(client._options.session);
   const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
-    operationID: "account.v1.queue",
+    operationID: "app.v1.queue",
     oAuth2Scopes: [],
     securitySource: client._options.session,
   };
@@ -103,7 +103,7 @@ export async function appAccountV1Queue(
   };
 
   const [result] = await M.match<
-    operations.AccountV1QueueResponse,
+    operations.AppV1QueueResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -113,7 +113,7 @@ export async function appAccountV1Queue(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1QueueResponse$inboundSchema, { hdrs: true }),
+    M.nil(204, operations.AppV1QueueResponse$inboundSchema, { hdrs: true }),
     M.jsonErr([400, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

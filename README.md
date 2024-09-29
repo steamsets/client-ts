@@ -86,10 +86,12 @@ run();
 * [accountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
+* [accountV1LeaderboardPreview](docs/sdks/account/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 * [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
 * [accountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff) - Get Staff Members and their info
 * [accountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1Queue](docs/sdks/account/README.md#accountv1queue) - Queue an account for processing
 * [accountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
 * [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
 * [accountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
@@ -102,7 +104,7 @@ run();
 ### [app](docs/sdks/app/README.md)
 
 * [appV1Get](docs/sdks/app/README.md#appv1get) - Get details about an app
-* [accountV1Queue](docs/sdks/app/README.md#accountv1queue) - Queue a app for processing
+* [appV1Queue](docs/sdks/app/README.md#appv1queue) - Queue a app for processing
 
 ### [badge](docs/sdks/badge/README.md)
 
@@ -125,7 +127,8 @@ run();
 * [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 * [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
-* [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue a app for processing
+* [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue an account for processing
+* [appV1Queue](docs/sdks/data/README.md#appv1queue) - Queue a app for processing
 
 ### [developer](docs/sdks/developer/README.md)
 
@@ -135,6 +138,7 @@ run();
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
+* [accountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 * [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
 
 ### [liveness](docs/sdks/liveness/README.md)
@@ -153,7 +157,8 @@ run();
 * [accountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
-* [accountV1Queue](docs/sdks/public/README.md#accountv1queue) - Queue a app for processing
+* [accountV1Queue](docs/sdks/public/README.md#accountv1queue) - Queue an account for processing
+* [appV1Queue](docs/sdks/public/README.md#appv1queue) - Queue a app for processing
 
 ### [session](docs/sdks/session/README.md)
 
@@ -523,6 +528,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo)
 - [accountAccountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory)
 - [accountAccountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff)
+- [accountAccountV1LeaderboardPreview](docs/sdks/account/README.md#accountv1leaderboardpreview)
+- [accountAccountV1Queue](docs/sdks/account/README.md#accountv1queue)
 - [accountAccountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate)
 - [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
 - [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
@@ -535,8 +542,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
 - [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
 - [accountLeaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
-- [appAccountV1Queue](docs/sdks/app/README.md#accountv1queue)
 - [appAppV1Get](docs/sdks/app/README.md#appv1get)
+- [appAppV1Queue](docs/sdks/app/README.md#appv1queue)
 - [badgeBadgeV1Tag](docs/sdks/badge/README.md#badgev1tag)
 - [badgeBadgeV1Tags](docs/sdks/badge/README.md#badgev1tags)
 - [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
@@ -551,9 +558,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
 - [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
 - [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
+- [dataAppV1Queue](docs/sdks/data/README.md#appv1queue)
 - [developerAccountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
 - [developerAccountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
 - [developerAccountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
+- [leaderboardAccountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview)
 - [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)
@@ -564,6 +573,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [publicAccountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
 - [publicAccountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory)
 - [publicAccountV1Queue](docs/sdks/public/README.md#accountv1queue)
+- [publicAppV1Queue](docs/sdks/public/README.md#appv1queue)
 - [sessionAccountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
 - [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
 - [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)

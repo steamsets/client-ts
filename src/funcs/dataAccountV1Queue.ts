@@ -24,11 +24,11 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Queue a app for processing
+ * Queue an account for processing
  */
 export async function dataAccountV1Queue(
   client: SteamSetsCore,
-  request: components.AppSearch,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -47,7 +47,7 @@ export async function dataAccountV1Queue(
 
   const parsed = safeParse(
     input,
-    (value) => components.AppSearch$outboundSchema.parse(value),
+    (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -56,7 +56,7 @@ export async function dataAccountV1Queue(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/app.v1.AppService/Queue")();
+  const path = pathToFunc("/account.v1.AccountService/Queue")();
 
   const headers = new Headers({
     "Content-Type": "application/json",

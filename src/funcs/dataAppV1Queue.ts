@@ -24,15 +24,15 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Queue an account for processing
+ * Queue a app for processing
  */
-export async function publicAccountV1Queue(
+export async function dataAppV1Queue(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.AppSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1QueueResponse,
+    operations.AppV1QueueResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -47,7 +47,7 @@ export async function publicAccountV1Queue(
 
   const parsed = safeParse(
     input,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) => components.AppSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -56,7 +56,7 @@ export async function publicAccountV1Queue(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/Queue")();
+  const path = pathToFunc("/app.v1.AppService/Queue")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export async function publicAccountV1Queue(
   const secConfig = await extractSecurity(client._options.session);
   const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
-    operationID: "account.v1.queue",
+    operationID: "app.v1.queue",
     oAuth2Scopes: [],
     securitySource: client._options.session,
   };
@@ -103,7 +103,7 @@ export async function publicAccountV1Queue(
   };
 
   const [result] = await M.match<
-    operations.AccountV1QueueResponse,
+    operations.AppV1QueueResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -113,7 +113,7 @@ export async function publicAccountV1Queue(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1QueueResponse$inboundSchema, { hdrs: true }),
+    M.nil(204, operations.AppV1QueueResponse$inboundSchema, { hdrs: true }),
     M.jsonErr([400, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
