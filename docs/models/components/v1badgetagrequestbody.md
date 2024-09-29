@@ -8,7 +8,7 @@ import { V1BadgeTagRequestBody } from "@steamsets/client-ts/models/components";
 let value: V1BadgeTagRequestBody = {
   badgeId: "bdg_123",
   colors: [
-    368584,
+    822118,
   ],
   designs: [
     {

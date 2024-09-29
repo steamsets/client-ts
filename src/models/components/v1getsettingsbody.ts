@@ -48,10 +48,6 @@ export type V1GetSettingsBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * The Generated API Key for this account
-   */
-  apiKey: string;
-  /**
    * The color the account is using
    */
   color: string;
@@ -128,7 +124,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  apiKey: z.string(),
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
@@ -150,7 +145,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1GetSettingsBody$Outbound = {
   $schema?: string | undefined;
-  apiKey: string;
   color: string;
   colors: string;
   connections: Array<Connection$Outbound> | null;
@@ -172,7 +166,6 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   V1GetSettingsBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  apiKey: z.string(),
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$outboundSchema)),

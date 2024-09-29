@@ -127,6 +127,12 @@ run();
 * [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
 * [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue a app for processing
 
+### [developer](docs/sdks/developer/README.md)
+
+* [accountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
+* [accountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
+* [accountV1SettingsDeveloperAppGenerateKey](docs/sdks/developer/README.md#accountv1settingsdeveloperappgeneratekey) - Generate a new API key for the developer app
+
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
@@ -545,6 +551,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
 - [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
 - [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
+- [developerAccountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
+- [developerAccountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
+- [developerAccountV1SettingsDeveloperAppGenerateKey](docs/sdks/developer/README.md#accountv1settingsdeveloperappgeneratekey)
 - [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)

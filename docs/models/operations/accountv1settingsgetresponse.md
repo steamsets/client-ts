@@ -14,7 +14,6 @@ let value: AccountV1SettingsGetResponse = {
   },
   v1GetSettingsBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
-    apiKey: "api_key",
     color: "#7652c9",
     colors: "#7652c9",
     connections: [
