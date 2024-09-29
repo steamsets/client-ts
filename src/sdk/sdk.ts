@@ -8,6 +8,7 @@ import { App } from "./app.js";
 import { Badge } from "./badge.js";
 import { Connection } from "./connection.js";
 import { Data } from "./data.js";
+import { Developer } from "./developer.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Location } from "./location.js";
@@ -24,6 +25,11 @@ export class SteamSets extends ClientSDK {
   private _connection?: Connection;
   get connection(): Connection {
     return (this._connection ??= new Connection(this._options));
+  }
+
+  private _developer?: Developer;
+  get developer(): Developer {
+    return (this._developer ??= new Developer(this._options));
   }
 
   private _session?: Session;

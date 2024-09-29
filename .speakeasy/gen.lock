@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 3b0e6ee5d68855cd8a6e2ba909879d6d
+  docChecksum: 3cdc90d1f7cc59909fb98e608995e21b
   docVersion: 1.0.0
   speakeasyVersion: 1.404.5
   generationVersion: 2.426.2
-  releaseVersion: 0.11.2
-  configChecksum: 5baac1d22dabe1dfc11c2c4c893642dd
+  releaseVersion: 0.11.3
+  configChecksum: 75be2b245f229f350dceb9a0c7cb9708
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -75,6 +75,7 @@ generatedFiles:
   - docs/models/components/designtag.md
   - docs/models/components/emailnotification.md
   - docs/models/components/emailnotificationtype.md
+  - docs/models/components/environment.md
   - docs/models/components/errordetail.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/httpmetadata.md
@@ -101,6 +102,10 @@ generatedFiles:
   - docs/models/components/v1accountappbadge.md
   - docs/models/components/v1accountbadgecompletion.md
   - docs/models/components/v1accountdatapointsresponsebody.md
+  - docs/models/components/v1accountdeveloperappdeleterequestbody.md
+  - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
+  - docs/models/components/v1accountdeveloperappgeneratekeyrequestbody.md
+  - docs/models/components/v1accountdeveloperappgeneratekeyresponsebody.md
   - docs/models/components/v1accountfriend.md
   - docs/models/components/v1accountfriendsresponsebody.md
   - docs/models/components/v1accountleaderboardaccount.md
@@ -130,6 +135,8 @@ generatedFiles:
   - docs/models/components/v1deleteimagesresponsebody.md
   - docs/models/components/v1deletesessionrequestbody.md
   - docs/models/components/v1deletesessionresponsebody.md
+  - docs/models/components/v1developerappcreaterequestbody.md
+  - docs/models/components/v1developerappcreateresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1leaderboardlocation.md
@@ -169,6 +176,9 @@ generatedFiles:
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
   - docs/models/operations/accountv1settingsdeleteimagesresponse.md
+  - docs/models/operations/accountv1settingsdeveloperappcreateresponse.md
+  - docs/models/operations/accountv1settingsdeveloperappdeleteresponse.md
+  - docs/models/operations/accountv1settingsdeveloperappgeneratekeyresponse.md
   - docs/models/operations/accountv1settingsgetresponse.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
@@ -188,6 +198,7 @@ generatedFiles:
   - docs/sdks/badge/README.md
   - docs/sdks/connection/README.md
   - docs/sdks/data/README.md
+  - docs/sdks/developer/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/location/README.md
@@ -237,6 +248,9 @@ generatedFiles:
   - src/funcs/dataAccountV1GetLeaderboardHistory.ts
   - src/funcs/dataAccountV1GetStaff.ts
   - src/funcs/dataAccountV1Queue.ts
+  - src/funcs/developerAccountV1SettingsDeveloperAppCreate.ts
+  - src/funcs/developerAccountV1SettingsDeveloperAppDelete.ts
+  - src/funcs/developerAccountV1SettingsDeveloperAppGenerateKey.ts
   - src/funcs/leaderboardLeaderboardV1GetAccount.ts
   - src/funcs/livenessLiveness.ts
   - src/funcs/locationLocation.ts
@@ -312,6 +326,10 @@ generatedFiles:
   - src/models/components/v1accountappbadge.ts
   - src/models/components/v1accountbadgecompletion.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
+  - src/models/components/v1accountdeveloperappdeleterequestbody.ts
+  - src/models/components/v1accountdeveloperappdeleteresponsebody.ts
+  - src/models/components/v1accountdeveloperappgeneratekeyrequestbody.ts
+  - src/models/components/v1accountdeveloperappgeneratekeyresponsebody.ts
   - src/models/components/v1accountfriend.ts
   - src/models/components/v1accountfriendsresponsebody.ts
   - src/models/components/v1accountleaderboardaccount.ts
@@ -339,6 +357,8 @@ generatedFiles:
   - src/models/components/v1deleteimagesresponsebody.ts
   - src/models/components/v1deletesessionrequestbody.ts
   - src/models/components/v1deletesessionresponsebody.ts
+  - src/models/components/v1developerappcreaterequestbody.ts
+  - src/models/components/v1developerappcreateresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/v1leaderboardlocation.ts
@@ -378,6 +398,9 @@ generatedFiles:
   - src/models/operations/accountv1sessionget.ts
   - src/models/operations/accountv1sessionlogin.ts
   - src/models/operations/accountv1settingsdeleteimages.ts
+  - src/models/operations/accountv1settingsdeveloperappcreate.ts
+  - src/models/operations/accountv1settingsdeveloperappdelete.ts
+  - src/models/operations/accountv1settingsdeveloperappgeneratekey.ts
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts
@@ -396,6 +419,7 @@ generatedFiles:
   - src/sdk/badge.ts
   - src/sdk/connection.ts
   - src/sdk/data.ts
+  - src/sdk/developer.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
@@ -517,7 +541,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "apiKey": "api_key", "color": "#7652c9", "colors": "#7652c9", "connections": [], "email": "steamsets@example.com", "emailNotifications": [], "emailVerified": true, "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "email": "steamsets@example.com", "emailNotifications": [], "emailVerified": true, "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
@@ -654,4 +678,31 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json"}
         "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.developer-app-create:
+    speakeasy-default-account-v1-settings-developer-app-create:
+      requestBody:
+        application/json: {"description": "Your App Description", "environment": "production", "generateKey": true, "icon": "https://yoururl.com/icon.png", "name": "Your App"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeveloperAppCreateResponseBody.json", "apiKey": "api_123"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.developer-app-delete:
+    speakeasy-default-account-v1-settings-developer-app-delete:
+      requestBody:
+        application/json: {"publicId": "da_123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppDeleteResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.developer-app-generate-key:
+    speakeasy-default-account-v1-settings-developer-app-generate-key:
+      requestBody:
+        application/json: {"publicId": "da_123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppGenerateKeyResponseBody.json", "apiKey": "api_123"}
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

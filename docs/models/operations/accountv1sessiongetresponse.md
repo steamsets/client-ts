@@ -17,7 +17,7 @@ let value: AccountV1SessionGetResponse = {
     accountId: 123456,
     resources: [
       {
-        resource: "social_link_amount",
+        resource: "developer_apps",
         value: "1",
       },
     ],
