@@ -52,6 +52,11 @@ export class SteamSets extends ClientSDK {
     return (this._public ??= new Public(this._options));
   }
 
+  private _leaderboard?: Leaderboard;
+  get leaderboard(): Leaderboard {
+    return (this._leaderboard ??= new Leaderboard(this._options));
+  }
+
   private _app?: App;
   get app(): App {
     return (this._app ??= new App(this._options));
@@ -60,11 +65,6 @@ export class SteamSets extends ClientSDK {
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
-  }
-
-  private _leaderboard?: Leaderboard;
-  get leaderboard(): Leaderboard {
-    return (this._leaderboard ??= new Leaderboard(this._options));
   }
 
   private _liveness?: Liveness;

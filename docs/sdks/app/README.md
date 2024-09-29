@@ -8,7 +8,7 @@ App related operations
 ### Available Operations
 
 * [appV1Get](#appv1get) - Get details about an app
-* [accountV1Queue](#accountv1queue) - Queue a app for processing
+* [appV1Queue](#appv1queue) - Queue a app for processing
 
 ## appV1Get
 
@@ -88,7 +88,7 @@ run();
 | errors.SDKError          | 4xx-5xx                  | */*                      |
 
 
-## accountV1Queue
+## appV1Queue
 
 Queue a app for processing
 
@@ -102,7 +102,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.app.accountV1Queue({
+  const result = await steamSets.app.appV1Queue({
     id: 730,
   });
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { appAccountV1Queue } from "@steamsets/client-ts/funcs/appAccountV1Queue.js";
+import { appAppV1Queue } from "@steamsets/client-ts/funcs/appAppV1Queue.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -128,7 +128,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await appAccountV1Queue(steamSets, {
+  const res = await appAppV1Queue(steamSets, {
     id: 730,
   });
 
@@ -156,7 +156,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AccountV1QueueResponse](../../models/operations/accountv1queueresponse.md)\>**
+**Promise\<[operations.AppV1QueueResponse](../../models/operations/appv1queueresponse.md)\>**
 
 ### Errors
 

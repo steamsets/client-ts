@@ -26,7 +26,7 @@ import { Result } from "../types/fp.js";
 /**
  * Queue an account for processing
  */
-export async function publicAccountV1Queue(
+export async function accountAccountV1Queue(
   client: SteamSetsCore,
   request: components.AccountSearch,
   options?: RequestOptions,

@@ -24,15 +24,15 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Queue an account for processing
+ * Preview what a given score would result in
  */
-export async function publicAccountV1Queue(
+export async function accountAccountV1LeaderboardPreview(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1AccountLeaderboardPreviewRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1QueueResponse,
+    operations.AccountV1LeaderboardPreviewResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -47,7 +47,10 @@ export async function publicAccountV1Queue(
 
   const parsed = safeParse(
     input,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) =>
+      components.V1AccountLeaderboardPreviewRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -56,17 +59,17 @@ export async function publicAccountV1Queue(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/Queue")();
+  const path = pathToFunc("/account.v1.AccountService/GetLeaderboardPreview")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
-    Accept: "application/problem+json",
+    Accept: "application/json",
   });
 
   const secConfig = await extractSecurity(client._options.session);
   const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
-    operationID: "account.v1.queue",
+    operationID: "account.v1.leaderboardPreview",
     oAuth2Scopes: [],
     securitySource: client._options.session,
   };
@@ -88,7 +91,7 @@ export async function publicAccountV1Queue(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["404", "422", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -103,7 +106,7 @@ export async function publicAccountV1Queue(
   };
 
   const [result] = await M.match<
-    operations.AccountV1QueueResponse,
+    operations.AccountV1LeaderboardPreviewResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -113,8 +116,10 @@ export async function publicAccountV1Queue(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1QueueResponse$inboundSchema, { hdrs: true }),
-    M.jsonErr([400, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.json(200, operations.AccountV1LeaderboardPreviewResponse$inboundSchema, {
+      key: "V1AccountLeaderboardPreviewResponseBody",
+    }),
+    M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

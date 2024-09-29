@@ -46,6 +46,8 @@ export * from "./v1accountfriendsresponsebody.js";
 export * from "./v1accountleaderboardaccount.js";
 export * from "./v1accountleaderboardbadgeinfo.js";
 export * from "./v1accountleaderboardhistoryresponsebody.js";
+export * from "./v1accountleaderboardpreviewrequestbody.js";
+export * from "./v1accountleaderboardpreviewresponsebody.js";
 export * from "./v1accountleaderboardrequestbody.js";
 export * from "./v1accountleaderboardresponsebody.js";
 export * from "./v1accountsappsresponsebody.js";

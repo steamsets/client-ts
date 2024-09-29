@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: bc61767373a91b3d62e90f9d9780767e
+  docChecksum: 1974f0e1598d83ea591a3ec19a5317a7
   docVersion: 1.0.0
   speakeasyVersion: 1.404.5
   generationVersion: 2.426.2
-  releaseVersion: 0.11.4
-  configChecksum: c17e8ef658a992cb5afa179c8cf33e13
+  releaseVersion: 0.11.5
+  configChecksum: ca10bf05f3b8de4b4274d3d1c84ad778
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -113,6 +113,9 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardaccount.md
   - docs/models/components/v1accountleaderboardbadgeinfo.md
   - docs/models/components/v1accountleaderboardhistoryresponsebody.md
+  - docs/models/components/v1accountleaderboardpreviewrequestbody.md
+  - docs/models/components/v1accountleaderboardpreviewrequestbodyleaderboard.md
+  - docs/models/components/v1accountleaderboardpreviewresponsebody.md
   - docs/models/components/v1accountleaderboardrequestbody.md
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
@@ -170,6 +173,7 @@ generatedFiles:
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
+  - docs/models/operations/accountv1leaderboardpreviewresponse.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
@@ -190,6 +194,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/appv1getresponse.md
+  - docs/models/operations/appv1queueresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
@@ -222,6 +227,8 @@ generatedFiles:
   - src/funcs/accountAccountV1GetInfo.ts
   - src/funcs/accountAccountV1GetLeaderboardHistory.ts
   - src/funcs/accountAccountV1GetStaff.ts
+  - src/funcs/accountAccountV1LeaderboardPreview.ts
+  - src/funcs/accountAccountV1Queue.ts
   - src/funcs/accountAccountV1SessionCreate.ts
   - src/funcs/accountAccountV1SessionDelete.ts
   - src/funcs/accountAccountV1SessionGet.ts
@@ -234,8 +241,8 @@ generatedFiles:
   - src/funcs/accountAccountV1SettingsUploadImages.ts
   - src/funcs/accountAccountV1SettingsVerfyEmail.ts
   - src/funcs/accountLeaderboardV1GetAccount.ts
-  - src/funcs/appAccountV1Queue.ts
   - src/funcs/appAppV1Get.ts
+  - src/funcs/appAppV1Queue.ts
   - src/funcs/badgeBadgeV1Tag.ts
   - src/funcs/badgeBadgeV1Tags.ts
   - src/funcs/connectionAccountV1ConnectionConnect.ts
@@ -250,9 +257,11 @@ generatedFiles:
   - src/funcs/dataAccountV1GetLeaderboardHistory.ts
   - src/funcs/dataAccountV1GetStaff.ts
   - src/funcs/dataAccountV1Queue.ts
+  - src/funcs/dataAppV1Queue.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppCreate.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppDelete.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppUpdate.ts
+  - src/funcs/leaderboardAccountV1LeaderboardPreview.ts
   - src/funcs/leaderboardLeaderboardV1GetAccount.ts
   - src/funcs/livenessLiveness.ts
   - src/funcs/locationLocation.ts
@@ -263,6 +272,7 @@ generatedFiles:
   - src/funcs/publicAccountV1GetInfo.ts
   - src/funcs/publicAccountV1GetLeaderboardHistory.ts
   - src/funcs/publicAccountV1Queue.ts
+  - src/funcs/publicAppV1Queue.ts
   - src/funcs/sessionAccountV1SessionCreate.ts
   - src/funcs/sessionAccountV1SessionDelete.ts
   - src/funcs/sessionAccountV1SessionGet.ts
@@ -338,6 +348,8 @@ generatedFiles:
   - src/models/components/v1accountleaderboardaccount.ts
   - src/models/components/v1accountleaderboardbadgeinfo.ts
   - src/models/components/v1accountleaderboardhistoryresponsebody.ts
+  - src/models/components/v1accountleaderboardpreviewrequestbody.ts
+  - src/models/components/v1accountleaderboardpreviewresponsebody.ts
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
   - src/models/components/v1accountsappsresponsebody.ts
@@ -395,6 +407,7 @@ generatedFiles:
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
   - src/models/operations/accountv1getstaff.ts
+  - src/models/operations/accountv1leaderboardpreview.ts
   - src/models/operations/accountv1queue.ts
   - src/models/operations/accountv1sessioncreate.ts
   - src/models/operations/accountv1sessiondelete.ts
@@ -411,6 +424,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1settingsverfyemail.ts
   - src/models/operations/appv1get.ts
+  - src/models/operations/appv1queue.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
@@ -623,7 +637,7 @@ examples:
   account.v1.queue:
     speakeasy-default-account-v1-queue:
       requestBody:
-        application/json: {"id": 730}
+        application/json: {"id": {}}
       responses:
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -717,4 +731,20 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.leaderboardPreview:
+    speakeasy-default-account-v1-leaderboard-preview:
+      requestBody:
+        application/json: {"leaderboard": "xp", "score": 123456}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardPreviewResponseBody.json", "currentRank": 123456, "wouldBeRank": 123456}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  app.v1.queue:
+    speakeasy-default-app-v1-queue:
+      requestBody:
+        application/json: {"id": 730}
+      responses:
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
