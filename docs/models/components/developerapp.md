@@ -1,0 +1,27 @@
+# DeveloperApp
+
+## Example Usage
+
+```typescript
+import { DeveloperApp } from "@steamsets/client-ts/models/components";
+
+let value: DeveloperApp = {
+  apiKey: "api_123",
+  description: "My App Description",
+  environment: "production",
+  icon: "https://yoururl.com/icon.png",
+  id: "da_123456",
+  name: "My App",
+};
+```
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              | Example                                                                                  |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `apiKey`                                                                                 | *string*                                                                                 | :heavy_check_mark:                                                                       | The api key of the developer app                                                         | api_123                                                                                  |
+| `description`                                                                            | *string*                                                                                 | :heavy_check_mark:                                                                       | The description of the developer app                                                     | My App Description                                                                       |
+| `environment`                                                                            | [components.DeveloperAppEnvironment](../../models/components/developerappenvironment.md) | :heavy_check_mark:                                                                       | The environment of the developer app                                                     | production                                                                               |
+| `icon`                                                                                   | *string*                                                                                 | :heavy_check_mark:                                                                       | The icon of the developer app                                                            | https://yoururl.com/icon.png                                                             |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | The id of the developer app                                                              | da_123456                                                                                |
+| `name`                                                                                   | *string*                                                                                 | :heavy_check_mark:                                                                       | The name of the developer app                                                            | My App                                                                                   |

@@ -21,6 +21,16 @@ let value: V1GetSettingsBody = {
       verified: true,
     },
   ],
+  developerApps: [
+    {
+      apiKey: "api_123",
+      description: "My App Description",
+      environment: "production",
+      icon: "https://yoururl.com/icon.png",
+      id: "da_123456",
+      name: "My App",
+    },
+  ],
   email: "steamsets@example.com",
   emailNotifications: [
     {
@@ -63,6 +73,7 @@ let value: V1GetSettingsBody = {
 | `color`                                                                        | *string*                                                                       | :heavy_check_mark:                                                             | The color the account is using                                                 | #7652c9                                                                        |
 | `colors`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | The colors the account is using                                                | #7652c9                                                                        |
 | `connections`                                                                  | [components.Connection](../../models/components/connection.md)[]               | :heavy_check_mark:                                                             | The connections the account has                                                |                                                                                |
+| `developerApps`                                                                | [components.DeveloperApp](../../models/components/developerapp.md)[]           | :heavy_check_mark:                                                             | The developer apps the account has                                             |                                                                                |
 | `email`                                                                        | *string*                                                                       | :heavy_check_mark:                                                             | The email the account is using                                                 | steamsets@example.com                                                          |
 | `emailNotifications`                                                           | [components.EmailNotification](../../models/components/emailnotification.md)[] | :heavy_check_mark:                                                             | The email notifications the account has                                        |                                                                                |
 | `emailVerified`                                                                | *boolean*                                                                      | :heavy_check_mark:                                                             | Whether the account has verified their email                                   | true                                                                           |

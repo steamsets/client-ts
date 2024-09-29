@@ -24,15 +24,15 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Generate a new API key for the developer app
+ * Update the developer app/re-generate the api key
  */
-export async function developerAccountV1SettingsDeveloperAppGenerateKey(
+export async function developerAccountV1SettingsDeveloperAppUpdate(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppGenerateKeyRequestBody,
+  request: components.V1AccountDeveloperAppUpdateRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsDeveloperAppGenerateKeyResponse,
+    operations.AccountV1SettingsDeveloperAppUpdateResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -48,8 +48,9 @@ export async function developerAccountV1SettingsDeveloperAppGenerateKey(
   const parsed = safeParse(
     input,
     (value) =>
-      components.V1AccountDeveloperAppGenerateKeyRequestBody$outboundSchema
-        .parse(value),
+      components.V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -58,9 +59,7 @@ export async function developerAccountV1SettingsDeveloperAppGenerateKey(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc(
-    "/account.v1.AccountService/GenerateDeveloperAppKey",
-  )();
+  const path = pathToFunc("/account.v1.AccountService/DeveloperAppUpdate")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -70,7 +69,7 @@ export async function developerAccountV1SettingsDeveloperAppGenerateKey(
   const secConfig = await extractSecurity(client._options.session);
   const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
-    operationID: "account.v1.settings.developer-app-generate-key",
+    operationID: "account.v1.settings.developer-app-update",
     oAuth2Scopes: [],
     securitySource: client._options.session,
   };
@@ -107,7 +106,7 @@ export async function developerAccountV1SettingsDeveloperAppGenerateKey(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsDeveloperAppGenerateKeyResponse,
+    operations.AccountV1SettingsDeveloperAppUpdateResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -119,8 +118,8 @@ export async function developerAccountV1SettingsDeveloperAppGenerateKey(
   >(
     M.json(
       200,
-      operations.AccountV1SettingsDeveloperAppGenerateKeyResponse$inboundSchema,
-      { key: "V1AccountDeveloperAppGenerateKeyResponseBody" },
+      operations.AccountV1SettingsDeveloperAppUpdateResponse$inboundSchema,
+      { key: "V1AccountDeveloperAppUpdateResponseBody" },
     ),
     M.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

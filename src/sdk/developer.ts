@@ -4,7 +4,7 @@
 
 import { developerAccountV1SettingsDeveloperAppCreate } from "../funcs/developerAccountV1SettingsDeveloperAppCreate.js";
 import { developerAccountV1SettingsDeveloperAppDelete } from "../funcs/developerAccountV1SettingsDeveloperAppDelete.js";
-import { developerAccountV1SettingsDeveloperAppGenerateKey } from "../funcs/developerAccountV1SettingsDeveloperAppGenerateKey.js";
+import { developerAccountV1SettingsDeveloperAppUpdate } from "../funcs/developerAccountV1SettingsDeveloperAppUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -40,13 +40,13 @@ export class Developer extends ClientSDK {
   }
 
   /**
-   * Generate a new API key for the developer app
+   * Update the developer app/re-generate the api key
    */
-  async accountV1SettingsDeveloperAppGenerateKey(
-    request: components.V1AccountDeveloperAppGenerateKeyRequestBody,
+  async accountV1SettingsDeveloperAppUpdate(
+    request: components.V1AccountDeveloperAppUpdateRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsDeveloperAppGenerateKeyResponse> {
-    return unwrapAsync(developerAccountV1SettingsDeveloperAppGenerateKey(
+  ): Promise<operations.AccountV1SettingsDeveloperAppUpdateResponse> {
+    return unwrapAsync(developerAccountV1SettingsDeveloperAppUpdate(
       this,
       request,
       options,

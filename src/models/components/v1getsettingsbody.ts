@@ -12,6 +12,12 @@ import {
   Connection$outboundSchema,
 } from "./connection.js";
 import {
+  DeveloperApp,
+  DeveloperApp$inboundSchema,
+  DeveloperApp$Outbound,
+  DeveloperApp$outboundSchema,
+} from "./developerapp.js";
+import {
   EmailNotification,
   EmailNotification$inboundSchema,
   EmailNotification$Outbound,
@@ -59,6 +65,10 @@ export type V1GetSettingsBody = {
    * The connections the account has
    */
   connections: Array<Connection> | null;
+  /**
+   * The developer apps the account has
+   */
+  developerApps: Array<DeveloperApp> | null;
   /**
    * The email the account is using
    */
@@ -127,6 +137,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
+  developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.string(),
   emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
   emailVerified: z.boolean(),
@@ -148,6 +159,7 @@ export type V1GetSettingsBody$Outbound = {
   color: string;
   colors: string;
   connections: Array<Connection$Outbound> | null;
+  developerApps: Array<DeveloperApp$Outbound> | null;
   email: string;
   emailNotifications: Array<EmailNotification$Outbound> | null;
   emailVerified: boolean;
@@ -169,6 +181,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
+  developerApps: z.nullable(z.array(DeveloperApp$outboundSchema)),
   email: z.string(),
   emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
   emailVerified: z.boolean(),

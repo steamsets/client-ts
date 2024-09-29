@@ -21,7 +21,7 @@ export * from "./accountv1sessionlogin.js";
 export * from "./accountv1settingsdeleteimages.js";
 export * from "./accountv1settingsdeveloperappcreate.js";
 export * from "./accountv1settingsdeveloperappdelete.js";
-export * from "./accountv1settingsdeveloperappgeneratekey.js";
+export * from "./accountv1settingsdeveloperappupdate.js";
 export * from "./accountv1settingsget.js";
 export * from "./accountv1settingssendemailverification.js";
 export * from "./accountv1settingsupdate.js";

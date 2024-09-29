@@ -6,9 +6,9 @@
 import { V1AccountBadgeCompletion } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountBadgeCompletion = {
-  completedAt: new Date("2022-06-12T08:41:49.943Z"),
-  level: 981830,
-  xp: 478370,
+  completedAt: new Date("2022-01-15T12:10:56.303Z"),
+  level: 347233,
+  xp: 148141,
 };
 ```
 

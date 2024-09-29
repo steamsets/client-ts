@@ -7,7 +7,7 @@ import { V1DeveloperAppCreateRequestBody } from "@steamsets/client-ts/models/com
 
 let value: V1DeveloperAppCreateRequestBody = {
   description: "Your App Description",
-  environment: "staging",
+  environment: "production",
   generateKey: true,
   icon: "https://yoururl.com/icon.png",
   name: "Your App",
@@ -19,7 +19,7 @@ let value: V1DeveloperAppCreateRequestBody = {
 | Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `description`                                                    | *string*                                                         | :heavy_check_mark:                                               | The description of the app                                       | Your App Description                                             |
-| `environment`                                                    | [components.Environment](../../models/components/environment.md) | :heavy_check_mark:                                               | The environment to create the app for                            | prod                                                             |
+| `environment`                                                    | [components.Environment](../../models/components/environment.md) | :heavy_check_mark:                                               | The environment to create the app for                            | production                                                       |
 | `generateKey`                                                    | *boolean*                                                        | :heavy_check_mark:                                               | Whether to generate a key for the app                            | true                                                             |
 | `icon`                                                           | *string*                                                         | :heavy_check_mark:                                               | The icon of the app                                              | https://yoururl.com/icon.png                                     |
 | `name`                                                           | *string*                                                         | :heavy_check_mark:                                               | The name of the app                                              | Your App                                                         |
