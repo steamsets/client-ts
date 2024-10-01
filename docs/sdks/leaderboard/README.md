@@ -82,11 +82,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## leaderboardV1GetAccount
 
@@ -108,12 +107,14 @@ async function run() {
     badgeIsFoil: true,
     end: 10,
     leaderboard: "xp",
-    location: {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
-    },
+    location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+    ],
     start: 1,
   });
 
@@ -145,12 +146,14 @@ async function run() {
     badgeIsFoil: true,
     end: 10,
     leaderboard: "xp",
-    location: {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
-    },
+    location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+    ],
     start: 1,
   });
 
@@ -182,7 +185,7 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

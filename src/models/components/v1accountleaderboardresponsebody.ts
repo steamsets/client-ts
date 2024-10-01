@@ -5,11 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
-  LeaderboardAccount,
-  LeaderboardAccount$inboundSchema,
-  LeaderboardAccount$Outbound,
-  LeaderboardAccount$outboundSchema,
-} from "./leaderboardaccount.js";
+  LeaderboardApp,
+  LeaderboardApp$inboundSchema,
+  LeaderboardApp$Outbound,
+  LeaderboardApp$outboundSchema,
+} from "./leaderboardapp.js";
 import {
   V1AccountLeaderboardAccount,
   V1AccountLeaderboardAccount$inboundSchema,
@@ -35,9 +35,9 @@ export type V1AccountLeaderboardResponseBody = {
    */
   dollarSchema?: string | undefined;
   accounts: Array<V1AccountLeaderboardAccount> | null;
-  app?: LeaderboardAccount | undefined;
-  badgeInfo?: V1AccountLeaderboardBadgeInfo | undefined;
-  location?: V1LeaderboardLocation | undefined;
+  app?: LeaderboardApp | null | undefined;
+  badgeInfo?: V1AccountLeaderboardBadgeInfo | null | undefined;
+  location?: V1LeaderboardLocation | null | undefined;
 };
 
 /** @internal */
@@ -48,9 +48,9 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$inboundSchema)),
-  app: LeaderboardAccount$inboundSchema.optional(),
-  badgeInfo: V1AccountLeaderboardBadgeInfo$inboundSchema.optional(),
-  location: V1LeaderboardLocation$inboundSchema.optional(),
+  app: z.nullable(LeaderboardApp$inboundSchema).optional(),
+  badgeInfo: z.nullable(V1AccountLeaderboardBadgeInfo$inboundSchema).optional(),
+  location: z.nullable(V1LeaderboardLocation$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -61,9 +61,9 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
 export type V1AccountLeaderboardResponseBody$Outbound = {
   $schema?: string | undefined;
   accounts: Array<V1AccountLeaderboardAccount$Outbound> | null;
-  app?: LeaderboardAccount$Outbound | undefined;
-  badgeInfo?: V1AccountLeaderboardBadgeInfo$Outbound | undefined;
-  location?: V1LeaderboardLocation$Outbound | undefined;
+  app?: LeaderboardApp$Outbound | null | undefined;
+  badgeInfo?: V1AccountLeaderboardBadgeInfo$Outbound | null | undefined;
+  location?: V1LeaderboardLocation$Outbound | null | undefined;
 };
 
 /** @internal */
@@ -74,9 +74,10 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$outboundSchema)),
-  app: LeaderboardAccount$outboundSchema.optional(),
-  badgeInfo: V1AccountLeaderboardBadgeInfo$outboundSchema.optional(),
-  location: V1LeaderboardLocation$outboundSchema.optional(),
+  app: z.nullable(LeaderboardApp$outboundSchema).optional(),
+  badgeInfo: z.nullable(V1AccountLeaderboardBadgeInfo$outboundSchema)
+    .optional(),
+  location: z.nullable(V1LeaderboardLocation$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

@@ -23,6 +23,7 @@ export * from "./errordetail.js";
 export * from "./httpmetadata.js";
 export * from "./image.js";
 export * from "./leaderboardaccount.js";
+export * from "./leaderboardapp.js";
 export * from "./leaderboardbadgeinfo.js";
 export * from "./location.js";
 export * from "./loginrequestbody.js";

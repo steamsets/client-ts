@@ -107,11 +107,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionCreate
 
@@ -181,11 +180,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,500                  | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 422, 500                 | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionDeleteConnection
 
@@ -259,11 +257,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsDeleteImages
 
@@ -341,11 +338,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionDelete
 
@@ -419,11 +415,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetApps
 
@@ -493,11 +488,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetBadges
 
@@ -567,11 +561,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetDataPoints
 
@@ -641,11 +634,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetFriends
 
@@ -715,11 +707,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetInfo
 
@@ -789,11 +780,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetLeaderboardHistory
 
@@ -863,11 +853,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1LeaderboardPreview
 
@@ -943,11 +932,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionGet
 
@@ -1016,11 +1004,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsGet
 
@@ -1089,11 +1076,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetStaff
 
@@ -1162,11 +1148,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,429,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 429, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionLogin
 
@@ -1262,11 +1247,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1Queue
 
@@ -1340,11 +1324,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsSendEmailVerification
 
@@ -1414,11 +1397,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionUpdateConnection
 
@@ -1494,11 +1476,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdateImage
 
@@ -1574,11 +1555,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdate
 
@@ -1680,11 +1660,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,429,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 422, 429, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUploadImages
 
@@ -1768,11 +1747,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,500                  | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 422, 500                 | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionVerifyConnection
 
@@ -1846,11 +1824,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsVerfyEmail
 
@@ -1924,11 +1901,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## leaderboardV1GetAccount
 
@@ -1950,12 +1926,14 @@ async function run() {
     badgeIsFoil: true,
     end: 10,
     leaderboard: "xp",
-    location: {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
-    },
+    location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+    ],
     start: 1,
   });
 
@@ -1987,12 +1965,14 @@ async function run() {
     badgeIsFoil: true,
     end: 10,
     leaderboard: "xp",
-    location: {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
-    },
+    location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+    ],
     start: 1,
   });
 
@@ -2024,7 +2004,7 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

@@ -89,11 +89,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsGet
 
@@ -162,11 +161,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsSendEmailVerification
 
@@ -236,11 +234,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdateImage
 
@@ -316,11 +313,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdate
 
@@ -422,11 +418,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,429,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 422, 429, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUploadImages
 
@@ -510,11 +505,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422,500                  | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 422, 500                 | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsVerfyEmail
 
@@ -588,7 +582,7 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404,422,429,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
+| errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

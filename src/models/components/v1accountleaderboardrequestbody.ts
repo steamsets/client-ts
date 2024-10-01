@@ -63,7 +63,10 @@ export type V1AccountLeaderboardRequestBody = {
    * The leaderboard to get
    */
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard;
-  location?: V1LeaderboardLocation | undefined;
+  /**
+   * The location(s)to get the leaderboard for, otherwise global
+   */
+  location?: Array<V1LeaderboardLocation> | null | undefined;
   /**
    * The start index
    */
@@ -104,7 +107,7 @@ export const V1AccountLeaderboardRequestBody$inboundSchema: z.ZodType<
   badgeIsFoil: z.nullable(z.boolean()).optional(),
   end: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$inboundSchema,
-  location: V1LeaderboardLocation$inboundSchema.optional(),
+  location: z.nullable(z.array(V1LeaderboardLocation$inboundSchema)).optional(),
   start: z.nullable(z.number().int()).optional(),
 });
 
@@ -115,7 +118,7 @@ export type V1AccountLeaderboardRequestBody$Outbound = {
   badgeIsFoil?: boolean | null | undefined;
   end?: number | null | undefined;
   leaderboard: string;
-  location?: V1LeaderboardLocation$Outbound | undefined;
+  location?: Array<V1LeaderboardLocation$Outbound> | null | undefined;
   start?: number | null | undefined;
 };
 
@@ -130,7 +133,8 @@ export const V1AccountLeaderboardRequestBody$outboundSchema: z.ZodType<
   badgeIsFoil: z.nullable(z.boolean()).optional(),
   end: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$outboundSchema,
-  location: V1LeaderboardLocation$outboundSchema.optional(),
+  location: z.nullable(z.array(V1LeaderboardLocation$outboundSchema))
+    .optional(),
   start: z.nullable(z.number().int()).optional(),
 });
 
