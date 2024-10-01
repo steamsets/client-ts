@@ -11,12 +11,14 @@ let value: V1AccountLeaderboardRequestBody = {
   badgeIsFoil: true,
   end: 10,
   leaderboard: "xp",
-  location: {
-    city: "Bad Krozingen",
-    country: "Germany",
-    region: "Europe",
-    state: "Baden-Wurttemberg",
-  },
+  location: [
+    {
+      city: "Bad Krozingen",
+      country: "Germany",
+      region: "Europe",
+      state: "Baden-Wurttemberg",
+    },
+  ],
   start: 1,
 };
 ```
@@ -30,5 +32,5 @@ let value: V1AccountLeaderboardRequestBody = {
 | `badgeIsFoil`                                                                                                                  | *boolean*                                                                                                                      | :heavy_minus_sign:                                                                                                             | For a given badge leaderboard, whether the badge is foil or not                                                                | true                                                                                                                           |
 | `end`                                                                                                                          | *number*                                                                                                                       | :heavy_minus_sign:                                                                                                             | The end index                                                                                                                  | 10                                                                                                                             |
 | `leaderboard`                                                                                                                  | [components.V1AccountLeaderboardRequestBodyLeaderboard](../../models/components/v1accountleaderboardrequestbodyleaderboard.md) | :heavy_check_mark:                                                                                                             | The leaderboard to get                                                                                                         | xp                                                                                                                             |
-| `location`                                                                                                                     | [components.V1LeaderboardLocation](../../models/components/v1leaderboardlocation.md)                                           | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |                                                                                                                                |
+| `location`                                                                                                                     | [components.V1LeaderboardLocation](../../models/components/v1leaderboardlocation.md)[]                                         | :heavy_minus_sign:                                                                                                             | The location(s)to get the leaderboard for, otherwise global                                                                    |                                                                                                                                |
 | `start`                                                                                                                        | *number*                                                                                                                       | :heavy_minus_sign:                                                                                                             | The start index                                                                                                                | 1                                                                                                                              |

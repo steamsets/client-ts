@@ -86,11 +86,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionDeleteConnection
 
@@ -164,11 +163,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionUpdateConnection
 
@@ -244,11 +242,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionVerifyConnection
 
@@ -322,7 +319,7 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400,422,500              | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
+| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

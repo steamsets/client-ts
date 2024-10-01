@@ -76,11 +76,10 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
-
+| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## badgeV1Tag
 
@@ -190,7 +189,7 @@ run();
 
 ### Errors
 
-| Error Object             | Status Code              | Content Type             |
+| Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403,404,422,500          | application/problem+json |
-| errors.SDKError          | 4xx-5xx                  | */*                      |
+| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
