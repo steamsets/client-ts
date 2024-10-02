@@ -43,10 +43,8 @@ export async function badgeBadgeV1Tag(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.V1BadgeTagRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );

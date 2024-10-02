@@ -43,10 +43,8 @@ export async function developerAccountV1SettingsDeveloperAppCreate(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1DeveloperAppCreateRequestBody$outboundSchema.parse(value),
     "Input validation failed",

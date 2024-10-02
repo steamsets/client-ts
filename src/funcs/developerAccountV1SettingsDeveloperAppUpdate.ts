@@ -43,10 +43,8 @@ export async function developerAccountV1SettingsDeveloperAppUpdate(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
         value,

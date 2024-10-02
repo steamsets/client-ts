@@ -4,6 +4,7 @@
 
 import { leaderboardAccountV1LeaderboardPreview } from "../funcs/leaderboardAccountV1LeaderboardPreview.js";
 import { leaderboardLeaderboardV1GetAccount } from "../funcs/leaderboardLeaderboardV1GetAccount.js";
+import { leaderboardLeaderboardV1GetBadges } from "../funcs/leaderboardLeaderboardV1GetBadges.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -34,6 +35,18 @@ export class Leaderboard extends ClientSDK {
     return unwrapAsync(leaderboardLeaderboardV1GetAccount(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * Get all available badges for leaderboards
+   */
+  async leaderboardV1GetBadges(
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetBadgesResponse> {
+    return unwrapAsync(leaderboardLeaderboardV1GetBadges(
+      this,
       options,
     ));
   }

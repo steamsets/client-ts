@@ -42,10 +42,8 @@ export async function settingsAccountV1SettingsSendEmailVerification(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.AccountV1SettingsSendEmailVerificationRequest$outboundSchema
         .parse(value),

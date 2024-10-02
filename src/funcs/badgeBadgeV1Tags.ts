@@ -26,7 +26,7 @@ import { Result } from "../types/fp.js";
  */
 export async function badgeBadgeV1Tags(
   client: SteamSetsCore,
-  request: components.V1BadgeTagsRequestBody,
+  _request: components.V1BadgeTagsRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -41,9 +41,6 @@ export async function badgeBadgeV1Tags(
     | ConnectionError
   >
 > {
-  const input = request;
-  void input; // request input is unused
-
   const path = pathToFunc("/badge.v1.BadgeService/GetTags")();
 
   const headers = new Headers({

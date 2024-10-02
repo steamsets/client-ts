@@ -43,10 +43,8 @@ export async function publicAccountV1GetApps(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );

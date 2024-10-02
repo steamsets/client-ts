@@ -27,6 +27,7 @@ import { accountAccountV1SettingsUpdateImage } from "../funcs/accountAccountV1Se
 import { accountAccountV1SettingsUploadImages } from "../funcs/accountAccountV1SettingsUploadImages.js";
 import { accountAccountV1SettingsVerfyEmail } from "../funcs/accountAccountV1SettingsVerfyEmail.js";
 import { accountLeaderboardV1GetAccount } from "../funcs/accountLeaderboardV1GetAccount.js";
+import { accountLeaderboardV1GetBadges } from "../funcs/accountLeaderboardV1GetBadges.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -373,6 +374,18 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountLeaderboardV1GetAccount(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * Get all available badges for leaderboards
+   */
+  async leaderboardV1GetBadges(
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetBadgesResponse> {
+    return unwrapAsync(accountLeaderboardV1GetBadges(
+      this,
       options,
     ));
   }

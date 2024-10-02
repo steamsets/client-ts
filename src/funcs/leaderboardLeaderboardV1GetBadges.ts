@@ -3,13 +3,10 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -24,15 +21,14 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Deletes a session, can also be used to logout
+ * Get all available badges for leaderboards
  */
-export async function sessionAccountV1SessionDelete(
+export async function leaderboardLeaderboardV1GetBadges(
   client: SteamSetsCore,
-  request: components.V1DeleteSessionRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SessionDeleteResponse,
+    operations.LeaderboardV1GetBadgesResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -43,29 +39,16 @@ export async function sessionAccountV1SessionDelete(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) =>
-      components.V1DeleteSessionRequestBody$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/account.v1.AccountService/DeleteSession")();
+  const path = pathToFunc("/leaderboard.v1.LeaderboardService/GetBadges")();
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
   const secConfig = await extractSecurity(client._options.session);
   const securityInput = secConfig == null ? {} : { session: secConfig };
   const context = {
-    operationID: "account.v1.session.delete",
+    operationID: "leaderboard.v1.getBadges",
     oAuth2Scopes: [],
     securitySource: client._options.session,
   };
@@ -76,7 +59,6 @@ export async function sessionAccountV1SessionDelete(
     method: "POST",
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -87,7 +69,7 @@ export async function sessionAccountV1SessionDelete(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["404", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -102,7 +84,7 @@ export async function sessionAccountV1SessionDelete(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SessionDeleteResponse,
+    operations.LeaderboardV1GetBadgesResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -112,10 +94,10 @@ export async function sessionAccountV1SessionDelete(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SessionDeleteResponse$inboundSchema, {
-      key: "V1DeleteSessionResponseBody",
+    M.json(200, operations.LeaderboardV1GetBadgesResponse$inboundSchema, {
+      key: "V1LeaderboardBadgeResponseBody",
     }),
-    M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

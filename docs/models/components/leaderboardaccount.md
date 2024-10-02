@@ -51,7 +51,7 @@ let value: LeaderboardAccount = {
   },
   roles: [
     {
-      colorr: "#ff0000",
+      color: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
       rating: 703889,

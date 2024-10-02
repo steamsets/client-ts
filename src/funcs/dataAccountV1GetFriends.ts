@@ -43,10 +43,8 @@ export async function dataAccountV1GetFriends(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );

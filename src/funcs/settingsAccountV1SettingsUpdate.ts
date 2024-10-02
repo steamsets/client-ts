@@ -42,10 +42,8 @@ export async function settingsAccountV1SettingsUpdate(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.AccountV1SettingsUpdateRequest$outboundSchema.parse(value),
     "Input validation failed",

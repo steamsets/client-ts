@@ -43,10 +43,8 @@ export async function leaderboardAccountV1LeaderboardPreview(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1AccountLeaderboardPreviewRequestBody$outboundSchema.parse(
         value,
