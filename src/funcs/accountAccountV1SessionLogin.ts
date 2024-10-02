@@ -42,10 +42,8 @@ export async function accountAccountV1SessionLogin(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.AccountV1SessionLoginRequest$outboundSchema.parse(value),
     "Input validation failed",

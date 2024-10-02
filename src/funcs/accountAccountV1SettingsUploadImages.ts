@@ -43,10 +43,8 @@ export async function accountAccountV1SettingsUploadImages(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.V1UploadImagesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );

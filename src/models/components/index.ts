@@ -75,6 +75,8 @@ export * from "./v1developerappcreaterequestbody.js";
 export * from "./v1developerappcreateresponsebody.js";
 export * from "./v1getsessionbody.js";
 export * from "./v1getsettingsbody.js";
+export * from "./v1leaderboardbadge.js";
+export * from "./v1leaderboardbadgeresponsebody.js";
 export * from "./v1leaderboardlocation.js";
 export * from "./v1livenessresponsebody.js";
 export * from "./v1loginresponsebody.js";

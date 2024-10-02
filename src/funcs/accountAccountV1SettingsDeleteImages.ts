@@ -43,10 +43,8 @@ export async function accountAccountV1SettingsDeleteImages(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.V1DeleteImagesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );

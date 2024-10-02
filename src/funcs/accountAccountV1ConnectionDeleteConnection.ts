@@ -43,10 +43,8 @@ export async function accountAccountV1ConnectionDeleteConnection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1DeleteConnectionRequestBody$outboundSchema.parse(value),
     "Input validation failed",

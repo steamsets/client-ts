@@ -6,7 +6,7 @@
 import { Role } from "@steamsets/client-ts/models/components";
 
 let value: Role = {
-  colorr: "#ff0000",
+  color: "#ff0000",
   icon: "tier_1.svg",
   name: "Tier 1",
   rating: 581273,
@@ -18,7 +18,7 @@ let value: Role = {
 
 | Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `colorr`                                                   | *string*                                                   | :heavy_check_mark:                                         | The role color                                             | #ff0000                                                    |
+| `color`                                                    | *string*                                                   | :heavy_check_mark:                                         | The role color                                             | #ff0000                                                    |
 | `icon`                                                     | *string*                                                   | :heavy_check_mark:                                         | The role icon                                              | tier_1.svg                                                 |
 | `name`                                                     | *string*                                                   | :heavy_check_mark:                                         | The Group name                                             | Tier 1                                                     |
 | `rating`                                                   | *number*                                                   | :heavy_check_mark:                                         | The higher the more presedence it has                      |                                                            |

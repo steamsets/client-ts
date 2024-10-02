@@ -43,10 +43,8 @@ export async function dataAppV1Queue(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.AppSearch$outboundSchema.parse(value),
     "Input validation failed",
   );

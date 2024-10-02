@@ -43,10 +43,8 @@ export async function leaderboardLeaderboardV1GetAccount(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1AccountLeaderboardRequestBody$outboundSchema.parse(value),
     "Input validation failed",

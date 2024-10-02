@@ -100,6 +100,7 @@ run();
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 * [leaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ### [app](docs/sdks/app/README.md)
 
@@ -140,6 +141,7 @@ run();
 
 * [accountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 * [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -553,6 +555,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
 - [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
 - [accountLeaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
+- [accountLeaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges)
 - [appAppV1Get](docs/sdks/app/README.md#appv1get)
 - [appAppV1Queue](docs/sdks/app/README.md#appv1queue)
 - [badgeBadgeV1Tag](docs/sdks/badge/README.md#badgev1tag)
@@ -575,6 +578,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [developerAccountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
 - [leaderboardAccountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview)
 - [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
+- [leaderboardLeaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges)
 - [livenessLiveness](docs/sdks/liveness/README.md#liveness)
 - [locationLocation](docs/sdks/location/README.md#location)
 - [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)

@@ -43,10 +43,8 @@ export async function connectionAccountV1ConnectionVerifyConnection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1VerifyConnectionRequestBody$outboundSchema.parse(value),
     "Input validation failed",

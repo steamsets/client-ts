@@ -43,10 +43,8 @@ export async function developerAccountV1SettingsDeveloperAppDelete(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       components.V1AccountDeveloperAppDeleteRequestBody$outboundSchema.parse(
         value,

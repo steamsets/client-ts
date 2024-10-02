@@ -43,10 +43,8 @@ export async function appAppV1Get(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.V1AppRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );

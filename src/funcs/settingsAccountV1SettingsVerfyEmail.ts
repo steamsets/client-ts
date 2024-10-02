@@ -43,10 +43,8 @@ export async function settingsAccountV1SettingsVerfyEmail(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => components.V1VerifyEmailRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );

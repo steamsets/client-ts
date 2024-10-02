@@ -31,7 +31,7 @@ export type Role = {
   /**
    * The role color
    */
-  colorr: string;
+  color: string;
   /**
    * The role icon
    */
@@ -69,7 +69,7 @@ export namespace RoleRole$ {
 /** @internal */
 export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
   .object({
-    colorr: z.string(),
+    color: z.string(),
     icon: z.string(),
     name: z.string(),
     rating: z.number().int(),
@@ -78,7 +78,7 @@ export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
 
 /** @internal */
 export type Role$Outbound = {
-  colorr: string;
+  color: string;
   icon: string;
   name: string;
   rating: number;
@@ -88,7 +88,7 @@ export type Role$Outbound = {
 /** @internal */
 export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> =
   z.object({
-    colorr: z.string(),
+    color: z.string(),
     icon: z.string(),
     name: z.string(),
     rating: z.number().int(),

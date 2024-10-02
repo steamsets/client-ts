@@ -34,5 +34,6 @@ export * from "./appv1queue.js";
 export * from "./badgev1tag.js";
 export * from "./badgev1tags.js";
 export * from "./leaderboardv1getaccount.js";
+export * from "./leaderboardv1getbadges.js";
 export * from "./liveness.js";
 export * from "./location.js";
