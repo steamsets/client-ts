@@ -23,11 +23,11 @@ export type V1BadgeTagsResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * The availiable color tags
+   * The available color tags
    */
   colorTags: Array<ColorTag> | null;
   /**
-   * The availiable design tags
+   * The available design tags
    */
   designTags: Array<DesignTag> | null;
 };

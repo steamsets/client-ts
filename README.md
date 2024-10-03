@@ -109,7 +109,7 @@ run();
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeV1Tags](docs/sdks/badge/README.md#badgev1tags) - Get all availiable badge tags
+* [badgeV1Tags](docs/sdks/badge/README.md#badgev1tags) - Get all available badge tags
 * [badgeV1Tag](docs/sdks/badge/README.md#badgev1tag) - Tag a badge
 
 ### [connection](docs/sdks/connection/README.md)

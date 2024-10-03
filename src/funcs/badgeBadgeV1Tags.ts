@@ -22,7 +22,7 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get all availiable badge tags
+ * Get all available badge tags
  */
 export async function badgeBadgeV1Tags(
   client: SteamSetsCore,
