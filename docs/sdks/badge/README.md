@@ -5,12 +5,12 @@
 
 ### Available Operations
 
-* [badgeV1Tags](#badgev1tags) - Get all availiable badge tags
+* [badgeV1Tags](#badgev1tags) - Get all available badge tags
 * [badgeV1Tag](#badgev1tag) - Tag a badge
 
 ## badgeV1Tags
 
-Get all availiable badge tags
+Get all available badge tags
 
 ### Example Usage
 

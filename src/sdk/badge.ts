@@ -11,7 +11,7 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Badge extends ClientSDK {
   /**
-   * Get all availiable badge tags
+   * Get all available badge tags
    */
   async badgeV1Tags(
     request: components.V1BadgeTagsRequestBody,
