@@ -104,7 +104,7 @@ export class Public extends ClientSDK {
    * Queue an account for processing
    */
   async accountV1Queue(
-    request: components.AccountSearch,
+    request: components.V1AccountQueueRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(publicAccountV1Queue(

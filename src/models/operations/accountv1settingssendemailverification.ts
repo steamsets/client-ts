@@ -12,6 +12,7 @@ export type AccountV1SettingsSendEmailVerificationRequest = {
 
 export type AccountV1SettingsSendEmailVerificationResponse = {
   httpMeta: components.HTTPMetadata;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -70,15 +71,18 @@ export const AccountV1SettingsSendEmailVerificationResponse$inboundSchema:
     unknown
   > = z.object({
     HttpMeta: components.HTTPMetadata$inboundSchema,
+    Headers: z.record(z.array(z.string())),
   }).transform((v) => {
     return remap$(v, {
       "HttpMeta": "httpMeta",
+      "Headers": "headers",
     });
   });
 
 /** @internal */
 export type AccountV1SettingsSendEmailVerificationResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -89,9 +93,11 @@ export const AccountV1SettingsSendEmailVerificationResponse$outboundSchema:
     AccountV1SettingsSendEmailVerificationResponse
   > = z.object({
     httpMeta: components.HTTPMetadata$outboundSchema,
+    headers: z.record(z.array(z.string())),
   }).transform((v) => {
     return remap$(v, {
       httpMeta: "HttpMeta",
+      headers: "Headers",
     });
   });
 

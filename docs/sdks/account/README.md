@@ -31,7 +31,7 @@ Account related operations
 * [accountV1SettingsUploadImages](#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
-* [leaderboardV1GetAccount](#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetAccount](#leaderboardv1getaccount) - Get a leaderboard for accounts
 * [leaderboardV1GetBadges](#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ## accountV1ConnectionConnect
@@ -1268,6 +1268,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.accountV1Queue({
+    force: true,
     id: {},
   });
 
@@ -1294,6 +1295,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountAccountV1Queue(steamSets, {
+    force: true,
     id: {},
   });
 
@@ -1314,7 +1316,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.V1AccountQueueRequestBody](../../models/components/v1accountqueuerequestbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1909,7 +1911,7 @@ run();
 
 ## leaderboardV1GetAccount
 
-Get an leaderboard for accounts
+Get a leaderboard for accounts
 
 ### Example Usage
 
@@ -1922,9 +1924,13 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.leaderboardV1GetAccount({
-    appId: 730,
-    badgeId: "4",
-    badgeIsFoil: true,
+    app: {
+      appId: 730,
+    },
+    badge: {
+      id: 4,
+      isFoil: true,
+    },
     end: 10,
     leaderboard: "xp",
     location: [
@@ -1961,9 +1967,13 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountLeaderboardV1GetAccount(steamSets, {
-    appId: 730,
-    badgeId: "4",
-    badgeIsFoil: true,
+    app: {
+      appId: 730,
+    },
+    badge: {
+      id: 4,
+      isFoil: true,
+    },
     end: 10,
     leaderboard: "xp",
     location: [

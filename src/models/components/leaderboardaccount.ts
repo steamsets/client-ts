@@ -4,12 +4,6 @@
 
 import * as z from "zod";
 import {
-  LeaderboardBadgeInfo,
-  LeaderboardBadgeInfo$inboundSchema,
-  LeaderboardBadgeInfo$Outbound,
-  LeaderboardBadgeInfo$outboundSchema,
-} from "./leaderboardbadgeinfo.js";
-import {
   Location,
   Location$inboundSchema,
   Location$Outbound,
@@ -27,10 +21,6 @@ export type LeaderboardAccount = {
    * The cost of an app
    */
   appCost: number;
-  /**
-   * The playtime of the account, incase of an app leaderboard
-   */
-  appPlaytime?: number | null | undefined;
   /**
    * The number of apps the account has
    */
@@ -51,7 +41,6 @@ export type LeaderboardAccount = {
    * The number of awards the account has
    */
   awardsReceived: number;
-  badgeInfo?: LeaderboardBadgeInfo | null | undefined;
   /**
    * The number of badges the account has
    */
@@ -165,13 +154,11 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   appCost: z.number().int(),
-  appPlaytime: z.nullable(z.number().int()).optional(),
   apps: z.number().int(),
   avatar: z.string(),
   averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
-  badgeInfo: z.nullable(LeaderboardBadgeInfo$inboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
   city: z.nullable(Location$inboundSchema).optional(),
@@ -206,13 +193,11 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
 /** @internal */
 export type LeaderboardAccount$Outbound = {
   appCost: number;
-  appPlaytime?: number | null | undefined;
   apps: number;
   avatar: string;
   averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
-  badgeInfo?: LeaderboardBadgeInfo$Outbound | null | undefined;
   badges: number;
   bans: number;
   city?: Location$Outbound | null | undefined;
@@ -251,13 +236,11 @@ export const LeaderboardAccount$outboundSchema: z.ZodType<
   LeaderboardAccount
 > = z.object({
   appCost: z.number().int(),
-  appPlaytime: z.nullable(z.number().int()).optional(),
   apps: z.number().int(),
   avatar: z.string(),
   averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
-  badgeInfo: z.nullable(LeaderboardBadgeInfo$outboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
   city: z.nullable(Location$outboundSchema).optional(),

@@ -45,7 +45,7 @@ let value: AccountV1SettingsGetResponse = {
         type: "login",
       },
     ],
-    emailVerified: true,
+    emailVerifiedAt: new Date("2023-01-01T00:00:00Z"),
     hidden: true,
     images: [
       {

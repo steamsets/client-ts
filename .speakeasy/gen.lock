@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 865c7a318dc3d18ab8ac4b56b158e170
+  docChecksum: d47ef6f4cfb24d19e0e821eb4f7692b9
   docVersion: 1.0.0
-  speakeasyVersion: 1.406.0
+  speakeasyVersion: 1.409.0
   generationVersion: 2.429.0
-  releaseVersion: 0.11.8
-  configChecksum: 923b5419b36489464df7f90c12950bff
+  releaseVersion: 0.11.9
+  configChecksum: d4b914981f267fd2864dc735f0178441
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -81,11 +81,11 @@ generatedFiles:
   - docs/models/components/errordetail.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/httpmetadata.md
+  - docs/models/components/idstruct.md
   - docs/models/components/image.md
   - docs/models/components/leaderboard.md
   - docs/models/components/leaderboardaccount.md
-  - docs/models/components/leaderboardapp.md
-  - docs/models/components/leaderboardbadgeinfo.md
+  - docs/models/components/leaderboardaccountbadgeinfo.md
   - docs/models/components/location.md
   - docs/models/components/loginrequestbody.md
   - docs/models/components/privacy.md
@@ -112,7 +112,8 @@ generatedFiles:
   - docs/models/components/v1accountfriend.md
   - docs/models/components/v1accountfriendsresponsebody.md
   - docs/models/components/v1accountleaderboardaccount.md
-  - docs/models/components/v1accountleaderboardbadgeinfo.md
+  - docs/models/components/v1accountleaderboardappsearch.md
+  - docs/models/components/v1accountleaderboardbadgesearch.md
   - docs/models/components/v1accountleaderboardhistoryresponsebody.md
   - docs/models/components/v1accountleaderboardpreviewrequestbody.md
   - docs/models/components/v1accountleaderboardpreviewrequestbodyleaderboard.md
@@ -120,6 +121,7 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbody.md
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
+  - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appdetail.md
@@ -145,9 +147,12 @@ generatedFiles:
   - docs/models/components/v1developerappcreateresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
+  - docs/models/components/v1leaderboardappinfo.md
   - docs/models/components/v1leaderboardbadge.md
+  - docs/models/components/v1leaderboardbadgeinfo.md
   - docs/models/components/v1leaderboardbadgeresponsebody.md
   - docs/models/components/v1leaderboardlocation.md
+  - docs/models/components/v1leaderboardlocationinfo.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1loginresponsebody.md
   - docs/models/components/v1updateconnectionrequestbody.md
@@ -164,6 +169,8 @@ generatedFiles:
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/v1verifyemailresponsebody.md
+  - docs/models/components/vanitystruct.md
+  - docs/models/components/vanitystructtype.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1connectionconnectresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
@@ -328,11 +335,11 @@ generatedFiles:
   - src/models/components/emailnotification.ts
   - src/models/components/errordetail.ts
   - src/models/components/httpmetadata.ts
+  - src/models/components/idstruct.ts
   - src/models/components/image.ts
   - src/models/components/index.ts
   - src/models/components/leaderboardaccount.ts
-  - src/models/components/leaderboardapp.ts
-  - src/models/components/leaderboardbadgeinfo.ts
+  - src/models/components/leaderboardaccountbadgeinfo.ts
   - src/models/components/location.ts
   - src/models/components/loginrequestbody.ts
   - src/models/components/region.ts
@@ -353,12 +360,14 @@ generatedFiles:
   - src/models/components/v1accountfriend.ts
   - src/models/components/v1accountfriendsresponsebody.ts
   - src/models/components/v1accountleaderboardaccount.ts
-  - src/models/components/v1accountleaderboardbadgeinfo.ts
+  - src/models/components/v1accountleaderboardappsearch.ts
+  - src/models/components/v1accountleaderboardbadgesearch.ts
   - src/models/components/v1accountleaderboardhistoryresponsebody.ts
   - src/models/components/v1accountleaderboardpreviewrequestbody.ts
   - src/models/components/v1accountleaderboardpreviewresponsebody.ts
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
+  - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appdetail.ts
@@ -383,9 +392,12 @@ generatedFiles:
   - src/models/components/v1developerappcreateresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
+  - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
+  - src/models/components/v1leaderboardbadgeinfo.ts
   - src/models/components/v1leaderboardbadgeresponsebody.ts
   - src/models/components/v1leaderboardlocation.ts
+  - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1loginresponsebody.ts
   - src/models/components/v1updateconnectionrequestbody.ts
@@ -400,6 +412,7 @@ generatedFiles:
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyemailrequestbody.ts
   - src/models/components/v1verifyemailresponsebody.ts
+  - src/models/components/vanitystruct.ts
   - src/models/errors/errormodel.ts
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
@@ -568,7 +581,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerified": true, "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
@@ -647,7 +660,7 @@ examples:
   account.v1.queue:
     speakeasy-default-account-v1-queue:
       requestBody:
-        application/json: {"id": {}}
+        application/json: {"force": true, "id": {}}
       responses:
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -677,10 +690,10 @@ examples:
   leaderboard.v1.getAccount:
     speakeasy-default-leaderboard-v1-get-account:
       requestBody:
-        application/json: {"appId": 730, "badgeId": "4", "badgeIsFoil": true, "end": 10, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
+        application/json: {"app": {"appId": 730}, "badge": {"id": 4, "isFoil": true}, "end": 10, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json", "accounts": [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456}, "badges": 123456, "bans": 492749, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 453372, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 927516, "role": "sapphire"}, {"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 492749, "role": "partner"}, {"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 453372, "role": "translator"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 631565, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 966064, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456}, "badges": 123456, "bans": 21866, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 911614, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 792009, "role": "contributor"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 452696, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 410127, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456}, "badges": 123456, "bans": 938673, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 64484, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 595186, "role": "translator"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 360198, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 592044, "xp": 123456}], "location": {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json", "accounts": [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 492749, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 453372, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 927516, "role": "sapphire"}, {"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 492749, "role": "partner"}, {"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 453372, "role": "translator"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 631565, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 966064, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 21866, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 911614, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 792009, "role": "contributor"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 452696, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 410127, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 938673, "city": {"code": "DE", "id": 1, "name": "Germany"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 64484, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"code": "DE", "id": 1, "name": "Germany"}, "roles": [{"color": "#ff0000", "icon": "tier_1.svg", "name": "Tier 1", "rating": 595186, "role": "translator"}], "state": {"code": "DE", "id": 1, "name": "Germany"}, "steamId": "76561198842603734", "steamSetsScore": 360198, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 592044, "xp": 123456}], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": [{"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}]}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.v1.tags:

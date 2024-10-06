@@ -24,7 +24,7 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get an leaderboard for accounts
+ * Get a leaderboard for accounts
  */
 export async function leaderboardLeaderboardV1GetAccount(
   client: SteamSetsCore,

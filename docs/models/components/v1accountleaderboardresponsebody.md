@@ -19,9 +19,10 @@ let value: V1AccountLeaderboardResponseBody = {
       badgeInfo: {
         completionTime: new Date("2023-01-01T00:00:00Z"),
         level: 123456,
+        xp: 123456,
       },
       badges: 123456,
-      bans: 998848,
+      bans: 868126,
       city: {
         code: "DE",
         id: 1,
@@ -37,7 +38,7 @@ let value: V1AccountLeaderboardResponseBody = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 149448,
+      gameBans: 162493,
       hidden: true,
       level: 123456,
       limitedApps: 123456,
@@ -59,7 +60,7 @@ let value: V1AccountLeaderboardResponseBody = {
           color: "#ff0000",
           icon: "tier_1.svg",
           name: "Tier 1",
-          rating: 868126,
+          rating: 615560,
           role: "staff",
         },
       ],
@@ -69,28 +70,49 @@ let value: V1AccountLeaderboardResponseBody = {
         name: "Germany",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 615560,
+      steamSetsScore: 848009,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 123820,
+      vacBans: 807319,
       xp: 123456,
     },
   ],
-  location: {
-    city: "Bad Krozingen",
-    country: "Germany",
-    region: "Europe",
-    state: "Baden-Wurttemberg",
+  app: {
+    id: 730,
+    image:
+      "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+    name: "Counter-Strike: Global Offensive",
+    type: "game",
   },
+  badgeInfo: {
+    appId: 730,
+    appImage:
+      "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+    appName: "Counter-Strike: Global Offensive",
+    image:
+      "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+    isFoil: true,
+    level: 15,
+    name: "Counter-Strike: Global Offensive",
+  },
+  location: [
+    {
+      cityName: "Bad Krozingen",
+      countryCode: "DE",
+      countryName: "Germany",
+      region: "Europe",
+      stateName: "Baden-Wurttemberg",
+    },
+  ],
 };
 ```
 
 ## Fields
 
-| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          | Example                                                                                              |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `dollarSchema`                                                                                       | *string*                                                                                             | :heavy_minus_sign:                                                                                   | A URL to the JSON Schema for this object.                                                            | https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json                              |
-| `accounts`                                                                                           | [components.V1AccountLeaderboardAccount](../../models/components/v1accountleaderboardaccount.md)[]   | :heavy_check_mark:                                                                                   | N/A                                                                                                  |                                                                                                      |
-| `app`                                                                                                | [components.LeaderboardApp](../../models/components/leaderboardapp.md)                               | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |                                                                                                      |
-| `badgeInfo`                                                                                          | [components.V1AccountLeaderboardBadgeInfo](../../models/components/v1accountleaderboardbadgeinfo.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |                                                                                                      |
-| `location`                                                                                           | [components.V1LeaderboardLocation](../../models/components/v1leaderboardlocation.md)                 | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |                                                                                                      |
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        | Example                                                                                            |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `dollarSchema`                                                                                     | *string*                                                                                           | :heavy_minus_sign:                                                                                 | A URL to the JSON Schema for this object.                                                          | https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json                            |
+| `accounts`                                                                                         | [components.V1AccountLeaderboardAccount](../../models/components/v1accountleaderboardaccount.md)[] | :heavy_check_mark:                                                                                 | N/A                                                                                                |                                                                                                    |
+| `app`                                                                                              | [components.V1LeaderboardAppInfo](../../models/components/v1leaderboardappinfo.md)                 | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
+| `badgeInfo`                                                                                        | [components.V1LeaderboardBadgeInfo](../../models/components/v1leaderboardbadgeinfo.md)             | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
+| `location`                                                                                         | [components.V1LeaderboardLocationInfo](../../models/components/v1leaderboardlocationinfo.md)[]     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
