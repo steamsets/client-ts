@@ -45,12 +45,12 @@ export async function sessionAccountV1SessionGet(
     Accept: "application/json",
   });
 
-  const secConfig = await extractSecurity(client._options.session);
-  const securityInput = secConfig == null ? {} : { session: secConfig };
+  const secConfig = await extractSecurity(client._options.token);
+  const securityInput = secConfig == null ? {} : { token: secConfig };
   const context = {
     operationID: "account.v1.session.get",
     oAuth2Scopes: [],
-    securitySource: client._options.session,
+    securitySource: client._options.token,
   };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 

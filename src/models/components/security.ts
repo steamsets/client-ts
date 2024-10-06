@@ -5,7 +5,7 @@
 import * as z from "zod";
 
 export type Security = {
-  session: string;
+  token: string;
 };
 
 /** @internal */
@@ -14,12 +14,12 @@ export const Security$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  session: z.string(),
+  token: z.string(),
 });
 
 /** @internal */
 export type Security$Outbound = {
-  session: string;
+  token: string;
 };
 
 /** @internal */
@@ -28,7 +28,7 @@ export const Security$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Security
 > = z.object({
-  session: z.string(),
+  token: z.string(),
 });
 
 /**

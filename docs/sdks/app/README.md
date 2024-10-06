@@ -20,7 +20,7 @@ Get details about an app
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -46,7 +46,7 @@ import { appAppV1Get } from "@steamsets/client-ts/funcs/appAppV1Get.js";
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -97,7 +97,7 @@ Queue a app for processing
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -123,7 +123,7 @@ import { appAppV1Queue } from "@steamsets/client-ts/funcs/appAppV1Queue.js";
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

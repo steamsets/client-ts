@@ -26,7 +26,7 @@ import { SDKValidationError } from "@steamsets/client-ts/models/errors/sdkvalida
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

@@ -27,7 +27,7 @@ Get Account Apps
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -51,7 +51,7 @@ import { dataAccountV1GetApps } from "@steamsets/client-ts/funcs/dataAccountV1Ge
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -100,7 +100,7 @@ Get Account Badges
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -124,7 +124,7 @@ import { dataAccountV1GetBadges } from "@steamsets/client-ts/funcs/dataAccountV1
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -173,7 +173,7 @@ Get Account DataPoints
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -197,7 +197,7 @@ import { dataAccountV1GetDataPoints } from "@steamsets/client-ts/funcs/dataAccou
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -246,7 +246,7 @@ Get Account Friends
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -270,7 +270,7 @@ import { dataAccountV1GetFriends } from "@steamsets/client-ts/funcs/dataAccountV
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -319,7 +319,7 @@ Get Account Info
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -343,7 +343,7 @@ import { dataAccountV1GetInfo } from "@steamsets/client-ts/funcs/dataAccountV1Ge
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -392,7 +392,7 @@ Get Account Leaderboard History
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -416,7 +416,7 @@ import { dataAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs/d
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -465,7 +465,7 @@ Get Staff Members and their info
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -489,7 +489,7 @@ import { dataAccountV1GetStaff } from "@steamsets/client-ts/funcs/dataAccountV1G
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -537,7 +537,7 @@ Queue an account for processing
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -564,7 +564,7 @@ import { dataAccountV1Queue } from "@steamsets/client-ts/funcs/dataAccountV1Queu
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -616,7 +616,7 @@ Queue a app for processing
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -642,7 +642,7 @@ import { dataAppV1Queue } from "@steamsets/client-ts/funcs/dataAppV1Queue.js";
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {

@@ -19,7 +19,7 @@ Preview what a given score would result in
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -46,7 +46,7 @@ import { leaderboardAccountV1LeaderboardPreview } from "@steamsets/client-ts/fun
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -98,7 +98,7 @@ Get a leaderboard for accounts
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -141,7 +141,7 @@ import { leaderboardLeaderboardV1GetAccount } from "@steamsets/client-ts/funcs/l
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -209,7 +209,7 @@ Get all available badges for leaderboards
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
@@ -233,7 +233,7 @@ import { leaderboardLeaderboardV1GetBadges } from "@steamsets/client-ts/funcs/le
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
 const steamSets = new SteamSetsCore({
-  session: "<YOUR_BEARER_TOKEN_HERE>",
+  token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
