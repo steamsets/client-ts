@@ -256,7 +256,7 @@ export class Account extends ClientSDK {
    * Queue an account for processing
    */
   async accountV1Queue(
-    request: components.AccountSearch,
+    request: components.V1AccountQueueRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(accountAccountV1Queue(
@@ -365,7 +365,7 @@ export class Account extends ClientSDK {
   }
 
   /**
-   * Get an leaderboard for accounts
+   * Get a leaderboard for accounts
    */
   async leaderboardV1GetAccount(
     request: components.V1AccountLeaderboardRequestBody,

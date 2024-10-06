@@ -20,10 +20,6 @@ let value: AccountV1GetStaffResponse = {
       averagePlaytime: 123456,
       awardsGiven: 123456,
       awardsReceived: 123456,
-      badgeInfo: {
-        completionTime: new Date("2023-01-01T00:00:00Z"),
-        level: 123456,
-      },
       badges: 123456,
       bans: 264555,
       city: {

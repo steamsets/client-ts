@@ -99,7 +99,7 @@ run();
 * [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
 * [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
 * [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
-* [leaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
 * [leaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ### [app](docs/sdks/app/README.md)
@@ -140,7 +140,7 @@ run();
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [accountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
-* [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
 * [leaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ### [liveness](docs/sdks/liveness/README.md)

@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [accountV1LeaderboardPreview](#accountv1leaderboardpreview) - Preview what a given score would result in
-* [leaderboardV1GetAccount](#leaderboardv1getaccount) - Get an leaderboard for accounts
+* [leaderboardV1GetAccount](#leaderboardv1getaccount) - Get a leaderboard for accounts
 * [leaderboardV1GetBadges](#leaderboardv1getbadges) - Get all available badges for leaderboards
 
 ## accountV1LeaderboardPreview
@@ -90,7 +90,7 @@ run();
 
 ## leaderboardV1GetAccount
 
-Get an leaderboard for accounts
+Get a leaderboard for accounts
 
 ### Example Usage
 
@@ -103,9 +103,13 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.leaderboard.leaderboardV1GetAccount({
-    appId: 730,
-    badgeId: "4",
-    badgeIsFoil: true,
+    app: {
+      appId: 730,
+    },
+    badge: {
+      id: 4,
+      isFoil: true,
+    },
     end: 10,
     leaderboard: "xp",
     location: [
@@ -142,9 +146,13 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await leaderboardLeaderboardV1GetAccount(steamSets, {
-    appId: 730,
-    badgeId: "4",
-    badgeIsFoil: true,
+    app: {
+      appId: 730,
+    },
+    badge: {
+      id: 4,
+      isFoil: true,
+    },
     end: 10,
     leaderboard: "xp",
     location: [

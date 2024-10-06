@@ -5,6 +5,18 @@
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
 import {
+  V1AccountLeaderboardAppSearch,
+  V1AccountLeaderboardAppSearch$inboundSchema,
+  V1AccountLeaderboardAppSearch$Outbound,
+  V1AccountLeaderboardAppSearch$outboundSchema,
+} from "./v1accountleaderboardappsearch.js";
+import {
+  V1AccountLeaderboardBadgeSearch,
+  V1AccountLeaderboardBadgeSearch$inboundSchema,
+  V1AccountLeaderboardBadgeSearch$Outbound,
+  V1AccountLeaderboardBadgeSearch$outboundSchema,
+} from "./v1accountleaderboardbadgesearch.js";
+import {
   V1LeaderboardLocation,
   V1LeaderboardLocation$inboundSchema,
   V1LeaderboardLocation$Outbound,
@@ -43,18 +55,8 @@ export type V1AccountLeaderboardRequestBodyLeaderboard = ClosedEnum<
 >;
 
 export type V1AccountLeaderboardRequestBody = {
-  /**
-   * For a given app leaderboard, the app id
-   */
-  appId?: number | null | undefined;
-  /**
-   * For a given badge leaderboard, the steam badge id
-   */
-  badgeId?: string | null | undefined;
-  /**
-   * For a given badge leaderboard, whether the badge is foil or not
-   */
-  badgeIsFoil?: boolean | null | undefined;
+  app?: V1AccountLeaderboardAppSearch | null | undefined;
+  badge?: V1AccountLeaderboardBadgeSearch | null | undefined;
   /**
    * The end index
    */
@@ -102,9 +104,8 @@ export const V1AccountLeaderboardRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  appId: z.nullable(z.number().int()).optional(),
-  badgeId: z.nullable(z.string()).optional(),
-  badgeIsFoil: z.nullable(z.boolean()).optional(),
+  app: z.nullable(V1AccountLeaderboardAppSearch$inboundSchema).optional(),
+  badge: z.nullable(V1AccountLeaderboardBadgeSearch$inboundSchema).optional(),
   end: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$inboundSchema,
   location: z.nullable(z.array(V1LeaderboardLocation$inboundSchema)).optional(),
@@ -113,9 +114,8 @@ export const V1AccountLeaderboardRequestBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type V1AccountLeaderboardRequestBody$Outbound = {
-  appId?: number | null | undefined;
-  badgeId?: string | null | undefined;
-  badgeIsFoil?: boolean | null | undefined;
+  app?: V1AccountLeaderboardAppSearch$Outbound | null | undefined;
+  badge?: V1AccountLeaderboardBadgeSearch$Outbound | null | undefined;
   end?: number | null | undefined;
   leaderboard: string;
   location?: Array<V1LeaderboardLocation$Outbound> | null | undefined;
@@ -128,9 +128,8 @@ export const V1AccountLeaderboardRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountLeaderboardRequestBody
 > = z.object({
-  appId: z.nullable(z.number().int()).optional(),
-  badgeId: z.nullable(z.string()).optional(),
-  badgeIsFoil: z.nullable(z.boolean()).optional(),
+  app: z.nullable(V1AccountLeaderboardAppSearch$outboundSchema).optional(),
+  badge: z.nullable(V1AccountLeaderboardBadgeSearch$outboundSchema).optional(),
   end: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$outboundSchema,
   location: z.nullable(z.array(V1LeaderboardLocation$outboundSchema))

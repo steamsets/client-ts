@@ -78,9 +78,9 @@ export type V1GetSettingsBody = {
    */
   emailNotifications: Array<EmailNotification> | null;
   /**
-   * Whether the account has verified their email
+   * The time the email was verified
    */
-  emailVerified: boolean;
+  emailVerifiedAt: Date | null;
   /**
    * Whether the account is hidden in the leaderboards
    */
@@ -140,7 +140,9 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.string(),
   emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
-  emailVerified: z.boolean(),
+  emailVerifiedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$inboundSchema)),
   language: z.string(),
@@ -162,7 +164,7 @@ export type V1GetSettingsBody$Outbound = {
   developerApps: Array<DeveloperApp$Outbound> | null;
   email: string;
   emailNotifications: Array<EmailNotification$Outbound> | null;
-  emailVerified: boolean;
+  emailVerifiedAt: string | null;
   hidden: boolean;
   images: Array<Image$Outbound> | null;
   language: string;
@@ -184,7 +186,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   developerApps: z.nullable(z.array(DeveloperApp$outboundSchema)),
   email: z.string(),
   emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
-  emailVerified: z.boolean(),
+  emailVerifiedAt: z.nullable(z.date().transform(v => v.toISOString())),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),
   language: z.string(),

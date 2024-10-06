@@ -26,6 +26,7 @@ let value: LeaderboardV1GetAccountResponse = {
         badgeInfo: {
           completionTime: new Date("2023-01-01T00:00:00Z"),
           level: 123456,
+          xp: 123456,
         },
         badges: 123456,
         bans: 612096,
@@ -83,12 +84,33 @@ let value: LeaderboardV1GetAccountResponse = {
         xp: 123456,
       },
     ],
-    location: {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
+    app: {
+      id: 730,
+      image:
+        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+      name: "Counter-Strike: Global Offensive",
+      type: "game",
     },
+    badgeInfo: {
+      appId: 730,
+      appImage:
+        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+      appName: "Counter-Strike: Global Offensive",
+      image:
+        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+      isFoil: true,
+      level: 15,
+      name: "Counter-Strike: Global Offensive",
+    },
+    location: [
+      {
+        cityName: "Bad Krozingen",
+        countryCode: "DE",
+        countryName: "Germany",
+        region: "Europe",
+        stateName: "Baden-Wurttemberg",
+      },
+    ],
   },
 };
 ```

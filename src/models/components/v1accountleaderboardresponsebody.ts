@@ -5,29 +5,29 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
-  LeaderboardApp,
-  LeaderboardApp$inboundSchema,
-  LeaderboardApp$Outbound,
-  LeaderboardApp$outboundSchema,
-} from "./leaderboardapp.js";
-import {
   V1AccountLeaderboardAccount,
   V1AccountLeaderboardAccount$inboundSchema,
   V1AccountLeaderboardAccount$Outbound,
   V1AccountLeaderboardAccount$outboundSchema,
 } from "./v1accountleaderboardaccount.js";
 import {
-  V1AccountLeaderboardBadgeInfo,
-  V1AccountLeaderboardBadgeInfo$inboundSchema,
-  V1AccountLeaderboardBadgeInfo$Outbound,
-  V1AccountLeaderboardBadgeInfo$outboundSchema,
-} from "./v1accountleaderboardbadgeinfo.js";
+  V1LeaderboardAppInfo,
+  V1LeaderboardAppInfo$inboundSchema,
+  V1LeaderboardAppInfo$Outbound,
+  V1LeaderboardAppInfo$outboundSchema,
+} from "./v1leaderboardappinfo.js";
 import {
-  V1LeaderboardLocation,
-  V1LeaderboardLocation$inboundSchema,
-  V1LeaderboardLocation$Outbound,
-  V1LeaderboardLocation$outboundSchema,
-} from "./v1leaderboardlocation.js";
+  V1LeaderboardBadgeInfo,
+  V1LeaderboardBadgeInfo$inboundSchema,
+  V1LeaderboardBadgeInfo$Outbound,
+  V1LeaderboardBadgeInfo$outboundSchema,
+} from "./v1leaderboardbadgeinfo.js";
+import {
+  V1LeaderboardLocationInfo,
+  V1LeaderboardLocationInfo$inboundSchema,
+  V1LeaderboardLocationInfo$Outbound,
+  V1LeaderboardLocationInfo$outboundSchema,
+} from "./v1leaderboardlocationinfo.js";
 
 export type V1AccountLeaderboardResponseBody = {
   /**
@@ -35,9 +35,9 @@ export type V1AccountLeaderboardResponseBody = {
    */
   dollarSchema?: string | undefined;
   accounts: Array<V1AccountLeaderboardAccount> | null;
-  app?: LeaderboardApp | null | undefined;
-  badgeInfo?: V1AccountLeaderboardBadgeInfo | null | undefined;
-  location?: V1LeaderboardLocation | null | undefined;
+  app?: V1LeaderboardAppInfo | null | undefined;
+  badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
+  location?: Array<V1LeaderboardLocationInfo> | null | undefined;
 };
 
 /** @internal */
@@ -48,9 +48,10 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$inboundSchema)),
-  app: z.nullable(LeaderboardApp$inboundSchema).optional(),
-  badgeInfo: z.nullable(V1AccountLeaderboardBadgeInfo$inboundSchema).optional(),
-  location: z.nullable(V1LeaderboardLocation$inboundSchema).optional(),
+  app: z.nullable(V1LeaderboardAppInfo$inboundSchema).optional(),
+  badgeInfo: z.nullable(V1LeaderboardBadgeInfo$inboundSchema).optional(),
+  location: z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -61,9 +62,9 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
 export type V1AccountLeaderboardResponseBody$Outbound = {
   $schema?: string | undefined;
   accounts: Array<V1AccountLeaderboardAccount$Outbound> | null;
-  app?: LeaderboardApp$Outbound | null | undefined;
-  badgeInfo?: V1AccountLeaderboardBadgeInfo$Outbound | null | undefined;
-  location?: V1LeaderboardLocation$Outbound | null | undefined;
+  app?: V1LeaderboardAppInfo$Outbound | null | undefined;
+  badgeInfo?: V1LeaderboardBadgeInfo$Outbound | null | undefined;
+  location?: Array<V1LeaderboardLocationInfo$Outbound> | null | undefined;
 };
 
 /** @internal */
@@ -74,10 +75,10 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$outboundSchema)),
-  app: z.nullable(LeaderboardApp$outboundSchema).optional(),
-  badgeInfo: z.nullable(V1AccountLeaderboardBadgeInfo$outboundSchema)
+  app: z.nullable(V1LeaderboardAppInfo$outboundSchema).optional(),
+  badgeInfo: z.nullable(V1LeaderboardBadgeInfo$outboundSchema).optional(),
+  location: z.nullable(z.array(V1LeaderboardLocationInfo$outboundSchema))
     .optional(),
-  location: z.nullable(V1LeaderboardLocation$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

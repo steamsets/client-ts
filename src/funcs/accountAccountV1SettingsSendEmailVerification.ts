@@ -119,6 +119,7 @@ export async function accountAccountV1SettingsSendEmailVerification(
     M.nil(
       204,
       operations.AccountV1SettingsSendEmailVerificationResponse$inboundSchema,
+      { hdrs: true },
     ),
     M.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

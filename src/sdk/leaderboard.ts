@@ -26,7 +26,7 @@ export class Leaderboard extends ClientSDK {
   }
 
   /**
-   * Get an leaderboard for accounts
+   * Get a leaderboard for accounts
    */
   async leaderboardV1GetAccount(
     request: components.V1AccountLeaderboardRequestBody,

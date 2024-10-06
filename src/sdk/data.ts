@@ -117,7 +117,7 @@ export class Data extends ClientSDK {
    * Queue an account for processing
    */
   async accountV1Queue(
-    request: components.AccountSearch,
+    request: components.V1AccountQueueRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1QueueResponse> {
     return unwrapAsync(dataAccountV1Queue(
