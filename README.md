@@ -530,77 +530,76 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [accountAccountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect)
-- [accountAccountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection)
-- [accountAccountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection)
-- [accountAccountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
-- [accountAccountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
-- [accountAccountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
-- [accountAccountV1GetDataPoints](docs/sdks/account/README.md#accountv1getdatapoints)
-- [accountAccountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends)
-- [accountAccountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo)
-- [accountAccountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory)
-- [accountAccountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff)
-- [accountAccountV1LeaderboardPreview](docs/sdks/account/README.md#accountv1leaderboardpreview)
-- [accountAccountV1Queue](docs/sdks/account/README.md#accountv1queue)
-- [accountAccountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate)
-- [accountAccountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
-- [accountAccountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
-- [accountAccountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin)
-- [accountAccountV1SettingsDeleteImages](docs/sdks/account/README.md#accountv1settingsdeleteimages)
-- [accountAccountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget)
-- [accountAccountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification)
-- [accountAccountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage)
-- [accountAccountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
-- [accountAccountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
-- [accountAccountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
-- [accountLeaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
-- [accountLeaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges)
-- [appAppV1Get](docs/sdks/app/README.md#appv1get)
-- [appAppV1Queue](docs/sdks/app/README.md#appv1queue)
-- [badgeBadgeV1Tag](docs/sdks/badge/README.md#badgev1tag)
-- [badgeBadgeV1Tags](docs/sdks/badge/README.md#badgev1tags)
-- [connectionAccountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
-- [connectionAccountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
-- [connectionAccountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
-- [connectionAccountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
-- [dataAccountV1GetApps](docs/sdks/data/README.md#accountv1getapps)
-- [dataAccountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges)
-- [dataAccountV1GetDataPoints](docs/sdks/data/README.md#accountv1getdatapoints)
-- [dataAccountV1GetFriends](docs/sdks/data/README.md#accountv1getfriends)
-- [dataAccountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo)
-- [dataAccountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
-- [dataAccountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
-- [dataAccountV1Queue](docs/sdks/data/README.md#accountv1queue)
-- [dataAppV1Queue](docs/sdks/data/README.md#appv1queue)
-- [developerAccountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
-- [developerAccountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
-- [developerAccountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
-- [leaderboardAccountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview)
-- [leaderboardLeaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
-- [leaderboardLeaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges)
-- [livenessLiveness](docs/sdks/liveness/README.md#liveness)
-- [locationLocation](docs/sdks/location/README.md#location)
-- [publicAccountV1GetApps](docs/sdks/public/README.md#accountv1getapps)
-- [publicAccountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges)
-- [publicAccountV1GetDataPoints](docs/sdks/public/README.md#accountv1getdatapoints)
-- [publicAccountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends)
-- [publicAccountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
-- [publicAccountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory)
-- [publicAccountV1Queue](docs/sdks/public/README.md#accountv1queue)
-- [publicAppV1Queue](docs/sdks/public/README.md#appv1queue)
-- [sessionAccountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
-- [sessionAccountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
-- [sessionAccountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
-- [sessionAccountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin)
-- [settingsAccountV1SettingsDeleteImages](docs/sdks/settings/README.md#accountv1settingsdeleteimages)
-- [settingsAccountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget)
-- [settingsAccountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification)
-- [settingsAccountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage)
-- [settingsAccountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate)
-- [settingsAccountV1SettingsUploadImages](docs/sdks/settings/README.md#accountv1settingsuploadimages)
-- [settingsAccountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail)
-
+- [`accountAccountV1ConnectionConnect`](docs/sdks/account/README.md#accountv1connectionconnect) - Connect a new Social Provider
+- [`accountAccountV1ConnectionDeleteConnection`](docs/sdks/account/README.md#accountv1connectiondeleteconnection) - Remove a connection
+- [`accountAccountV1ConnectionUpdateConnection`](docs/sdks/account/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
+- [`accountAccountV1ConnectionVerifyConnection`](docs/sdks/account/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+- [`accountAccountV1GetApps`](docs/sdks/account/README.md#accountv1getapps) - Get Account Apps
+- [`accountAccountV1GetBadges`](docs/sdks/account/README.md#accountv1getbadges) - Get Account Badges
+- [`accountAccountV1GetDataPoints`](docs/sdks/account/README.md#accountv1getdatapoints) - Get Account DataPoints
+- [`accountAccountV1GetFriends`](docs/sdks/account/README.md#accountv1getfriends) - Get Account Friends
+- [`accountAccountV1GetInfo`](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
+- [`accountAccountV1GetLeaderboardHistory`](docs/sdks/account/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
+- [`accountAccountV1GetStaff`](docs/sdks/account/README.md#accountv1getstaff) - Get Staff Members and their info
+- [`accountAccountV1LeaderboardPreview`](docs/sdks/account/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
+- [`accountAccountV1Queue`](docs/sdks/account/README.md#accountv1queue) - Queue an account for processing
+- [`accountAccountV1SessionCreate`](docs/sdks/account/README.md#accountv1sessioncreate) - Create a new session for non logged in users
+- [`accountAccountV1SessionDelete`](docs/sdks/account/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+- [`accountAccountV1SessionGet`](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
+- [`accountAccountV1SessionLogin`](docs/sdks/account/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+- [`accountAccountV1SettingsDeleteImages`](docs/sdks/account/README.md#accountv1settingsdeleteimages) - Delete mulitple imagest
+- [`accountAccountV1SettingsGet`](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
+- [`accountAccountV1SettingsSendEmailVerification`](docs/sdks/account/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
+- [`accountAccountV1SettingsUpdate`](docs/sdks/account/README.md#accountv1settingsupdate) - Update settings for the logged in account
+- [`accountAccountV1SettingsUpdateImage`](docs/sdks/account/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
+- [`accountAccountV1SettingsUploadImages`](docs/sdks/account/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
+- [`accountAccountV1SettingsVerfyEmail`](docs/sdks/account/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
+- [`accountLeaderboardV1GetAccount`](docs/sdks/account/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
+- [`accountLeaderboardV1GetBadges`](docs/sdks/account/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
+- [`appAppV1Get`](docs/sdks/app/README.md#appv1get) - Get details about an app
+- [`appAppV1Queue`](docs/sdks/app/README.md#appv1queue) - Queue a app for processing
+- [`badgeBadgeV1Tag`](docs/sdks/badge/README.md#badgev1tag) - Tag a badge
+- [`badgeBadgeV1Tags`](docs/sdks/badge/README.md#badgev1tags) - Get all available badge tags
+- [`connectionAccountV1ConnectionConnect`](docs/sdks/connection/README.md#accountv1connectionconnect) - Connect a new Social Provider
+- [`connectionAccountV1ConnectionDeleteConnection`](docs/sdks/connection/README.md#accountv1connectiondeleteconnection) - Remove a connection
+- [`connectionAccountV1ConnectionUpdateConnection`](docs/sdks/connection/README.md#accountv1connectionupdateconnection) - Make a connection visible/invisible
+- [`connectionAccountV1ConnectionVerifyConnection`](docs/sdks/connection/README.md#accountv1connectionverifyconnection) - Verify a domain connection only atm
+- [`dataAccountV1GetApps`](docs/sdks/data/README.md#accountv1getapps) - Get Account Apps
+- [`dataAccountV1GetBadges`](docs/sdks/data/README.md#accountv1getbadges) - Get Account Badges
+- [`dataAccountV1GetDataPoints`](docs/sdks/data/README.md#accountv1getdatapoints) - Get Account DataPoints
+- [`dataAccountV1GetFriends`](docs/sdks/data/README.md#accountv1getfriends) - Get Account Friends
+- [`dataAccountV1GetInfo`](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
+- [`dataAccountV1GetLeaderboardHistory`](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
+- [`dataAccountV1GetStaff`](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
+- [`dataAccountV1Queue`](docs/sdks/data/README.md#accountv1queue) - Queue an account for processing
+- [`dataAppV1Queue`](docs/sdks/data/README.md#appv1queue) - Queue a app for processing
+- [`developerAccountV1SettingsDeveloperAppCreate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
+- [`developerAccountV1SettingsDeveloperAppDelete`](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
+- [`developerAccountV1SettingsDeveloperAppUpdate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
+- [`leaderboardAccountV1LeaderboardPreview`](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
+- [`leaderboardLeaderboardV1GetAccount`](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
+- [`leaderboardLeaderboardV1GetBadges`](docs/sdks/leaderboard/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
+- [`livenessLiveness`](docs/sdks/liveness/README.md#liveness) - Liveness check
+- [`locationLocation`](docs/sdks/location/README.md#location) - Location List
+- [`publicAccountV1GetApps`](docs/sdks/public/README.md#accountv1getapps) - Get Account Apps
+- [`publicAccountV1GetBadges`](docs/sdks/public/README.md#accountv1getbadges) - Get Account Badges
+- [`publicAccountV1GetDataPoints`](docs/sdks/public/README.md#accountv1getdatapoints) - Get Account DataPoints
+- [`publicAccountV1GetFriends`](docs/sdks/public/README.md#accountv1getfriends) - Get Account Friends
+- [`publicAccountV1GetInfo`](docs/sdks/public/README.md#accountv1getinfo) - Get Account Info
+- [`publicAccountV1GetLeaderboardHistory`](docs/sdks/public/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
+- [`publicAccountV1Queue`](docs/sdks/public/README.md#accountv1queue) - Queue an account for processing
+- [`publicAppV1Queue`](docs/sdks/public/README.md#appv1queue) - Queue a app for processing
+- [`sessionAccountV1SessionCreate`](docs/sdks/session/README.md#accountv1sessioncreate) - Create a new session for non logged in users
+- [`sessionAccountV1SessionDelete`](docs/sdks/session/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
+- [`sessionAccountV1SessionGet`](docs/sdks/session/README.md#accountv1sessionget) - Gets all session data
+- [`sessionAccountV1SessionLogin`](docs/sdks/session/README.md#accountv1sessionlogin) - Logs a user in and creates a new session
+- [`settingsAccountV1SettingsDeleteImages`](docs/sdks/settings/README.md#accountv1settingsdeleteimages) - Delete mulitple imagest
+- [`settingsAccountV1SettingsGet`](docs/sdks/settings/README.md#accountv1settingsget) - Gets all settings for the account
+- [`settingsAccountV1SettingsSendEmailVerification`](docs/sdks/settings/README.md#accountv1settingssendemailverification) - Resend the verification code for an email
+- [`settingsAccountV1SettingsUpdate`](docs/sdks/settings/README.md#accountv1settingsupdate) - Update settings for the logged in account
+- [`settingsAccountV1SettingsUpdateImage`](docs/sdks/settings/README.md#accountv1settingsupdateimage) - Update one of the uploaded images
+- [`settingsAccountV1SettingsUploadImages`](docs/sdks/settings/README.md#accountv1settingsuploadimages) - Multi Upload Endpoint for images
+- [`settingsAccountV1SettingsVerfyEmail`](docs/sdks/settings/README.md#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

@@ -28,6 +28,10 @@ export type V1AccountLeaderboardAccount = {
    */
   appCost: number;
   /**
+   * For the app playtime leaderboard
+   */
+  appPlaytime: number | null;
+  /**
    * The number of apps the account has
    */
   apps: number;
@@ -165,6 +169,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   appCost: z.number().int(),
+  appPlaytime: z.nullable(z.number().int()),
   apps: z.number().int(),
   avatar: z.string(),
   averagePlaytime: z.number().int(),
@@ -206,6 +211,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountLeaderboardAccount$Outbound = {
   appCost: number;
+  appPlaytime: number | null;
   apps: number;
   avatar: string;
   averagePlaytime: number;
@@ -251,6 +257,7 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   V1AccountLeaderboardAccount
 > = z.object({
   appCost: z.number().int(),
+  appPlaytime: z.nullable(z.number().int()),
   apps: z.number().int(),
   avatar: z.string(),
   averagePlaytime: z.number().int(),
