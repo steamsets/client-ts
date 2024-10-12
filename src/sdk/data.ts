@@ -9,8 +9,6 @@ import { dataAccountV1GetFriends } from "../funcs/dataAccountV1GetFriends.js";
 import { dataAccountV1GetInfo } from "../funcs/dataAccountV1GetInfo.js";
 import { dataAccountV1GetLeaderboardHistory } from "../funcs/dataAccountV1GetLeaderboardHistory.js";
 import { dataAccountV1GetStaff } from "../funcs/dataAccountV1GetStaff.js";
-import { dataAccountV1Queue } from "../funcs/dataAccountV1Queue.js";
-import { dataAppV1Queue } from "../funcs/dataAppV1Queue.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -109,34 +107,6 @@ export class Data extends ClientSDK {
   ): Promise<operations.AccountV1GetStaffResponse> {
     return unwrapAsync(dataAccountV1GetStaff(
       this,
-      options,
-    ));
-  }
-
-  /**
-   * Queue an account for processing
-   */
-  async accountV1Queue(
-    request: components.V1AccountQueueRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1QueueResponse> {
-    return unwrapAsync(dataAccountV1Queue(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Queue a app for processing
-   */
-  async appV1Queue(
-    request: components.AppSearch,
-    options?: RequestOptions,
-  ): Promise<operations.AppV1QueueResponse> {
-    return unwrapAsync(dataAppV1Queue(
-      this,
-      request,
       options,
     ));
   }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 7aa6bb0ce4d5a288dc6cf0517afe41fa
+  docChecksum: 828ae4d7d0160d5fefc8e571532ca03e
   docVersion: 1.0.0
   speakeasyVersion: 1.418.1
   generationVersion: 2.438.3
-  releaseVersion: 0.11.12
-  configChecksum: b935e497711e1c924b159dc834cfd687
+  releaseVersion: 0.11.13
+  configChecksum: 262d902df3c2483162c3db76d7e339ce
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -268,8 +268,6 @@ generatedFiles:
   - src/funcs/dataAccountV1GetInfo.ts
   - src/funcs/dataAccountV1GetLeaderboardHistory.ts
   - src/funcs/dataAccountV1GetStaff.ts
-  - src/funcs/dataAccountV1Queue.ts
-  - src/funcs/dataAppV1Queue.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppCreate.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppDelete.ts
   - src/funcs/developerAccountV1SettingsDeveloperAppUpdate.ts
@@ -660,7 +658,7 @@ examples:
   account.v1.queue:
     speakeasy-default-account-v1-queue:
       requestBody:
-        application/json: {"force": true, "id": {}}
+        application/json: {"force": true, "id": {}, "steamId": "76561198842603734"}
       responses:
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

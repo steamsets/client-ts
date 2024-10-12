@@ -1270,6 +1270,7 @@ async function run() {
   const result = await steamSets.account.accountV1Queue({
     force: true,
     id: {},
+    steamId: "76561198842603734",
   });
 
   // Handle the result
@@ -1297,6 +1298,7 @@ async function run() {
   const res = await accountAccountV1Queue(steamSets, {
     force: true,
     id: {},
+    steamId: "76561198842603734",
   });
 
   if (!res.ok) {
