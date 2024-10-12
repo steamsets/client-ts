@@ -128,8 +128,6 @@ run();
 * [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 * [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
-* [accountV1Queue](docs/sdks/data/README.md#accountv1queue) - Queue an account for processing
-* [appV1Queue](docs/sdks/data/README.md#appv1queue) - Queue a app for processing
 
 ### [developer](docs/sdks/developer/README.md)
 
@@ -571,8 +569,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`dataAccountV1GetInfo`](docs/sdks/data/README.md#accountv1getinfo) - Get Account Info
 - [`dataAccountV1GetLeaderboardHistory`](docs/sdks/data/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 - [`dataAccountV1GetStaff`](docs/sdks/data/README.md#accountv1getstaff) - Get Staff Members and their info
-- [`dataAccountV1Queue`](docs/sdks/data/README.md#accountv1queue) - Queue an account for processing
-- [`dataAppV1Queue`](docs/sdks/data/README.md#appv1queue) - Queue a app for processing
 - [`developerAccountV1SettingsDeveloperAppCreate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
 - [`developerAccountV1SettingsDeveloperAppDelete`](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
 - [`developerAccountV1SettingsDeveloperAppUpdate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
