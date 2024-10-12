@@ -1,11 +1,11 @@
-# AccountBadgeScarcityDataPoint
+# V1AccountBadgeScarcityDataPoint
 
 ## Example Usage
 
 ```typescript
-import { AccountBadgeScarcityDataPoint } from "@steamsets/client-ts/models/components";
+import { V1AccountBadgeScarcityDataPoint } from "@steamsets/client-ts/models/components";
 
-let value: AccountBadgeScarcityDataPoint = {
+let value: V1AccountBadgeScarcityDataPoint = {
   appId: 730,
   badgeId: "bdg_123",
   badgeImage: "someHash.idk",

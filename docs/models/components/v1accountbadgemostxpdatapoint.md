@@ -1,11 +1,11 @@
-# AccountBadgeMostXpDataPoint
+# V1AccountBadgeMostXpDataPoint
 
 ## Example Usage
 
 ```typescript
-import { AccountBadgeMostXpDataPoint } from "@steamsets/client-ts/models/components";
+import { V1AccountBadgeMostXpDataPoint } from "@steamsets/client-ts/models/components";
 
-let value: AccountBadgeMostXpDataPoint = {
+let value: V1AccountBadgeMostXpDataPoint = {
   appId: 123456,
   badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
   badgeId: "123456",
