@@ -22,7 +22,6 @@ export const ResourceResource = {
   SocialLinks: "social_links",
   Theme: "theme",
   VanityLength: "vanity_length",
-  SocialLinkAmount: "social_link_amount",
   DeveloperApps: "developer_apps",
 } as const;
 export type ResourceResource = ClosedEnum<typeof ResourceResource>;

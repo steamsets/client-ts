@@ -5,32 +5,32 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
-  AccountBadgeMostXpDataPoint,
-  AccountBadgeMostXpDataPoint$inboundSchema,
-  AccountBadgeMostXpDataPoint$Outbound,
-  AccountBadgeMostXpDataPoint$outboundSchema,
-} from "./accountbadgemostxpdatapoint.js";
+  V1AccountBadgeMostXpDataPoint,
+  V1AccountBadgeMostXpDataPoint$inboundSchema,
+  V1AccountBadgeMostXpDataPoint$Outbound,
+  V1AccountBadgeMostXpDataPoint$outboundSchema,
+} from "./v1accountbadgemostxpdatapoint.js";
 import {
-  AccountBadgeScarcityDataPoint,
-  AccountBadgeScarcityDataPoint$inboundSchema,
-  AccountBadgeScarcityDataPoint$Outbound,
-  AccountBadgeScarcityDataPoint$outboundSchema,
-} from "./accountbadgescarcitydatapoint.js";
+  V1AccountBadgeScarcityDataPoint,
+  V1AccountBadgeScarcityDataPoint$inboundSchema,
+  V1AccountBadgeScarcityDataPoint$Outbound,
+  V1AccountBadgeScarcityDataPoint$outboundSchema,
+} from "./v1accountbadgescarcitydatapoint.js";
 import {
-  AccountPlaytimeDataPoint,
-  AccountPlaytimeDataPoint$inboundSchema,
-  AccountPlaytimeDataPoint$Outbound,
-  AccountPlaytimeDataPoint$outboundSchema,
-} from "./accountplaytimedatapoint.js";
+  V1AccountPlaytimeDataPoint,
+  V1AccountPlaytimeDataPoint$inboundSchema,
+  V1AccountPlaytimeDataPoint$Outbound,
+  V1AccountPlaytimeDataPoint$outboundSchema,
+} from "./v1accountplaytimedatapoint.js";
 
 export type V1AccountDataPointsResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  mostXp: Array<AccountBadgeMostXpDataPoint> | null;
-  playtime: Array<AccountPlaytimeDataPoint> | null;
-  scarcity: Array<AccountBadgeScarcityDataPoint> | null;
+  mostXp: Array<V1AccountBadgeMostXpDataPoint> | null;
+  playtime: Array<V1AccountPlaytimeDataPoint> | null;
+  scarcity: Array<V1AccountBadgeScarcityDataPoint> | null;
   xp: { [k: string]: { [k: string]: number } };
 };
 
@@ -41,9 +41,9 @@ export const V1AccountDataPointsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  mostXp: z.nullable(z.array(AccountBadgeMostXpDataPoint$inboundSchema)),
-  playtime: z.nullable(z.array(AccountPlaytimeDataPoint$inboundSchema)),
-  scarcity: z.nullable(z.array(AccountBadgeScarcityDataPoint$inboundSchema)),
+  mostXp: z.nullable(z.array(V1AccountBadgeMostXpDataPoint$inboundSchema)),
+  playtime: z.nullable(z.array(V1AccountPlaytimeDataPoint$inboundSchema)),
+  scarcity: z.nullable(z.array(V1AccountBadgeScarcityDataPoint$inboundSchema)),
   xp: z.record(z.record(z.number().int())),
 }).transform((v) => {
   return remap$(v, {
@@ -54,9 +54,9 @@ export const V1AccountDataPointsResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountDataPointsResponseBody$Outbound = {
   $schema?: string | undefined;
-  mostXp: Array<AccountBadgeMostXpDataPoint$Outbound> | null;
-  playtime: Array<AccountPlaytimeDataPoint$Outbound> | null;
-  scarcity: Array<AccountBadgeScarcityDataPoint$Outbound> | null;
+  mostXp: Array<V1AccountBadgeMostXpDataPoint$Outbound> | null;
+  playtime: Array<V1AccountPlaytimeDataPoint$Outbound> | null;
+  scarcity: Array<V1AccountBadgeScarcityDataPoint$Outbound> | null;
   xp: { [k: string]: { [k: string]: number } };
 };
 
@@ -67,9 +67,9 @@ export const V1AccountDataPointsResponseBody$outboundSchema: z.ZodType<
   V1AccountDataPointsResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  mostXp: z.nullable(z.array(AccountBadgeMostXpDataPoint$outboundSchema)),
-  playtime: z.nullable(z.array(AccountPlaytimeDataPoint$outboundSchema)),
-  scarcity: z.nullable(z.array(AccountBadgeScarcityDataPoint$outboundSchema)),
+  mostXp: z.nullable(z.array(V1AccountBadgeMostXpDataPoint$outboundSchema)),
+  playtime: z.nullable(z.array(V1AccountPlaytimeDataPoint$outboundSchema)),
+  scarcity: z.nullable(z.array(V1AccountBadgeScarcityDataPoint$outboundSchema)),
   xp: z.record(z.record(z.number().int())),
 }).transform((v) => {
   return remap$(v, {

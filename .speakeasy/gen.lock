@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 72ba69bdc3992c797a3816d84fc1bf77
+  docChecksum: 7aa6bb0ce4d5a288dc6cf0517afe41fa
   docVersion: 1.0.0
-  speakeasyVersion: 1.410.1
-  generationVersion: 2.434.3
-  releaseVersion: 0.11.11
-  configChecksum: e942fa519b9d412f4f9f87ba176a429b
+  speakeasyVersion: 1.418.1
+  generationVersion: 2.438.3
+  releaseVersion: 0.11.12
+  configChecksum: b935e497711e1c924b159dc834cfd687
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -55,12 +55,9 @@ generatedFiles:
   - RUNTIMES.md
   - USAGE.md
   - docs/lib/utils/retryconfig.md
-  - docs/models/components/accountbadgemostxpdatapoint.md
-  - docs/models/components/accountbadgescarcitydatapoint.md
   - docs/models/components/accountinfobody.md
   - docs/models/components/accountleaderboardhistory.md
   - docs/models/components/accountleaderboardhistoryleaderboard.md
-  - docs/models/components/accountplaytimedatapoint.md
   - docs/models/components/accountsearch.md
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/accountsearchvanitystruct.md
@@ -104,6 +101,8 @@ generatedFiles:
   - docs/models/components/v1accountapp.md
   - docs/models/components/v1accountappbadge.md
   - docs/models/components/v1accountbadgecompletion.md
+  - docs/models/components/v1accountbadgemostxpdatapoint.md
+  - docs/models/components/v1accountbadgescarcitydatapoint.md
   - docs/models/components/v1accountdatapointsresponsebody.md
   - docs/models/components/v1accountdeveloperappdeleterequestbody.md
   - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
@@ -121,6 +120,7 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbody.md
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
+  - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
   - docs/models/components/v1appbadge.md
@@ -316,11 +316,8 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
-  - src/models/components/accountbadgemostxpdatapoint.ts
-  - src/models/components/accountbadgescarcitydatapoint.ts
   - src/models/components/accountinfobody.ts
   - src/models/components/accountleaderboardhistory.ts
-  - src/models/components/accountplaytimedatapoint.ts
   - src/models/components/accountsearch.ts
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/accountsearchvanitystruct.ts
@@ -352,6 +349,8 @@ generatedFiles:
   - src/models/components/v1accountapp.ts
   - src/models/components/v1accountappbadge.ts
   - src/models/components/v1accountbadgecompletion.ts
+  - src/models/components/v1accountbadgemostxpdatapoint.ts
+  - src/models/components/v1accountbadgescarcitydatapoint.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
   - src/models/components/v1accountdeveloperappdeleterequestbody.ts
   - src/models/components/v1accountdeveloperappdeleteresponsebody.ts
@@ -367,6 +366,7 @@ generatedFiles:
   - src/models/components/v1accountleaderboardpreviewresponsebody.ts
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
+  - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1appbadge.ts

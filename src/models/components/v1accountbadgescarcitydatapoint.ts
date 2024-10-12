@@ -4,15 +4,11 @@
 
 import * as z from "zod";
 
-export type AccountBadgeMostXpDataPoint = {
+export type V1AccountBadgeScarcityDataPoint = {
   /**
    * The app id
    */
   appId: number;
-  /**
-   * The badge completed at
-   */
-  badgeCompletedAt: Date;
   /**
    * The badge id
    */
@@ -38,14 +34,6 @@ export type AccountBadgeMostXpDataPoint = {
    */
   badgeScarcity: number;
   /**
-   * The badge steam id
-   */
-  badgeSteamID: number;
-  /**
-   * The badge xp
-   */
-  badgeXP: number;
-  /**
    * The image of the app
    */
   image: string;
@@ -56,59 +44,48 @@ export type AccountBadgeMostXpDataPoint = {
 };
 
 /** @internal */
-export const AccountBadgeMostXpDataPoint$inboundSchema: z.ZodType<
-  AccountBadgeMostXpDataPoint,
+export const V1AccountBadgeScarcityDataPoint$inboundSchema: z.ZodType<
+  V1AccountBadgeScarcityDataPoint,
   z.ZodTypeDef,
   unknown
 > = z.object({
   appId: z.number().int(),
-  badgeCompletedAt: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ),
   badgeId: z.string(),
   badgeImage: z.string(),
   badgeIsFoil: z.boolean(),
   badgeLevel: z.number().int(),
   badgeName: z.string(),
   badgeScarcity: z.number().int(),
-  badgeSteamID: z.number().int(),
-  badgeXP: z.number().int(),
   image: z.string(),
   name: z.string(),
 });
 
 /** @internal */
-export type AccountBadgeMostXpDataPoint$Outbound = {
+export type V1AccountBadgeScarcityDataPoint$Outbound = {
   appId: number;
-  badgeCompletedAt: string;
   badgeId: string;
   badgeImage: string;
   badgeIsFoil: boolean;
   badgeLevel: number;
   badgeName: string;
   badgeScarcity: number;
-  badgeSteamID: number;
-  badgeXP: number;
   image: string;
   name: string;
 };
 
 /** @internal */
-export const AccountBadgeMostXpDataPoint$outboundSchema: z.ZodType<
-  AccountBadgeMostXpDataPoint$Outbound,
+export const V1AccountBadgeScarcityDataPoint$outboundSchema: z.ZodType<
+  V1AccountBadgeScarcityDataPoint$Outbound,
   z.ZodTypeDef,
-  AccountBadgeMostXpDataPoint
+  V1AccountBadgeScarcityDataPoint
 > = z.object({
   appId: z.number().int(),
-  badgeCompletedAt: z.date().transform(v => v.toISOString()),
   badgeId: z.string(),
   badgeImage: z.string(),
   badgeIsFoil: z.boolean(),
   badgeLevel: z.number().int(),
   badgeName: z.string(),
   badgeScarcity: z.number().int(),
-  badgeSteamID: z.number().int(),
-  badgeXP: z.number().int(),
   image: z.string(),
   name: z.string(),
 });
@@ -117,11 +94,11 @@ export const AccountBadgeMostXpDataPoint$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountBadgeMostXpDataPoint$ {
-  /** @deprecated use `AccountBadgeMostXpDataPoint$inboundSchema` instead. */
-  export const inboundSchema = AccountBadgeMostXpDataPoint$inboundSchema;
-  /** @deprecated use `AccountBadgeMostXpDataPoint$outboundSchema` instead. */
-  export const outboundSchema = AccountBadgeMostXpDataPoint$outboundSchema;
-  /** @deprecated use `AccountBadgeMostXpDataPoint$Outbound` instead. */
-  export type Outbound = AccountBadgeMostXpDataPoint$Outbound;
+export namespace V1AccountBadgeScarcityDataPoint$ {
+  /** @deprecated use `V1AccountBadgeScarcityDataPoint$inboundSchema` instead. */
+  export const inboundSchema = V1AccountBadgeScarcityDataPoint$inboundSchema;
+  /** @deprecated use `V1AccountBadgeScarcityDataPoint$outboundSchema` instead. */
+  export const outboundSchema = V1AccountBadgeScarcityDataPoint$outboundSchema;
+  /** @deprecated use `V1AccountBadgeScarcityDataPoint$Outbound` instead. */
+  export type Outbound = V1AccountBadgeScarcityDataPoint$Outbound;
 }

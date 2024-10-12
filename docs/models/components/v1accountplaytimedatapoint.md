@@ -1,11 +1,11 @@
-# AccountPlaytimeDataPoint
+# V1AccountPlaytimeDataPoint
 
 ## Example Usage
 
 ```typescript
-import { AccountPlaytimeDataPoint } from "@steamsets/client-ts/models/components";
+import { V1AccountPlaytimeDataPoint } from "@steamsets/client-ts/models/components";
 
-let value: AccountPlaytimeDataPoint = {
+let value: V1AccountPlaytimeDataPoint = {
   appId: 730,
   image: "someHash.idk",
   name: "CS2",
