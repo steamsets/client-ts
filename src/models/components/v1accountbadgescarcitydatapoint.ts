@@ -10,6 +10,10 @@ export type V1AccountBadgeScarcityDataPoint = {
    */
   appId: number;
   /**
+   * The badge completed at
+   */
+  badgeCompletedAt: Date;
+  /**
    * The badge id
    */
   badgeId: string;
@@ -34,6 +38,14 @@ export type V1AccountBadgeScarcityDataPoint = {
    */
   badgeScarcity: number;
   /**
+   * The badge steam id
+   */
+  badgeSteamId: number;
+  /**
+   * The badge xp
+   */
+  badgeXP: number;
+  /**
    * The image of the app
    */
   image: string;
@@ -50,12 +62,17 @@ export const V1AccountBadgeScarcityDataPoint$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   appId: z.number().int(),
+  badgeCompletedAt: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ),
   badgeId: z.string(),
   badgeImage: z.string(),
   badgeIsFoil: z.boolean(),
   badgeLevel: z.number().int(),
   badgeName: z.string(),
   badgeScarcity: z.number().int(),
+  badgeSteamId: z.number().int(),
+  badgeXP: z.number().int(),
   image: z.string(),
   name: z.string(),
 });
@@ -63,12 +80,15 @@ export const V1AccountBadgeScarcityDataPoint$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountBadgeScarcityDataPoint$Outbound = {
   appId: number;
+  badgeCompletedAt: string;
   badgeId: string;
   badgeImage: string;
   badgeIsFoil: boolean;
   badgeLevel: number;
   badgeName: string;
   badgeScarcity: number;
+  badgeSteamId: number;
+  badgeXP: number;
   image: string;
   name: string;
 };
@@ -80,12 +100,15 @@ export const V1AccountBadgeScarcityDataPoint$outboundSchema: z.ZodType<
   V1AccountBadgeScarcityDataPoint
 > = z.object({
   appId: z.number().int(),
+  badgeCompletedAt: z.date().transform(v => v.toISOString()),
   badgeId: z.string(),
   badgeImage: z.string(),
   badgeIsFoil: z.boolean(),
   badgeLevel: z.number().int(),
   badgeName: z.string(),
   badgeScarcity: z.number().int(),
+  badgeSteamId: z.number().int(),
+  badgeXP: z.number().int(),
   image: z.string(),
   name: z.string(),
 });

@@ -42,12 +42,15 @@ let value: AccountV1GetDataPointsResponse = {
     scarcity: [
       {
         appId: 730,
+        badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
         badgeId: "bdg_123",
         badgeImage: "someHash.idk",
         badgeIsFoil: true,
         badgeLevel: 15,
         badgeName: "Sommer Sale 2024 Foil 1+",
         badgeScarcity: 15,
+        badgeSteamId: 123456,
+        badgeXP: 123456,
         image: "someHash.idk",
         name: "CS2",
       },

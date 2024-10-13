@@ -2,8 +2,8 @@ speakeasyVersion: 1.418.2
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:ae2953b65227a77f8e8f2a0f75541290bf404a43e770ba9594ff99128780fb8c
-        sourceBlobDigest: sha256:a51953255dd87ff493a80221df81b85837cf18235abbd6dfca4827fc36e4ebbc
+        sourceRevisionDigest: sha256:d2bad06e1c5b27234104d7ebaf017d327d8abb8a60eb0b28f92b655dcae398b9
+        sourceBlobDigest: sha256:2860302a489089a57985316d959a8f6239d85d83b8c8912395602ef679be838d
         tags:
             - latest
             - main
@@ -18,8 +18,8 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:ae2953b65227a77f8e8f2a0f75541290bf404a43e770ba9594ff99128780fb8c
-        sourceBlobDigest: sha256:a51953255dd87ff493a80221df81b85837cf18235abbd6dfca4827fc36e4ebbc
+        sourceRevisionDigest: sha256:d2bad06e1c5b27234104d7ebaf017d327d8abb8a60eb0b28f92b655dcae398b9
+        sourceBlobDigest: sha256:2860302a489089a57985316d959a8f6239d85d83b8c8912395602ef679be838d
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
