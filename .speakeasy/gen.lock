@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 828ae4d7d0160d5fefc8e571532ca03e
+  docChecksum: 0299a3e86d6a3079ae1ccb9804a7f1a4
   docVersion: 1.0.0
-  speakeasyVersion: 1.418.1
+  speakeasyVersion: 1.418.2
   generationVersion: 2.438.3
-  releaseVersion: 0.11.13
-  configChecksum: 262d902df3c2483162c3db76d7e339ce
+  releaseVersion: 0.11.14
+  configChecksum: a62c41fea9ee262367dde7b147e46b79
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -489,7 +489,7 @@ examples:
     speakeasy-default-account-v1-session-create:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "sessionId": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "sessionToken": "ABC123"}
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.connection.deleteConnection:
