@@ -11,9 +11,9 @@ export type V1CreateSessionBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * The session id
+   * The session token
    */
-  sessionId: string;
+  sessionToken: string;
 };
 
 /** @internal */
@@ -23,7 +23,7 @@ export const V1CreateSessionBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  sessionId: z.string(),
+  sessionToken: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -33,7 +33,7 @@ export const V1CreateSessionBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1CreateSessionBody$Outbound = {
   $schema?: string | undefined;
-  sessionId: string;
+  sessionToken: string;
 };
 
 /** @internal */
@@ -43,7 +43,7 @@ export const V1CreateSessionBody$outboundSchema: z.ZodType<
   V1CreateSessionBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  sessionId: z.string(),
+  sessionToken: z.string(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

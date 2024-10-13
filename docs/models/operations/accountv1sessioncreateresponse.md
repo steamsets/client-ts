@@ -14,7 +14,7 @@ let value: AccountV1SessionCreateResponse = {
   },
   v1CreateSessionBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1CreateSessionBody.json",
-    sessionId: "ABC123",
+    sessionToken: "ABC123",
   },
 };
 ```
