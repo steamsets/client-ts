@@ -10,7 +10,7 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "queue_priority",
+      resource: "social_links",
       value: "1",
     },
   ],
@@ -19,8 +19,8 @@ let value: V1GetSessionBody = {
       color: "#ff0000",
       icon: "tier_1.svg",
       name: "Tier 1",
-      rating: 431418,
-      role: "top_100",
+      rating: 703889,
+      role: "donator",
     },
   ],
   sessionData: {

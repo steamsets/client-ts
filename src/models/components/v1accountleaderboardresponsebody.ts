@@ -38,6 +38,7 @@ export type V1AccountLeaderboardResponseBody = {
   app?: V1LeaderboardAppInfo | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
   location?: Array<V1LeaderboardLocationInfo> | null | undefined;
+  ownAccount?: V1AccountLeaderboardAccount | undefined;
 };
 
 /** @internal */
@@ -52,6 +53,7 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$inboundSchema).optional(),
   location: z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema))
     .optional(),
+  ownAccount: V1AccountLeaderboardAccount$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -65,6 +67,7 @@ export type V1AccountLeaderboardResponseBody$Outbound = {
   app?: V1LeaderboardAppInfo$Outbound | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo$Outbound | null | undefined;
   location?: Array<V1LeaderboardLocationInfo$Outbound> | null | undefined;
+  ownAccount?: V1AccountLeaderboardAccount$Outbound | undefined;
 };
 
 /** @internal */
@@ -79,6 +82,7 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$outboundSchema).optional(),
   location: z.nullable(z.array(V1LeaderboardLocationInfo$outboundSchema))
     .optional(),
+  ownAccount: V1AccountLeaderboardAccount$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

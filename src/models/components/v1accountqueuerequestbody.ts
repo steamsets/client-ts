@@ -22,10 +22,6 @@ export type V1AccountQueueRequestBody = {
    */
   force: boolean;
   id?: IDStruct | undefined;
-  /**
-   * The steam id of the account if it doesn't exist in the database
-   */
-  steamId?: string | null | undefined;
   vanity?: VanityStruct | undefined;
 };
 
@@ -37,7 +33,6 @@ export const V1AccountQueueRequestBody$inboundSchema: z.ZodType<
 > = z.object({
   force: z.boolean(),
   id: IDStruct$inboundSchema.optional(),
-  steamId: z.nullable(z.string()).optional(),
   vanity: VanityStruct$inboundSchema.optional(),
 });
 
@@ -45,7 +40,6 @@ export const V1AccountQueueRequestBody$inboundSchema: z.ZodType<
 export type V1AccountQueueRequestBody$Outbound = {
   force: boolean;
   id?: IDStruct$Outbound | undefined;
-  steamId?: string | null | undefined;
   vanity?: VanityStruct$Outbound | undefined;
 };
 
@@ -57,7 +51,6 @@ export const V1AccountQueueRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   force: z.boolean(),
   id: IDStruct$outboundSchema.optional(),
-  steamId: z.nullable(z.string()).optional(),
   vanity: VanityStruct$outboundSchema.optional(),
 });
 

@@ -111,6 +111,7 @@ async function run() {
       isFoil: true,
     },
     end: 10,
+    goToLeaderboardRank: 1,
     leaderboard: "xp",
     location: [
       {
@@ -154,6 +155,7 @@ async function run() {
       isFoil: true,
     },
     end: 10,
+    goToLeaderboardRank: 1,
     leaderboard: "xp",
     location: [
       {

@@ -11,7 +11,7 @@ let value: ColorTag = {
   groupOwner: false,
   hex: "<value>",
   hsl: "<value>",
-  id: 716860,
+  id: 136900,
   name: "<value>",
 };
 ```

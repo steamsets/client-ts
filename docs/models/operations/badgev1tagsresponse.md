@@ -22,13 +22,13 @@ let value: BadgeV1TagsResponse = {
         groupOwner: false,
         hex: "<value>",
         hsl: "<value>",
-        id: 692472,
+        id: 929297,
         name: "<value>",
       },
     ],
     designTags: [
       {
-        id: 566602,
+        id: 318569,
         name: "<value>",
       },
     ],
