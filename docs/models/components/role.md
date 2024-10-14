@@ -9,8 +9,8 @@ let value: Role = {
   color: "#ff0000",
   icon: "tier_1.svg",
   name: "Tier 1",
-  rating: 581273,
-  role: "translator",
+  rating: 643990,
+  role: "amber",
 };
 ```
 

@@ -50,7 +50,7 @@ let value: V1AccountDataPointsResponseBody = {
   ],
   xp: {
     "key": {
-      "key": 270008,
+      "key": 572252,
     },
   },
 };

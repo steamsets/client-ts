@@ -62,6 +62,10 @@ export type V1AccountLeaderboardRequestBody = {
    */
   end?: number | null | undefined;
   /**
+   * The rank to go to
+   */
+  goToLeaderboardRank?: number | null | undefined;
+  /**
    * The leaderboard to get
    */
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard;
@@ -107,6 +111,7 @@ export const V1AccountLeaderboardRequestBody$inboundSchema: z.ZodType<
   app: z.nullable(V1AccountLeaderboardAppSearch$inboundSchema).optional(),
   badge: z.nullable(V1AccountLeaderboardBadgeSearch$inboundSchema).optional(),
   end: z.nullable(z.number().int()).optional(),
+  goToLeaderboardRank: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$inboundSchema,
   location: z.nullable(z.array(V1LeaderboardLocation$inboundSchema)).optional(),
   start: z.nullable(z.number().int()).optional(),
@@ -117,6 +122,7 @@ export type V1AccountLeaderboardRequestBody$Outbound = {
   app?: V1AccountLeaderboardAppSearch$Outbound | null | undefined;
   badge?: V1AccountLeaderboardBadgeSearch$Outbound | null | undefined;
   end?: number | null | undefined;
+  goToLeaderboardRank?: number | null | undefined;
   leaderboard: string;
   location?: Array<V1LeaderboardLocation$Outbound> | null | undefined;
   start?: number | null | undefined;
@@ -131,6 +137,7 @@ export const V1AccountLeaderboardRequestBody$outboundSchema: z.ZodType<
   app: z.nullable(V1AccountLeaderboardAppSearch$outboundSchema).optional(),
   badge: z.nullable(V1AccountLeaderboardBadgeSearch$outboundSchema).optional(),
   end: z.nullable(z.number().int()).optional(),
+  goToLeaderboardRank: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$outboundSchema,
   location: z.nullable(z.array(V1LeaderboardLocation$outboundSchema))
     .optional(),
