@@ -31,9 +31,8 @@ let value: AccountV1GetInfoResponse = {
     bans: 87129,
     bansUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     city: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Bad Krozingen",
     },
     communityBan: false,
     connections: [
@@ -94,9 +93,8 @@ let value: AccountV1GetInfoResponse = {
     pointsReceived: 123456,
     privacy: "public",
     region: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Europe",
     },
     roles: [
       {
@@ -108,9 +106,8 @@ let value: AccountV1GetInfoResponse = {
       },
     ],
     state: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
     steamSetsScore: 799159,

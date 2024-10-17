@@ -25,9 +25,8 @@ let value: V1AccountLeaderboardResponseBody = {
       badges: 123456,
       bans: 569101,
       city: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Bad Krozingen",
       },
       country: {
         code: "DE",
@@ -52,9 +51,8 @@ let value: V1AccountLeaderboardResponseBody = {
       privacy: "public",
       rank: 1,
       region: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Europe",
       },
       roles: [
         {
@@ -66,9 +64,8 @@ let value: V1AccountLeaderboardResponseBody = {
         },
       ],
       state: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
       steamSetsScore: 453543,
@@ -121,9 +118,8 @@ let value: V1AccountLeaderboardResponseBody = {
     badges: 123456,
     bans: 866383,
     city: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Bad Krozingen",
     },
     country: {
       code: "DE",
@@ -148,9 +144,8 @@ let value: V1AccountLeaderboardResponseBody = {
     privacy: "public",
     rank: 1,
     region: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Europe",
     },
     roles: [
       {
@@ -162,9 +157,8 @@ let value: V1AccountLeaderboardResponseBody = {
       },
     ],
     state: {
-      code: "DE",
       id: 1,
-      name: "Germany",
+      name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
     steamSetsScore: 359978,

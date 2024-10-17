@@ -19,9 +19,8 @@ let value: V1AccountFriendsResponseBody = {
       badges: 123456,
       bans: 223081,
       city: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Bad Krozingen",
       },
       country: {
         code: "DE",
@@ -46,9 +45,8 @@ let value: V1AccountFriendsResponseBody = {
       pointsReceived: 123456,
       privacy: "public",
       region: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Europe",
       },
       roles: [
         {
@@ -60,9 +58,8 @@ let value: V1AccountFriendsResponseBody = {
         },
       ],
       state: {
-        code: "DE",
         id: 1,
-        name: "Germany",
+        name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
       steamSetsScore: 297437,

@@ -10,11 +10,29 @@ import {
   LeaderboardAccountBadgeInfo$outboundSchema,
 } from "./leaderboardaccountbadgeinfo.js";
 import {
-  Location,
-  Location$inboundSchema,
-  Location$Outbound,
-  Location$outboundSchema,
-} from "./location.js";
+  LeaderboardCity,
+  LeaderboardCity$inboundSchema,
+  LeaderboardCity$Outbound,
+  LeaderboardCity$outboundSchema,
+} from "./leaderboardcity.js";
+import {
+  LeaderboardCountry,
+  LeaderboardCountry$inboundSchema,
+  LeaderboardCountry$Outbound,
+  LeaderboardCountry$outboundSchema,
+} from "./leaderboardcountry.js";
+import {
+  LeaderboardRegion,
+  LeaderboardRegion$inboundSchema,
+  LeaderboardRegion$Outbound,
+  LeaderboardRegion$outboundSchema,
+} from "./leaderboardregion.js";
+import {
+  LeaderboardState,
+  LeaderboardState$inboundSchema,
+  LeaderboardState$Outbound,
+  LeaderboardState$outboundSchema,
+} from "./leaderboardstate.js";
 import {
   Role,
   Role$inboundSchema,
@@ -60,8 +78,8 @@ export type V1AccountLeaderboardAccount = {
    * The number of bans
    */
   bans: number;
-  city?: Location | null | undefined;
-  country?: Location | null | undefined;
+  city?: LeaderboardCity | null | undefined;
+  country?: LeaderboardCountry | null | undefined;
   /**
    * The time the account was created
    */
@@ -130,12 +148,12 @@ export type V1AccountLeaderboardAccount = {
    * The rank of the account
    */
   rank: number;
-  region?: Location | null | undefined;
+  region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
    */
   roles: Array<Role> | null;
-  state?: Location | null | undefined;
+  state?: LeaderboardState | null | undefined;
   /**
    * The steam id
    */
@@ -178,8 +196,8 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   badgeInfo: z.nullable(LeaderboardAccountBadgeInfo$inboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
-  city: z.nullable(Location$inboundSchema).optional(),
-  country: z.nullable(Location$inboundSchema).optional(),
+  city: z.nullable(LeaderboardCity$inboundSchema).optional(),
+  country: z.nullable(LeaderboardCountry$inboundSchema).optional(),
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
@@ -197,9 +215,9 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   pointsReceived: z.number().int(),
   privacy: z.string(),
   rank: z.number().int(),
-  region: z.nullable(Location$inboundSchema).optional(),
+  region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
-  state: z.nullable(Location$inboundSchema).optional(),
+  state: z.nullable(LeaderboardState$inboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
@@ -220,8 +238,8 @@ export type V1AccountLeaderboardAccount$Outbound = {
   badgeInfo?: LeaderboardAccountBadgeInfo$Outbound | null | undefined;
   badges: number;
   bans: number;
-  city?: Location$Outbound | null | undefined;
-  country?: Location$Outbound | null | undefined;
+  city?: LeaderboardCity$Outbound | null | undefined;
+  country?: LeaderboardCountry$Outbound | null | undefined;
   createdAt: string;
   economyBan: string;
   foilBadgeCost: number;
@@ -239,9 +257,9 @@ export type V1AccountLeaderboardAccount$Outbound = {
   pointsReceived: number;
   privacy: string;
   rank: number;
-  region?: Location$Outbound | null | undefined;
+  region?: LeaderboardRegion$Outbound | null | undefined;
   roles: Array<Role$Outbound> | null;
-  state?: Location$Outbound | null | undefined;
+  state?: LeaderboardState$Outbound | null | undefined;
   steamId: string;
   steamSetsScore: number;
   steamSetsVanity: string;
@@ -266,8 +284,8 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   badgeInfo: z.nullable(LeaderboardAccountBadgeInfo$outboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
-  city: z.nullable(Location$outboundSchema).optional(),
-  country: z.nullable(Location$outboundSchema).optional(),
+  city: z.nullable(LeaderboardCity$outboundSchema).optional(),
+  country: z.nullable(LeaderboardCountry$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
@@ -285,9 +303,9 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   pointsReceived: z.number().int(),
   privacy: z.string(),
   rank: z.number().int(),
-  region: z.nullable(Location$outboundSchema).optional(),
+  region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
-  state: z.nullable(Location$outboundSchema).optional(),
+  state: z.nullable(LeaderboardState$outboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),

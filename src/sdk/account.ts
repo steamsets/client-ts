@@ -13,7 +13,6 @@ import { accountAccountV1GetFriends } from "../funcs/accountAccountV1GetFriends.
 import { accountAccountV1GetInfo } from "../funcs/accountAccountV1GetInfo.js";
 import { accountAccountV1GetLeaderboardHistory } from "../funcs/accountAccountV1GetLeaderboardHistory.js";
 import { accountAccountV1GetStaff } from "../funcs/accountAccountV1GetStaff.js";
-import { accountAccountV1LeaderboardPreview } from "../funcs/accountAccountV1LeaderboardPreview.js";
 import { accountAccountV1Queue } from "../funcs/accountAccountV1Queue.js";
 import { accountAccountV1SessionCreate } from "../funcs/accountAccountV1SessionCreate.js";
 import { accountAccountV1SessionDelete } from "../funcs/accountAccountV1SessionDelete.js";
@@ -182,20 +181,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetLeaderboardHistoryResponse> {
     return unwrapAsync(accountAccountV1GetLeaderboardHistory(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Preview what a given score would result in
-   */
-  async accountV1LeaderboardPreview(
-    request: components.V1AccountLeaderboardPreviewRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1LeaderboardPreviewResponse> {
-    return unwrapAsync(accountAccountV1LeaderboardPreview(
       this,
       request,
       options,
