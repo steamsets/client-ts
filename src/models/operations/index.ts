@@ -13,7 +13,6 @@ export * from "./accountv1getfriends.js";
 export * from "./accountv1getinfo.js";
 export * from "./accountv1getleaderboardhistory.js";
 export * from "./accountv1getstaff.js";
-export * from "./accountv1leaderboardpreview.js";
 export * from "./accountv1queue.js";
 export * from "./accountv1sessioncreate.js";
 export * from "./accountv1sessiondelete.js";

@@ -86,7 +86,6 @@ run();
 * [accountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends) - Get Account Friends
 * [accountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
 * [accountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
-* [accountV1LeaderboardPreview](docs/sdks/account/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 * [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget) - Gets all session data
 * [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget) - Gets all settings for the account
 * [accountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff) - Get Staff Members and their info
@@ -137,7 +136,6 @@ run();
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
-* [accountV1LeaderboardPreview](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 * [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
 * [leaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 
@@ -539,7 +537,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountAccountV1GetInfo`](docs/sdks/account/README.md#accountv1getinfo) - Get Account Info
 - [`accountAccountV1GetLeaderboardHistory`](docs/sdks/account/README.md#accountv1getleaderboardhistory) - Get Account Leaderboard History
 - [`accountAccountV1GetStaff`](docs/sdks/account/README.md#accountv1getstaff) - Get Staff Members and their info
-- [`accountAccountV1LeaderboardPreview`](docs/sdks/account/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 - [`accountAccountV1Queue`](docs/sdks/account/README.md#accountv1queue) - Queue an account for processing
 - [`accountAccountV1SessionCreate`](docs/sdks/account/README.md#accountv1sessioncreate) - Create a new session for non logged in users
 - [`accountAccountV1SessionDelete`](docs/sdks/account/README.md#accountv1sessiondelete) - Deletes a session, can also be used to logout
@@ -572,7 +569,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`developerAccountV1SettingsDeveloperAppCreate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
 - [`developerAccountV1SettingsDeveloperAppDelete`](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
 - [`developerAccountV1SettingsDeveloperAppUpdate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
-- [`leaderboardAccountV1LeaderboardPreview`](docs/sdks/leaderboard/README.md#accountv1leaderboardpreview) - Preview what a given score would result in
 - [`leaderboardLeaderboardV1GetAccount`](docs/sdks/leaderboard/README.md#leaderboardv1getaccount) - Get a leaderboard for accounts
 - [`leaderboardLeaderboardV1GetBadges`](docs/sdks/leaderboard/README.md#leaderboardv1getbadges) - Get all available badges for leaderboards
 - [`livenessLiveness`](docs/sdks/liveness/README.md#liveness) - Liveness check

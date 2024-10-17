@@ -15,9 +15,8 @@ let value: V1AccountFriend = {
   badges: 123456,
   bans: 396506,
   city: {
-    code: "DE",
     id: 1,
-    name: "Germany",
+    name: "Bad Krozingen",
   },
   country: {
     code: "DE",
@@ -42,9 +41,8 @@ let value: V1AccountFriend = {
   pointsReceived: 123456,
   privacy: "public",
   region: {
-    code: "DE",
     id: 1,
-    name: "Germany",
+    name: "Europe",
   },
   roles: [
     {
@@ -56,9 +54,8 @@ let value: V1AccountFriend = {
     },
   ],
   state: {
-    code: "DE",
     id: 1,
-    name: "Germany",
+    name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
   steamSetsScore: 725255,
@@ -81,8 +78,8 @@ let value: V1AccountFriend = {
 | `awardsReceived`                                                                              | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of awards the account has                                                          | 123456                                                                                        |
 | `badges`                                                                                      | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of badges the account has                                                          | 123456                                                                                        |
 | `bans`                                                                                        | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of bans                                                                            |                                                                                               |
-| `city`                                                                                        | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
-| `country`                                                                                     | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `city`                                                                                        | [components.LeaderboardCity](../../models/components/leaderboardcity.md)                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `country`                                                                                     | [components.LeaderboardCountry](../../models/components/leaderboardcountry.md)                | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The time the account was created                                                              | 2023-01-01T00:00:00Z                                                                          |
 | `economyBan`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The economy ban of the account                                                                | steam                                                                                         |
 | `foilBadgeCost`                                                                               | *number*                                                                                      | :heavy_check_mark:                                                                            | The cost of a foil badge                                                                      | 123456                                                                                        |
@@ -100,9 +97,9 @@ let value: V1AccountFriend = {
 | `pointsGiven`                                                                                 | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of points the account has                                                          | 123456                                                                                        |
 | `pointsReceived`                                                                              | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of points the account has                                                          | 123456                                                                                        |
 | `privacy`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | The privacy of the account                                                                    | public                                                                                        |
-| `region`                                                                                      | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `region`                                                                                      | [components.LeaderboardRegion](../../models/components/leaderboardregion.md)                  | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
 | `roles`                                                                                       | [components.Role](../../models/components/role.md)[]                                          | :heavy_check_mark:                                                                            | The roles of the account                                                                      |                                                                                               |
-| `state`                                                                                       | [components.Location](../../models/components/location.md)                                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `state`                                                                                       | [components.LeaderboardState](../../models/components/leaderboardstate.md)                    | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
 | `steamId`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | The steam id                                                                                  | 76561198842603734                                                                             |
 | `steamSetsScore`                                                                              | *number*                                                                                      | :heavy_check_mark:                                                                            | The steam sets score                                                                          |                                                                                               |
 | `steamSetsVanity`                                                                             | *string*                                                                                      | :heavy_check_mark:                                                                            | The vanity of the account                                                                     | steamsets                                                                                     |

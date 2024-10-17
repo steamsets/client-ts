@@ -24,11 +24,29 @@ import {
   Image$outboundSchema,
 } from "./image.js";
 import {
-  Location,
-  Location$inboundSchema,
-  Location$Outbound,
-  Location$outboundSchema,
-} from "./location.js";
+  LeaderboardCity,
+  LeaderboardCity$inboundSchema,
+  LeaderboardCity$Outbound,
+  LeaderboardCity$outboundSchema,
+} from "./leaderboardcity.js";
+import {
+  LeaderboardCountry,
+  LeaderboardCountry$inboundSchema,
+  LeaderboardCountry$Outbound,
+  LeaderboardCountry$outboundSchema,
+} from "./leaderboardcountry.js";
+import {
+  LeaderboardRegion,
+  LeaderboardRegion$inboundSchema,
+  LeaderboardRegion$Outbound,
+  LeaderboardRegion$outboundSchema,
+} from "./leaderboardregion.js";
+import {
+  LeaderboardState,
+  LeaderboardState$inboundSchema,
+  LeaderboardState$Outbound,
+  LeaderboardState$outboundSchema,
+} from "./leaderboardstate.js";
 import {
   Role,
   Role$inboundSchema,
@@ -144,7 +162,7 @@ export type AccountInfoBody = {
    * The time the bans were updated
    */
   bansUpdatedAt: Date | null;
-  city?: Location | null | undefined;
+  city?: LeaderboardCity | null | undefined;
   /**
    * If the account is community banned or not
    */
@@ -153,7 +171,7 @@ export type AccountInfoBody = {
    * The connections of the account
    */
   connections: Array<Connection> | null;
-  country?: Location | null | undefined;
+  country?: LeaderboardCountry | null | undefined;
   /**
    * The time the account was created
    */
@@ -246,12 +264,12 @@ export type AccountInfoBody = {
    * The privacy of the account
    */
   privacy: Privacy;
-  region?: Location | null | undefined;
+  region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
    */
   roles: Array<Role> | null;
-  state?: Location | null | undefined;
+  state?: LeaderboardState | null | undefined;
   /**
    * The steam id
    */
@@ -374,10 +392,10 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   bansUpdatedAt: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
-  city: z.nullable(Location$inboundSchema).optional(),
+  city: z.nullable(LeaderboardCity$inboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
-  country: z.nullable(Location$inboundSchema).optional(),
+  country: z.nullable(LeaderboardCountry$inboundSchema).optional(),
   createdAt: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
@@ -407,9 +425,9 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
   privacy: Privacy$inboundSchema,
-  region: z.nullable(Location$inboundSchema).optional(),
+  region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
-  state: z.nullable(Location$inboundSchema).optional(),
+  state: z.nullable(LeaderboardState$inboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
@@ -445,10 +463,10 @@ export type AccountInfoBody$Outbound = {
   badgesUpdatedAt: string | null;
   bans: number;
   bansUpdatedAt: string | null;
-  city?: Location$Outbound | null | undefined;
+  city?: LeaderboardCity$Outbound | null | undefined;
   communityBan: boolean;
   connections: Array<Connection$Outbound> | null;
-  country?: Location$Outbound | null | undefined;
+  country?: LeaderboardCountry$Outbound | null | undefined;
   createdAt: string | null;
   currentBestRanks: Array<BestLeaderboardRank$Outbound> | null;
   currentRanks: Array<BestLeaderboardRank$Outbound> | null;
@@ -472,9 +490,9 @@ export type AccountInfoBody$Outbound = {
   pointsGiven: number;
   pointsReceived: number;
   privacy: string;
-  region?: Location$Outbound | null | undefined;
+  region?: LeaderboardRegion$Outbound | null | undefined;
   roles: Array<Role$Outbound> | null;
-  state?: Location$Outbound | null | undefined;
+  state?: LeaderboardState$Outbound | null | undefined;
   steamId: string;
   steamSetsScore: number;
   steamSetsVanity: string;
@@ -508,10 +526,10 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   badgesUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   bans: z.number().int(),
   bansUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
-  city: z.nullable(Location$outboundSchema).optional(),
+  city: z.nullable(LeaderboardCity$outboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
-  country: z.nullable(Location$outboundSchema).optional(),
+  country: z.nullable(LeaderboardCountry$outboundSchema).optional(),
   createdAt: z.nullable(z.date().transform(v => v.toISOString())),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
   currentRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
@@ -535,9 +553,9 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
   privacy: Privacy$outboundSchema,
-  region: z.nullable(Location$outboundSchema).optional(),
+  region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
-  state: z.nullable(Location$outboundSchema).optional(),
+  state: z.nullable(LeaderboardState$outboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
