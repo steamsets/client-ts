@@ -11,7 +11,9 @@ export type V1AccountAppBadge = {
   appShortName: string;
   badgeImage: string;
   completedAt: Date;
+  isEvent: boolean;
   isFoil: boolean;
+  isSale: boolean;
   level: number;
   name: string;
   price: number;
@@ -35,7 +37,9 @@ export const V1AccountAppBadge$inboundSchema: z.ZodType<
   completedAt: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ),
+  isEvent: z.boolean(),
   isFoil: z.boolean(),
+  isSale: z.boolean(),
   level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
@@ -53,7 +57,9 @@ export type V1AccountAppBadge$Outbound = {
   appShortName: string;
   badgeImage: string;
   completedAt: string;
+  isEvent: boolean;
   isFoil: boolean;
+  isSale: boolean;
   level: number;
   name: string;
   price: number;
@@ -75,7 +81,9 @@ export const V1AccountAppBadge$outboundSchema: z.ZodType<
   appShortName: z.string(),
   badgeImage: z.string(),
   completedAt: z.date().transform(v => v.toISOString()),
+  isEvent: z.boolean(),
   isFoil: z.boolean(),
+  isSale: z.boolean(),
   level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
