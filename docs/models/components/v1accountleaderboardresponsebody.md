@@ -56,9 +56,6 @@ let value: V1AccountLeaderboardResponseBody = {
       },
       roles: [
         {
-          color: "#ff0000",
-          icon: "tier_1.svg",
-          name: "Tier 1",
           rating: 69167,
           role: "contributor",
         },
@@ -149,9 +146,6 @@ let value: V1AccountLeaderboardResponseBody = {
     },
     roles: [
       {
-        color: "#ff0000",
-        icon: "tier_1.svg",
-        name: "Tier 1",
         rating: 855804,
         role: "user",
       },
