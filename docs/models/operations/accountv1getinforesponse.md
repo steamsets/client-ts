@@ -98,9 +98,6 @@ let value: AccountV1GetInfoResponse = {
     },
     roles: [
       {
-        color: "#ff0000",
-        icon: "tier_1.svg",
-        name: "Tier 1",
         rating: 870013,
         role: "badge_scout",
       },

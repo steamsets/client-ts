@@ -29,18 +29,6 @@ export type RoleRole = ClosedEnum<typeof RoleRole>;
 
 export type Role = {
   /**
-   * The role color
-   */
-  color: string;
-  /**
-   * The role icon
-   */
-  icon: string;
-  /**
-   * The Group name
-   */
-  name: string;
-  /**
    * The higher the more presedence it has
    */
   rating: number;
@@ -69,18 +57,12 @@ export namespace RoleRole$ {
 /** @internal */
 export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
   .object({
-    color: z.string(),
-    icon: z.string(),
-    name: z.string(),
     rating: z.number().int(),
     role: RoleRole$inboundSchema,
   });
 
 /** @internal */
 export type Role$Outbound = {
-  color: string;
-  icon: string;
-  name: string;
   rating: number;
   role: string;
 };
@@ -88,9 +70,6 @@ export type Role$Outbound = {
 /** @internal */
 export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> =
   z.object({
-    color: z.string(),
-    icon: z.string(),
-    name: z.string(),
     rating: z.number().int(),
     role: RoleRole$outboundSchema,
   });

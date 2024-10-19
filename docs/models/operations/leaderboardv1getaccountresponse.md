@@ -63,9 +63,6 @@ let value: LeaderboardV1GetAccountResponse = {
         },
         roles: [
           {
-            color: "#ff0000",
-            icon: "tier_1.svg",
-            name: "Tier 1",
             rating: 943749,
             role: "contributor",
           },
@@ -156,9 +153,6 @@ let value: LeaderboardV1GetAccountResponse = {
       },
       roles: [
         {
-          color: "#ff0000",
-          icon: "tier_1.svg",
-          name: "Tier 1",
           rating: 666767,
           role: "contributor",
         },
