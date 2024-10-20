@@ -10,7 +10,7 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "social_links",
+      resource: "theme",
       value: "1",
     },
   ],

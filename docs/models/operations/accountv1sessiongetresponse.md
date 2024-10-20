@@ -17,7 +17,7 @@ let value: AccountV1SessionGetResponse = {
     accountId: 123456,
     resources: [
       {
-        resource: "developer_apps",
+        resource: "account_queues",
         value: "1",
       },
     ],
