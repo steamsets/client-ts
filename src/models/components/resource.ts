@@ -23,6 +23,7 @@ export const ResourceResource = {
   Theme: "theme",
   VanityLength: "vanity_length",
   DeveloperApps: "developer_apps",
+  AccountQueues: "account_queues",
 } as const;
 export type ResourceResource = ClosedEnum<typeof ResourceResource>;
 
