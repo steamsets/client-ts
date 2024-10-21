@@ -17,7 +17,7 @@ export type V1ConnectResponseBody = {
   /**
    * Public ID of the connection only for domain connections
    */
-  publicId: string | null;
+  publicId?: string | null | undefined;
 };
 
 /** @internal */
@@ -28,7 +28,7 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   code: z.string(),
-  publicId: z.nullable(z.string()),
+  publicId: z.nullable(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -39,7 +39,7 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
 export type V1ConnectResponseBody$Outbound = {
   $schema?: string | undefined;
   code: string;
-  publicId: string | null;
+  publicId?: string | null | undefined;
 };
 
 /** @internal */
@@ -50,7 +50,7 @@ export const V1ConnectResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   code: z.string(),
-  publicId: z.nullable(z.string()),
+  publicId: z.nullable(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
