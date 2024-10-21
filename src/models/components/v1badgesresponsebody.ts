@@ -5,18 +5,18 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
-  V1AccountAppBadge,
-  V1AccountAppBadge$inboundSchema,
-  V1AccountAppBadge$Outbound,
-  V1AccountAppBadge$outboundSchema,
-} from "./v1accountappbadge.js";
+  V1AppBadge,
+  V1AppBadge$inboundSchema,
+  V1AppBadge$Outbound,
+  V1AppBadge$outboundSchema,
+} from "./v1appbadge.js";
 
 export type V1BadgesResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  badges: Array<V1AccountAppBadge> | null;
+  badges: Array<V1AppBadge> | null;
 };
 
 /** @internal */
@@ -26,7 +26,7 @@ export const V1BadgesResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  badges: z.nullable(z.array(V1AccountAppBadge$inboundSchema)),
+  badges: z.nullable(z.array(V1AppBadge$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -36,7 +36,7 @@ export const V1BadgesResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1BadgesResponseBody$Outbound = {
   $schema?: string | undefined;
-  badges: Array<V1AccountAppBadge$Outbound> | null;
+  badges: Array<V1AppBadge$Outbound> | null;
 };
 
 /** @internal */
@@ -46,7 +46,7 @@ export const V1BadgesResponseBody$outboundSchema: z.ZodType<
   V1BadgesResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  badges: z.nullable(z.array(V1AccountAppBadge$outboundSchema)),
+  badges: z.nullable(z.array(V1AppBadge$outboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

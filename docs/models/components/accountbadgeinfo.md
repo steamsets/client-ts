@@ -1,11 +1,11 @@
-# LeaderboardAccountBadgeInfo
+# AccountBadgeInfo
 
 ## Example Usage
 
 ```typescript
-import { LeaderboardAccountBadgeInfo } from "@steamsets/client-ts/models/components";
+import { AccountBadgeInfo } from "@steamsets/client-ts/models/components";
 
-let value: LeaderboardAccountBadgeInfo = {
+let value: AccountBadgeInfo = {
   completionTime: new Date("2023-01-01T00:00:00Z"),
   level: 123456,
   xp: 123456,

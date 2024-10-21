@@ -4,11 +4,11 @@
 
 import * as z from "zod";
 import {
-  LeaderboardAccountBadgeInfo,
-  LeaderboardAccountBadgeInfo$inboundSchema,
-  LeaderboardAccountBadgeInfo$Outbound,
-  LeaderboardAccountBadgeInfo$outboundSchema,
-} from "./leaderboardaccountbadgeinfo.js";
+  AccountBadgeInfo,
+  AccountBadgeInfo$inboundSchema,
+  AccountBadgeInfo$Outbound,
+  AccountBadgeInfo$outboundSchema,
+} from "./accountbadgeinfo.js";
 import {
   LeaderboardCity,
   LeaderboardCity$inboundSchema,
@@ -69,7 +69,7 @@ export type V1AccountLeaderboardAccount = {
    * The number of awards the account has
    */
   awardsReceived: number;
-  badgeInfo?: LeaderboardAccountBadgeInfo | null | undefined;
+  badgeInfo?: AccountBadgeInfo | null | undefined;
   /**
    * The number of badges the account has
    */
@@ -193,7 +193,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
-  badgeInfo: z.nullable(LeaderboardAccountBadgeInfo$inboundSchema).optional(),
+  badgeInfo: z.nullable(AccountBadgeInfo$inboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
   city: z.nullable(LeaderboardCity$inboundSchema).optional(),
@@ -235,7 +235,7 @@ export type V1AccountLeaderboardAccount$Outbound = {
   averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
-  badgeInfo?: LeaderboardAccountBadgeInfo$Outbound | null | undefined;
+  badgeInfo?: AccountBadgeInfo$Outbound | null | undefined;
   badges: number;
   bans: number;
   city?: LeaderboardCity$Outbound | null | undefined;
@@ -281,7 +281,7 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
-  badgeInfo: z.nullable(LeaderboardAccountBadgeInfo$outboundSchema).optional(),
+  badgeInfo: z.nullable(AccountBadgeInfo$outboundSchema).optional(),
   badges: z.number().int(),
   bans: z.number().int(),
   city: z.nullable(LeaderboardCity$outboundSchema).optional(),

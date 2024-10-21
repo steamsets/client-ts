@@ -4,26 +4,38 @@
 
 import * as z from "zod";
 import {
-  V1AccountBadgeCompletion,
-  V1AccountBadgeCompletion$inboundSchema,
-  V1AccountBadgeCompletion$Outbound,
-  V1AccountBadgeCompletion$outboundSchema,
-} from "./v1accountbadgecompletion.js";
+  AccountBadgeInfo,
+  AccountBadgeInfo$inboundSchema,
+  AccountBadgeInfo$Outbound,
+  AccountBadgeInfo$outboundSchema,
+} from "./accountbadgeinfo.js";
 
 export type V1AppBadge = {
-  accountBadge: V1AccountBadgeCompletion;
+  accountInfo?: AccountBadgeInfo | null | undefined;
+  appId: number;
+  appImage: string;
+  appName: string;
+  appShortName: string;
   badgeImage: string;
+  /**
+   * The level this badge starts at
+   */
+  baseLevel: number;
+  /**
+   * The XP the badge gives per level
+   */
+  baseXp: number;
   firstCompletion: Date | null;
   highestLevel: number;
+  isEvent: boolean;
   isFoil: boolean;
+  isSale: boolean;
   lastCompletion: Date | null;
-  level: number;
   name: string;
   price: number;
   publicId: string;
   scarcity: number;
   steamId: number;
-  xp: number;
 };
 
 /** @internal */
@@ -32,40 +44,52 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  accountBadge: V1AccountBadgeCompletion$inboundSchema,
+  accountInfo: z.nullable(AccountBadgeInfo$inboundSchema).optional(),
+  appId: z.number().int(),
+  appImage: z.string(),
+  appName: z.string(),
+  appShortName: z.string(),
   badgeImage: z.string(),
+  baseLevel: z.number().int(),
+  baseXp: z.number().int(),
   firstCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   highestLevel: z.number().int(),
+  isEvent: z.boolean(),
   isFoil: z.boolean(),
+  isSale: z.boolean(),
   lastCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
-  level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
   publicId: z.string(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
-  xp: z.number().int(),
 });
 
 /** @internal */
 export type V1AppBadge$Outbound = {
-  accountBadge: V1AccountBadgeCompletion$Outbound;
+  accountInfo?: AccountBadgeInfo$Outbound | null | undefined;
+  appId: number;
+  appImage: string;
+  appName: string;
+  appShortName: string;
   badgeImage: string;
+  baseLevel: number;
+  baseXp: number;
   firstCompletion: string | null;
   highestLevel: number;
+  isEvent: boolean;
   isFoil: boolean;
+  isSale: boolean;
   lastCompletion: string | null;
-  level: number;
   name: string;
   price: number;
   publicId: string;
   scarcity: number;
   steamId: number;
-  xp: number;
 };
 
 /** @internal */
@@ -74,19 +98,25 @@ export const V1AppBadge$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AppBadge
 > = z.object({
-  accountBadge: V1AccountBadgeCompletion$outboundSchema,
+  accountInfo: z.nullable(AccountBadgeInfo$outboundSchema).optional(),
+  appId: z.number().int(),
+  appImage: z.string(),
+  appName: z.string(),
+  appShortName: z.string(),
   badgeImage: z.string(),
+  baseLevel: z.number().int(),
+  baseXp: z.number().int(),
   firstCompletion: z.nullable(z.date().transform(v => v.toISOString())),
   highestLevel: z.number().int(),
+  isEvent: z.boolean(),
   isFoil: z.boolean(),
+  isSale: z.boolean(),
   lastCompletion: z.nullable(z.date().transform(v => v.toISOString())),
-  level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
   publicId: z.string(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
-  xp: z.number().int(),
 });
 
 /**

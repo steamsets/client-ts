@@ -17,7 +17,7 @@ let value: V1UpdateSettingsRequestBody = {
   ],
   hidden: true,
   language: "en",
-  role: "amber",
+  role: "amethyst",
   theme: "dark",
   vanity: "flo",
 };

@@ -5,32 +5,26 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import {
-  V1AccountBadgeMostXpDataPoint,
-  V1AccountBadgeMostXpDataPoint$inboundSchema,
-  V1AccountBadgeMostXpDataPoint$Outbound,
-  V1AccountBadgeMostXpDataPoint$outboundSchema,
-} from "./v1accountbadgemostxpdatapoint.js";
-import {
-  V1AccountBadgeScarcityDataPoint,
-  V1AccountBadgeScarcityDataPoint$inboundSchema,
-  V1AccountBadgeScarcityDataPoint$Outbound,
-  V1AccountBadgeScarcityDataPoint$outboundSchema,
-} from "./v1accountbadgescarcitydatapoint.js";
-import {
   V1AccountPlaytimeDataPoint,
   V1AccountPlaytimeDataPoint$inboundSchema,
   V1AccountPlaytimeDataPoint$Outbound,
   V1AccountPlaytimeDataPoint$outboundSchema,
 } from "./v1accountplaytimedatapoint.js";
+import {
+  V1AppBadge,
+  V1AppBadge$inboundSchema,
+  V1AppBadge$Outbound,
+  V1AppBadge$outboundSchema,
+} from "./v1appbadge.js";
 
 export type V1AccountDataPointsResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  mostXp: Array<V1AccountBadgeMostXpDataPoint> | null;
+  mostXp: Array<V1AppBadge> | null;
   playtime: Array<V1AccountPlaytimeDataPoint> | null;
-  scarcity: Array<V1AccountBadgeScarcityDataPoint> | null;
+  scarcity: Array<V1AppBadge> | null;
   xp: { [k: string]: { [k: string]: number } };
 };
 
@@ -41,9 +35,9 @@ export const V1AccountDataPointsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  mostXp: z.nullable(z.array(V1AccountBadgeMostXpDataPoint$inboundSchema)),
+  mostXp: z.nullable(z.array(V1AppBadge$inboundSchema)),
   playtime: z.nullable(z.array(V1AccountPlaytimeDataPoint$inboundSchema)),
-  scarcity: z.nullable(z.array(V1AccountBadgeScarcityDataPoint$inboundSchema)),
+  scarcity: z.nullable(z.array(V1AppBadge$inboundSchema)),
   xp: z.record(z.record(z.number().int())),
 }).transform((v) => {
   return remap$(v, {
@@ -54,9 +48,9 @@ export const V1AccountDataPointsResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountDataPointsResponseBody$Outbound = {
   $schema?: string | undefined;
-  mostXp: Array<V1AccountBadgeMostXpDataPoint$Outbound> | null;
+  mostXp: Array<V1AppBadge$Outbound> | null;
   playtime: Array<V1AccountPlaytimeDataPoint$Outbound> | null;
-  scarcity: Array<V1AccountBadgeScarcityDataPoint$Outbound> | null;
+  scarcity: Array<V1AppBadge$Outbound> | null;
   xp: { [k: string]: { [k: string]: number } };
 };
 
@@ -67,9 +61,9 @@ export const V1AccountDataPointsResponseBody$outboundSchema: z.ZodType<
   V1AccountDataPointsResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  mostXp: z.nullable(z.array(V1AccountBadgeMostXpDataPoint$outboundSchema)),
+  mostXp: z.nullable(z.array(V1AppBadge$outboundSchema)),
   playtime: z.nullable(z.array(V1AccountPlaytimeDataPoint$outboundSchema)),
-  scarcity: z.nullable(z.array(V1AccountBadgeScarcityDataPoint$outboundSchema)),
+  scarcity: z.nullable(z.array(V1AppBadge$outboundSchema)),
   xp: z.record(z.record(z.number().int())),
 }).transform((v) => {
   return remap$(v, {

@@ -10,18 +10,29 @@ let value: V1AccountDataPointsResponseBody = {
     "https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json",
   mostXp: [
     {
-      appId: 123456,
-      badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
-      badgeId: "123456",
-      badgeImage: "steamsets",
-      badgeIsFoil: true,
-      badgeLevel: 123456,
-      badgeName: "steamsets",
-      badgeScarcity: 123456,
-      badgeSteamID: 123456,
-      badgeXP: 123456,
-      image: "steamsets",
-      name: "steamsets",
+      accountInfo: {
+        completionTime: new Date("2023-01-01T00:00:00Z"),
+        level: 123456,
+        xp: 123456,
+      },
+      appId: 643990,
+      appImage: "<value>",
+      appName: "<value>",
+      appShortName: "<value>",
+      badgeImage: "<value>",
+      baseLevel: 423855,
+      baseXp: 606393,
+      firstCompletion: new Date("2022-01-22T00:51:28.398Z"),
+      highestLevel: 301575,
+      isEvent: false,
+      isFoil: false,
+      isSale: false,
+      lastCompletion: new Date("2023-12-25T13:12:17.029Z"),
+      name: "<value>",
+      price: 290077,
+      publicId: "<id>",
+      scarcity: 618016,
+      steamId: 428769,
     },
   ],
   playtime: [
@@ -34,23 +45,34 @@ let value: V1AccountDataPointsResponseBody = {
   ],
   scarcity: [
     {
-      appId: 730,
-      badgeCompletedAt: new Date("2023-01-01T00:00:00Z"),
-      badgeId: "bdg_123",
-      badgeImage: "someHash.idk",
-      badgeIsFoil: true,
-      badgeLevel: 15,
-      badgeName: "Sommer Sale 2024 Foil 1+",
-      badgeScarcity: 15,
-      badgeSteamId: 123456,
-      badgeXP: 123456,
-      image: "someHash.idk",
-      name: "CS2",
+      accountInfo: {
+        completionTime: new Date("2023-01-01T00:00:00Z"),
+        level: 123456,
+        xp: 123456,
+      },
+      appId: 135474,
+      appImage: "<value>",
+      appName: "<value>",
+      appShortName: "<value>",
+      badgeImage: "<value>",
+      baseLevel: 298282,
+      baseXp: 569965,
+      firstCompletion: new Date("2023-10-10T14:19:01.603Z"),
+      highestLevel: 574325,
+      isEvent: false,
+      isFoil: false,
+      isSale: false,
+      lastCompletion: new Date("2023-12-17T21:47:39.716Z"),
+      name: "<value>",
+      price: 652103,
+      publicId: "<id>",
+      scarcity: 431418,
+      steamId: 896547,
     },
   ],
   xp: {
     "key": {
-      "key": 270008,
+      "key": 367562,
     },
   },
 };
@@ -58,10 +80,10 @@ let value: V1AccountDataPointsResponseBody = {
 
 ## Fields
 
-| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `dollarSchema`                                                                                             | *string*                                                                                                   | :heavy_minus_sign:                                                                                         | A URL to the JSON Schema for this object.                                                                  | https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json                                     |
-| `mostXp`                                                                                                   | [components.V1AccountBadgeMostXpDataPoint](../../models/components/v1accountbadgemostxpdatapoint.md)[]     | :heavy_check_mark:                                                                                         | N/A                                                                                                        |                                                                                                            |
-| `playtime`                                                                                                 | [components.V1AccountPlaytimeDataPoint](../../models/components/v1accountplaytimedatapoint.md)[]           | :heavy_check_mark:                                                                                         | N/A                                                                                                        |                                                                                                            |
-| `scarcity`                                                                                                 | [components.V1AccountBadgeScarcityDataPoint](../../models/components/v1accountbadgescarcitydatapoint.md)[] | :heavy_check_mark:                                                                                         | N/A                                                                                                        |                                                                                                            |
-| `xp`                                                                                                       | Record<string, Record<string, *number*>>                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |                                                                                                            |
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      | Example                                                                                          |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `dollarSchema`                                                                                   | *string*                                                                                         | :heavy_minus_sign:                                                                               | A URL to the JSON Schema for this object.                                                        | https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json                           |
+| `mostXp`                                                                                         | [components.V1AppBadge](../../models/components/v1appbadge.md)[]                                 | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |
+| `playtime`                                                                                       | [components.V1AccountPlaytimeDataPoint](../../models/components/v1accountplaytimedatapoint.md)[] | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |
+| `scarcity`                                                                                       | [components.V1AppBadge](../../models/components/v1appbadge.md)[]                                 | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |
+| `xp`                                                                                             | Record<string, Record<string, *number*>>                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |

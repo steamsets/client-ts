@@ -9,23 +9,29 @@ let value: V1AppResponseBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1AppResponseBody.json",
   badges: [
     {
-      accountBadge: {
-        completedAt: new Date("2022-03-01T13:18:23.203Z"),
-        level: 199996,
-        xp: 18521,
+      accountInfo: {
+        completionTime: new Date("2023-01-01T00:00:00Z"),
+        level: 123456,
+        xp: 123456,
       },
+      appId: 216897,
+      appImage: "<value>",
+      appName: "<value>",
+      appShortName: "<value>",
       badgeImage: "<value>",
-      firstCompletion: new Date("2024-05-19T21:25:27.801Z"),
-      highestLevel: 223924,
+      baseLevel: 663078,
+      baseXp: 263322,
+      firstCompletion: new Date("2022-01-23T15:12:14.003Z"),
+      highestLevel: 758379,
+      isEvent: false,
       isFoil: false,
-      lastCompletion: new Date("2023-01-14T12:07:50.192Z"),
-      level: 928082,
+      isSale: false,
+      lastCompletion: new Date("2022-12-17T17:43:52.087Z"),
       name: "<value>",
-      price: 704415,
+      price: 383464,
       publicId: "<id>",
-      scarcity: 31838,
-      steamId: 164694,
-      xp: 621479,
+      scarcity: 588317,
+      steamId: 831049,
     },
   ],
   detail: {
@@ -41,8 +47,9 @@ let value: V1AppResponseBody = {
   },
   items: [
     {
-      cost: 577229,
-      description: "justly pfft oh delete",
+      cost: 628982,
+      description:
+        "underplay hippodrome league given only trash within ack incidentally",
       largeImage: "<value>",
       name: "<value>",
       publicId: "<id>",
