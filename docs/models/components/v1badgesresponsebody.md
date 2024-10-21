@@ -9,22 +9,29 @@ let value: V1BadgesResponseBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1BadgesResponseBody.json",
   badges: [
     {
-      appId: 93940,
+      accountInfo: {
+        completionTime: new Date("2023-01-01T00:00:00Z"),
+        level: 123456,
+        xp: 123456,
+      },
+      appId: 576157,
       appImage: "<value>",
       appName: "<value>",
       appShortName: "<value>",
       badgeImage: "<value>",
-      completedAt: new Date("2023-09-24T05:41:47.829Z"),
+      baseLevel: 592042,
+      baseXp: 572252,
+      firstCompletion: new Date("2022-09-02T11:56:21.354Z"),
+      highestLevel: 952749,
       isEvent: false,
       isFoil: false,
       isSale: false,
-      level: 929297,
+      lastCompletion: new Date("2023-05-06T01:11:09.453Z"),
       name: "<value>",
-      price: 318569,
+      price: 846409,
       publicId: "<id>",
-      scarcity: 667411,
-      steamId: 131797,
-      xp: 716327,
+      scarcity: 699479,
+      steamId: 297437,
     },
   ],
 };
@@ -32,7 +39,7 @@ let value: V1BadgesResponseBody = {
 
 ## Fields
 
-| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `dollarSchema`                                                                 | *string*                                                                       | :heavy_minus_sign:                                                             | A URL to the JSON Schema for this object.                                      | https://api.steamsets.com/schemas/V1BadgesResponseBody.json                    |
-| `badges`                                                                       | [components.V1AccountAppBadge](../../models/components/v1accountappbadge.md)[] | :heavy_check_mark:                                                             | N/A                                                                            |                                                                                |
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `dollarSchema`                                                   | *string*                                                         | :heavy_minus_sign:                                               | A URL to the JSON Schema for this object.                        | https://api.steamsets.com/schemas/V1BadgesResponseBody.json      |
+| `badges`                                                         | [components.V1AppBadge](../../models/components/v1appbadge.md)[] | :heavy_check_mark:                                               | N/A                                                              |                                                                  |

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 81360ba636c2ca92d902a8628f3d62ad
+  docChecksum: 6d65d70f86df284cf340be806a4a3843
   docVersion: 1.0.0
   speakeasyVersion: 1.419.2
   generationVersion: 2.438.15
-  releaseVersion: 0.11.21
-  configChecksum: 5a8669c47ba2310e356ece0e9baa8ba2
+  releaseVersion: 0.11.22
+  configChecksum: 717b58d5ccbecbf075bbccf503f47e68
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -55,6 +55,7 @@ generatedFiles:
   - RUNTIMES.md
   - USAGE.md
   - docs/lib/utils/retryconfig.md
+  - docs/models/components/accountbadgeinfo.md
   - docs/models/components/accountinfobody.md
   - docs/models/components/accountleaderboardhistory.md
   - docs/models/components/accountleaderboardhistoryleaderboard.md
@@ -82,7 +83,6 @@ generatedFiles:
   - docs/models/components/image.md
   - docs/models/components/leaderboard.md
   - docs/models/components/leaderboardaccount.md
-  - docs/models/components/leaderboardaccountbadgeinfo.md
   - docs/models/components/leaderboardcity.md
   - docs/models/components/leaderboardcountry.md
   - docs/models/components/leaderboardregion.md
@@ -102,10 +102,6 @@ generatedFiles:
   - docs/models/components/theme.md
   - docs/models/components/type.md
   - docs/models/components/v1accountapp.md
-  - docs/models/components/v1accountappbadge.md
-  - docs/models/components/v1accountbadgecompletion.md
-  - docs/models/components/v1accountbadgemostxpdatapoint.md
-  - docs/models/components/v1accountbadgescarcitydatapoint.md
   - docs/models/components/v1accountdatapointsresponsebody.md
   - docs/models/components/v1accountdeveloperappdeleterequestbody.md
   - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
@@ -312,6 +308,7 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
+  - src/models/components/accountbadgeinfo.ts
   - src/models/components/accountinfobody.ts
   - src/models/components/accountleaderboardhistory.ts
   - src/models/components/accountsearch.ts
@@ -332,7 +329,6 @@ generatedFiles:
   - src/models/components/image.ts
   - src/models/components/index.ts
   - src/models/components/leaderboardaccount.ts
-  - src/models/components/leaderboardaccountbadgeinfo.ts
   - src/models/components/leaderboardcity.ts
   - src/models/components/leaderboardcountry.ts
   - src/models/components/leaderboardregion.ts
@@ -346,10 +342,6 @@ generatedFiles:
   - src/models/components/setdesigntag.ts
   - src/models/components/state.ts
   - src/models/components/v1accountapp.ts
-  - src/models/components/v1accountappbadge.ts
-  - src/models/components/v1accountbadgecompletion.ts
-  - src/models/components/v1accountbadgemostxpdatapoint.ts
-  - src/models/components/v1accountbadgescarcitydatapoint.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
   - src/models/components/v1accountdeveloperappdeleterequestbody.ts
   - src/models/components/v1accountdeveloperappdeleteresponsebody.ts

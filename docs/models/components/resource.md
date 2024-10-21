@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "max_leaderboard_entries",
+  resource: "account_refresh_rate",
   value: "1",
 };
 ```

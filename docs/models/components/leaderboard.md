@@ -7,7 +7,7 @@ The leaderboard of the best leaderboard
 ```typescript
 import { Leaderboard } from "@steamsets/client-ts/models/components";
 
-let value: Leaderboard = "bans";
+let value: Leaderboard = "game_bans";
 ```
 
 ## Values

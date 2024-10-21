@@ -10,14 +10,14 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "queue_priority",
+      resource: "site_color",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 431418,
-      role: "top_100",
+      rating: 31838,
+      role: "staff",
     },
   ],
   sessionData: {

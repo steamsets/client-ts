@@ -6,8 +6,9 @@
 import { V1AppItem } from "@steamsets/client-ts/models/components";
 
 let value: V1AppItem = {
-  cost: 663078,
-  description: "prejudge cutover for clear-cut consequently",
+  cost: 148141,
+  description:
+    "apud testing phooey restfully circulate emphasize sarong in-joke oof behind",
   largeImage: "<value>",
   name: "<value>",
   publicId: "<id>",
