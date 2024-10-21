@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 19a441bae9240c897a1e9300a85e5e76
+  docChecksum: 81360ba636c2ca92d902a8628f3d62ad
   docVersion: 1.0.0
   speakeasyVersion: 1.419.2
   generationVersion: 2.438.15
-  releaseVersion: 0.11.20
-  configChecksum: f345ba08521f52827b5717a45d746a6d
+  releaseVersion: 0.11.21
+  configChecksum: 5a8669c47ba2310e356ece0e9baa8ba2
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -160,6 +160,7 @@ generatedFiles:
   - docs/models/components/v1updateimagerequestbody.md
   - docs/models/components/v1updateimageresponsebody.md
   - docs/models/components/v1updatesettingsrequestbody.md
+  - docs/models/components/v1updatesettingsrequestbodyrole.md
   - docs/models/components/v1updatesettingsrequestbodytheme.md
   - docs/models/components/v1updatesettingsresponsebody.md
   - docs/models/components/v1uploadedimage.md
@@ -621,7 +622,7 @@ examples:
   account.v1.settings.update:
     speakeasy-default-account-v1-settings-update:
       requestBody:
-        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "emailNotifications": [], "hidden": true, "language": "en", "theme": "dark", "vanity": "flo"}
+        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "emailNotifications": [], "hidden": true, "language": "en", "role": "emerald", "theme": "dark", "vanity": "flo"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json"}

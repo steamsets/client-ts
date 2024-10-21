@@ -18,6 +18,7 @@ let value: AccountV1SettingsUpdateRequest = {
     ],
     hidden: true,
     language: "en",
+    role: "sapphire",
     theme: "dark",
     vanity: "flo",
   },
