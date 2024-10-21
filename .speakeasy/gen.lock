@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 6d65d70f86df284cf340be806a4a3843
+  docChecksum: 2ca32950990841fa49c4b91badf3140e
   docVersion: 1.0.0
-  speakeasyVersion: 1.419.2
+  speakeasyVersion: 1.420.0
   generationVersion: 2.438.15
-  releaseVersion: 0.11.22
-  configChecksum: 717b58d5ccbecbf075bbccf503f47e68
+  releaseVersion: 0.11.23
+  configChecksum: c44100f4ff6e38a2dce7a1ad700f25ed
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -472,7 +472,7 @@ examples:
         application/json: {"code": "123456", "provider": "discord"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123", "public_id": "ABC123"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.session.create:
