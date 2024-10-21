@@ -7,7 +7,7 @@ Which type of vanity to search for
 ```typescript
 import { Type } from "@steamsets/client-ts/models/components";
 
-let value: Type = "internal";
+let value: Type = "steam";
 ```
 
 ## Values

@@ -12,6 +12,24 @@ import {
 } from "./emailnotification.js";
 
 /**
+ * The role the account should have between one of the 6 donation roles
+ */
+export const V1UpdateSettingsRequestBodyRole = {
+  Amber: "amber",
+  Amethyst: "amethyst",
+  Emerald: "emerald",
+  Sapphire: "sapphire",
+  Ruby: "ruby",
+  Diamond: "diamond",
+} as const;
+/**
+ * The role the account should have between one of the 6 donation roles
+ */
+export type V1UpdateSettingsRequestBodyRole = ClosedEnum<
+  typeof V1UpdateSettingsRequestBodyRole
+>;
+
+/**
  * The theme the account should use, only if the account is private
  */
 export const V1UpdateSettingsRequestBodyTheme = {
@@ -51,6 +69,10 @@ export type V1UpdateSettingsRequestBody = {
    */
   language: string;
   /**
+   * The role the account should have between one of the 6 donation roles
+   */
+  role: V1UpdateSettingsRequestBodyRole | null;
+  /**
    * The theme the account should use, only if the account is private
    */
   theme: V1UpdateSettingsRequestBodyTheme;
@@ -59,6 +81,27 @@ export type V1UpdateSettingsRequestBody = {
    */
   vanity: string;
 };
+
+/** @internal */
+export const V1UpdateSettingsRequestBodyRole$inboundSchema: z.ZodNativeEnum<
+  typeof V1UpdateSettingsRequestBodyRole
+> = z.nativeEnum(V1UpdateSettingsRequestBodyRole);
+
+/** @internal */
+export const V1UpdateSettingsRequestBodyRole$outboundSchema: z.ZodNativeEnum<
+  typeof V1UpdateSettingsRequestBodyRole
+> = V1UpdateSettingsRequestBodyRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace V1UpdateSettingsRequestBodyRole$ {
+  /** @deprecated use `V1UpdateSettingsRequestBodyRole$inboundSchema` instead. */
+  export const inboundSchema = V1UpdateSettingsRequestBodyRole$inboundSchema;
+  /** @deprecated use `V1UpdateSettingsRequestBodyRole$outboundSchema` instead. */
+  export const outboundSchema = V1UpdateSettingsRequestBodyRole$outboundSchema;
+}
 
 /** @internal */
 export const V1UpdateSettingsRequestBodyTheme$inboundSchema: z.ZodNativeEnum<
@@ -93,6 +136,7 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
   emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
+  role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema),
   theme: V1UpdateSettingsRequestBodyTheme$inboundSchema,
   vanity: z.string(),
 });
@@ -105,6 +149,7 @@ export type V1UpdateSettingsRequestBody$Outbound = {
   emailNotifications: Array<EmailNotification$Outbound> | null;
   hidden: boolean;
   language: string;
+  role: string | null;
   theme: string;
   vanity: string;
 };
@@ -121,6 +166,7 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
   emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
+  role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema),
   theme: V1UpdateSettingsRequestBodyTheme$outboundSchema,
   vanity: z.string(),
 });
