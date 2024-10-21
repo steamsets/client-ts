@@ -14,6 +14,10 @@ export type V1ConnectResponseBody = {
    * Code that has to be used to verify domain connections
    */
   code?: string | undefined;
+  /**
+   * Public ID of the connection only for domain connections
+   */
+  publicId?: string | undefined;
 };
 
 /** @internal */
@@ -24,9 +28,11 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   code: z.string().optional(),
+  public_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
+    "public_id": "publicId",
   });
 });
 
@@ -34,6 +40,7 @@ export const V1ConnectResponseBody$inboundSchema: z.ZodType<
 export type V1ConnectResponseBody$Outbound = {
   $schema?: string | undefined;
   code?: string | undefined;
+  public_id?: string | undefined;
 };
 
 /** @internal */
@@ -44,9 +51,11 @@ export const V1ConnectResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   code: z.string().optional(),
+  publicId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
+    publicId: "public_id",
   });
 });
 

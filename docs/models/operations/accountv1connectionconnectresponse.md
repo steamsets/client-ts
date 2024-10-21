@@ -16,6 +16,7 @@ let value: AccountV1ConnectionConnectResponse = {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1ConnectResponseBody.json",
     code: "ABC123",
+    publicId: "ABC123",
   },
 };
 ```
