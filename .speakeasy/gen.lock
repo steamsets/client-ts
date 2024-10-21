@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: ec09941df87c5612dc52e7c5073f2890
+  docChecksum: 44f5177fbe02515780dd570f8cce6dc3
   docVersion: 1.0.0
   speakeasyVersion: 1.420.0
   generationVersion: 2.438.15
-  releaseVersion: 0.11.24
-  configChecksum: ca0e313a181c05d74166a09bd23d46d9
+  releaseVersion: 0.11.25
+  configChecksum: ef06d9b4f7f9521bbc37f605658068e0
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
