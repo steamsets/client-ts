@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 220d184bf793269c6fa41e8ccd302ec8
+  docChecksum: 3fb31d71006e53caf57adeeb547139b3
   docVersion: 1.0.0
   speakeasyVersion: 1.420.0
   generationVersion: 2.438.15
-  releaseVersion: 0.11.26
-  configChecksum: bdd87c2f827e91e9da00f0cf0e8af310
+  releaseVersion: 0.11.27
+  configChecksum: 3532485d0bdd7e74a3d4d0a44fb9a9f1
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -144,6 +144,7 @@ generatedFiles:
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1groupleaderboardgroup.md
+  - docs/models/components/v1groupleaderboardgroupprivacy.md
   - docs/models/components/v1groupleaderboardrequestbody.md
   - docs/models/components/v1groupleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1groupleaderboardresponsebody.md
@@ -786,6 +787,6 @@ examples:
         application/json: {"end": 10, "goToLeaderboardRank": 1, "leaderboard": "most_members", "start": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GroupLeaderboardResponseBody.json", "groups": [{"owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 20878, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 805347, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 608111, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 20104, "xp": 123456}, "rank": 1}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GroupLeaderboardResponseBody.json", "groups": [{"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 20878, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 805347, "hidden": true, "level": 123456, "limitedApps": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 608111, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 20104, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}]}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

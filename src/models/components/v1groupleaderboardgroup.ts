@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { ClosedEnum } from "../../types/enums.js";
 import {
   LeaderboardAccount,
   LeaderboardAccount$inboundSchema,
@@ -10,13 +11,82 @@ import {
   LeaderboardAccount$outboundSchema,
 } from "./leaderboardaccount.js";
 
+/**
+ * The privacy of the group
+ */
+export const V1GroupLeaderboardGroupPrivacy = {
+  Public: "public",
+  RequestOnly: "request_only",
+  InviteOnly: "invite_only",
+  Hidden: "hidden",
+} as const;
+/**
+ * The privacy of the group
+ */
+export type V1GroupLeaderboardGroupPrivacy = ClosedEnum<
+  typeof V1GroupLeaderboardGroupPrivacy
+>;
+
 export type V1GroupLeaderboardGroup = {
+  /**
+   * The avatar of the group
+   */
+  avatar: string;
+  /**
+   * The time the group was founded
+   */
+  foundedAt: Date;
+  /**
+   * The id of the group
+   */
+  id: number;
+  /**
+   * The number of members in the group
+   */
+  members: number;
+  /**
+   * The name of the group
+   */
+  name: string;
   owner: LeaderboardAccount;
+  /**
+   * The privacy of the group
+   */
+  privacy: V1GroupLeaderboardGroupPrivacy;
   /**
    * The rank of the account
    */
   rank: number;
+  /**
+   * The tag of the group
+   */
+  tag: string;
+  /**
+   * The vanity of the group
+   */
+  vanity: string;
 };
+
+/** @internal */
+export const V1GroupLeaderboardGroupPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof V1GroupLeaderboardGroupPrivacy
+> = z.nativeEnum(V1GroupLeaderboardGroupPrivacy);
+
+/** @internal */
+export const V1GroupLeaderboardGroupPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof V1GroupLeaderboardGroupPrivacy
+> = V1GroupLeaderboardGroupPrivacy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace V1GroupLeaderboardGroupPrivacy$ {
+  /** @deprecated use `V1GroupLeaderboardGroupPrivacy$inboundSchema` instead. */
+  export const inboundSchema = V1GroupLeaderboardGroupPrivacy$inboundSchema;
+  /** @deprecated use `V1GroupLeaderboardGroupPrivacy$outboundSchema` instead. */
+  export const outboundSchema = V1GroupLeaderboardGroupPrivacy$outboundSchema;
+}
 
 /** @internal */
 export const V1GroupLeaderboardGroup$inboundSchema: z.ZodType<
@@ -24,14 +94,30 @@ export const V1GroupLeaderboardGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  avatar: z.string(),
+  foundedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  id: z.number().int(),
+  members: z.number().int(),
+  name: z.string(),
   owner: LeaderboardAccount$inboundSchema,
+  privacy: V1GroupLeaderboardGroupPrivacy$inboundSchema,
   rank: z.number().int(),
+  tag: z.string(),
+  vanity: z.string(),
 });
 
 /** @internal */
 export type V1GroupLeaderboardGroup$Outbound = {
+  avatar: string;
+  foundedAt: string;
+  id: number;
+  members: number;
+  name: string;
   owner: LeaderboardAccount$Outbound;
+  privacy: string;
   rank: number;
+  tag: string;
+  vanity: string;
 };
 
 /** @internal */
@@ -40,8 +126,16 @@ export const V1GroupLeaderboardGroup$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1GroupLeaderboardGroup
 > = z.object({
+  avatar: z.string(),
+  foundedAt: z.date().transform(v => v.toISOString()),
+  id: z.number().int(),
+  members: z.number().int(),
+  name: z.string(),
   owner: LeaderboardAccount$outboundSchema,
+  privacy: V1GroupLeaderboardGroupPrivacy$outboundSchema,
   rank: z.number().int(),
+  tag: z.string(),
+  vanity: z.string(),
 });
 
 /**

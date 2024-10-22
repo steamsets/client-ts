@@ -36,7 +36,7 @@ export async function leaderboardLeaderboardV1GetBadges(
     | ConnectionError
   >
 > {
-  const path = pathToFunc("/leaderboard.v1.LeaderboardService/GetBadges")();
+  const path = pathToFunc("/leaderboard.v1.LeaderboardService/GetBadgeList")();
 
   const headers = new Headers({
     Accept: "application/json",
