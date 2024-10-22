@@ -48,7 +48,7 @@ export type V1GroupLeaderboardGroup = {
    * The name of the group
    */
   name: string;
-  owner: LeaderboardAccount;
+  owner: LeaderboardAccount | null;
   /**
    * The privacy of the group
    */
@@ -99,7 +99,7 @@ export const V1GroupLeaderboardGroup$inboundSchema: z.ZodType<
   id: z.number().int(),
   members: z.number().int(),
   name: z.string(),
-  owner: LeaderboardAccount$inboundSchema,
+  owner: z.nullable(LeaderboardAccount$inboundSchema),
   privacy: V1GroupLeaderboardGroupPrivacy$inboundSchema,
   rank: z.number().int(),
   tag: z.string(),
@@ -113,7 +113,7 @@ export type V1GroupLeaderboardGroup$Outbound = {
   id: number;
   members: number;
   name: string;
-  owner: LeaderboardAccount$Outbound;
+  owner: LeaderboardAccount$Outbound | null;
   privacy: string;
   rank: number;
   tag: string;
@@ -131,7 +131,7 @@ export const V1GroupLeaderboardGroup$outboundSchema: z.ZodType<
   id: z.number().int(),
   members: z.number().int(),
   name: z.string(),
-  owner: LeaderboardAccount$outboundSchema,
+  owner: z.nullable(LeaderboardAccount$outboundSchema),
   privacy: V1GroupLeaderboardGroupPrivacy$outboundSchema,
   rank: z.number().int(),
   tag: z.string(),
