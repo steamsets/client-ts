@@ -10,9 +10,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Badge extends ClientSDK {
-  /**
-   * Get all available badge tags
-   */
   async badgeV1Tags(
     request: components.V1BadgeTagsRequestBody,
     options?: RequestOptions,
@@ -24,9 +21,6 @@ export class Badge extends ClientSDK {
     ));
   }
 
-  /**
-   * Tag a badge
-   */
   async badgeV1Tag(
     request: components.V1BadgeTagRequestBody,
     options?: RequestOptions,

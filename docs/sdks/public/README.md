@@ -7,18 +7,16 @@ This API can be accessed by anyone with an API Key
 
 ### Available Operations
 
-* [accountV1GetApps](#accountv1getapps) - Get Account Apps
-* [accountV1GetBadges](#accountv1getbadges) - Get Account Badges
-* [accountV1GetDataPoints](#accountv1getdatapoints) - Get Account DataPoints
-* [accountV1GetFriends](#accountv1getfriends) - Get Account Friends
-* [accountV1GetInfo](#accountv1getinfo) - Get Account Info
-* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory) - Get Account Leaderboard History
-* [accountV1Queue](#accountv1queue) - Queue an account for processing
-* [appV1Queue](#appv1queue) - Queue a app for processing
+* [accountV1GetApps](#accountv1getapps)
+* [accountV1GetBadges](#accountv1getbadges)
+* [accountV1GetDataPoints](#accountv1getdatapoints)
+* [accountV1GetFriends](#accountv1getfriends)
+* [accountV1GetInfo](#accountv1getinfo)
+* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory)
+* [accountV1Queue](#accountv1queue)
+* [appV1Queue](#appv1queue)
 
 ## accountV1GetApps
-
-Get Account Apps
 
 ### Example Usage
 
@@ -91,8 +89,6 @@ run();
 
 ## accountV1GetBadges
 
-Get Account Badges
-
 ### Example Usage
 
 ```typescript
@@ -163,8 +159,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetDataPoints
-
-Get Account DataPoints
 
 ### Example Usage
 
@@ -237,8 +231,6 @@ run();
 
 ## accountV1GetFriends
 
-Get Account Friends
-
 ### Example Usage
 
 ```typescript
@@ -309,8 +301,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetInfo
-
-Get Account Info
 
 ### Example Usage
 
@@ -383,8 +373,6 @@ run();
 
 ## accountV1GetLeaderboardHistory
 
-Get Account Leaderboard History
-
 ### Example Usage
 
 ```typescript
@@ -455,8 +443,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1Queue
-
-Queue an account for processing
 
 ### Example Usage
 
@@ -534,8 +520,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## appV1Queue
-
-Queue a app for processing
 
 ### Example Usage
 

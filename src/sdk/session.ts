@@ -12,9 +12,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Session extends ClientSDK {
-  /**
-   * Create a new session for non logged in users
-   */
   async accountV1SessionCreate(
     request: operations.AccountV1SessionCreateRequest,
     options?: RequestOptions,
@@ -26,9 +23,6 @@ export class Session extends ClientSDK {
     ));
   }
 
-  /**
-   * Deletes a session, can also be used to logout
-   */
   async accountV1SessionDelete(
     request: components.V1DeleteSessionRequestBody,
     options?: RequestOptions,
@@ -40,9 +34,6 @@ export class Session extends ClientSDK {
     ));
   }
 
-  /**
-   * Gets all session data
-   */
   async accountV1SessionGet(
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionGetResponse> {
@@ -52,9 +43,6 @@ export class Session extends ClientSDK {
     ));
   }
 
-  /**
-   * Logs a user in and creates a new session
-   */
   async accountV1SessionLogin(
     request: operations.AccountV1SessionLoginRequest,
     options?: RequestOptions,

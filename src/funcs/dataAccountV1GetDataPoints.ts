@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Get Account DataPoints
- */
 export async function dataAccountV1GetDataPoints(
   client: SteamSetsCore,
   request: components.AccountSearch,

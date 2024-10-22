@@ -5,14 +5,12 @@
 
 ### Available Operations
 
-* [accountV1SessionCreate](#accountv1sessioncreate) - Create a new session for non logged in users
-* [accountV1SessionDelete](#accountv1sessiondelete) - Deletes a session, can also be used to logout
-* [accountV1SessionGet](#accountv1sessionget) - Gets all session data
-* [accountV1SessionLogin](#accountv1sessionlogin) - Logs a user in and creates a new session
+* [accountV1SessionCreate](#accountv1sessioncreate)
+* [accountV1SessionDelete](#accountv1sessiondelete)
+* [accountV1SessionGet](#accountv1sessionget)
+* [accountV1SessionLogin](#accountv1sessionlogin)
 
 ## accountV1SessionCreate
-
-Create a new session for non logged in users
 
 ### Example Usage
 
@@ -84,8 +82,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionDelete
-
-Deletes a session, can also be used to logout
 
 ### Example Usage
 
@@ -162,8 +158,6 @@ run();
 
 ## accountV1SessionGet
 
-Gets all session data
-
 ### Example Usage
 
 ```typescript
@@ -233,8 +227,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionLogin
-
-Logs a user in and creates a new session
 
 ### Example Usage
 

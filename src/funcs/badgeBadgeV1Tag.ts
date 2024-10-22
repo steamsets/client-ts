@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Tag a badge
- */
 export async function badgeBadgeV1Tag(
   client: SteamSetsCore,
   request: components.V1BadgeTagRequestBody,

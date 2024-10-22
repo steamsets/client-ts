@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Verify the email by passing in the code the user should've gotten
- */
 export async function settingsAccountV1SettingsVerfyEmail(
   client: SteamSetsCore,
   request: components.V1VerifyEmailRequestBody,

@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Connect a new Social Provider
- */
 export async function connectionAccountV1ConnectionConnect(
   client: SteamSetsCore,
   request: components.V1ConnectRequestBody,

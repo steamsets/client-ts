@@ -9,6 +9,7 @@ import { Badge } from "./badge.js";
 import { Connection } from "./connection.js";
 import { Data } from "./data.js";
 import { Developer } from "./developer.js";
+import { Group } from "./group.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Location } from "./location.js";
@@ -65,6 +66,11 @@ export class SteamSets extends ClientSDK {
   private _leaderboard?: Leaderboard;
   get leaderboard(): Leaderboard {
     return (this._leaderboard ??= new Leaderboard(this._options));
+  }
+
+  private _group?: Group;
+  get group(): Group {
+    return (this._group ??= new Group(this._options));
   }
 
   private _liveness?: Liveness;

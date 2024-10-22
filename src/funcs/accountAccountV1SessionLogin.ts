@@ -22,9 +22,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Logs a user in and creates a new session
- */
 export async function accountAccountV1SessionLogin(
   client: SteamSetsCore,
   request: operations.AccountV1SessionLoginRequest,

@@ -7,14 +7,12 @@ Operations related to oauth2/custom connections.
 
 ### Available Operations
 
-* [accountV1ConnectionConnect](#accountv1connectionconnect) - Connect a new Social Provider
-* [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection) - Remove a connection
-* [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection) - Make a connection visible/invisible
-* [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection) - Verify a domain connection only atm
+* [accountV1ConnectionConnect](#accountv1connectionconnect)
+* [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection)
+* [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection)
+* [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection)
 
 ## accountV1ConnectionConnect
-
-Connect a new Social Provider
 
 ### Example Usage
 
@@ -93,8 +91,6 @@ run();
 
 ## accountV1ConnectionDeleteConnection
 
-Remove a connection
-
 ### Example Usage
 
 ```typescript
@@ -169,8 +165,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionUpdateConnection
-
-Make a connection visible/invisible
 
 ### Example Usage
 
@@ -248,8 +242,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionVerifyConnection
-
-Verify a domain connection only atm
 
 ### Example Usage
 

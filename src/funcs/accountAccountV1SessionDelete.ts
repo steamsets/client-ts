@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Deletes a session, can also be used to logout
- */
 export async function accountAccountV1SessionDelete(
   client: SteamSetsCore,
   request: components.V1DeleteSessionRequestBody,

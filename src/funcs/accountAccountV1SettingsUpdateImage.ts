@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Update one of the uploaded images
- */
 export async function accountAccountV1SettingsUpdateImage(
   client: SteamSetsCore,
   request: components.V1UpdateImageRequestBody,

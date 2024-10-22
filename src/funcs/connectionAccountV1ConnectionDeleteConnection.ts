@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Remove a connection
- */
 export async function connectionAccountV1ConnectionDeleteConnection(
   client: SteamSetsCore,
   request: components.V1DeleteConnectionRequestBody,

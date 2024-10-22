@@ -7,12 +7,10 @@ App related operations
 
 ### Available Operations
 
-* [appV1Get](#appv1get) - Get details about an app
-* [appV1Queue](#appv1queue) - Queue a app for processing
+* [appV1Get](#appv1get)
+* [appV1Queue](#appv1queue)
 
 ## appV1Get
-
-Get details about an app
 
 ### Example Usage
 
@@ -88,8 +86,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## appV1Queue
-
-Queue a app for processing
 
 ### Example Usage
 

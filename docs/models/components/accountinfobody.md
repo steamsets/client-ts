@@ -21,7 +21,7 @@ let value: AccountInfoBody = {
   background: "steamsets",
   badges: 123456,
   badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-  bans: 69167,
+  bans: 31838,
   bansUpdatedAt: new Date("2023-01-01T00:00:00Z"),
   city: {
     id: 1,
@@ -48,13 +48,13 @@ let value: AccountInfoBody = {
   createdAt: new Date("2023-01-01T00:00:00Z"),
   currentBestRanks: [
     {
-      leaderboard: "badges",
+      leaderboard: "app_playtime",
       ranks: "1,1,1,1,1",
     },
   ],
   currentRanks: [
     {
-      leaderboard: "vac_bans",
+      leaderboard: "normal_badges",
       ranks: "1,1,1,1,1",
     },
   ],
@@ -64,7 +64,7 @@ let value: AccountInfoBody = {
   friendPrivacy: "public",
   friends: 123456,
   friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
-  gameBans: 722056,
+  gameBans: 577229,
   hidden: true,
   images: [
     {
@@ -91,8 +91,8 @@ let value: AccountInfoBody = {
   },
   roles: [
     {
-      rating: 866383,
-      role: "badge_scout",
+      rating: 237893,
+      role: "top_100",
     },
   ],
   state: {
@@ -100,12 +100,12 @@ let value: AccountInfoBody = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 855804,
+  steamSetsScore: 613966,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   theme: "steamsets",
   updatedAt: new Date("2023-01-01T00:00:00Z"),
-  vacBans: 11714,
+  vacBans: 535633,
   xp: 123456,
 };
 ```

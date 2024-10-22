@@ -22,9 +22,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Update settings for the logged in account
- */
 export async function settingsAccountV1SettingsUpdate(
   client: SteamSetsCore,
   request: operations.AccountV1SettingsUpdateRequest,

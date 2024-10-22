@@ -20,9 +20,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Gets all settings for the account
- */
 export async function settingsAccountV1SettingsGet(
   client: SteamSetsCore,
   options?: RequestOptions,
