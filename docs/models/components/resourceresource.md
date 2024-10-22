@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "queue_priority";
+let value: ResourceResource = "site_color";
 ```
 
 ## Values

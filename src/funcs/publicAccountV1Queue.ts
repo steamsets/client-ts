@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Queue an account for processing
- */
 export async function publicAccountV1Queue(
   client: SteamSetsCore,
   request: components.V1AccountQueueRequestBody,

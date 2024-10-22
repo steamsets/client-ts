@@ -27,15 +27,13 @@ import { accountAccountV1SettingsUploadImages } from "../funcs/accountAccountV1S
 import { accountAccountV1SettingsVerfyEmail } from "../funcs/accountAccountV1SettingsVerfyEmail.js";
 import { accountLeaderboardV1GetAccount } from "../funcs/accountLeaderboardV1GetAccount.js";
 import { accountLeaderboardV1GetBadges } from "../funcs/accountLeaderboardV1GetBadges.js";
+import { accountLeaderboardV1GetGroup } from "../funcs/accountLeaderboardV1GetGroup.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Account extends ClientSDK {
-  /**
-   * Connect a new Social Provider
-   */
   async accountV1ConnectionConnect(
     request: components.V1ConnectRequestBody,
     options?: RequestOptions,
@@ -47,9 +45,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Create a new session for non logged in users
-   */
   async accountV1SessionCreate(
     request: operations.AccountV1SessionCreateRequest,
     options?: RequestOptions,
@@ -61,9 +56,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Remove a connection
-   */
   async accountV1ConnectionDeleteConnection(
     request: components.V1DeleteConnectionRequestBody,
     options?: RequestOptions,
@@ -75,9 +67,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Delete mulitple imagest
-   */
   async accountV1SettingsDeleteImages(
     request: components.V1DeleteImagesRequestBody,
     options?: RequestOptions,
@@ -89,9 +78,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Deletes a session, can also be used to logout
-   */
   async accountV1SessionDelete(
     request: components.V1DeleteSessionRequestBody,
     options?: RequestOptions,
@@ -103,9 +89,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Apps
-   */
   async accountV1GetApps(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -117,9 +100,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Badges
-   */
   async accountV1GetBadges(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -131,9 +111,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account DataPoints
-   */
   async accountV1GetDataPoints(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -145,9 +122,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Friends
-   */
   async accountV1GetFriends(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -159,9 +133,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Info
-   */
   async accountV1GetInfo(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -173,9 +144,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Leaderboard History
-   */
   async accountV1GetLeaderboardHistory(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -187,9 +155,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Gets all session data
-   */
   async accountV1SessionGet(
     options?: RequestOptions,
   ): Promise<operations.AccountV1SessionGetResponse> {
@@ -199,9 +164,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Gets all settings for the account
-   */
   async accountV1SettingsGet(
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsGetResponse> {
@@ -211,9 +173,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Staff Members and their info
-   */
   async accountV1GetStaff(
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetStaffResponse> {
@@ -223,9 +182,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Logs a user in and creates a new session
-   */
   async accountV1SessionLogin(
     request: operations.AccountV1SessionLoginRequest,
     options?: RequestOptions,
@@ -237,9 +193,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Queue an account for processing
-   */
   async accountV1Queue(
     request: components.V1AccountQueueRequestBody,
     options?: RequestOptions,
@@ -251,9 +204,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Resend the verification code for an email
-   */
   async accountV1SettingsSendEmailVerification(
     request: operations.AccountV1SettingsSendEmailVerificationRequest,
     options?: RequestOptions,
@@ -265,9 +215,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Make a connection visible/invisible
-   */
   async accountV1ConnectionUpdateConnection(
     request: components.V1UpdateConnectionRequestBody,
     options?: RequestOptions,
@@ -279,9 +226,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Update one of the uploaded images
-   */
   async accountV1SettingsUpdateImage(
     request: components.V1UpdateImageRequestBody,
     options?: RequestOptions,
@@ -293,9 +237,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Update settings for the logged in account
-   */
   async accountV1SettingsUpdate(
     request: operations.AccountV1SettingsUpdateRequest,
     options?: RequestOptions,
@@ -307,9 +248,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Multi Upload Endpoint for images
-   */
   async accountV1SettingsUploadImages(
     request: components.V1UploadImagesRequestBody,
     options?: RequestOptions,
@@ -321,9 +259,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Verify a domain connection only atm
-   */
   async accountV1ConnectionVerifyConnection(
     request: components.V1VerifyConnectionRequestBody,
     options?: RequestOptions,
@@ -335,9 +270,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Verify the email by passing in the code the user should've gotten
-   */
   async accountV1SettingsVerfyEmail(
     request: components.V1VerifyEmailRequestBody,
     options?: RequestOptions,
@@ -349,9 +281,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get a leaderboard for accounts
-   */
   async leaderboardV1GetAccount(
     request: components.V1AccountLeaderboardRequestBody,
     options?: RequestOptions,
@@ -363,14 +292,22 @@ export class Account extends ClientSDK {
     ));
   }
 
-  /**
-   * Get all available badges for leaderboards
-   */
   async leaderboardV1GetBadges(
     options?: RequestOptions,
   ): Promise<operations.LeaderboardV1GetBadgesResponse> {
     return unwrapAsync(accountLeaderboardV1GetBadges(
       this,
+      options,
+    ));
+  }
+
+  async leaderboardV1GetGroup(
+    request: components.V1GroupLeaderboardRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetGroupResponse> {
+    return unwrapAsync(accountLeaderboardV1GetGroup(
+      this,
+      request,
       options,
     ));
   }

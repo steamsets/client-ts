@@ -15,9 +15,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Settings extends ClientSDK {
-  /**
-   * Delete mulitple imagest
-   */
   async accountV1SettingsDeleteImages(
     request: components.V1DeleteImagesRequestBody,
     options?: RequestOptions,
@@ -29,9 +26,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Gets all settings for the account
-   */
   async accountV1SettingsGet(
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsGetResponse> {
@@ -41,9 +35,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Resend the verification code for an email
-   */
   async accountV1SettingsSendEmailVerification(
     request: operations.AccountV1SettingsSendEmailVerificationRequest,
     options?: RequestOptions,
@@ -55,9 +46,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Update one of the uploaded images
-   */
   async accountV1SettingsUpdateImage(
     request: components.V1UpdateImageRequestBody,
     options?: RequestOptions,
@@ -69,9 +57,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Update settings for the logged in account
-   */
   async accountV1SettingsUpdate(
     request: operations.AccountV1SettingsUpdateRequest,
     options?: RequestOptions,
@@ -83,9 +68,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Multi Upload Endpoint for images
-   */
   async accountV1SettingsUploadImages(
     request: components.V1UploadImagesRequestBody,
     options?: RequestOptions,
@@ -97,9 +79,6 @@ export class Settings extends ClientSDK {
     ));
   }
 
-  /**
-   * Verify the email by passing in the code the user should've gotten
-   */
   async accountV1SettingsVerfyEmail(
     request: components.V1VerifyEmailRequestBody,
     options?: RequestOptions,

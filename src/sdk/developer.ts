@@ -11,9 +11,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Developer extends ClientSDK {
-  /**
-   * Add a new Developer App to the account
-   */
   async accountV1SettingsDeveloperAppCreate(
     request: components.V1DeveloperAppCreateRequestBody,
     options?: RequestOptions,
@@ -25,9 +22,6 @@ export class Developer extends ClientSDK {
     ));
   }
 
-  /**
-   * Delete a developer app from the account
-   */
   async accountV1SettingsDeveloperAppDelete(
     request: components.V1AccountDeveloperAppDeleteRequestBody,
     options?: RequestOptions,
@@ -39,9 +33,6 @@ export class Developer extends ClientSDK {
     ));
   }
 
-  /**
-   * Update the developer app/re-generate the api key
-   */
   async accountV1SettingsDeveloperAppUpdate(
     request: components.V1AccountDeveloperAppUpdateRequestBody,
     options?: RequestOptions,

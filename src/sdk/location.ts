@@ -9,9 +9,6 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Location extends ClientSDK {
   /**
-   * Location List
-   *
-   * @remarks
    * Get all of our available locations
    */
   async location(

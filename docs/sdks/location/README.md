@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [location](#location) - Location List
+* [location](#location) - Get all of our available locations
 
 ## location
 

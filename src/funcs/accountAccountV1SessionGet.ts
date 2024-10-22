@@ -20,9 +20,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Gets all session data
- */
 export async function accountAccountV1SessionGet(
   client: SteamSetsCore,
   options?: RequestOptions,

@@ -5,12 +5,10 @@
 
 ### Available Operations
 
-* [badgeV1Tags](#badgev1tags) - Get all available badge tags
-* [badgeV1Tag](#badgev1tag) - Tag a badge
+* [badgeV1Tags](#badgev1tags)
+* [badgeV1Tag](#badgev1tag)
 
 ## badgeV1Tags
-
-Get all available badge tags
 
 ### Example Usage
 
@@ -82,8 +80,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## badgeV1Tag
-
-Tag a badge
 
 ### Example Usage
 

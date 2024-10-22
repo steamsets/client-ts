@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Make a connection visible/invisible
- */
 export async function connectionAccountV1ConnectionUpdateConnection(
   client: SteamSetsCore,
   request: components.V1UpdateConnectionRequestBody,

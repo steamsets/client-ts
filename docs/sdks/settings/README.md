@@ -5,17 +5,15 @@
 
 ### Available Operations
 
-* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages) - Delete mulitple imagest
-* [accountV1SettingsGet](#accountv1settingsget) - Gets all settings for the account
-* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification) - Resend the verification code for an email
-* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage) - Update one of the uploaded images
-* [accountV1SettingsUpdate](#accountv1settingsupdate) - Update settings for the logged in account
-* [accountV1SettingsUploadImages](#accountv1settingsuploadimages) - Multi Upload Endpoint for images
-* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
+* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages)
+* [accountV1SettingsGet](#accountv1settingsget)
+* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification)
+* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage)
+* [accountV1SettingsUpdate](#accountv1settingsupdate)
+* [accountV1SettingsUploadImages](#accountv1settingsuploadimages)
+* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail)
 
 ## accountV1SettingsDeleteImages
-
-Delete mulitple imagest
 
 ### Example Usage
 
@@ -96,8 +94,6 @@ run();
 
 ## accountV1SettingsGet
 
-Gets all settings for the account
-
 ### Example Usage
 
 ```typescript
@@ -167,8 +163,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsSendEmailVerification
-
-Resend the verification code for an email
 
 ### Example Usage
 
@@ -240,8 +234,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdateImage
-
-Update one of the uploaded images
 
 ### Example Usage
 
@@ -319,8 +311,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdate
-
-Update settings for the logged in account
 
 ### Example Usage
 
@@ -427,8 +417,6 @@ run();
 
 ## accountV1SettingsUploadImages
 
-Multi Upload Endpoint for images
-
 ### Example Usage
 
 ```typescript
@@ -513,8 +501,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsVerfyEmail
-
-Verify the email by passing in the code the user should've gotten
 
 ### Example Usage
 

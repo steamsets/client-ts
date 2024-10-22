@@ -7,13 +7,11 @@ Developer App related operations
 
 ### Available Operations
 
-* [accountV1SettingsDeveloperAppCreate](#accountv1settingsdeveloperappcreate) - Add a new Developer App to the account
-* [accountV1SettingsDeveloperAppDelete](#accountv1settingsdeveloperappdelete) - Delete a developer app from the account
-* [accountV1SettingsDeveloperAppUpdate](#accountv1settingsdeveloperappupdate) - Update the developer app/re-generate the api key
+* [accountV1SettingsDeveloperAppCreate](#accountv1settingsdeveloperappcreate)
+* [accountV1SettingsDeveloperAppDelete](#accountv1settingsdeveloperappdelete)
+* [accountV1SettingsDeveloperAppUpdate](#accountv1settingsdeveloperappupdate)
 
 ## accountV1SettingsDeveloperAppCreate
-
-Add a new Developer App to the account
 
 ### Example Usage
 
@@ -98,8 +96,6 @@ run();
 
 ## accountV1SettingsDeveloperAppDelete
 
-Delete a developer app from the account
-
 ### Example Usage
 
 ```typescript
@@ -174,8 +170,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsDeveloperAppUpdate
-
-Update the developer app/re-generate the api key
 
 ### Example Usage
 

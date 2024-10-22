@@ -16,9 +16,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Public extends ClientSDK {
-  /**
-   * Get Account Apps
-   */
   async accountV1GetApps(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -30,9 +27,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Badges
-   */
   async accountV1GetBadges(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -44,9 +38,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account DataPoints
-   */
   async accountV1GetDataPoints(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -58,9 +49,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Friends
-   */
   async accountV1GetFriends(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -72,9 +60,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Info
-   */
   async accountV1GetInfo(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -86,9 +71,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Get Account Leaderboard History
-   */
   async accountV1GetLeaderboardHistory(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -100,9 +82,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Queue an account for processing
-   */
   async accountV1Queue(
     request: components.V1AccountQueueRequestBody,
     options?: RequestOptions,
@@ -114,9 +93,6 @@ export class Public extends ClientSDK {
     ));
   }
 
-  /**
-   * Queue a app for processing
-   */
   async appV1Queue(
     request: components.AppSearch,
     options?: RequestOptions,

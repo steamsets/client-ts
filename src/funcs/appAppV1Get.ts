@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Get details about an app
- */
 export async function appAppV1Get(
   client: SteamSetsCore,
   request: components.V1AppRequestBody,

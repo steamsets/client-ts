@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Delete a developer app from the account
- */
 export async function developerAccountV1SettingsDeveloperAppDelete(
   client: SteamSetsCore,
   request: components.V1AccountDeveloperAppDeleteRequestBody,

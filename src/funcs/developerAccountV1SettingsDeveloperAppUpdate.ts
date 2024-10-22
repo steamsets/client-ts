@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Update the developer app/re-generate the api key
- */
 export async function developerAccountV1SettingsDeveloperAppUpdate(
   client: SteamSetsCore,
   request: components.V1AccountDeveloperAppUpdateRequestBody,

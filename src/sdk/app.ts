@@ -10,9 +10,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class App extends ClientSDK {
-  /**
-   * Get details about an app
-   */
   async appV1Get(
     request: components.V1AppRequestBody,
     options?: RequestOptions,
@@ -24,9 +21,6 @@ export class App extends ClientSDK {
     ));
   }
 
-  /**
-   * Queue a app for processing
-   */
   async appV1Queue(
     request: components.AppSearch,
     options?: RequestOptions,

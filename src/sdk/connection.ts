@@ -12,9 +12,6 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Connection extends ClientSDK {
-  /**
-   * Connect a new Social Provider
-   */
   async accountV1ConnectionConnect(
     request: components.V1ConnectRequestBody,
     options?: RequestOptions,
@@ -26,9 +23,6 @@ export class Connection extends ClientSDK {
     ));
   }
 
-  /**
-   * Remove a connection
-   */
   async accountV1ConnectionDeleteConnection(
     request: components.V1DeleteConnectionRequestBody,
     options?: RequestOptions,
@@ -40,9 +34,6 @@ export class Connection extends ClientSDK {
     ));
   }
 
-  /**
-   * Make a connection visible/invisible
-   */
   async accountV1ConnectionUpdateConnection(
     request: components.V1UpdateConnectionRequestBody,
     options?: RequestOptions,
@@ -54,9 +45,6 @@ export class Connection extends ClientSDK {
     ));
   }
 
-  /**
-   * Verify a domain connection only atm
-   */
   async accountV1ConnectionVerifyConnection(
     request: components.V1VerifyConnectionRequestBody,
     options?: RequestOptions,

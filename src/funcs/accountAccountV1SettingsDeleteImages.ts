@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Delete mulitple imagest
- */
 export async function accountAccountV1SettingsDeleteImages(
   client: SteamSetsCore,
   request: components.V1DeleteImagesRequestBody,

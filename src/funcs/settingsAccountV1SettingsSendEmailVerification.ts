@@ -22,9 +22,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Resend the verification code for an email
- */
 export async function settingsAccountV1SettingsSendEmailVerification(
   client: SteamSetsCore,
   request: operations.AccountV1SettingsSendEmailVerificationRequest,

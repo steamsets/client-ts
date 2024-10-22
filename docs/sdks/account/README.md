@@ -7,35 +7,34 @@ Account related operations
 
 ### Available Operations
 
-* [accountV1ConnectionConnect](#accountv1connectionconnect) - Connect a new Social Provider
-* [accountV1SessionCreate](#accountv1sessioncreate) - Create a new session for non logged in users
-* [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection) - Remove a connection
-* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages) - Delete mulitple imagest
-* [accountV1SessionDelete](#accountv1sessiondelete) - Deletes a session, can also be used to logout
-* [accountV1GetApps](#accountv1getapps) - Get Account Apps
-* [accountV1GetBadges](#accountv1getbadges) - Get Account Badges
-* [accountV1GetDataPoints](#accountv1getdatapoints) - Get Account DataPoints
-* [accountV1GetFriends](#accountv1getfriends) - Get Account Friends
-* [accountV1GetInfo](#accountv1getinfo) - Get Account Info
-* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory) - Get Account Leaderboard History
-* [accountV1SessionGet](#accountv1sessionget) - Gets all session data
-* [accountV1SettingsGet](#accountv1settingsget) - Gets all settings for the account
-* [accountV1GetStaff](#accountv1getstaff) - Get Staff Members and their info
-* [accountV1SessionLogin](#accountv1sessionlogin) - Logs a user in and creates a new session
-* [accountV1Queue](#accountv1queue) - Queue an account for processing
-* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification) - Resend the verification code for an email
-* [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection) - Make a connection visible/invisible
-* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage) - Update one of the uploaded images
-* [accountV1SettingsUpdate](#accountv1settingsupdate) - Update settings for the logged in account
-* [accountV1SettingsUploadImages](#accountv1settingsuploadimages) - Multi Upload Endpoint for images
-* [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection) - Verify a domain connection only atm
-* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail) - Verify the email by passing in the code the user should've gotten
-* [leaderboardV1GetAccount](#leaderboardv1getaccount) - Get a leaderboard for accounts
-* [leaderboardV1GetBadges](#leaderboardv1getbadges) - Get all available badges for leaderboards
+* [accountV1ConnectionConnect](#accountv1connectionconnect)
+* [accountV1SessionCreate](#accountv1sessioncreate)
+* [accountV1ConnectionDeleteConnection](#accountv1connectiondeleteconnection)
+* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages)
+* [accountV1SessionDelete](#accountv1sessiondelete)
+* [accountV1GetApps](#accountv1getapps)
+* [accountV1GetBadges](#accountv1getbadges)
+* [accountV1GetDataPoints](#accountv1getdatapoints)
+* [accountV1GetFriends](#accountv1getfriends)
+* [accountV1GetInfo](#accountv1getinfo)
+* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory)
+* [accountV1SessionGet](#accountv1sessionget)
+* [accountV1SettingsGet](#accountv1settingsget)
+* [accountV1GetStaff](#accountv1getstaff)
+* [accountV1SessionLogin](#accountv1sessionlogin)
+* [accountV1Queue](#accountv1queue)
+* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification)
+* [accountV1ConnectionUpdateConnection](#accountv1connectionupdateconnection)
+* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage)
+* [accountV1SettingsUpdate](#accountv1settingsupdate)
+* [accountV1SettingsUploadImages](#accountv1settingsuploadimages)
+* [accountV1ConnectionVerifyConnection](#accountv1connectionverifyconnection)
+* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail)
+* [leaderboardV1GetAccount](#leaderboardv1getaccount)
+* [leaderboardV1GetBadges](#leaderboardv1getbadges)
+* [leaderboardV1GetGroup](#leaderboardv1getgroup)
 
 ## accountV1ConnectionConnect
-
-Connect a new Social Provider
 
 ### Example Usage
 
@@ -114,8 +113,6 @@ run();
 
 ## accountV1SessionCreate
 
-Create a new session for non logged in users
-
 ### Example Usage
 
 ```typescript
@@ -186,8 +183,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionDeleteConnection
-
-Remove a connection
 
 ### Example Usage
 
@@ -263,8 +258,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsDeleteImages
-
-Delete mulitple imagest
 
 ### Example Usage
 
@@ -345,8 +338,6 @@ run();
 
 ## accountV1SessionDelete
 
-Deletes a session, can also be used to logout
-
 ### Example Usage
 
 ```typescript
@@ -422,8 +413,6 @@ run();
 
 ## accountV1GetApps
 
-Get Account Apps
-
 ### Example Usage
 
 ```typescript
@@ -494,8 +483,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetBadges
-
-Get Account Badges
 
 ### Example Usage
 
@@ -568,8 +555,6 @@ run();
 
 ## accountV1GetDataPoints
 
-Get Account DataPoints
-
 ### Example Usage
 
 ```typescript
@@ -640,8 +625,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetFriends
-
-Get Account Friends
 
 ### Example Usage
 
@@ -714,8 +697,6 @@ run();
 
 ## accountV1GetInfo
 
-Get Account Info
-
 ### Example Usage
 
 ```typescript
@@ -786,8 +767,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetLeaderboardHistory
-
-Get Account Leaderboard History
 
 ### Example Usage
 
@@ -860,8 +839,6 @@ run();
 
 ## accountV1SessionGet
 
-Gets all session data
-
 ### Example Usage
 
 ```typescript
@@ -931,8 +908,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsGet
-
-Gets all settings for the account
 
 ### Example Usage
 
@@ -1004,8 +979,6 @@ run();
 
 ## accountV1GetStaff
 
-Get Staff Members and their info
-
 ### Example Usage
 
 ```typescript
@@ -1075,8 +1048,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SessionLogin
-
-Logs a user in and creates a new session
 
 ### Example Usage
 
@@ -1175,8 +1146,6 @@ run();
 
 ## accountV1Queue
 
-Queue an account for processing
-
 ### Example Usage
 
 ```typescript
@@ -1254,8 +1223,6 @@ run();
 
 ## accountV1SettingsSendEmailVerification
 
-Resend the verification code for an email
-
 ### Example Usage
 
 ```typescript
@@ -1326,8 +1293,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ConnectionUpdateConnection
-
-Make a connection visible/invisible
 
 ### Example Usage
 
@@ -1406,8 +1371,6 @@ run();
 
 ## accountV1SettingsUpdateImage
 
-Update one of the uploaded images
-
 ### Example Usage
 
 ```typescript
@@ -1484,8 +1447,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1SettingsUpdate
-
-Update settings for the logged in account
 
 ### Example Usage
 
@@ -1592,8 +1553,6 @@ run();
 
 ## accountV1SettingsUploadImages
 
-Multi Upload Endpoint for images
-
 ### Example Usage
 
 ```typescript
@@ -1679,8 +1638,6 @@ run();
 
 ## accountV1ConnectionVerifyConnection
 
-Verify a domain connection only atm
-
 ### Example Usage
 
 ```typescript
@@ -1756,8 +1713,6 @@ run();
 
 ## accountV1SettingsVerfyEmail
 
-Verify the email by passing in the code the user should've gotten
-
 ### Example Usage
 
 ```typescript
@@ -1832,8 +1787,6 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## leaderboardV1GetAccount
-
-Get a leaderboard for accounts
 
 ### Example Usage
 
@@ -1946,8 +1899,6 @@ run();
 
 ## leaderboardV1GetBadges
 
-Get all available badges for leaderboards
-
 ### Example Usage
 
 ```typescript
@@ -2014,4 +1965,85 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404, 500                 | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## leaderboardV1GetGroup
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.leaderboardV1GetGroup({
+    end: 10,
+    goToLeaderboardRank: 1,
+    leaderboard: "most_members",
+    start: 1,
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountLeaderboardV1GetGroup } from "@steamsets/client-ts/funcs/accountLeaderboardV1GetGroup.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountLeaderboardV1GetGroup(steamSets, {
+    end: 10,
+    goToLeaderboardRank: 1,
+    leaderboard: "most_members",
+    start: 1,
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1GroupLeaderboardRequestBody](../../models/components/v1groupleaderboardrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.LeaderboardV1GetGroupResponse](../../models/operations/leaderboardv1getgroupresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

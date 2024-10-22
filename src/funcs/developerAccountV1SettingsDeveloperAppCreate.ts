@@ -23,9 +23,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Add a new Developer App to the account
- */
 export async function developerAccountV1SettingsDeveloperAppCreate(
   client: SteamSetsCore,
   request: components.V1DeveloperAppCreateRequestBody,

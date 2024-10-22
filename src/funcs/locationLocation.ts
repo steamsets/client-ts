@@ -21,9 +21,6 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Location List
- *
- * @remarks
  * Get all of our available locations
  */
 export async function locationLocation(
