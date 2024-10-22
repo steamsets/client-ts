@@ -17,6 +17,11 @@ let value: LeaderboardV1GetGroupResponse = {
       "https://api.steamsets.com/schemas/V1GroupLeaderboardResponseBody.json",
     groups: [
       {
+        avatar: "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg",
+        foundedAt: new Date("2023-01-01T00:00:00Z"),
+        id: 730,
+        members: 100,
+        name: "Group Name",
         owner: {
           appCost: 123456,
           apps: 123456,
@@ -72,7 +77,10 @@ let value: LeaderboardV1GetGroupResponse = {
           vacBans: 739264,
           xp: 123456,
         },
+        privacy: "public",
         rank: 1,
+        tag: "Group Tag",
+        vanity: "Group Vanity",
       },
     ],
   },
