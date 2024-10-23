@@ -5,11 +5,9 @@
 
 ### Available Operations
 
-* [location](#location) - Get all of our available locations
+* [location](#location)
 
 ## location
-
-Get all of our available locations
 
 ### Example Usage
 

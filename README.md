@@ -155,7 +155,7 @@ run();
 
 ### [location](docs/sdks/location/README.md)
 
-* [location](docs/sdks/location/README.md#location) - Get all of our available locations
+* [location](docs/sdks/location/README.md#location)
 
 ### [public](docs/sdks/public/README.md)
 
@@ -586,7 +586,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardLeaderboardV1GetBadges`](docs/sdks/leaderboard/README.md#leaderboardv1getbadges)
 - [`leaderboardLeaderboardV1GetGroup`](docs/sdks/leaderboard/README.md#leaderboardv1getgroup)
 - [`livenessLiveness`](docs/sdks/liveness/README.md#liveness) - Liveness check
-- [`locationLocation`](docs/sdks/location/README.md#location) - Get all of our available locations
+- [`locationLocation`](docs/sdks/location/README.md#location)
 - [`publicAccountV1GetApps`](docs/sdks/public/README.md#accountv1getapps)
 - [`publicAccountV1GetBadges`](docs/sdks/public/README.md#accountv1getbadges)
 - [`publicAccountV1GetDataPoints`](docs/sdks/public/README.md#accountv1getdatapoints)

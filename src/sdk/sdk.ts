@@ -79,13 +79,13 @@ export class SteamSets extends ClientSDK {
     return (this._group ??= new Group(this._options));
   }
 
-  private _liveness?: Liveness;
-  get liveness(): Liveness {
-    return (this._liveness ??= new Liveness(this._options));
-  }
-
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _liveness?: Liveness;
+  get liveness(): Liveness {
+    return (this._liveness ??= new Liveness(this._options));
   }
 }

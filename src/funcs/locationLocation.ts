@@ -20,9 +20,6 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-/**
- * Get all of our available locations
- */
 export async function locationLocation(
   client: SteamSetsCore,
   options?: RequestOptions,
@@ -39,7 +36,7 @@ export async function locationLocation(
     | ConnectionError
   >
 > {
-  const path = pathToFunc("/v1/location")();
+  const path = pathToFunc("/location.v1.LocationService/GetLocations")();
 
   const headers = new Headers({
     Accept: "application/json",
