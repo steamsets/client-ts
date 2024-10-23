@@ -14,7 +14,7 @@ export type State = {
   /**
    * The cities of the state
    */
-  cities: { [k: string]: City };
+  cities: Array<City> | null;
   /**
    * The code of the state
    */
@@ -28,14 +28,14 @@ export type State = {
 /** @internal */
 export const State$inboundSchema: z.ZodType<State, z.ZodTypeDef, unknown> = z
   .object({
-    cities: z.record(City$inboundSchema),
+    cities: z.nullable(z.array(City$inboundSchema)),
     code: z.string(),
     name: z.string(),
   });
 
 /** @internal */
 export type State$Outbound = {
-  cities: { [k: string]: City$Outbound };
+  cities: Array<City$Outbound> | null;
   code: string;
   name: string;
 };
@@ -46,7 +46,7 @@ export const State$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   State
 > = z.object({
-  cities: z.record(City$outboundSchema),
+  cities: z.nullable(z.array(City$outboundSchema)),
   code: z.string(),
   name: z.string(),
 });
