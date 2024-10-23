@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "go_to_leaderboard_entry",
+  resource: "theme",
   value: "1",
 };
 ```

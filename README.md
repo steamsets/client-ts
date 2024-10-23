@@ -102,6 +102,10 @@ run();
 * [leaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges)
 * [leaderboardV1GetGroup](docs/sdks/account/README.md#leaderboardv1getgroup)
 
+### [admin](docs/sdks/admin/README.md)
+
+* [adminV1GetAccount](docs/sdks/admin/README.md#adminv1getaccount)
+
 ### [app](docs/sdks/app/README.md)
 
 * [appV1Get](docs/sdks/app/README.md#appv1get)
@@ -558,6 +562,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountLeaderboardV1GetAccount`](docs/sdks/account/README.md#leaderboardv1getaccount)
 - [`accountLeaderboardV1GetBadges`](docs/sdks/account/README.md#leaderboardv1getbadges)
 - [`accountLeaderboardV1GetGroup`](docs/sdks/account/README.md#leaderboardv1getgroup)
+- [`adminAdminV1GetAccount`](docs/sdks/admin/README.md#adminv1getaccount)
 - [`appAppV1Get`](docs/sdks/app/README.md#appv1get)
 - [`appAppV1Queue`](docs/sdks/app/README.md#appv1queue)
 - [`badgeBadgeV1Tag`](docs/sdks/badge/README.md#badgev1tag)

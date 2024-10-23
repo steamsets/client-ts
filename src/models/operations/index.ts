@@ -28,6 +28,7 @@ export * from "./accountv1settingsupdate.js";
 export * from "./accountv1settingsupdateimage.js";
 export * from "./accountv1settingsuploadimages.js";
 export * from "./accountv1settingsverfyemail.js";
+export * from "./adminv1getaccount.js";
 export * from "./appv1get.js";
 export * from "./appv1queue.js";
 export * from "./badgev1tag.js";
