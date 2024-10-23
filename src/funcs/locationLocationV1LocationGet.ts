@@ -20,12 +20,12 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function locationLocation(
+export async function locationLocationV1LocationGet(
   client: SteamSetsCore,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.LocationResponse,
+    operations.LocationV1LocationGetResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -45,7 +45,7 @@ export async function locationLocation(
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
   const context = {
-    operationID: "location",
+    operationID: "location.v1.location.get",
     oAuth2Scopes: [],
     securitySource: client._options.token,
   };
@@ -81,7 +81,7 @@ export async function locationLocation(
   };
 
   const [result] = await M.match<
-    operations.LocationResponse,
+    operations.LocationV1LocationGetResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -91,7 +91,9 @@ export async function locationLocation(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LocationResponse$inboundSchema, { key: "Regions" }),
+    M.json(200, operations.LocationV1LocationGetResponse$inboundSchema, {
+      key: "Regions",
+    }),
     M.jsonErr([401, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
