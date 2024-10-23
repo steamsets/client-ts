@@ -22,7 +22,7 @@ export type Country = {
   /**
    * The states of the country
    */
-  states: { [k: string]: State };
+  states: Array<State> | null;
 };
 
 /** @internal */
@@ -30,14 +30,14 @@ export const Country$inboundSchema: z.ZodType<Country, z.ZodTypeDef, unknown> =
   z.object({
     code: z.string(),
     name: z.string(),
-    states: z.record(State$inboundSchema),
+    states: z.nullable(z.array(State$inboundSchema)),
   });
 
 /** @internal */
 export type Country$Outbound = {
   code: string;
   name: string;
-  states: { [k: string]: State$Outbound };
+  states: Array<State$Outbound> | null;
 };
 
 /** @internal */
@@ -48,7 +48,7 @@ export const Country$outboundSchema: z.ZodType<
 > = z.object({
   code: z.string(),
   name: z.string(),
-  states: z.record(State$outboundSchema),
+  states: z.nullable(z.array(State$outboundSchema)),
 });
 
 /**

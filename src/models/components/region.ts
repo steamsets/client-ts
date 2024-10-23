@@ -14,7 +14,7 @@ export type Region = {
   /**
    * The countries of the region
    */
-  countries: { [k: string]: Country };
+  countries: Array<Country> | null;
   /**
    * The name of the region
    */
@@ -24,13 +24,13 @@ export type Region = {
 /** @internal */
 export const Region$inboundSchema: z.ZodType<Region, z.ZodTypeDef, unknown> = z
   .object({
-    countries: z.record(Country$inboundSchema),
+    countries: z.nullable(z.array(Country$inboundSchema)),
     name: z.string(),
   });
 
 /** @internal */
 export type Region$Outbound = {
-  countries: { [k: string]: Country$Outbound };
+  countries: Array<Country$Outbound> | null;
   name: string;
 };
 
@@ -40,7 +40,7 @@ export const Region$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Region
 > = z.object({
-  countries: z.record(Country$outboundSchema),
+  countries: z.nullable(z.array(Country$outboundSchema)),
   name: z.string(),
 });
 

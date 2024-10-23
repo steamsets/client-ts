@@ -14,23 +14,23 @@ let value: LocationResponse = {
   },
   regions: [
     {
-      countries: {
-        "key": {
+      countries: [
+        {
           code: "<value>",
           name: "<value>",
-          states: {
-            "key": {
-              cities: {
-                "key": {
+          states: [
+            {
+              cities: [
+                {
                   name: "<value>",
                 },
-              },
+              ],
               code: "<value>",
               name: "<value>",
             },
-          },
+          ],
         },
-      },
+      ],
       name: "Europe",
     },
   ],
