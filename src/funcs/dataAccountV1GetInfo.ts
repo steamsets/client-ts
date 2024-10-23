@@ -83,7 +83,7 @@ export async function dataAccountV1GetInfo(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -111,7 +111,7 @@ export async function dataAccountV1GetInfo(
     M.json(200, operations.AccountV1GetInfoResponse$inboundSchema, {
       key: "AccountInfoBody",
     }),
-    M.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

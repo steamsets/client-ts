@@ -23,13 +23,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function dataAccountV1GetApps(
+export async function adminAdminV1GetAccount(
   client: SteamSetsCore,
   request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetAppsResponse,
+    operations.AdminV1GetAccountResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -51,7 +51,7 @@ export async function dataAccountV1GetApps(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetApps")();
+  const path = pathToFunc("/admin.v1.AdminService/GetAccount")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export async function dataAccountV1GetApps(
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
   const context = {
-    operationID: "account.v1.getApps",
+    operationID: "admin.v1.get-account",
     oAuth2Scopes: [],
     securitySource: client._options.token,
   };
@@ -83,7 +83,7 @@ export async function dataAccountV1GetApps(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -98,7 +98,7 @@ export async function dataAccountV1GetApps(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetAppsResponse,
+    operations.AdminV1GetAccountResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -108,10 +108,10 @@ export async function dataAccountV1GetApps(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetAppsResponse$inboundSchema, {
-      key: "V1AccountsAppsResponseBody",
+    M.json(200, operations.AdminV1GetAccountResponse$inboundSchema, {
+      key: "V1AdminGetAccountResponseBody",
     }),
-    M.jsonErr([400, 403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

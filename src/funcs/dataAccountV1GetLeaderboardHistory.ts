@@ -83,7 +83,7 @@ export async function dataAccountV1GetLeaderboardHistory(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
     retryConfig: options?.retries
       || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
@@ -113,7 +113,7 @@ export async function dataAccountV1GetLeaderboardHistory(
       operations.AccountV1GetLeaderboardHistoryResponse$inboundSchema,
       { key: "V1AccountLeaderboardHistoryResponseBody" },
     ),
-    M.jsonErr([400, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

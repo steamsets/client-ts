@@ -17,7 +17,7 @@ let value: V1UpdateSettingsRequestBody = {
   ],
   hidden: true,
   language: "en",
-  role: "sapphire",
+  role: "ruby",
   theme: "dark",
   vanity: "flo",
 };
