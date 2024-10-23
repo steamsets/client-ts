@@ -6,7 +6,7 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
 
-export type LocationResponse = {
+export type LocationV1LocationGetResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -15,8 +15,8 @@ export type LocationResponse = {
 };
 
 /** @internal */
-export const LocationResponse$inboundSchema: z.ZodType<
-  LocationResponse,
+export const LocationV1LocationGetResponse$inboundSchema: z.ZodType<
+  LocationV1LocationGetResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -30,16 +30,16 @@ export const LocationResponse$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type LocationResponse$Outbound = {
+export type LocationV1LocationGetResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   Regions?: Array<components.Region$Outbound> | null | undefined;
 };
 
 /** @internal */
-export const LocationResponse$outboundSchema: z.ZodType<
-  LocationResponse$Outbound,
+export const LocationV1LocationGetResponse$outboundSchema: z.ZodType<
+  LocationV1LocationGetResponse$Outbound,
   z.ZodTypeDef,
-  LocationResponse
+  LocationV1LocationGetResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   regions: z.nullable(z.array(components.Region$outboundSchema)).optional(),
@@ -54,11 +54,11 @@ export const LocationResponse$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace LocationResponse$ {
-  /** @deprecated use `LocationResponse$inboundSchema` instead. */
-  export const inboundSchema = LocationResponse$inboundSchema;
-  /** @deprecated use `LocationResponse$outboundSchema` instead. */
-  export const outboundSchema = LocationResponse$outboundSchema;
-  /** @deprecated use `LocationResponse$Outbound` instead. */
-  export type Outbound = LocationResponse$Outbound;
+export namespace LocationV1LocationGetResponse$ {
+  /** @deprecated use `LocationV1LocationGetResponse$inboundSchema` instead. */
+  export const inboundSchema = LocationV1LocationGetResponse$inboundSchema;
+  /** @deprecated use `LocationV1LocationGetResponse$outboundSchema` instead. */
+  export const outboundSchema = LocationV1LocationGetResponse$outboundSchema;
+  /** @deprecated use `LocationV1LocationGetResponse$Outbound` instead. */
+  export type Outbound = LocationV1LocationGetResponse$Outbound;
 }

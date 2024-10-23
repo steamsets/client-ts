@@ -1,11 +1,11 @@
-# LocationResponse
+# LocationV1LocationGetResponse
 
 ## Example Usage
 
 ```typescript
-import { LocationResponse } from "@steamsets/client-ts/models/operations";
+import { LocationV1LocationGetResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LocationResponse = {
+let value: LocationV1LocationGetResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },
