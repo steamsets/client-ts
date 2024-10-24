@@ -17,13 +17,13 @@ export const ResourceResource = {
   MiniBackground: "mini_background",
   AccountColors: "account_colors",
   AccountRefreshRate: "account_refresh_rate",
-  QueuePriority: "queue_priority",
   SiteColor: "site_color",
   SocialLinks: "social_links",
   Theme: "theme",
   VanityLength: "vanity_length",
   DeveloperApps: "developer_apps",
   AccountQueues: "account_queues",
+  ShortLinkDomain: "short_link_domain",
 } as const;
 export type ResourceResource = ClosedEnum<typeof ResourceResource>;
 
