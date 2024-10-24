@@ -7,16 +7,14 @@ This API can be accessed by anyone with an API Key
 
 ### Available Operations
 
-* [accountV1GetApps](#accountv1getapps)
-* [accountV1GetBadges](#accountv1getbadges)
-* [accountV1GetDataPoints](#accountv1getdatapoints)
-* [accountV1GetFriends](#accountv1getfriends)
-* [accountV1GetInfo](#accountv1getinfo)
-* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory)
-* [accountV1Queue](#accountv1queue)
-* [appV1Queue](#appv1queue)
+* [getApps](#getapps)
+* [getBadges](#getbadges)
+* [getDataPoints](#getdatapoints)
+* [getFriends](#getfriends)
+* [getInfo](#getinfo)
+* [getLeaderboardHistory](#getleaderboardhistory)
 
-## accountV1GetApps
+## getApps
 
 ### Example Usage
 
@@ -28,7 +26,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetApps({});
+  const result = await steamSets.public.getApps({});
 
   // Handle the result
   console.log(result);
@@ -43,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetApps } from "@steamsets/client-ts/funcs/publicAccountV1GetApps.js";
+import { publicGetApps } from "@steamsets/client-ts/funcs/publicGetApps.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +50,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetApps(steamSets, {});
+  const res = await publicGetApps(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -87,7 +85,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetBadges
+## getBadges
 
 ### Example Usage
 
@@ -99,7 +97,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetBadges({});
+  const result = await steamSets.public.getBadges({});
 
   // Handle the result
   console.log(result);
@@ -114,7 +112,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetBadges } from "@steamsets/client-ts/funcs/publicAccountV1GetBadges.js";
+import { publicGetBadges } from "@steamsets/client-ts/funcs/publicGetBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -123,7 +121,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetBadges(steamSets, {});
+  const res = await publicGetBadges(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -158,7 +156,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetDataPoints
+## getDataPoints
 
 ### Example Usage
 
@@ -170,7 +168,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetDataPoints({});
+  const result = await steamSets.public.getDataPoints({});
 
   // Handle the result
   console.log(result);
@@ -185,7 +183,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetDataPoints } from "@steamsets/client-ts/funcs/publicAccountV1GetDataPoints.js";
+import { publicGetDataPoints } from "@steamsets/client-ts/funcs/publicGetDataPoints.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -194,7 +192,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetDataPoints(steamSets, {});
+  const res = await publicGetDataPoints(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -229,7 +227,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetFriends
+## getFriends
 
 ### Example Usage
 
@@ -241,7 +239,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetFriends({});
+  const result = await steamSets.public.getFriends({});
 
   // Handle the result
   console.log(result);
@@ -256,7 +254,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetFriends } from "@steamsets/client-ts/funcs/publicAccountV1GetFriends.js";
+import { publicGetFriends } from "@steamsets/client-ts/funcs/publicGetFriends.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -265,7 +263,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetFriends(steamSets, {});
+  const res = await publicGetFriends(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -300,7 +298,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetInfo
+## getInfo
 
 ### Example Usage
 
@@ -312,7 +310,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetInfo({});
+  const result = await steamSets.public.getInfo({});
 
   // Handle the result
   console.log(result);
@@ -327,7 +325,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetInfo } from "@steamsets/client-ts/funcs/publicAccountV1GetInfo.js";
+import { publicGetInfo } from "@steamsets/client-ts/funcs/publicGetInfo.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -336,7 +334,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetInfo(steamSets, {});
+  const res = await publicGetInfo(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -371,7 +369,7 @@ run();
 | errors.ErrorModel        | 403, 404, 422, 429, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetLeaderboardHistory
+## getLeaderboardHistory
 
 ### Example Usage
 
@@ -383,7 +381,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.accountV1GetLeaderboardHistory({});
+  const result = await steamSets.public.getLeaderboardHistory({});
 
   // Handle the result
   console.log(result);
@@ -398,7 +396,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs/publicAccountV1GetLeaderboardHistory.js";
+import { publicGetLeaderboardHistory } from "@steamsets/client-ts/funcs/publicGetLeaderboardHistory.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -407,7 +405,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicAccountV1GetLeaderboardHistory(steamSets, {});
+  const res = await publicGetLeaderboardHistory(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -440,156 +438,4 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## accountV1Queue
-
-### Example Usage
-
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.public.accountV1Queue({
-    force: true,
-    id: {},
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAccountV1Queue } from "@steamsets/client-ts/funcs/publicAccountV1Queue.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await publicAccountV1Queue(steamSets, {
-    force: true,
-    id: {},
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountQueueRequestBody](../../models/components/v1accountqueuerequestbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountV1QueueResponse](../../models/operations/accountv1queueresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 429, 500       | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## appV1Queue
-
-### Example Usage
-
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.public.appV1Queue({
-    id: 730,
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicAppV1Queue } from "@steamsets/client-ts/funcs/publicAppV1Queue.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await publicAppV1Queue(steamSets, {
-    id: 730,
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AppSearch](../../models/components/appsearch.md)                                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AppV1QueueResponse](../../models/operations/appv1queueresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 429, 500       | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

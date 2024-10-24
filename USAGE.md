@@ -7,7 +7,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });

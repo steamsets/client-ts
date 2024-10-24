@@ -7,15 +7,15 @@ This is actual data seen by others then yourself
 
 ### Available Operations
 
-* [accountV1GetApps](#accountv1getapps)
-* [accountV1GetBadges](#accountv1getbadges)
-* [accountV1GetDataPoints](#accountv1getdatapoints)
-* [accountV1GetFriends](#accountv1getfriends)
-* [accountV1GetInfo](#accountv1getinfo)
-* [accountV1GetLeaderboardHistory](#accountv1getleaderboardhistory)
-* [accountV1GetStaff](#accountv1getstaff)
+* [getApps](#getapps)
+* [getBadges](#getbadges)
+* [getDataPoints](#getdatapoints)
+* [getFriends](#getfriends)
+* [getInfo](#getinfo)
+* [getLeaderboardHistory](#getleaderboardhistory)
+* [getStaff](#getstaff)
 
-## accountV1GetApps
+## getApps
 
 ### Example Usage
 
@@ -27,7 +27,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetApps({});
+  const result = await steamSets.data.getApps({});
 
   // Handle the result
   console.log(result);
@@ -42,7 +42,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetApps } from "@steamsets/client-ts/funcs/dataAccountV1GetApps.js";
+import { dataGetApps } from "@steamsets/client-ts/funcs/dataGetApps.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetApps(steamSets, {});
+  const res = await dataGetApps(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -86,7 +86,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetBadges
+## getBadges
 
 ### Example Usage
 
@@ -98,7 +98,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetBadges({});
+  const result = await steamSets.data.getBadges({});
 
   // Handle the result
   console.log(result);
@@ -113,7 +113,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetBadges } from "@steamsets/client-ts/funcs/dataAccountV1GetBadges.js";
+import { dataGetBadges } from "@steamsets/client-ts/funcs/dataGetBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -122,7 +122,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetBadges(steamSets, {});
+  const res = await dataGetBadges(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -157,7 +157,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetDataPoints
+## getDataPoints
 
 ### Example Usage
 
@@ -169,7 +169,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetDataPoints({});
+  const result = await steamSets.data.getDataPoints({});
 
   // Handle the result
   console.log(result);
@@ -184,7 +184,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetDataPoints } from "@steamsets/client-ts/funcs/dataAccountV1GetDataPoints.js";
+import { dataGetDataPoints } from "@steamsets/client-ts/funcs/dataGetDataPoints.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -193,7 +193,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetDataPoints(steamSets, {});
+  const res = await dataGetDataPoints(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -228,7 +228,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetFriends
+## getFriends
 
 ### Example Usage
 
@@ -240,7 +240,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetFriends({});
+  const result = await steamSets.data.getFriends({});
 
   // Handle the result
   console.log(result);
@@ -255,7 +255,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetFriends } from "@steamsets/client-ts/funcs/dataAccountV1GetFriends.js";
+import { dataGetFriends } from "@steamsets/client-ts/funcs/dataGetFriends.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -264,7 +264,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetFriends(steamSets, {});
+  const res = await dataGetFriends(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -299,7 +299,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetInfo
+## getInfo
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetInfo({});
+  const result = await steamSets.data.getInfo({});
 
   // Handle the result
   console.log(result);
@@ -326,7 +326,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetInfo } from "@steamsets/client-ts/funcs/dataAccountV1GetInfo.js";
+import { dataGetInfo } from "@steamsets/client-ts/funcs/dataGetInfo.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -335,7 +335,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetInfo(steamSets, {});
+  const res = await dataGetInfo(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -370,7 +370,7 @@ run();
 | errors.ErrorModel        | 403, 404, 422, 429, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetLeaderboardHistory
+## getLeaderboardHistory
 
 ### Example Usage
 
@@ -382,7 +382,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetLeaderboardHistory({});
+  const result = await steamSets.data.getLeaderboardHistory({});
 
   // Handle the result
   console.log(result);
@@ -397,7 +397,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetLeaderboardHistory } from "@steamsets/client-ts/funcs/dataAccountV1GetLeaderboardHistory.js";
+import { dataGetLeaderboardHistory } from "@steamsets/client-ts/funcs/dataGetLeaderboardHistory.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -406,7 +406,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetLeaderboardHistory(steamSets, {});
+  const res = await dataGetLeaderboardHistory(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -441,7 +441,7 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1GetStaff
+## getStaff
 
 ### Example Usage
 
@@ -453,7 +453,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.accountV1GetStaff();
+  const result = await steamSets.data.getStaff();
 
   // Handle the result
   console.log(result);
@@ -468,7 +468,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { dataAccountV1GetStaff } from "@steamsets/client-ts/funcs/dataAccountV1GetStaff.js";
+import { dataGetStaff } from "@steamsets/client-ts/funcs/dataGetStaff.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -477,7 +477,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataAccountV1GetStaff(steamSets);
+  const res = await dataGetStaff(steamSets);
 
   if (!res.ok) {
     throw res.error;

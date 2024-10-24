@@ -17,14 +17,14 @@ let value: AccountV1SessionGetResponse = {
     accountId: 123456,
     resources: [
       {
-        resource: "avatar_frame",
+        resource: "background",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 315428,
-        role: "amethyst",
+        rating: 161309,
+        role: "diamond",
       },
     ],
     sessionData: {

@@ -1,0 +1,351 @@
+overlay: 1.0.0
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/account.v1.AccountService/GetInfo"]["post"]
+    update:
+      x-speakeasy-name-override: getInfo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getInfo()
+      after: sdk.account.getInfo()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/VerifyConnection"]["post"]
+    update:
+      x-speakeasy-group: connection
+      x-speakeasy-name-override: verify
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.connection.verifyConnection()
+      after: sdk.connection.verify()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/UpdateConnection"]["post"]
+    update:
+      x-speakeasy-group: connection
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.connection.updateConnection()
+      after: sdk.connection.update()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/CreateDeveloperApp"]["post"]
+    update:
+      x-speakeasy-name-override: createDeveloperApp
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.developer.account.v1.settings.developer-app-create()
+      after: sdk.developer.createDeveloperApp()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetSettings"]["post"]
+    update:
+      x-speakeasy-group: settings
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.get()
+      after: sdk.settings.get()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetFriends"]["post"]
+    update:
+      x-speakeasy-name-override: getFriends
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getFriends()
+      after: sdk.account.getFriends()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/Queue"]["post"]
+    update:
+      x-speakeasy-group: accounts
+      x-speakeasy-name-override: queue
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.queue()
+      after: sdk.accounts.queue()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/UploadImages"]["post"]
+    update:
+      x-speakeasy-name-override: uploadImages
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.upload-images()
+      after: sdk.account.uploadImages()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/SendEmailVerification"]["post"]
+    update:
+      x-speakeasy-name-override: sendEmailVerification
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.send-email-verification()
+      after: sdk.account.sendEmailVerification()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/Login"]["post"]
+    update:
+      x-speakeasy-group: session
+      x-speakeasy-name-override: login
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.session.login()
+      after: sdk.session.login()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetApps"]["post"]
+    update:
+      x-speakeasy-name-override: getApps
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getApps()
+      after: sdk.account.getApps()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/DeleteDeveloperApp"]["post"]
+    update:
+      x-speakeasy-name-override: deleteDeveloperApp
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.developer.account.v1.settings.developer-app-delete()
+      after: sdk.developer.deleteDeveloperApp()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/badge.v1.BadgeService/GetTags"]["post"]
+    update:
+      x-speakeasy-name-override: getTags
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.badge.badge.v1.tags()
+      after: sdk.badge.getTags()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/leaderboard.v1.LeaderboardService/GetAccountLeaderboard"]["post"]
+    update:
+      x-speakeasy-group: leaderboard
+      x-speakeasy-name-override: getAccount
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.leaderboard.v1.getAccount()
+      after: sdk.leaderboard.getAccount()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/admin.v1.AdminService/GetAccount"]["post"]
+    update:
+      x-speakeasy-name-override: getAccount
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.admin.admin.v1.get-account()
+      after: sdk.admin.getAccount()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetLeaderboardHistory"]["post"]
+    update:
+      x-speakeasy-name-override: getLeaderboardHistory
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getLeaderboardHistory()
+      after: sdk.account.getLeaderboardHistory()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/DeleteSession"]["post"]
+    update:
+      x-speakeasy-group: sessions
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.session.delete()
+      after: sdk.sessions.delete()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/leaderboard.v1.LeaderboardService/GetGroupLeaderboard"]["post"]
+    update:
+      x-speakeasy-group: leaderboard
+      x-speakeasy-name-override: getGroup
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.leaderboard.v1.getGroup()
+      after: sdk.leaderboard.getGroup()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/leaderboard.v1.LeaderboardService/GetBadgeList"]["post"]
+    update:
+      x-speakeasy-group: leaderboard
+      x-speakeasy-name-override: getBadges
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.leaderboard.v1.getBadges()
+      after: sdk.leaderboard.getBadges()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/DeleteConnection"]["post"]
+    update:
+      x-speakeasy-group: connection
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.connection.deleteConnection()
+      after: sdk.connection.delete()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/badge.v1.BadgeService/Tag"]["post"]
+    update:
+      x-speakeasy-group: badges
+      x-speakeasy-name-override: tag
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.badge.badge.v1.tag()
+      after: sdk.badges.tag()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetSession"]["post"]
+    update:
+      x-speakeasy-group: sessions
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.session.get()
+      after: sdk.sessions.get()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/UpdateSettings"]["post"]
+    update:
+      x-speakeasy-group: settings
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.update()
+      after: sdk.settings.update()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetBadges"]["post"]
+    update:
+      x-speakeasy-name-override: getBadges
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getBadges()
+      after: sdk.account.getBadges()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetDataPoints"]["post"]
+    update:
+      x-speakeasy-name-override: getDataPoints
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getDataPoints()
+      after: sdk.account.getDataPoints()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/v1/liveness"]["get"]
+    update:
+      x-speakeasy-name-override: check
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.liveness.liveness()
+      after: sdk.liveness.check()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/CreateSession"]["post"]
+    update:
+      x-speakeasy-group: session
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.session.create()
+      after: sdk.session.create()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/Connect"]["post"]
+    update:
+      x-speakeasy-group: connections
+      x-speakeasy-name-override: connect
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.connection.connect()
+      after: sdk.connections.connect()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/VerifyEmail"]["post"]
+    update:
+      x-speakeasy-name-override: verifyEmail
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.verfy-email()
+      after: sdk.account.verifyEmail()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/app.v1.AppService/GetApp"]["post"]
+    update:
+      x-speakeasy-group: apps
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.app.app.v1.get()
+      after: sdk.apps.get()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/DeveloperAppUpdate"]["post"]
+    update:
+      x-speakeasy-name-override: updateApp
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.developer.account.v1.settings.developer-app-update()
+      after: sdk.developer.updateApp()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/location.v1.LocationService/GetLocations"]["get"]
+    update:
+      x-speakeasy-group: locations
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.location.location.v1.location.get()
+      after: sdk.locations.get()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/app.v1.AppService/Queue"]["post"]
+    update:
+      x-speakeasy-group: apps
+      x-speakeasy-name-override: queue
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.app.app.v1.queue()
+      after: sdk.apps.queue()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/DeleteImages"]["post"]
+    update:
+      x-speakeasy-name-override: deleteImages
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.delete-images()
+      after: sdk.account.deleteImages()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/GetStaff"]["post"]
+    update:
+      x-speakeasy-name-override: getStaff
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.getStaff()
+      after: sdk.account.getStaff()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010
+  - target: $["paths"]["/account.v1.AccountService/UpdateImage"]["post"]
+    update:
+      x-speakeasy-name-override: updateImage
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.account.account.v1.settings.update-image()
+      after: sdk.account.updateImage()
+      reviewed_at: 1729763596260
+      created_at: 1729763571010

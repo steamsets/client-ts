@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountV1ConnectionConnect } from "@steamsets/client-ts/funcs/accountAccountV1ConnectionConnect.js";
+import { connectionsConnect } from "@steamsets/client-ts/funcs/connectionsConnect.js";
 import { SDKValidationError } from "@steamsets/client-ts/models/errors/sdkvalidationerror.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
@@ -30,7 +30,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountV1ConnectionConnect(steamSets, {
+  const res = await connectionsConnect(steamSets, {
     code: "123456",
     provider: "discord",
   });

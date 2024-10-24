@@ -10,14 +10,14 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   resources: [
     {
-      resource: "social_links",
+      resource: "max_leaderboard_entries",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 320017,
-      role: "amethyst",
+      rating: 565421,
+      role: "developer",
     },
   ],
   sessionData: {

@@ -2,11 +2,10 @@ speakeasyVersion: 1.421.1
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:3c0616ff19ca8cf235a431155ca6d61569aff3d02b1501875a17d5c4e92de520
-        sourceBlobDigest: sha256:40daae6914eadc4d66d8c633d1af112ef82b8da04179ad3a0f4a63f38c193d0c
+        sourceRevisionDigest: sha256:88f4c9eab88240faaf3cdb57536ace47f046a73ba741d8b5a0f8607a95f081c2
+        sourceBlobDigest: sha256:a879ba06256b9296e48656ae38e94386d107fbd3fee3bc4cb31c640adb4fc5ff
         tags:
             - latest
-            - main
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
         sourceRevisionDigest: sha256:30a9312dee5e350dcebe7a8d25d7040cdd39d7f9e02c75a183b6fd046a69e405
@@ -18,8 +17,8 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:3c0616ff19ca8cf235a431155ca6d61569aff3d02b1501875a17d5c4e92de520
-        sourceBlobDigest: sha256:40daae6914eadc4d66d8c633d1af112ef82b8da04179ad3a0f4a63f38c193d0c
+        sourceRevisionDigest: sha256:88f4c9eab88240faaf3cdb57536ace47f046a73ba741d8b5a0f8607a95f081c2
+        sourceBlobDigest: sha256:a879ba06256b9296e48656ae38e94386d107fbd3fee3bc4cb31c640adb4fc5ff
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -27,6 +26,8 @@ workflow:
         API:
             inputs:
                 - location: https://api.steamsets.com/openapi.json
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/steamsets/steamsets/api
     targets:

@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [leaderboardV1GetAccount](#leaderboardv1getaccount)
-* [leaderboardV1GetBadges](#leaderboardv1getbadges)
-* [leaderboardV1GetGroup](#leaderboardv1getgroup)
+* [getAccount](#getaccount)
+* [getBadges](#getbadges)
+* [getGroup](#getgroup)
 
-## leaderboardV1GetAccount
+## getAccount
 
 ### Example Usage
 
@@ -21,7 +21,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardV1GetAccount({
+  const result = await steamSets.leaderboard.getAccount({
     app: {
       appId: 730,
     },
@@ -56,7 +56,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardV1GetAccount } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetAccount.js";
+import { leaderboardGetAccount } from "@steamsets/client-ts/funcs/leaderboardGetAccount.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -65,7 +65,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardV1GetAccount(steamSets, {
+  const res = await leaderboardGetAccount(steamSets, {
     app: {
       appId: 730,
     },
@@ -120,7 +120,7 @@ run();
 | errors.ErrorModel        | 404, 422, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardV1GetBadges
+## getBadges
 
 ### Example Usage
 
@@ -132,7 +132,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardV1GetBadges();
+  const result = await steamSets.leaderboard.getBadges();
 
   // Handle the result
   console.log(result);
@@ -147,7 +147,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardV1GetBadges } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetBadges.js";
+import { leaderboardGetBadges } from "@steamsets/client-ts/funcs/leaderboardGetBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -156,7 +156,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardV1GetBadges(steamSets);
+  const res = await leaderboardGetBadges(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -190,7 +190,7 @@ run();
 | errors.ErrorModel        | 404, 500                 | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardV1GetGroup
+## getGroup
 
 ### Example Usage
 
@@ -202,7 +202,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardV1GetGroup({
+  const result = await steamSets.leaderboard.getGroup({
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "most_members",
@@ -222,7 +222,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardV1GetGroup } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetGroup.js";
+import { leaderboardGetGroup } from "@steamsets/client-ts/funcs/leaderboardGetGroup.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -231,7 +231,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardV1GetGroup(steamSets, {
+  const res = await leaderboardGetGroup(steamSets, {
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "most_members",

@@ -53,7 +53,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });
@@ -75,115 +75,108 @@ run();
 
 ### [account](docs/sdks/account/README.md)
 
-* [accountV1ConnectionConnect](docs/sdks/account/README.md#accountv1connectionconnect)
-* [accountV1SessionCreate](docs/sdks/account/README.md#accountv1sessioncreate)
-* [accountV1ConnectionDeleteConnection](docs/sdks/account/README.md#accountv1connectiondeleteconnection)
-* [accountV1SettingsDeleteImages](docs/sdks/account/README.md#accountv1settingsdeleteimages)
-* [accountV1SessionDelete](docs/sdks/account/README.md#accountv1sessiondelete)
-* [accountV1GetApps](docs/sdks/account/README.md#accountv1getapps)
-* [accountV1GetBadges](docs/sdks/account/README.md#accountv1getbadges)
-* [accountV1GetDataPoints](docs/sdks/account/README.md#accountv1getdatapoints)
-* [accountV1GetFriends](docs/sdks/account/README.md#accountv1getfriends)
-* [accountV1GetInfo](docs/sdks/account/README.md#accountv1getinfo)
-* [accountV1GetLeaderboardHistory](docs/sdks/account/README.md#accountv1getleaderboardhistory)
-* [accountV1SessionGet](docs/sdks/account/README.md#accountv1sessionget)
-* [accountV1SettingsGet](docs/sdks/account/README.md#accountv1settingsget)
-* [accountV1GetStaff](docs/sdks/account/README.md#accountv1getstaff)
-* [accountV1SessionLogin](docs/sdks/account/README.md#accountv1sessionlogin)
-* [accountV1Queue](docs/sdks/account/README.md#accountv1queue)
-* [accountV1SettingsSendEmailVerification](docs/sdks/account/README.md#accountv1settingssendemailverification)
-* [accountV1ConnectionUpdateConnection](docs/sdks/account/README.md#accountv1connectionupdateconnection)
-* [accountV1SettingsUpdateImage](docs/sdks/account/README.md#accountv1settingsupdateimage)
-* [accountV1SettingsUpdate](docs/sdks/account/README.md#accountv1settingsupdate)
-* [accountV1SettingsUploadImages](docs/sdks/account/README.md#accountv1settingsuploadimages)
-* [accountV1ConnectionVerifyConnection](docs/sdks/account/README.md#accountv1connectionverifyconnection)
-* [accountV1SettingsVerfyEmail](docs/sdks/account/README.md#accountv1settingsverfyemail)
-* [leaderboardV1GetAccount](docs/sdks/account/README.md#leaderboardv1getaccount)
-* [leaderboardV1GetBadges](docs/sdks/account/README.md#leaderboardv1getbadges)
-* [leaderboardV1GetGroup](docs/sdks/account/README.md#leaderboardv1getgroup)
+* [deleteImages](docs/sdks/account/README.md#deleteimages)
+* [getApps](docs/sdks/account/README.md#getapps)
+* [getBadges](docs/sdks/account/README.md#getbadges)
+* [getDataPoints](docs/sdks/account/README.md#getdatapoints)
+* [getFriends](docs/sdks/account/README.md#getfriends)
+* [getInfo](docs/sdks/account/README.md#getinfo)
+* [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
+* [getStaff](docs/sdks/account/README.md#getstaff)
+* [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
+* [updateImage](docs/sdks/account/README.md#updateimage)
+* [uploadImages](docs/sdks/account/README.md#uploadimages)
+* [verifyEmail](docs/sdks/account/README.md#verifyemail)
+
+### [accounts](docs/sdks/accounts/README.md)
+
+* [queue](docs/sdks/accounts/README.md#queue)
 
 ### [admin](docs/sdks/admin/README.md)
 
-* [adminV1GetAccount](docs/sdks/admin/README.md#adminv1getaccount)
+* [getAccount](docs/sdks/admin/README.md#getaccount)
 
-### [app](docs/sdks/app/README.md)
+### [apps](docs/sdks/apps/README.md)
 
-* [appV1Get](docs/sdks/app/README.md#appv1get)
-* [appV1Queue](docs/sdks/app/README.md#appv1queue)
+* [get](docs/sdks/apps/README.md#get)
+* [queue](docs/sdks/apps/README.md#queue)
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeV1Tags](docs/sdks/badge/README.md#badgev1tags)
-* [badgeV1Tag](docs/sdks/badge/README.md#badgev1tag)
+* [getTags](docs/sdks/badge/README.md#gettags)
+
+### [badges](docs/sdks/badges/README.md)
+
+* [tag](docs/sdks/badges/README.md#tag)
 
 ### [connection](docs/sdks/connection/README.md)
 
-* [accountV1ConnectionConnect](docs/sdks/connection/README.md#accountv1connectionconnect)
-* [accountV1ConnectionDeleteConnection](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
-* [accountV1ConnectionUpdateConnection](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
-* [accountV1ConnectionVerifyConnection](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
+* [delete](docs/sdks/connection/README.md#delete)
+* [update](docs/sdks/connection/README.md#update)
+* [verify](docs/sdks/connection/README.md#verify)
+
+### [connections](docs/sdks/connections/README.md)
+
+* [connect](docs/sdks/connections/README.md#connect)
 
 ### [data](docs/sdks/data/README.md)
 
-* [accountV1GetApps](docs/sdks/data/README.md#accountv1getapps)
-* [accountV1GetBadges](docs/sdks/data/README.md#accountv1getbadges)
-* [accountV1GetDataPoints](docs/sdks/data/README.md#accountv1getdatapoints)
-* [accountV1GetFriends](docs/sdks/data/README.md#accountv1getfriends)
-* [accountV1GetInfo](docs/sdks/data/README.md#accountv1getinfo)
-* [accountV1GetLeaderboardHistory](docs/sdks/data/README.md#accountv1getleaderboardhistory)
-* [accountV1GetStaff](docs/sdks/data/README.md#accountv1getstaff)
+* [getApps](docs/sdks/data/README.md#getapps)
+* [getBadges](docs/sdks/data/README.md#getbadges)
+* [getDataPoints](docs/sdks/data/README.md#getdatapoints)
+* [getFriends](docs/sdks/data/README.md#getfriends)
+* [getInfo](docs/sdks/data/README.md#getinfo)
+* [getLeaderboardHistory](docs/sdks/data/README.md#getleaderboardhistory)
+* [getStaff](docs/sdks/data/README.md#getstaff)
 
 ### [developer](docs/sdks/developer/README.md)
 
-* [accountV1SettingsDeveloperAppCreate](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
-* [accountV1SettingsDeveloperAppDelete](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
-* [accountV1SettingsDeveloperAppUpdate](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
-
-### [group](docs/sdks/group/README.md)
-
-* [leaderboardV1GetGroup](docs/sdks/group/README.md#leaderboardv1getgroup)
+* [createDeveloperApp](docs/sdks/developer/README.md#createdeveloperapp)
+* [deleteDeveloperApp](docs/sdks/developer/README.md#deletedeveloperapp)
+* [updateApp](docs/sdks/developer/README.md#updateapp)
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
-* [leaderboardV1GetAccount](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
-* [leaderboardV1GetBadges](docs/sdks/leaderboard/README.md#leaderboardv1getbadges)
-* [leaderboardV1GetGroup](docs/sdks/leaderboard/README.md#leaderboardv1getgroup)
+* [getAccount](docs/sdks/leaderboard/README.md#getaccount)
+* [getBadges](docs/sdks/leaderboard/README.md#getbadges)
+* [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 
 ### [liveness](docs/sdks/liveness/README.md)
 
-* [liveness](docs/sdks/liveness/README.md#liveness) - Liveness check
+* [check](docs/sdks/liveness/README.md#check) - Liveness check
 
-### [location](docs/sdks/location/README.md)
+### [locations](docs/sdks/locations/README.md)
 
-* [locationV1LocationGet](docs/sdks/location/README.md#locationv1locationget)
+* [get](docs/sdks/locations/README.md#get)
 
 ### [public](docs/sdks/public/README.md)
 
-* [accountV1GetApps](docs/sdks/public/README.md#accountv1getapps)
-* [accountV1GetBadges](docs/sdks/public/README.md#accountv1getbadges)
-* [accountV1GetDataPoints](docs/sdks/public/README.md#accountv1getdatapoints)
-* [accountV1GetFriends](docs/sdks/public/README.md#accountv1getfriends)
-* [accountV1GetInfo](docs/sdks/public/README.md#accountv1getinfo)
-* [accountV1GetLeaderboardHistory](docs/sdks/public/README.md#accountv1getleaderboardhistory)
-* [accountV1Queue](docs/sdks/public/README.md#accountv1queue)
-* [appV1Queue](docs/sdks/public/README.md#appv1queue)
+* [getApps](docs/sdks/public/README.md#getapps)
+* [getBadges](docs/sdks/public/README.md#getbadges)
+* [getDataPoints](docs/sdks/public/README.md#getdatapoints)
+* [getFriends](docs/sdks/public/README.md#getfriends)
+* [getInfo](docs/sdks/public/README.md#getinfo)
+* [getLeaderboardHistory](docs/sdks/public/README.md#getleaderboardhistory)
 
 ### [session](docs/sdks/session/README.md)
 
-* [accountV1SessionCreate](docs/sdks/session/README.md#accountv1sessioncreate)
-* [accountV1SessionDelete](docs/sdks/session/README.md#accountv1sessiondelete)
-* [accountV1SessionGet](docs/sdks/session/README.md#accountv1sessionget)
-* [accountV1SessionLogin](docs/sdks/session/README.md#accountv1sessionlogin)
+* [create](docs/sdks/session/README.md#create)
+* [login](docs/sdks/session/README.md#login)
+
+### [sessions](docs/sdks/sessions/README.md)
+
+* [delete](docs/sdks/sessions/README.md#delete)
+* [get](docs/sdks/sessions/README.md#get)
 
 ### [settings](docs/sdks/settings/README.md)
 
-* [accountV1SettingsDeleteImages](docs/sdks/settings/README.md#accountv1settingsdeleteimages)
-* [accountV1SettingsGet](docs/sdks/settings/README.md#accountv1settingsget)
-* [accountV1SettingsSendEmailVerification](docs/sdks/settings/README.md#accountv1settingssendemailverification)
-* [accountV1SettingsUpdateImage](docs/sdks/settings/README.md#accountv1settingsupdateimage)
-* [accountV1SettingsUpdate](docs/sdks/settings/README.md#accountv1settingsupdate)
-* [accountV1SettingsUploadImages](docs/sdks/settings/README.md#accountv1settingsuploadimages)
-* [accountV1SettingsVerfyEmail](docs/sdks/settings/README.md#accountv1settingsverfyemail)
+* [deleteImages](docs/sdks/settings/README.md#deleteimages)
+* [get](docs/sdks/settings/README.md#get)
+* [sendEmailVerification](docs/sdks/settings/README.md#sendemailverification)
+* [updateImage](docs/sdks/settings/README.md#updateimage)
+* [update](docs/sdks/settings/README.md#update)
+* [uploadImages](docs/sdks/settings/README.md#uploadimages)
+* [verifyEmail](docs/sdks/settings/README.md#verifyemail)
 
 
 </details>
@@ -203,7 +196,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   }, {
@@ -246,7 +239,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });
@@ -275,7 +268,7 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `accountV1ConnectionConnect` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `connect` method may throw the following errors:
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
@@ -296,7 +289,7 @@ const steamSets = new SteamSets({
 async function run() {
   let result;
   try {
-    result = await steamSets.account.accountV1ConnectionConnect({
+    result = await steamSets.connections.connect({
       code: "123456",
       provider: "discord",
     });
@@ -352,7 +345,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });
@@ -379,7 +372,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });
@@ -462,7 +455,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1ConnectionConnect({
+  const result = await steamSets.connections.connect({
     code: "123456",
     provider: "discord",
   });
@@ -536,76 +529,60 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountV1ConnectionConnect`](docs/sdks/account/README.md#accountv1connectionconnect)
-- [`accountAccountV1ConnectionDeleteConnection`](docs/sdks/account/README.md#accountv1connectiondeleteconnection)
-- [`accountAccountV1ConnectionUpdateConnection`](docs/sdks/account/README.md#accountv1connectionupdateconnection)
-- [`accountAccountV1ConnectionVerifyConnection`](docs/sdks/account/README.md#accountv1connectionverifyconnection)
-- [`accountAccountV1GetApps`](docs/sdks/account/README.md#accountv1getapps)
-- [`accountAccountV1GetBadges`](docs/sdks/account/README.md#accountv1getbadges)
-- [`accountAccountV1GetDataPoints`](docs/sdks/account/README.md#accountv1getdatapoints)
-- [`accountAccountV1GetFriends`](docs/sdks/account/README.md#accountv1getfriends)
-- [`accountAccountV1GetInfo`](docs/sdks/account/README.md#accountv1getinfo)
-- [`accountAccountV1GetLeaderboardHistory`](docs/sdks/account/README.md#accountv1getleaderboardhistory)
-- [`accountAccountV1GetStaff`](docs/sdks/account/README.md#accountv1getstaff)
-- [`accountAccountV1Queue`](docs/sdks/account/README.md#accountv1queue)
-- [`accountAccountV1SessionCreate`](docs/sdks/account/README.md#accountv1sessioncreate)
-- [`accountAccountV1SessionDelete`](docs/sdks/account/README.md#accountv1sessiondelete)
-- [`accountAccountV1SessionGet`](docs/sdks/account/README.md#accountv1sessionget)
-- [`accountAccountV1SessionLogin`](docs/sdks/account/README.md#accountv1sessionlogin)
-- [`accountAccountV1SettingsDeleteImages`](docs/sdks/account/README.md#accountv1settingsdeleteimages)
-- [`accountAccountV1SettingsGet`](docs/sdks/account/README.md#accountv1settingsget)
-- [`accountAccountV1SettingsSendEmailVerification`](docs/sdks/account/README.md#accountv1settingssendemailverification)
-- [`accountAccountV1SettingsUpdate`](docs/sdks/account/README.md#accountv1settingsupdate)
-- [`accountAccountV1SettingsUpdateImage`](docs/sdks/account/README.md#accountv1settingsupdateimage)
-- [`accountAccountV1SettingsUploadImages`](docs/sdks/account/README.md#accountv1settingsuploadimages)
-- [`accountAccountV1SettingsVerfyEmail`](docs/sdks/account/README.md#accountv1settingsverfyemail)
-- [`accountLeaderboardV1GetAccount`](docs/sdks/account/README.md#leaderboardv1getaccount)
-- [`accountLeaderboardV1GetBadges`](docs/sdks/account/README.md#leaderboardv1getbadges)
-- [`accountLeaderboardV1GetGroup`](docs/sdks/account/README.md#leaderboardv1getgroup)
-- [`adminAdminV1GetAccount`](docs/sdks/admin/README.md#adminv1getaccount)
-- [`appAppV1Get`](docs/sdks/app/README.md#appv1get)
-- [`appAppV1Queue`](docs/sdks/app/README.md#appv1queue)
-- [`badgeBadgeV1Tag`](docs/sdks/badge/README.md#badgev1tag)
-- [`badgeBadgeV1Tags`](docs/sdks/badge/README.md#badgev1tags)
-- [`connectionAccountV1ConnectionConnect`](docs/sdks/connection/README.md#accountv1connectionconnect)
-- [`connectionAccountV1ConnectionDeleteConnection`](docs/sdks/connection/README.md#accountv1connectiondeleteconnection)
-- [`connectionAccountV1ConnectionUpdateConnection`](docs/sdks/connection/README.md#accountv1connectionupdateconnection)
-- [`connectionAccountV1ConnectionVerifyConnection`](docs/sdks/connection/README.md#accountv1connectionverifyconnection)
-- [`dataAccountV1GetApps`](docs/sdks/data/README.md#accountv1getapps)
-- [`dataAccountV1GetBadges`](docs/sdks/data/README.md#accountv1getbadges)
-- [`dataAccountV1GetDataPoints`](docs/sdks/data/README.md#accountv1getdatapoints)
-- [`dataAccountV1GetFriends`](docs/sdks/data/README.md#accountv1getfriends)
-- [`dataAccountV1GetInfo`](docs/sdks/data/README.md#accountv1getinfo)
-- [`dataAccountV1GetLeaderboardHistory`](docs/sdks/data/README.md#accountv1getleaderboardhistory)
-- [`dataAccountV1GetStaff`](docs/sdks/data/README.md#accountv1getstaff)
-- [`developerAccountV1SettingsDeveloperAppCreate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappcreate)
-- [`developerAccountV1SettingsDeveloperAppDelete`](docs/sdks/developer/README.md#accountv1settingsdeveloperappdelete)
-- [`developerAccountV1SettingsDeveloperAppUpdate`](docs/sdks/developer/README.md#accountv1settingsdeveloperappupdate)
-- [`groupLeaderboardV1GetGroup`](docs/sdks/group/README.md#leaderboardv1getgroup)
-- [`leaderboardLeaderboardV1GetAccount`](docs/sdks/leaderboard/README.md#leaderboardv1getaccount)
-- [`leaderboardLeaderboardV1GetBadges`](docs/sdks/leaderboard/README.md#leaderboardv1getbadges)
-- [`leaderboardLeaderboardV1GetGroup`](docs/sdks/leaderboard/README.md#leaderboardv1getgroup)
-- [`livenessLiveness`](docs/sdks/liveness/README.md#liveness) - Liveness check
-- [`locationLocationV1LocationGet`](docs/sdks/location/README.md#locationv1locationget)
-- [`publicAccountV1GetApps`](docs/sdks/public/README.md#accountv1getapps)
-- [`publicAccountV1GetBadges`](docs/sdks/public/README.md#accountv1getbadges)
-- [`publicAccountV1GetDataPoints`](docs/sdks/public/README.md#accountv1getdatapoints)
-- [`publicAccountV1GetFriends`](docs/sdks/public/README.md#accountv1getfriends)
-- [`publicAccountV1GetInfo`](docs/sdks/public/README.md#accountv1getinfo)
-- [`publicAccountV1GetLeaderboardHistory`](docs/sdks/public/README.md#accountv1getleaderboardhistory)
-- [`publicAccountV1Queue`](docs/sdks/public/README.md#accountv1queue)
-- [`publicAppV1Queue`](docs/sdks/public/README.md#appv1queue)
-- [`sessionAccountV1SessionCreate`](docs/sdks/session/README.md#accountv1sessioncreate)
-- [`sessionAccountV1SessionDelete`](docs/sdks/session/README.md#accountv1sessiondelete)
-- [`sessionAccountV1SessionGet`](docs/sdks/session/README.md#accountv1sessionget)
-- [`sessionAccountV1SessionLogin`](docs/sdks/session/README.md#accountv1sessionlogin)
-- [`settingsAccountV1SettingsDeleteImages`](docs/sdks/settings/README.md#accountv1settingsdeleteimages)
-- [`settingsAccountV1SettingsGet`](docs/sdks/settings/README.md#accountv1settingsget)
-- [`settingsAccountV1SettingsSendEmailVerification`](docs/sdks/settings/README.md#accountv1settingssendemailverification)
-- [`settingsAccountV1SettingsUpdate`](docs/sdks/settings/README.md#accountv1settingsupdate)
-- [`settingsAccountV1SettingsUpdateImage`](docs/sdks/settings/README.md#accountv1settingsupdateimage)
-- [`settingsAccountV1SettingsUploadImages`](docs/sdks/settings/README.md#accountv1settingsuploadimages)
-- [`settingsAccountV1SettingsVerfyEmail`](docs/sdks/settings/README.md#accountv1settingsverfyemail)
+- [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
+- [`accountGetApps`](docs/sdks/account/README.md#getapps)
+- [`accountGetBadges`](docs/sdks/account/README.md#getbadges)
+- [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints)
+- [`accountGetFriends`](docs/sdks/account/README.md#getfriends)
+- [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
+- [`accountGetLeaderboardHistory`](docs/sdks/account/README.md#getleaderboardhistory)
+- [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
+- [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
+- [`accountsQueue`](docs/sdks/accounts/README.md#queue)
+- [`accountUpdateImage`](docs/sdks/account/README.md#updateimage)
+- [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
+- [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
+- [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
+- [`appsGet`](docs/sdks/apps/README.md#get)
+- [`appsQueue`](docs/sdks/apps/README.md#queue)
+- [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
+- [`badgesTag`](docs/sdks/badges/README.md#tag)
+- [`connectionDelete`](docs/sdks/connection/README.md#delete)
+- [`connectionsConnect`](docs/sdks/connections/README.md#connect)
+- [`connectionUpdate`](docs/sdks/connection/README.md#update)
+- [`connectionVerify`](docs/sdks/connection/README.md#verify)
+- [`dataGetApps`](docs/sdks/data/README.md#getapps)
+- [`dataGetBadges`](docs/sdks/data/README.md#getbadges)
+- [`dataGetDataPoints`](docs/sdks/data/README.md#getdatapoints)
+- [`dataGetFriends`](docs/sdks/data/README.md#getfriends)
+- [`dataGetInfo`](docs/sdks/data/README.md#getinfo)
+- [`dataGetLeaderboardHistory`](docs/sdks/data/README.md#getleaderboardhistory)
+- [`dataGetStaff`](docs/sdks/data/README.md#getstaff)
+- [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
+- [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
+- [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
+- [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
+- [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
+- [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
+- [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
+- [`locationsGet`](docs/sdks/locations/README.md#get)
+- [`publicGetApps`](docs/sdks/public/README.md#getapps)
+- [`publicGetBadges`](docs/sdks/public/README.md#getbadges)
+- [`publicGetDataPoints`](docs/sdks/public/README.md#getdatapoints)
+- [`publicGetFriends`](docs/sdks/public/README.md#getfriends)
+- [`publicGetInfo`](docs/sdks/public/README.md#getinfo)
+- [`publicGetLeaderboardHistory`](docs/sdks/public/README.md#getleaderboardhistory)
+- [`sessionCreate`](docs/sdks/session/README.md#create)
+- [`sessionLogin`](docs/sdks/session/README.md#login)
+- [`sessionsDelete`](docs/sdks/sessions/README.md#delete)
+- [`sessionsGet`](docs/sdks/sessions/README.md#get)
+- [`settingsDeleteImages`](docs/sdks/settings/README.md#deleteimages)
+- [`settingsGet`](docs/sdks/settings/README.md#get)
+- [`settingsSendEmailVerification`](docs/sdks/settings/README.md#sendemailverification)
+- [`settingsUpdate`](docs/sdks/settings/README.md#update)
+- [`settingsUpdateImage`](docs/sdks/settings/README.md#updateimage)
+- [`settingsUploadImages`](docs/sdks/settings/README.md#uploadimages)
+- [`settingsVerifyEmail`](docs/sdks/settings/README.md#verifyemail)
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

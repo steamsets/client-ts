@@ -7,7 +7,7 @@ The role the account should have between one of the 6 donation roles
 ```typescript
 import { V1UpdateSettingsRequestBodyRole } from "@steamsets/client-ts/models/components";
 
-let value: V1UpdateSettingsRequestBodyRole = "amethyst";
+let value: V1UpdateSettingsRequestBodyRole = "ruby";
 ```
 
 ## Values

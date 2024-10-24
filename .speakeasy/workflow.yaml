@@ -4,6 +4,8 @@ sources:
     API:
         inputs:
             - location: https://api.steamsets.com/openapi.json
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/steamsets/steamsets/api
 targets:

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 967eb461a9bf7e1f07c3f5394013507b
+  docChecksum: 4edef29d2d1cb863d30d28486e8c86f5
   docVersion: 1.0.0
   speakeasyVersion: 1.421.1
   generationVersion: 2.438.15
-  releaseVersion: 0.11.33
-  configChecksum: 55532888c702248e0d553b1ba1116fb4
+  releaseVersion: 0.12.1
+  configChecksum: ce4a70d4dc72390c55c499ff0bc8b4f9
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -38,7 +38,9 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
+    groups: 2.81.2
     inputOutputModels: 2.82.0
+    nameOverrides: 2.81.2
     nullables: 0.1.0
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -220,93 +222,80 @@ generatedFiles:
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
   - docs/sdks/account/README.md
+  - docs/sdks/accounts/README.md
   - docs/sdks/admin/README.md
-  - docs/sdks/app/README.md
+  - docs/sdks/apps/README.md
   - docs/sdks/badge/README.md
+  - docs/sdks/badges/README.md
   - docs/sdks/connection/README.md
+  - docs/sdks/connections/README.md
   - docs/sdks/data/README.md
   - docs/sdks/developer/README.md
-  - docs/sdks/group/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
-  - docs/sdks/location/README.md
+  - docs/sdks/locations/README.md
   - docs/sdks/public/README.md
   - docs/sdks/session/README.md
+  - docs/sdks/sessions/README.md
   - docs/sdks/settings/README.md
   - docs/sdks/steamsets/README.md
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountV1ConnectionConnect.ts
-  - src/funcs/accountAccountV1ConnectionDeleteConnection.ts
-  - src/funcs/accountAccountV1ConnectionUpdateConnection.ts
-  - src/funcs/accountAccountV1ConnectionVerifyConnection.ts
-  - src/funcs/accountAccountV1GetApps.ts
-  - src/funcs/accountAccountV1GetBadges.ts
-  - src/funcs/accountAccountV1GetDataPoints.ts
-  - src/funcs/accountAccountV1GetFriends.ts
-  - src/funcs/accountAccountV1GetInfo.ts
-  - src/funcs/accountAccountV1GetLeaderboardHistory.ts
-  - src/funcs/accountAccountV1GetStaff.ts
-  - src/funcs/accountAccountV1Queue.ts
-  - src/funcs/accountAccountV1SessionCreate.ts
-  - src/funcs/accountAccountV1SessionDelete.ts
-  - src/funcs/accountAccountV1SessionGet.ts
-  - src/funcs/accountAccountV1SessionLogin.ts
-  - src/funcs/accountAccountV1SettingsDeleteImages.ts
-  - src/funcs/accountAccountV1SettingsGet.ts
-  - src/funcs/accountAccountV1SettingsSendEmailVerification.ts
-  - src/funcs/accountAccountV1SettingsUpdate.ts
-  - src/funcs/accountAccountV1SettingsUpdateImage.ts
-  - src/funcs/accountAccountV1SettingsUploadImages.ts
-  - src/funcs/accountAccountV1SettingsVerfyEmail.ts
-  - src/funcs/accountLeaderboardV1GetAccount.ts
-  - src/funcs/accountLeaderboardV1GetBadges.ts
-  - src/funcs/accountLeaderboardV1GetGroup.ts
-  - src/funcs/adminAdminV1GetAccount.ts
-  - src/funcs/appAppV1Get.ts
-  - src/funcs/appAppV1Queue.ts
-  - src/funcs/badgeBadgeV1Tag.ts
-  - src/funcs/badgeBadgeV1Tags.ts
-  - src/funcs/connectionAccountV1ConnectionConnect.ts
-  - src/funcs/connectionAccountV1ConnectionDeleteConnection.ts
-  - src/funcs/connectionAccountV1ConnectionUpdateConnection.ts
-  - src/funcs/connectionAccountV1ConnectionVerifyConnection.ts
-  - src/funcs/dataAccountV1GetApps.ts
-  - src/funcs/dataAccountV1GetBadges.ts
-  - src/funcs/dataAccountV1GetDataPoints.ts
-  - src/funcs/dataAccountV1GetFriends.ts
-  - src/funcs/dataAccountV1GetInfo.ts
-  - src/funcs/dataAccountV1GetLeaderboardHistory.ts
-  - src/funcs/dataAccountV1GetStaff.ts
-  - src/funcs/developerAccountV1SettingsDeveloperAppCreate.ts
-  - src/funcs/developerAccountV1SettingsDeveloperAppDelete.ts
-  - src/funcs/developerAccountV1SettingsDeveloperAppUpdate.ts
-  - src/funcs/groupLeaderboardV1GetGroup.ts
-  - src/funcs/leaderboardLeaderboardV1GetAccount.ts
-  - src/funcs/leaderboardLeaderboardV1GetBadges.ts
-  - src/funcs/leaderboardLeaderboardV1GetGroup.ts
-  - src/funcs/livenessLiveness.ts
-  - src/funcs/locationLocationV1LocationGet.ts
-  - src/funcs/publicAccountV1GetApps.ts
-  - src/funcs/publicAccountV1GetBadges.ts
-  - src/funcs/publicAccountV1GetDataPoints.ts
-  - src/funcs/publicAccountV1GetFriends.ts
-  - src/funcs/publicAccountV1GetInfo.ts
-  - src/funcs/publicAccountV1GetLeaderboardHistory.ts
-  - src/funcs/publicAccountV1Queue.ts
-  - src/funcs/publicAppV1Queue.ts
-  - src/funcs/sessionAccountV1SessionCreate.ts
-  - src/funcs/sessionAccountV1SessionDelete.ts
-  - src/funcs/sessionAccountV1SessionGet.ts
-  - src/funcs/sessionAccountV1SessionLogin.ts
-  - src/funcs/settingsAccountV1SettingsDeleteImages.ts
-  - src/funcs/settingsAccountV1SettingsGet.ts
-  - src/funcs/settingsAccountV1SettingsSendEmailVerification.ts
-  - src/funcs/settingsAccountV1SettingsUpdate.ts
-  - src/funcs/settingsAccountV1SettingsUpdateImage.ts
-  - src/funcs/settingsAccountV1SettingsUploadImages.ts
-  - src/funcs/settingsAccountV1SettingsVerfyEmail.ts
+  - src/funcs/accountDeleteImages.ts
+  - src/funcs/accountGetApps.ts
+  - src/funcs/accountGetBadges.ts
+  - src/funcs/accountGetDataPoints.ts
+  - src/funcs/accountGetFriends.ts
+  - src/funcs/accountGetInfo.ts
+  - src/funcs/accountGetLeaderboardHistory.ts
+  - src/funcs/accountGetStaff.ts
+  - src/funcs/accountSendEmailVerification.ts
+  - src/funcs/accountUpdateImage.ts
+  - src/funcs/accountUploadImages.ts
+  - src/funcs/accountVerifyEmail.ts
+  - src/funcs/accountsQueue.ts
+  - src/funcs/adminGetAccount.ts
+  - src/funcs/appsGet.ts
+  - src/funcs/appsQueue.ts
+  - src/funcs/badgeGetTags.ts
+  - src/funcs/badgesTag.ts
+  - src/funcs/connectionDelete.ts
+  - src/funcs/connectionUpdate.ts
+  - src/funcs/connectionVerify.ts
+  - src/funcs/connectionsConnect.ts
+  - src/funcs/dataGetApps.ts
+  - src/funcs/dataGetBadges.ts
+  - src/funcs/dataGetDataPoints.ts
+  - src/funcs/dataGetFriends.ts
+  - src/funcs/dataGetInfo.ts
+  - src/funcs/dataGetLeaderboardHistory.ts
+  - src/funcs/dataGetStaff.ts
+  - src/funcs/developerCreateDeveloperApp.ts
+  - src/funcs/developerDeleteDeveloperApp.ts
+  - src/funcs/developerUpdateApp.ts
+  - src/funcs/leaderboardGetAccount.ts
+  - src/funcs/leaderboardGetBadges.ts
+  - src/funcs/leaderboardGetGroup.ts
+  - src/funcs/livenessCheck.ts
+  - src/funcs/locationsGet.ts
+  - src/funcs/publicGetApps.ts
+  - src/funcs/publicGetBadges.ts
+  - src/funcs/publicGetDataPoints.ts
+  - src/funcs/publicGetFriends.ts
+  - src/funcs/publicGetInfo.ts
+  - src/funcs/publicGetLeaderboardHistory.ts
+  - src/funcs/sessionCreate.ts
+  - src/funcs/sessionLogin.ts
+  - src/funcs/sessionsDelete.ts
+  - src/funcs/sessionsGet.ts
+  - src/funcs/settingsDeleteImages.ts
+  - src/funcs/settingsGet.ts
+  - src/funcs/settingsSendEmailVerification.ts
+  - src/funcs/settingsUpdate.ts
+  - src/funcs/settingsUpdateImage.ts
+  - src/funcs/settingsUploadImages.ts
+  - src/funcs/settingsVerifyEmail.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -470,20 +459,23 @@ generatedFiles:
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
   - src/sdk/account.ts
+  - src/sdk/accounts.ts
   - src/sdk/admin.ts
-  - src/sdk/app.ts
+  - src/sdk/apps.ts
   - src/sdk/badge.ts
+  - src/sdk/badges.ts
   - src/sdk/connection.ts
+  - src/sdk/connections.ts
   - src/sdk/data.ts
   - src/sdk/developer.ts
-  - src/sdk/group.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
-  - src/sdk/location.ts
+  - src/sdk/locations.ts
   - src/sdk/public.ts
   - src/sdk/sdk.ts
   - src/sdk/session.ts
+  - src/sdk/sessions.ts
   - src/sdk/settings.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts

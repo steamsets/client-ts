@@ -7,11 +7,11 @@ Developer App related operations
 
 ### Available Operations
 
-* [accountV1SettingsDeveloperAppCreate](#accountv1settingsdeveloperappcreate)
-* [accountV1SettingsDeveloperAppDelete](#accountv1settingsdeveloperappdelete)
-* [accountV1SettingsDeveloperAppUpdate](#accountv1settingsdeveloperappupdate)
+* [createDeveloperApp](#createdeveloperapp)
+* [deleteDeveloperApp](#deletedeveloperapp)
+* [updateApp](#updateapp)
 
-## accountV1SettingsDeveloperAppCreate
+## createDeveloperApp
 
 ### Example Usage
 
@@ -23,7 +23,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.developer.accountV1SettingsDeveloperAppCreate({
+  const result = await steamSets.developer.createDeveloperApp({
     description: "Your App Description",
     environment: "production",
     generateKey: true,
@@ -44,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { developerAccountV1SettingsDeveloperAppCreate } from "@steamsets/client-ts/funcs/developerAccountV1SettingsDeveloperAppCreate.js";
+import { developerCreateDeveloperApp } from "@steamsets/client-ts/funcs/developerCreateDeveloperApp.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -53,7 +53,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await developerAccountV1SettingsDeveloperAppCreate(steamSets, {
+  const res = await developerCreateDeveloperApp(steamSets, {
     description: "Your App Description",
     environment: "production",
     generateKey: true,
@@ -94,7 +94,7 @@ run();
 | errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsDeveloperAppDelete
+## deleteDeveloperApp
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.developer.accountV1SettingsDeveloperAppDelete({
+  const result = await steamSets.developer.deleteDeveloperApp({
     publicId: "da_123456",
   });
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { developerAccountV1SettingsDeveloperAppDelete } from "@steamsets/client-ts/funcs/developerAccountV1SettingsDeveloperAppDelete.js";
+import { developerDeleteDeveloperApp } from "@steamsets/client-ts/funcs/developerDeleteDeveloperApp.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -132,7 +132,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await developerAccountV1SettingsDeveloperAppDelete(steamSets, {
+  const res = await developerDeleteDeveloperApp(steamSets, {
     publicId: "da_123456",
   });
 
@@ -169,7 +169,7 @@ run();
 | errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsDeveloperAppUpdate
+## updateApp
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.developer.accountV1SettingsDeveloperAppUpdate({
+  const result = await steamSets.developer.updateApp({
     description: "My App Description",
     icon: "https://yoururl.com/icon.png",
     name: "My App",
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { developerAccountV1SettingsDeveloperAppUpdate } from "@steamsets/client-ts/funcs/developerAccountV1SettingsDeveloperAppUpdate.js";
+import { developerUpdateApp } from "@steamsets/client-ts/funcs/developerUpdateApp.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,7 +211,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await developerAccountV1SettingsDeveloperAppUpdate(steamSets, {
+  const res = await developerUpdateApp(steamSets, {
     description: "My App Description",
     icon: "https://yoururl.com/icon.png",
     name: "My App",

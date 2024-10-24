@@ -19,7 +19,7 @@ let value: V1AccountLeaderboardAccount = {
     xp: 123456,
   },
   badges: 123456,
-  bans: 132068,
+  bans: 796392,
   city: {
     id: 1,
     name: "Bad Krozingen",
@@ -34,7 +34,7 @@ let value: V1AccountLeaderboardAccount = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  gameBans: 716860,
+  gameBans: 959167,
   hidden: true,
   level: 123456,
   limitedApps: 123456,
@@ -52,7 +52,7 @@ let value: V1AccountLeaderboardAccount = {
   },
   roles: [
     {
-      rating: 396060,
+      rating: 458139,
       role: "ruby",
     },
   ],
@@ -61,10 +61,10 @@ let value: V1AccountLeaderboardAccount = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 183280,
+  steamSetsScore: 857723,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 144847,
+  vacBans: 457223,
   xp: 123456,
 };
 ```

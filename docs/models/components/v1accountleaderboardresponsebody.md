@@ -23,7 +23,7 @@ let value: V1AccountLeaderboardResponseBody = {
         xp: 123456,
       },
       badges: 123456,
-      bans: 213312,
+      bans: 882042,
       city: {
         id: 1,
         name: "Bad Krozingen",
@@ -38,7 +38,7 @@ let value: V1AccountLeaderboardResponseBody = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 518201,
+      gameBans: 458604,
       hidden: true,
       level: 123456,
       limitedApps: 123456,
@@ -56,8 +56,8 @@ let value: V1AccountLeaderboardResponseBody = {
       },
       roles: [
         {
-          rating: 25662,
-          role: "developer",
+          rating: 724168,
+          role: "amber",
         },
       ],
       state: {
@@ -65,10 +65,10 @@ let value: V1AccountLeaderboardResponseBody = {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 424685,
+      steamSetsScore: 904045,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 374170,
+      vacBans: 690025,
       xp: 123456,
     },
   ],
@@ -113,7 +113,7 @@ let value: V1AccountLeaderboardResponseBody = {
       xp: 123456,
     },
     badges: 123456,
-    bans: 463575,
+    bans: 699622,
     city: {
       id: 1,
       name: "Bad Krozingen",
@@ -128,7 +128,7 @@ let value: V1AccountLeaderboardResponseBody = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 277628,
+    gameBans: 327720,
     hidden: true,
     level: 123456,
     limitedApps: 123456,
@@ -146,8 +146,8 @@ let value: V1AccountLeaderboardResponseBody = {
     },
     roles: [
       {
-        rating: 586784,
-        role: "translator",
+        rating: 756779,
+        role: "diamond",
       },
     ],
     state: {
@@ -155,10 +155,10 @@ let value: V1AccountLeaderboardResponseBody = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 117531,
+    steamSetsScore: 240020,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 517379,
+    vacBans: 160538,
     xp: 123456,
   },
 };

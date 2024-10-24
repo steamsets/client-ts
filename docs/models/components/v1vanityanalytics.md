@@ -6,7 +6,7 @@
 import { V1VanityAnalytics } from "@steamsets/client-ts/models/components";
 
 let value: V1VanityAnalytics = {
-  clicks: 872651,
+  clicks: 132068,
 };
 ```
 

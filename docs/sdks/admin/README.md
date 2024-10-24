@@ -7,9 +7,9 @@ Admin related operations
 
 ### Available Operations
 
-* [adminV1GetAccount](#adminv1getaccount)
+* [getAccount](#getaccount)
 
-## adminV1GetAccount
+## getAccount
 
 ### Example Usage
 
@@ -21,7 +21,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.admin.adminV1GetAccount({});
+  const result = await steamSets.admin.getAccount({});
 
   // Handle the result
   console.log(result);
@@ -36,7 +36,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { adminAdminV1GetAccount } from "@steamsets/client-ts/funcs/adminAdminV1GetAccount.js";
+import { adminGetAccount } from "@steamsets/client-ts/funcs/adminGetAccount.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -45,7 +45,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await adminAdminV1GetAccount(steamSets, {});
+  const res = await adminGetAccount(steamSets, {});
 
   if (!res.ok) {
     throw res.error;

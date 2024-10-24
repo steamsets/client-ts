@@ -63,7 +63,7 @@ let value: V1GetSettingsBody = {
   theme: "dark",
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 628982,
+    clicks: 517379,
   },
 };
 ```

@@ -5,15 +5,15 @@
 
 ### Available Operations
 
-* [accountV1SettingsDeleteImages](#accountv1settingsdeleteimages)
-* [accountV1SettingsGet](#accountv1settingsget)
-* [accountV1SettingsSendEmailVerification](#accountv1settingssendemailverification)
-* [accountV1SettingsUpdateImage](#accountv1settingsupdateimage)
-* [accountV1SettingsUpdate](#accountv1settingsupdate)
-* [accountV1SettingsUploadImages](#accountv1settingsuploadimages)
-* [accountV1SettingsVerfyEmail](#accountv1settingsverfyemail)
+* [deleteImages](#deleteimages)
+* [get](#get)
+* [sendEmailVerification](#sendemailverification)
+* [updateImage](#updateimage)
+* [update](#update)
+* [uploadImages](#uploadimages)
+* [verifyEmail](#verifyemail)
 
-## accountV1SettingsDeleteImages
+## deleteImages
 
 ### Example Usage
 
@@ -25,7 +25,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsDeleteImages({
+  const result = await steamSets.settings.deleteImages({
     imageIds: [
       "<value>",
     ],
@@ -44,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsDeleteImages } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsDeleteImages.js";
+import { settingsDeleteImages } from "@steamsets/client-ts/funcs/settingsDeleteImages.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -53,7 +53,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsDeleteImages(steamSets, {
+  const res = await settingsDeleteImages(steamSets, {
     imageIds: [
       "<value>",
     ],
@@ -92,7 +92,7 @@ run();
 | errors.ErrorModel        | 404, 422, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsGet
+## get
 
 ### Example Usage
 
@@ -104,7 +104,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsGet();
+  const result = await steamSets.settings.get();
 
   // Handle the result
   console.log(result);
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsGet } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsGet.js";
+import { settingsGet } from "@steamsets/client-ts/funcs/settingsGet.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -128,7 +128,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsGet(steamSets);
+  const res = await settingsGet(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -162,7 +162,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsSendEmailVerification
+## sendEmailVerification
 
 ### Example Usage
 
@@ -174,7 +174,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsSendEmailVerification({});
+  const result = await steamSets.settings.sendEmailVerification({});
 
   // Handle the result
   console.log(result);
@@ -189,7 +189,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsSendEmailVerification } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsSendEmailVerification.js";
+import { settingsSendEmailVerification } from "@steamsets/client-ts/funcs/settingsSendEmailVerification.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -198,7 +198,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsSendEmailVerification(steamSets, {});
+  const res = await settingsSendEmailVerification(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -233,7 +233,7 @@ run();
 | errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsUpdateImage
+## updateImage
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsUpdateImage({
+  const result = await steamSets.settings.updateImage({
     active: true,
     imageId: "123456",
   });
@@ -263,7 +263,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsUpdateImage } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsUpdateImage.js";
+import { settingsUpdateImage } from "@steamsets/client-ts/funcs/settingsUpdateImage.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -272,7 +272,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsUpdateImage(steamSets, {
+  const res = await settingsUpdateImage(steamSets, {
     active: true,
     imageId: "123456",
   });
@@ -310,7 +310,7 @@ run();
 | errors.ErrorModel        | 404, 422, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsUpdate
+## update
 
 ### Example Usage
 
@@ -322,7 +322,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsUpdate({
+  const result = await steamSets.settings.update({
     v1UpdateSettingsRequestBody: {
       color: "#7652c9",
       colors: "#7652c9",
@@ -354,7 +354,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsUpdate } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsUpdate.js";
+import { settingsUpdate } from "@steamsets/client-ts/funcs/settingsUpdate.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -363,7 +363,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsUpdate(steamSets, {
+  const res = await settingsUpdate(steamSets, {
     v1UpdateSettingsRequestBody: {
       color: "#7652c9",
       colors: "#7652c9",
@@ -415,7 +415,7 @@ run();
 | errors.ErrorModel        | 422, 429, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsUploadImages
+## uploadImages
 
 ### Example Usage
 
@@ -427,7 +427,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsUploadImages({
+  const result = await steamSets.settings.uploadImages({
     images: [
       {
         data: "base64_encoded_image",
@@ -449,7 +449,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsUploadImages } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsUploadImages.js";
+import { settingsUploadImages } from "@steamsets/client-ts/funcs/settingsUploadImages.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -458,7 +458,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsUploadImages(steamSets, {
+  const res = await settingsUploadImages(steamSets, {
     images: [
       {
         data: "base64_encoded_image",
@@ -500,7 +500,7 @@ run();
 | errors.ErrorModel        | 422, 500                 | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsVerfyEmail
+## verifyEmail
 
 ### Example Usage
 
@@ -512,7 +512,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsVerfyEmail({
+  const result = await steamSets.settings.verifyEmail({
     code: "123456",
   });
 
@@ -529,7 +529,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsVerfyEmail } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsVerfyEmail.js";
+import { settingsVerifyEmail } from "@steamsets/client-ts/funcs/settingsVerifyEmail.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -538,7 +538,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsVerfyEmail(steamSets, {
+  const res = await settingsVerifyEmail(steamSets, {
     code: "123456",
   });
 
