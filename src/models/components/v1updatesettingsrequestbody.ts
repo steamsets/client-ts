@@ -55,7 +55,7 @@ export type V1UpdateSettingsRequestBody = {
   /**
    * The email the account should use, only if the account is private
    */
-  email: string;
+  email: string | null;
   /**
    * The email notifications the account wants
    */
@@ -71,15 +71,15 @@ export type V1UpdateSettingsRequestBody = {
   /**
    * The role the account should have between one of the 6 donation roles
    */
-  role: V1UpdateSettingsRequestBodyRole | null;
+  role?: V1UpdateSettingsRequestBodyRole | null | undefined;
   /**
    * The theme the account should use, only if the account is private
    */
   theme: V1UpdateSettingsRequestBodyTheme;
   /**
-   * The vanity the account should use, only if the account is private
+   * The vanity the account should use
    */
-  vanity: string;
+  vanity: string | null;
 };
 
 /** @internal */
@@ -132,26 +132,26 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
 > = z.object({
   color: z.string(),
   colors: z.string(),
-  email: z.string(),
+  email: z.nullable(z.string()),
   emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
-  role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema),
+  role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema).optional(),
   theme: V1UpdateSettingsRequestBodyTheme$inboundSchema,
-  vanity: z.string(),
+  vanity: z.nullable(z.string()),
 });
 
 /** @internal */
 export type V1UpdateSettingsRequestBody$Outbound = {
   color: string;
   colors: string;
-  email: string;
+  email: string | null;
   emailNotifications: Array<EmailNotification$Outbound> | null;
   hidden: boolean;
   language: string;
-  role: string | null;
+  role?: string | null | undefined;
   theme: string;
-  vanity: string;
+  vanity: string | null;
 };
 
 /** @internal */
@@ -162,13 +162,13 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   color: z.string(),
   colors: z.string(),
-  email: z.string(),
+  email: z.nullable(z.string()),
   emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
-  role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema),
+  role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema).optional(),
   theme: V1UpdateSettingsRequestBodyTheme$outboundSchema,
-  vanity: z.string(),
+  vanity: z.nullable(z.string()),
 });
 
 /**

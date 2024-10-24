@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: ad595853fac1d4feac58793d67cffd3d
+  docChecksum: 967eb461a9bf7e1f07c3f5394013507b
   docVersion: 1.0.0
-  speakeasyVersion: 1.421.0
+  speakeasyVersion: 1.421.1
   generationVersion: 2.438.15
-  releaseVersion: 0.11.32
-  configChecksum: 240986e7a271c32468c8342ace26a270
+  releaseVersion: 0.11.33
+  configChecksum: 55532888c702248e0d553b1ba1116fb4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -171,6 +171,7 @@ generatedFiles:
   - docs/models/components/v1uploadedimage.md
   - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
+  - docs/models/components/v1vanityanalytics.md
   - docs/models/components/v1verifyconnectionrequestbody.md
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
@@ -420,6 +421,7 @@ generatedFiles:
   - src/models/components/v1updatesettingsresponsebody.ts
   - src/models/components/v1uploadedimage.ts
   - src/models/components/v1uploadimagesrequestbody.ts
+  - src/models/components/v1vanityanalytics.ts
   - src/models/components/v1verifyconnectionrequestbody.ts
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyemailrequestbody.ts
@@ -598,7 +600,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:

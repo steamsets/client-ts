@@ -69,6 +69,9 @@ let value: AccountV1SettingsGetResponse = {
     ],
     theme: "dark",
     vanity: "flo",
+    vanityAnalytics: {
+      clicks: 570197,
+    },
   },
 };
 ```
