@@ -35,6 +35,12 @@ import {
   Session$Outbound,
   Session$outboundSchema,
 } from "./session.js";
+import {
+  V1VanityAnalytics,
+  V1VanityAnalytics$inboundSchema,
+  V1VanityAnalytics$Outbound,
+  V1VanityAnalytics$outboundSchema,
+} from "./v1vanityanalytics.js";
 
 /**
  * The theme the account is using
@@ -105,6 +111,7 @@ export type V1GetSettingsBody = {
    * The vanity the account is using
    */
   vanity: string;
+  vanityAnalytics: V1VanityAnalytics | null;
 };
 
 /** @internal */
@@ -149,6 +156,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   sessions: z.nullable(z.array(Session$inboundSchema)),
   theme: Theme$inboundSchema,
   vanity: z.string(),
+  vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -171,6 +179,7 @@ export type V1GetSettingsBody$Outbound = {
   sessions: Array<Session$Outbound> | null;
   theme: string;
   vanity: string;
+  vanityAnalytics: V1VanityAnalytics$Outbound | null;
 };
 
 /** @internal */
@@ -193,6 +202,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   sessions: z.nullable(z.array(Session$outboundSchema)),
   theme: Theme$outboundSchema,
   vanity: z.string(),
+  vanityAnalytics: z.nullable(V1VanityAnalytics$outboundSchema),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

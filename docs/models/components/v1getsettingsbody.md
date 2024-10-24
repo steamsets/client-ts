@@ -62,6 +62,9 @@ let value: V1GetSettingsBody = {
   ],
   theme: "dark",
   vanity: "flo",
+  vanityAnalytics: {
+    clicks: 628982,
+  },
 };
 ```
 
@@ -83,3 +86,4 @@ let value: V1GetSettingsBody = {
 | `sessions`                                                                                    | [components.Session](../../models/components/session.md)[]                                    | :heavy_check_mark:                                                                            | The sessions the account has                                                                  |                                                                                               |
 | `theme`                                                                                       | [components.Theme](../../models/components/theme.md)                                          | :heavy_check_mark:                                                                            | The theme the account is using                                                                | dark                                                                                          |
 | `vanity`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | The vanity the account is using                                                               | flo                                                                                           |
+| `vanityAnalytics`                                                                             | [components.V1VanityAnalytics](../../models/components/v1vanityanalytics.md)                  | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
