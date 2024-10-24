@@ -45,7 +45,7 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "social_links",
+      resource: "theme",
       value: "1",
     },
   ],
