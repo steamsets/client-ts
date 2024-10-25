@@ -75,7 +75,7 @@ export type V1AdminGetAccountResponseBody = {
    */
   connections: Array<Connection> | null;
   /**
-   * The country of the account
+   * The country code of the account
    */
   country: string | null;
   /**

@@ -15,3 +15,7 @@ targets:
         publish:
             npm:
                 token: $npm_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/steamsets/steamsets/api-code-samples
+            blocking: false

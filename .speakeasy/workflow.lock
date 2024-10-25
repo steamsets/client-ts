@@ -1,9 +1,9 @@
-speakeasyVersion: 1.421.1
+speakeasyVersion: 1.422.1
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:cf496a634153eac94529854c053d11c055917577afd525b5867d81cb503f46f4
-        sourceBlobDigest: sha256:61989f5d1a8bf3db02735eb31b3dcf33a1f102756f3b1336aa016165f497b633
+        sourceRevisionDigest: sha256:a09b56a77ee7350173ea994c0d3284266ab16b1327be025ed5e9e524b6a51d8b
+        sourceBlobDigest: sha256:f6027e08d0b20a6c78edeae050955e484d3744f4b0cce1cfcd71b05bda19ed54
         tags:
             - latest
             - main
@@ -18,8 +18,10 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:cf496a634153eac94529854c053d11c055917577afd525b5867d81cb503f46f4
-        sourceBlobDigest: sha256:61989f5d1a8bf3db02735eb31b3dcf33a1f102756f3b1336aa016165f497b633
+        sourceRevisionDigest: sha256:a09b56a77ee7350173ea994c0d3284266ab16b1327be025ed5e9e524b6a51d8b
+        sourceBlobDigest: sha256:f6027e08d0b20a6c78edeae050955e484d3744f4b0cce1cfcd71b05bda19ed54
+        codeSamplesNamespace: api-code-samples
+        codeSamplesRevisionDigest: sha256:fc3daf47d0d6f905cbd7f99104ba53efa39bf47ec4e6f3197c4ee7f47bd6f339
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -38,3 +40,7 @@ workflow:
             publish:
                 npm:
                     token: $npm_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/steamsets/steamsets/api-code-samples
+                blocking: false
