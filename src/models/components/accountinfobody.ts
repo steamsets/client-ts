@@ -213,10 +213,6 @@ export type AccountInfoBody = {
    */
   gameBans: number;
   /**
-   * Whether the account is hidden in the leaderboards
-   */
-  hidden: boolean;
-  /**
    * The images of the account
    */
   images: Array<Image> | null;
@@ -269,6 +265,10 @@ export type AccountInfoBody = {
    * The roles of the account
    */
   roles: Array<Role> | null;
+  /**
+   * The shortlink domain of the account, is to be used with their steamsets vanity
+   */
+  shortlinkDomain: string | null;
   state?: LeaderboardState | null | undefined;
   /**
    * The steam id
@@ -410,7 +410,6 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   images: z.nullable(z.array(Image$inboundSchema)),
   lastBanDate: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
@@ -427,6 +426,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   privacy: Privacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
+  shortlinkDomain: z.nullable(z.string()),
   state: z.nullable(LeaderboardState$inboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),
@@ -477,7 +477,6 @@ export type AccountInfoBody$Outbound = {
   friends: number;
   friendsUpdatedAt: string | null;
   gameBans: number;
-  hidden: boolean;
   images: Array<Image$Outbound> | null;
   lastBanDate: string | null;
   level: number;
@@ -492,6 +491,7 @@ export type AccountInfoBody$Outbound = {
   privacy: string;
   region?: LeaderboardRegion$Outbound | null | undefined;
   roles: Array<Role$Outbound> | null;
+  shortlinkDomain: string | null;
   state?: LeaderboardState$Outbound | null | undefined;
   steamId: string;
   steamSetsScore: number;
@@ -540,7 +540,6 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   friends: z.number().int(),
   friendsUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),
   lastBanDate: z.nullable(z.date().transform(v => v.toISOString())),
   level: z.number().int(),
@@ -555,6 +554,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   privacy: Privacy$outboundSchema,
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
+  shortlinkDomain: z.nullable(z.string()),
   state: z.nullable(LeaderboardState$outboundSchema).optional(),
   steamId: z.string(),
   steamSetsScore: z.number().int(),

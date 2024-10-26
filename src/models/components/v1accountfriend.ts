@@ -95,10 +95,6 @@ export type V1AccountFriend = {
    */
   gameBans: number;
   /**
-   * Whether the account is hidden in the leaderboards
-   */
-  hidden: boolean;
-  /**
    * The level of the account
    */
   level: number;
@@ -191,7 +187,6 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   level: z.number().int(),
   limitedApps: z.number().int(),
   name: z.string(),
@@ -231,7 +226,6 @@ export type V1AccountFriend$Outbound = {
   friends: number;
   friendsSince: string | null;
   gameBans: number;
-  hidden: boolean;
   level: number;
   limitedApps: number;
   name: string;
@@ -275,7 +269,6 @@ export const V1AccountFriend$outboundSchema: z.ZodType<
   friends: z.number().int(),
   friendsSince: z.nullable(z.date().transform(v => v.toISOString())),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   level: z.number().int(),
   limitedApps: z.number().int(),
   name: z.string(),

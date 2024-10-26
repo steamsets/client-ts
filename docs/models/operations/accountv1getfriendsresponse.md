@@ -41,7 +41,6 @@ let value: AccountV1GetFriendsResponse = {
         friends: 123456,
         friendsSince: new Date("2023-03-31T11:16:03.610Z"),
         gameBans: 264555,
-        hidden: true,
         level: 123456,
         limitedApps: 123456,
         name: "steamsets",

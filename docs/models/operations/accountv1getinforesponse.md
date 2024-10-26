@@ -72,7 +72,6 @@ let value: AccountV1GetInfoResponse = {
     friends: 123456,
     friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     gameBans: 943749,
-    hidden: true,
     images: [
       {
         active: true,
@@ -102,6 +101,7 @@ let value: AccountV1GetInfoResponse = {
         role: "amethyst",
       },
     ],
+    shortlinkDomain: "steamsets.link",
     state: {
       id: 1,
       name: "Baden-Wurttemberg",

@@ -39,7 +39,6 @@ let value: V1GroupLeaderboardResponseBody = {
         foilBadges: 123456,
         friends: 123456,
         gameBans: 575751,
-        hidden: true,
         level: 123456,
         limitedApps: 123456,
         name: "steamsets",
