@@ -94,10 +94,6 @@ export type LeaderboardAccount = {
    */
   gameBans: number;
   /**
-   * Whether the account is hidden in the leaderboards
-   */
-  hidden: boolean;
-  /**
    * The level of the account
    */
   level: number;
@@ -187,7 +183,6 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   level: z.number().int(),
   limitedApps: z.number().int(),
   name: z.string(),
@@ -226,7 +221,6 @@ export type LeaderboardAccount$Outbound = {
   foilBadges: number;
   friends: number;
   gameBans: number;
-  hidden: boolean;
   level: number;
   limitedApps: number;
   name: string;
@@ -269,7 +263,6 @@ export const LeaderboardAccount$outboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
-  hidden: z.boolean(),
   level: z.number().int(),
   limitedApps: z.number().int(),
   name: z.string(),

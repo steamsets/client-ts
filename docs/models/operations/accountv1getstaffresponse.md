@@ -37,7 +37,6 @@ let value: AccountV1GetStaffResponse = {
       foilBadges: 123456,
       friends: 123456,
       gameBans: 315428,
-      hidden: true,
       level: 123456,
       limitedApps: 123456,
       name: "steamsets",

@@ -35,7 +35,6 @@ let value: V1GroupLeaderboardGroup = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 398434,
-    hidden: true,
     level: 123456,
     limitedApps: 123456,
     name: "steamsets",
