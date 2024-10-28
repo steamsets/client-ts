@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 2555f936df029267fab957bb70830414
+  docChecksum: d149d135ff0ac1d822584f8bbff231b0
   docVersion: 1.0.0
-  speakeasyVersion: 1.422.1
-  generationVersion: 2.438.15
-  releaseVersion: 0.12.4
-  configChecksum: 22feddd29a5ff64e14d59bdb638f3617
+  speakeasyVersion: 1.422.2
+  generationVersion: 2.442.11
+  releaseVersion: 0.12.5
+  configChecksum: e50670c167c4fd8595e1c9178996ada9
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -72,6 +72,7 @@ generatedFiles:
   - docs/models/components/connection.md
   - docs/models/components/connectionprovider.md
   - docs/models/components/country.md
+  - docs/models/components/deletedroles.md
   - docs/models/components/designtag.md
   - docs/models/components/developerapp.md
   - docs/models/components/developerappenvironment.md
@@ -90,6 +91,7 @@ generatedFiles:
   - docs/models/components/leaderboardregion.md
   - docs/models/components/leaderboardstate.md
   - docs/models/components/loginrequestbody.md
+  - docs/models/components/newroles.md
   - docs/models/components/privacy.md
   - docs/models/components/provider.md
   - docs/models/components/region.md
@@ -119,12 +121,16 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
   - docs/models/components/v1accountlocationupdate.md
+  - docs/models/components/v1accountmetaresponsebody.md
   - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
   - docs/models/components/v1admingetaccountresponsebody.md
   - docs/models/components/v1admingetaccountresponsebodyprivacy.md
+  - docs/models/components/v1adminupdateresourcesrequestbody.md
+  - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
+  - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appdetail.md
   - docs/models/components/v1appdetailtype.md
@@ -188,9 +194,11 @@ generatedFiles:
   - docs/models/operations/accountv1getappsresponse.md
   - docs/models/operations/accountv1getbadgesresponse.md
   - docs/models/operations/accountv1getdatapointsresponse.md
+  - docs/models/operations/accountv1getembedresponse.md
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
+  - docs/models/operations/accountv1getmetaresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1sessioncreaterequest.md
@@ -212,6 +220,8 @@ generatedFiles:
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
+  - docs/models/operations/adminv1updateresourcesresponse.md
+  - docs/models/operations/adminv1updaterolesresponse.md
   - docs/models/operations/appv1getresponse.md
   - docs/models/operations/appv1queueresponse.md
   - docs/models/operations/badgev1tagresponse.md
@@ -253,8 +263,12 @@ generatedFiles:
   - src/funcs/accountSendEmailVerification.ts
   - src/funcs/accountUpdateImage.ts
   - src/funcs/accountUploadImages.ts
+  - src/funcs/accountV1GetEmbed.ts
+  - src/funcs/accountV1GetMeta.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
+  - src/funcs/adminAdminV1UpdateResources.ts
+  - src/funcs/adminAdminV1UpdateRoles.ts
   - src/funcs/adminGetAccount.ts
   - src/funcs/appsGet.ts
   - src/funcs/appsQueue.ts
@@ -363,11 +377,14 @@ generatedFiles:
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
   - src/models/components/v1accountlocationupdate.ts
+  - src/models/components/v1accountmetaresponsebody.ts
   - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1admingetaccountresponsebody.ts
+  - src/models/components/v1adminupdateresourcesrequestbody.ts
+  - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appdetail.ts
   - src/models/components/v1appitem.ts
@@ -428,9 +445,11 @@ generatedFiles:
   - src/models/operations/accountv1getapps.ts
   - src/models/operations/accountv1getbadges.ts
   - src/models/operations/accountv1getdatapoints.ts
+  - src/models/operations/accountv1getembed.ts
   - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
+  - src/models/operations/accountv1getmeta.ts
   - src/models/operations/accountv1getstaff.ts
   - src/models/operations/accountv1queue.ts
   - src/models/operations/accountv1sessioncreate.ts
@@ -448,6 +467,8 @@ generatedFiles:
   - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1settingsverfyemail.ts
   - src/models/operations/adminv1getaccount.ts
+  - src/models/operations/adminv1updateresources.ts
+  - src/models/operations/adminv1updateroles.ts
   - src/models/operations/appv1get.ts
   - src/models/operations/appv1queue.ts
   - src/models/operations/badgev1tag.ts
@@ -811,4 +832,32 @@ examples:
         "200":
           application/json: []
         "401":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getEmbed:
+    speakeasy-default-account-v1-get-embed:
+      responses:
+        "200":
+          application/json: "<value>"
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getMeta:
+    speakeasy-default-account-v1-get-meta:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.v1.update-resources:
+    speakeasy-default-admin-v1-update-resources:
+      requestBody:
+        application/json: {"newResources": [{"resource": "max_leaderboard_entries", "value": "1"}], "resource": ["short_link_domain", "custom_vanity"]}
+      responses:
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.v1.update-roles:
+    speakeasy-default-admin-v1-update-roles:
+      requestBody:
+        application/json: {"deletedRoles": [], "newRoles": []}
+      responses:
+        "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

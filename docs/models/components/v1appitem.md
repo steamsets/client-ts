@@ -6,8 +6,8 @@
 import { V1AppItem } from "@steamsets/client-ts/models/components";
 
 let value: V1AppItem = {
-  cost: 379927,
-  description: "jaggedly where appropriate jubilantly",
+  cost: 725595,
+  description: "knottily ethyl covenant",
   largeImage: "<value>",
   name: "<value>",
   publicId: "<id>",
