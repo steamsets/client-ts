@@ -53,10 +53,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.accountV1GetEmbed({});
 
   // Handle the result
   console.log(result);
@@ -95,6 +92,8 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
+* [adminV1UpdateResources](docs/sdks/admin/README.md#adminv1updateresources)
+* [adminV1UpdateRoles](docs/sdks/admin/README.md#adminv1updateroles)
 
 ### [apps](docs/sdks/apps/README.md)
 
@@ -178,6 +177,10 @@ run();
 * [uploadImages](docs/sdks/settings/README.md#uploadimages)
 * [verifyEmail](docs/sdks/settings/README.md#verifyemail)
 
+### [SteamSets SDK](docs/sdks/steamsets/README.md)
+
+* [accountV1GetEmbed](docs/sdks/steamsets/README.md#accountv1getembed)
+* [accountV1GetMeta](docs/sdks/steamsets/README.md#accountv1getmeta)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -196,10 +199,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  }, {
+  const result = await steamSets.accountV1GetEmbed({}, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -239,10 +239,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.accountV1GetEmbed({});
 
   // Handle the result
   console.log(result);
@@ -268,11 +265,11 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `connect` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `accountV1GetEmbed` method may throw the following errors:
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.ErrorModel        | 403, 404, 422, 429, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ```typescript
@@ -289,10 +286,7 @@ const steamSets = new SteamSets({
 async function run() {
   let result;
   try {
-    result = await steamSets.connections.connect({
-      code: "123456",
-      provider: "discord",
-    });
+    result = await steamSets.accountV1GetEmbed({});
 
     // Handle the result
     console.log(result);
@@ -345,10 +339,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.accountV1GetEmbed({});
 
   // Handle the result
   console.log(result);
@@ -372,10 +363,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.accountV1GetEmbed({});
 
   // Handle the result
   console.log(result);
@@ -455,10 +443,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
-  });
+  const result = await steamSets.accountV1GetEmbed({});
 
   // Handle the result
   console.log(result);
@@ -541,7 +526,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateImage`](docs/sdks/account/README.md#updateimage)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
+- [`accountV1GetEmbed`](docs/sdks/steamsets/README.md#accountv1getembed)
+- [`accountV1GetMeta`](docs/sdks/steamsets/README.md#accountv1getmeta)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
+- [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
+- [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`appsGet`](docs/sdks/apps/README.md#get)
 - [`appsQueue`](docs/sdks/apps/README.md#queue)
