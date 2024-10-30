@@ -95,11 +95,6 @@ run();
 * [adminV1UpdateResources](docs/sdks/admin/README.md#adminv1updateresources)
 * [adminV1UpdateRoles](docs/sdks/admin/README.md#adminv1updateroles)
 
-### [apps](docs/sdks/apps/README.md)
-
-* [get](docs/sdks/apps/README.md#get)
-* [queue](docs/sdks/apps/README.md#queue)
-
 ### [badge](docs/sdks/badge/README.md)
 
 * [getTags](docs/sdks/badge/README.md#gettags)
@@ -532,8 +527,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
 - [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
-- [`appsGet`](docs/sdks/apps/README.md#get)
-- [`appsQueue`](docs/sdks/apps/README.md#queue)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)

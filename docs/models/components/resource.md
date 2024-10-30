@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "mini_background",
+  resource: "theme",
   value: "1",
 };
 ```

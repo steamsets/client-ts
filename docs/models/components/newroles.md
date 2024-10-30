@@ -5,7 +5,7 @@
 ```typescript
 import { NewRoles } from "@steamsets/client-ts/models/components";
 
-let value: NewRoles = "owner";
+let value: NewRoles = "contributor";
 ```
 
 ## Values
