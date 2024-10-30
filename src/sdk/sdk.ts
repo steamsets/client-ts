@@ -11,7 +11,6 @@ import { unwrapAsync } from "../types/fp.js";
 import { Account } from "./account.js";
 import { Accounts } from "./accounts.js";
 import { Admin } from "./admin.js";
-import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Connection } from "./connection.js";
@@ -80,11 +79,6 @@ export class SteamSets extends ClientSDK {
   private _admin?: Admin;
   get admin(): Admin {
     return (this._admin ??= new Admin(this._options));
-  }
-
-  private _apps?: Apps;
-  get apps(): Apps {
-    return (this._apps ??= new Apps(this._options));
   }
 
   private _badge?: Badge;

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9007462941b1bbdb4dd09f26ea4f12a9
+  docChecksum: 79fba602c3c8a2570d6067c093e6f8cf
   docVersion: 1.0.0
-  speakeasyVersion: 1.423.1
-  generationVersion: 2.442.11
-  releaseVersion: 0.12.6
-  configChecksum: 7cf91be008235c465eb8e8da604a1695
+  speakeasyVersion: 1.423.4
+  generationVersion: 2.445.1
+  releaseVersion: 0.12.7
+  configChecksum: 4a0eede2d43e7db1f0f481188cd95a6a
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -65,7 +65,6 @@ generatedFiles:
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/accountsearchvanitystruct.md
   - docs/models/components/appprivacy.md
-  - docs/models/components/appsearch.md
   - docs/models/components/bestleaderboardrank.md
   - docs/models/components/city.md
   - docs/models/components/colortag.md
@@ -132,11 +131,6 @@ generatedFiles:
   - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
-  - docs/models/components/v1appdetail.md
-  - docs/models/components/v1appdetailtype.md
-  - docs/models/components/v1appitem.md
-  - docs/models/components/v1apprequestbody.md
-  - docs/models/components/v1appresponsebody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagresponsebody.md
@@ -222,8 +216,6 @@ generatedFiles:
   - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
-  - docs/models/operations/appv1getresponse.md
-  - docs/models/operations/appv1queueresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
@@ -234,7 +226,6 @@ generatedFiles:
   - docs/sdks/account/README.md
   - docs/sdks/accounts/README.md
   - docs/sdks/admin/README.md
-  - docs/sdks/apps/README.md
   - docs/sdks/badge/README.md
   - docs/sdks/badges/README.md
   - docs/sdks/connection/README.md
@@ -270,8 +261,6 @@ generatedFiles:
   - src/funcs/adminAdminV1UpdateResources.ts
   - src/funcs/adminAdminV1UpdateRoles.ts
   - src/funcs/adminGetAccount.ts
-  - src/funcs/appsGet.ts
-  - src/funcs/appsQueue.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
   - src/funcs/connectionDelete.ts
@@ -335,7 +324,6 @@ generatedFiles:
   - src/models/components/accountsearch.ts
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/accountsearchvanitystruct.ts
-  - src/models/components/appsearch.ts
   - src/models/components/bestleaderboardrank.ts
   - src/models/components/city.ts
   - src/models/components/colortag.ts
@@ -386,10 +374,6 @@ generatedFiles:
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
-  - src/models/components/v1appdetail.ts
-  - src/models/components/v1appitem.ts
-  - src/models/components/v1apprequestbody.ts
-  - src/models/components/v1appresponsebody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagresponsebody.ts
@@ -469,8 +453,6 @@ generatedFiles:
   - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
-  - src/models/operations/appv1get.ts
-  - src/models/operations/appv1queue.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
@@ -482,7 +464,6 @@ generatedFiles:
   - src/sdk/account.ts
   - src/sdk/accounts.ts
   - src/sdk/admin.ts
-  - src/sdk/apps.ts
   - src/sdk/badge.ts
   - src/sdk/badges.ts
   - src/sdk/connection.ts
