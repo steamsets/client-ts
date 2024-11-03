@@ -7,7 +7,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.accountV1GetEmbed({});
+  const result = await steamSets.connections.connect({
+    code: "123456",
+    provider: "discord",
+  });
 
   // Handle the result
   console.log(result);
