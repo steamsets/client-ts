@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 79fba602c3c8a2570d6067c093e6f8cf
+  docChecksum: 286b84b9200e253806b80b529b95fd97
   docVersion: 1.0.0
-  speakeasyVersion: 1.423.4
+  speakeasyVersion: 1.424.0
   generationVersion: 2.445.1
-  releaseVersion: 0.12.7
-  configChecksum: 4a0eede2d43e7db1f0f481188cd95a6a
+  releaseVersion: 0.12.8
+  configChecksum: fef5eb3879b7ebdfb6157973ad39cde4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -235,6 +235,7 @@ generatedFiles:
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/locations/README.md
+  - docs/sdks/meta/README.md
   - docs/sdks/public/README.md
   - docs/sdks/session/README.md
   - docs/sdks/sessions/README.md
@@ -254,8 +255,6 @@ generatedFiles:
   - src/funcs/accountSendEmailVerification.ts
   - src/funcs/accountUpdateImage.ts
   - src/funcs/accountUploadImages.ts
-  - src/funcs/accountV1GetEmbed.ts
-  - src/funcs/accountV1GetMeta.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
   - src/funcs/adminAdminV1UpdateResources.ts
@@ -282,6 +281,8 @@ generatedFiles:
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
+  - src/funcs/metaAccountV1GetEmbed.ts
+  - src/funcs/metaAccountV1GetMeta.ts
   - src/funcs/publicGetApps.ts
   - src/funcs/publicGetBadges.ts
   - src/funcs/publicGetDataPoints.ts
@@ -474,6 +475,7 @@ generatedFiles:
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
   - src/sdk/locations.ts
+  - src/sdk/meta.ts
   - src/sdk/public.ts
   - src/sdk/sdk.ts
   - src/sdk/session.ts

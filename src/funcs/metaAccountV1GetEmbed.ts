@@ -23,13 +23,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function accountV1GetMeta(
+export async function metaAccountV1GetEmbed(
   client: SteamSetsCore,
   request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetMetaResponse,
+    operations.AccountV1GetEmbedResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -51,7 +51,7 @@ export async function accountV1GetMeta(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetMeta")();
+  const path = pathToFunc("/account.v1.AccountService/GetEmbed")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export async function accountV1GetMeta(
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
   const context = {
-    operationID: "account.v1.getMeta",
+    operationID: "account.v1.getEmbed",
     oAuth2Scopes: [],
     securitySource: client._options.token,
   };
@@ -108,7 +108,7 @@ export async function accountV1GetMeta(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetMetaResponse,
+    operations.AccountV1GetEmbedResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -118,8 +118,9 @@ export async function accountV1GetMeta(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetMetaResponse$inboundSchema, {
-      key: "V1AccountMetaResponseBody",
+    M.json(200, operations.AccountV1GetEmbedResponse$inboundSchema, {
+      hdrs: true,
+      key: "string",
     }),
     M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
