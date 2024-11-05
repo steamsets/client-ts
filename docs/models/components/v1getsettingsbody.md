@@ -7,6 +7,10 @@ import { V1GetSettingsBody } from "@steamsets/client-ts/models/components";
 
 let value: V1GetSettingsBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
+  chosenRole: {
+    role: "contributor",
+    tier: "tier_1",
+  },
   color: "#7652c9",
   colors: "#7652c9",
   connections: [
@@ -63,7 +67,7 @@ let value: V1GetSettingsBody = {
   theme: "dark",
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 453543,
+    clicks: 866383,
   },
 };
 ```
@@ -73,6 +77,7 @@ let value: V1GetSettingsBody = {
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | https://api.steamsets.com/schemas/V1GetSettingsBody.json                                      |
+| `chosenRole`                                                                                  | [components.ChosenRole](../../models/components/chosenrole.md)                                | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `color`                                                                                       | *string*                                                                                      | :heavy_check_mark:                                                                            | The color the account is using                                                                | #7652c9                                                                                       |
 | `colors`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | The colors the account is using                                                               | #7652c9                                                                                       |
 | `connections`                                                                                 | [components.Connection](../../models/components/connection.md)[]                              | :heavy_check_mark:                                                                            | The connections the account has                                                               |                                                                                               |

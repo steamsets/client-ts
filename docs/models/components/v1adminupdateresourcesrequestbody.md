@@ -8,12 +8,12 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   newResources: [
     {
-      resource: "beta_access",
+      resource: "animated_avatar",
       value: "1",
     },
   ],
   resource: [
-    "go_to_leaderboard_entry",
+    "avatar_frame",
   ],
 };
 ```

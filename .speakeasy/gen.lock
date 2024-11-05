@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 286b84b9200e253806b80b529b95fd97
+  docChecksum: 28a87c751060408df613b3cc3f99bb32
   docVersion: 1.0.0
-  speakeasyVersion: 1.424.0
-  generationVersion: 2.445.1
-  releaseVersion: 0.12.8
-  configChecksum: fef5eb3879b7ebdfb6157973ad39cde4
+  speakeasyVersion: 1.428.0
+  generationVersion: 2.447.4
+  releaseVersion: 0.13.0
+  configChecksum: a0595bfa52e04bd2eb2749ecd630c1a9
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,11 +29,11 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.2
+    core: 3.18.3
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
-    envVarSecurityUsage: 0.1.1
+    envVarSecurityUsage: 0.1.2
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
@@ -44,7 +44,7 @@ features:
     nullables: 0.1.0
     responseFormat: 0.2.3
     retries: 2.83.0
-    sdkHooks: 0.1.0
+    sdkHooks: 0.2.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -66,6 +66,8 @@ generatedFiles:
   - docs/models/components/accountsearchvanitystruct.md
   - docs/models/components/appprivacy.md
   - docs/models/components/bestleaderboardrank.md
+  - docs/models/components/chosenrole.md
+  - docs/models/components/chosenrolerole.md
   - docs/models/components/city.md
   - docs/models/components/colortag.md
   - docs/models/components/connection.md
@@ -326,6 +328,7 @@ generatedFiles:
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/accountsearchvanitystruct.ts
   - src/models/components/bestleaderboardrank.ts
+  - src/models/components/chosenrole.ts
   - src/models/components/city.ts
   - src/models/components/colortag.ts
   - src/models/components/connection.ts
@@ -596,7 +599,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
