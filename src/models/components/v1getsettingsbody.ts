@@ -6,6 +6,12 @@ import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
 import {
+  ChosenRole,
+  ChosenRole$inboundSchema,
+  ChosenRole$Outbound,
+  ChosenRole$outboundSchema,
+} from "./chosenrole.js";
+import {
   Connection,
   Connection$inboundSchema,
   Connection$Outbound,
@@ -59,6 +65,7 @@ export type V1GetSettingsBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  chosenRole: ChosenRole | null;
   /**
    * The color the account is using
    */
@@ -141,6 +148,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
+  chosenRole: z.nullable(ChosenRole$inboundSchema),
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
@@ -166,6 +174,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1GetSettingsBody$Outbound = {
   $schema?: string | undefined;
+  chosenRole: ChosenRole$Outbound | null;
   color: string;
   colors: string;
   connections: Array<Connection$Outbound> | null;
@@ -189,6 +198,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   V1GetSettingsBody
 > = z.object({
   dollarSchema: z.string().optional(),
+  chosenRole: z.nullable(ChosenRole$outboundSchema),
   color: z.string(),
   colors: z.string(),
   connections: z.nullable(z.array(Connection$outboundSchema)),

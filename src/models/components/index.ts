@@ -9,6 +9,7 @@ export * from "./accountsearch.js";
 export * from "./accountsearchidstruct.js";
 export * from "./accountsearchvanitystruct.js";
 export * from "./bestleaderboardrank.js";
+export * from "./chosenrole.js";
 export * from "./city.js";
 export * from "./colortag.js";
 export * from "./connection.js";
