@@ -85,6 +85,10 @@ export type V1AccountLeaderboardAccount = {
    */
   createdAt: Date;
   /**
+   * The total of donations the account has
+   */
+  donated: number;
+  /**
    * The economy ban of the account
    */
   economyBan: string;
@@ -195,6 +199,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   city: z.nullable(LeaderboardCity$inboundSchema).optional(),
   country: z.nullable(LeaderboardCountry$inboundSchema).optional(),
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  donated: z.number().int(),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
@@ -236,6 +241,7 @@ export type V1AccountLeaderboardAccount$Outbound = {
   city?: LeaderboardCity$Outbound | null | undefined;
   country?: LeaderboardCountry$Outbound | null | undefined;
   createdAt: string;
+  donated: number;
   economyBan: string;
   foilBadgeCost: number;
   foilBadges: number;
@@ -281,6 +287,7 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   city: z.nullable(LeaderboardCity$outboundSchema).optional(),
   country: z.nullable(LeaderboardCountry$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()),
+  donated: z.number().int(),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),

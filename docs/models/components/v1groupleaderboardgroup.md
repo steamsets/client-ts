@@ -30,6 +30,7 @@ let value: V1GroupLeaderboardGroup = {
       name: "Germany",
     },
     createdAt: new Date("2023-01-01T00:00:00Z"),
+    donated: 123456,
     economyBan: "steam",
     foilBadgeCost: 123456,
     foilBadges: 123456,
