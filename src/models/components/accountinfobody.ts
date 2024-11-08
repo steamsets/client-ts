@@ -185,6 +185,10 @@ export type AccountInfoBody = {
    */
   currentRanks: Array<BestLeaderboardRank> | null;
   /**
+   * The total of donations the account has
+   */
+  donated: number;
+  /**
    * The economy ban of the account
    */
   economyBan: string;
@@ -401,6 +405,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   ),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
   currentRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
+  donated: z.number().int(),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
@@ -470,6 +475,7 @@ export type AccountInfoBody$Outbound = {
   createdAt: string | null;
   currentBestRanks: Array<BestLeaderboardRank$Outbound> | null;
   currentRanks: Array<BestLeaderboardRank$Outbound> | null;
+  donated: number;
   economyBan: string;
   foilBadgeCost: number;
   foilBadges: number;
@@ -533,6 +539,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   createdAt: z.nullable(z.date().transform(v => v.toISOString())),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
   currentRanks: z.nullable(z.array(BestLeaderboardRank$outboundSchema)),
+  donated: z.number().int(),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),

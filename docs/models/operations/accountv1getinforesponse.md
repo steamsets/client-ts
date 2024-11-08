@@ -65,6 +65,7 @@ let value: AccountV1GetInfoResponse = {
         ranks: "1,1,1,1,1",
       },
     ],
+    donated: 123456,
     economyBan: "steam",
     foilBadgeCost: 123456,
     foilBadges: 123456,
