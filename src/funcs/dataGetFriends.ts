@@ -65,6 +65,9 @@ export async function dataGetFriends(
   const context = {
     operationID: "account.v1.getFriends",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

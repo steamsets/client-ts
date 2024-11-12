@@ -65,6 +65,9 @@ export async function adminGetAccount(
   const context = {
     operationID: "admin.v1.get-account",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

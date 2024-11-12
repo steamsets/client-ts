@@ -65,6 +65,9 @@ export async function publicGetLeaderboardHistory(
   const context = {
     operationID: "account.v1.getLeaderboardHistory",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

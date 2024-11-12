@@ -72,6 +72,9 @@ export async function settingsUpdate(
   const context = {
     operationID: "account.v1.settings.update",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

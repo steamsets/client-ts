@@ -41,7 +41,6 @@ let value: V1AccountLeaderboardResponseBody = {
       friends: 123456,
       gameBans: 209843,
       level: 123456,
-      limitedApps: 123456,
       name: "steamsets",
       normalBadgeCost: 123456,
       normalBadges: 123456,
@@ -131,7 +130,6 @@ let value: V1AccountLeaderboardResponseBody = {
     friends: 123456,
     gameBans: 254356,
     level: 123456,
-    limitedApps: 123456,
     name: "steamsets",
     normalBadgeCost: 123456,
     normalBadges: 123456,
@@ -174,3 +172,4 @@ let value: V1AccountLeaderboardResponseBody = {
 | `badgeInfo`                                                                                        | [components.V1LeaderboardBadgeInfo](../../models/components/v1leaderboardbadgeinfo.md)             | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
 | `location`                                                                                         | [components.V1LeaderboardLocationInfo](../../models/components/v1leaderboardlocationinfo.md)[]     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
 | `ownAccount`                                                                                       | [components.V1AccountLeaderboardAccount](../../models/components/v1accountleaderboardaccount.md)   | :heavy_minus_sign:                                                                                 | N/A                                                                                                |                                                                                                    |
+| `rankedOutOf`                                                                                      | *number*                                                                                           | :heavy_minus_sign:                                                                                 | The number of accounts that are ranked in the leaderboard                                          |                                                                                                    |

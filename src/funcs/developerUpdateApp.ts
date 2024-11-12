@@ -68,6 +68,9 @@ export async function developerUpdateApp(
   const context = {
     operationID: "account.v1.settings.developer-app-update",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

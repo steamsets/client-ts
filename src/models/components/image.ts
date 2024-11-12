@@ -3,6 +3,22 @@
  */
 
 import * as z from "zod";
+import { ClosedEnum } from "../../types/enums.js";
+
+/**
+ * The type of the image
+ */
+export const ImageType = {
+  Avatar: "avatar",
+  Background: "background",
+  AvatarFrame: "avatar_frame",
+  AniamtedAvatar: "aniamted_avatar",
+  MiniBackground: "mini_background",
+} as const;
+/**
+ * The type of the image
+ */
+export type ImageType = ClosedEnum<typeof ImageType>;
 
 export type Image = {
   /**
@@ -20,8 +36,27 @@ export type Image = {
   /**
    * The type of the image
    */
-  imageType: string;
+  imageType: ImageType;
 };
+
+/** @internal */
+export const ImageType$inboundSchema: z.ZodNativeEnum<typeof ImageType> = z
+  .nativeEnum(ImageType);
+
+/** @internal */
+export const ImageType$outboundSchema: z.ZodNativeEnum<typeof ImageType> =
+  ImageType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ImageType$ {
+  /** @deprecated use `ImageType$inboundSchema` instead. */
+  export const inboundSchema = ImageType$inboundSchema;
+  /** @deprecated use `ImageType$outboundSchema` instead. */
+  export const outboundSchema = ImageType$outboundSchema;
+}
 
 /** @internal */
 export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z
@@ -29,7 +64,7 @@ export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z
     active: z.boolean(),
     fileName: z.string(),
     imageId: z.string(),
-    imageType: z.string(),
+    imageType: ImageType$inboundSchema,
   });
 
 /** @internal */
@@ -49,7 +84,7 @@ export const Image$outboundSchema: z.ZodType<
   active: z.boolean(),
   fileName: z.string(),
   imageId: z.string(),
-  imageType: z.string(),
+  imageType: ImageType$outboundSchema,
 });
 
 /**

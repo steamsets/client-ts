@@ -66,6 +66,9 @@ export async function developerCreateDeveloperApp(
   const context = {
     operationID: "account.v1.settings.developer-app-create",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

@@ -49,6 +49,9 @@ export async function dataGetStaff(
   const context = {
     operationID: "account.v1.getStaff",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

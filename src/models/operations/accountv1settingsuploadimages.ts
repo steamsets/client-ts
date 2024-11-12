@@ -8,6 +8,12 @@ import * as components from "../components/index.js";
 
 export type AccountV1SettingsUploadImagesResponse = {
   httpMeta: components.HTTPMetadata;
+  /**
+   * OK
+   */
+  v1UploadImagesResponseBody?:
+    | components.V1UploadImagesResponseBody
+    | undefined;
 };
 
 /** @internal */
@@ -17,15 +23,21 @@ export const AccountV1SettingsUploadImagesResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
+  V1UploadImagesResponseBody: components
+    .V1UploadImagesResponseBody$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
+    "V1UploadImagesResponseBody": "v1UploadImagesResponseBody",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsUploadImagesResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
+  V1UploadImagesResponseBody?:
+    | components.V1UploadImagesResponseBody$Outbound
+    | undefined;
 };
 
 /** @internal */
@@ -35,9 +47,12 @@ export const AccountV1SettingsUploadImagesResponse$outboundSchema: z.ZodType<
   AccountV1SettingsUploadImagesResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
+  v1UploadImagesResponseBody: components
+    .V1UploadImagesResponseBody$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
+    v1UploadImagesResponseBody: "V1UploadImagesResponseBody",
   });
 });
 

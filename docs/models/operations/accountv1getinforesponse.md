@@ -19,7 +19,6 @@ let value: AccountV1GetInfoResponse = {
     appCost: 123456,
     appPrivacy: "public",
     apps: 123456,
-    appsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
     avatarFrame: "steamsets",
     averagePlaytime: 123456,
@@ -27,9 +26,7 @@ let value: AccountV1GetInfoResponse = {
     awardsReceived: 123456,
     background: "steamsets",
     badges: 123456,
-    badgesUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     bans: 617636,
-    bansUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     city: {
       id: 1,
       name: "Bad Krozingen",
@@ -71,7 +68,6 @@ let value: AccountV1GetInfoResponse = {
     foilBadges: 123456,
     friendPrivacy: "public",
     friends: 123456,
-    friendsUpdatedAt: new Date("2023-01-01T00:00:00Z"),
     gameBans: 943749,
     images: [
       {
@@ -83,7 +79,6 @@ let value: AccountV1GetInfoResponse = {
     ],
     lastBanDate: new Date("2024-03-07 07:31:46"),
     level: 123456,
-    limitedApps: 123456,
     miniBackground: "steamsets",
     name: "steamsets",
     normalBadgeCost: 123456,

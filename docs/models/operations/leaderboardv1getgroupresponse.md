@@ -48,7 +48,6 @@ let value: LeaderboardV1GetGroupResponse = {
           friends: 123456,
           gameBans: 282807,
           level: 123456,
-          limitedApps: 123456,
           name: "steamsets",
           normalBadgeCost: 123456,
           normalBadges: 123456,

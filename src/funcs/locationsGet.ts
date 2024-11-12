@@ -49,6 +49,9 @@ export async function locationsGet(
   const context = {
     operationID: "location.v1.location.get",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

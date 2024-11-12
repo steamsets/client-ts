@@ -103,10 +103,6 @@ export type V1AccountFriend = {
    */
   level: number;
   /**
-   * The number of limited apps the account has
-   */
-  limitedApps: number;
-  /**
    * The name of the account
    */
   name: string;
@@ -193,7 +189,6 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   ),
   gameBans: z.number().int(),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
@@ -233,7 +228,6 @@ export type V1AccountFriend$Outbound = {
   friendsSince: string | null;
   gameBans: number;
   level: number;
-  limitedApps: number;
   name: string;
   normalBadgeCost: number;
   normalBadges: number;
@@ -277,7 +271,6 @@ export const V1AccountFriend$outboundSchema: z.ZodType<
   friendsSince: z.nullable(z.date().transform(v => v.toISOString())),
   gameBans: z.number().int(),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),

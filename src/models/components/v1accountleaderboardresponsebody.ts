@@ -39,6 +39,10 @@ export type V1AccountLeaderboardResponseBody = {
   badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
   location?: Array<V1LeaderboardLocationInfo> | null | undefined;
   ownAccount?: V1AccountLeaderboardAccount | null | undefined;
+  /**
+   * The number of accounts that are ranked in the leaderboard
+   */
+  rankedOutOf?: number | undefined;
 };
 
 /** @internal */
@@ -54,6 +58,7 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
   location: z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema))
     .optional(),
   ownAccount: z.nullable(V1AccountLeaderboardAccount$inboundSchema).optional(),
+  rankedOutOf: z.number().int().default(0),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -68,6 +73,7 @@ export type V1AccountLeaderboardResponseBody$Outbound = {
   badgeInfo?: V1LeaderboardBadgeInfo$Outbound | null | undefined;
   location?: Array<V1LeaderboardLocationInfo$Outbound> | null | undefined;
   ownAccount?: V1AccountLeaderboardAccount$Outbound | null | undefined;
+  rankedOutOf: number;
 };
 
 /** @internal */
@@ -83,6 +89,7 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
   location: z.nullable(z.array(V1LeaderboardLocationInfo$outboundSchema))
     .optional(),
   ownAccount: z.nullable(V1AccountLeaderboardAccount$outboundSchema).optional(),
+  rankedOutOf: z.number().int().default(0),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

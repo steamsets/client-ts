@@ -65,6 +65,9 @@ export async function publicGetApps(
   const context = {
     operationID: "account.v1.getApps",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

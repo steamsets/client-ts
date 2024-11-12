@@ -52,6 +52,9 @@ export async function badgeGetTags(
   const context = {
     operationID: "badge.v1.tags",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

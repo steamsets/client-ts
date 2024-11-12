@@ -113,10 +113,6 @@ export type V1AccountLeaderboardAccount = {
    */
   level: number;
   /**
-   * The number of limited apps the account has
-   */
-  limitedApps: number;
-  /**
    * The name of the account
    */
   name: string;
@@ -206,7 +202,6 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   friends: z.number().int(),
   gameBans: z.number().int(),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
@@ -248,7 +243,6 @@ export type V1AccountLeaderboardAccount$Outbound = {
   friends: number;
   gameBans: number;
   level: number;
-  limitedApps: number;
   name: string;
   normalBadgeCost: number;
   normalBadges: number;
@@ -294,7 +288,6 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   friends: z.number().int(),
   gameBans: z.number().int(),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),

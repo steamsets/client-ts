@@ -95,6 +95,7 @@ export * from "./v1updatesettingsrequestbody.js";
 export * from "./v1updatesettingsresponsebody.js";
 export * from "./v1uploadedimage.js";
 export * from "./v1uploadimagesrequestbody.js";
+export * from "./v1uploadimagesresponsebody.js";
 export * from "./v1vanityanalytics.js";
 export * from "./v1verifyconnectionrequestbody.js";
 export * from "./v1verifyconnectionresponsebody.js";
