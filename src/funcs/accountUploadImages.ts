@@ -55,7 +55,7 @@ export async function accountUploadImages(
 
   const headers = new Headers({
     "Content-Type": "application/json",
-    Accept: "application/problem+json",
+    Accept: "application/json",
   });
 
   const secConfig = await extractSecurity(client._options.token);
@@ -65,6 +65,9 @@ export async function accountUploadImages(
   const context = {
     operationID: "account.v1.settings.upload-images",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig
@@ -122,7 +125,11 @@ export async function accountUploadImages(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1SettingsUploadImagesResponse$inboundSchema),
+    M.json(
+      200,
+      operations.AccountV1SettingsUploadImagesResponse$inboundSchema,
+      { key: "V1UploadImagesResponseBody" },
+    ),
     M.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

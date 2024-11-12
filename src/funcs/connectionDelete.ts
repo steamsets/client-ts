@@ -66,6 +66,9 @@ export async function connectionDelete(
   const context = {
     operationID: "account.v1.connection.deleteConnection",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

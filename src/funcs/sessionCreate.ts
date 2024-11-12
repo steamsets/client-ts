@@ -81,6 +81,9 @@ export async function sessionCreate(
   const context = {
     operationID: "account.v1.session.create",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

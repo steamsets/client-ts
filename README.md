@@ -272,10 +272,10 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 
 In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `connect` method may throw the following errors:
 
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+| Error Type        | Status Code   | Content Type             |
+| ----------------- | ------------- | ------------------------ |
+| errors.ErrorModel | 400, 422, 500 | application/problem+json |
+| errors.SDKError   | 4XX, 5XX      | \*/\*                    |
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
@@ -331,12 +331,14 @@ Validation errors can also occur when either method arguments or data returned f
 
 ### Select Server by Index
 
-You can override the default server globally by passing a server index to the `serverIdx` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.steamsets.com` | None |
-| 1 | `http://localhost:8080` | None |
+| #   | Server                      |
+| --- | --------------------------- |
+| 0   | `https://api.steamsets.com` |
+| 1   | `http://localhost:8080`     |
+
+#### Example
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
@@ -360,11 +362,9 @@ run();
 
 ```
 
-
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
-
+The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -444,9 +444,9 @@ const sdk = new SteamSets({ httpClient });
 
 This SDK supports the following security scheme globally:
 
-| Name        | Type        | Scheme      |
-| ----------- | ----------- | ----------- |
-| `token`     | http        | HTTP Bearer |
+| Name    | Type | Scheme      |
+| ------- | ---- | ----------- |
+| `token` | http | HTTP Bearer |
 
 To authenticate with the API the `token` parameter must be set when initializing the SDK client instance. For example:
 ```typescript

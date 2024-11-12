@@ -15,9 +15,9 @@ let value: Image = {
 
 ## Fields
 
-| Field                              | Type                               | Required                           | Description                        | Example                            |
-| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-| `active`                           | *boolean*                          | :heavy_check_mark:                 | Whether the image is active or not | true                               |
-| `fileName`                         | *string*                           | :heavy_check_mark:                 | The name of the file               | avatar.png                         |
-| `imageId`                          | *string*                           | :heavy_check_mark:                 | The id of the image                | img_wasd123                        |
-| `imageType`                        | *string*                           | :heavy_check_mark:                 | The type of the image              | avatar                             |
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `active`                                                     | *boolean*                                                    | :heavy_check_mark:                                           | Whether the image is active or not                           | true                                                         |
+| `fileName`                                                   | *string*                                                     | :heavy_check_mark:                                           | The name of the file                                         | avatar.png                                                   |
+| `imageId`                                                    | *string*                                                     | :heavy_check_mark:                                           | The id of the image                                          | img_wasd123                                                  |
+| `imageType`                                                  | [components.ImageType](../../models/components/imagetype.md) | :heavy_check_mark:                                           | The type of the image                                        | avatar                                                       |

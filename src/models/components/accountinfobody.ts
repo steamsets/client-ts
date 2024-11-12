@@ -119,10 +119,6 @@ export type AccountInfoBody = {
    */
   apps: number;
   /**
-   * The time the apps were updated
-   */
-  appsUpdatedAt: Date | null;
-  /**
    * The avatar hash of the account
    */
   avatar: string;
@@ -151,17 +147,9 @@ export type AccountInfoBody = {
    */
   badges: number;
   /**
-   * The time the badges were updated
-   */
-  badgesUpdatedAt: Date | null;
-  /**
    * The number of bans
    */
   bans: number;
-  /**
-   * The time the bans were updated
-   */
-  bansUpdatedAt: Date | null;
   city?: LeaderboardCity | null | undefined;
   /**
    * If the account is community banned or not
@@ -209,10 +197,6 @@ export type AccountInfoBody = {
    */
   friends: number;
   /**
-   * The time the friends were updated
-   */
-  friendsUpdatedAt: Date | null;
-  /**
    * The number of game bans
    */
   gameBans: number;
@@ -228,10 +212,6 @@ export type AccountInfoBody = {
    * The level of the account
    */
   level: number;
-  /**
-   * The number of limited apps the account has
-   */
-  limitedApps: number;
   /**
    * The mini background of the account
    */
@@ -379,9 +359,6 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   appCost: z.number().int(),
   appPrivacy: AppPrivacy$inboundSchema,
   apps: z.number().int(),
-  appsUpdatedAt: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ),
   avatar: z.string(),
   avatarFrame: z.string(),
   averagePlaytime: z.number().int(),
@@ -389,13 +366,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   awardsReceived: z.number().int(),
   background: z.string(),
   badges: z.number().int(),
-  badgesUpdatedAt: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ),
   bans: z.number().int(),
-  bansUpdatedAt: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ),
   city: z.nullable(LeaderboardCity$inboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
@@ -411,16 +382,12 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friendPrivacy: FriendPrivacy$inboundSchema,
   friends: z.number().int(),
-  friendsUpdatedAt: z.nullable(
-    z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  ),
   gameBans: z.number().int(),
   images: z.nullable(z.array(Image$inboundSchema)),
   lastBanDate: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
@@ -457,7 +424,6 @@ export type AccountInfoBody$Outbound = {
   appCost: number;
   appPrivacy: string;
   apps: number;
-  appsUpdatedAt: string | null;
   avatar: string;
   avatarFrame: string;
   averagePlaytime: number;
@@ -465,9 +431,7 @@ export type AccountInfoBody$Outbound = {
   awardsReceived: number;
   background: string;
   badges: number;
-  badgesUpdatedAt: string | null;
   bans: number;
-  bansUpdatedAt: string | null;
   city?: LeaderboardCity$Outbound | null | undefined;
   communityBan: boolean;
   connections: Array<Connection$Outbound> | null;
@@ -481,12 +445,10 @@ export type AccountInfoBody$Outbound = {
   foilBadges: number;
   friendPrivacy: string;
   friends: number;
-  friendsUpdatedAt: string | null;
   gameBans: number;
   images: Array<Image$Outbound> | null;
   lastBanDate: string | null;
   level: number;
-  limitedApps: number;
   miniBackground: string;
   name: string;
   normalBadgeCost: number;
@@ -521,7 +483,6 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   appCost: z.number().int(),
   appPrivacy: AppPrivacy$outboundSchema,
   apps: z.number().int(),
-  appsUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   avatar: z.string(),
   avatarFrame: z.string(),
   averagePlaytime: z.number().int(),
@@ -529,9 +490,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   awardsReceived: z.number().int(),
   background: z.string(),
   badges: z.number().int(),
-  badgesUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   bans: z.number().int(),
-  bansUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   city: z.nullable(LeaderboardCity$outboundSchema).optional(),
   communityBan: z.boolean(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
@@ -545,12 +504,10 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friendPrivacy: FriendPrivacy$outboundSchema,
   friends: z.number().int(),
-  friendsUpdatedAt: z.nullable(z.date().transform(v => v.toISOString())),
   gameBans: z.number().int(),
   images: z.nullable(z.array(Image$outboundSchema)),
   lastBanDate: z.nullable(z.date().transform(v => v.toISOString())),
   level: z.number().int(),
-  limitedApps: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
   normalBadgeCost: z.number().int(),

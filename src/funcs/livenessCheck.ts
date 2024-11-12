@@ -55,6 +55,9 @@ export async function livenessCheck(
   const context = {
     operationID: "liveness",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

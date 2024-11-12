@@ -37,7 +37,6 @@ let value: V1GroupLeaderboardGroup = {
     friends: 123456,
     gameBans: 758379,
     level: 123456,
-    limitedApps: 123456,
     name: "steamsets",
     normalBadgeCost: 123456,
     normalBadges: 123456,

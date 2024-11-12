@@ -28,7 +28,6 @@ import {
  */
 export const V1AccountLeaderboardRequestBodyLeaderboard = {
   Apps: "apps",
-  LimitedApps: "limited_apps",
   AppPlaytime: "app_playtime",
   AwardsGiven: "awards_given",
   AwardsReceived: "awards_received",

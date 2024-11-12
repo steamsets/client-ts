@@ -7,7 +7,6 @@ import { ClosedEnum } from "../../types/enums.js";
 
 export const AccountLeaderboardHistoryLeaderboard = {
   Apps: "apps",
-  LimitedApps: "limited_apps",
   AwardsGiven: "awards_given",
   AwardsReceived: "awards_received",
   Bans: "bans",

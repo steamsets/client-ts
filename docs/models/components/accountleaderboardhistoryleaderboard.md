@@ -11,5 +11,5 @@ let value: AccountLeaderboardHistoryLeaderboard = "steam_sets";
 ## Values
 
 ```typescript
-"apps" | "limited_apps" | "awards_given" | "awards_received" | "bans" | "game_bans" | "vac_bans" | "foil_badges" | "normal_badges" | "badges" | "playtime" | "points_given" | "points_received" | "steam_sets" | "xp"
+"apps" | "awards_given" | "awards_received" | "bans" | "game_bans" | "vac_bans" | "foil_badges" | "normal_badges" | "badges" | "playtime" | "points_given" | "points_received" | "steam_sets" | "xp"
 ```

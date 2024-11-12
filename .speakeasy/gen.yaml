@@ -37,7 +37,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.13.2
+  version: 0.13.3
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -45,6 +45,7 @@ typescript:
   additionalPackageJSON: {}
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKError
   enumFormat: union
   flattenGlobalSecurity: true
   flatteningOrder: body-first

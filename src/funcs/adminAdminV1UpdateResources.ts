@@ -66,6 +66,9 @@ export async function adminAdminV1UpdateResources(
   const context = {
     operationID: "admin.v1.update-resources",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.token,
     retryConfig: options?.retries
       || client._options.retryConfig

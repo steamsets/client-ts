@@ -10,7 +10,6 @@ import { ClosedEnum } from "../../types/enums.js";
  */
 export const Leaderboard = {
   Apps: "apps",
-  LimitedApps: "limited_apps",
   AppPlaytime: "app_playtime",
   AwardsGiven: "awards_given",
   AwardsReceived: "awards_received",
