@@ -6,7 +6,7 @@
 import { DesignTag } from "@steamsets/client-ts/models/components";
 
 let value: DesignTag = {
-  id: 589910,
+  id: 944373,
   name: "<value>",
 };
 ```

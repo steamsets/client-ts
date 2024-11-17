@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountLeaderboardAppSearch = {
   /**
@@ -45,4 +48,24 @@ export namespace V1AccountLeaderboardAppSearch$ {
   export const outboundSchema = V1AccountLeaderboardAppSearch$outboundSchema;
   /** @deprecated use `V1AccountLeaderboardAppSearch$Outbound` instead. */
   export type Outbound = V1AccountLeaderboardAppSearch$Outbound;
+}
+
+export function v1AccountLeaderboardAppSearchToJSON(
+  v1AccountLeaderboardAppSearch: V1AccountLeaderboardAppSearch,
+): string {
+  return JSON.stringify(
+    V1AccountLeaderboardAppSearch$outboundSchema.parse(
+      v1AccountLeaderboardAppSearch,
+    ),
+  );
+}
+
+export function v1AccountLeaderboardAppSearchFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountLeaderboardAppSearch, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountLeaderboardAppSearch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountLeaderboardAppSearch' from JSON`,
+  );
 }

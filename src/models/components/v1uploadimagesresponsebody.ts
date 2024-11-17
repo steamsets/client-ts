@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   Image,
   Image$inboundSchema,
@@ -67,4 +70,22 @@ export namespace V1UploadImagesResponseBody$ {
   export const outboundSchema = V1UploadImagesResponseBody$outboundSchema;
   /** @deprecated use `V1UploadImagesResponseBody$Outbound` instead. */
   export type Outbound = V1UploadImagesResponseBody$Outbound;
+}
+
+export function v1UploadImagesResponseBodyToJSON(
+  v1UploadImagesResponseBody: V1UploadImagesResponseBody,
+): string {
+  return JSON.stringify(
+    V1UploadImagesResponseBody$outboundSchema.parse(v1UploadImagesResponseBody),
+  );
+}
+
+export function v1UploadImagesResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1UploadImagesResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1UploadImagesResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1UploadImagesResponseBody' from JSON`,
+  );
 }

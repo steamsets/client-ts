@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1DeleteSessionRequestBody = {
   /**
@@ -45,4 +48,22 @@ export namespace V1DeleteSessionRequestBody$ {
   export const outboundSchema = V1DeleteSessionRequestBody$outboundSchema;
   /** @deprecated use `V1DeleteSessionRequestBody$Outbound` instead. */
   export type Outbound = V1DeleteSessionRequestBody$Outbound;
+}
+
+export function v1DeleteSessionRequestBodyToJSON(
+  v1DeleteSessionRequestBody: V1DeleteSessionRequestBody,
+): string {
+  return JSON.stringify(
+    V1DeleteSessionRequestBody$outboundSchema.parse(v1DeleteSessionRequestBody),
+  );
+}
+
+export function v1DeleteSessionRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1DeleteSessionRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1DeleteSessionRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DeleteSessionRequestBody' from JSON`,
+  );
 }

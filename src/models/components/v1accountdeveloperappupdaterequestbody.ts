@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountDeveloperAppUpdateRequestBody = {
   /**
@@ -75,4 +78,26 @@ export namespace V1AccountDeveloperAppUpdateRequestBody$ {
     V1AccountDeveloperAppUpdateRequestBody$outboundSchema;
   /** @deprecated use `V1AccountDeveloperAppUpdateRequestBody$Outbound` instead. */
   export type Outbound = V1AccountDeveloperAppUpdateRequestBody$Outbound;
+}
+
+export function v1AccountDeveloperAppUpdateRequestBodyToJSON(
+  v1AccountDeveloperAppUpdateRequestBody:
+    V1AccountDeveloperAppUpdateRequestBody,
+): string {
+  return JSON.stringify(
+    V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
+      v1AccountDeveloperAppUpdateRequestBody,
+    ),
+  );
+}
+
+export function v1AccountDeveloperAppUpdateRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountDeveloperAppUpdateRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      V1AccountDeveloperAppUpdateRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountDeveloperAppUpdateRequestBody' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LivenessResponse = {
   httpMeta: components.HTTPMetadata;
@@ -65,4 +68,22 @@ export namespace LivenessResponse$ {
   export const outboundSchema = LivenessResponse$outboundSchema;
   /** @deprecated use `LivenessResponse$Outbound` instead. */
   export type Outbound = LivenessResponse$Outbound;
+}
+
+export function livenessResponseToJSON(
+  livenessResponse: LivenessResponse,
+): string {
+  return JSON.stringify(
+    LivenessResponse$outboundSchema.parse(livenessResponse),
+  );
+}
+
+export function livenessResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<LivenessResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LivenessResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LivenessResponse' from JSON`,
+  );
 }

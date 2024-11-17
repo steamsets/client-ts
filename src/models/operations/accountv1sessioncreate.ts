@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SessionCreateRequest = {
   userAgent?: string | undefined;
@@ -80,6 +83,26 @@ export namespace AccountV1SessionCreateRequest$ {
   export type Outbound = AccountV1SessionCreateRequest$Outbound;
 }
 
+export function accountV1SessionCreateRequestToJSON(
+  accountV1SessionCreateRequest: AccountV1SessionCreateRequest,
+): string {
+  return JSON.stringify(
+    AccountV1SessionCreateRequest$outboundSchema.parse(
+      accountV1SessionCreateRequest,
+    ),
+  );
+}
+
+export function accountV1SessionCreateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SessionCreateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SessionCreateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SessionCreateRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const AccountV1SessionCreateResponse$inboundSchema: z.ZodType<
   AccountV1SessionCreateResponse,
@@ -127,4 +150,24 @@ export namespace AccountV1SessionCreateResponse$ {
   export const outboundSchema = AccountV1SessionCreateResponse$outboundSchema;
   /** @deprecated use `AccountV1SessionCreateResponse$Outbound` instead. */
   export type Outbound = AccountV1SessionCreateResponse$Outbound;
+}
+
+export function accountV1SessionCreateResponseToJSON(
+  accountV1SessionCreateResponse: AccountV1SessionCreateResponse,
+): string {
+  return JSON.stringify(
+    AccountV1SessionCreateResponse$outboundSchema.parse(
+      accountV1SessionCreateResponse,
+    ),
+  );
+}
+
+export function accountV1SessionCreateResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SessionCreateResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SessionCreateResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SessionCreateResponse' from JSON`,
+  );
 }

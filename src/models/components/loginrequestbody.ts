@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LoginRequestBody = {
   /**
@@ -135,4 +138,22 @@ export namespace LoginRequestBody$ {
   export const outboundSchema = LoginRequestBody$outboundSchema;
   /** @deprecated use `LoginRequestBody$Outbound` instead. */
   export type Outbound = LoginRequestBody$Outbound;
+}
+
+export function loginRequestBodyToJSON(
+  loginRequestBody: LoginRequestBody,
+): string {
+  return JSON.stringify(
+    LoginRequestBody$outboundSchema.parse(loginRequestBody),
+  );
+}
+
+export function loginRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<LoginRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LoginRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LoginRequestBody' from JSON`,
+  );
 }

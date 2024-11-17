@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1DeleteConnectionRequestBody = {
   /**
@@ -45,4 +48,24 @@ export namespace V1DeleteConnectionRequestBody$ {
   export const outboundSchema = V1DeleteConnectionRequestBody$outboundSchema;
   /** @deprecated use `V1DeleteConnectionRequestBody$Outbound` instead. */
   export type Outbound = V1DeleteConnectionRequestBody$Outbound;
+}
+
+export function v1DeleteConnectionRequestBodyToJSON(
+  v1DeleteConnectionRequestBody: V1DeleteConnectionRequestBody,
+): string {
+  return JSON.stringify(
+    V1DeleteConnectionRequestBody$outboundSchema.parse(
+      v1DeleteConnectionRequestBody,
+    ),
+  );
+}
+
+export function v1DeleteConnectionRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1DeleteConnectionRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1DeleteConnectionRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DeleteConnectionRequestBody' from JSON`,
+  );
 }

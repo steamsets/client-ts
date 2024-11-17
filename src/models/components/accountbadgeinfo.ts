@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountBadgeInfo = {
   /**
@@ -61,4 +64,22 @@ export namespace AccountBadgeInfo$ {
   export const outboundSchema = AccountBadgeInfo$outboundSchema;
   /** @deprecated use `AccountBadgeInfo$Outbound` instead. */
   export type Outbound = AccountBadgeInfo$Outbound;
+}
+
+export function accountBadgeInfoToJSON(
+  accountBadgeInfo: AccountBadgeInfo,
+): string {
+  return JSON.stringify(
+    AccountBadgeInfo$outboundSchema.parse(accountBadgeInfo),
+  );
+}
+
+export function accountBadgeInfoFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountBadgeInfo, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountBadgeInfo$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountBadgeInfo' from JSON`,
+  );
 }

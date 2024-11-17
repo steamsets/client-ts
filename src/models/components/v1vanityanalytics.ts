@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1VanityAnalytics = {
   /**
@@ -45,4 +48,22 @@ export namespace V1VanityAnalytics$ {
   export const outboundSchema = V1VanityAnalytics$outboundSchema;
   /** @deprecated use `V1VanityAnalytics$Outbound` instead. */
   export type Outbound = V1VanityAnalytics$Outbound;
+}
+
+export function v1VanityAnalyticsToJSON(
+  v1VanityAnalytics: V1VanityAnalytics,
+): string {
+  return JSON.stringify(
+    V1VanityAnalytics$outboundSchema.parse(v1VanityAnalytics),
+  );
+}
+
+export function v1VanityAnalyticsFromJSON(
+  jsonString: string,
+): SafeParseResult<V1VanityAnalytics, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1VanityAnalytics$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1VanityAnalytics' from JSON`,
+  );
 }

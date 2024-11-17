@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ResourceResource = {
   AnimatedAvatar: "animated_avatar",
@@ -93,4 +96,18 @@ export namespace Resource$ {
   export const outboundSchema = Resource$outboundSchema;
   /** @deprecated use `Resource$Outbound` instead. */
   export type Outbound = Resource$Outbound;
+}
+
+export function resourceToJSON(resource: Resource): string {
+  return JSON.stringify(Resource$outboundSchema.parse(resource));
+}
+
+export function resourceFromJSON(
+  jsonString: string,
+): SafeParseResult<Resource, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Resource$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Resource' from JSON`,
+  );
 }

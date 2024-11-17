@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountLeaderboardBadgeSearch = {
   /**
@@ -52,4 +55,24 @@ export namespace V1AccountLeaderboardBadgeSearch$ {
   export const outboundSchema = V1AccountLeaderboardBadgeSearch$outboundSchema;
   /** @deprecated use `V1AccountLeaderboardBadgeSearch$Outbound` instead. */
   export type Outbound = V1AccountLeaderboardBadgeSearch$Outbound;
+}
+
+export function v1AccountLeaderboardBadgeSearchToJSON(
+  v1AccountLeaderboardBadgeSearch: V1AccountLeaderboardBadgeSearch,
+): string {
+  return JSON.stringify(
+    V1AccountLeaderboardBadgeSearch$outboundSchema.parse(
+      v1AccountLeaderboardBadgeSearch,
+    ),
+  );
+}
+
+export function v1AccountLeaderboardBadgeSearchFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountLeaderboardBadgeSearch, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountLeaderboardBadgeSearch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountLeaderboardBadgeSearch' from JSON`,
+  );
 }

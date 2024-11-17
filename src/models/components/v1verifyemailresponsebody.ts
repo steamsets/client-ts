@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1VerifyEmailResponseBody = {
   /**
@@ -54,4 +57,22 @@ export namespace V1VerifyEmailResponseBody$ {
   export const outboundSchema = V1VerifyEmailResponseBody$outboundSchema;
   /** @deprecated use `V1VerifyEmailResponseBody$Outbound` instead. */
   export type Outbound = V1VerifyEmailResponseBody$Outbound;
+}
+
+export function v1VerifyEmailResponseBodyToJSON(
+  v1VerifyEmailResponseBody: V1VerifyEmailResponseBody,
+): string {
+  return JSON.stringify(
+    V1VerifyEmailResponseBody$outboundSchema.parse(v1VerifyEmailResponseBody),
+  );
+}
+
+export function v1VerifyEmailResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1VerifyEmailResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1VerifyEmailResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1VerifyEmailResponseBody' from JSON`,
+  );
 }

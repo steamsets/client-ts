@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1DeleteImagesRequestBody = {
   /**
@@ -45,4 +48,22 @@ export namespace V1DeleteImagesRequestBody$ {
   export const outboundSchema = V1DeleteImagesRequestBody$outboundSchema;
   /** @deprecated use `V1DeleteImagesRequestBody$Outbound` instead. */
   export type Outbound = V1DeleteImagesRequestBody$Outbound;
+}
+
+export function v1DeleteImagesRequestBodyToJSON(
+  v1DeleteImagesRequestBody: V1DeleteImagesRequestBody,
+): string {
+  return JSON.stringify(
+    V1DeleteImagesRequestBody$outboundSchema.parse(v1DeleteImagesRequestBody),
+  );
+}
+
+export function v1DeleteImagesRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1DeleteImagesRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1DeleteImagesRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DeleteImagesRequestBody' from JSON`,
+  );
 }

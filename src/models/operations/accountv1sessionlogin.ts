@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SessionLoginRequest = {
   userAgent?: string | undefined;
@@ -74,6 +77,26 @@ export namespace AccountV1SessionLoginRequest$ {
   export type Outbound = AccountV1SessionLoginRequest$Outbound;
 }
 
+export function accountV1SessionLoginRequestToJSON(
+  accountV1SessionLoginRequest: AccountV1SessionLoginRequest,
+): string {
+  return JSON.stringify(
+    AccountV1SessionLoginRequest$outboundSchema.parse(
+      accountV1SessionLoginRequest,
+    ),
+  );
+}
+
+export function accountV1SessionLoginRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SessionLoginRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SessionLoginRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SessionLoginRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const AccountV1SessionLoginResponse$inboundSchema: z.ZodType<
   AccountV1SessionLoginResponse,
@@ -121,4 +144,24 @@ export namespace AccountV1SessionLoginResponse$ {
   export const outboundSchema = AccountV1SessionLoginResponse$outboundSchema;
   /** @deprecated use `AccountV1SessionLoginResponse$Outbound` instead. */
   export type Outbound = AccountV1SessionLoginResponse$Outbound;
+}
+
+export function accountV1SessionLoginResponseToJSON(
+  accountV1SessionLoginResponse: AccountV1SessionLoginResponse,
+): string {
+  return JSON.stringify(
+    AccountV1SessionLoginResponse$outboundSchema.parse(
+      accountV1SessionLoginResponse,
+    ),
+  );
+}
+
+export function accountV1SessionLoginResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SessionLoginResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SessionLoginResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SessionLoginResponse' from JSON`,
+  );
 }

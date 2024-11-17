@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   V1AccountLeaderboardAccount,
   V1AccountLeaderboardAccount$inboundSchema,
@@ -107,4 +110,24 @@ export namespace V1AccountLeaderboardResponseBody$ {
   export const outboundSchema = V1AccountLeaderboardResponseBody$outboundSchema;
   /** @deprecated use `V1AccountLeaderboardResponseBody$Outbound` instead. */
   export type Outbound = V1AccountLeaderboardResponseBody$Outbound;
+}
+
+export function v1AccountLeaderboardResponseBodyToJSON(
+  v1AccountLeaderboardResponseBody: V1AccountLeaderboardResponseBody,
+): string {
+  return JSON.stringify(
+    V1AccountLeaderboardResponseBody$outboundSchema.parse(
+      v1AccountLeaderboardResponseBody,
+    ),
+  );
+}
+
+export function v1AccountLeaderboardResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountLeaderboardResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountLeaderboardResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountLeaderboardResponseBody' from JSON`,
+  );
 }

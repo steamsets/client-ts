@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The provider to connect with
@@ -90,4 +93,22 @@ export namespace V1ConnectRequestBody$ {
   export const outboundSchema = V1ConnectRequestBody$outboundSchema;
   /** @deprecated use `V1ConnectRequestBody$Outbound` instead. */
   export type Outbound = V1ConnectRequestBody$Outbound;
+}
+
+export function v1ConnectRequestBodyToJSON(
+  v1ConnectRequestBody: V1ConnectRequestBody,
+): string {
+  return JSON.stringify(
+    V1ConnectRequestBody$outboundSchema.parse(v1ConnectRequestBody),
+  );
+}
+
+export function v1ConnectRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1ConnectRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1ConnectRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1ConnectRequestBody' from JSON`,
+  );
 }

@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1LeaderboardLocationInfo = {
   /**
@@ -73,4 +76,22 @@ export namespace V1LeaderboardLocationInfo$ {
   export const outboundSchema = V1LeaderboardLocationInfo$outboundSchema;
   /** @deprecated use `V1LeaderboardLocationInfo$Outbound` instead. */
   export type Outbound = V1LeaderboardLocationInfo$Outbound;
+}
+
+export function v1LeaderboardLocationInfoToJSON(
+  v1LeaderboardLocationInfo: V1LeaderboardLocationInfo,
+): string {
+  return JSON.stringify(
+    V1LeaderboardLocationInfo$outboundSchema.parse(v1LeaderboardLocationInfo),
+  );
+}
+
+export function v1LeaderboardLocationInfoFromJSON(
+  jsonString: string,
+): SafeParseResult<V1LeaderboardLocationInfo, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1LeaderboardLocationInfo$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1LeaderboardLocationInfo' from JSON`,
+  );
 }

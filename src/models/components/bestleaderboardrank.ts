@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The leaderboard of the best leaderboard
@@ -98,4 +101,22 @@ export namespace BestLeaderboardRank$ {
   export const outboundSchema = BestLeaderboardRank$outboundSchema;
   /** @deprecated use `BestLeaderboardRank$Outbound` instead. */
   export type Outbound = BestLeaderboardRank$Outbound;
+}
+
+export function bestLeaderboardRankToJSON(
+  bestLeaderboardRank: BestLeaderboardRank,
+): string {
+  return JSON.stringify(
+    BestLeaderboardRank$outboundSchema.parse(bestLeaderboardRank),
+  );
+}
+
+export function bestLeaderboardRankFromJSON(
+  jsonString: string,
+): SafeParseResult<BestLeaderboardRank, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => BestLeaderboardRank$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'BestLeaderboardRank' from JSON`,
+  );
 }

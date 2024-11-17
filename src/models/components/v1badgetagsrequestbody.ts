@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1BadgeTagsRequestBody = {};
 
@@ -34,4 +37,22 @@ export namespace V1BadgeTagsRequestBody$ {
   export const outboundSchema = V1BadgeTagsRequestBody$outboundSchema;
   /** @deprecated use `V1BadgeTagsRequestBody$Outbound` instead. */
   export type Outbound = V1BadgeTagsRequestBody$Outbound;
+}
+
+export function v1BadgeTagsRequestBodyToJSON(
+  v1BadgeTagsRequestBody: V1BadgeTagsRequestBody,
+): string {
+  return JSON.stringify(
+    V1BadgeTagsRequestBody$outboundSchema.parse(v1BadgeTagsRequestBody),
+  );
+}
+
+export function v1BadgeTagsRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1BadgeTagsRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1BadgeTagsRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1BadgeTagsRequestBody' from JSON`,
+  );
 }

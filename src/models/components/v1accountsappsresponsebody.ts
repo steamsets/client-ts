@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   V1AccountApp,
   V1AccountApp$inboundSchema,
@@ -64,4 +67,22 @@ export namespace V1AccountsAppsResponseBody$ {
   export const outboundSchema = V1AccountsAppsResponseBody$outboundSchema;
   /** @deprecated use `V1AccountsAppsResponseBody$Outbound` instead. */
   export type Outbound = V1AccountsAppsResponseBody$Outbound;
+}
+
+export function v1AccountsAppsResponseBodyToJSON(
+  v1AccountsAppsResponseBody: V1AccountsAppsResponseBody,
+): string {
+  return JSON.stringify(
+    V1AccountsAppsResponseBody$outboundSchema.parse(v1AccountsAppsResponseBody),
+  );
+}
+
+export function v1AccountsAppsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountsAppsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountsAppsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountsAppsResponseBody' from JSON`,
+  );
 }

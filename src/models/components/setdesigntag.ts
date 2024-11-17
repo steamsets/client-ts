@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type SetDesignTag = {
   /**
@@ -52,4 +55,18 @@ export namespace SetDesignTag$ {
   export const outboundSchema = SetDesignTag$outboundSchema;
   /** @deprecated use `SetDesignTag$Outbound` instead. */
   export type Outbound = SetDesignTag$Outbound;
+}
+
+export function setDesignTagToJSON(setDesignTag: SetDesignTag): string {
+  return JSON.stringify(SetDesignTag$outboundSchema.parse(setDesignTag));
+}
+
+export function setDesignTagFromJSON(
+  jsonString: string,
+): SafeParseResult<SetDesignTag, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => SetDesignTag$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'SetDesignTag' from JSON`,
+  );
 }

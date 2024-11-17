@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   Country,
   Country$inboundSchema,
@@ -55,4 +58,18 @@ export namespace Region$ {
   export const outboundSchema = Region$outboundSchema;
   /** @deprecated use `Region$Outbound` instead. */
   export type Outbound = Region$Outbound;
+}
+
+export function regionToJSON(region: Region): string {
+  return JSON.stringify(Region$outboundSchema.parse(region));
+}
+
+export function regionFromJSON(
+  jsonString: string,
+): SafeParseResult<Region, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Region$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Region' from JSON`,
+  );
 }

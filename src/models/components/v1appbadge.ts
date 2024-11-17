@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountBadgeInfo,
   AccountBadgeInfo$inboundSchema,
@@ -130,4 +133,18 @@ export namespace V1AppBadge$ {
   export const outboundSchema = V1AppBadge$outboundSchema;
   /** @deprecated use `V1AppBadge$Outbound` instead. */
   export type Outbound = V1AppBadge$Outbound;
+}
+
+export function v1AppBadgeToJSON(v1AppBadge: V1AppBadge): string {
+  return JSON.stringify(V1AppBadge$outboundSchema.parse(v1AppBadge));
+}
+
+export function v1AppBadgeFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AppBadge, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AppBadge$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AppBadge' from JSON`,
+  );
 }

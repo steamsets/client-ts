@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountSearchIDStruct = {
   /**
@@ -52,4 +55,22 @@ export namespace AccountSearchIDStruct$ {
   export const outboundSchema = AccountSearchIDStruct$outboundSchema;
   /** @deprecated use `AccountSearchIDStruct$Outbound` instead. */
   export type Outbound = AccountSearchIDStruct$Outbound;
+}
+
+export function accountSearchIDStructToJSON(
+  accountSearchIDStruct: AccountSearchIDStruct,
+): string {
+  return JSON.stringify(
+    AccountSearchIDStruct$outboundSchema.parse(accountSearchIDStruct),
+  );
+}
+
+export function accountSearchIDStructFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountSearchIDStruct, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountSearchIDStruct$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountSearchIDStruct' from JSON`,
+  );
 }

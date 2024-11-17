@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1UpdateConnectionRequestBody = {
   /**
@@ -52,4 +55,24 @@ export namespace V1UpdateConnectionRequestBody$ {
   export const outboundSchema = V1UpdateConnectionRequestBody$outboundSchema;
   /** @deprecated use `V1UpdateConnectionRequestBody$Outbound` instead. */
   export type Outbound = V1UpdateConnectionRequestBody$Outbound;
+}
+
+export function v1UpdateConnectionRequestBodyToJSON(
+  v1UpdateConnectionRequestBody: V1UpdateConnectionRequestBody,
+): string {
+  return JSON.stringify(
+    V1UpdateConnectionRequestBody$outboundSchema.parse(
+      v1UpdateConnectionRequestBody,
+    ),
+  );
+}
+
+export function v1UpdateConnectionRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1UpdateConnectionRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1UpdateConnectionRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1UpdateConnectionRequestBody' from JSON`,
+  );
 }

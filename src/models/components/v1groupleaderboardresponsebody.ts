@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   V1GroupLeaderboardGroup,
   V1GroupLeaderboardGroup$inboundSchema,
@@ -17,6 +20,7 @@ export type V1GroupLeaderboardResponseBody = {
    */
   dollarSchema?: string | undefined;
   groups: Array<V1GroupLeaderboardGroup> | null;
+  steamSetsGroup: V1GroupLeaderboardGroup;
 };
 
 /** @internal */
@@ -27,6 +31,7 @@ export const V1GroupLeaderboardResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   groups: z.nullable(z.array(V1GroupLeaderboardGroup$inboundSchema)),
+  steamSetsGroup: V1GroupLeaderboardGroup$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -37,6 +42,7 @@ export const V1GroupLeaderboardResponseBody$inboundSchema: z.ZodType<
 export type V1GroupLeaderboardResponseBody$Outbound = {
   $schema?: string | undefined;
   groups: Array<V1GroupLeaderboardGroup$Outbound> | null;
+  steamSetsGroup: V1GroupLeaderboardGroup$Outbound;
 };
 
 /** @internal */
@@ -47,6 +53,7 @@ export const V1GroupLeaderboardResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   groups: z.nullable(z.array(V1GroupLeaderboardGroup$outboundSchema)),
+  steamSetsGroup: V1GroupLeaderboardGroup$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
@@ -64,4 +71,24 @@ export namespace V1GroupLeaderboardResponseBody$ {
   export const outboundSchema = V1GroupLeaderboardResponseBody$outboundSchema;
   /** @deprecated use `V1GroupLeaderboardResponseBody$Outbound` instead. */
   export type Outbound = V1GroupLeaderboardResponseBody$Outbound;
+}
+
+export function v1GroupLeaderboardResponseBodyToJSON(
+  v1GroupLeaderboardResponseBody: V1GroupLeaderboardResponseBody,
+): string {
+  return JSON.stringify(
+    V1GroupLeaderboardResponseBody$outboundSchema.parse(
+      v1GroupLeaderboardResponseBody,
+    ),
+  );
+}
+
+export function v1GroupLeaderboardResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1GroupLeaderboardResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1GroupLeaderboardResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1GroupLeaderboardResponseBody' from JSON`,
+  );
 }

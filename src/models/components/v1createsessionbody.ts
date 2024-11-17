@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1CreateSessionBody = {
   /**
@@ -61,4 +64,22 @@ export namespace V1CreateSessionBody$ {
   export const outboundSchema = V1CreateSessionBody$outboundSchema;
   /** @deprecated use `V1CreateSessionBody$Outbound` instead. */
   export type Outbound = V1CreateSessionBody$Outbound;
+}
+
+export function v1CreateSessionBodyToJSON(
+  v1CreateSessionBody: V1CreateSessionBody,
+): string {
+  return JSON.stringify(
+    V1CreateSessionBody$outboundSchema.parse(v1CreateSessionBody),
+  );
+}
+
+export function v1CreateSessionBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1CreateSessionBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1CreateSessionBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1CreateSessionBody' from JSON`,
+  );
 }

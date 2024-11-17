@@ -6,7 +6,7 @@
 import { VanityStruct } from "@steamsets/client-ts/models/components";
 
 let value: VanityStruct = {
-  type: "internal",
+  type: "steam",
   value: "<value>",
 };
 ```

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LeaderboardV1GetAccountResponse = {
   httpMeta: components.HTTPMetadata;
@@ -67,4 +70,24 @@ export namespace LeaderboardV1GetAccountResponse$ {
   export const outboundSchema = LeaderboardV1GetAccountResponse$outboundSchema;
   /** @deprecated use `LeaderboardV1GetAccountResponse$Outbound` instead. */
   export type Outbound = LeaderboardV1GetAccountResponse$Outbound;
+}
+
+export function leaderboardV1GetAccountResponseToJSON(
+  leaderboardV1GetAccountResponse: LeaderboardV1GetAccountResponse,
+): string {
+  return JSON.stringify(
+    LeaderboardV1GetAccountResponse$outboundSchema.parse(
+      leaderboardV1GetAccountResponse,
+    ),
+  );
+}
+
+export function leaderboardV1GetAccountResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<LeaderboardV1GetAccountResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LeaderboardV1GetAccountResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LeaderboardV1GetAccountResponse' from JSON`,
+  );
 }

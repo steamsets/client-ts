@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   EmailNotification,
   EmailNotification$inboundSchema,
@@ -182,4 +185,24 @@ export namespace V1UpdateSettingsRequestBody$ {
   export const outboundSchema = V1UpdateSettingsRequestBody$outboundSchema;
   /** @deprecated use `V1UpdateSettingsRequestBody$Outbound` instead. */
   export type Outbound = V1UpdateSettingsRequestBody$Outbound;
+}
+
+export function v1UpdateSettingsRequestBodyToJSON(
+  v1UpdateSettingsRequestBody: V1UpdateSettingsRequestBody,
+): string {
+  return JSON.stringify(
+    V1UpdateSettingsRequestBody$outboundSchema.parse(
+      v1UpdateSettingsRequestBody,
+    ),
+  );
+}
+
+export function v1UpdateSettingsRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1UpdateSettingsRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1UpdateSettingsRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1UpdateSettingsRequestBody' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   ChosenRole,
   ChosenRole$inboundSchema,
@@ -230,4 +233,22 @@ export namespace V1GetSettingsBody$ {
   export const outboundSchema = V1GetSettingsBody$outboundSchema;
   /** @deprecated use `V1GetSettingsBody$Outbound` instead. */
   export type Outbound = V1GetSettingsBody$Outbound;
+}
+
+export function v1GetSettingsBodyToJSON(
+  v1GetSettingsBody: V1GetSettingsBody,
+): string {
+  return JSON.stringify(
+    V1GetSettingsBody$outboundSchema.parse(v1GetSettingsBody),
+  );
+}
+
+export function v1GetSettingsBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1GetSettingsBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1GetSettingsBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1GetSettingsBody' from JSON`,
+  );
 }

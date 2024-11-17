@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The Image Type
@@ -89,4 +92,20 @@ export namespace V1UploadedImage$ {
   export const outboundSchema = V1UploadedImage$outboundSchema;
   /** @deprecated use `V1UploadedImage$Outbound` instead. */
   export type Outbound = V1UploadedImage$Outbound;
+}
+
+export function v1UploadedImageToJSON(
+  v1UploadedImage: V1UploadedImage,
+): string {
+  return JSON.stringify(V1UploadedImage$outboundSchema.parse(v1UploadedImage));
+}
+
+export function v1UploadedImageFromJSON(
+  jsonString: string,
+): SafeParseResult<V1UploadedImage, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1UploadedImage$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1UploadedImage' from JSON`,
+  );
 }

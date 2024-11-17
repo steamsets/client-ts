@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AdminV1UpdateResourcesResponse = {
   httpMeta: components.HTTPMetadata;
@@ -52,4 +55,24 @@ export namespace AdminV1UpdateResourcesResponse$ {
   export const outboundSchema = AdminV1UpdateResourcesResponse$outboundSchema;
   /** @deprecated use `AdminV1UpdateResourcesResponse$Outbound` instead. */
   export type Outbound = AdminV1UpdateResourcesResponse$Outbound;
+}
+
+export function adminV1UpdateResourcesResponseToJSON(
+  adminV1UpdateResourcesResponse: AdminV1UpdateResourcesResponse,
+): string {
+  return JSON.stringify(
+    AdminV1UpdateResourcesResponse$outboundSchema.parse(
+      adminV1UpdateResourcesResponse,
+    ),
+  );
+}
+
+export function adminV1UpdateResourcesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AdminV1UpdateResourcesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AdminV1UpdateResourcesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AdminV1UpdateResourcesResponse' from JSON`,
+  );
 }

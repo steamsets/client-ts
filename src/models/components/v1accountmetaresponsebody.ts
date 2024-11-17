@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountMetaResponseBody = {
   /**
@@ -54,4 +57,22 @@ export namespace V1AccountMetaResponseBody$ {
   export const outboundSchema = V1AccountMetaResponseBody$outboundSchema;
   /** @deprecated use `V1AccountMetaResponseBody$Outbound` instead. */
   export type Outbound = V1AccountMetaResponseBody$Outbound;
+}
+
+export function v1AccountMetaResponseBodyToJSON(
+  v1AccountMetaResponseBody: V1AccountMetaResponseBody,
+): string {
+  return JSON.stringify(
+    V1AccountMetaResponseBody$outboundSchema.parse(v1AccountMetaResponseBody),
+  );
+}
+
+export function v1AccountMetaResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountMetaResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountMetaResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountMetaResponseBody' from JSON`,
+  );
 }

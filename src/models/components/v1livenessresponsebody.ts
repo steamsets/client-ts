@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1LivenessResponseBody = {
   /**
@@ -61,4 +64,22 @@ export namespace V1LivenessResponseBody$ {
   export const outboundSchema = V1LivenessResponseBody$outboundSchema;
   /** @deprecated use `V1LivenessResponseBody$Outbound` instead. */
   export type Outbound = V1LivenessResponseBody$Outbound;
+}
+
+export function v1LivenessResponseBodyToJSON(
+  v1LivenessResponseBody: V1LivenessResponseBody,
+): string {
+  return JSON.stringify(
+    V1LivenessResponseBody$outboundSchema.parse(v1LivenessResponseBody),
+  );
+}
+
+export function v1LivenessResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1LivenessResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1LivenessResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1LivenessResponseBody' from JSON`,
+  );
 }

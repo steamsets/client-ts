@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   ColorTag,
   ColorTag$inboundSchema,
@@ -80,4 +83,22 @@ export namespace V1BadgeTagsResponseBody$ {
   export const outboundSchema = V1BadgeTagsResponseBody$outboundSchema;
   /** @deprecated use `V1BadgeTagsResponseBody$Outbound` instead. */
   export type Outbound = V1BadgeTagsResponseBody$Outbound;
+}
+
+export function v1BadgeTagsResponseBodyToJSON(
+  v1BadgeTagsResponseBody: V1BadgeTagsResponseBody,
+): string {
+  return JSON.stringify(
+    V1BadgeTagsResponseBody$outboundSchema.parse(v1BadgeTagsResponseBody),
+  );
+}
+
+export function v1BadgeTagsResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1BadgeTagsResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1BadgeTagsResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1BadgeTagsResponseBody' from JSON`,
+  );
 }

@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   IDStruct,
   IDStruct$inboundSchema,
@@ -128,4 +131,24 @@ export namespace V1AdminUpdateResourcesRequestBody$ {
     V1AdminUpdateResourcesRequestBody$outboundSchema;
   /** @deprecated use `V1AdminUpdateResourcesRequestBody$Outbound` instead. */
   export type Outbound = V1AdminUpdateResourcesRequestBody$Outbound;
+}
+
+export function v1AdminUpdateResourcesRequestBodyToJSON(
+  v1AdminUpdateResourcesRequestBody: V1AdminUpdateResourcesRequestBody,
+): string {
+  return JSON.stringify(
+    V1AdminUpdateResourcesRequestBody$outboundSchema.parse(
+      v1AdminUpdateResourcesRequestBody,
+    ),
+  );
+}
+
+export function v1AdminUpdateResourcesRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AdminUpdateResourcesRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AdminUpdateResourcesRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AdminUpdateResourcesRequestBody' from JSON`,
+  );
 }

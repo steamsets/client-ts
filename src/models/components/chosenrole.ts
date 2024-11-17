@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ChosenRoleRole = {
   User: "user",
@@ -93,4 +96,18 @@ export namespace ChosenRole$ {
   export const outboundSchema = ChosenRole$outboundSchema;
   /** @deprecated use `ChosenRole$Outbound` instead. */
   export type Outbound = ChosenRole$Outbound;
+}
+
+export function chosenRoleToJSON(chosenRole: ChosenRole): string {
+  return JSON.stringify(ChosenRole$outboundSchema.parse(chosenRole));
+}
+
+export function chosenRoleFromJSON(
+  jsonString: string,
+): SafeParseResult<ChosenRole, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ChosenRole$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChosenRole' from JSON`,
+  );
 }

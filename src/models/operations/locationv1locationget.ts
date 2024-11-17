@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LocationV1LocationGetResponse = {
   httpMeta: components.HTTPMetadata;
@@ -61,4 +64,24 @@ export namespace LocationV1LocationGetResponse$ {
   export const outboundSchema = LocationV1LocationGetResponse$outboundSchema;
   /** @deprecated use `LocationV1LocationGetResponse$Outbound` instead. */
   export type Outbound = LocationV1LocationGetResponse$Outbound;
+}
+
+export function locationV1LocationGetResponseToJSON(
+  locationV1LocationGetResponse: LocationV1LocationGetResponse,
+): string {
+  return JSON.stringify(
+    LocationV1LocationGetResponse$outboundSchema.parse(
+      locationV1LocationGetResponse,
+    ),
+  );
+}
+
+export function locationV1LocationGetResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<LocationV1LocationGetResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LocationV1LocationGetResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LocationV1LocationGetResponse' from JSON`,
+  );
 }
