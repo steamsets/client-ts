@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SettingsSendEmailVerificationRequest = {
   xForwardedFor?: string | undefined;
@@ -63,6 +66,33 @@ export namespace AccountV1SettingsSendEmailVerificationRequest$ {
   export type Outbound = AccountV1SettingsSendEmailVerificationRequest$Outbound;
 }
 
+export function accountV1SettingsSendEmailVerificationRequestToJSON(
+  accountV1SettingsSendEmailVerificationRequest:
+    AccountV1SettingsSendEmailVerificationRequest,
+): string {
+  return JSON.stringify(
+    AccountV1SettingsSendEmailVerificationRequest$outboundSchema.parse(
+      accountV1SettingsSendEmailVerificationRequest,
+    ),
+  );
+}
+
+export function accountV1SettingsSendEmailVerificationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  AccountV1SettingsSendEmailVerificationRequest,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AccountV1SettingsSendEmailVerificationRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'AccountV1SettingsSendEmailVerificationRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const AccountV1SettingsSendEmailVerificationResponse$inboundSchema:
   z.ZodType<
@@ -115,4 +145,31 @@ export namespace AccountV1SettingsSendEmailVerificationResponse$ {
   /** @deprecated use `AccountV1SettingsSendEmailVerificationResponse$Outbound` instead. */
   export type Outbound =
     AccountV1SettingsSendEmailVerificationResponse$Outbound;
+}
+
+export function accountV1SettingsSendEmailVerificationResponseToJSON(
+  accountV1SettingsSendEmailVerificationResponse:
+    AccountV1SettingsSendEmailVerificationResponse,
+): string {
+  return JSON.stringify(
+    AccountV1SettingsSendEmailVerificationResponse$outboundSchema.parse(
+      accountV1SettingsSendEmailVerificationResponse,
+    ),
+  );
+}
+
+export function accountV1SettingsSendEmailVerificationResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  AccountV1SettingsSendEmailVerificationResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AccountV1SettingsSendEmailVerificationResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'AccountV1SettingsSendEmailVerificationResponse' from JSON`,
+  );
 }

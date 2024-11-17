@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1VerifyEmailRequestBody = {
   /**
@@ -45,4 +48,22 @@ export namespace V1VerifyEmailRequestBody$ {
   export const outboundSchema = V1VerifyEmailRequestBody$outboundSchema;
   /** @deprecated use `V1VerifyEmailRequestBody$Outbound` instead. */
   export type Outbound = V1VerifyEmailRequestBody$Outbound;
+}
+
+export function v1VerifyEmailRequestBodyToJSON(
+  v1VerifyEmailRequestBody: V1VerifyEmailRequestBody,
+): string {
+  return JSON.stringify(
+    V1VerifyEmailRequestBody$outboundSchema.parse(v1VerifyEmailRequestBody),
+  );
+}
+
+export function v1VerifyEmailRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1VerifyEmailRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1VerifyEmailRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1VerifyEmailRequestBody' from JSON`,
+  );
 }

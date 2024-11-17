@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The environment of the developer app
@@ -117,4 +120,18 @@ export namespace DeveloperApp$ {
   export const outboundSchema = DeveloperApp$outboundSchema;
   /** @deprecated use `DeveloperApp$Outbound` instead. */
   export type Outbound = DeveloperApp$Outbound;
+}
+
+export function developerAppToJSON(developerApp: DeveloperApp): string {
+  return JSON.stringify(DeveloperApp$outboundSchema.parse(developerApp));
+}
+
+export function developerAppFromJSON(
+  jsonString: string,
+): SafeParseResult<DeveloperApp, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DeveloperApp$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DeveloperApp' from JSON`,
+  );
 }

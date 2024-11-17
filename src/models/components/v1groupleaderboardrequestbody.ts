@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The leaderboard to get
@@ -103,4 +106,24 @@ export namespace V1GroupLeaderboardRequestBody$ {
   export const outboundSchema = V1GroupLeaderboardRequestBody$outboundSchema;
   /** @deprecated use `V1GroupLeaderboardRequestBody$Outbound` instead. */
   export type Outbound = V1GroupLeaderboardRequestBody$Outbound;
+}
+
+export function v1GroupLeaderboardRequestBodyToJSON(
+  v1GroupLeaderboardRequestBody: V1GroupLeaderboardRequestBody,
+): string {
+  return JSON.stringify(
+    V1GroupLeaderboardRequestBody$outboundSchema.parse(
+      v1GroupLeaderboardRequestBody,
+    ),
+  );
+}
+
+export function v1GroupLeaderboardRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1GroupLeaderboardRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1GroupLeaderboardRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1GroupLeaderboardRequestBody' from JSON`,
+  );
 }

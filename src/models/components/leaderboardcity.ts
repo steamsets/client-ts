@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LeaderboardCity = {
   /**
@@ -52,4 +55,20 @@ export namespace LeaderboardCity$ {
   export const outboundSchema = LeaderboardCity$outboundSchema;
   /** @deprecated use `LeaderboardCity$Outbound` instead. */
   export type Outbound = LeaderboardCity$Outbound;
+}
+
+export function leaderboardCityToJSON(
+  leaderboardCity: LeaderboardCity,
+): string {
+  return JSON.stringify(LeaderboardCity$outboundSchema.parse(leaderboardCity));
+}
+
+export function leaderboardCityFromJSON(
+  jsonString: string,
+): SafeParseResult<LeaderboardCity, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LeaderboardCity$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LeaderboardCity' from JSON`,
+  );
 }

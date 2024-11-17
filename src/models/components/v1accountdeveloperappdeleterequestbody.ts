@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountDeveloperAppDeleteRequestBody = {
   /**
@@ -47,4 +50,26 @@ export namespace V1AccountDeveloperAppDeleteRequestBody$ {
     V1AccountDeveloperAppDeleteRequestBody$outboundSchema;
   /** @deprecated use `V1AccountDeveloperAppDeleteRequestBody$Outbound` instead. */
   export type Outbound = V1AccountDeveloperAppDeleteRequestBody$Outbound;
+}
+
+export function v1AccountDeveloperAppDeleteRequestBodyToJSON(
+  v1AccountDeveloperAppDeleteRequestBody:
+    V1AccountDeveloperAppDeleteRequestBody,
+): string {
+  return JSON.stringify(
+    V1AccountDeveloperAppDeleteRequestBody$outboundSchema.parse(
+      v1AccountDeveloperAppDeleteRequestBody,
+    ),
+  );
+}
+
+export function v1AccountDeveloperAppDeleteRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountDeveloperAppDeleteRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      V1AccountDeveloperAppDeleteRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountDeveloperAppDeleteRequestBody' from JSON`,
+  );
 }

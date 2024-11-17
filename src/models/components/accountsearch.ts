@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountSearchIDStruct,
   AccountSearchIDStruct$inboundSchema,
@@ -58,4 +61,18 @@ export namespace AccountSearch$ {
   export const outboundSchema = AccountSearch$outboundSchema;
   /** @deprecated use `AccountSearch$Outbound` instead. */
   export type Outbound = AccountSearch$Outbound;
+}
+
+export function accountSearchToJSON(accountSearch: AccountSearch): string {
+  return JSON.stringify(AccountSearch$outboundSchema.parse(accountSearch));
+}
+
+export function accountSearchFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountSearch, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountSearch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountSearch' from JSON`,
+  );
 }

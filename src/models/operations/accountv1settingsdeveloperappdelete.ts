@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SettingsDeveloperAppDeleteResponse = {
   httpMeta: components.HTTPMetadata;
@@ -73,4 +76,31 @@ export namespace AccountV1SettingsDeveloperAppDeleteResponse$ {
     AccountV1SettingsDeveloperAppDeleteResponse$outboundSchema;
   /** @deprecated use `AccountV1SettingsDeveloperAppDeleteResponse$Outbound` instead. */
   export type Outbound = AccountV1SettingsDeveloperAppDeleteResponse$Outbound;
+}
+
+export function accountV1SettingsDeveloperAppDeleteResponseToJSON(
+  accountV1SettingsDeveloperAppDeleteResponse:
+    AccountV1SettingsDeveloperAppDeleteResponse,
+): string {
+  return JSON.stringify(
+    AccountV1SettingsDeveloperAppDeleteResponse$outboundSchema.parse(
+      accountV1SettingsDeveloperAppDeleteResponse,
+    ),
+  );
+}
+
+export function accountV1SettingsDeveloperAppDeleteResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  AccountV1SettingsDeveloperAppDeleteResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AccountV1SettingsDeveloperAppDeleteResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'AccountV1SettingsDeveloperAppDeleteResponse' from JSON`,
+  );
 }

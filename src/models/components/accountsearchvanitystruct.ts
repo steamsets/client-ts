@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * Which type of vanity to search for
@@ -85,4 +88,22 @@ export namespace AccountSearchVanityStruct$ {
   export const outboundSchema = AccountSearchVanityStruct$outboundSchema;
   /** @deprecated use `AccountSearchVanityStruct$Outbound` instead. */
   export type Outbound = AccountSearchVanityStruct$Outbound;
+}
+
+export function accountSearchVanityStructToJSON(
+  accountSearchVanityStruct: AccountSearchVanityStruct,
+): string {
+  return JSON.stringify(
+    AccountSearchVanityStruct$outboundSchema.parse(accountSearchVanityStruct),
+  );
+}
+
+export function accountSearchVanityStructFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountSearchVanityStruct, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountSearchVanityStruct$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountSearchVanityStruct' from JSON`,
+  );
 }

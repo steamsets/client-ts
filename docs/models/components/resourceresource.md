@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "animated_avatar";
+let value: ResourceResource = "account_queues";
 ```
 
 ## Values

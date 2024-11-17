@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SettingsUpdateRequest = {
   xForwardedFor?: string | undefined;
@@ -72,6 +75,26 @@ export namespace AccountV1SettingsUpdateRequest$ {
   export type Outbound = AccountV1SettingsUpdateRequest$Outbound;
 }
 
+export function accountV1SettingsUpdateRequestToJSON(
+  accountV1SettingsUpdateRequest: AccountV1SettingsUpdateRequest,
+): string {
+  return JSON.stringify(
+    AccountV1SettingsUpdateRequest$outboundSchema.parse(
+      accountV1SettingsUpdateRequest,
+    ),
+  );
+}
+
+export function accountV1SettingsUpdateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SettingsUpdateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SettingsUpdateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SettingsUpdateRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const AccountV1SettingsUpdateResponse$inboundSchema: z.ZodType<
   AccountV1SettingsUpdateResponse,
@@ -123,4 +146,24 @@ export namespace AccountV1SettingsUpdateResponse$ {
   export const outboundSchema = AccountV1SettingsUpdateResponse$outboundSchema;
   /** @deprecated use `AccountV1SettingsUpdateResponse$Outbound` instead. */
   export type Outbound = AccountV1SettingsUpdateResponse$Outbound;
+}
+
+export function accountV1SettingsUpdateResponseToJSON(
+  accountV1SettingsUpdateResponse: AccountV1SettingsUpdateResponse,
+): string {
+  return JSON.stringify(
+    AccountV1SettingsUpdateResponse$outboundSchema.parse(
+      accountV1SettingsUpdateResponse,
+    ),
+  );
+}
+
+export function accountV1SettingsUpdateResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1SettingsUpdateResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1SettingsUpdateResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SettingsUpdateResponse' from JSON`,
+  );
 }

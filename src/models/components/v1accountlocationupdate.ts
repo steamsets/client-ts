@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountLocationUpdate = {
   /**
@@ -80,4 +83,22 @@ export namespace V1AccountLocationUpdate$ {
   export const outboundSchema = V1AccountLocationUpdate$outboundSchema;
   /** @deprecated use `V1AccountLocationUpdate$Outbound` instead. */
   export type Outbound = V1AccountLocationUpdate$Outbound;
+}
+
+export function v1AccountLocationUpdateToJSON(
+  v1AccountLocationUpdate: V1AccountLocationUpdate,
+): string {
+  return JSON.stringify(
+    V1AccountLocationUpdate$outboundSchema.parse(v1AccountLocationUpdate),
+  );
+}
+
+export function v1AccountLocationUpdateFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountLocationUpdate, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountLocationUpdate$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountLocationUpdate' from JSON`,
+  );
 }

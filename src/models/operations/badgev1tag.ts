@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type BadgeV1TagResponse = {
   httpMeta: components.HTTPMetadata;
@@ -65,4 +68,22 @@ export namespace BadgeV1TagResponse$ {
   export const outboundSchema = BadgeV1TagResponse$outboundSchema;
   /** @deprecated use `BadgeV1TagResponse$Outbound` instead. */
   export type Outbound = BadgeV1TagResponse$Outbound;
+}
+
+export function badgeV1TagResponseToJSON(
+  badgeV1TagResponse: BadgeV1TagResponse,
+): string {
+  return JSON.stringify(
+    BadgeV1TagResponse$outboundSchema.parse(badgeV1TagResponse),
+  );
+}
+
+export function badgeV1TagResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<BadgeV1TagResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => BadgeV1TagResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'BadgeV1TagResponse' from JSON`,
+  );
 }

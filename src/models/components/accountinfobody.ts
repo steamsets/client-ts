@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   BestLeaderboardRank,
   BestLeaderboardRank$inboundSchema,
@@ -545,4 +548,20 @@ export namespace AccountInfoBody$ {
   export const outboundSchema = AccountInfoBody$outboundSchema;
   /** @deprecated use `AccountInfoBody$Outbound` instead. */
   export type Outbound = AccountInfoBody$Outbound;
+}
+
+export function accountInfoBodyToJSON(
+  accountInfoBody: AccountInfoBody,
+): string {
+  return JSON.stringify(AccountInfoBody$outboundSchema.parse(accountInfoBody));
+}
+
+export function accountInfoBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountInfoBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountInfoBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountInfoBody' from JSON`,
+  );
 }

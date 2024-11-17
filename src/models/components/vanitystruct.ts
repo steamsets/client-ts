@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * Which type of vanity to search for
@@ -86,4 +89,18 @@ export namespace VanityStruct$ {
   export const outboundSchema = VanityStruct$outboundSchema;
   /** @deprecated use `VanityStruct$Outbound` instead. */
   export type Outbound = VanityStruct$Outbound;
+}
+
+export function vanityStructToJSON(vanityStruct: VanityStruct): string {
+  return JSON.stringify(VanityStruct$outboundSchema.parse(vanityStruct));
+}
+
+export function vanityStructFromJSON(
+  jsonString: string,
+): SafeParseResult<VanityStruct, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => VanityStruct$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'VanityStruct' from JSON`,
+  );
 }

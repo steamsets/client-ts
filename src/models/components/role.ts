@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const RoleRole = {
   User: "user",
@@ -85,4 +88,18 @@ export namespace Role$ {
   export const outboundSchema = Role$outboundSchema;
   /** @deprecated use `Role$Outbound` instead. */
   export type Outbound = Role$Outbound;
+}
+
+export function roleToJSON(role: Role): string {
+  return JSON.stringify(Role$outboundSchema.parse(role));
+}
+
+export function roleFromJSON(
+  jsonString: string,
+): SafeParseResult<Role, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Role$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Role' from JSON`,
+  );
 }

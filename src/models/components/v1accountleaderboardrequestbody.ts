@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   V1AccountLeaderboardAppSearch,
   V1AccountLeaderboardAppSearch$inboundSchema,
@@ -154,4 +157,24 @@ export namespace V1AccountLeaderboardRequestBody$ {
   export const outboundSchema = V1AccountLeaderboardRequestBody$outboundSchema;
   /** @deprecated use `V1AccountLeaderboardRequestBody$Outbound` instead. */
   export type Outbound = V1AccountLeaderboardRequestBody$Outbound;
+}
+
+export function v1AccountLeaderboardRequestBodyToJSON(
+  v1AccountLeaderboardRequestBody: V1AccountLeaderboardRequestBody,
+): string {
+  return JSON.stringify(
+    V1AccountLeaderboardRequestBody$outboundSchema.parse(
+      v1AccountLeaderboardRequestBody,
+    ),
+  );
+}
+
+export function v1AccountLeaderboardRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountLeaderboardRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountLeaderboardRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountLeaderboardRequestBody' from JSON`,
+  );
 }

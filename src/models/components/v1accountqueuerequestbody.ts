@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   IDStruct,
   IDStruct$inboundSchema,
@@ -65,4 +68,22 @@ export namespace V1AccountQueueRequestBody$ {
   export const outboundSchema = V1AccountQueueRequestBody$outboundSchema;
   /** @deprecated use `V1AccountQueueRequestBody$Outbound` instead. */
   export type Outbound = V1AccountQueueRequestBody$Outbound;
+}
+
+export function v1AccountQueueRequestBodyToJSON(
+  v1AccountQueueRequestBody: V1AccountQueueRequestBody,
+): string {
+  return JSON.stringify(
+    V1AccountQueueRequestBody$outboundSchema.parse(v1AccountQueueRequestBody),
+  );
+}
+
+export function v1AccountQueueRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountQueueRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountQueueRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountQueueRequestBody' from JSON`,
+  );
 }

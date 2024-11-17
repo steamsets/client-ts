@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   LeaderboardAccount,
   LeaderboardAccount$inboundSchema,
@@ -149,4 +152,22 @@ export namespace V1GroupLeaderboardGroup$ {
   export const outboundSchema = V1GroupLeaderboardGroup$outboundSchema;
   /** @deprecated use `V1GroupLeaderboardGroup$Outbound` instead. */
   export type Outbound = V1GroupLeaderboardGroup$Outbound;
+}
+
+export function v1GroupLeaderboardGroupToJSON(
+  v1GroupLeaderboardGroup: V1GroupLeaderboardGroup,
+): string {
+  return JSON.stringify(
+    V1GroupLeaderboardGroup$outboundSchema.parse(v1GroupLeaderboardGroup),
+  );
+}
+
+export function v1GroupLeaderboardGroupFromJSON(
+  jsonString: string,
+): SafeParseResult<V1GroupLeaderboardGroup, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1GroupLeaderboardGroup$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1GroupLeaderboardGroup' from JSON`,
+  );
 }

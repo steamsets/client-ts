@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   Connection,
   Connection$inboundSchema,
@@ -235,4 +238,24 @@ export namespace V1AdminGetAccountResponseBody$ {
   export const outboundSchema = V1AdminGetAccountResponseBody$outboundSchema;
   /** @deprecated use `V1AdminGetAccountResponseBody$Outbound` instead. */
   export type Outbound = V1AdminGetAccountResponseBody$Outbound;
+}
+
+export function v1AdminGetAccountResponseBodyToJSON(
+  v1AdminGetAccountResponseBody: V1AdminGetAccountResponseBody,
+): string {
+  return JSON.stringify(
+    V1AdminGetAccountResponseBody$outboundSchema.parse(
+      v1AdminGetAccountResponseBody,
+    ),
+  );
+}
+
+export function v1AdminGetAccountResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AdminGetAccountResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AdminGetAccountResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AdminGetAccountResponseBody' from JSON`,
+  );
 }

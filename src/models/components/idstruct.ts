@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type IDStruct = {
   /**
@@ -52,4 +55,18 @@ export namespace IDStruct$ {
   export const outboundSchema = IDStruct$outboundSchema;
   /** @deprecated use `IDStruct$Outbound` instead. */
   export type Outbound = IDStruct$Outbound;
+}
+
+export function idStructToJSON(idStruct: IDStruct): string {
+  return JSON.stringify(IDStruct$outboundSchema.parse(idStruct));
+}
+
+export function idStructFromJSON(
+  jsonString: string,
+): SafeParseResult<IDStruct, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IDStruct$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IDStruct' from JSON`,
+  );
 }

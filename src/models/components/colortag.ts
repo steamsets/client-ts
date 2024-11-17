@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ColorTag = {
   gradient: string | null;
@@ -87,4 +90,18 @@ export namespace ColorTag$ {
   export const outboundSchema = ColorTag$outboundSchema;
   /** @deprecated use `ColorTag$Outbound` instead. */
   export type Outbound = ColorTag$Outbound;
+}
+
+export function colorTagToJSON(colorTag: ColorTag): string {
+  return JSON.stringify(ColorTag$outboundSchema.parse(colorTag));
+}
+
+export function colorTagFromJSON(
+  jsonString: string,
+): SafeParseResult<ColorTag, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ColorTag$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ColorTag' from JSON`,
+  );
 }

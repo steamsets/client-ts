@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1ConnectionConnectResponse = {
   httpMeta: components.HTTPMetadata;
@@ -64,4 +67,25 @@ export namespace AccountV1ConnectionConnectResponse$ {
     AccountV1ConnectionConnectResponse$outboundSchema;
   /** @deprecated use `AccountV1ConnectionConnectResponse$Outbound` instead. */
   export type Outbound = AccountV1ConnectionConnectResponse$Outbound;
+}
+
+export function accountV1ConnectionConnectResponseToJSON(
+  accountV1ConnectionConnectResponse: AccountV1ConnectionConnectResponse,
+): string {
+  return JSON.stringify(
+    AccountV1ConnectionConnectResponse$outboundSchema.parse(
+      accountV1ConnectionConnectResponse,
+    ),
+  );
+}
+
+export function accountV1ConnectionConnectResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1ConnectionConnectResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AccountV1ConnectionConnectResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1ConnectionConnectResponse' from JSON`,
+  );
 }

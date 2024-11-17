@@ -7,10 +7,10 @@ import { V1AdminUpdateRolessRequestBody } from "@steamsets/client-ts/models/comp
 
 let value: V1AdminUpdateRolessRequestBody = {
   deletedRoles: [
-    "partner",
+    "owner",
   ],
   newRoles: [
-    "top_100",
+    "amber",
   ],
 };
 ```

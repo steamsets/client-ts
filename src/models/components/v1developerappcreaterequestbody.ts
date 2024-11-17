@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The environment to create the app for
@@ -106,4 +109,24 @@ export namespace V1DeveloperAppCreateRequestBody$ {
   export const outboundSchema = V1DeveloperAppCreateRequestBody$outboundSchema;
   /** @deprecated use `V1DeveloperAppCreateRequestBody$Outbound` instead. */
   export type Outbound = V1DeveloperAppCreateRequestBody$Outbound;
+}
+
+export function v1DeveloperAppCreateRequestBodyToJSON(
+  v1DeveloperAppCreateRequestBody: V1DeveloperAppCreateRequestBody,
+): string {
+  return JSON.stringify(
+    V1DeveloperAppCreateRequestBody$outboundSchema.parse(
+      v1DeveloperAppCreateRequestBody,
+    ),
+  );
+}
+
+export function v1DeveloperAppCreateRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1DeveloperAppCreateRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1DeveloperAppCreateRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DeveloperAppCreateRequestBody' from JSON`,
+  );
 }

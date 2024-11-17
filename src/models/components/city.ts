@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type City = {
   /**
@@ -39,4 +42,18 @@ export namespace City$ {
   export const outboundSchema = City$outboundSchema;
   /** @deprecated use `City$Outbound` instead. */
   export type Outbound = City$Outbound;
+}
+
+export function cityToJSON(city: City): string {
+  return JSON.stringify(City$outboundSchema.parse(city));
+}
+
+export function cityFromJSON(
+  jsonString: string,
+): SafeParseResult<City, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => City$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'City' from JSON`,
+  );
 }

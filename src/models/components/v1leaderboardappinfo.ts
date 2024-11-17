@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1LeaderboardAppInfo = {
   /**
@@ -66,4 +69,22 @@ export namespace V1LeaderboardAppInfo$ {
   export const outboundSchema = V1LeaderboardAppInfo$outboundSchema;
   /** @deprecated use `V1LeaderboardAppInfo$Outbound` instead. */
   export type Outbound = V1LeaderboardAppInfo$Outbound;
+}
+
+export function v1LeaderboardAppInfoToJSON(
+  v1LeaderboardAppInfo: V1LeaderboardAppInfo,
+): string {
+  return JSON.stringify(
+    V1LeaderboardAppInfo$outboundSchema.parse(v1LeaderboardAppInfo),
+  );
+}
+
+export function v1LeaderboardAppInfoFromJSON(
+  jsonString: string,
+): SafeParseResult<V1LeaderboardAppInfo, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1LeaderboardAppInfo$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1LeaderboardAppInfo' from JSON`,
+  );
 }

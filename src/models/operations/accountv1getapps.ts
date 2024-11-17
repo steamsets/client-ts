@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1GetAppsResponse = {
   httpMeta: components.HTTPMetadata;
@@ -67,4 +70,22 @@ export namespace AccountV1GetAppsResponse$ {
   export const outboundSchema = AccountV1GetAppsResponse$outboundSchema;
   /** @deprecated use `AccountV1GetAppsResponse$Outbound` instead. */
   export type Outbound = AccountV1GetAppsResponse$Outbound;
+}
+
+export function accountV1GetAppsResponseToJSON(
+  accountV1GetAppsResponse: AccountV1GetAppsResponse,
+): string {
+  return JSON.stringify(
+    AccountV1GetAppsResponse$outboundSchema.parse(accountV1GetAppsResponse),
+  );
+}
+
+export function accountV1GetAppsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1GetAppsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountV1GetAppsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1GetAppsResponse' from JSON`,
+  );
 }

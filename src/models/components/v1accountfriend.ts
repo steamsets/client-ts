@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   LeaderboardCity,
   LeaderboardCity$inboundSchema,
@@ -300,4 +303,20 @@ export namespace V1AccountFriend$ {
   export const outboundSchema = V1AccountFriend$outboundSchema;
   /** @deprecated use `V1AccountFriend$Outbound` instead. */
   export type Outbound = V1AccountFriend$Outbound;
+}
+
+export function v1AccountFriendToJSON(
+  v1AccountFriend: V1AccountFriend,
+): string {
+  return JSON.stringify(V1AccountFriend$outboundSchema.parse(v1AccountFriend));
+}
+
+export function v1AccountFriendFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountFriend, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountFriend$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountFriend' from JSON`,
+  );
 }

@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AccountLeaderboardHistoryLeaderboard = {
   Apps: "apps",
@@ -99,4 +102,22 @@ export namespace AccountLeaderboardHistory$ {
   export const outboundSchema = AccountLeaderboardHistory$outboundSchema;
   /** @deprecated use `AccountLeaderboardHistory$Outbound` instead. */
   export type Outbound = AccountLeaderboardHistory$Outbound;
+}
+
+export function accountLeaderboardHistoryToJSON(
+  accountLeaderboardHistory: AccountLeaderboardHistory,
+): string {
+  return JSON.stringify(
+    AccountLeaderboardHistory$outboundSchema.parse(accountLeaderboardHistory),
+  );
+}
+
+export function accountLeaderboardHistoryFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountLeaderboardHistory, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountLeaderboardHistory$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountLeaderboardHistory' from JSON`,
+  );
 }

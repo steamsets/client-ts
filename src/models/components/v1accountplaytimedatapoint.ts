@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountPlaytimeDataPoint = {
   /**
@@ -66,4 +69,22 @@ export namespace V1AccountPlaytimeDataPoint$ {
   export const outboundSchema = V1AccountPlaytimeDataPoint$outboundSchema;
   /** @deprecated use `V1AccountPlaytimeDataPoint$Outbound` instead. */
   export type Outbound = V1AccountPlaytimeDataPoint$Outbound;
+}
+
+export function v1AccountPlaytimeDataPointToJSON(
+  v1AccountPlaytimeDataPoint: V1AccountPlaytimeDataPoint,
+): string {
+  return JSON.stringify(
+    V1AccountPlaytimeDataPoint$outboundSchema.parse(v1AccountPlaytimeDataPoint),
+  );
+}
+
+export function v1AccountPlaytimeDataPointFromJSON(
+  jsonString: string,
+): SafeParseResult<V1AccountPlaytimeDataPoint, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1AccountPlaytimeDataPoint$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountPlaytimeDataPoint' from JSON`,
+  );
 }

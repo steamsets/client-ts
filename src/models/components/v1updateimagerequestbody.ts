@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1UpdateImageRequestBody = {
   /**
@@ -52,4 +55,22 @@ export namespace V1UpdateImageRequestBody$ {
   export const outboundSchema = V1UpdateImageRequestBody$outboundSchema;
   /** @deprecated use `V1UpdateImageRequestBody$Outbound` instead. */
   export type Outbound = V1UpdateImageRequestBody$Outbound;
+}
+
+export function v1UpdateImageRequestBodyToJSON(
+  v1UpdateImageRequestBody: V1UpdateImageRequestBody,
+): string {
+  return JSON.stringify(
+    V1UpdateImageRequestBody$outboundSchema.parse(v1UpdateImageRequestBody),
+  );
+}
+
+export function v1UpdateImageRequestBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1UpdateImageRequestBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1UpdateImageRequestBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1UpdateImageRequestBody' from JSON`,
+  );
 }

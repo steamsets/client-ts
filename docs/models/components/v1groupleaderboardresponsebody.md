@@ -23,7 +23,7 @@ let value: V1GroupLeaderboardResponseBody = {
         awardsGiven: 123456,
         awardsReceived: 123456,
         badges: 123456,
-        bans: 536579,
+        bans: 20651,
         city: {
           id: 1,
           name: "Bad Krozingen",
@@ -39,7 +39,7 @@ let value: V1GroupLeaderboardResponseBody = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        gameBans: 896672,
+        gameBans: 758379,
         level: 123456,
         name: "steamsets",
         normalBadgeCost: 123456,
@@ -54,8 +54,8 @@ let value: V1GroupLeaderboardResponseBody = {
         },
         roles: [
           {
-            rating: 990339,
-            role: "developer",
+            rating: 320017,
+            role: "amethyst",
           },
         ],
         state: {
@@ -63,10 +63,10 @@ let value: V1GroupLeaderboardResponseBody = {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 663078,
+        steamSetsScore: 588317,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 263322,
+        vacBans: 831049,
         xp: 123456,
       },
       privacy: "public",
@@ -75,6 +75,71 @@ let value: V1GroupLeaderboardResponseBody = {
       vanity: "Group Vanity",
     },
   ],
+  steamSetsGroup: {
+    avatar: "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg",
+    foundedAt: new Date("2023-01-01T00:00:00Z"),
+    id: 730,
+    members: 100,
+    name: "Group Name",
+    owner: {
+      appCost: 123456,
+      apps: 123456,
+      avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+      averagePlaytime: 123456,
+      awardsGiven: 123456,
+      awardsReceived: 123456,
+      badges: 123456,
+      bans: 628982,
+      city: {
+        id: 1,
+        name: "Bad Krozingen",
+      },
+      country: {
+        code: "DE",
+        id: 1,
+        name: "Germany",
+      },
+      createdAt: new Date("2023-01-01T00:00:00Z"),
+      donated: 123456,
+      economyBan: "steam",
+      foilBadgeCost: 123456,
+      foilBadges: 123456,
+      friends: 123456,
+      gameBans: 872651,
+      level: 123456,
+      name: "steamsets",
+      normalBadgeCost: 123456,
+      normalBadges: 123456,
+      playtime: 123456,
+      pointsGiven: 123456,
+      pointsReceived: 123456,
+      privacy: "public",
+      region: {
+        id: 1,
+        name: "Europe",
+      },
+      roles: [
+        {
+          rating: 273542,
+          role: "beta",
+        },
+      ],
+      state: {
+        id: 1,
+        name: "Baden-Wurttemberg",
+      },
+      steamId: "76561198842603734",
+      steamSetsScore: 185636,
+      steamSetsVanity: "steamsets",
+      steamVanity: "steamsets",
+      vacBans: 952792,
+      xp: 123456,
+    },
+    privacy: "public",
+    rank: 1,
+    tag: "Group Tag",
+    vanity: "Group Vanity",
+  },
 };
 ```
 
@@ -84,3 +149,4 @@ let value: V1GroupLeaderboardResponseBody = {
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `dollarSchema`                                                                             | *string*                                                                                   | :heavy_minus_sign:                                                                         | A URL to the JSON Schema for this object.                                                  | https://api.steamsets.com/schemas/V1GroupLeaderboardResponseBody.json                      |
 | `groups`                                                                                   | [components.V1GroupLeaderboardGroup](../../models/components/v1groupleaderboardgroup.md)[] | :heavy_check_mark:                                                                         | N/A                                                                                        |                                                                                            |
+| `steamSetsGroup`                                                                           | [components.V1GroupLeaderboardGroup](../../models/components/v1groupleaderboardgroup.md)   | :heavy_check_mark:                                                                         | N/A                                                                                        |                                                                                            |

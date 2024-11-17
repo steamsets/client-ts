@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1DeleteImagesResponseBody = {
   /**
@@ -54,4 +57,22 @@ export namespace V1DeleteImagesResponseBody$ {
   export const outboundSchema = V1DeleteImagesResponseBody$outboundSchema;
   /** @deprecated use `V1DeleteImagesResponseBody$Outbound` instead. */
   export type Outbound = V1DeleteImagesResponseBody$Outbound;
+}
+
+export function v1DeleteImagesResponseBodyToJSON(
+  v1DeleteImagesResponseBody: V1DeleteImagesResponseBody,
+): string {
+  return JSON.stringify(
+    V1DeleteImagesResponseBody$outboundSchema.parse(v1DeleteImagesResponseBody),
+  );
+}
+
+export function v1DeleteImagesResponseBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<V1DeleteImagesResponseBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => V1DeleteImagesResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DeleteImagesResponseBody' from JSON`,
+  );
 }

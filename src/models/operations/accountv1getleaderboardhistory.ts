@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1GetLeaderboardHistoryResponse = {
   httpMeta: components.HTTPMetadata;
@@ -71,4 +74,26 @@ export namespace AccountV1GetLeaderboardHistoryResponse$ {
     AccountV1GetLeaderboardHistoryResponse$outboundSchema;
   /** @deprecated use `AccountV1GetLeaderboardHistoryResponse$Outbound` instead. */
   export type Outbound = AccountV1GetLeaderboardHistoryResponse$Outbound;
+}
+
+export function accountV1GetLeaderboardHistoryResponseToJSON(
+  accountV1GetLeaderboardHistoryResponse:
+    AccountV1GetLeaderboardHistoryResponse,
+): string {
+  return JSON.stringify(
+    AccountV1GetLeaderboardHistoryResponse$outboundSchema.parse(
+      accountV1GetLeaderboardHistoryResponse,
+    ),
+  );
+}
+
+export function accountV1GetLeaderboardHistoryResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountV1GetLeaderboardHistoryResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AccountV1GetLeaderboardHistoryResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1GetLeaderboardHistoryResponse' from JSON`,
+  );
 }

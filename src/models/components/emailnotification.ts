@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The type of email notifications
@@ -85,4 +88,22 @@ export namespace EmailNotification$ {
   export const outboundSchema = EmailNotification$outboundSchema;
   /** @deprecated use `EmailNotification$Outbound` instead. */
   export type Outbound = EmailNotification$Outbound;
+}
+
+export function emailNotificationToJSON(
+  emailNotification: EmailNotification,
+): string {
+  return JSON.stringify(
+    EmailNotification$outboundSchema.parse(emailNotification),
+  );
+}
+
+export function emailNotificationFromJSON(
+  jsonString: string,
+): SafeParseResult<EmailNotification, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EmailNotification$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EmailNotification' from JSON`,
+  );
 }

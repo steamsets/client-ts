@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { safeParse } from "../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DesignTag = {
   id: number;
@@ -57,4 +60,18 @@ export namespace DesignTag$ {
   export const outboundSchema = DesignTag$outboundSchema;
   /** @deprecated use `DesignTag$Outbound` instead. */
   export type Outbound = DesignTag$Outbound;
+}
+
+export function designTagToJSON(designTag: DesignTag): string {
+  return JSON.stringify(DesignTag$outboundSchema.parse(designTag));
+}
+
+export function designTagFromJSON(
+  jsonString: string,
+): SafeParseResult<DesignTag, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => DesignTag$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'DesignTag' from JSON`,
+  );
 }
