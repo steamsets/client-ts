@@ -15,6 +15,8 @@ let value: AccountV1SessionGetResponse = {
   v1GetSessionBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSessionBody.json",
     accountId: 123456,
+    avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+    name: "flo",
     resources: [
       {
         resource: "avatar_frame",

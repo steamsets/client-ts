@@ -3,13 +3,10 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -25,11 +22,10 @@ import { Result } from "../types/fp.js";
 
 export async function adminGetAccount(
   client: SteamSetsCore,
-  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AdminV1GetAccountResponse,
+    operations.AdminV1GetEventsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -40,21 +36,9 @@ export async function adminGetAccount(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
   const path = pathToFunc("/admin.v1.AdminService/GetAccount")();
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -63,7 +47,7 @@ export async function adminGetAccount(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "admin.v1.get-account",
+    operationID: "admin.v1.get-events",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -90,7 +74,6 @@ export async function adminGetAccount(
     method: "POST",
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -101,7 +84,7 @@ export async function adminGetAccount(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -115,7 +98,7 @@ export async function adminGetAccount(
   };
 
   const [result] = await M.match<
-    operations.AdminV1GetAccountResponse,
+    operations.AdminV1GetEventsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,10 +108,10 @@ export async function adminGetAccount(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AdminV1GetAccountResponse$inboundSchema, {
-      key: "V1AdminGetAccountResponseBody",
+    M.json(200, operations.AdminV1GetEventsResponse$inboundSchema, {
+      key: "V1AdminGetEventsResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

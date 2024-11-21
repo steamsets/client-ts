@@ -8,16 +8,18 @@ import { V1GetSessionBody } from "@steamsets/client-ts/models/components";
 let value: V1GetSessionBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1GetSessionBody.json",
   accountId: 123456,
+  avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+  name: "flo",
   resources: [
     {
-      resource: "vanity_length",
+      resource: "animated_avatar",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 223924,
-      role: "amethyst",
+      rating: 793698,
+      role: "partner",
     },
   ],
   sessionData: {
@@ -39,6 +41,8 @@ let value: V1GetSessionBody = {
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `dollarSchema`                                               | *string*                                                     | :heavy_minus_sign:                                           | A URL to the JSON Schema for this object.                    | https://api.steamsets.com/schemas/V1GetSessionBody.json      |
 | `accountId`                                                  | *number*                                                     | :heavy_check_mark:                                           | The account id                                               | 123456                                                       |
+| `avatar`                                                     | *string*                                                     | :heavy_check_mark:                                           | The avatar of the account                                    | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                         |
+| `name`                                                       | *string*                                                     | :heavy_check_mark:                                           | The name of the accountt                                     | flo                                                          |
 | `resources`                                                  | [components.Resource](../../models/components/resource.md)[] | :heavy_check_mark:                                           | The resources the user has (permissions)                     |                                                              |
 | `roles`                                                      | [components.Role](../../models/components/role.md)[]         | :heavy_check_mark:                                           | The roles the user has                                       |                                                              |
 | `sessionData`                                                | [components.Session](../../models/components/session.md)     | :heavy_check_mark:                                           | N/A                                                          |                                                              |

@@ -95,11 +95,14 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
+* [adminV1UpdateEvent](docs/sdks/admin/README.md#adminv1updateevent)
 * [adminV1UpdateResources](docs/sdks/admin/README.md#adminv1updateresources)
 * [adminV1UpdateRoles](docs/sdks/admin/README.md#adminv1updateroles)
 
 ### [badge](docs/sdks/badge/README.md)
 
+* [badgeV1Bookmark](docs/sdks/badge/README.md#badgev1bookmark)
+* [badgeV1GetBookmarks](docs/sdks/badge/README.md#badgev1getbookmarks)
 * [getTags](docs/sdks/badge/README.md#gettags)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -544,9 +547,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUpdateImage`](docs/sdks/account/README.md#updateimage)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
+- [`adminAdminV1UpdateEvent`](docs/sdks/admin/README.md#adminv1updateevent)
 - [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
 - [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
+- [`badgeBadgeV1Bookmark`](docs/sdks/badge/README.md#badgev1bookmark)
+- [`badgeBadgeV1GetBookmarks`](docs/sdks/badge/README.md#badgev1getbookmarks)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)
