@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: d841388e5f4f8a62c0568efa94af25ad
+  docChecksum: 2b8fceba3045459164724590fb79a8f8
   docVersion: 1.0.0
-  speakeasyVersion: 1.440.1
-  generationVersion: 2.460.1
-  releaseVersion: 0.13.4
-  configChecksum: ab7c5b558d7f75d85334d054f967a461
+  speakeasyVersion: 1.441.1
+  generationVersion: 2.461.2
+  releaseVersion: 0.13.5
+  configChecksum: 830e6a52d47d6546284dad866aa0a527
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.5
+    core: 3.18.6
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -122,18 +122,19 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbody.md
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
-  - docs/models/components/v1accountlocationupdate.md
   - docs/models/components/v1accountmetaresponsebody.md
-  - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
-  - docs/models/components/v1admingetaccountresponsebody.md
-  - docs/models/components/v1admingetaccountresponsebodyprivacy.md
+  - docs/models/components/v1admingeteventsresponsebody.md
+  - docs/models/components/v1adminupdateeventresponsebody.md
   - docs/models/components/v1adminupdateresourcesrequestbody.md
   - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
+  - docs/models/components/v1badgebookmark.md
+  - docs/models/components/v1badgebookmarkrequestbody.md
+  - docs/models/components/v1badgebookmarkresponsebody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagresponsebody.md
@@ -150,6 +151,9 @@ generatedFiles:
   - docs/models/components/v1deletesessionresponsebody.md
   - docs/models/components/v1developerappcreaterequestbody.md
   - docs/models/components/v1developerappcreateresponsebody.md
+  - docs/models/components/v1event.md
+  - docs/models/components/v1getbadgebookmarksrequestbody.md
+  - docs/models/components/v1getbadgebookmarksresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1groupleaderboardgroup.md
@@ -159,6 +163,7 @@ generatedFiles:
   - docs/models/components/v1groupleaderboardresponsebody.md
   - docs/models/components/v1leaderboardappinfo.md
   - docs/models/components/v1leaderboardbadge.md
+  - docs/models/components/v1leaderboardbadgeevent.md
   - docs/models/components/v1leaderboardbadgeinfo.md
   - docs/models/components/v1leaderboardbadgeresponsebody.md
   - docs/models/components/v1leaderboardlocation.md
@@ -217,9 +222,12 @@ generatedFiles:
   - docs/models/operations/accountv1settingsupdateresponse.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
-  - docs/models/operations/adminv1getaccountresponse.md
+  - docs/models/operations/adminv1geteventsresponse.md
+  - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
+  - docs/models/operations/badgev1bookmarkresponse.md
+  - docs/models/operations/badgev1getbookmarksresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
@@ -261,9 +269,12 @@ generatedFiles:
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
+  - src/funcs/adminAdminV1UpdateEvent.ts
   - src/funcs/adminAdminV1UpdateResources.ts
   - src/funcs/adminAdminV1UpdateRoles.ts
   - src/funcs/adminGetAccount.ts
+  - src/funcs/badgeBadgeV1Bookmark.ts
+  - src/funcs/badgeBadgeV1GetBookmarks.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
   - src/funcs/connectionDelete.ts
@@ -370,16 +381,18 @@ generatedFiles:
   - src/models/components/v1accountleaderboardhistoryresponsebody.ts
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
-  - src/models/components/v1accountlocationupdate.ts
   - src/models/components/v1accountmetaresponsebody.ts
-  - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
-  - src/models/components/v1admingetaccountresponsebody.ts
+  - src/models/components/v1admingeteventsresponsebody.ts
+  - src/models/components/v1adminupdateeventresponsebody.ts
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
+  - src/models/components/v1badgebookmark.ts
+  - src/models/components/v1badgebookmarkrequestbody.ts
+  - src/models/components/v1badgebookmarkresponsebody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagresponsebody.ts
@@ -396,6 +409,9 @@ generatedFiles:
   - src/models/components/v1deletesessionresponsebody.ts
   - src/models/components/v1developerappcreaterequestbody.ts
   - src/models/components/v1developerappcreateresponsebody.ts
+  - src/models/components/v1event.ts
+  - src/models/components/v1getbadgebookmarksrequestbody.ts
+  - src/models/components/v1getbadgebookmarksresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/v1groupleaderboardgroup.ts
@@ -403,6 +419,7 @@ generatedFiles:
   - src/models/components/v1groupleaderboardresponsebody.ts
   - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
+  - src/models/components/v1leaderboardbadgeevent.ts
   - src/models/components/v1leaderboardbadgeinfo.ts
   - src/models/components/v1leaderboardbadgeresponsebody.ts
   - src/models/components/v1leaderboardlocation.ts
@@ -457,9 +474,12 @@ generatedFiles:
   - src/models/operations/accountv1settingsupdateimage.ts
   - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1settingsverfyemail.ts
-  - src/models/operations/adminv1getaccount.ts
+  - src/models/operations/adminv1getevents.ts
+  - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
+  - src/models/operations/badgev1bookmark.ts
+  - src/models/operations/badgev1getbookmarks.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
@@ -595,7 +615,7 @@ examples:
     speakeasy-default-account-v1-session-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "resources": [], "roles": [], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "flo", "resources": [], "roles": [], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.get:
@@ -798,7 +818,7 @@ examples:
     speakeasy-default-leaderboard-v1-get-badges:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.v1.getGroup:
@@ -850,5 +870,35 @@ examples:
       requestBody:
         application/json: {"deletedRoles": [], "newRoles": []}
       responses:
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.v1.get-events:
+    speakeasy-default-admin-v1-get-events:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2023-02-11T10:30:25.221Z", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "publicId": "<id>", "startsAt": "2024-04-11T15:48:12.868Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.v1.update-event:
+    speakeasy-default-admin-v1-update-event:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminUpdateEventResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.bookmark:
+    speakeasy-default-badge-v1-bookmark:
+      requestBody:
+        application/json: {"badgeId": "bdg_123", "bookmark": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeBookmarkResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.getBookmarks:
+    speakeasy-default-badge-v1-get-bookmarks:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetBadgeBookmarksResponseBody.json", "bookmarks": []}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

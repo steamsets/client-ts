@@ -1,0 +1,42 @@
+# AdminV1GetEventsResponse
+
+## Example Usage
+
+```typescript
+import { AdminV1GetEventsResponse } from "@steamsets/client-ts/models/operations";
+
+let value: AdminV1GetEventsResponse = {
+  httpMeta: {
+    response: new Response("{\"message\": \"hello world\"}", {
+      headers: { "Content-Type": "application/json" },
+    }),
+    request: new Request("https://example.com"),
+  },
+  v1AdminGetEventsResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json",
+    events: [
+      {
+        bodyImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+        downvotes: 123456,
+        endsAt: new Date("2023-05-27T01:50:18.849Z"),
+        gid: "123456",
+        headerImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
+        name: "Steam Summer Sale 2024",
+        postedAt: new Date("2023-01-01T00:00:00Z"),
+        publicId: "<id>",
+        startsAt: new Date("2022-09-25T21:22:14.779Z"),
+        title: "Steam Summer Sale 2024",
+        upvotes: 123456,
+      },
+    ],
+  },
+};
+```
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `v1AdminGetEventsResponseBody`                                                                     | [components.V1AdminGetEventsResponseBody](../../models/components/v1admingeteventsresponsebody.md) | :heavy_minus_sign:                                                                                 | OK                                                                                                 |
