@@ -22,6 +22,11 @@ import { Sessions } from "./sessions.js";
 import { Settings } from "./settings.js";
 
 export class SteamSets extends ClientSDK {
+  private _badge?: Badge;
+  get badge(): Badge {
+    return (this._badge ??= new Badge(this._options));
+  }
+
   private _connections?: Connections;
   get connections(): Connections {
     return (this._connections ??= new Connections(this._options));
@@ -80,11 +85,6 @@ export class SteamSets extends ClientSDK {
   private _admin?: Admin;
   get admin(): Admin {
     return (this._admin ??= new Admin(this._options));
-  }
-
-  private _badge?: Badge;
-  get badge(): Badge {
-    return (this._badge ??= new Badge(this._options));
   }
 
   private _badges?: Badges;

@@ -3,9 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -23,13 +21,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function badgeBadgeV1Bookmark(
+export async function badgeAccountV1GetBadgeBookmarks(
   client: SteamSetsCore,
-  request: components.V1BadgeBookmarkRequestBody,
+  _request: components.V1AccountBadgeBookmarksRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.BadgeV1BookmarkResponse,
+    operations.AccountV1GetBadgeBookmarksResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -40,19 +38,7 @@ export async function badgeBadgeV1Bookmark(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) =>
-      components.V1BadgeBookmarkRequestBody$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/badge.v1.BadgeService/Bookmark")();
+  const path = pathToFunc("/account.v1.AccountService/GetBadgeBookmarks")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -64,7 +50,7 @@ export async function badgeBadgeV1Bookmark(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "badge.v1.bookmark",
+    operationID: "account.v1.getBadgeBookmarks",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -91,7 +77,6 @@ export async function badgeBadgeV1Bookmark(
     method: "POST",
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -116,7 +101,7 @@ export async function badgeBadgeV1Bookmark(
   };
 
   const [result] = await M.match<
-    operations.BadgeV1BookmarkResponse,
+    operations.AccountV1GetBadgeBookmarksResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -126,8 +111,8 @@ export async function badgeBadgeV1Bookmark(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.BadgeV1BookmarkResponse$inboundSchema, {
-      key: "V1BadgeBookmarkResponseBody",
+    M.json(200, operations.AccountV1GetBadgeBookmarksResponse$inboundSchema, {
+      key: "V1AccountBadgeBookmarksResponseBody",
     }),
     M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
