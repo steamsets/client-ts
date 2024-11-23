@@ -5,7 +5,7 @@
 ```typescript
 import { DeletedRoles } from "@steamsets/client-ts/models/components";
 
-let value: DeletedRoles = "ruby";
+let value: DeletedRoles = "top_100";
 ```
 
 ## Values
