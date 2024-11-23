@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 2b8fceba3045459164724590fb79a8f8
+  docChecksum: e0fbe69d25d063149c9142a9d5f5522f
   docVersion: 1.0.0
-  speakeasyVersion: 1.441.1
-  generationVersion: 2.461.2
-  releaseVersion: 0.13.5
-  configChecksum: 830e6a52d47d6546284dad866aa0a527
+  speakeasyVersion: 1.444.1
+  generationVersion: 2.461.4
+  releaseVersion: 0.13.6
+  configChecksum: bb693daaaaa8f4dba65ae92e4669afa5
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -122,16 +122,22 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbody.md
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
+  - docs/models/components/v1accountlocationupdate.md
   - docs/models/components/v1accountmetaresponsebody.md
+  - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
+  - docs/models/components/v1admingetaccountresponsebody.md
+  - docs/models/components/v1admingetaccountresponsebodyprivacy.md
   - docs/models/components/v1admingeteventsresponsebody.md
+  - docs/models/components/v1adminupdateeventrequestbody.md
   - docs/models/components/v1adminupdateeventresponsebody.md
   - docs/models/components/v1adminupdateresourcesrequestbody.md
   - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
+  - docs/models/components/v1appeventmapping.md
   - docs/models/components/v1badgebookmark.md
   - docs/models/components/v1badgebookmarkrequestbody.md
   - docs/models/components/v1badgebookmarkresponsebody.md
@@ -222,6 +228,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingsupdateresponse.md
   - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
+  - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1geteventsresponse.md
   - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
@@ -269,6 +276,7 @@ generatedFiles:
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
+  - src/funcs/adminAdminV1GetEvents.ts
   - src/funcs/adminAdminV1UpdateEvent.ts
   - src/funcs/adminAdminV1UpdateResources.ts
   - src/funcs/adminAdminV1UpdateRoles.ts
@@ -381,15 +389,20 @@ generatedFiles:
   - src/models/components/v1accountleaderboardhistoryresponsebody.ts
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
+  - src/models/components/v1accountlocationupdate.ts
   - src/models/components/v1accountmetaresponsebody.ts
+  - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
+  - src/models/components/v1admingetaccountresponsebody.ts
   - src/models/components/v1admingeteventsresponsebody.ts
+  - src/models/components/v1adminupdateeventrequestbody.ts
   - src/models/components/v1adminupdateeventresponsebody.ts
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
+  - src/models/components/v1appeventmapping.ts
   - src/models/components/v1badgebookmark.ts
   - src/models/components/v1badgebookmarkrequestbody.ts
   - src/models/components/v1badgebookmarkresponsebody.ts
@@ -474,6 +487,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsupdateimage.ts
   - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1settingsverfyemail.ts
+  - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1getevents.ts
   - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
@@ -876,11 +890,13 @@ examples:
     speakeasy-default-admin-v1-get-events:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2023-02-11T10:30:25.221Z", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "publicId": "<id>", "startsAt": "2024-04-11T15:48:12.868Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2023-02-11T10:30:25.221Z", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "mappings": [{"appId": 730, "steamId": 76561198842603730}, {"appId": 730, "steamId": 76561198842603730}], "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "publicId": "<id>", "startsAt": "2024-04-11T15:48:12.868Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.v1.update-event:
     speakeasy-default-admin-v1-update-event:
+      requestBody:
+        application/json: {"eventId": "evt_123456", "mappings": [{"appId": 730, "steamId": 76561198842603730}]}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminUpdateEventResponseBody.json"}

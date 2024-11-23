@@ -95,6 +95,7 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
+* [adminV1GetEvents](docs/sdks/admin/README.md#adminv1getevents)
 * [adminV1UpdateEvent](docs/sdks/admin/README.md#adminv1updateevent)
 * [adminV1UpdateResources](docs/sdks/admin/README.md#adminv1updateresources)
 * [adminV1UpdateRoles](docs/sdks/admin/README.md#adminv1updateroles)
@@ -547,6 +548,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUpdateImage`](docs/sdks/account/README.md#updateimage)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
+- [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
 - [`adminAdminV1UpdateEvent`](docs/sdks/admin/README.md#adminv1updateevent)
 - [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
 - [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)

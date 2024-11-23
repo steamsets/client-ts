@@ -30,6 +30,7 @@ export * from "./accountv1settingsupdate.js";
 export * from "./accountv1settingsupdateimage.js";
 export * from "./accountv1settingsuploadimages.js";
 export * from "./accountv1settingsverfyemail.js";
+export * from "./adminv1getaccount.js";
 export * from "./adminv1getevents.js";
 export * from "./adminv1updateevent.js";
 export * from "./adminv1updateresources.js";

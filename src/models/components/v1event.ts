@@ -6,6 +6,12 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  V1AppEventMapping,
+  V1AppEventMapping$inboundSchema,
+  V1AppEventMapping$Outbound,
+  V1AppEventMapping$outboundSchema,
+} from "./v1appeventmapping.js";
 
 export type V1Event = {
   /**
@@ -28,6 +34,10 @@ export type V1Event = {
    * The header image of the event
    */
   headerImage: string;
+  /**
+   * The mappings of the event
+   */
+  mappings: Array<V1AppEventMapping> | null;
   /**
    * The name of the event
    */
@@ -62,6 +72,7 @@ export const V1Event$inboundSchema: z.ZodType<V1Event, z.ZodTypeDef, unknown> =
     endsAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
     gid: z.string(),
     headerImage: z.string(),
+    mappings: z.nullable(z.array(V1AppEventMapping$inboundSchema)),
     name: z.string(),
     postedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
     publicId: z.string(),
@@ -77,6 +88,7 @@ export type V1Event$Outbound = {
   endsAt: string;
   gid: string;
   headerImage: string;
+  mappings: Array<V1AppEventMapping$Outbound> | null;
   name: string;
   postedAt: string;
   publicId: string;
@@ -96,6 +108,7 @@ export const V1Event$outboundSchema: z.ZodType<
   endsAt: z.date().transform(v => v.toISOString()),
   gid: z.string(),
   headerImage: z.string(),
+  mappings: z.nullable(z.array(V1AppEventMapping$outboundSchema)),
   name: z.string(),
   postedAt: z.date().transform(v => v.toISOString()),
   publicId: z.string(),
