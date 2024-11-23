@@ -53,9 +53,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -77,6 +77,7 @@ run();
 
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
 * [getApps](docs/sdks/account/README.md#getapps)
+* [accountV1GetBadgeBookmarks](docs/sdks/account/README.md#accountv1getbadgebookmarks)
 * [getBadges](docs/sdks/account/README.md#getbadges)
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints)
 * [getFriends](docs/sdks/account/README.md#getfriends)
@@ -102,8 +103,8 @@ run();
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeV1Bookmark](docs/sdks/badge/README.md#badgev1bookmark)
-* [badgeV1GetBookmarks](docs/sdks/badge/README.md#badgev1getbookmarks)
+* [accountV1BookmarkBadge](docs/sdks/badge/README.md#accountv1bookmarkbadge)
+* [accountV1GetBadgeBookmarks](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
 * [getTags](docs/sdks/badge/README.md#gettags)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -202,9 +203,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   }, {
     retries: {
       strategy: "backoff",
@@ -245,9 +246,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -274,12 +275,12 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `connect` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `accountV1BookmarkBadge` method may throw the following errors:
 
-| Error Type        | Status Code   | Content Type             |
-| ----------------- | ------------- | ------------------------ |
-| errors.ErrorModel | 400, 422, 500 | application/problem+json |
-| errors.SDKError   | 4XX, 5XX      | \*/\*                    |
+| Error Type        | Status Code        | Content Type             |
+| ----------------- | ------------------ | ------------------------ |
+| errors.ErrorModel | 403, 404, 422, 500 | application/problem+json |
+| errors.SDKError   | 4XX, 5XX           | \*/\*                    |
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
@@ -295,9 +296,9 @@ const steamSets = new SteamSets({
 async function run() {
   let result;
   try {
-    result = await steamSets.connections.connect({
-      code: "123456",
-      provider: "discord",
+    result = await steamSets.badge.accountV1BookmarkBadge({
+      badgeId: "bdg_123",
+      bookmark: true,
     });
 
     // Handle the result
@@ -353,9 +354,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -378,9 +379,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -461,9 +462,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -535,6 +536,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountV1GetBadgeBookmarks`](docs/sdks/account/README.md#accountv1getbadgebookmarks)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
 - [`accountGetApps`](docs/sdks/account/README.md#getapps)
 - [`accountGetBadges`](docs/sdks/account/README.md#getbadges)
@@ -553,8 +555,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
 - [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
-- [`badgeBadgeV1Bookmark`](docs/sdks/badge/README.md#badgev1bookmark)
-- [`badgeBadgeV1GetBookmarks`](docs/sdks/badge/README.md#badgev1getbookmarks)
+- [`badgeAccountV1BookmarkBadge`](docs/sdks/badge/README.md#accountv1bookmarkbadge)
+- [`badgeAccountV1GetBadgeBookmarks`](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)

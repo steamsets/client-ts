@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e0fbe69d25d063149c9142a9d5f5522f
+  docChecksum: 0878ae95281a613b9cd5c1c10b2029c4
   docVersion: 1.0.0
   speakeasyVersion: 1.444.1
   generationVersion: 2.461.4
-  releaseVersion: 0.13.6
-  configChecksum: bb693daaaaa8f4dba65ae92e4669afa5
+  releaseVersion: 0.13.7
+  configChecksum: bf370c4c5ad4467d0aa889f16b4babba
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -108,6 +108,11 @@ generatedFiles:
   - docs/models/components/theme.md
   - docs/models/components/type.md
   - docs/models/components/v1accountapp.md
+  - docs/models/components/v1accountbadgebookmark.md
+  - docs/models/components/v1accountbadgebookmarkrequestbody.md
+  - docs/models/components/v1accountbadgebookmarkresponsebody.md
+  - docs/models/components/v1accountbadgebookmarksrequestbody.md
+  - docs/models/components/v1accountbadgebookmarksresponsebody.md
   - docs/models/components/v1accountdatapointsresponsebody.md
   - docs/models/components/v1accountdeveloperappdeleterequestbody.md
   - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
@@ -138,9 +143,6 @@ generatedFiles:
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appeventmapping.md
-  - docs/models/components/v1badgebookmark.md
-  - docs/models/components/v1badgebookmarkrequestbody.md
-  - docs/models/components/v1badgebookmarkresponsebody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagresponsebody.md
@@ -158,8 +160,6 @@ generatedFiles:
   - docs/models/components/v1developerappcreaterequestbody.md
   - docs/models/components/v1developerappcreateresponsebody.md
   - docs/models/components/v1event.md
-  - docs/models/components/v1getbadgebookmarksrequestbody.md
-  - docs/models/components/v1getbadgebookmarksresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1groupleaderboardgroup.md
@@ -196,11 +196,13 @@ generatedFiles:
   - docs/models/components/vanitystruct.md
   - docs/models/components/vanitystructtype.md
   - docs/models/errors/errormodel.md
+  - docs/models/operations/accountv1bookmarkbadgeresponse.md
   - docs/models/operations/accountv1connectionconnectresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1getappsresponse.md
+  - docs/models/operations/accountv1getbadgebookmarksresponse.md
   - docs/models/operations/accountv1getbadgesresponse.md
   - docs/models/operations/accountv1getdatapointsresponse.md
   - docs/models/operations/accountv1getembedresponse.md
@@ -233,8 +235,6 @@ generatedFiles:
   - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
-  - docs/models/operations/badgev1bookmarkresponse.md
-  - docs/models/operations/badgev1getbookmarksresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
@@ -263,6 +263,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1GetBadgeBookmarks.ts
   - src/funcs/accountDeleteImages.ts
   - src/funcs/accountGetApps.ts
   - src/funcs/accountGetBadges.ts
@@ -281,8 +282,8 @@ generatedFiles:
   - src/funcs/adminAdminV1UpdateResources.ts
   - src/funcs/adminAdminV1UpdateRoles.ts
   - src/funcs/adminGetAccount.ts
-  - src/funcs/badgeBadgeV1Bookmark.ts
-  - src/funcs/badgeBadgeV1GetBookmarks.ts
+  - src/funcs/badgeAccountV1BookmarkBadge.ts
+  - src/funcs/badgeAccountV1GetBadgeBookmarks.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
   - src/funcs/connectionDelete.ts
@@ -376,6 +377,11 @@ generatedFiles:
   - src/models/components/setdesigntag.ts
   - src/models/components/state.ts
   - src/models/components/v1accountapp.ts
+  - src/models/components/v1accountbadgebookmark.ts
+  - src/models/components/v1accountbadgebookmarkrequestbody.ts
+  - src/models/components/v1accountbadgebookmarkresponsebody.ts
+  - src/models/components/v1accountbadgebookmarksrequestbody.ts
+  - src/models/components/v1accountbadgebookmarksresponsebody.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
   - src/models/components/v1accountdeveloperappdeleterequestbody.ts
   - src/models/components/v1accountdeveloperappdeleteresponsebody.ts
@@ -403,9 +409,6 @@ generatedFiles:
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appeventmapping.ts
-  - src/models/components/v1badgebookmark.ts
-  - src/models/components/v1badgebookmarkrequestbody.ts
-  - src/models/components/v1badgebookmarkresponsebody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagresponsebody.ts
@@ -423,8 +426,6 @@ generatedFiles:
   - src/models/components/v1developerappcreaterequestbody.ts
   - src/models/components/v1developerappcreateresponsebody.ts
   - src/models/components/v1event.ts
-  - src/models/components/v1getbadgebookmarksrequestbody.ts
-  - src/models/components/v1getbadgebookmarksresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/v1groupleaderboardgroup.ts
@@ -459,11 +460,13 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/accountv1bookmarkbadge.ts
   - src/models/operations/accountv1connectionconnect.ts
   - src/models/operations/accountv1connectiondeleteconnection.ts
   - src/models/operations/accountv1connectionupdateconnection.ts
   - src/models/operations/accountv1connectionverifyconnection.ts
   - src/models/operations/accountv1getapps.ts
+  - src/models/operations/accountv1getbadgebookmarks.ts
   - src/models/operations/accountv1getbadges.ts
   - src/models/operations/accountv1getdatapoints.ts
   - src/models/operations/accountv1getembed.ts
@@ -492,8 +495,6 @@ generatedFiles:
   - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
-  - src/models/operations/badgev1bookmark.ts
-  - src/models/operations/badgev1getbookmarks.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
@@ -916,5 +917,21 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetBadgeBookmarksResponseBody.json", "bookmarks": []}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.bookmark-badge:
+    speakeasy-default-account-v1-bookmark-badge:
+      requestBody:
+        application/json: {"badgeId": "bdg_123", "bookmark": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarkResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getBadgeBookmarks:
+    speakeasy-default-account-v1-get-badge-bookmarks:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarksResponseBody.json", "bookmarks": [{"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}, {"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

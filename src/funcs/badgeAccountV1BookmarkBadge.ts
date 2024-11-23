@@ -3,7 +3,9 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -21,13 +23,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function badgeBadgeV1GetBookmarks(
+export async function badgeAccountV1BookmarkBadge(
   client: SteamSetsCore,
-  _request: components.V1GetBadgeBookmarksRequestBody,
+  request: components.V1AccountBadgeBookmarkRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.BadgeV1GetBookmarksResponse,
+    operations.AccountV1BookmarkBadgeResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -38,7 +40,19 @@ export async function badgeBadgeV1GetBookmarks(
     | ConnectionError
   >
 > {
-  const path = pathToFunc("/badge.v1.BadgeService/GetBookmarks")();
+  const parsed = safeParse(
+    request,
+    (value) =>
+      components.V1AccountBadgeBookmarkRequestBody$outboundSchema.parse(value),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return parsed;
+  }
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload, { explode: true });
+
+  const path = pathToFunc("/account.v1.AccountService/BookmarkBadge")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -50,7 +64,7 @@ export async function badgeBadgeV1GetBookmarks(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "badge.v1.getBookmarks",
+    operationID: "account.v1.bookmark-badge",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -77,6 +91,7 @@ export async function badgeBadgeV1GetBookmarks(
     method: "POST",
     path: path,
     headers: headers,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -101,7 +116,7 @@ export async function badgeBadgeV1GetBookmarks(
   };
 
   const [result] = await M.match<
-    operations.BadgeV1GetBookmarksResponse,
+    operations.AccountV1BookmarkBadgeResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -111,8 +126,8 @@ export async function badgeBadgeV1GetBookmarks(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.BadgeV1GetBookmarksResponse$inboundSchema, {
-      key: "V1GetBadgeBookmarksResponseBody",
+    M.json(200, operations.AccountV1BookmarkBadgeResponse$inboundSchema, {
+      key: "V1AccountBadgeBookmarkResponseBody",
     }),
     M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

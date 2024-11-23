@@ -1,11 +1,11 @@
-# V1BadgeBookmarkRequestBody
+# V1AccountBadgeBookmarkRequestBody
 
 ## Example Usage
 
 ```typescript
-import { V1BadgeBookmarkRequestBody } from "@steamsets/client-ts/models/components";
+import { V1AccountBadgeBookmarkRequestBody } from "@steamsets/client-ts/models/components";
 
-let value: V1BadgeBookmarkRequestBody = {
+let value: V1AccountBadgeBookmarkRequestBody = {
   badgeId: "bdg_123",
   bookmark: true,
 };

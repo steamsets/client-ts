@@ -7,9 +7,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connections.connect({
-    code: "123456",
-    provider: "discord",
+  const result = await steamSets.badge.accountV1BookmarkBadge({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
