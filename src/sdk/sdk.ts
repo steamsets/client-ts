@@ -12,6 +12,7 @@ import { Connection } from "./connection.js";
 import { Connections } from "./connections.js";
 import { Data } from "./data.js";
 import { Developer } from "./developer.js";
+import { Images } from "./images.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Locations } from "./locations.js";
@@ -52,9 +53,9 @@ export class SteamSets extends ClientSDK {
     return (this._account ??= new Account(this._options));
   }
 
-  private _settings?: Settings;
-  get settings(): Settings {
-    return (this._settings ??= new Settings(this._options));
+  private _images?: Images;
+  get images(): Images {
+    return (this._images ??= new Images(this._options));
   }
 
   private _sessions?: Sessions;
@@ -75,6 +76,11 @@ export class SteamSets extends ClientSDK {
   private _meta?: Meta;
   get meta(): Meta {
     return (this._meta ??= new Meta(this._options));
+  }
+
+  private _settings?: Settings;
+  get settings(): Settings {
+    return (this._settings ??= new Settings(this._options));
   }
 
   private _accounts?: Accounts;

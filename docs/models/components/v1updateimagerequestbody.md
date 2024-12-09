@@ -6,14 +6,17 @@
 import { V1UpdateImageRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1UpdateImageRequestBody = {
-  active: true,
-  imageId: "123456",
+  images: [
+    {
+      active: true,
+      imageId: "123456",
+    },
+  ],
 };
 ```
 
 ## Fields
 
-| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `active`                                                                | *boolean*                                                               | :heavy_check_mark:                                                      | Whether the image is active or not, only one of each type can be active | true                                                                    |
-| `imageId`                                                               | *string*                                                                | :heavy_check_mark:                                                      | The image id to update                                                  | 123456                                                                  |
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `images`                                                               | [components.V1UpdateImage](../../models/components/v1updateimage.md)[] | :heavy_check_mark:                                                     | The images to update                                                   |

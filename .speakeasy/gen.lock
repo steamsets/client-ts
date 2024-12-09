@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0878ae95281a613b9cd5c1c10b2029c4
+  docChecksum: 5b288f0bd7470b193c9b1372fb0650ac
   docVersion: 1.0.0
-  speakeasyVersion: 1.444.1
-  generationVersion: 2.461.4
-  releaseVersion: 0.13.7
-  configChecksum: bf370c4c5ad4467d0aa889f16b4babba
+  speakeasyVersion: 1.453.4
+  generationVersion: 2.474.6
+  releaseVersion: 0.14.0
+  configChecksum: 01ad0c4655adf9511241938492f741fb
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,8 +29,9 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.6
+    core: 3.18.8
     defaultEnabledRetries: 0.1.0
+    deprecations: 2.81.1
     devContainers: 2.90.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
@@ -77,8 +78,6 @@ generatedFiles:
   - docs/models/components/designtag.md
   - docs/models/components/developerapp.md
   - docs/models/components/developerappenvironment.md
-  - docs/models/components/emailnotification.md
-  - docs/models/components/emailnotificationtype.md
   - docs/models/components/environment.md
   - docs/models/components/errordetail.md
   - docs/models/components/friendprivacy.md
@@ -160,6 +159,7 @@ generatedFiles:
   - docs/models/components/v1developerappcreaterequestbody.md
   - docs/models/components/v1developerappcreateresponsebody.md
   - docs/models/components/v1event.md
+  - docs/models/components/v1getimagesresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
   - docs/models/components/v1groupleaderboardgroup.md
@@ -178,6 +178,7 @@ generatedFiles:
   - docs/models/components/v1loginresponsebody.md
   - docs/models/components/v1updateconnectionrequestbody.md
   - docs/models/components/v1updateconnectionresponsebody.md
+  - docs/models/components/v1updateimage.md
   - docs/models/components/v1updateimagerequestbody.md
   - docs/models/components/v1updateimageresponsebody.md
   - docs/models/components/v1updatesettingsrequestbody.md
@@ -211,6 +212,10 @@ generatedFiles:
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
   - docs/models/operations/accountv1getmetaresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
+  - docs/models/operations/accountv1imagesdeleteresponse.md
+  - docs/models/operations/accountv1imagesgetresponse.md
+  - docs/models/operations/accountv1imagesupdateresponse.md
+  - docs/models/operations/accountv1imagesuploadresponse.md
   - docs/models/operations/accountv1queueresponse.md
   - docs/models/operations/accountv1sessioncreaterequest.md
   - docs/models/operations/accountv1sessioncreateresponse.md
@@ -218,17 +223,14 @@ generatedFiles:
   - docs/models/operations/accountv1sessiongetresponse.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
-  - docs/models/operations/accountv1settingsdeleteimagesresponse.md
   - docs/models/operations/accountv1settingsdeveloperappcreateresponse.md
   - docs/models/operations/accountv1settingsdeveloperappdeleteresponse.md
   - docs/models/operations/accountv1settingsdeveloperappupdateresponse.md
   - docs/models/operations/accountv1settingsgetresponse.md
   - docs/models/operations/accountv1settingssendemailverificationrequest.md
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
-  - docs/models/operations/accountv1settingsupdateimageresponse.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
-  - docs/models/operations/accountv1settingsuploadimagesresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1geteventsresponse.md
@@ -251,6 +253,7 @@ generatedFiles:
   - docs/sdks/connections/README.md
   - docs/sdks/data/README.md
   - docs/sdks/developer/README.md
+  - docs/sdks/images/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/locations/README.md
@@ -264,6 +267,8 @@ generatedFiles:
   - package.json
   - src/core.ts
   - src/funcs/accountAccountV1GetBadgeBookmarks.ts
+  - src/funcs/accountAccountV1ImagesGet.ts
+  - src/funcs/accountAccountV1ImagesUpdate.ts
   - src/funcs/accountDeleteImages.ts
   - src/funcs/accountGetApps.ts
   - src/funcs/accountGetBadges.ts
@@ -273,7 +278,6 @@ generatedFiles:
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
   - src/funcs/accountSendEmailVerification.ts
-  - src/funcs/accountUpdateImage.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
@@ -300,6 +304,10 @@ generatedFiles:
   - src/funcs/developerCreateDeveloperApp.ts
   - src/funcs/developerDeleteDeveloperApp.ts
   - src/funcs/developerUpdateApp.ts
+  - src/funcs/imagesAccountV1ImagesGet.ts
+  - src/funcs/imagesAccountV1ImagesUpdate.ts
+  - src/funcs/imagesDeleteImages.ts
+  - src/funcs/imagesUploadImages.ts
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetBadges.ts
   - src/funcs/leaderboardGetGroup.ts
@@ -317,12 +325,9 @@ generatedFiles:
   - src/funcs/sessionLogin.ts
   - src/funcs/sessionsDelete.ts
   - src/funcs/sessionsGet.ts
-  - src/funcs/settingsDeleteImages.ts
   - src/funcs/settingsGet.ts
   - src/funcs/settingsSendEmailVerification.ts
   - src/funcs/settingsUpdate.ts
-  - src/funcs/settingsUpdateImage.ts
-  - src/funcs/settingsUploadImages.ts
   - src/funcs/settingsVerifyEmail.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
@@ -357,7 +362,6 @@ generatedFiles:
   - src/models/components/country.ts
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
-  - src/models/components/emailnotification.ts
   - src/models/components/errordetail.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idstruct.ts
@@ -426,6 +430,7 @@ generatedFiles:
   - src/models/components/v1developerappcreaterequestbody.ts
   - src/models/components/v1developerappcreateresponsebody.ts
   - src/models/components/v1event.ts
+  - src/models/components/v1getimagesresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
   - src/models/components/v1groupleaderboardgroup.ts
@@ -442,6 +447,7 @@ generatedFiles:
   - src/models/components/v1loginresponsebody.ts
   - src/models/components/v1updateconnectionrequestbody.ts
   - src/models/components/v1updateconnectionresponsebody.ts
+  - src/models/components/v1updateimage.ts
   - src/models/components/v1updateimagerequestbody.ts
   - src/models/components/v1updateimageresponsebody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
@@ -475,20 +481,21 @@ generatedFiles:
   - src/models/operations/accountv1getleaderboardhistory.ts
   - src/models/operations/accountv1getmeta.ts
   - src/models/operations/accountv1getstaff.ts
+  - src/models/operations/accountv1imagesdelete.ts
+  - src/models/operations/accountv1imagesget.ts
+  - src/models/operations/accountv1imagesupdate.ts
+  - src/models/operations/accountv1imagesupload.ts
   - src/models/operations/accountv1queue.ts
   - src/models/operations/accountv1sessioncreate.ts
   - src/models/operations/accountv1sessiondelete.ts
   - src/models/operations/accountv1sessionget.ts
   - src/models/operations/accountv1sessionlogin.ts
-  - src/models/operations/accountv1settingsdeleteimages.ts
   - src/models/operations/accountv1settingsdeveloperappcreate.ts
   - src/models/operations/accountv1settingsdeveloperappdelete.ts
   - src/models/operations/accountv1settingsdeveloperappupdate.ts
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts
-  - src/models/operations/accountv1settingsupdateimage.ts
-  - src/models/operations/accountv1settingsuploadimages.ts
   - src/models/operations/accountv1settingsverfyemail.ts
   - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1getevents.ts
@@ -512,6 +519,7 @@ generatedFiles:
   - src/sdk/connections.ts
   - src/sdk/data.ts
   - src/sdk/developer.ts
+  - src/sdk/images.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
@@ -637,7 +645,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailNotifications": [], "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
@@ -682,7 +690,7 @@ examples:
   account.v1.settings.update:
     speakeasy-default-account-v1-settings-update:
       requestBody:
-        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "emailNotifications": [], "hidden": true, "language": "en", "role": "emerald", "theme": "dark", "vanity": "flo"}
+        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "hidden": true, "language": "en", "role": "emerald", "theme": "dark", "vanity": "flo"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json"}
@@ -935,3 +943,38 @@ examples:
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarksResponseBody.json", "bookmarks": [{"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}, {"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.images.delete:
+    speakeasy-default-account-v1-images-delete:
+      requestBody:
+        application/json: {"imageIds": ["<value>", "<value>"]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeleteImagesResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.images.get:
+    speakeasy-default-account-v1-images-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetImagesResponseBody.json", "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}]}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.images.update:
+    speakeasy-default-account-v1-images-update:
+      requestBody:
+        application/json: {"images": []}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.images.upload:
+    speakeasy-default-account-v1-images-upload:
+      requestBody:
+        application/json: {"images": []}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UploadImagesResponseBody.json", "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}]}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+generatedTests: {}

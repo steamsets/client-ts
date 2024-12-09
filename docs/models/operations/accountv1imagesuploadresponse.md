@@ -1,11 +1,11 @@
-# AccountV1SettingsUploadImagesResponse
+# AccountV1ImagesUploadResponse
 
 ## Example Usage
 
 ```typescript
-import { AccountV1SettingsUploadImagesResponse } from "@steamsets/client-ts/models/operations";
+import { AccountV1ImagesUploadResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1SettingsUploadImagesResponse = {
+let value: AccountV1ImagesUploadResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },

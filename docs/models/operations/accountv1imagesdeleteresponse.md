@@ -1,11 +1,11 @@
-# AccountV1SettingsDeleteImagesResponse
+# AccountV1ImagesDeleteResponse
 
 ## Example Usage
 
 ```typescript
-import { AccountV1SettingsDeleteImagesResponse } from "@steamsets/client-ts/models/operations";
+import { AccountV1ImagesDeleteResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1SettingsDeleteImagesResponse = {
+let value: AccountV1ImagesDeleteResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },

@@ -27,12 +27,6 @@ import {
   DeveloperApp$outboundSchema,
 } from "./developerapp.js";
 import {
-  EmailNotification,
-  EmailNotification$inboundSchema,
-  EmailNotification$Outbound,
-  EmailNotification$outboundSchema,
-} from "./emailnotification.js";
-import {
   Image,
   Image$inboundSchema,
   Image$Outbound,
@@ -90,10 +84,6 @@ export type V1GetSettingsBody = {
    */
   email: string;
   /**
-   * The email notifications the account has
-   */
-  emailNotifications: Array<EmailNotification> | null;
-  /**
    * The time the email was verified
    */
   emailVerifiedAt: Date | null;
@@ -103,6 +93,8 @@ export type V1GetSettingsBody = {
   hidden: boolean;
   /**
    * The images the account has
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   images: Array<Image> | null;
   /**
@@ -157,7 +149,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   connections: z.nullable(z.array(Connection$inboundSchema)),
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.string(),
-  emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
   emailVerifiedAt: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
@@ -183,7 +174,6 @@ export type V1GetSettingsBody$Outbound = {
   connections: Array<Connection$Outbound> | null;
   developerApps: Array<DeveloperApp$Outbound> | null;
   email: string;
-  emailNotifications: Array<EmailNotification$Outbound> | null;
   emailVerifiedAt: string | null;
   hidden: boolean;
   images: Array<Image$Outbound> | null;
@@ -207,7 +197,6 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   connections: z.nullable(z.array(Connection$outboundSchema)),
   developerApps: z.nullable(z.array(DeveloperApp$outboundSchema)),
   email: z.string(),
-  emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
   emailVerifiedAt: z.nullable(z.date().transform(v => v.toISOString())),
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),

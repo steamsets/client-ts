@@ -7,12 +7,6 @@ import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  EmailNotification,
-  EmailNotification$inboundSchema,
-  EmailNotification$Outbound,
-  EmailNotification$outboundSchema,
-} from "./emailnotification.js";
 
 /**
  * The role the account should have between one of the 6 donation roles
@@ -59,10 +53,6 @@ export type V1UpdateSettingsRequestBody = {
    * The email the account should use, only if the account is private
    */
   email: string | null;
-  /**
-   * The email notifications the account wants
-   */
-  emailNotifications: Array<EmailNotification> | null;
   /**
    * Whether the account should be hidden in the leaderboards, only possible if the account is private
    */
@@ -136,7 +126,6 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
   color: z.string(),
   colors: z.string(),
   email: z.nullable(z.string()),
-  emailNotifications: z.nullable(z.array(EmailNotification$inboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
   role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema).optional(),
@@ -149,7 +138,6 @@ export type V1UpdateSettingsRequestBody$Outbound = {
   color: string;
   colors: string;
   email: string | null;
-  emailNotifications: Array<EmailNotification$Outbound> | null;
   hidden: boolean;
   language: string;
   role?: string | null | undefined;
@@ -166,7 +154,6 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
   color: z.string(),
   colors: z.string(),
   email: z.nullable(z.string()),
-  emailNotifications: z.nullable(z.array(EmailNotification$outboundSchema)),
   hidden: z.boolean(),
   language: z.string(),
   role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema).optional(),

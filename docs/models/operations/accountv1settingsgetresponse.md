@@ -15,7 +15,7 @@ let value: AccountV1SettingsGetResponse = {
   v1GetSettingsBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
     chosenRole: {
-      role: "staff",
+      role: "emerald",
       tier: "tier_1",
     },
     color: "#7652c9",
@@ -43,12 +43,6 @@ let value: AccountV1SettingsGetResponse = {
       },
     ],
     email: "steamsets@example.com",
-    emailNotifications: [
-      {
-        enabled: true,
-        type: "login",
-      },
-    ],
     emailVerifiedAt: new Date("2023-01-01T00:00:00Z"),
     hidden: true,
     images: [
@@ -74,7 +68,7 @@ let value: AccountV1SettingsGetResponse = {
     theme: "dark",
     vanity: "flo",
     vanityAnalytics: {
-      clicks: 653108,
+      clicks: 244425,
     },
   },
 };

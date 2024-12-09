@@ -3,6 +3,8 @@
  */
 
 import { accountAccountV1GetBadgeBookmarks } from "../funcs/accountAccountV1GetBadgeBookmarks.js";
+import { accountAccountV1ImagesGet } from "../funcs/accountAccountV1ImagesGet.js";
+import { accountAccountV1ImagesUpdate } from "../funcs/accountAccountV1ImagesUpdate.js";
 import { accountDeleteImages } from "../funcs/accountDeleteImages.js";
 import { accountGetApps } from "../funcs/accountGetApps.js";
 import { accountGetBadges } from "../funcs/accountGetBadges.js";
@@ -12,7 +14,6 @@ import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
-import { accountUpdateImage } from "../funcs/accountUpdateImage.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -24,7 +25,7 @@ export class Account extends ClientSDK {
   async deleteImages(
     request: components.V1DeleteImagesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsDeleteImagesResponse> {
+  ): Promise<operations.AccountV1ImagesDeleteResponse> {
     return unwrapAsync(accountDeleteImages(
       this,
       request,
@@ -87,6 +88,15 @@ export class Account extends ClientSDK {
     ));
   }
 
+  async accountV1ImagesGet(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1ImagesGetResponse> {
+    return unwrapAsync(accountAccountV1ImagesGet(
+      this,
+      options,
+    ));
+  }
+
   async getInfo(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -129,11 +139,11 @@ export class Account extends ClientSDK {
     ));
   }
 
-  async updateImage(
+  async accountV1ImagesUpdate(
     request: components.V1UpdateImageRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsUpdateImageResponse> {
-    return unwrapAsync(accountUpdateImage(
+  ): Promise<operations.AccountV1ImagesUpdateResponse> {
+    return unwrapAsync(accountAccountV1ImagesUpdate(
       this,
       request,
       options,
@@ -143,7 +153,7 @@ export class Account extends ClientSDK {
   async uploadImages(
     request: components.V1UploadImagesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsUploadImagesResponse> {
+  ): Promise<operations.AccountV1ImagesUploadResponse> {
     return unwrapAsync(accountUploadImages(
       this,
       request,

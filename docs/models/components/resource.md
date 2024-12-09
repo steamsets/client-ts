@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "account_queues",
+  resource: "social_links",
   value: "1",
 };
 ```

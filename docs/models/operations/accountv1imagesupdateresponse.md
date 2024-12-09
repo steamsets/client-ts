@@ -1,11 +1,11 @@
-# AccountV1SettingsUpdateImageResponse
+# AccountV1ImagesUpdateResponse
 
 ## Example Usage
 
 ```typescript
-import { AccountV1SettingsUpdateImageResponse } from "@steamsets/client-ts/models/operations";
+import { AccountV1ImagesUpdateResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1SettingsUpdateImageResponse = {
+let value: AccountV1ImagesUpdateResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },
@@ -15,7 +15,6 @@ let value: AccountV1SettingsUpdateImageResponse = {
   v1UpdateImageResponseBody: {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json",
-    key: "api_123",
   },
 };
 ```

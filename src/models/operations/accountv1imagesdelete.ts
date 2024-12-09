@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountV1SettingsDeleteImagesResponse = {
+export type AccountV1ImagesDeleteResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -20,8 +20,8 @@ export type AccountV1SettingsDeleteImagesResponse = {
 };
 
 /** @internal */
-export const AccountV1SettingsDeleteImagesResponse$inboundSchema: z.ZodType<
-  AccountV1SettingsDeleteImagesResponse,
+export const AccountV1ImagesDeleteResponse$inboundSchema: z.ZodType<
+  AccountV1ImagesDeleteResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -36,7 +36,7 @@ export const AccountV1SettingsDeleteImagesResponse$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountV1SettingsDeleteImagesResponse$Outbound = {
+export type AccountV1ImagesDeleteResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   V1DeleteImagesResponseBody?:
     | components.V1DeleteImagesResponseBody$Outbound
@@ -44,10 +44,10 @@ export type AccountV1SettingsDeleteImagesResponse$Outbound = {
 };
 
 /** @internal */
-export const AccountV1SettingsDeleteImagesResponse$outboundSchema: z.ZodType<
-  AccountV1SettingsDeleteImagesResponse$Outbound,
+export const AccountV1ImagesDeleteResponse$outboundSchema: z.ZodType<
+  AccountV1ImagesDeleteResponse$Outbound,
   z.ZodTypeDef,
-  AccountV1SettingsDeleteImagesResponse
+  AccountV1ImagesDeleteResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   v1DeleteImagesResponseBody: components
@@ -63,34 +63,31 @@ export const AccountV1SettingsDeleteImagesResponse$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountV1SettingsDeleteImagesResponse$ {
-  /** @deprecated use `AccountV1SettingsDeleteImagesResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    AccountV1SettingsDeleteImagesResponse$inboundSchema;
-  /** @deprecated use `AccountV1SettingsDeleteImagesResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountV1SettingsDeleteImagesResponse$outboundSchema;
-  /** @deprecated use `AccountV1SettingsDeleteImagesResponse$Outbound` instead. */
-  export type Outbound = AccountV1SettingsDeleteImagesResponse$Outbound;
+export namespace AccountV1ImagesDeleteResponse$ {
+  /** @deprecated use `AccountV1ImagesDeleteResponse$inboundSchema` instead. */
+  export const inboundSchema = AccountV1ImagesDeleteResponse$inboundSchema;
+  /** @deprecated use `AccountV1ImagesDeleteResponse$outboundSchema` instead. */
+  export const outboundSchema = AccountV1ImagesDeleteResponse$outboundSchema;
+  /** @deprecated use `AccountV1ImagesDeleteResponse$Outbound` instead. */
+  export type Outbound = AccountV1ImagesDeleteResponse$Outbound;
 }
 
-export function accountV1SettingsDeleteImagesResponseToJSON(
-  accountV1SettingsDeleteImagesResponse: AccountV1SettingsDeleteImagesResponse,
+export function accountV1ImagesDeleteResponseToJSON(
+  accountV1ImagesDeleteResponse: AccountV1ImagesDeleteResponse,
 ): string {
   return JSON.stringify(
-    AccountV1SettingsDeleteImagesResponse$outboundSchema.parse(
-      accountV1SettingsDeleteImagesResponse,
+    AccountV1ImagesDeleteResponse$outboundSchema.parse(
+      accountV1ImagesDeleteResponse,
     ),
   );
 }
 
-export function accountV1SettingsDeleteImagesResponseFromJSON(
+export function accountV1ImagesDeleteResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AccountV1SettingsDeleteImagesResponse, SDKValidationError> {
+): SafeParseResult<AccountV1ImagesDeleteResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AccountV1SettingsDeleteImagesResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountV1SettingsDeleteImagesResponse' from JSON`,
+    (x) => AccountV1ImagesDeleteResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1ImagesDeleteResponse' from JSON`,
   );
 }

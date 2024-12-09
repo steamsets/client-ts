@@ -10,12 +10,6 @@ let value: AccountV1SettingsUpdateRequest = {
     color: "#7652c9",
     colors: "#7652c9",
     email: "steamsets@example.com",
-    emailNotifications: [
-      {
-        enabled: true,
-        type: "login",
-      },
-    ],
     hidden: true,
     language: "en",
     theme: "dark",

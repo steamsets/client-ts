@@ -23,13 +23,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function settingsUploadImages(
+export async function imagesUploadImages(
   client: SteamSetsCore,
   request: components.V1UploadImagesRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsUploadImagesResponse,
+    operations.AccountV1ImagesUploadResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -63,7 +63,7 @@ export async function settingsUploadImages(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.upload-images",
+    operationID: "account.v1.images.upload",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,14 +75,14 @@ export async function settingsUploadImages(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -115,7 +115,7 @@ export async function settingsUploadImages(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsUploadImagesResponse,
+    operations.AccountV1ImagesUploadResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,11 +125,9 @@ export async function settingsUploadImages(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.AccountV1SettingsUploadImagesResponse$inboundSchema,
-      { key: "V1UploadImagesResponseBody" },
-    ),
+    M.json(200, operations.AccountV1ImagesUploadResponse$inboundSchema, {
+      key: "V1UploadImagesResponseBody",
+    }),
     M.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

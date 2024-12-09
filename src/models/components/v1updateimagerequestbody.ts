@@ -6,16 +6,18 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  V1UpdateImage,
+  V1UpdateImage$inboundSchema,
+  V1UpdateImage$Outbound,
+  V1UpdateImage$outboundSchema,
+} from "./v1updateimage.js";
 
 export type V1UpdateImageRequestBody = {
   /**
-   * Whether the image is active or not, only one of each type can be active
+   * The images to update
    */
-  active: boolean;
-  /**
-   * The image id to update
-   */
-  imageId: string;
+  images: Array<V1UpdateImage> | null;
 };
 
 /** @internal */
@@ -24,14 +26,12 @@ export const V1UpdateImageRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  active: z.boolean(),
-  imageId: z.string(),
+  images: z.nullable(z.array(V1UpdateImage$inboundSchema)),
 });
 
 /** @internal */
 export type V1UpdateImageRequestBody$Outbound = {
-  active: boolean;
-  imageId: string;
+  images: Array<V1UpdateImage$Outbound> | null;
 };
 
 /** @internal */
@@ -40,8 +40,7 @@ export const V1UpdateImageRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1UpdateImageRequestBody
 > = z.object({
-  active: z.boolean(),
-  imageId: z.string(),
+  images: z.nullable(z.array(V1UpdateImage$outboundSchema)),
 });
 
 /**

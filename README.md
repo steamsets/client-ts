@@ -81,11 +81,12 @@ run();
 * [getBadges](docs/sdks/account/README.md#getbadges)
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints)
 * [getFriends](docs/sdks/account/README.md#getfriends)
+* [accountV1ImagesGet](docs/sdks/account/README.md#accountv1imagesget)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
-* [updateImage](docs/sdks/account/README.md#updateimage)
+* [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [verifyEmail](docs/sdks/account/README.md#verifyemail)
 
@@ -137,6 +138,13 @@ run();
 * [deleteDeveloperApp](docs/sdks/developer/README.md#deletedeveloperapp)
 * [updateApp](docs/sdks/developer/README.md#updateapp)
 
+### [images](docs/sdks/images/README.md)
+
+* [deleteImages](docs/sdks/images/README.md#deleteimages)
+* [accountV1ImagesGet](docs/sdks/images/README.md#accountv1imagesget)
+* [accountV1ImagesUpdate](docs/sdks/images/README.md#accountv1imagesupdate)
+* [uploadImages](docs/sdks/images/README.md#uploadimages)
+
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount)
@@ -177,12 +185,9 @@ run();
 
 ### [settings](docs/sdks/settings/README.md)
 
-* [deleteImages](docs/sdks/settings/README.md#deleteimages)
 * [get](docs/sdks/settings/README.md#get)
 * [sendEmailVerification](docs/sdks/settings/README.md#sendemailverification)
-* [updateImage](docs/sdks/settings/README.md#updateimage)
 * [update](docs/sdks/settings/README.md#update)
-* [uploadImages](docs/sdks/settings/README.md#uploadimages)
 * [verifyEmail](docs/sdks/settings/README.md#verifyemail)
 
 
@@ -537,6 +542,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 <summary>Available standalone functions</summary>
 
 - [`accountAccountV1GetBadgeBookmarks`](docs/sdks/account/README.md#accountv1getbadgebookmarks)
+- [`accountAccountV1ImagesGet`](docs/sdks/account/README.md#accountv1imagesget)
+- [`accountAccountV1ImagesUpdate`](docs/sdks/account/README.md#accountv1imagesupdate)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
 - [`accountGetApps`](docs/sdks/account/README.md#getapps)
 - [`accountGetBadges`](docs/sdks/account/README.md#getbadges)
@@ -547,7 +554,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
-- [`accountUpdateImage`](docs/sdks/account/README.md#updateimage)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
 - [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
@@ -573,6 +579,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
 - [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
+- [`imagesAccountV1ImagesGet`](docs/sdks/images/README.md#accountv1imagesget)
+- [`imagesAccountV1ImagesUpdate`](docs/sdks/images/README.md#accountv1imagesupdate)
+- [`imagesDeleteImages`](docs/sdks/images/README.md#deleteimages)
+- [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
@@ -590,12 +600,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`sessionLogin`](docs/sdks/session/README.md#login)
 - [`sessionsDelete`](docs/sdks/sessions/README.md#delete)
 - [`sessionsGet`](docs/sdks/sessions/README.md#get)
-- [`settingsDeleteImages`](docs/sdks/settings/README.md#deleteimages)
 - [`settingsGet`](docs/sdks/settings/README.md#get)
 - [`settingsSendEmailVerification`](docs/sdks/settings/README.md#sendemailverification)
 - [`settingsUpdate`](docs/sdks/settings/README.md#update)
-- [`settingsUpdateImage`](docs/sdks/settings/README.md#updateimage)
-- [`settingsUploadImages`](docs/sdks/settings/README.md#uploadimages)
 - [`settingsVerifyEmail`](docs/sdks/settings/README.md#verifyemail)
 
 </details>
@@ -626,18 +633,25 @@ const sdk = new SteamSets({ debugLogger: console });
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [openapi](#openapi)
+  * [SDK Installation](#sdk-installation)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+  * [Special Types](#special-types)
+  * [SDK Installation](#sdk-installation-1)
+  * [Requirements](#requirements)
+  * [Standalone functions](#standalone-functions)
+  * [Debugging](#debugging)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
-* [SDK Installation](#sdk-installation)
-* [Requirements](#requirements)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Standalone functions](#standalone-functions)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
