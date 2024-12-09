@@ -29,7 +29,7 @@ export async function accountUploadImages(
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsUploadImagesResponse,
+    operations.AccountV1ImagesUploadResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -63,7 +63,7 @@ export async function accountUploadImages(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.upload-images",
+    operationID: "account.v1.images.upload",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,14 +75,14 @@ export async function accountUploadImages(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -115,7 +115,7 @@ export async function accountUploadImages(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsUploadImagesResponse,
+    operations.AccountV1ImagesUploadResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,11 +125,9 @@ export async function accountUploadImages(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.AccountV1SettingsUploadImagesResponse$inboundSchema,
-      { key: "V1UploadImagesResponseBody" },
-    ),
+    M.json(200, operations.AccountV1ImagesUploadResponse$inboundSchema, {
+      key: "V1UploadImagesResponseBody",
+    }),
     M.jsonErr([422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

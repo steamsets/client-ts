@@ -13,11 +13,12 @@ Account related operations
 * [getBadges](#getbadges)
 * [getDataPoints](#getdatapoints)
 * [getFriends](#getfriends)
+* [accountV1ImagesGet](#accountv1imagesget)
 * [getInfo](#getinfo)
 * [getLeaderboardHistory](#getleaderboardhistory)
 * [getStaff](#getstaff)
 * [sendEmailVerification](#sendemailverification)
-* [updateImage](#updateimage)
+* [accountV1ImagesUpdate](#accountv1imagesupdate)
 * [uploadImages](#uploadimages)
 * [verifyEmail](#verifyemail)
 
@@ -35,6 +36,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.deleteImages({
     imageIds: [
+      "<value>",
       "<value>",
     ],
   });
@@ -64,6 +66,7 @@ async function run() {
   const res = await accountDeleteImages(steamSets, {
     imageIds: [
       "<value>",
+      "<value>",
     ],
   });
 
@@ -91,7 +94,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AccountV1SettingsDeleteImagesResponse](../../models/operations/accountv1settingsdeleteimagesresponse.md)\>**
+**Promise\<[operations.AccountV1ImagesDeleteResponse](../../models/operations/accountv1imagesdeleteresponse.md)\>**
 
 ### Errors
 
@@ -455,6 +458,76 @@ run();
 | errors.ErrorModel        | 400, 403, 404, 422, 500  | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## accountV1ImagesGet
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountV1ImagesGet();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountV1ImagesGet } from "@steamsets/client-ts/funcs/accountAccountV1ImagesGet.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountV1ImagesGet(steamSets);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountV1ImagesGetResponse](../../models/operations/accountv1imagesgetresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## getInfo
 
 ### Example Usage
@@ -738,7 +811,7 @@ run();
 | errors.ErrorModel        | 404, 422, 429, 500       | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## updateImage
+## accountV1ImagesUpdate
 
 ### Example Usage
 
@@ -750,9 +823,13 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.updateImage({
-    active: true,
-    imageId: "123456",
+  const result = await steamSets.account.accountV1ImagesUpdate({
+    images: [
+      {
+        active: true,
+        imageId: "123456",
+      },
+    ],
   });
 
   // Handle the result
@@ -768,7 +845,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountUpdateImage } from "@steamsets/client-ts/funcs/accountUpdateImage.js";
+import { accountAccountV1ImagesUpdate } from "@steamsets/client-ts/funcs/accountAccountV1ImagesUpdate.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -777,9 +854,13 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountUpdateImage(steamSets, {
-    active: true,
-    imageId: "123456",
+  const res = await accountAccountV1ImagesUpdate(steamSets, {
+    images: [
+      {
+        active: true,
+        imageId: "123456",
+      },
+    ],
   });
 
   if (!res.ok) {
@@ -806,7 +887,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AccountV1SettingsUpdateImageResponse](../../models/operations/accountv1settingsupdateimageresponse.md)\>**
+**Promise\<[operations.AccountV1ImagesUpdateResponse](../../models/operations/accountv1imagesupdateresponse.md)\>**
 
 ### Errors
 
@@ -891,7 +972,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AccountV1SettingsUploadImagesResponse](../../models/operations/accountv1settingsuploadimagesresponse.md)\>**
+**Promise\<[operations.AccountV1ImagesUploadResponse](../../models/operations/accountv1imagesuploadresponse.md)\>**
 
 ### Errors
 

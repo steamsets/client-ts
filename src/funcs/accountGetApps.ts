@@ -75,14 +75,14 @@ export async function accountGetApps(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {

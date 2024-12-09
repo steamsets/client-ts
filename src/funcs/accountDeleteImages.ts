@@ -29,7 +29,7 @@ export async function accountDeleteImages(
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsDeleteImagesResponse,
+    operations.AccountV1ImagesDeleteResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -63,7 +63,7 @@ export async function accountDeleteImages(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.delete-images",
+    operationID: "account.v1.images.delete",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,14 +75,14 @@ export async function accountDeleteImages(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -115,7 +115,7 @@ export async function accountDeleteImages(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsDeleteImagesResponse,
+    operations.AccountV1ImagesDeleteResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,11 +125,9 @@ export async function accountDeleteImages(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.AccountV1SettingsDeleteImagesResponse$inboundSchema,
-      { key: "V1DeleteImagesResponseBody" },
-    ),
+    M.json(200, operations.AccountV1ImagesDeleteResponse$inboundSchema, {
+      key: "V1DeleteImagesResponseBody",
+    }),
     M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

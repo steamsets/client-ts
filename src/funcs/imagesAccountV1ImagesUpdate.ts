@@ -23,13 +23,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function settingsUpdateImage(
+export async function imagesAccountV1ImagesUpdate(
   client: SteamSetsCore,
   request: components.V1UpdateImageRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsUpdateImageResponse,
+    operations.AccountV1ImagesUpdateResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -51,7 +51,7 @@ export async function settingsUpdateImage(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/UpdateImage")();
+  const path = pathToFunc("/account.v1.AccountService/UpdateImages")();
 
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -63,7 +63,7 @@ export async function settingsUpdateImage(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.update-image",
+    operationID: "account.v1.images.update",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,14 +75,14 @@ export async function settingsUpdateImage(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -115,7 +115,7 @@ export async function settingsUpdateImage(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsUpdateImageResponse,
+    operations.AccountV1ImagesUpdateResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,7 +125,7 @@ export async function settingsUpdateImage(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SettingsUpdateImageResponse$inboundSchema, {
+    M.json(200, operations.AccountV1ImagesUpdateResponse$inboundSchema, {
       key: "V1UpdateImageResponseBody",
     }),
     M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {

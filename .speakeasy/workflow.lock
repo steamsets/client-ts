@@ -1,12 +1,13 @@
-speakeasyVersion: 1.444.1
+speakeasyVersion: 1.453.4
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:1091d82628ceadf65375cde503b4b442f0d538f31e40036005d7273560a0a9b8
-        sourceBlobDigest: sha256:e04d5723569b01b1e6cd535cf2b4062533d9ea21329304798619d4edb7801289
+        sourceRevisionDigest: sha256:771f1310928c9e04cb8fb52479a30ab7a70f5c75d9a1e8c934e55c01575db9ab
+        sourceBlobDigest: sha256:bd6593e00ad7b21256f947fcb277ab3e58a93dd3a8578c634a81a52f566a8fa0
         tags:
             - latest
-            - speakeasy-sdk-regen-1732402486
+            - speakeasy-sdk-regen-1733696813
+            - 1.0.0
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
         sourceRevisionDigest: sha256:30a9312dee5e350dcebe7a8d25d7040cdd39d7f9e02c75a183b6fd046a69e405
@@ -18,10 +19,10 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:1091d82628ceadf65375cde503b4b442f0d538f31e40036005d7273560a0a9b8
-        sourceBlobDigest: sha256:e04d5723569b01b1e6cd535cf2b4062533d9ea21329304798619d4edb7801289
-        codeSamplesNamespace: api-code-samples
-        codeSamplesRevisionDigest: sha256:c62aa3e246f8704d955fe8a8e077d793005137569548ba7078c11529c5f1b8c8
+        sourceRevisionDigest: sha256:771f1310928c9e04cb8fb52479a30ab7a70f5c75d9a1e8c934e55c01575db9ab
+        sourceBlobDigest: sha256:bd6593e00ad7b21256f947fcb277ab3e58a93dd3a8578c634a81a52f566a8fa0
+        codeSamplesNamespace: api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:0bfebca07db4417685a86a84153257d3fb8e1382b6d38fdc4494a14c5d619d80
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -42,5 +43,5 @@ workflow:
                     token: $npm_token
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/steamsets/steamsets/api-code-samples
+                    location: registry.speakeasyapi.dev/steamsets/steamsets/api-typescript-code-samples
                 blocking: false

@@ -19,13 +19,13 @@ let value: AccountV1SessionGetResponse = {
     name: "flo",
     resources: [
       {
-        resource: "beta_access",
+        resource: "avatar_frame",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 466311,
+        rating: 653108,
         role: "partner",
       },
     ],

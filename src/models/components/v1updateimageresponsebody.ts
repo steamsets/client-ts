@@ -13,10 +13,6 @@ export type V1UpdateImageResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  /**
-   * The generated API Key
-   */
-  key: string;
 };
 
 /** @internal */
@@ -26,7 +22,6 @@ export const V1UpdateImageResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  key: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -36,7 +31,6 @@ export const V1UpdateImageResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1UpdateImageResponseBody$Outbound = {
   $schema?: string | undefined;
-  key: string;
 };
 
 /** @internal */
@@ -46,7 +40,6 @@ export const V1UpdateImageResponseBody$outboundSchema: z.ZodType<
   V1UpdateImageResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  key: z.string(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

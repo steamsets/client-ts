@@ -5,7 +5,7 @@
 ```typescript
 import { ChosenRoleRole } from "@steamsets/client-ts/models/components";
 
-let value: ChosenRoleRole = "top_100";
+let value: ChosenRoleRole = "ruby";
 ```
 
 ## Values

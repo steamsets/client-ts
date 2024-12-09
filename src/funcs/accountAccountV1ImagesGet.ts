@@ -3,13 +3,10 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -23,13 +20,12 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function accountUpdateImage(
+export async function accountAccountV1ImagesGet(
   client: SteamSetsCore,
-  request: components.V1UpdateImageRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsUpdateImageResponse,
+    operations.AccountV1ImagesGetResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -40,21 +36,9 @@ export async function accountUpdateImage(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) => components.V1UpdateImageRequestBody$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/account.v1.AccountService/UpdateImage")();
+  const path = pathToFunc("/account.v1.AccountService/GetImages")();
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -63,7 +47,7 @@ export async function accountUpdateImage(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.update-image",
+    operationID: "account.v1.images.get",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -75,14 +59,14 @@ export async function accountUpdateImage(
         strategy: "backoff",
         backoff: {
           initialInterval: 500,
-          maxInterval: 60000,
+          maxInterval: 5000,
           exponent: 1.5,
-          maxElapsedTime: 3600000,
+          maxElapsedTime: 60000,
         },
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["500", "501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -90,7 +74,6 @@ export async function accountUpdateImage(
     method: "POST",
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -101,7 +84,7 @@ export async function accountUpdateImage(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -115,7 +98,7 @@ export async function accountUpdateImage(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsUpdateImageResponse,
+    operations.AccountV1ImagesGetResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -125,10 +108,10 @@ export async function accountUpdateImage(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SettingsUpdateImageResponse$inboundSchema, {
-      key: "V1UpdateImageResponseBody",
+    M.json(200, operations.AccountV1ImagesGetResponse$inboundSchema, {
+      key: "V1GetImagesResponseBody",
     }),
-    M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

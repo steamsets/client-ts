@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountV1SettingsUpdateImageResponse = {
+export type AccountV1ImagesUpdateResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -18,8 +18,8 @@ export type AccountV1SettingsUpdateImageResponse = {
 };
 
 /** @internal */
-export const AccountV1SettingsUpdateImageResponse$inboundSchema: z.ZodType<
-  AccountV1SettingsUpdateImageResponse,
+export const AccountV1ImagesUpdateResponse$inboundSchema: z.ZodType<
+  AccountV1ImagesUpdateResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -34,7 +34,7 @@ export const AccountV1SettingsUpdateImageResponse$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountV1SettingsUpdateImageResponse$Outbound = {
+export type AccountV1ImagesUpdateResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   V1UpdateImageResponseBody?:
     | components.V1UpdateImageResponseBody$Outbound
@@ -42,10 +42,10 @@ export type AccountV1SettingsUpdateImageResponse$Outbound = {
 };
 
 /** @internal */
-export const AccountV1SettingsUpdateImageResponse$outboundSchema: z.ZodType<
-  AccountV1SettingsUpdateImageResponse$Outbound,
+export const AccountV1ImagesUpdateResponse$outboundSchema: z.ZodType<
+  AccountV1ImagesUpdateResponse$Outbound,
   z.ZodTypeDef,
-  AccountV1SettingsUpdateImageResponse
+  AccountV1ImagesUpdateResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   v1UpdateImageResponseBody: components.V1UpdateImageResponseBody$outboundSchema
@@ -61,34 +61,31 @@ export const AccountV1SettingsUpdateImageResponse$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountV1SettingsUpdateImageResponse$ {
-  /** @deprecated use `AccountV1SettingsUpdateImageResponse$inboundSchema` instead. */
-  export const inboundSchema =
-    AccountV1SettingsUpdateImageResponse$inboundSchema;
-  /** @deprecated use `AccountV1SettingsUpdateImageResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountV1SettingsUpdateImageResponse$outboundSchema;
-  /** @deprecated use `AccountV1SettingsUpdateImageResponse$Outbound` instead. */
-  export type Outbound = AccountV1SettingsUpdateImageResponse$Outbound;
+export namespace AccountV1ImagesUpdateResponse$ {
+  /** @deprecated use `AccountV1ImagesUpdateResponse$inboundSchema` instead. */
+  export const inboundSchema = AccountV1ImagesUpdateResponse$inboundSchema;
+  /** @deprecated use `AccountV1ImagesUpdateResponse$outboundSchema` instead. */
+  export const outboundSchema = AccountV1ImagesUpdateResponse$outboundSchema;
+  /** @deprecated use `AccountV1ImagesUpdateResponse$Outbound` instead. */
+  export type Outbound = AccountV1ImagesUpdateResponse$Outbound;
 }
 
-export function accountV1SettingsUpdateImageResponseToJSON(
-  accountV1SettingsUpdateImageResponse: AccountV1SettingsUpdateImageResponse,
+export function accountV1ImagesUpdateResponseToJSON(
+  accountV1ImagesUpdateResponse: AccountV1ImagesUpdateResponse,
 ): string {
   return JSON.stringify(
-    AccountV1SettingsUpdateImageResponse$outboundSchema.parse(
-      accountV1SettingsUpdateImageResponse,
+    AccountV1ImagesUpdateResponse$outboundSchema.parse(
+      accountV1ImagesUpdateResponse,
     ),
   );
 }
 
-export function accountV1SettingsUpdateImageResponseFromJSON(
+export function accountV1ImagesUpdateResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AccountV1SettingsUpdateImageResponse, SDKValidationError> {
+): SafeParseResult<AccountV1ImagesUpdateResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AccountV1SettingsUpdateImageResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountV1SettingsUpdateImageResponse' from JSON`,
+    (x) => AccountV1ImagesUpdateResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1ImagesUpdateResponse' from JSON`,
   );
 }
