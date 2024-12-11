@@ -14,7 +14,7 @@ let value: AccountV1SessionLoginRequest = {
     openidNs: "http://specs.openid.net/auth/2.0",
     openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
     openidResponseNonce: "123456",
-    openidReturnTo: "https://steamsets.com/api/v1/openid/login",
+    openidReturnTo: "https://example.com",
     openidSig: "123456",
     openidSigned: "123456",
   },
