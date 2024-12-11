@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 5b288f0bd7470b193c9b1372fb0650ac
+  docChecksum: cbc49c24c4a1dbf36bc9c8eee4a68155
   docVersion: 1.0.0
-  speakeasyVersion: 1.453.4
-  generationVersion: 2.474.6
-  releaseVersion: 0.14.0
-  configChecksum: 01ad0c4655adf9511241938492f741fb
+  speakeasyVersion: 1.454.0
+  generationVersion: 2.477.0
+  releaseVersion: 0.14.1
+  configChecksum: e8c9f032b6efc41efd8e166864e10744
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.8
+    core: 3.18.9
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -658,7 +658,7 @@ examples:
   account.v1.session.login:
     speakeasy-default-account-v1-session-login:
       requestBody:
-        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://steamsets.com/api/v1/openid/login", "openid_sig": "123456", "openid_signed": "123456"}
+        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://example.com", "openid_sig": "123456", "openid_signed": "123456"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "sessionToken": "123456", "steamId": "76561198842603734"}

@@ -13,7 +13,7 @@ let value: LoginRequestBody = {
   openidNs: "http://specs.openid.net/auth/2.0",
   openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
   openidResponseNonce: "123456",
-  openidReturnTo: "https://steamsets.com/api/v1/openid/login",
+  openidReturnTo: "https://example.com",
   openidSig: "123456",
   openidSigned: "123456",
 };
@@ -30,6 +30,6 @@ let value: LoginRequestBody = {
 | `openidNs`                                | *string*                                  | :heavy_check_mark:                        | The namespace of the login                | http://specs.openid.net/auth/2.0          |
 | `openidOpEndpoint`                        | *string*                                  | :heavy_check_mark:                        | The endpoint of the login                 | https://steamsets.com/api/v1/openid/login |
 | `openidResponseNonce`                     | *string*                                  | :heavy_check_mark:                        | The response nonce of the login           | 123456                                    |
-| `openidReturnTo`                          | *string*                                  | :heavy_check_mark:                        | The return to of the login                | https://steamsets.com/api/v1/openid/login |
+| `openidReturnTo`                          | *string*                                  | :heavy_check_mark:                        | The return to of the login                | https://example.com                       |
 | `openidSig`                               | *string*                                  | :heavy_check_mark:                        | The sig of the login                      | 123456                                    |
 | `openidSigned`                            | *string*                                  | :heavy_check_mark:                        | The signed of the login                   | 123456                                    |
