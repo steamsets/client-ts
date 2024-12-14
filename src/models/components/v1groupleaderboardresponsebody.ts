@@ -20,6 +20,10 @@ export type V1GroupLeaderboardResponseBody = {
    */
   dollarSchema?: string | undefined;
   groups: Array<V1GroupLeaderboardGroup> | null;
+  /**
+   * The number of accounts that are ranked in the leaderboard
+   */
+  rankedOutOf?: number | undefined;
   steamSetsGroup: V1GroupLeaderboardGroup;
 };
 
@@ -31,6 +35,7 @@ export const V1GroupLeaderboardResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   groups: z.nullable(z.array(V1GroupLeaderboardGroup$inboundSchema)),
+  rankedOutOf: z.number().int().default(0),
   steamSetsGroup: V1GroupLeaderboardGroup$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
@@ -42,6 +47,7 @@ export const V1GroupLeaderboardResponseBody$inboundSchema: z.ZodType<
 export type V1GroupLeaderboardResponseBody$Outbound = {
   $schema?: string | undefined;
   groups: Array<V1GroupLeaderboardGroup$Outbound> | null;
+  rankedOutOf: number;
   steamSetsGroup: V1GroupLeaderboardGroup$Outbound;
 };
 
@@ -53,6 +59,7 @@ export const V1GroupLeaderboardResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   groups: z.nullable(z.array(V1GroupLeaderboardGroup$outboundSchema)),
+  rankedOutOf: z.number().int().default(0),
   steamSetsGroup: V1GroupLeaderboardGroup$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
