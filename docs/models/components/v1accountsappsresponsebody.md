@@ -16,7 +16,6 @@ let value: V1AccountsAppsResponseBody = {
       name: "Counter-Strike: Global Offensive",
       playtime: 123456,
       price: 1200,
-      shortName: "csgo",
     },
   ],
 };

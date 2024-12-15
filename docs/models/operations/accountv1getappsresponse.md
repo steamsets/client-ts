@@ -23,7 +23,6 @@ let value: AccountV1GetAppsResponse = {
         name: "Counter-Strike: Global Offensive",
         playtime: 123456,
         price: 1200,
-        shortName: "csgo",
       },
     ],
   },

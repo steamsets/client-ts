@@ -14,7 +14,6 @@ let value: V1AppBadge = {
   appId: 248753,
   appImage: "<value>",
   appName: "<value>",
-  appShortName: "<value>",
   badgeImage: "<value>",
   baseLevel: 576157,
   baseXp: 592042,
@@ -40,7 +39,6 @@ let value: V1AppBadge = {
 | `appId`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `appImage`                                                                                    | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `appName`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `appShortName`                                                                                | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `badgeImage`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `baseLevel`                                                                                   | *number*                                                                                      | :heavy_check_mark:                                                                            | The level this badge starts at                                                                |
 | `baseXp`                                                                                      | *number*                                                                                      | :heavy_check_mark:                                                                            | The XP the badge gives per level                                                              |

@@ -17,7 +17,6 @@ let value: V1BadgesResponseBody = {
       appId: 183191,
       appImage: "<value>",
       appName: "<value>",
-      appShortName: "<value>",
       badgeImage: "<value>",
       baseLevel: 586513,
       baseXp: 20107,

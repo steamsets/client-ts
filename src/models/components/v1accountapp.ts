@@ -28,10 +28,6 @@ export type V1AccountApp = {
    * How much the app costs
    */
   price: number;
-  /**
-   * The App's short name
-   */
-  shortName: string;
 };
 
 /** @internal */
@@ -45,7 +41,6 @@ export const V1AccountApp$inboundSchema: z.ZodType<
   name: z.string(),
   playtime: z.number().int(),
   price: z.number().int(),
-  shortName: z.string(),
 });
 
 /** @internal */
@@ -55,7 +50,6 @@ export type V1AccountApp$Outbound = {
   name: string;
   playtime: number;
   price: number;
-  shortName: string;
 };
 
 /** @internal */
@@ -69,7 +63,6 @@ export const V1AccountApp$outboundSchema: z.ZodType<
   name: z.string(),
   playtime: z.number().int(),
   price: z.number().int(),
-  shortName: z.string(),
 });
 
 /**

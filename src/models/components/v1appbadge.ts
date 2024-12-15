@@ -18,7 +18,6 @@ export type V1AppBadge = {
   appId: number;
   appImage: string;
   appName: string;
-  appShortName: string;
   badgeImage: string;
   /**
    * The level this badge starts at
@@ -51,7 +50,6 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
-  appShortName: z.string(),
   badgeImage: z.string(),
   baseLevel: z.number().int(),
   baseXp: z.number().int(),
@@ -78,7 +76,6 @@ export type V1AppBadge$Outbound = {
   appId: number;
   appImage: string;
   appName: string;
-  appShortName: string;
   badgeImage: string;
   baseLevel: number;
   baseXp: number;
@@ -105,7 +102,6 @@ export const V1AppBadge$outboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
-  appShortName: z.string(),
   badgeImage: z.string(),
   baseLevel: z.number().int(),
   baseXp: z.number().int(),
