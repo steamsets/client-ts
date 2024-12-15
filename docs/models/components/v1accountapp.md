@@ -12,7 +12,6 @@ let value: V1AccountApp = {
   name: "Counter-Strike: Global Offensive",
   playtime: 123456,
   price: 1200,
-  shortName: "csgo",
 };
 ```
 
@@ -25,4 +24,3 @@ let value: V1AccountApp = {
 | `name`                                                                                                            | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The App's name                                                                                                    | Counter-Strike: Global Offensive                                                                                  |
 | `playtime`                                                                                                        | *number*                                                                                                          | :heavy_check_mark:                                                                                                | The Account's playtime in the App                                                                                 | 123456                                                                                                            |
 | `price`                                                                                                           | *number*                                                                                                          | :heavy_check_mark:                                                                                                | How much the app costs                                                                                            | 1200                                                                                                              |
-| `shortName`                                                                                                       | *string*                                                                                                          | :heavy_check_mark:                                                                                                | The App's short name                                                                                              | csgo                                                                                                              |

@@ -24,7 +24,6 @@ let value: AccountV1GetBadgesResponse = {
         appId: 602763,
         appImage: "<value>",
         appName: "<value>",
-        appShortName: "<value>",
         badgeImage: "<value>",
         baseLevel: 544883,
         baseXp: 423655,
