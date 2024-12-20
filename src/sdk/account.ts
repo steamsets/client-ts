@@ -45,12 +45,10 @@ export class Account extends ClientSDK {
   }
 
   async accountV1GetBadgeBookmarks(
-    request: components.V1AccountBadgeBookmarksRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgeBookmarksResponse> {
     return unwrapAsync(accountAccountV1GetBadgeBookmarks(
       this,
-      request,
       options,
     ));
   }

@@ -52,14 +52,14 @@ let value: AdminV1GetAccountResponse = {
     region: "Europe",
     resources: [
       {
-        resource: "avatar_frame",
+        resource: "max_leaderboard_entries",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 110375,
-        role: "diamond",
+        rating: 64147,
+        role: "contributor",
       },
     ],
     sessions: [

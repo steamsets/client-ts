@@ -72,6 +72,7 @@ export async function locationsGet(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "GET",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     uaHeader: "x-speakeasy-user-agent",

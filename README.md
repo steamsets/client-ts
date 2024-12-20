@@ -107,6 +107,7 @@ run();
 * [accountV1BookmarkBadge](docs/sdks/badge/README.md#accountv1bookmarkbadge)
 * [accountV1GetBadgeBookmarks](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
 * [getTags](docs/sdks/badge/README.md#gettags)
+* [badgeV1Search](docs/sdks/badge/README.md#badgev1search)
 
 ### [badges](docs/sdks/badges/README.md)
 
@@ -565,6 +566,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`badgeAccountV1BookmarkBadge`](docs/sdks/badge/README.md#accountv1bookmarkbadge)
 - [`badgeAccountV1GetBadgeBookmarks`](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
+- [`badgeBadgeV1Search`](docs/sdks/badge/README.md#badgev1search)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)

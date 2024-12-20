@@ -12,16 +12,11 @@ let value: BadgeV1TagResponse = {
     }),
     request: new Request("https://example.com"),
   },
-  v1BadgeTagResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json",
-  },
 };
 ```
 
 ## Fields
 
-| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                             | [components.HTTPMetadata](../../models/components/httpmetadata.md)                     | :heavy_check_mark:                                                                     | N/A                                                                                    |
-| `v1BadgeTagResponseBody`                                                               | [components.V1BadgeTagResponseBody](../../models/components/v1badgetagresponsebody.md) | :heavy_minus_sign:                                                                     | OK                                                                                     |
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `httpMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |
