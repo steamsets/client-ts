@@ -8,6 +8,7 @@
 * [accountV1BookmarkBadge](#accountv1bookmarkbadge)
 * [accountV1GetBadgeBookmarks](#accountv1getbadgebookmarks)
 * [getTags](#gettags)
+* [badgeV1Search](#badgev1search)
 
 ## accountV1BookmarkBadge
 
@@ -98,7 +99,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1GetBadgeBookmarks({});
+  const result = await steamSets.badge.accountV1GetBadgeBookmarks();
 
   // Handle the result
   console.log(result);
@@ -122,7 +123,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await badgeAccountV1GetBadgeBookmarks(steamSets, {});
+  const res = await badgeAccountV1GetBadgeBookmarks(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -141,7 +142,6 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountBadgeBookmarksRequestBody](../../models/components/v1accountbadgebookmarksrequestbody.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -154,7 +154,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.ErrorModel        | 403, 404, 500            | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## getTags
@@ -220,6 +220,87 @@ run();
 ### Response
 
 **Promise\<[operations.BadgeV1TagsResponse](../../models/operations/badgev1tagsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## badgeV1Search
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.badge.badgeV1Search({
+    filter: "<value>",
+    limit: 10,
+    offset: 0,
+    query: "<value>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { badgeBadgeV1Search } from "@steamsets/client-ts/funcs/badgeBadgeV1Search.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await badgeBadgeV1Search(steamSets, {
+    filter: "<value>",
+    limit: 10,
+    offset: 0,
+    query: "<value>",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1SearchRequest](../../models/components/v1searchrequest.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.BadgeV1SearchResponse](../../models/operations/badgev1searchresponse.md)\>**
 
 ### Errors
 

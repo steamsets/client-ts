@@ -72,6 +72,7 @@ export async function accountAccountV1ImagesGet(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "POST",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     uaHeader: "x-speakeasy-user-agent",

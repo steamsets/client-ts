@@ -7,7 +7,6 @@ import * as M from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -23,7 +22,6 @@ import { Result } from "../types/fp.js";
 
 export async function accountAccountV1GetBadgeBookmarks(
   client: SteamSetsCore,
-  _request: components.V1AccountBadgeBookmarksRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -41,7 +39,6 @@ export async function accountAccountV1GetBadgeBookmarks(
   const path = pathToFunc("/account.v1.AccountService/GetBadgeBookmarks")();
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -75,6 +72,7 @@ export async function accountAccountV1GetBadgeBookmarks(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "POST",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     uaHeader: "x-speakeasy-user-agent",
@@ -87,7 +85,7 @@ export async function accountAccountV1GetBadgeBookmarks(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -114,7 +112,7 @@ export async function accountAccountV1GetBadgeBookmarks(
     M.json(200, operations.AccountV1GetBadgeBookmarksResponse$inboundSchema, {
       key: "V1AccountBadgeBookmarksResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

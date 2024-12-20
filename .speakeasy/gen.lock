@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e0ed75b5e8b811b795e8336f65422cbf
+  docChecksum: 8c76b6a2b5e4bb7fd2607ab88bda1fd2
   docVersion: 1.0.0
-  speakeasyVersion: 1.455.3
-  generationVersion: 2.479.3
-  releaseVersion: 0.14.3
-  configChecksum: 1ae858e9a56627e560107897cd3c98c0
+  speakeasyVersion: 1.456.1
+  generationVersion: 2.481.0
+  releaseVersion: 0.14.4
+  configChecksum: 8335cbcbc2c3198d74a9f6b579531f6d
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.9
+    core: 3.18.11
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -66,6 +66,7 @@ generatedFiles:
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/accountsearchvanitystruct.md
   - docs/models/components/appprivacy.md
+  - docs/models/components/badge.md
   - docs/models/components/bestleaderboardrank.md
   - docs/models/components/chosenrole.md
   - docs/models/components/chosenrolerole.md
@@ -110,7 +111,6 @@ generatedFiles:
   - docs/models/components/v1accountbadgebookmark.md
   - docs/models/components/v1accountbadgebookmarkrequestbody.md
   - docs/models/components/v1accountbadgebookmarkresponsebody.md
-  - docs/models/components/v1accountbadgebookmarksrequestbody.md
   - docs/models/components/v1accountbadgebookmarksresponsebody.md
   - docs/models/components/v1accountdatapointsresponsebody.md
   - docs/models/components/v1accountdeveloperappdeleterequestbody.md
@@ -142,9 +142,9 @@ generatedFiles:
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appeventmapping.md
+  - docs/models/components/v1badgesearchresponsebody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
-  - docs/models/components/v1badgetagresponsebody.md
   - docs/models/components/v1badgetagsrequestbody.md
   - docs/models/components/v1badgetagsresponsebody.md
   - docs/models/components/v1connectrequestbody.md
@@ -176,6 +176,7 @@ generatedFiles:
   - docs/models/components/v1leaderboardlocationinfo.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1loginresponsebody.md
+  - docs/models/components/v1searchrequest.md
   - docs/models/components/v1updateconnectionrequestbody.md
   - docs/models/components/v1updateconnectionresponsebody.md
   - docs/models/components/v1updateimage.md
@@ -237,6 +238,7 @@ generatedFiles:
   - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
+  - docs/models/operations/badgev1searchresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
@@ -288,6 +290,7 @@ generatedFiles:
   - src/funcs/adminGetAccount.ts
   - src/funcs/badgeAccountV1BookmarkBadge.ts
   - src/funcs/badgeAccountV1GetBadgeBookmarks.ts
+  - src/funcs/badgeBadgeV1Search.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
   - src/funcs/connectionDelete.ts
@@ -354,6 +357,7 @@ generatedFiles:
   - src/models/components/accountsearch.ts
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/accountsearchvanitystruct.ts
+  - src/models/components/badge.ts
   - src/models/components/bestleaderboardrank.ts
   - src/models/components/chosenrole.ts
   - src/models/components/city.ts
@@ -384,7 +388,6 @@ generatedFiles:
   - src/models/components/v1accountbadgebookmark.ts
   - src/models/components/v1accountbadgebookmarkrequestbody.ts
   - src/models/components/v1accountbadgebookmarkresponsebody.ts
-  - src/models/components/v1accountbadgebookmarksrequestbody.ts
   - src/models/components/v1accountbadgebookmarksresponsebody.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
   - src/models/components/v1accountdeveloperappdeleterequestbody.ts
@@ -413,9 +416,9 @@ generatedFiles:
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appeventmapping.ts
+  - src/models/components/v1badgesearchresponsebody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
-  - src/models/components/v1badgetagresponsebody.ts
   - src/models/components/v1badgetagsrequestbody.ts
   - src/models/components/v1badgetagsresponsebody.ts
   - src/models/components/v1connectrequestbody.ts
@@ -445,6 +448,7 @@ generatedFiles:
   - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1loginresponsebody.ts
+  - src/models/components/v1searchrequest.ts
   - src/models/components/v1updateconnectionrequestbody.ts
   - src/models/components/v1updateconnectionresponsebody.ts
   - src/models/components/v1updateimage.ts
@@ -502,6 +506,7 @@ generatedFiles:
   - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
+  - src/models/operations/badgev1search.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
@@ -772,10 +777,12 @@ examples:
   badge.v1.search:
     speakeasy-default-badge-v1-search:
       requestBody:
-        application/json: {"appId": 123456, "appIds": [444, 730], "badgeId": "bdg_123", "badgeIds": ["bdg_123", "bdg_456"], "colorSearch": [{"key": ["<value>", "<value>", "<value>"]}], "isEvent": true, "isFoil": true, "isSale": true, "limit": 10, "offset": 0, "typeSearch": [{"key": ["<value>"], "key1": ["<value>"], "key2": ["<value>", "<value>", "<value>"]}, {"key": [], "key1": ["<value>", "<value>", "<value>"]}]}
+        application/json: {"filter": "<value>", "limit": 10, "offset": 0, "query": "<value>"}
       responses:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": "3133.10"}]}
   badge.v1.tag:
     speakeasy-default-badge-v1-tag:
       requestBody:

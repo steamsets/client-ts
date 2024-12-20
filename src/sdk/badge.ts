@@ -4,6 +4,7 @@
 
 import { badgeAccountV1BookmarkBadge } from "../funcs/badgeAccountV1BookmarkBadge.js";
 import { badgeAccountV1GetBadgeBookmarks } from "../funcs/badgeAccountV1GetBadgeBookmarks.js";
+import { badgeBadgeV1Search } from "../funcs/badgeBadgeV1Search.js";
 import { badgeGetTags } from "../funcs/badgeGetTags.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -23,12 +24,10 @@ export class Badge extends ClientSDK {
   }
 
   async accountV1GetBadgeBookmarks(
-    request: components.V1AccountBadgeBookmarksRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgeBookmarksResponse> {
     return unwrapAsync(badgeAccountV1GetBadgeBookmarks(
       this,
-      request,
       options,
     ));
   }
@@ -38,6 +37,17 @@ export class Badge extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.BadgeV1TagsResponse> {
     return unwrapAsync(badgeGetTags(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async badgeV1Search(
+    request: components.V1SearchRequest,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeV1SearchResponse> {
+    return unwrapAsync(badgeBadgeV1Search(
       this,
       request,
       options,
