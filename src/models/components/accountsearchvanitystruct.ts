@@ -11,20 +11,22 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * Which type of vanity to search for
  */
-export const Type = {
+export const AccountSearchVanityStructType = {
   Steam: "steam",
   Internal: "internal",
 } as const;
 /**
  * Which type of vanity to search for
  */
-export type Type = ClosedEnum<typeof Type>;
+export type AccountSearchVanityStructType = ClosedEnum<
+  typeof AccountSearchVanityStructType
+>;
 
 export type AccountSearchVanityStruct = {
   /**
    * Which type of vanity to search for
    */
-  type: Type;
+  type: AccountSearchVanityStructType;
   /**
    * Vanity to search for
    */
@@ -32,23 +34,24 @@ export type AccountSearchVanityStruct = {
 };
 
 /** @internal */
-export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
-  Type,
-);
+export const AccountSearchVanityStructType$inboundSchema: z.ZodNativeEnum<
+  typeof AccountSearchVanityStructType
+> = z.nativeEnum(AccountSearchVanityStructType);
 
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> =
-  Type$inboundSchema;
+export const AccountSearchVanityStructType$outboundSchema: z.ZodNativeEnum<
+  typeof AccountSearchVanityStructType
+> = AccountSearchVanityStructType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Type$ {
-  /** @deprecated use `Type$inboundSchema` instead. */
-  export const inboundSchema = Type$inboundSchema;
-  /** @deprecated use `Type$outboundSchema` instead. */
-  export const outboundSchema = Type$outboundSchema;
+export namespace AccountSearchVanityStructType$ {
+  /** @deprecated use `AccountSearchVanityStructType$inboundSchema` instead. */
+  export const inboundSchema = AccountSearchVanityStructType$inboundSchema;
+  /** @deprecated use `AccountSearchVanityStructType$outboundSchema` instead. */
+  export const outboundSchema = AccountSearchVanityStructType$outboundSchema;
 }
 
 /** @internal */
@@ -57,7 +60,7 @@ export const AccountSearchVanityStruct$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  type: Type$inboundSchema,
+  type: AccountSearchVanityStructType$inboundSchema,
   value: z.string(),
 });
 
@@ -73,7 +76,7 @@ export const AccountSearchVanityStruct$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountSearchVanityStruct
 > = z.object({
-  type: Type$outboundSchema,
+  type: AccountSearchVanityStructType$outboundSchema,
   value: z.string(),
 });
 

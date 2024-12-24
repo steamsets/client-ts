@@ -1,11 +1,11 @@
-# DeletedRoles
+# Roles
 
 ## Example Usage
 
 ```typescript
-import { DeletedRoles } from "@steamsets/client-ts/models/components";
+import { Roles } from "@steamsets/client-ts/models/components";
 
-let value: DeletedRoles = "top_100";
+let value: Roles = "emerald";
 ```
 
 ## Values

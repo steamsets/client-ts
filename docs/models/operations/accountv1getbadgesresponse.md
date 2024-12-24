@@ -40,6 +40,7 @@ let value: AccountV1GetBadgesResponse = {
         steamId: 774234,
       },
     ],
+    pages: 456150,
   },
 };
 ```

@@ -20,7 +20,7 @@ import {
   VanityStruct$outboundSchema,
 } from "./vanitystruct.js";
 
-export const DeletedRoles = {
+export const Roles = {
   User: "user",
   Donator: "donator",
   Staff: "staff",
@@ -40,73 +40,32 @@ export const DeletedRoles = {
   Top100: "top_100",
   BadgeScout: "badge_scout",
 } as const;
-export type DeletedRoles = ClosedEnum<typeof DeletedRoles>;
-
-export const NewRoles = {
-  User: "user",
-  Donator: "donator",
-  Staff: "staff",
-  Developer: "developer",
-  Partner: "partner",
-  Owner: "owner",
-  Amethyst: "amethyst",
-  Amber: "amber",
-  Emerald: "emerald",
-  Sapphire: "sapphire",
-  Ruby: "ruby",
-  Diamond: "diamond",
-  Contributor: "contributor",
-  EarlySupporter: "early_supporter",
-  Beta: "beta",
-  Translator: "translator",
-  Top100: "top_100",
-  BadgeScout: "badge_scout",
-} as const;
-export type NewRoles = ClosedEnum<typeof NewRoles>;
+export type Roles = ClosedEnum<typeof Roles>;
 
 export type V1AdminUpdateRolessRequestBody = {
-  deletedRoles: Array<DeletedRoles> | null;
   id?: IDStruct | undefined;
-  newRoles: Array<NewRoles> | null;
+  roles: Array<Roles> | null;
   vanity?: VanityStruct | undefined;
 };
 
 /** @internal */
-export const DeletedRoles$inboundSchema: z.ZodNativeEnum<typeof DeletedRoles> =
-  z.nativeEnum(DeletedRoles);
+export const Roles$inboundSchema: z.ZodNativeEnum<typeof Roles> = z.nativeEnum(
+  Roles,
+);
 
 /** @internal */
-export const DeletedRoles$outboundSchema: z.ZodNativeEnum<typeof DeletedRoles> =
-  DeletedRoles$inboundSchema;
+export const Roles$outboundSchema: z.ZodNativeEnum<typeof Roles> =
+  Roles$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace DeletedRoles$ {
-  /** @deprecated use `DeletedRoles$inboundSchema` instead. */
-  export const inboundSchema = DeletedRoles$inboundSchema;
-  /** @deprecated use `DeletedRoles$outboundSchema` instead. */
-  export const outboundSchema = DeletedRoles$outboundSchema;
-}
-
-/** @internal */
-export const NewRoles$inboundSchema: z.ZodNativeEnum<typeof NewRoles> = z
-  .nativeEnum(NewRoles);
-
-/** @internal */
-export const NewRoles$outboundSchema: z.ZodNativeEnum<typeof NewRoles> =
-  NewRoles$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NewRoles$ {
-  /** @deprecated use `NewRoles$inboundSchema` instead. */
-  export const inboundSchema = NewRoles$inboundSchema;
-  /** @deprecated use `NewRoles$outboundSchema` instead. */
-  export const outboundSchema = NewRoles$outboundSchema;
+export namespace Roles$ {
+  /** @deprecated use `Roles$inboundSchema` instead. */
+  export const inboundSchema = Roles$inboundSchema;
+  /** @deprecated use `Roles$outboundSchema` instead. */
+  export const outboundSchema = Roles$outboundSchema;
 }
 
 /** @internal */
@@ -115,17 +74,15 @@ export const V1AdminUpdateRolessRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  deletedRoles: z.nullable(z.array(DeletedRoles$inboundSchema)),
   id: IDStruct$inboundSchema.optional(),
-  newRoles: z.nullable(z.array(NewRoles$inboundSchema)),
+  roles: z.nullable(z.array(Roles$inboundSchema)),
   vanity: VanityStruct$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AdminUpdateRolessRequestBody$Outbound = {
-  deletedRoles: Array<string> | null;
   id?: IDStruct$Outbound | undefined;
-  newRoles: Array<string> | null;
+  roles: Array<string> | null;
   vanity?: VanityStruct$Outbound | undefined;
 };
 
@@ -135,9 +92,8 @@ export const V1AdminUpdateRolessRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AdminUpdateRolessRequestBody
 > = z.object({
-  deletedRoles: z.nullable(z.array(DeletedRoles$outboundSchema)),
   id: IDStruct$outboundSchema.optional(),
-  newRoles: z.nullable(z.array(NewRoles$outboundSchema)),
+  roles: z.nullable(z.array(Roles$outboundSchema)),
   vanity: VanityStruct$outboundSchema.optional(),
 });
 

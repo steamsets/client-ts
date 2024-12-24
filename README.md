@@ -349,7 +349,7 @@ You can override the default server globally by passing a server index to the `s
 | #   | Server                      |
 | --- | --------------------------- |
 | 0   | `https://api.steamsets.com` |
-| 1   | `http://localhost:8080`     |
+| 1   | `http://localhost:7388`     |
 
 #### Example
 

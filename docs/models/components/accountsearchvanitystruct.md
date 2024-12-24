@@ -6,14 +6,14 @@
 import { AccountSearchVanityStruct } from "@steamsets/client-ts/models/components";
 
 let value: AccountSearchVanityStruct = {
-  type: "internal",
+  type: "steam",
   value: "<value>",
 };
 ```
 
 ## Fields
 
-| Field                                              | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `type`                                             | [components.Type](../../models/components/type.md) | :heavy_check_mark:                                 | Which type of vanity to search for                 |
-| `value`                                            | *string*                                           | :heavy_check_mark:                                 | Vanity to search for                               |
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `type`                                                                                               | [components.AccountSearchVanityStructType](../../models/components/accountsearchvanitystructtype.md) | :heavy_check_mark:                                                                                   | Which type of vanity to search for                                                                   |
+| `value`                                                                                              | *string*                                                                                             | :heavy_check_mark:                                                                                   | Vanity to search for                                                                                 |
