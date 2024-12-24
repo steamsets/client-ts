@@ -25,7 +25,7 @@ import { Result } from "../types/fp.js";
 
 export async function publicGetApps(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1AccountsAppsRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -42,7 +42,7 @@ export async function publicGetApps(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) => components.V1AccountsAppsRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

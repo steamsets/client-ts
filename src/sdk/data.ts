@@ -16,7 +16,7 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Data extends ClientSDK {
   async getApps(
-    request: components.AccountSearch,
+    request: components.V1AccountsAppsRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetAppsResponse> {
     return unwrapAsync(dataGetApps(
@@ -27,7 +27,7 @@ export class Data extends ClientSDK {
   }
 
   async getBadges(
-    request: components.AccountSearch,
+    request: components.V1BadgesRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgesResponse> {
     return unwrapAsync(dataGetBadges(

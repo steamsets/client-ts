@@ -45,14 +45,14 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "social_links",
+      resource: "custom_vanity",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 396060,
-      role: "ruby",
+      rating: 240829,
+      role: "donator",
     },
   ],
   sessions: [

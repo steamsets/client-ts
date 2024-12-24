@@ -5,7 +5,7 @@
 ```typescript
 import { V1AdminUpdateResourcesRequestBodyResource } from "@steamsets/client-ts/models/components";
 
-let value: V1AdminUpdateResourcesRequestBodyResource = "account_queues";
+let value: V1AdminUpdateResourcesRequestBodyResource = "custom_vanity";
 ```
 
 ## Values

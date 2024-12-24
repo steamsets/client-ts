@@ -14,25 +14,26 @@ let value: V1BadgesResponseBody = {
         level: 123456,
         xp: 123456,
       },
-      appId: 162493,
+      appId: 866383,
       appImage: "<value>",
       appName: "<value>",
       badgeImage: "<value>",
-      baseLevel: 615560,
-      baseXp: 123820,
-      firstCompletion: new Date("2024-07-18T10:00:30.471Z"),
-      highestLevel: 807319,
+      baseLevel: 975522,
+      baseXp: 855804,
+      firstCompletion: new Date("2022-01-13T20:07:38.173Z"),
+      highestLevel: 359978,
       isEvent: false,
       isFoil: false,
       isSale: false,
-      lastCompletion: new Date("2023-09-16T17:37:32.983Z"),
+      lastCompletion: new Date("2024-03-11T01:40:18.315Z"),
       name: "<value>",
-      price: 407183,
+      price: 171629,
       publicId: "<id>",
-      scarcity: 69167,
-      steamId: 697429,
+      scarcity: 521037,
+      steamId: 54338,
     },
   ],
+  pages: 199996,
 };
 ```
 
@@ -42,3 +43,4 @@ let value: V1BadgesResponseBody = {
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `dollarSchema`                                                   | *string*                                                         | :heavy_minus_sign:                                               | A URL to the JSON Schema for this object.                        | https://api.steamsets.com/schemas/V1BadgesResponseBody.json      |
 | `badges`                                                         | [components.V1AppBadge](../../models/components/v1appbadge.md)[] | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
+| `pages`                                                          | *number*                                                         | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
