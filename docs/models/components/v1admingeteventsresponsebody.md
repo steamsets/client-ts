@@ -12,7 +12,7 @@ let value: V1AdminGetEventsResponseBody = {
     {
       bodyImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
       downvotes: 123456,
-      endsAt: new Date("2022-01-19T00:09:53.916Z"),
+      endsAt: new Date("2022-11-05T18:37:43.326Z"),
       gid: "123456",
       headerImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
       mappings: [
@@ -24,7 +24,7 @@ let value: V1AdminGetEventsResponseBody = {
       name: "Steam Summer Sale 2024",
       postedAt: new Date("2023-01-01T00:00:00Z"),
       publicId: "<id>",
-      startsAt: new Date("2024-10-15T18:20:20.936Z"),
+      startsAt: new Date("2023-10-05T16:55:58.841Z"),
       title: "Steam Summer Sale 2024",
       upvotes: 123456,
     },

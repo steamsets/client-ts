@@ -6,7 +6,7 @@
 import { V1AppOrder } from "@steamsets/client-ts/models/components";
 
 let value: V1AppOrder = {
-  by: "playtime",
+  by: "appId",
 };
 ```
 

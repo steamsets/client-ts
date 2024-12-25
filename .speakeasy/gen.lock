@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 40bc34357953a8fd13119ca06fd7b46c
+  docChecksum: b4b006b512363bee4d08bd4d362bc991
   docVersion: 1.0.0
   speakeasyVersion: 1.460.2
   generationVersion: 2.484.0
-  releaseVersion: 0.14.5
-  configChecksum: 8ac0c42bb9105e9faf3b4cce239f6d38
+  releaseVersion: 0.14.6
+  configChecksum: 34054610e54e84267f032a8c1d47f4ec
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -611,7 +611,7 @@ examples:
     speakeasy-default-account-v1-get-apps:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": []}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": [], "pages": 433832}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getBadges:

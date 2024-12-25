@@ -8,7 +8,7 @@ import { V1GetSettingsBody } from "@steamsets/client-ts/models/components";
 let value: V1GetSettingsBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
   chosenRole: {
-    role: "early_supporter",
+    role: "ruby",
     tier: "tier_1",
   },
   color: "#7652c9",
@@ -61,7 +61,7 @@ let value: V1GetSettingsBody = {
   theme: "dark",
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 903720,
+    clicks: 961937,
   },
 };
 ```
