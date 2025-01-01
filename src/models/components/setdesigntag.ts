@@ -11,7 +11,7 @@ export type SetDesignTag = {
   /**
    * The id of the design/color
    */
-  id?: number | null | undefined;
+  id?: string | null | undefined;
   /**
    * The tag to add to the database
    */
@@ -24,13 +24,13 @@ export const SetDesignTag$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: z.nullable(z.number().int()).optional(),
+  id: z.nullable(z.string()).optional(),
   name: z.nullable(z.string()).optional(),
 });
 
 /** @internal */
 export type SetDesignTag$Outbound = {
-  id?: number | null | undefined;
+  id?: string | null | undefined;
   name?: string | null | undefined;
 };
 
@@ -40,7 +40,7 @@ export const SetDesignTag$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   SetDesignTag
 > = z.object({
-  id: z.nullable(z.number().int()).optional(),
+  id: z.nullable(z.string()).optional(),
   name: z.nullable(z.string()).optional(),
 });
 

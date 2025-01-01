@@ -8,11 +8,11 @@ import { V1BadgeTagRequestBody } from "@steamsets/client-ts/models/components";
 let value: V1BadgeTagRequestBody = {
   badgeId: "bdg_123",
   colors: [
-    16429,
+    "<value>",
   ],
   designs: [
     {
-      id: 1,
+      id: "1",
       name: "cat",
     },
   ],
@@ -24,5 +24,5 @@ let value: V1BadgeTagRequestBody = {
 | Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | `badgeId`                                                            | *string*                                                             | :heavy_check_mark:                                                   | The badge id                                                         | bdg_123                                                              |
-| `colors`                                                             | *number*[]                                                           | :heavy_check_mark:                                                   | All the colors of the badge                                          |                                                                      |
+| `colors`                                                             | *string*[]                                                           | :heavy_check_mark:                                                   | All the colors of the badge                                          |                                                                      |
 | `designs`                                                            | [components.SetDesignTag](../../models/components/setdesigntag.md)[] | :heavy_check_mark:                                                   | All the designs of the badge                                         |                                                                      |

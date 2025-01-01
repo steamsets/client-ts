@@ -26,6 +26,10 @@ export type V1LeaderboardBadge = {
    * The name of the app
    */
   appName: string;
+  /**
+   * The public id of the badge
+   */
+  badgeId: string;
   event?: V1LeaderboardBadgeEvent | null | undefined;
   /**
    * The time the badge was completed
@@ -68,10 +72,6 @@ export type V1LeaderboardBadge = {
    */
   price: number;
   /**
-   * The public id of the badge
-   */
-  publicId: string;
-  /**
    * The scarcity of the badge
    */
   scarcity: number | null;
@@ -94,6 +94,7 @@ export const V1LeaderboardBadge$inboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
+  badgeId: z.string(),
   event: z.nullable(V1LeaderboardBadgeEvent$inboundSchema).optional(),
   firstCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
@@ -109,7 +110,6 @@ export const V1LeaderboardBadge$inboundSchema: z.ZodType<
   level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
-  publicId: z.string(),
   scarcity: z.nullable(z.number().int()),
   steamId: z.number().int(),
   xp: z.number().int(),
@@ -120,6 +120,7 @@ export type V1LeaderboardBadge$Outbound = {
   appId: number;
   appImage: string;
   appName: string;
+  badgeId: string;
   event?: V1LeaderboardBadgeEvent$Outbound | null | undefined;
   firstCompletion: string | null;
   highestLevel: number | null;
@@ -131,7 +132,6 @@ export type V1LeaderboardBadge$Outbound = {
   level: number;
   name: string;
   price: number;
-  publicId: string;
   scarcity: number | null;
   steamId: number;
   xp: number;
@@ -146,6 +146,7 @@ export const V1LeaderboardBadge$outboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
+  badgeId: z.string(),
   event: z.nullable(V1LeaderboardBadgeEvent$outboundSchema).optional(),
   firstCompletion: z.nullable(z.date().transform(v => v.toISOString())),
   highestLevel: z.nullable(z.number().int()),
@@ -157,7 +158,6 @@ export const V1LeaderboardBadge$outboundSchema: z.ZodType<
   level: z.number().int(),
   name: z.string(),
   price: z.number().int(),
-  publicId: z.string(),
   scarcity: z.nullable(z.number().int()),
   steamId: z.number().int(),
   xp: z.number().int(),

@@ -14,11 +14,11 @@ let value: V1AdminGetAccountResponseBody = {
     {
       avatar:
         "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+      connectionId: "123456",
       externalId: "123456",
       hide: true,
       name: "steamsets",
       provider: "discord",
-      publicId: "123456",
       verified: true,
     },
   ],
@@ -45,14 +45,14 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "go_to_leaderboard_entry",
+      resource: "max_leaderboard_entries",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 940432,
-      role: "early_supporter",
+      rating: 374170,
+      role: "emerald",
     },
   ],
   sessions: [

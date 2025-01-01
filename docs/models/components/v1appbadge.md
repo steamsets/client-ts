@@ -11,23 +11,23 @@ let value: V1AppBadge = {
     level: 123456,
     xp: 123456,
   },
-  appId: 975522,
+  appId: 998848,
   appImage: "<value>",
   appName: "<value>",
+  badgeId: "<id>",
   badgeImage: "<value>",
-  baseLevel: 855804,
-  baseXp: 11714,
-  firstCompletion: new Date("2024-01-30T12:51:46.829Z"),
-  highestLevel: 729991,
+  baseLevel: 149448,
+  baseXp: 868126,
+  firstCompletion: new Date("2023-06-28T02:12:50.953Z"),
+  highestLevel: 615560,
   isEvent: false,
   isFoil: false,
   isSale: false,
-  lastCompletion: new Date("2023-07-08T02:32:49.310Z"),
+  lastCompletion: new Date("2023-05-16T16:57:38.984Z"),
   name: "<value>",
-  price: 521037,
-  publicId: "<id>",
-  scarcity: 54338,
-  steamId: 199996,
+  price: 848009,
+  scarcity: 807319,
+  steamId: 569101,
 };
 ```
 
@@ -39,6 +39,7 @@ let value: V1AppBadge = {
 | `appId`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `appImage`                                                                                    | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `appName`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `badgeId`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `badgeImage`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `baseLevel`                                                                                   | *number*                                                                                      | :heavy_check_mark:                                                                            | The level this badge starts at                                                                |
 | `baseXp`                                                                                      | *number*                                                                                      | :heavy_check_mark:                                                                            | The XP the badge gives per level                                                              |
@@ -50,6 +51,5 @@ let value: V1AppBadge = {
 | `lastCompletion`                                                                              | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `price`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `publicId`                                                                                    | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `scarcity`                                                                                    | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `steamId`                                                                                     | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |

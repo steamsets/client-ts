@@ -7,7 +7,6 @@ import * as M from "../lib/matchers.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -23,7 +22,6 @@ import { Result } from "../types/fp.js";
 
 export async function badgeGetTags(
   client: SteamSetsCore,
-  _request: components.V1BadgeTagsRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -41,7 +39,6 @@ export async function badgeGetTags(
   const path = pathToFunc("/badge.v1.BadgeService/GetTags")();
 
   const headers = new Headers({
-    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -88,7 +85,7 @@ export async function badgeGetTags(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -115,7 +112,7 @@ export async function badgeGetTags(
     M.json(200, operations.BadgeV1TagsResponse$inboundSchema, {
       key: "V1BadgeTagsResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

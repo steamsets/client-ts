@@ -14,6 +14,7 @@ let value: V1LeaderboardBadgeResponseBody = {
       appImage:
         "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
       appName: "Counter-Strike: Global Offensive",
+      badgeId: "bdg_123",
       event: {
         bodyImage: "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg",
         downvotes: 123456,
@@ -37,7 +38,6 @@ let value: V1LeaderboardBadgeResponseBody = {
       level: 123456,
       name: "Sommer Sale 2024 Foil 1+",
       price: 1200,
-      publicId: "bdg_123",
       scarcity: 123456,
       steamId: 76561198842603730,
       xp: 123456,

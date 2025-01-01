@@ -11,7 +11,7 @@ export type V1AccountDeveloperAppDeleteRequestBody = {
   /**
    * The public id of the developer app
    */
-  publicId: string;
+  developerAppId: string;
 };
 
 /** @internal */
@@ -20,12 +20,12 @@ export const V1AccountDeveloperAppDeleteRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  publicId: z.string(),
+  developerAppId: z.string(),
 });
 
 /** @internal */
 export type V1AccountDeveloperAppDeleteRequestBody$Outbound = {
-  publicId: string;
+  developerAppId: string;
 };
 
 /** @internal */
@@ -34,7 +34,7 @@ export const V1AccountDeveloperAppDeleteRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountDeveloperAppDeleteRequestBody
 > = z.object({
-  publicId: z.string(),
+  developerAppId: z.string(),
 });
 
 /**

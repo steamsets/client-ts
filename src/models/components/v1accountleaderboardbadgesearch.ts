@@ -11,7 +11,7 @@ export type V1AccountLeaderboardBadgeSearch = {
   /**
    * The badge id to get the leaderboard for
    */
-  id?: number | undefined;
+  id: number;
   /**
    * Whether the badge is foil or not
    */
@@ -24,13 +24,13 @@ export const V1AccountLeaderboardBadgeSearch$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: z.number().int().optional(),
+  id: z.number().int(),
   isFoil: z.boolean(),
 });
 
 /** @internal */
 export type V1AccountLeaderboardBadgeSearch$Outbound = {
-  id?: number | undefined;
+  id: number;
   isFoil: boolean;
 };
 
@@ -40,7 +40,7 @@ export const V1AccountLeaderboardBadgeSearch$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountLeaderboardBadgeSearch
 > = z.object({
-  id: z.number().int().optional(),
+  id: z.number().int(),
   isFoil: z.boolean(),
 });
 

@@ -15,7 +15,7 @@ let value: AccountV1SettingsGetResponse = {
   v1GetSettingsBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
     chosenRole: {
-      role: "staff",
+      role: "badge_scout",
       tier: "tier_1",
     },
     color: "#7652c9",
@@ -24,11 +24,11 @@ let value: AccountV1SettingsGetResponse = {
       {
         avatar:
           "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+        connectionId: "123456",
         externalId: "123456",
         hide: true,
         name: "steamsets",
         provider: "discord",
-        publicId: "123456",
         verified: true,
       },
     ],
@@ -68,7 +68,7 @@ let value: AccountV1SettingsGetResponse = {
     theme: "dark",
     vanity: "flo",
     vanityAnalytics: {
-      clicks: 317983,
+      clicks: 468651,
     },
   },
 };

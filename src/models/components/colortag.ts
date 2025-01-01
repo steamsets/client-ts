@@ -3,7 +3,6 @@
  */
 
 import * as z from "zod";
-import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -14,7 +13,7 @@ export type ColorTag = {
   groupOwner: boolean;
   hex: string | null;
   hsl: string;
-  id: number;
+  id: string;
   name: string;
 };
 
@@ -24,34 +23,24 @@ export const ColorTag$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Gradient: z.nullable(z.string()),
-  Group: z.string(),
-  GroupOwner: z.boolean(),
-  Hex: z.nullable(z.string()),
-  Hsl: z.string(),
-  ID: z.number().int(),
-  Name: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "Gradient": "gradient",
-    "Group": "group",
-    "GroupOwner": "groupOwner",
-    "Hex": "hex",
-    "Hsl": "hsl",
-    "ID": "id",
-    "Name": "name",
-  });
+  gradient: z.nullable(z.string()),
+  group: z.string(),
+  groupOwner: z.boolean(),
+  hex: z.nullable(z.string()),
+  hsl: z.string(),
+  id: z.string(),
+  name: z.string(),
 });
 
 /** @internal */
 export type ColorTag$Outbound = {
-  Gradient: string | null;
-  Group: string;
-  GroupOwner: boolean;
-  Hex: string | null;
-  Hsl: string;
-  ID: number;
-  Name: string;
+  gradient: string | null;
+  group: string;
+  groupOwner: boolean;
+  hex: string | null;
+  hsl: string;
+  id: string;
+  name: string;
 };
 
 /** @internal */
@@ -65,18 +54,8 @@ export const ColorTag$outboundSchema: z.ZodType<
   groupOwner: z.boolean(),
   hex: z.nullable(z.string()),
   hsl: z.string(),
-  id: z.number().int(),
+  id: z.string(),
   name: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    gradient: "Gradient",
-    group: "Group",
-    groupOwner: "GroupOwner",
-    hex: "Hex",
-    hsl: "Hsl",
-    id: "ID",
-    name: "Name",
-  });
 });
 
 /**

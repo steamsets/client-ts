@@ -13,6 +13,10 @@ export type V1AccountDeveloperAppUpdateRequestBody = {
    */
   description: string | null;
   /**
+   * The public id of the developer app
+   */
+  developerAppId: string;
+  /**
    * The new icon of the developer app
    */
   icon: string | null;
@@ -20,10 +24,6 @@ export type V1AccountDeveloperAppUpdateRequestBody = {
    * The new name of the developer app
    */
   name: string | null;
-  /**
-   * The public id of the developer app
-   */
-  publicId: string;
   /**
    * Whether to re-generate the key
    */
@@ -37,18 +37,18 @@ export const V1AccountDeveloperAppUpdateRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   description: z.nullable(z.string()),
+  developerAppId: z.string(),
   icon: z.nullable(z.string()),
   name: z.nullable(z.string()),
-  publicId: z.string(),
   regenerate: z.boolean(),
 });
 
 /** @internal */
 export type V1AccountDeveloperAppUpdateRequestBody$Outbound = {
   description: string | null;
+  developerAppId: string;
   icon: string | null;
   name: string | null;
-  publicId: string;
   regenerate: boolean;
 };
 
@@ -59,9 +59,9 @@ export const V1AccountDeveloperAppUpdateRequestBody$outboundSchema: z.ZodType<
   V1AccountDeveloperAppUpdateRequestBody
 > = z.object({
   description: z.nullable(z.string()),
+  developerAppId: z.string(),
   icon: z.nullable(z.string()),
   name: z.nullable(z.string()),
-  publicId: z.string(),
   regenerate: z.boolean(),
 });
 

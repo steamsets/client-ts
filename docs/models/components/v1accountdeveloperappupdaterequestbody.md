@@ -7,9 +7,9 @@ import { V1AccountDeveloperAppUpdateRequestBody } from "@steamsets/client-ts/mod
 
 let value: V1AccountDeveloperAppUpdateRequestBody = {
   description: "My App Description",
+  developerAppId: "da_123456",
   icon: "https://yoururl.com/icon.png",
   name: "My App",
-  publicId: "da_123456",
   regenerate: true,
 };
 ```
@@ -19,7 +19,7 @@ let value: V1AccountDeveloperAppUpdateRequestBody = {
 | Field                                    | Type                                     | Required                                 | Description                              | Example                                  |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | `description`                            | *string*                                 | :heavy_check_mark:                       | The new description of the developer app | My App Description                       |
+| `developerAppId`                         | *string*                                 | :heavy_check_mark:                       | The public id of the developer app       | da_123456                                |
 | `icon`                                   | *string*                                 | :heavy_check_mark:                       | The new icon of the developer app        | https://yoururl.com/icon.png             |
 | `name`                                   | *string*                                 | :heavy_check_mark:                       | The new name of the developer app        | My App                                   |
-| `publicId`                               | *string*                                 | :heavy_check_mark:                       | The public id of the developer app       | da_123456                                |
 | `regenerate`                             | *boolean*                                | :heavy_check_mark:                       | Whether to re-generate the key           | true                                     |

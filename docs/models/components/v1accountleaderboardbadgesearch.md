@@ -6,7 +6,7 @@
 import { V1AccountLeaderboardBadgeSearch } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountLeaderboardBadgeSearch = {
-  id: 4,
+  id: 281730,
   isFoil: true,
 };
 ```
@@ -15,5 +15,5 @@ let value: V1AccountLeaderboardBadgeSearch = {
 
 | Field                                   | Type                                    | Required                                | Description                             | Example                                 |
 | --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| `id`                                    | *number*                                | :heavy_minus_sign:                      | The badge id to get the leaderboard for | 4                                       |
+| `id`                                    | *number*                                | :heavy_check_mark:                      | The badge id to get the leaderboard for |                                         |
 | `isFoil`                                | *boolean*                               | :heavy_check_mark:                      | Whether the badge is foil or not        | true                                    |

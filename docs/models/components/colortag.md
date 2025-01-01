@@ -11,7 +11,7 @@ let value: ColorTag = {
   groupOwner: false,
   hex: "<value>",
   hsl: "<value>",
-  id: 297437,
+  id: "<id>",
   name: "<value>",
 };
 ```
@@ -25,5 +25,5 @@ let value: ColorTag = {
 | `groupOwner`       | *boolean*          | :heavy_check_mark: | N/A                |
 | `hex`              | *string*           | :heavy_check_mark: | N/A                |
 | `hsl`              | *string*           | :heavy_check_mark: | N/A                |
-| `id`               | *number*           | :heavy_check_mark: | N/A                |
+| `id`               | *string*           | :heavy_check_mark: | N/A                |
 | `name`             | *string*           | :heavy_check_mark: | N/A                |

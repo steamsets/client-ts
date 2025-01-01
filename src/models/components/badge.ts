@@ -11,12 +11,12 @@ export type Badge = {
   appId: number;
   appImage: string;
   appName: string;
+  badgeId: string;
   bookmarks: number;
   colors: Array<string> | null;
   designs: Array<string> | null;
   firstCompletion: number;
   highestLevel: number;
-  id: string;
   image: string;
   isEvent: boolean;
   isFoil: boolean;
@@ -36,12 +36,12 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     appId: z.number().int(),
     appImage: z.string(),
     appName: z.string(),
+    badgeId: z.string(),
     bookmarks: z.number().int(),
     colors: z.nullable(z.array(z.string())),
     designs: z.nullable(z.array(z.string())),
     firstCompletion: z.number().int(),
     highestLevel: z.number().int(),
-    id: z.string(),
     image: z.string(),
     isEvent: z.boolean(),
     isFoil: z.boolean(),
@@ -60,12 +60,12 @@ export type Badge$Outbound = {
   appId: number;
   appImage: string;
   appName: string;
+  badgeId: string;
   bookmarks: number;
   colors: Array<string> | null;
   designs: Array<string> | null;
   firstCompletion: number;
   highestLevel: number;
-  id: string;
   image: string;
   isEvent: boolean;
   isFoil: boolean;
@@ -88,12 +88,12 @@ export const Badge$outboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
+  badgeId: z.string(),
   bookmarks: z.number().int(),
   colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(z.string())),
   firstCompletion: z.number().int(),
   highestLevel: z.number().int(),
-  id: z.string(),
   image: z.string(),
   isEvent: z.boolean(),
   isFoil: z.boolean(),

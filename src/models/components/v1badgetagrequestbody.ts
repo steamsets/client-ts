@@ -21,7 +21,7 @@ export type V1BadgeTagRequestBody = {
   /**
    * All the colors of the badge
    */
-  colors: Array<number> | null;
+  colors: Array<string> | null;
   /**
    * All the designs of the badge
    */
@@ -35,14 +35,14 @@ export const V1BadgeTagRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   badgeId: z.string(),
-  colors: z.nullable(z.array(z.number().int())),
+  colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(SetDesignTag$inboundSchema)),
 });
 
 /** @internal */
 export type V1BadgeTagRequestBody$Outbound = {
   badgeId: string;
-  colors: Array<number> | null;
+  colors: Array<string> | null;
   designs: Array<SetDesignTag$Outbound> | null;
 };
 
@@ -53,7 +53,7 @@ export const V1BadgeTagRequestBody$outboundSchema: z.ZodType<
   V1BadgeTagRequestBody
 > = z.object({
   badgeId: z.string(),
-  colors: z.nullable(z.array(z.number().int())),
+  colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(SetDesignTag$outboundSchema)),
 });
 

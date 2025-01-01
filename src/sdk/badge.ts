@@ -33,12 +33,10 @@ export class Badge extends ClientSDK {
   }
 
   async getTags(
-    request: components.V1BadgeTagsRequestBody,
     options?: RequestOptions,
   ): Promise<operations.BadgeV1TagsResponse> {
     return unwrapAsync(badgeGetTags(
       this,
-      request,
       options,
     ));
   }
