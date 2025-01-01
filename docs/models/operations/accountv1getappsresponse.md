@@ -25,7 +25,8 @@ let value: AccountV1GetAppsResponse = {
         price: 1200,
       },
     ],
-    pages: 780529,
+    pages: 1,
+    totalHits: 1,
   },
 };
 ```

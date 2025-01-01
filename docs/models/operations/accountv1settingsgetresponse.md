@@ -15,7 +15,7 @@ let value: AccountV1SettingsGetResponse = {
   v1GetSettingsBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
     chosenRole: {
-      role: "amber",
+      role: "staff",
       tier: "tier_1",
     },
     color: "#7652c9",
@@ -68,7 +68,7 @@ let value: AccountV1SettingsGetResponse = {
     theme: "dark",
     vanity: "flo",
     vanityAnalytics: {
-      clicks: 64147,
+      clicks: 317983,
     },
   },
 };

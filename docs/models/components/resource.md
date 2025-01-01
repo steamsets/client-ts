@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "account_colors",
+  resource: "avatar_frame",
   value: "1",
 };
 ```

@@ -14,26 +14,27 @@ let value: V1BadgesResponseBody = {
         level: 123456,
         xp: 123456,
       },
-      appId: 359978,
+      appId: 848009,
       appImage: "<value>",
       appName: "<value>",
       badgeImage: "<value>",
-      baseLevel: 729991,
-      baseXp: 171629,
-      firstCompletion: new Date("2023-07-26T01:20:48.803Z"),
-      highestLevel: 54338,
+      baseLevel: 807319,
+      baseXp: 569101,
+      firstCompletion: new Date("2024-03-22T06:32:58.021Z"),
+      highestLevel: 69167,
       isEvent: false,
       isFoil: false,
       isSale: false,
-      lastCompletion: new Date("2022-08-08T04:42:30.927Z"),
+      lastCompletion: new Date("2025-02-03T09:09:59.216Z"),
       name: "<value>",
-      price: 18521,
+      price: 453543,
       publicId: "<id>",
-      scarcity: 793698,
-      steamId: 223924,
+      scarcity: 722056,
+      steamId: 866383,
     },
   ],
-  pages: 345352,
+  pages: 1,
+  totalHits: 1,
 };
 ```
 
@@ -43,4 +44,5 @@ let value: V1BadgesResponseBody = {
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `dollarSchema`                                                   | *string*                                                         | :heavy_minus_sign:                                               | A URL to the JSON Schema for this object.                        | https://api.steamsets.com/schemas/V1BadgesResponseBody.json      |
 | `badges`                                                         | [components.V1AppBadge](../../models/components/v1appbadge.md)[] | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
-| `pages`                                                          | *number*                                                         | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
+| `pages`                                                          | *number*                                                         | :heavy_check_mark:                                               | The number of pages                                              | 1                                                                |
+| `totalHits`                                                      | *number*                                                         | :heavy_check_mark:                                               | The total number of hits for all pages                           | 1                                                                |

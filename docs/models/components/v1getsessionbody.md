@@ -12,14 +12,14 @@ let value: V1GetSessionBody = {
   name: "flo",
   resources: [
     {
-      resource: "theme",
+      resource: "account_refresh_rate",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 748664,
-      role: "top_100",
+      rating: 863856,
+      role: "staff",
     },
   ],
   sessionData: {
