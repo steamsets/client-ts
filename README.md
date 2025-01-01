@@ -160,11 +160,6 @@ run();
 
 * [get](docs/sdks/locations/README.md#get)
 
-### [meta](docs/sdks/meta/README.md)
-
-* [accountV1GetEmbed](docs/sdks/meta/README.md#accountv1getembed)
-* [accountV1GetMeta](docs/sdks/meta/README.md#accountv1getmeta)
-
 ### [public](docs/sdks/public/README.md)
 
 * [getApps](docs/sdks/public/README.md#getapps)
@@ -592,8 +587,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
-- [`metaAccountV1GetEmbed`](docs/sdks/meta/README.md#accountv1getembed)
-- [`metaAccountV1GetMeta`](docs/sdks/meta/README.md#accountv1getmeta)
 - [`publicGetApps`](docs/sdks/public/README.md#getapps)
 - [`publicGetBadges`](docs/sdks/public/README.md#getbadges)
 - [`publicGetDataPoints`](docs/sdks/public/README.md#getdatapoints)

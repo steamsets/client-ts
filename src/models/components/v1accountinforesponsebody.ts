@@ -83,6 +83,16 @@ export const FriendPrivacy = {
  */
 export type FriendPrivacy = ClosedEnum<typeof FriendPrivacy>;
 
+export const LastQueueStatus = {
+  Undefined: "undefined",
+  Pending: "pending",
+  InProgress: "in_progress",
+  Retrying: "retrying",
+  Failed: "failed",
+  Completed: "completed",
+} as const;
+export type LastQueueStatus = ClosedEnum<typeof LastQueueStatus>;
+
 /**
  * The privacy of the account
  */
@@ -96,7 +106,7 @@ export const Privacy = {
  */
 export type Privacy = ClosedEnum<typeof Privacy>;
 
-export type AccountInfoBody = {
+export type V1AccountInfoResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
@@ -211,6 +221,7 @@ export type AccountInfoBody = {
    * The Last date the account got a ban on
    */
   lastBanDate: Date | null;
+  lastQueueStatus: LastQueueStatus;
   /**
    * The level of the account
    */
@@ -332,6 +343,27 @@ export namespace FriendPrivacy$ {
 }
 
 /** @internal */
+export const LastQueueStatus$inboundSchema: z.ZodNativeEnum<
+  typeof LastQueueStatus
+> = z.nativeEnum(LastQueueStatus);
+
+/** @internal */
+export const LastQueueStatus$outboundSchema: z.ZodNativeEnum<
+  typeof LastQueueStatus
+> = LastQueueStatus$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace LastQueueStatus$ {
+  /** @deprecated use `LastQueueStatus$inboundSchema` instead. */
+  export const inboundSchema = LastQueueStatus$inboundSchema;
+  /** @deprecated use `LastQueueStatus$outboundSchema` instead. */
+  export const outboundSchema = LastQueueStatus$outboundSchema;
+}
+
+/** @internal */
 export const Privacy$inboundSchema: z.ZodNativeEnum<typeof Privacy> = z
   .nativeEnum(Privacy);
 
@@ -351,8 +383,8 @@ export namespace Privacy$ {
 }
 
 /** @internal */
-export const AccountInfoBody$inboundSchema: z.ZodType<
-  AccountInfoBody,
+export const V1AccountInfoResponseBody$inboundSchema: z.ZodType<
+  V1AccountInfoResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -390,6 +422,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
   lastBanDate: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
+  lastQueueStatus: LastQueueStatus$inboundSchema,
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
@@ -420,7 +453,7 @@ export const AccountInfoBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountInfoBody$Outbound = {
+export type V1AccountInfoResponseBody$Outbound = {
   $schema?: string | undefined;
   accountId: number;
   animatedAvatar: string;
@@ -451,6 +484,7 @@ export type AccountInfoBody$Outbound = {
   gameBans: number;
   images: Array<Image$Outbound> | null;
   lastBanDate: string | null;
+  lastQueueStatus: string;
   level: number;
   miniBackground: string;
   name: string;
@@ -475,10 +509,10 @@ export type AccountInfoBody$Outbound = {
 };
 
 /** @internal */
-export const AccountInfoBody$outboundSchema: z.ZodType<
-  AccountInfoBody$Outbound,
+export const V1AccountInfoResponseBody$outboundSchema: z.ZodType<
+  V1AccountInfoResponseBody$Outbound,
   z.ZodTypeDef,
-  AccountInfoBody
+  V1AccountInfoResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
   accountId: z.number().int(),
@@ -510,6 +544,7 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
   gameBans: z.number().int(),
   images: z.nullable(z.array(Image$outboundSchema)),
   lastBanDate: z.nullable(z.date().transform(v => v.toISOString())),
+  lastQueueStatus: LastQueueStatus$outboundSchema,
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
@@ -541,27 +576,29 @@ export const AccountInfoBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountInfoBody$ {
-  /** @deprecated use `AccountInfoBody$inboundSchema` instead. */
-  export const inboundSchema = AccountInfoBody$inboundSchema;
-  /** @deprecated use `AccountInfoBody$outboundSchema` instead. */
-  export const outboundSchema = AccountInfoBody$outboundSchema;
-  /** @deprecated use `AccountInfoBody$Outbound` instead. */
-  export type Outbound = AccountInfoBody$Outbound;
+export namespace V1AccountInfoResponseBody$ {
+  /** @deprecated use `V1AccountInfoResponseBody$inboundSchema` instead. */
+  export const inboundSchema = V1AccountInfoResponseBody$inboundSchema;
+  /** @deprecated use `V1AccountInfoResponseBody$outboundSchema` instead. */
+  export const outboundSchema = V1AccountInfoResponseBody$outboundSchema;
+  /** @deprecated use `V1AccountInfoResponseBody$Outbound` instead. */
+  export type Outbound = V1AccountInfoResponseBody$Outbound;
 }
 
-export function accountInfoBodyToJSON(
-  accountInfoBody: AccountInfoBody,
+export function v1AccountInfoResponseBodyToJSON(
+  v1AccountInfoResponseBody: V1AccountInfoResponseBody,
 ): string {
-  return JSON.stringify(AccountInfoBody$outboundSchema.parse(accountInfoBody));
+  return JSON.stringify(
+    V1AccountInfoResponseBody$outboundSchema.parse(v1AccountInfoResponseBody),
+  );
 }
 
-export function accountInfoBodyFromJSON(
+export function v1AccountInfoResponseBodyFromJSON(
   jsonString: string,
-): SafeParseResult<AccountInfoBody, SDKValidationError> {
+): SafeParseResult<V1AccountInfoResponseBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountInfoBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountInfoBody' from JSON`,
+    (x) => V1AccountInfoResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1AccountInfoResponseBody' from JSON`,
   );
 }

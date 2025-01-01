@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "background";
+let value: ResourceResource = "account_colors";
 ```
 
 ## Values

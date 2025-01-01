@@ -17,7 +17,6 @@ let value: BadgeV1TagsResponse = {
       "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json",
     colorTags: [
       {
-        gradient: "<value>",
         group: "<value>",
         groupOwner: false,
         hex: "<value>",

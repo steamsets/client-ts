@@ -6,7 +6,6 @@
 import { ColorTag } from "@steamsets/client-ts/models/components";
 
 let value: ColorTag = {
-  gradient: "<value>",
   group: "<value>",
   groupOwner: false,
   hex: "<value>",
@@ -20,7 +19,6 @@ let value: ColorTag = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `gradient`         | *string*           | :heavy_check_mark: | N/A                |
 | `group`            | *string*           | :heavy_check_mark: | N/A                |
 | `groupOwner`       | *boolean*          | :heavy_check_mark: | N/A                |
 | `hex`              | *string*           | :heavy_check_mark: | N/A                |

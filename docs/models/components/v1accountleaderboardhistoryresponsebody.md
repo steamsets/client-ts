@@ -10,10 +10,10 @@ let value: V1AccountLeaderboardHistoryResponseBody = {
     "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
   histories: [
     {
-      date: new Date("2025-09-09T18:02:30.092Z"),
-      leaderboard: "xp",
-      rank: 216897,
-      score: 663078,
+      date: new Date("2023-01-23T15:12:14.003Z"),
+      leaderboard: "points_given",
+      rank: 320017,
+      score: 383464,
     },
   ],
 };

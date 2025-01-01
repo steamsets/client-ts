@@ -12,8 +12,9 @@ let value: AccountV1GetInfoResponse = {
     }),
     request: new Request("https://example.com"),
   },
-  accountInfoBody: {
-    dollarSchema: "https://api.steamsets.com/schemas/AccountInfoBody.json",
+  v1AccountInfoResponseBody: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json",
     accountId: 123456,
     animatedAvatar: "steamsets",
     appCost: 123456,
@@ -78,6 +79,7 @@ let value: AccountV1GetInfoResponse = {
       },
     ],
     lastBanDate: new Date("2024-03-07 07:31:46"),
+    lastQueueStatus: "undefined",
     level: 123456,
     miniBackground: "steamsets",
     name: "steamsets",
@@ -93,8 +95,8 @@ let value: AccountV1GetInfoResponse = {
     },
     roles: [
       {
-        rating: 102044,
-        role: "developer",
+        rating: 208876,
+        role: "staff",
       },
     ],
     shortlinkDomain: "steamsets.link",
@@ -103,12 +105,12 @@ let value: AccountV1GetInfoResponse = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 161309,
+    steamSetsScore: 653108,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     theme: "steamsets",
     updatedAt: new Date("2023-01-01T00:00:00Z"),
-    vacBans: 653108,
+    vacBans: 253291,
     xp: 123456,
   },
 };
@@ -116,7 +118,7 @@ let value: AccountV1GetInfoResponse = {
 
 ## Fields
 
-| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `httpMeta`                                                               | [components.HTTPMetadata](../../models/components/httpmetadata.md)       | :heavy_check_mark:                                                       | N/A                                                                      |
-| `accountInfoBody`                                                        | [components.AccountInfoBody](../../models/components/accountinfobody.md) | :heavy_minus_sign:                                                       | OK                                                                       |
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                   | [components.HTTPMetadata](../../models/components/httpmetadata.md)                           | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `v1AccountInfoResponseBody`                                                                  | [components.V1AccountInfoResponseBody](../../models/components/v1accountinforesponsebody.md) | :heavy_minus_sign:                                                                           | OK                                                                                           |

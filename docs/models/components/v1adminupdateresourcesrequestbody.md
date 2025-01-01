@@ -13,7 +13,7 @@ let value: V1AdminUpdateResourcesRequestBody = {
     },
   ],
   resource: [
-    "social_links",
+    "mini_background",
   ],
 };
 ```

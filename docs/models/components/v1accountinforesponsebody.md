@@ -1,12 +1,13 @@
-# AccountInfoBody
+# V1AccountInfoResponseBody
 
 ## Example Usage
 
 ```typescript
-import { AccountInfoBody } from "@steamsets/client-ts/models/components";
+import { V1AccountInfoResponseBody } from "@steamsets/client-ts/models/components";
 
-let value: AccountInfoBody = {
-  dollarSchema: "https://api.steamsets.com/schemas/AccountInfoBody.json",
+let value: V1AccountInfoResponseBody = {
+  dollarSchema:
+    "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json",
   accountId: 123456,
   animatedAvatar: "steamsets",
   appCost: 123456,
@@ -19,7 +20,7 @@ let value: AccountInfoBody = {
   awardsReceived: 123456,
   background: "steamsets",
   badges: 123456,
-  bans: 434417,
+  bans: 179603,
   city: {
     id: 1,
     name: "Bad Krozingen",
@@ -45,13 +46,13 @@ let value: AccountInfoBody = {
   createdAt: new Date("2023-01-01T00:00:00Z"),
   currentBestRanks: [
     {
-      leaderboard: "bans",
+      leaderboard: "apps",
       ranks: "1,1,1,1,1",
     },
   ],
   currentRanks: [
     {
-      leaderboard: "playtime",
+      leaderboard: "app_playtime",
       ranks: "1,1,1,1,1",
     },
   ],
@@ -61,7 +62,7 @@ let value: AccountInfoBody = {
   foilBadges: 123456,
   friendPrivacy: "public",
   friends: 123456,
-  gameBans: 377752,
+  gameBans: 679393,
   images: [
     {
       active: true,
@@ -71,6 +72,7 @@ let value: AccountInfoBody = {
     },
   ],
   lastBanDate: new Date("2024-03-07 07:31:46"),
+  lastQueueStatus: "in_progress",
   level: 123456,
   miniBackground: "steamsets",
   name: "steamsets",
@@ -86,8 +88,8 @@ let value: AccountInfoBody = {
   },
   roles: [
     {
-      rating: 179603,
-      role: "user",
+      rating: 536579,
+      role: "top_100",
     },
   ],
   shortlinkDomain: "steamsets.link",
@@ -96,12 +98,12 @@ let value: AccountInfoBody = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 67249,
+  steamSetsScore: 990339,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   theme: "steamsets",
   updatedAt: new Date("2023-01-01T00:00:00Z"),
-  vacBans: 679393,
+  vacBans: 216897,
   xp: 123456,
 };
 ```
@@ -110,7 +112,7 @@ let value: AccountInfoBody = {
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | https://api.steamsets.com/schemas/AccountInfoBody.json                                        |
+| `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json                              |
 | `accountId`                                                                                   | *number*                                                                                      | :heavy_check_mark:                                                                            | The account id                                                                                | 123456                                                                                        |
 | `animatedAvatar`                                                                              | *string*                                                                                      | :heavy_check_mark:                                                                            | The animated avatar of the account                                                            | steamsets                                                                                     |
 | `appCost`                                                                                     | *number*                                                                                      | :heavy_check_mark:                                                                            | The cost of an app                                                                            | 123456                                                                                        |
@@ -140,6 +142,7 @@ let value: AccountInfoBody = {
 | `gameBans`                                                                                    | *number*                                                                                      | :heavy_check_mark:                                                                            | The number of game bans                                                                       |                                                                                               |
 | `images`                                                                                      | [components.Image](../../models/components/image.md)[]                                        | :heavy_check_mark:                                                                            | The images of the account                                                                     |                                                                                               |
 | `lastBanDate`                                                                                 | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The Last date the account got a ban on                                                        | 2024-03-07 07:31:46                                                                           |
+| `lastQueueStatus`                                                                             | [components.LastQueueStatus](../../models/components/lastqueuestatus.md)                      | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `level`                                                                                       | *number*                                                                                      | :heavy_check_mark:                                                                            | The level of the account                                                                      | 123456                                                                                        |
 | `miniBackground`                                                                              | *string*                                                                                      | :heavy_check_mark:                                                                            | The mini background of the account                                                            | steamsets                                                                                     |
 | `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | The name of the account                                                                       | steamsets                                                                                     |

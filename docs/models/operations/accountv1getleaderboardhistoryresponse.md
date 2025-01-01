@@ -17,10 +17,10 @@ let value: AccountV1GetLeaderboardHistoryResponse = {
       "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json",
     histories: [
       {
-        date: new Date("2023-10-05T14:34:56.327Z"),
-        leaderboard: "foil_badges",
-        rank: 244425,
-        score: 158969,
+        date: new Date("2024-05-26T01:50:18.849Z"),
+        leaderboard: "bans",
+        rank: 158969,
+        score: 110375,
       },
     ],
   },

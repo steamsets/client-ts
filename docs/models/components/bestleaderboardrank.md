@@ -6,7 +6,7 @@
 import { BestLeaderboardRank } from "@steamsets/client-ts/models/components";
 
 let value: BestLeaderboardRank = {
-  leaderboard: "foil_badges",
+  leaderboard: "bans",
   ranks: "1,1,1,1,1",
 };
 ```
