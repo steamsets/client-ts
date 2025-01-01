@@ -26,6 +26,8 @@ export type DeveloperAppEnvironment = ClosedEnum<
 export type DeveloperApp = {
   /**
    * The api key of the developer app
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   apiKey: string | null;
   /**

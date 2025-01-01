@@ -15,13 +15,13 @@ let value: V1BadgeTagsResponseBody = {
       groupOwner: false,
       hex: "<value>",
       hsl: "<value>",
-      id: 699479,
+      id: 447125,
       name: "<value>",
     },
   ],
   designTags: [
     {
-      id: 297437,
+      id: 846409,
       name: "<value>",
     },
   ],

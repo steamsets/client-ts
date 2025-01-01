@@ -103,7 +103,7 @@ export async function developerCreateDeveloperApp(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["400", "404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -132,7 +132,7 @@ export async function developerCreateDeveloperApp(
       operations.AccountV1SettingsDeveloperAppCreateResponse$inboundSchema,
       { key: "V1DeveloperAppCreateResponseBody" },
     ),
-    M.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 404, 422, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail(["4XX", "5XX"]),

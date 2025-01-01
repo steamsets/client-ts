@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: b4b006b512363bee4d08bd4d362bc991
+  docChecksum: 5acf1a1fd4d49c1c44e09e569c668551
   docVersion: 1.0.0
-  speakeasyVersion: 1.460.2
+  speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.14.6
-  configChecksum: 34054610e54e84267f032a8c1d47f4ec
+  releaseVersion: 0.14.7
+  configChecksum: 6f2d6dd9d2fb6fcba0f7c588c26a9a91
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -611,14 +611,14 @@ examples:
     speakeasy-default-account-v1-get-apps:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": [], "pages": 433832}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": [], "pages": 1, "totalHits": 1}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getBadges:
     speakeasy-default-account-v1-get-badges:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgesResponseBody.json", "badges": [], "pages": 809352}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgesResponseBody.json", "badges": [], "pages": 1, "totalHits": 1}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getDataPoints:
@@ -812,6 +812,8 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeveloperAppCreateResponseBody.json", "apiKey": "api_123"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.developer-app-delete:
     speakeasy-default-account-v1-settings-developer-app-delete:

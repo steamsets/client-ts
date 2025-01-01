@@ -18,7 +18,8 @@ let value: V1AccountsAppsResponseBody = {
       price: 1200,
     },
   ],
-  pages: 453543,
+  pages: 1,
+  totalHits: 1,
 };
 ```
 
@@ -28,4 +29,5 @@ let value: V1AccountsAppsResponseBody = {
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | `dollarSchema`                                                       | *string*                                                             | :heavy_minus_sign:                                                   | A URL to the JSON Schema for this object.                            | https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json    |
 | `apps`                                                               | [components.V1AccountApp](../../models/components/v1accountapp.md)[] | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
-| `pages`                                                              | *number*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
+| `pages`                                                              | *number*                                                             | :heavy_check_mark:                                                   | The number of pages                                                  | 1                                                                    |
+| `totalHits`                                                          | *number*                                                             | :heavy_check_mark:                                                   | The total number of hits for all pages                               | 1                                                                    |

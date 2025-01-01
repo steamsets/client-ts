@@ -20,7 +20,14 @@ export type V1AccountsAppsResponseBody = {
    */
   dollarSchema?: string | undefined;
   apps: Array<V1AccountApp> | null;
+  /**
+   * The number of pages
+   */
   pages: number;
+  /**
+   * The total number of hits for all pages
+   */
+  totalHits: number;
 };
 
 /** @internal */
@@ -32,6 +39,7 @@ export const V1AccountsAppsResponseBody$inboundSchema: z.ZodType<
   $schema: z.string().optional(),
   apps: z.nullable(z.array(V1AccountApp$inboundSchema)),
   pages: z.number().int(),
+  totalHits: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -43,6 +51,7 @@ export type V1AccountsAppsResponseBody$Outbound = {
   $schema?: string | undefined;
   apps: Array<V1AccountApp$Outbound> | null;
   pages: number;
+  totalHits: number;
 };
 
 /** @internal */
@@ -54,6 +63,7 @@ export const V1AccountsAppsResponseBody$outboundSchema: z.ZodType<
   dollarSchema: z.string().optional(),
   apps: z.nullable(z.array(V1AccountApp$outboundSchema)),
   pages: z.number().int(),
+  totalHits: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
