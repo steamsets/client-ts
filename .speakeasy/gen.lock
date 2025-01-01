@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 5acf1a1fd4d49c1c44e09e569c668551
+  docChecksum: 023494a7da3f09811635d297d7814674
   docVersion: 1.0.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.14.7
-  configChecksum: 6f2d6dd9d2fb6fcba0f7c588c26a9a91
+  releaseVersion: 0.14.8
+  configChecksum: 2c83b3ea9571f42fd0be0703852bbdbf
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -154,7 +154,6 @@ generatedFiles:
   - docs/models/components/v1badgesrequestbody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
-  - docs/models/components/v1badgetagsrequestbody.md
   - docs/models/components/v1badgetagsresponsebody.md
   - docs/models/components/v1connectrequestbody.md
   - docs/models/components/v1connectresponsebody.md
@@ -431,7 +430,6 @@ generatedFiles:
   - src/models/components/v1badgesrequestbody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
-  - src/models/components/v1badgetagsrequestbody.ts
   - src/models/components/v1badgetagsresponsebody.ts
   - src/models/components/v1connectrequestbody.ts
   - src/models/components/v1connectresponsebody.ts
@@ -563,7 +561,7 @@ examples:
         application/json: {"code": "123456", "provider": "discord"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123", "publicId": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.session.create:
@@ -783,7 +781,7 @@ examples:
     speakeasy-default-badge-v1-tags:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [{"Gradient": "<value>", "Group": "<value>", "GroupOwner": false, "Hex": "<value>", "Hsl": "<value>", "ID": 903285, "Name": "<value>"}, {"Gradient": "<value>", "Group": "<value>", "GroupOwner": false, "Hex": "<value>", "Hsl": "<value>", "ID": 410040, "Name": "<value>"}], "designTags": [{"ID": 873198, "Name": "<value>"}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [{"gradient": "<value>", "group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}, {"gradient": "<value>", "group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.v1.search:
@@ -794,11 +792,11 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": "3133.10"}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": "3133.10"}]}
   badge.v1.tag:
     speakeasy-default-badge-v1-tag:
       requestBody:
-        application/json: {"badgeId": "bdg_123", "colors": [922516, 416016], "designs": [{"id": 1, "name": "cat"}, {"id": 1, "name": "cat"}, {"id": 1, "name": "cat"}]}
+        application/json: {"badgeId": "bdg_123", "colors": ["922516", "416016"], "designs": [{"id": "1", "name": "cat"}, {"id": "1", "name": "cat"}, {"id": "1", "name": "cat"}]}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json"}
@@ -818,7 +816,7 @@ examples:
   account.v1.settings.developer-app-delete:
     speakeasy-default-account-v1-settings-developer-app-delete:
       requestBody:
-        application/json: {"publicId": "da_123456"}
+        application/json: {"developerAppId": "da_123456"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppDeleteResponseBody.json"}
@@ -836,7 +834,7 @@ examples:
   account.v1.settings.developer-app-update:
     speakeasy-default-account-v1-settings-developer-app-update:
       requestBody:
-        application/json: {"description": "My App Description", "icon": "https://yoururl.com/icon.png", "name": "My App", "publicId": "da_123456", "regenerate": true}
+        application/json: {"description": "My App Description", "developerAppId": "da_123456", "icon": "https://yoururl.com/icon.png", "name": "My App", "regenerate": true}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
@@ -862,7 +860,7 @@ examples:
     speakeasy-default-leaderboard-v1-get-badges:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "publicId": "bdg_123", "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.v1.getGroup:
@@ -878,7 +876,7 @@ examples:
     speakeasy-default-admin-v1-get-account:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "externalId": "123456", "hide": true, "name": "steamsets", "provider": "discord", "publicId": "123456", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [{"rating": 911979, "role": "sapphire"}], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [{"rating": 911979, "role": "sapphire"}], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   location.v1.location.get:
@@ -920,7 +918,7 @@ examples:
     speakeasy-default-admin-v1-get-events:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2023-02-11T10:30:25.221Z", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "mappings": [{"appId": 730, "steamId": 76561198842603730}, {"appId": 730, "steamId": 76561198842603730}], "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "publicId": "<id>", "startsAt": "2024-04-11T15:48:12.868Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2023-02-11T10:30:25.221Z", "eventId": "<id>", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "mappings": [{"appId": 730, "steamId": 76561198842603730}, {"appId": 730, "steamId": 76561198842603730}], "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2024-04-11T15:48:12.868Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.v1.update-event:

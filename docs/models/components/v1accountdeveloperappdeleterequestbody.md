@@ -6,7 +6,7 @@
 import { V1AccountDeveloperAppDeleteRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountDeveloperAppDeleteRequestBody = {
-  publicId: "da_123456",
+  developerAppId: "da_123456",
 };
 ```
 
@@ -14,4 +14,4 @@ let value: V1AccountDeveloperAppDeleteRequestBody = {
 
 | Field                              | Type                               | Required                           | Description                        | Example                            |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-| `publicId`                         | *string*                           | :heavy_check_mark:                 | The public id of the developer app | da_123456                          |
+| `developerAppId`                   | *string*                           | :heavy_check_mark:                 | The public id of the developer app | da_123456                          |

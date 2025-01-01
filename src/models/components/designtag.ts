@@ -3,13 +3,12 @@
  */
 
 import * as z from "zod";
-import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type DesignTag = {
-  id: number;
+  id: string;
   name: string;
 };
 
@@ -19,19 +18,14 @@ export const DesignTag$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  ID: z.number().int(),
-  Name: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ID": "id",
-    "Name": "name",
-  });
+  id: z.string(),
+  name: z.string(),
 });
 
 /** @internal */
 export type DesignTag$Outbound = {
-  ID: number;
-  Name: string;
+  id: string;
+  name: string;
 };
 
 /** @internal */
@@ -40,13 +34,8 @@ export const DesignTag$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   DesignTag
 > = z.object({
-  id: z.number().int(),
+  id: z.string(),
   name: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    id: "ID",
-    name: "Name",
-  });
 });
 
 /**

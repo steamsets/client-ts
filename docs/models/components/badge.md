@@ -6,30 +6,30 @@
 import { Badge } from "@steamsets/client-ts/models/components";
 
 let value: Badge = {
-  appId: 574325,
+  appId: 501324,
   appImage: "<value>",
   appName: "<value>",
-  bookmarks: 653201,
+  badgeId: "<id>",
+  bookmarks: 956084,
   colors: [
     "<value>",
   ],
   designs: [
     "<value>",
   ],
-  firstCompletion: 652103,
-  highestLevel: 431418,
-  id: "<id>",
-  image: "https://loremflickr.com/3586/1470?lock=8033731378583247",
+  firstCompletion: 643990,
+  highestLevel: 423855,
+  image: "https://loremflickr.com/2425/77?lock=5946314594903837",
   isEvent: false,
   isFoil: false,
   isSale: false,
-  lastCompletion: 806194,
-  level: 703889,
+  lastCompletion: 290077,
+  level: 618016,
   name: "<value>",
-  price: 100226,
-  scarcity: 919483,
-  steamId: 714242,
-  xp: 9988.47,
+  price: 428769,
+  scarcity: 135474,
+  steamId: 298282,
+  xp: 5699.65,
 };
 ```
 
@@ -40,12 +40,12 @@ let value: Badge = {
 | `appId`            | *number*           | :heavy_check_mark: | N/A                |
 | `appImage`         | *string*           | :heavy_check_mark: | N/A                |
 | `appName`          | *string*           | :heavy_check_mark: | N/A                |
+| `badgeId`          | *string*           | :heavy_check_mark: | N/A                |
 | `bookmarks`        | *number*           | :heavy_check_mark: | N/A                |
 | `colors`           | *string*[]         | :heavy_check_mark: | N/A                |
 | `designs`          | *string*[]         | :heavy_check_mark: | N/A                |
 | `firstCompletion`  | *number*           | :heavy_check_mark: | N/A                |
 | `highestLevel`     | *number*           | :heavy_check_mark: | N/A                |
-| `id`               | *string*           | :heavy_check_mark: | N/A                |
 | `image`            | *string*           | :heavy_check_mark: | N/A                |
 | `isEvent`          | *boolean*          | :heavy_check_mark: | N/A                |
 | `isFoil`           | *boolean*          | :heavy_check_mark: | N/A                |

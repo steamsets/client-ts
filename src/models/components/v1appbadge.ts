@@ -18,6 +18,7 @@ export type V1AppBadge = {
   appId: number;
   appImage: string;
   appName: string;
+  badgeId: string;
   badgeImage: string;
   /**
    * The level this badge starts at
@@ -35,7 +36,6 @@ export type V1AppBadge = {
   lastCompletion: Date | null;
   name: string;
   price: number;
-  publicId: string;
   scarcity: number;
   steamId: number;
 };
@@ -50,6 +50,7 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
+  badgeId: z.string(),
   badgeImage: z.string(),
   baseLevel: z.number().int(),
   baseXp: z.number().int(),
@@ -65,7 +66,6 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   ),
   name: z.string(),
   price: z.number().int(),
-  publicId: z.string(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
 });
@@ -76,6 +76,7 @@ export type V1AppBadge$Outbound = {
   appId: number;
   appImage: string;
   appName: string;
+  badgeId: string;
   badgeImage: string;
   baseLevel: number;
   baseXp: number;
@@ -87,7 +88,6 @@ export type V1AppBadge$Outbound = {
   lastCompletion: string | null;
   name: string;
   price: number;
-  publicId: string;
   scarcity: number;
   steamId: number;
 };
@@ -102,6 +102,7 @@ export const V1AppBadge$outboundSchema: z.ZodType<
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
+  badgeId: z.string(),
   badgeImage: z.string(),
   baseLevel: z.number().int(),
   baseXp: z.number().int(),
@@ -113,7 +114,6 @@ export const V1AppBadge$outboundSchema: z.ZodType<
   lastCompletion: z.nullable(z.date().transform(v => v.toISOString())),
   name: z.string(),
   price: z.number().int(),
-  publicId: z.string(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
 });

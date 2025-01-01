@@ -27,6 +27,10 @@ export type V1Event = {
    */
   endsAt: Date;
   /**
+   * Use this ID to make any changes to the event
+   */
+  eventId: string;
+  /**
    * The gid of the event
    */
   gid: string;
@@ -47,10 +51,6 @@ export type V1Event = {
    */
   postedAt: Date;
   /**
-   * Use this ID to make any changes to the event
-   */
-  publicId: string;
-  /**
    * The start time of the event
    */
   startsAt: Date;
@@ -70,12 +70,12 @@ export const V1Event$inboundSchema: z.ZodType<V1Event, z.ZodTypeDef, unknown> =
     bodyImage: z.string(),
     downvotes: z.number().int(),
     endsAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    eventId: z.string(),
     gid: z.string(),
     headerImage: z.string(),
     mappings: z.nullable(z.array(V1AppEventMapping$inboundSchema)),
     name: z.string(),
     postedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-    publicId: z.string(),
     startsAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
     title: z.string(),
     upvotes: z.number().int(),
@@ -86,12 +86,12 @@ export type V1Event$Outbound = {
   bodyImage: string;
   downvotes: number;
   endsAt: string;
+  eventId: string;
   gid: string;
   headerImage: string;
   mappings: Array<V1AppEventMapping$Outbound> | null;
   name: string;
   postedAt: string;
-  publicId: string;
   startsAt: string;
   title: string;
   upvotes: number;
@@ -106,12 +106,12 @@ export const V1Event$outboundSchema: z.ZodType<
   bodyImage: z.string(),
   downvotes: z.number().int(),
   endsAt: z.date().transform(v => v.toISOString()),
+  eventId: z.string(),
   gid: z.string(),
   headerImage: z.string(),
   mappings: z.nullable(z.array(V1AppEventMapping$outboundSchema)),
   name: z.string(),
   postedAt: z.date().transform(v => v.toISOString()),
-  publicId: z.string(),
   startsAt: z.date().transform(v => v.toISOString()),
   title: z.string(),
   upvotes: z.number().int(),

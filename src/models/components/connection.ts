@@ -32,6 +32,10 @@ export type Connection = {
    */
   avatar: string;
   /**
+   * The public id of the connection
+   */
+  connectionId: string;
+  /**
    * The external id of the connected user
    */
   externalId: string;
@@ -47,10 +51,6 @@ export type Connection = {
    * The provider to connect with
    */
   provider: ConnectionProvider;
-  /**
-   * The public id of the connection
-   */
-  publicId: string;
   /**
    * Whether the connection has been verified or not
    */
@@ -85,22 +85,22 @@ export const Connection$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   avatar: z.string(),
+  connectionId: z.string(),
   externalId: z.string(),
   hide: z.boolean(),
   name: z.string(),
   provider: ConnectionProvider$inboundSchema,
-  publicId: z.string(),
   verified: z.boolean(),
 });
 
 /** @internal */
 export type Connection$Outbound = {
   avatar: string;
+  connectionId: string;
   externalId: string;
   hide: boolean;
   name: string;
   provider: string;
-  publicId: string;
   verified: boolean;
 };
 
@@ -111,11 +111,11 @@ export const Connection$outboundSchema: z.ZodType<
   Connection
 > = z.object({
   avatar: z.string(),
+  connectionId: z.string(),
   externalId: z.string(),
   hide: z.boolean(),
   name: z.string(),
   provider: ConnectionProvider$outboundSchema,
-  publicId: z.string(),
   verified: z.boolean(),
 });
 

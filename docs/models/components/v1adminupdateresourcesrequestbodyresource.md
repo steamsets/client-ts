@@ -5,7 +5,7 @@
 ```typescript
 import { V1AdminUpdateResourcesRequestBodyResource } from "@steamsets/client-ts/models/components";
 
-let value: V1AdminUpdateResourcesRequestBodyResource = "account_refresh_rate";
+let value: V1AdminUpdateResourcesRequestBodyResource = "account_colors";
 ```
 
 ## Values

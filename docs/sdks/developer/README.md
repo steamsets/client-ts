@@ -107,7 +107,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.developer.deleteDeveloperApp({
-    publicId: "da_123456",
+    developerAppId: "da_123456",
   });
 
   // Handle the result
@@ -133,7 +133,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await developerDeleteDeveloperApp(steamSets, {
-    publicId: "da_123456",
+    developerAppId: "da_123456",
   });
 
   if (!res.ok) {
@@ -183,9 +183,9 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.developer.updateApp({
     description: "My App Description",
+    developerAppId: "da_123456",
     icon: "https://yoururl.com/icon.png",
     name: "My App",
-    publicId: "da_123456",
     regenerate: true,
   });
 
@@ -213,9 +213,9 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await developerUpdateApp(steamSets, {
     description: "My App Description",
+    developerAppId: "da_123456",
     icon: "https://yoururl.com/icon.png",
     name: "My App",
-    publicId: "da_123456",
     regenerate: true,
   });
 

@@ -22,20 +22,20 @@ async function run() {
   const result = await steamSets.badges.tag({
     badgeId: "bdg_123",
     colors: [
-      922516,
-      416016,
+      "922516",
+      "416016",
     ],
     designs: [
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
     ],
@@ -66,20 +66,20 @@ async function run() {
   const res = await badgesTag(steamSets, {
     badgeId: "bdg_123",
     colors: [
-      922516,
-      416016,
+      "922516",
+      "416016",
     ],
     designs: [
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
       {
-        id: 1,
+        id: "1",
         name: "cat",
       },
     ],

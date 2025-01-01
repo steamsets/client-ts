@@ -73,7 +73,6 @@ export * from "./v1badgesearchresponsebody.js";
 export * from "./v1badgesrequestbody.js";
 export * from "./v1badgesresponsebody.js";
 export * from "./v1badgetagrequestbody.js";
-export * from "./v1badgetagsrequestbody.js";
 export * from "./v1badgetagsresponsebody.js";
 export * from "./v1connectrequestbody.js";
 export * from "./v1connectresponsebody.js";
