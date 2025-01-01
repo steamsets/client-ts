@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 023494a7da3f09811635d297d7814674
+  docChecksum: 39064662f3368c490efa004f7bb5cb65
   docVersion: 1.0.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.14.8
-  configChecksum: 2c83b3ea9571f42fd0be0703852bbdbf
+  releaseVersion: 0.14.9
+  configChecksum: 3e5e5c6a95bce66e5fdcf3ecc81ff007
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -59,7 +59,6 @@ generatedFiles:
   - USAGE.md
   - docs/lib/utils/retryconfig.md
   - docs/models/components/accountbadgeinfo.md
-  - docs/models/components/accountinfobody.md
   - docs/models/components/accountleaderboardhistory.md
   - docs/models/components/accountleaderboardhistoryleaderboard.md
   - docs/models/components/accountsearch.md
@@ -89,6 +88,7 @@ generatedFiles:
   - docs/models/components/idstruct.md
   - docs/models/components/image.md
   - docs/models/components/imagetype.md
+  - docs/models/components/lastqueuestatus.md
   - docs/models/components/leaderboard.md
   - docs/models/components/leaderboardaccount.md
   - docs/models/components/leaderboardcity.md
@@ -122,6 +122,7 @@ generatedFiles:
   - docs/models/components/v1accountdeveloperappupdateresponsebody.md
   - docs/models/components/v1accountfriend.md
   - docs/models/components/v1accountfriendsresponsebody.md
+  - docs/models/components/v1accountinforesponsebody.md
   - docs/models/components/v1accountleaderboardaccount.md
   - docs/models/components/v1accountleaderboardappsearch.md
   - docs/models/components/v1accountleaderboardbadgesearch.md
@@ -130,7 +131,6 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
   - docs/models/components/v1accountlocationupdate.md
-  - docs/models/components/v1accountmetaresponsebody.md
   - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
@@ -214,11 +214,9 @@ generatedFiles:
   - docs/models/operations/accountv1getbadgebookmarksresponse.md
   - docs/models/operations/accountv1getbadgesresponse.md
   - docs/models/operations/accountv1getdatapointsresponse.md
-  - docs/models/operations/accountv1getembedresponse.md
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
-  - docs/models/operations/accountv1getmetaresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
   - docs/models/operations/accountv1imagesdeleteresponse.md
   - docs/models/operations/accountv1imagesgetresponse.md
@@ -266,7 +264,6 @@ generatedFiles:
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/locations/README.md
-  - docs/sdks/meta/README.md
   - docs/sdks/public/README.md
   - docs/sdks/session/README.md
   - docs/sdks/sessions/README.md
@@ -323,8 +320,6 @@ generatedFiles:
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
-  - src/funcs/metaAccountV1GetEmbed.ts
-  - src/funcs/metaAccountV1GetMeta.ts
   - src/funcs/publicGetApps.ts
   - src/funcs/publicGetBadges.ts
   - src/funcs/publicGetDataPoints.ts
@@ -359,7 +354,6 @@ generatedFiles:
   - src/lib/security.ts
   - src/lib/url.ts
   - src/models/components/accountbadgeinfo.ts
-  - src/models/components/accountinfobody.ts
   - src/models/components/accountleaderboardhistory.ts
   - src/models/components/accountsearch.ts
   - src/models/components/accountsearchidstruct.ts
@@ -403,6 +397,7 @@ generatedFiles:
   - src/models/components/v1accountdeveloperappupdateresponsebody.ts
   - src/models/components/v1accountfriend.ts
   - src/models/components/v1accountfriendsresponsebody.ts
+  - src/models/components/v1accountinforesponsebody.ts
   - src/models/components/v1accountleaderboardaccount.ts
   - src/models/components/v1accountleaderboardappsearch.ts
   - src/models/components/v1accountleaderboardbadgesearch.ts
@@ -410,7 +405,6 @@ generatedFiles:
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
   - src/models/components/v1accountlocationupdate.ts
-  - src/models/components/v1accountmetaresponsebody.ts
   - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
@@ -489,11 +483,9 @@ generatedFiles:
   - src/models/operations/accountv1getbadgebookmarks.ts
   - src/models/operations/accountv1getbadges.ts
   - src/models/operations/accountv1getdatapoints.ts
-  - src/models/operations/accountv1getembed.ts
   - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
-  - src/models/operations/accountv1getmeta.ts
   - src/models/operations/accountv1getstaff.ts
   - src/models/operations/accountv1imagesdelete.ts
   - src/models/operations/accountv1imagesget.ts
@@ -539,7 +531,6 @@ generatedFiles:
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
   - src/sdk/locations.ts
-  - src/sdk/meta.ts
   - src/sdk/public.ts
   - src/sdk/sdk.ts
   - src/sdk/session.ts
@@ -637,7 +628,7 @@ examples:
     speakeasy-default-account-v1-get-info:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/AccountInfoBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 44244, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [], "currentRanks": [], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 154594, "images": [], "lastBanDate": "2024-03-07 07:31:46", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 451463, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 768684, "xp": 123456}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 44244, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [], "currentRanks": [], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 154594, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 451463, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 768684, "xp": 123456}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "403":
@@ -781,7 +772,7 @@ examples:
     speakeasy-default-badge-v1-tags:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [{"gradient": "<value>", "group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}, {"gradient": "<value>", "group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [{"group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}, {"group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.v1.search:

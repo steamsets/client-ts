@@ -14,7 +14,7 @@ export type AccountV1GetInfoResponse = {
   /**
    * OK
    */
-  accountInfoBody?: components.AccountInfoBody | undefined;
+  v1AccountInfoResponseBody?: components.V1AccountInfoResponseBody | undefined;
 };
 
 /** @internal */
@@ -24,18 +24,21 @@ export const AccountV1GetInfoResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  AccountInfoBody: components.AccountInfoBody$inboundSchema.optional(),
+  V1AccountInfoResponseBody: components.V1AccountInfoResponseBody$inboundSchema
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "AccountInfoBody": "accountInfoBody",
+    "V1AccountInfoResponseBody": "v1AccountInfoResponseBody",
   });
 });
 
 /** @internal */
 export type AccountV1GetInfoResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  AccountInfoBody?: components.AccountInfoBody$Outbound | undefined;
+  V1AccountInfoResponseBody?:
+    | components.V1AccountInfoResponseBody$Outbound
+    | undefined;
 };
 
 /** @internal */
@@ -45,11 +48,12 @@ export const AccountV1GetInfoResponse$outboundSchema: z.ZodType<
   AccountV1GetInfoResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  accountInfoBody: components.AccountInfoBody$outboundSchema.optional(),
+  v1AccountInfoResponseBody: components.V1AccountInfoResponseBody$outboundSchema
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    accountInfoBody: "AccountInfoBody",
+    v1AccountInfoResponseBody: "V1AccountInfoResponseBody",
   });
 });
 

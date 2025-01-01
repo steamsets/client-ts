@@ -16,7 +16,6 @@ import { Images } from "./images.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Locations } from "./locations.js";
-import { Meta } from "./meta.js";
 import { Public } from "./public.js";
 import { Session } from "./session.js";
 import { Sessions } from "./sessions.js";
@@ -71,11 +70,6 @@ export class SteamSets extends ClientSDK {
   private _public?: Public;
   get public(): Public {
     return (this._public ??= new Public(this._options));
-  }
-
-  private _meta?: Meta;
-  get meta(): Meta {
-    return (this._meta ??= new Meta(this._options));
   }
 
   private _settings?: Settings;

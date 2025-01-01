@@ -13,7 +13,7 @@ let value: V1AccountFriend = {
   awardsGiven: 123456,
   awardsReceived: 123456,
   badges: 123456,
-  bans: 311945,
+  bans: 186193,
   city: {
     id: 1,
     name: "Bad Krozingen",
@@ -29,8 +29,8 @@ let value: V1AccountFriend = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  friendsSince: new Date("2024-03-12T10:48:24.554Z"),
-  gameBans: 209843,
+  friendsSince: new Date("2025-11-01T00:46:16.847Z"),
+  gameBans: 739551,
   level: 123456,
   name: "steamsets",
   normalBadgeCost: 123456,
@@ -45,8 +45,8 @@ let value: V1AccountFriend = {
   },
   roles: [
     {
-      rating: 186193,
-      role: "top_100",
+      rating: 490459,
+      role: "partner",
     },
   ],
   state: {
@@ -54,10 +54,10 @@ let value: V1AccountFriend = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 739551,
+  steamSetsScore: 254356,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 490459,
+  vacBans: 58029,
   xp: 123456,
 };
 ```

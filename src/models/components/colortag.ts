@@ -8,7 +8,6 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ColorTag = {
-  gradient: string | null;
   group: string;
   groupOwner: boolean;
   hex: string | null;
@@ -23,7 +22,6 @@ export const ColorTag$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  gradient: z.nullable(z.string()),
   group: z.string(),
   groupOwner: z.boolean(),
   hex: z.nullable(z.string()),
@@ -34,7 +32,6 @@ export const ColorTag$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ColorTag$Outbound = {
-  gradient: string | null;
   group: string;
   groupOwner: boolean;
   hex: string | null;
@@ -49,7 +46,6 @@ export const ColorTag$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ColorTag
 > = z.object({
-  gradient: z.nullable(z.string()),
   group: z.string(),
   groupOwner: z.boolean(),
   hex: z.nullable(z.string()),

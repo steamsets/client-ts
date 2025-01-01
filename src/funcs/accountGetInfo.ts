@@ -127,7 +127,7 @@ export async function accountGetInfo(
     | ConnectionError
   >(
     M.json(200, operations.AccountV1GetInfoResponse$inboundSchema, {
-      key: "AccountInfoBody",
+      key: "V1AccountInfoResponseBody",
     }),
     M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

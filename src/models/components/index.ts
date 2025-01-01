@@ -3,7 +3,6 @@
  */
 
 export * from "./accountbadgeinfo.js";
-export * from "./accountinfobody.js";
 export * from "./accountleaderboardhistory.js";
 export * from "./accountsearch.js";
 export * from "./accountsearchidstruct.js";
@@ -46,6 +45,7 @@ export * from "./v1accountdeveloperappupdaterequestbody.js";
 export * from "./v1accountdeveloperappupdateresponsebody.js";
 export * from "./v1accountfriend.js";
 export * from "./v1accountfriendsresponsebody.js";
+export * from "./v1accountinforesponsebody.js";
 export * from "./v1accountleaderboardaccount.js";
 export * from "./v1accountleaderboardappsearch.js";
 export * from "./v1accountleaderboardbadgesearch.js";
@@ -53,7 +53,6 @@ export * from "./v1accountleaderboardhistoryresponsebody.js";
 export * from "./v1accountleaderboardrequestbody.js";
 export * from "./v1accountleaderboardresponsebody.js";
 export * from "./v1accountlocationupdate.js";
-export * from "./v1accountmetaresponsebody.js";
 export * from "./v1accountnameupdate.js";
 export * from "./v1accountplaytimedatapoint.js";
 export * from "./v1accountqueuerequestbody.js";
