@@ -13,7 +13,6 @@ let value: V1BadgeSearchResponseBody = {
       appId: 735194,
       appImage: "<value>",
       appName: "<value>",
-      badgeId: "<id>",
       bookmarks: 962189,
       colors: [
         "<value>",
@@ -23,6 +22,7 @@ let value: V1BadgeSearchResponseBody = {
       ],
       firstCompletion: 248753,
       highestLevel: 576157,
+      id: "<id>",
       image: "https://loremflickr.com/2368/2289?lock=8581600186491004",
       isEvent: false,
       isFoil: false,

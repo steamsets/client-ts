@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 39064662f3368c490efa004f7bb5cb65
+  docChecksum: 4c7e739a35c04af2c3594759a4bf4bae
   docVersion: 1.0.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.14.9
-  configChecksum: 3e5e5c6a95bce66e5fdcf3ecc81ff007
+  releaseVersion: 0.14.10
+  configChecksum: 74e0d1e9a83db35fc0df19eb13b249cb
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -783,7 +783,7 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": "3133.10"}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": "3133.10"}]}
   badge.v1.tag:
     speakeasy-default-badge-v1-tag:
       requestBody:

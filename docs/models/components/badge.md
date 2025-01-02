@@ -9,7 +9,6 @@ let value: Badge = {
   appId: 881104,
   appImage: "<value>",
   appName: "<value>",
-  badgeId: "<id>",
   bookmarks: 581273,
   colors: [
     "<value>",
@@ -19,6 +18,7 @@ let value: Badge = {
   ],
   firstCompletion: 881736,
   highestLevel: 692532,
+  id: "<id>",
   image: "https://picsum.photos/seed/qB1iEhCq/2901/2005",
   isEvent: false,
   isFoil: false,
@@ -40,12 +40,12 @@ let value: Badge = {
 | `appId`            | *number*           | :heavy_check_mark: | N/A                |
 | `appImage`         | *string*           | :heavy_check_mark: | N/A                |
 | `appName`          | *string*           | :heavy_check_mark: | N/A                |
-| `badgeId`          | *string*           | :heavy_check_mark: | N/A                |
 | `bookmarks`        | *number*           | :heavy_check_mark: | N/A                |
 | `colors`           | *string*[]         | :heavy_check_mark: | N/A                |
 | `designs`          | *string*[]         | :heavy_check_mark: | N/A                |
 | `firstCompletion`  | *number*           | :heavy_check_mark: | N/A                |
 | `highestLevel`     | *number*           | :heavy_check_mark: | N/A                |
+| `id`               | *string*           | :heavy_check_mark: | N/A                |
 | `image`            | *string*           | :heavy_check_mark: | N/A                |
 | `isEvent`          | *boolean*          | :heavy_check_mark: | N/A                |
 | `isFoil`           | *boolean*          | :heavy_check_mark: | N/A                |
