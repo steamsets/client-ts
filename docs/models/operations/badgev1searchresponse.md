@@ -20,7 +20,6 @@ let value: BadgeV1SearchResponse = {
         appId: 548814,
         appImage: "<value>",
         appName: "<value>",
-        badgeId: "<id>",
         bookmarks: 715190,
         colors: [
           "<value>",
@@ -30,6 +29,7 @@ let value: BadgeV1SearchResponse = {
         ],
         firstCompletion: 602763,
         highestLevel: 544883,
+        id: "<id>",
         image: "https://loremflickr.com/1695/2583?lock=8032377108042487",
         isEvent: false,
         isFoil: false,
