@@ -165,13 +165,10 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.settings.update({
     v1UpdateSettingsRequestBody: {
-      color: "#7652c9",
-      colors: "#7652c9",
       email: "steamsets@example.com",
       hidden: true,
       language: "en",
       role: "emerald",
-      theme: "dark",
       vanity: "flo",
     },
   });
@@ -200,13 +197,10 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await settingsUpdate(steamSets, {
     v1UpdateSettingsRequestBody: {
-      color: "#7652c9",
-      colors: "#7652c9",
       email: "steamsets@example.com",
       hidden: true,
       language: "en",
       role: "emerald",
-      theme: "dark",
       vanity: "flo",
     },
   });

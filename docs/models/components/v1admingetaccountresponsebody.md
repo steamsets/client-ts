@@ -45,7 +45,7 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "developer_apps",
+      resource: "account_queues",
       value: "1",
     },
   ],

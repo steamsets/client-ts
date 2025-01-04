@@ -8,7 +8,7 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   newResources: [
     {
-      resource: "avatar_frame",
+      resource: "auto_refresh",
       value: "1",
     },
   ],

@@ -26,29 +26,7 @@ export type V1UpdateSettingsRequestBodyRole = ClosedEnum<
   typeof V1UpdateSettingsRequestBodyRole
 >;
 
-/**
- * The theme the account should use, only if the account is private
- */
-export const V1UpdateSettingsRequestBodyTheme = {
-  Dark: "dark",
-  Light: "light",
-} as const;
-/**
- * The theme the account should use, only if the account is private
- */
-export type V1UpdateSettingsRequestBodyTheme = ClosedEnum<
-  typeof V1UpdateSettingsRequestBodyTheme
->;
-
 export type V1UpdateSettingsRequestBody = {
-  /**
-   * The color the account should use, only if the account is private
-   */
-  color: string;
-  /**
-   * The colors the account should use, only if the account is private
-   */
-  colors: string;
   /**
    * The email the account should use, only if the account is private
    */
@@ -65,10 +43,6 @@ export type V1UpdateSettingsRequestBody = {
    * The role the account should have between one of the 6 donation roles
    */
   role?: V1UpdateSettingsRequestBodyRole | null | undefined;
-  /**
-   * The theme the account should use, only if the account is private
-   */
-  theme: V1UpdateSettingsRequestBodyTheme;
   /**
    * The vanity the account should use
    */
@@ -97,51 +71,24 @@ export namespace V1UpdateSettingsRequestBodyRole$ {
 }
 
 /** @internal */
-export const V1UpdateSettingsRequestBodyTheme$inboundSchema: z.ZodNativeEnum<
-  typeof V1UpdateSettingsRequestBodyTheme
-> = z.nativeEnum(V1UpdateSettingsRequestBodyTheme);
-
-/** @internal */
-export const V1UpdateSettingsRequestBodyTheme$outboundSchema: z.ZodNativeEnum<
-  typeof V1UpdateSettingsRequestBodyTheme
-> = V1UpdateSettingsRequestBodyTheme$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V1UpdateSettingsRequestBodyTheme$ {
-  /** @deprecated use `V1UpdateSettingsRequestBodyTheme$inboundSchema` instead. */
-  export const inboundSchema = V1UpdateSettingsRequestBodyTheme$inboundSchema;
-  /** @deprecated use `V1UpdateSettingsRequestBodyTheme$outboundSchema` instead. */
-  export const outboundSchema = V1UpdateSettingsRequestBodyTheme$outboundSchema;
-}
-
-/** @internal */
 export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
   V1UpdateSettingsRequestBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  color: z.string(),
-  colors: z.string(),
   email: z.nullable(z.string()),
   hidden: z.boolean(),
   language: z.string(),
   role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema).optional(),
-  theme: V1UpdateSettingsRequestBodyTheme$inboundSchema,
   vanity: z.nullable(z.string()),
 });
 
 /** @internal */
 export type V1UpdateSettingsRequestBody$Outbound = {
-  color: string;
-  colors: string;
   email: string | null;
   hidden: boolean;
   language: string;
   role?: string | null | undefined;
-  theme: string;
   vanity: string | null;
 };
 
@@ -151,13 +98,10 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1UpdateSettingsRequestBody
 > = z.object({
-  color: z.string(),
-  colors: z.string(),
   email: z.nullable(z.string()),
   hidden: z.boolean(),
   language: z.string(),
   role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema).optional(),
-  theme: V1UpdateSettingsRequestBodyTheme$outboundSchema,
   vanity: z.nullable(z.string()),
 });
 
