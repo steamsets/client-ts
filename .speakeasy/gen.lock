@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4c7e739a35c04af2c3594759a4bf4bae
+  docChecksum: 6836aea7dcc982fcfa0e705a8683aa50
   docVersion: 1.0.0
-  speakeasyVersion: 1.460.3
-  generationVersion: 2.484.0
-  releaseVersion: 0.14.10
-  configChecksum: 74e0d1e9a83db35fc0df19eb13b249cb
+  speakeasyVersion: 1.462.2
+  generationVersion: 2.486.1
+  releaseVersion: 0.14.11
+  configChecksum: be3d72c911ef223972b1524b7f6f1459
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -108,7 +108,6 @@ generatedFiles:
   - docs/models/components/session.md
   - docs/models/components/setdesigntag.md
   - docs/models/components/state.md
-  - docs/models/components/theme.md
   - docs/models/components/type.md
   - docs/models/components/v1accountapp.md
   - docs/models/components/v1accountbadgebookmark.md
@@ -192,7 +191,6 @@ generatedFiles:
   - docs/models/components/v1updateimageresponsebody.md
   - docs/models/components/v1updatesettingsrequestbody.md
   - docs/models/components/v1updatesettingsrequestbodyrole.md
-  - docs/models/components/v1updatesettingsrequestbodytheme.md
   - docs/models/components/v1updatesettingsresponsebody.md
   - docs/models/components/v1uploadedimage.md
   - docs/models/components/v1uploadedimagetype.md
@@ -651,7 +649,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "color": "#7652c9", "colors": "#7652c9", "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "theme": "dark", "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "sessions": [], "vanity": "flo", "vanityAnalytics": {"clicks": 568802}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
@@ -696,7 +694,7 @@ examples:
   account.v1.settings.update:
     speakeasy-default-account-v1-settings-update:
       requestBody:
-        application/json: {"color": "#7652c9", "colors": "#7652c9", "email": "steamsets@example.com", "hidden": true, "language": "en", "role": "emerald", "theme": "dark", "vanity": "flo"}
+        application/json: {"email": "steamsets@example.com", "hidden": true, "language": "en", "role": "emerald", "vanity": "flo"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json"}
@@ -894,7 +892,7 @@ examples:
   admin.v1.update-resources:
     speakeasy-default-admin-v1-update-resources:
       requestBody:
-        application/json: {"newResources": [{"resource": "max_leaderboard_entries", "value": "1"}], "resource": ["short_link_domain", "custom_vanity"]}
+        application/json: {"newResources": [{"resource": "max_leaderboard_entries", "value": "1"}], "resource": ["short_link_domain", "background"]}
       responses:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

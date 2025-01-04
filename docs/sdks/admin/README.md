@@ -262,7 +262,7 @@ async function run() {
     ],
     resource: [
       "short_link_domain",
-      "custom_vanity",
+      "background",
     ],
   });
 
@@ -297,7 +297,7 @@ async function run() {
     ],
     resource: [
       "short_link_domain",
-      "custom_vanity",
+      "background",
     ],
   });
 

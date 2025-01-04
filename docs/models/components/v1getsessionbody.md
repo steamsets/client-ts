@@ -12,7 +12,7 @@ let value: V1GetSessionBody = {
   name: "flo",
   resources: [
     {
-      resource: "theme",
+      resource: "vanity",
       value: "1",
     },
   ],

@@ -5,7 +5,6 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -45,32 +44,12 @@ import {
   V1VanityAnalytics$outboundSchema,
 } from "./v1vanityanalytics.js";
 
-/**
- * The theme the account is using
- */
-export const Theme = {
-  Dark: "dark",
-  Light: "light",
-} as const;
-/**
- * The theme the account is using
- */
-export type Theme = ClosedEnum<typeof Theme>;
-
 export type V1GetSettingsBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
   chosenRole: ChosenRole | null;
-  /**
-   * The color the account is using
-   */
-  color: string;
-  /**
-   * The colors the account is using
-   */
-  colors: string;
   /**
    * The connections the account has
    */
@@ -106,35 +85,11 @@ export type V1GetSettingsBody = {
    */
   sessions: Array<Session> | null;
   /**
-   * The theme the account is using
-   */
-  theme: Theme;
-  /**
    * The vanity the account is using
    */
   vanity: string;
   vanityAnalytics: V1VanityAnalytics | null;
 };
-
-/** @internal */
-export const Theme$inboundSchema: z.ZodNativeEnum<typeof Theme> = z.nativeEnum(
-  Theme,
-);
-
-/** @internal */
-export const Theme$outboundSchema: z.ZodNativeEnum<typeof Theme> =
-  Theme$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Theme$ {
-  /** @deprecated use `Theme$inboundSchema` instead. */
-  export const inboundSchema = Theme$inboundSchema;
-  /** @deprecated use `Theme$outboundSchema` instead. */
-  export const outboundSchema = Theme$outboundSchema;
-}
 
 /** @internal */
 export const V1GetSettingsBody$inboundSchema: z.ZodType<
@@ -144,8 +99,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   chosenRole: z.nullable(ChosenRole$inboundSchema),
-  color: z.string(),
-  colors: z.string(),
   connections: z.nullable(z.array(Connection$inboundSchema)),
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.string(),
@@ -156,7 +109,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   images: z.nullable(z.array(Image$inboundSchema)),
   language: z.string(),
   sessions: z.nullable(z.array(Session$inboundSchema)),
-  theme: Theme$inboundSchema,
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
 }).transform((v) => {
@@ -169,8 +121,6 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
 export type V1GetSettingsBody$Outbound = {
   $schema?: string | undefined;
   chosenRole: ChosenRole$Outbound | null;
-  color: string;
-  colors: string;
   connections: Array<Connection$Outbound> | null;
   developerApps: Array<DeveloperApp$Outbound> | null;
   email: string;
@@ -179,7 +129,6 @@ export type V1GetSettingsBody$Outbound = {
   images: Array<Image$Outbound> | null;
   language: string;
   sessions: Array<Session$Outbound> | null;
-  theme: string;
   vanity: string;
   vanityAnalytics: V1VanityAnalytics$Outbound | null;
 };
@@ -192,8 +141,6 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   chosenRole: z.nullable(ChosenRole$outboundSchema),
-  color: z.string(),
-  colors: z.string(),
   connections: z.nullable(z.array(Connection$outboundSchema)),
   developerApps: z.nullable(z.array(DeveloperApp$outboundSchema)),
   email: z.string(),
@@ -202,7 +149,6 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   images: z.nullable(z.array(Image$outboundSchema)),
   language: z.string(),
   sessions: z.nullable(z.array(Session$outboundSchema)),
-  theme: Theme$outboundSchema,
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$outboundSchema),
 }).transform((v) => {

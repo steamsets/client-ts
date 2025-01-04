@@ -7,12 +7,9 @@ import { AccountV1SettingsUpdateRequest } from "@steamsets/client-ts/models/oper
 
 let value: AccountV1SettingsUpdateRequest = {
   v1UpdateSettingsRequestBody: {
-    color: "#7652c9",
-    colors: "#7652c9",
     email: "steamsets@example.com",
     hidden: true,
     language: "en",
-    theme: "dark",
     vanity: "flo",
   },
 };
