@@ -4,6 +4,7 @@
 
 import { badgeAccountV1BookmarkBadge } from "../funcs/badgeAccountV1BookmarkBadge.js";
 import { badgeAccountV1GetBadgeBookmarks } from "../funcs/badgeAccountV1GetBadgeBookmarks.js";
+import { badgeAccountV1GetOwnedBadges } from "../funcs/badgeAccountV1GetOwnedBadges.js";
 import { badgeBadgeV1Search } from "../funcs/badgeBadgeV1Search.js";
 import { badgeGetTags } from "../funcs/badgeGetTags.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -27,6 +28,15 @@ export class Badge extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgeBookmarksResponse> {
     return unwrapAsync(badgeAccountV1GetBadgeBookmarks(
+      this,
+      options,
+    ));
+  }
+
+  async accountV1GetOwnedBadges(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetOwnedBadgesResponse> {
+    return unwrapAsync(badgeAccountV1GetOwnedBadges(
       this,
       options,
     ));

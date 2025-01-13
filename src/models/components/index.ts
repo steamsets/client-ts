@@ -38,6 +38,8 @@ export * from "./v1accountbadgebookmark.js";
 export * from "./v1accountbadgebookmarkrequestbody.js";
 export * from "./v1accountbadgebookmarkresponsebody.js";
 export * from "./v1accountbadgebookmarksresponsebody.js";
+export * from "./v1accountbadgeownedbadge.js";
+export * from "./v1accountbadgeownedbadgesresponsebody.js";
 export * from "./v1accountdatapointsresponsebody.js";
 export * from "./v1accountdeveloperappdeleterequestbody.js";
 export * from "./v1accountdeveloperappdeleteresponsebody.js";

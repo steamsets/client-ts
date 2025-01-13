@@ -14,6 +14,7 @@ export * from "./accountv1getdatapoints.js";
 export * from "./accountv1getfriends.js";
 export * from "./accountv1getinfo.js";
 export * from "./accountv1getleaderboardhistory.js";
+export * from "./accountv1getownedbadges.js";
 export * from "./accountv1getstaff.js";
 export * from "./accountv1imagesdelete.js";
 export * from "./accountv1imagesget.js";
