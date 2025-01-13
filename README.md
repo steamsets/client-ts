@@ -90,6 +90,7 @@ run();
 * [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [verifyEmail](docs/sdks/account/README.md#verifyemail)
+* [statsV1StatsGet](docs/sdks/account/README.md#statsv1statsget)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -134,6 +135,7 @@ run();
 * [getInfo](docs/sdks/data/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/data/README.md#getleaderboardhistory)
 * [getStaff](docs/sdks/data/README.md#getstaff)
+* [statsV1StatsGet](docs/sdks/data/README.md#statsv1statsget)
 
 ### [developer](docs/sdks/developer/README.md)
 
@@ -555,6 +557,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
+- [`accountStatsV1StatsGet`](docs/sdks/account/README.md#statsv1statsget)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
 - [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
@@ -579,6 +582,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`dataGetInfo`](docs/sdks/data/README.md#getinfo)
 - [`dataGetLeaderboardHistory`](docs/sdks/data/README.md#getleaderboardhistory)
 - [`dataGetStaff`](docs/sdks/data/README.md#getstaff)
+- [`dataStatsV1StatsGet`](docs/sdks/data/README.md#statsv1statsget)
 - [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
 - [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
