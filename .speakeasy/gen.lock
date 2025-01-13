@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 6836aea7dcc982fcfa0e705a8683aa50
+  docChecksum: 03f6f57c3459483e62865ab358fe0504
   docVersion: 1.0.0
-  speakeasyVersion: 1.462.2
-  generationVersion: 2.486.1
-  releaseVersion: 0.14.11
-  configChecksum: be3d72c911ef223972b1524b7f6f1459
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 0.14.12
+  configChecksum: 02629006fbb749d9255efd6cddabac5f
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -53,7 +53,6 @@ generatedFiles:
   - .eslintrc.cjs
   - .gitattributes
   - .npmignore
-  - CONTRIBUTING.md
   - FUNCTIONS.md
   - RUNTIMES.md
   - USAGE.md
@@ -114,6 +113,8 @@ generatedFiles:
   - docs/models/components/v1accountbadgebookmarkrequestbody.md
   - docs/models/components/v1accountbadgebookmarkresponsebody.md
   - docs/models/components/v1accountbadgebookmarksresponsebody.md
+  - docs/models/components/v1accountbadgeownedbadge.md
+  - docs/models/components/v1accountbadgeownedbadgesresponsebody.md
   - docs/models/components/v1accountdatapointsresponsebody.md
   - docs/models/components/v1accountdeveloperappdeleterequestbody.md
   - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
@@ -215,6 +216,7 @@ generatedFiles:
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
+  - docs/models/operations/accountv1getownedbadgesresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
   - docs/models/operations/accountv1imagesdeleteresponse.md
   - docs/models/operations/accountv1imagesgetresponse.md
@@ -271,6 +273,7 @@ generatedFiles:
   - package.json
   - src/core.ts
   - src/funcs/accountAccountV1GetBadgeBookmarks.ts
+  - src/funcs/accountAccountV1GetOwnedBadges.ts
   - src/funcs/accountAccountV1ImagesGet.ts
   - src/funcs/accountAccountV1ImagesUpdate.ts
   - src/funcs/accountDeleteImages.ts
@@ -292,6 +295,7 @@ generatedFiles:
   - src/funcs/adminGetAccount.ts
   - src/funcs/badgeAccountV1BookmarkBadge.ts
   - src/funcs/badgeAccountV1GetBadgeBookmarks.ts
+  - src/funcs/badgeAccountV1GetOwnedBadges.ts
   - src/funcs/badgeBadgeV1Search.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
@@ -388,6 +392,8 @@ generatedFiles:
   - src/models/components/v1accountbadgebookmarkrequestbody.ts
   - src/models/components/v1accountbadgebookmarkresponsebody.ts
   - src/models/components/v1accountbadgebookmarksresponsebody.ts
+  - src/models/components/v1accountbadgeownedbadge.ts
+  - src/models/components/v1accountbadgeownedbadgesresponsebody.ts
   - src/models/components/v1accountdatapointsresponsebody.ts
   - src/models/components/v1accountdeveloperappdeleterequestbody.ts
   - src/models/components/v1accountdeveloperappdeleteresponsebody.ts
@@ -484,6 +490,7 @@ generatedFiles:
   - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
+  - src/models/operations/accountv1getownedbadges.ts
   - src/models/operations/accountv1getstaff.ts
   - src/models/operations/accountv1imagesdelete.ts
   - src/models/operations/accountv1imagesget.ts
@@ -984,5 +991,12 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1UploadImagesResponseBody.json", "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}]}
         "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getOwnedBadges:
+    speakeasy-default-account-v1-get-owned-badges:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json", "ownedBadges": []}
+        "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 generatedTests: {}

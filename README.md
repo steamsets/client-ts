@@ -84,6 +84,7 @@ run();
 * [accountV1ImagesGet](docs/sdks/account/README.md#accountv1imagesget)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
+* [accountV1GetOwnedBadges](docs/sdks/account/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
 * [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
@@ -106,6 +107,7 @@ run();
 
 * [accountV1BookmarkBadge](docs/sdks/badge/README.md#accountv1bookmarkbadge)
 * [accountV1GetBadgeBookmarks](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
+* [accountV1GetOwnedBadges](docs/sdks/badge/README.md#accountv1getownedbadges)
 * [getTags](docs/sdks/badge/README.md#gettags)
 * [badgeV1Search](docs/sdks/badge/README.md#badgev1search)
 
@@ -540,6 +542,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 <summary>Available standalone functions</summary>
 
 - [`accountAccountV1GetBadgeBookmarks`](docs/sdks/account/README.md#accountv1getbadgebookmarks)
+- [`accountAccountV1GetOwnedBadges`](docs/sdks/account/README.md#accountv1getownedbadges)
 - [`accountAccountV1ImagesGet`](docs/sdks/account/README.md#accountv1imagesget)
 - [`accountAccountV1ImagesUpdate`](docs/sdks/account/README.md#accountv1imagesupdate)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
@@ -561,6 +564,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`badgeAccountV1BookmarkBadge`](docs/sdks/badge/README.md#accountv1bookmarkbadge)
 - [`badgeAccountV1GetBadgeBookmarks`](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
+- [`badgeAccountV1GetOwnedBadges`](docs/sdks/badge/README.md#accountv1getownedbadges)
 - [`badgeBadgeV1Search`](docs/sdks/badge/README.md#badgev1search)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)

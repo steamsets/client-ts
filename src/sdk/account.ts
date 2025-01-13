@@ -3,6 +3,7 @@
  */
 
 import { accountAccountV1GetBadgeBookmarks } from "../funcs/accountAccountV1GetBadgeBookmarks.js";
+import { accountAccountV1GetOwnedBadges } from "../funcs/accountAccountV1GetOwnedBadges.js";
 import { accountAccountV1ImagesGet } from "../funcs/accountAccountV1ImagesGet.js";
 import { accountAccountV1ImagesUpdate } from "../funcs/accountAccountV1ImagesUpdate.js";
 import { accountDeleteImages } from "../funcs/accountDeleteImages.js";
@@ -113,6 +114,15 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountGetLeaderboardHistory(
       this,
       request,
+      options,
+    ));
+  }
+
+  async accountV1GetOwnedBadges(
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1GetOwnedBadgesResponse> {
+    return unwrapAsync(accountAccountV1GetOwnedBadges(
+      this,
       options,
     ));
   }
