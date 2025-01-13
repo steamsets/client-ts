@@ -103,6 +103,7 @@ export * from "./v1leaderboardlocationinfo.js";
 export * from "./v1livenessresponsebody.js";
 export * from "./v1loginresponsebody.js";
 export * from "./v1searchrequest.js";
+export * from "./v1stats.js";
 export * from "./v1updateconnectionrequestbody.js";
 export * from "./v1updateconnectionresponsebody.js";
 export * from "./v1updateimage.js";

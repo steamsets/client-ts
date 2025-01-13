@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 03f6f57c3459483e62865ab358fe0504
+  docChecksum: e7450262c26bc21250e90d3676abb146
   docVersion: 1.0.0
   speakeasyVersion: 1.468.2
   generationVersion: 2.493.4
-  releaseVersion: 0.14.12
-  configChecksum: 02629006fbb749d9255efd6cddabac5f
+  releaseVersion: 0.14.13
+  configChecksum: ce43ebb05b84cc6d50e7628dec3e8f2b
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -185,6 +185,7 @@ generatedFiles:
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1loginresponsebody.md
   - docs/models/components/v1searchrequest.md
+  - docs/models/components/v1stats.md
   - docs/models/components/v1updateconnectionrequestbody.md
   - docs/models/components/v1updateconnectionresponsebody.md
   - docs/models/components/v1updateimage.md
@@ -251,6 +252,7 @@ generatedFiles:
   - docs/models/operations/leaderboardv1getgroupresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
+  - docs/models/operations/statsv1statsgetresponse.md
   - docs/sdks/account/README.md
   - docs/sdks/accounts/README.md
   - docs/sdks/admin/README.md
@@ -285,6 +287,7 @@ generatedFiles:
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
   - src/funcs/accountSendEmailVerification.ts
+  - src/funcs/accountStatsV1StatsGet.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
@@ -310,6 +313,7 @@ generatedFiles:
   - src/funcs/dataGetInfo.ts
   - src/funcs/dataGetLeaderboardHistory.ts
   - src/funcs/dataGetStaff.ts
+  - src/funcs/dataStatsV1StatsGet.ts
   - src/funcs/developerCreateDeveloperApp.ts
   - src/funcs/developerDeleteDeveloperApp.ts
   - src/funcs/developerUpdateApp.ts
@@ -457,6 +461,7 @@ generatedFiles:
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1loginresponsebody.ts
   - src/models/components/v1searchrequest.ts
+  - src/models/components/v1stats.ts
   - src/models/components/v1updateconnectionrequestbody.ts
   - src/models/components/v1updateconnectionresponsebody.ts
   - src/models/components/v1updateimage.ts
@@ -522,6 +527,7 @@ generatedFiles:
   - src/models/operations/leaderboardv1getgroup.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
+  - src/models/operations/statsv1statsget.ts
   - src/sdk/account.ts
   - src/sdk/accounts.ts
   - src/sdk/admin.ts
@@ -998,5 +1004,12 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json", "ownedBadges": []}
         "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  stats.v1.stats.get:
+    speakeasy-default-stats-v1-stats-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1Stats.json", "accountsAdded": 1, "accountsUpdated": 1, "appCost": 1, "appPlaytime": 1, "apps": 1, "awardsGiven": 1, "awardsReceived": 1, "badges": 1, "bans": 1, "foilBadges": 1, "friends": 1, "gameBans": 1, "level": 1, "normalBadges": 1, "playtime": 1, "pointsGiven": 1, "pointsReceived": 1, "steamSetsScore": 1, "totalAccounts": 1, "vacBans": 1, "xp": 1}
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 generatedTests: {}

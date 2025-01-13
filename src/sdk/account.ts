@@ -15,6 +15,7 @@ import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
+import { accountStatsV1StatsGet } from "../funcs/accountStatsV1StatsGet.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -176,6 +177,15 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountVerifyEmail(
       this,
       request,
+      options,
+    ));
+  }
+
+  async statsV1StatsGet(
+    options?: RequestOptions,
+  ): Promise<operations.StatsV1StatsGetResponse> {
+    return unwrapAsync(accountStatsV1StatsGet(
+      this,
       options,
     ));
   }
