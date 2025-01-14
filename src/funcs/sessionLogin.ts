@@ -5,6 +5,7 @@
 import { SteamSetsCore } from "../core.js";
 import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -53,7 +54,7 @@ export async function sessionLogin(
 
   const path = pathToFunc("/account.v1.AccountService/Login")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
     "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
@@ -65,7 +66,7 @@ export async function sessionLogin(
       payload["X-Forwarded-For"],
       { explode: false, charEncoding: "none" },
     ),
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };

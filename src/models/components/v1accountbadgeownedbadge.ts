@@ -17,6 +17,10 @@ export type V1AccountBadgeOwnedBadge = {
    */
   badgeId: string;
   /**
+   * Whether the badge is foil or not
+   */
+  isFoil: boolean;
+  /**
    * The level of the badge
    */
   level: number;
@@ -34,6 +38,7 @@ export const V1AccountBadgeOwnedBadge$inboundSchema: z.ZodType<
 > = z.object({
   appId: z.number().int(),
   badgeId: z.string(),
+  isFoil: z.boolean(),
   level: z.number().int(),
   steamId: z.number().int(),
 });
@@ -42,6 +47,7 @@ export const V1AccountBadgeOwnedBadge$inboundSchema: z.ZodType<
 export type V1AccountBadgeOwnedBadge$Outbound = {
   appId: number;
   badgeId: string;
+  isFoil: boolean;
   level: number;
   steamId: number;
 };
@@ -54,6 +60,7 @@ export const V1AccountBadgeOwnedBadge$outboundSchema: z.ZodType<
 > = z.object({
   appId: z.number().int(),
   badgeId: z.string(),
+  isFoil: z.boolean(),
   level: z.number().int(),
   steamId: z.number().int(),
 });
