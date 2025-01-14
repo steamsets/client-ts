@@ -175,10 +175,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.images.accountV1ImagesUpdate({
     images: [
-      {
-        active: true,
-        imageId: "123456",
-      },
+
     ],
   });
 
@@ -206,10 +203,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await imagesAccountV1ImagesUpdate(steamSets, {
     images: [
-      {
-        active: true,
-        imageId: "123456",
-      },
+  
     ],
   });
 
@@ -260,10 +254,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.images.uploadImages({
     images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
+
     ],
   });
 
@@ -291,10 +282,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await imagesUploadImages(steamSets, {
     images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
+  
     ],
   });
 

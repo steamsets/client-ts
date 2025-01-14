@@ -12,6 +12,7 @@ let value: V1AccountBadgeOwnedBadgesResponseBody = {
     {
       appId: 730,
       badgeId: "bdg_123",
+      isFoil: true,
       level: 123456,
       steamId: 13,
     },

@@ -348,7 +348,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.adminV1UpdateRoles({
     roles: [
-      "staff",
+
     ],
   });
 
@@ -376,7 +376,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminAdminV1UpdateRoles(steamSets, {
     roles: [
-      "diamond",
+  
     ],
   });
 

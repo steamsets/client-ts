@@ -5,6 +5,7 @@
 import { SteamSetsCore } from "../core.js";
 import { encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -54,14 +55,14 @@ export async function settingsSendEmailVerification(
 
   const path = pathToFunc("/account.v1.AccountService/SendEmailVerification")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/problem+json",
     "X-Forwarded-For": encodeSimple(
       "X-Forwarded-For",
       payload["X-Forwarded-For"],
       { explode: false, charEncoding: "none" },
     ),
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e7450262c26bc21250e90d3676abb146
+  docChecksum: fca4de18ecd1077a704030e31634ce67
   docVersion: 1.0.0
-  speakeasyVersion: 1.468.2
-  generationVersion: 2.493.4
-  releaseVersion: 0.14.13
-  configChecksum: ce43ebb05b84cc6d50e7628dec3e8f2b
+  speakeasyVersion: 1.468.5
+  generationVersion: 2.493.11
+  releaseVersion: 0.14.14
+  configChecksum: 65d7e5334ecc5b163f9fb3e4fce07066
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.12
+    core: 3.18.14
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -609,6 +609,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getApps:
     speakeasy-default-account-v1-get-apps:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": [], "pages": 1, "totalHits": 1}
@@ -616,6 +618,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getBadges:
     speakeasy-default-account-v1-get-badges:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgesResponseBody.json", "badges": [], "pages": 1, "totalHits": 1}
@@ -623,6 +627,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getDataPoints:
     speakeasy-default-account-v1-get-data-points:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDataPointsResponseBody.json", "mostXp": [], "playtime": [], "scarcity": [], "xp": {"key": {}, "key1": {}, "key2": {"key": 71683}}}
@@ -630,6 +636,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getFriends:
     speakeasy-default-account-v1-get-friends:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountFriendsResponseBody.json", "friends": []}
@@ -637,6 +645,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getInfo:
     speakeasy-default-account-v1-get-info:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "averagePlaytime": 123456, "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 44244, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [], "currentRanks": [], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 154594, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 451463, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 768684, "xp": 123456}
@@ -646,6 +656,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getLeaderboardHistory:
     speakeasy-default-account-v1-get-leaderboard-history:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardHistoryResponseBody.json", "histories": []}
@@ -876,6 +888,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.v1.get-account:
     speakeasy-default-admin-v1-get-account:
+      requestBody:
+        application/json: {}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [{"rating": 911979, "role": "sapphire"}], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
