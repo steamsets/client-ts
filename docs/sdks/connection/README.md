@@ -83,7 +83,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## update
@@ -160,7 +161,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 404, 422, 500       | application/problem+json |
+| errors.ErrorModel        | 400, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## verify
@@ -235,5 +237,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 500            | application/problem+json |
+| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

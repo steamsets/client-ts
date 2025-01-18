@@ -32,6 +32,7 @@ export async function leaderboardGetGroup(
   Result<
     operations.LeaderboardV1GetGroupResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -122,6 +123,7 @@ export async function leaderboardGetGroup(
   const [result] = await M.match<
     operations.LeaderboardV1GetGroupResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -133,10 +135,14 @@ export async function leaderboardGetGroup(
     M.json(200, operations.LeaderboardV1GetGroupResponse$inboundSchema, {
       key: "V1GroupLeaderboardResponseBody",
     }),
-    M.jsonErr([404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

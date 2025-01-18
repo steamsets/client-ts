@@ -32,6 +32,7 @@ export async function badgesTag(
   Result<
     operations.BadgeV1TagResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -119,6 +120,7 @@ export async function badgesTag(
   const [result] = await M.match<
     operations.BadgeV1TagResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -128,10 +130,14 @@ export async function badgesTag(
     | ConnectionError
   >(
     M.nil(204, operations.BadgeV1TagResponse$inboundSchema),
-    M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

@@ -31,6 +31,7 @@ export async function sessionLogin(
   Result<
     operations.AccountV1SessionLoginResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -128,6 +129,7 @@ export async function sessionLogin(
   const [result] = await M.match<
     operations.AccountV1SessionLoginResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -139,10 +141,14 @@ export async function sessionLogin(
     M.json(200, operations.AccountV1SessionLoginResponse$inboundSchema, {
       key: "V1LoginResponseBody",
     }),
-    M.jsonErr([400, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

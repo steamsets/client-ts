@@ -32,6 +32,7 @@ export async function adminAdminV1UpdateResources(
   Result<
     operations.AdminV1UpdateResourcesResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -120,6 +121,7 @@ export async function adminAdminV1UpdateResources(
   const [result] = await M.match<
     operations.AdminV1UpdateResourcesResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -129,10 +131,14 @@ export async function adminAdminV1UpdateResources(
     | ConnectionError
   >(
     M.nil(204, operations.AdminV1UpdateResourcesResponse$inboundSchema),
-    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

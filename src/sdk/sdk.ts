@@ -20,6 +20,7 @@ import { Public } from "./public.js";
 import { Session } from "./session.js";
 import { Sessions } from "./sessions.js";
 import { Settings } from "./settings.js";
+import { Stats } from "./stats.js";
 
 export class SteamSets extends ClientSDK {
   private _badge?: Badge;
@@ -100,6 +101,11 @@ export class SteamSets extends ClientSDK {
   private _locations?: Locations;
   get locations(): Locations {
     return (this._locations ??= new Locations(this._options));
+  }
+
+  private _stats?: Stats;
+  get stats(): Stats {
+    return (this._stats ??= new Stats(this._options));
   }
 
   private _liveness?: Liveness;

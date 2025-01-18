@@ -32,6 +32,7 @@ export async function connectionVerify(
   Result<
     operations.AccountV1ConnectionVerifyConnectionResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -120,6 +121,7 @@ export async function connectionVerify(
   const [result] = await M.match<
     operations.AccountV1ConnectionVerifyConnectionResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -133,10 +135,14 @@ export async function connectionVerify(
       operations.AccountV1ConnectionVerifyConnectionResponse$inboundSchema,
       { key: "V1VerifyConnectionResponseBody" },
     ),
-    M.jsonErr([400, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

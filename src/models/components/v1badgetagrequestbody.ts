@@ -7,11 +7,17 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  SetDesignTag,
-  SetDesignTag$inboundSchema,
-  SetDesignTag$Outbound,
-  SetDesignTag$outboundSchema,
-} from "./setdesigntag.js";
+  SetRemoveColorTag,
+  SetRemoveColorTag$inboundSchema,
+  SetRemoveColorTag$Outbound,
+  SetRemoveColorTag$outboundSchema,
+} from "./setremovecolortag.js";
+import {
+  SetRemoveDesignTag,
+  SetRemoveDesignTag$inboundSchema,
+  SetRemoveDesignTag$Outbound,
+  SetRemoveDesignTag$outboundSchema,
+} from "./setremovedesigntag.js";
 
 export type V1BadgeTagRequestBody = {
   /**
@@ -21,11 +27,11 @@ export type V1BadgeTagRequestBody = {
   /**
    * All the colors of the badge
    */
-  colors: Array<string> | null;
+  colors: Array<SetRemoveColorTag> | null;
   /**
    * All the designs of the badge
    */
-  designs: Array<SetDesignTag> | null;
+  designs: Array<SetRemoveDesignTag> | null;
 };
 
 /** @internal */
@@ -35,15 +41,15 @@ export const V1BadgeTagRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   badgeId: z.string(),
-  colors: z.nullable(z.array(z.string())),
-  designs: z.nullable(z.array(SetDesignTag$inboundSchema)),
+  colors: z.nullable(z.array(SetRemoveColorTag$inboundSchema)),
+  designs: z.nullable(z.array(SetRemoveDesignTag$inboundSchema)),
 });
 
 /** @internal */
 export type V1BadgeTagRequestBody$Outbound = {
   badgeId: string;
-  colors: Array<string> | null;
-  designs: Array<SetDesignTag$Outbound> | null;
+  colors: Array<SetRemoveColorTag$Outbound> | null;
+  designs: Array<SetRemoveDesignTag$Outbound> | null;
 };
 
 /** @internal */
@@ -53,8 +59,8 @@ export const V1BadgeTagRequestBody$outboundSchema: z.ZodType<
   V1BadgeTagRequestBody
 > = z.object({
   badgeId: z.string(),
-  colors: z.nullable(z.array(z.string())),
-  designs: z.nullable(z.array(SetDesignTag$outboundSchema)),
+  colors: z.nullable(z.array(SetRemoveColorTag$outboundSchema)),
+  designs: z.nullable(z.array(SetRemoveDesignTag$outboundSchema)),
 });
 
 /**

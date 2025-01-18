@@ -85,7 +85,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetBadgeBookmarks
@@ -155,7 +156,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 500            | application/problem+json |
+| errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1GetOwnedBadges
@@ -225,7 +227,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 500            | application/problem+json |
+| errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## getTags
@@ -295,7 +298,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 500            | application/problem+json |
+| errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## badgeV1Search
@@ -376,5 +380,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

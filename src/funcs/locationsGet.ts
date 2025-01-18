@@ -28,6 +28,7 @@ export async function locationsGet(
   Result<
     operations.LocationV1LocationGetResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -102,6 +103,7 @@ export async function locationsGet(
   const [result] = await M.match<
     operations.LocationV1LocationGetResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,10 +115,14 @@ export async function locationsGet(
     M.json(200, operations.LocationV1LocationGetResponse$inboundSchema, {
       key: "Regions",
     }),
-    M.jsonErr([401, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr(401, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

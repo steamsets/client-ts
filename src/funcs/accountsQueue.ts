@@ -32,6 +32,7 @@ export async function accountsQueue(
   Result<
     operations.AccountV1QueueResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -119,6 +120,7 @@ export async function accountsQueue(
   const [result] = await M.match<
     operations.AccountV1QueueResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -128,10 +130,14 @@ export async function accountsQueue(
     | ConnectionError
   >(
     M.nil(204, operations.AccountV1QueueResponse$inboundSchema, { hdrs: true }),
-    M.jsonErr([400, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

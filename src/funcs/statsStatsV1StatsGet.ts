@@ -21,12 +21,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function accountStatsV1StatsGet(
+export async function statsStatsV1StatsGet(
   client: SteamSetsCore,
   options?: RequestOptions,
 ): Promise<
   Result<
     operations.StatsV1StatsGetResponse,
+    | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -102,6 +103,7 @@ export async function accountStatsV1StatsGet(
   const [result] = await M.match<
     operations.StatsV1StatsGetResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,10 +115,14 @@ export async function accountStatsV1StatsGet(
     M.json(200, operations.StatsV1StatsGetResponse$inboundSchema, {
       key: "V1Stats",
     }),
-    M.jsonErr([404, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;
