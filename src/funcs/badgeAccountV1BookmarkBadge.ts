@@ -32,6 +32,7 @@ export async function badgeAccountV1BookmarkBadge(
   Result<
     operations.AccountV1BookmarkBadgeResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -120,6 +121,7 @@ export async function badgeAccountV1BookmarkBadge(
   const [result] = await M.match<
     operations.AccountV1BookmarkBadgeResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -131,10 +133,14 @@ export async function badgeAccountV1BookmarkBadge(
     M.json(200, operations.AccountV1BookmarkBadgeResponse$inboundSchema, {
       key: "V1AccountBadgeBookmarkResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

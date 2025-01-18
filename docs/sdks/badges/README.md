@@ -22,20 +22,26 @@ async function run() {
   const result = await steamSets.badges.tag({
     badgeId: "bdg_123",
     colors: [
-      "922516",
-      "416016",
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
     ],
     designs: [
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
     ],
@@ -66,20 +72,26 @@ async function run() {
   const res = await badgesTag(steamSets, {
     badgeId: "bdg_123",
     colors: [
-      "922516",
-      "416016",
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
     ],
     designs: [
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
       {
-        id: "1",
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
       },
     ],
@@ -115,5 +127,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422, 500       | application/problem+json |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

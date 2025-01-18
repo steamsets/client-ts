@@ -32,6 +32,7 @@ export async function accountGetDataPoints(
   Result<
     operations.AccountV1GetDataPointsResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -119,6 +120,7 @@ export async function accountGetDataPoints(
   const [result] = await M.match<
     operations.AccountV1GetDataPointsResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -130,10 +132,14 @@ export async function accountGetDataPoints(
     M.json(200, operations.AccountV1GetDataPointsResponse$inboundSchema, {
       key: "V1AccountDataPointsResponseBody",
     }),
-    M.jsonErr([400, 403, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

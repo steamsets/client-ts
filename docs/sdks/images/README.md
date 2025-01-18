@@ -88,7 +88,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## accountV1ImagesGet
@@ -237,7 +238,8 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 500            | application/problem+json |
+| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## uploadImages
@@ -316,5 +318,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422, 500                 | application/problem+json |
+| errors.ErrorModel        | 422                      | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

@@ -32,6 +32,7 @@ export async function adminAdminV1UpdateEvent(
   Result<
     operations.AdminV1UpdateEventResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -120,6 +121,7 @@ export async function adminAdminV1UpdateEvent(
   const [result] = await M.match<
     operations.AdminV1UpdateEventResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -131,10 +133,14 @@ export async function adminAdminV1UpdateEvent(
     M.json(200, operations.AdminV1UpdateEventResponse$inboundSchema, {
       key: "V1AdminUpdateEventResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

@@ -8,12 +8,16 @@ import { V1BadgeTagRequestBody } from "@steamsets/client-ts/models/components";
 let value: V1BadgeTagRequestBody = {
   badgeId: "bdg_123",
   colors: [
-    "<value>",
+    {
+      id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+      remove: true,
+    },
   ],
   designs: [
     {
-      id: "1",
+      id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
       name: "cat",
+      remove: true,
     },
   ],
 };
@@ -21,8 +25,8 @@ let value: V1BadgeTagRequestBody = {
 
 ## Fields
 
-| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `badgeId`                                                            | *string*                                                             | :heavy_check_mark:                                                   | The badge id                                                         | bdg_123                                                              |
-| `colors`                                                             | *string*[]                                                           | :heavy_check_mark:                                                   | All the colors of the badge                                          |                                                                      |
-| `designs`                                                            | [components.SetDesignTag](../../models/components/setdesigntag.md)[] | :heavy_check_mark:                                                   | All the designs of the badge                                         |                                                                      |
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `badgeId`                                                                        | *string*                                                                         | :heavy_check_mark:                                                               | The badge id                                                                     | bdg_123                                                                          |
+| `colors`                                                                         | [components.SetRemoveColorTag](../../models/components/setremovecolortag.md)[]   | :heavy_check_mark:                                                               | All the colors of the badge                                                      |                                                                                  |
+| `designs`                                                                        | [components.SetRemoveDesignTag](../../models/components/setremovedesigntag.md)[] | :heavy_check_mark:                                                               | All the designs of the badge                                                     |                                                                                  |

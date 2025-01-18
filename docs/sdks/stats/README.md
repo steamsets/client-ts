@@ -1,13 +1,15 @@
-# Locations
-(*locations*)
+# Stats
+(*stats*)
 
 ## Overview
 
+Stats related endpoints
+
 ### Available Operations
 
-* [get](#get)
+* [statsV1StatsGet](#statsv1statsget)
 
-## get
+## statsV1StatsGet
 
 ### Example Usage
 
@@ -19,7 +21,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.locations.get();
+  const result = await steamSets.stats.statsV1StatsGet();
 
   // Handle the result
   console.log(result);
@@ -34,7 +36,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { locationsGet } from "@steamsets/client-ts/funcs/locationsGet.js";
+import { statsStatsV1StatsGet } from "@steamsets/client-ts/funcs/statsStatsV1StatsGet.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -43,7 +45,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await locationsGet(steamSets);
+  const res = await statsStatsV1StatsGet(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -68,12 +70,12 @@ run();
 
 ### Response
 
-**Promise\<[operations.LocationV1LocationGetResponse](../../models/operations/locationv1locationgetresponse.md)\>**
+**Promise\<[operations.StatsV1StatsGetResponse](../../models/operations/statsv1statsgetresponse.md)\>**
 
 ### Errors
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 401                      | application/problem+json |
+| errors.ErrorModel        | 404, 429                 | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

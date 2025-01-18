@@ -28,6 +28,7 @@ export async function badgeGetTags(
   Result<
     operations.BadgeV1TagsResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -102,6 +103,7 @@ export async function badgeGetTags(
   const [result] = await M.match<
     operations.BadgeV1TagsResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,10 +115,14 @@ export async function badgeGetTags(
     M.json(200, operations.BadgeV1TagsResponse$inboundSchema, {
       key: "V1BadgeTagsResponseBody",
     }),
-    M.jsonErr([403, 404, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

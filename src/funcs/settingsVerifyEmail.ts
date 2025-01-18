@@ -32,6 +32,7 @@ export async function settingsVerifyEmail(
   Result<
     operations.AccountV1SettingsVerfyEmailResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -119,6 +120,7 @@ export async function settingsVerifyEmail(
   const [result] = await M.match<
     operations.AccountV1SettingsVerfyEmailResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -130,10 +132,14 @@ export async function settingsVerifyEmail(
     M.json(200, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
       key: "V1VerifyEmailResponseBody",
     }),
-    M.jsonErr([404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

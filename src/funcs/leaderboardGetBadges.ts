@@ -28,6 +28,7 @@ export async function leaderboardGetBadges(
   Result<
     operations.LeaderboardV1GetBadgesResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -102,6 +103,7 @@ export async function leaderboardGetBadges(
   const [result] = await M.match<
     operations.LeaderboardV1GetBadgesResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,10 +115,14 @@ export async function leaderboardGetBadges(
     M.json(200, operations.LeaderboardV1GetBadgesResponse$inboundSchema, {
       key: "V1LeaderboardBadgeResponseBody",
     }),
-    M.jsonErr([404, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr(404, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

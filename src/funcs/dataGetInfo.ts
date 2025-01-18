@@ -32,6 +32,7 @@ export async function dataGetInfo(
   Result<
     operations.AccountV1GetInfoResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -119,6 +120,7 @@ export async function dataGetInfo(
   const [result] = await M.match<
     operations.AccountV1GetInfoResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -130,10 +132,14 @@ export async function dataGetInfo(
     M.json(200, operations.AccountV1GetInfoResponse$inboundSchema, {
       key: "V1AccountInfoResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 429, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;

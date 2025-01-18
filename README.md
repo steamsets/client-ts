@@ -90,7 +90,6 @@ run();
 * [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [verifyEmail](docs/sdks/account/README.md#verifyemail)
-* [statsV1StatsGet](docs/sdks/account/README.md#statsv1statsget)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -135,7 +134,6 @@ run();
 * [getInfo](docs/sdks/data/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/data/README.md#getleaderboardhistory)
 * [getStaff](docs/sdks/data/README.md#getstaff)
-* [statsV1StatsGet](docs/sdks/data/README.md#statsv1statsget)
 
 ### [developer](docs/sdks/developer/README.md)
 
@@ -189,6 +187,10 @@ run();
 * [sendEmailVerification](docs/sdks/settings/README.md#sendemailverification)
 * [update](docs/sdks/settings/README.md#update)
 * [verifyEmail](docs/sdks/settings/README.md#verifyemail)
+
+### [stats](docs/sdks/stats/README.md)
+
+* [statsV1StatsGet](docs/sdks/stats/README.md#statsv1statsget)
 
 
 </details>
@@ -270,10 +272,11 @@ run();
 
 Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `accountV1BookmarkBadge` method may throw the following errors:
 
-| Error Type        | Status Code        | Content Type             |
-| ----------------- | ------------------ | ------------------------ |
-| errors.ErrorModel | 403, 404, 422, 500 | application/problem+json |
-| errors.SDKError   | 4XX, 5XX           | \*/\*                    |
+| Error Type        | Status Code   | Content Type             |
+| ----------------- | ------------- | ------------------------ |
+| errors.ErrorModel | 403, 404, 422 | application/problem+json |
+| errors.ErrorModel | 500           | application/problem+json |
+| errors.SDKError   | 4XX, 5XX      | \*/\*                    |
 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `SDKError`.
 
@@ -306,6 +309,11 @@ async function run() {
         console.error(err.pretty());
         // Raw value may also be inspected
         console.error(err.rawValue);
+        return;
+      }
+      case (err instanceof ErrorModel): {
+        // Handle err.data$: ErrorModelData
+        console.error(err);
         return;
       }
       case (err instanceof ErrorModel): {
@@ -557,7 +565,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
-- [`accountStatsV1StatsGet`](docs/sdks/account/README.md#statsv1statsget)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
 - [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
@@ -582,7 +589,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`dataGetInfo`](docs/sdks/data/README.md#getinfo)
 - [`dataGetLeaderboardHistory`](docs/sdks/data/README.md#getleaderboardhistory)
 - [`dataGetStaff`](docs/sdks/data/README.md#getstaff)
-- [`dataStatsV1StatsGet`](docs/sdks/data/README.md#statsv1statsget)
 - [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
 - [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
@@ -609,6 +615,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`settingsSendEmailVerification`](docs/sdks/settings/README.md#sendemailverification)
 - [`settingsUpdate`](docs/sdks/settings/README.md#update)
 - [`settingsVerifyEmail`](docs/sdks/settings/README.md#verifyemail)
+- [`statsStatsV1StatsGet`](docs/sdks/stats/README.md#statsv1statsget)
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

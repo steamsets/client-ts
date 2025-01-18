@@ -32,6 +32,7 @@ export async function connectionUpdate(
   Result<
     operations.AccountV1ConnectionUpdateConnectionResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -120,6 +121,7 @@ export async function connectionUpdate(
   const [result] = await M.match<
     operations.AccountV1ConnectionUpdateConnectionResponse,
     | errors.ErrorModel
+    | errors.ErrorModel
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -133,10 +135,14 @@ export async function connectionUpdate(
       operations.AccountV1ConnectionUpdateConnectionResponse$inboundSchema,
       { key: "V1UpdateConnectionResponseBody" },
     ),
-    M.jsonErr([400, 404, 422, 500], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return result;
