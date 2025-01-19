@@ -40,6 +40,10 @@ export type V1AccountLeaderboardResponseBody = {
   accounts: Array<V1AccountLeaderboardAccount> | null;
   app?: V1LeaderboardAppInfo | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
+  /**
+   * The ranks that are hidden in the leaderboard
+   */
+  hiddenRanks?: Array<number> | null | undefined;
   location?: Array<V1LeaderboardLocationInfo> | null | undefined;
   ownAccount?: V1AccountLeaderboardAccount | null | undefined;
   /**
@@ -58,6 +62,7 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$inboundSchema)),
   app: z.nullable(V1LeaderboardAppInfo$inboundSchema).optional(),
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$inboundSchema).optional(),
+  hiddenRanks: z.nullable(z.array(z.number().int())).optional(),
   location: z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema))
     .optional(),
   ownAccount: z.nullable(V1AccountLeaderboardAccount$inboundSchema).optional(),
@@ -74,6 +79,7 @@ export type V1AccountLeaderboardResponseBody$Outbound = {
   accounts: Array<V1AccountLeaderboardAccount$Outbound> | null;
   app?: V1LeaderboardAppInfo$Outbound | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo$Outbound | null | undefined;
+  hiddenRanks?: Array<number> | null | undefined;
   location?: Array<V1LeaderboardLocationInfo$Outbound> | null | undefined;
   ownAccount?: V1AccountLeaderboardAccount$Outbound | null | undefined;
   rankedOutOf: number;
@@ -89,6 +95,7 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
   accounts: z.nullable(z.array(V1AccountLeaderboardAccount$outboundSchema)),
   app: z.nullable(V1LeaderboardAppInfo$outboundSchema).optional(),
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$outboundSchema).optional(),
+  hiddenRanks: z.nullable(z.array(z.number().int())).optional(),
   location: z.nullable(z.array(V1LeaderboardLocationInfo$outboundSchema))
     .optional(),
   ownAccount: z.nullable(V1AccountLeaderboardAccount$outboundSchema).optional(),
