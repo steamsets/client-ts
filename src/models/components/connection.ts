@@ -40,6 +40,10 @@ export type Connection = {
    */
   externalId: string;
   /**
+   * Whether the connection has failed to refresh or not
+   */
+  failed: boolean;
+  /**
    * Whether the connection should be hidden or not
    */
   hide: boolean;
@@ -87,6 +91,7 @@ export const Connection$inboundSchema: z.ZodType<
   avatar: z.string(),
   connectionId: z.string(),
   externalId: z.string(),
+  failed: z.boolean(),
   hide: z.boolean(),
   name: z.string(),
   provider: ConnectionProvider$inboundSchema,
@@ -98,6 +103,7 @@ export type Connection$Outbound = {
   avatar: string;
   connectionId: string;
   externalId: string;
+  failed: boolean;
   hide: boolean;
   name: string;
   provider: string;
@@ -113,6 +119,7 @@ export const Connection$outboundSchema: z.ZodType<
   avatar: z.string(),
   connectionId: z.string(),
   externalId: z.string(),
+  failed: z.boolean(),
   hide: z.boolean(),
   name: z.string(),
   provider: ConnectionProvider$outboundSchema,

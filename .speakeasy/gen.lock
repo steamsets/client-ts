@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 1f501c2dcb5ab0658a5ff619c46fd11f
+  docChecksum: 45a112becc593e1f6bea71ce3f95650b
   docVersion: 1.0.0
   speakeasyVersion: 1.469.1
   generationVersion: 2.493.21
-  releaseVersion: 0.14.16
-  configChecksum: e47a29c6654c68c493ca46b9c7f7b893
+  releaseVersion: 0.14.17
+  configChecksum: 9e6916b3ada3c27ba0a4bf09dd0c4858
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -949,7 +949,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [{"rating": 911979, "role": "sapphire"}], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}, {"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [{"rating": 911979, "role": "sapphire"}], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
