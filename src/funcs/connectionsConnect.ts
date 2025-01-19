@@ -26,7 +26,7 @@ import { Result } from "../types/fp.js";
 
 export async function connectionsConnect(
   client: SteamSetsCore,
-  request: components.V1ConnectRequestBody,
+  request: components.V1ReconnectRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -44,7 +44,7 @@ export async function connectionsConnect(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.V1ConnectRequestBody$outboundSchema.parse(value),
+    (value) => components.V1ReconnectRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -130,7 +130,7 @@ export async function connectionsConnect(
     | ConnectionError
   >(
     M.json(200, operations.AccountV1ConnectionConnectResponse$inboundSchema, {
-      key: "V1ConnectResponseBody",
+      key: "V1ReconnectResponseBody",
     }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

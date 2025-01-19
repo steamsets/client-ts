@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 45a112becc593e1f6bea71ce3f95650b
+  docChecksum: 922a47dac8aaa7fa732bc81a50f081c8
   docVersion: 1.0.0
   speakeasyVersion: 1.469.1
   generationVersion: 2.493.21
-  releaseVersion: 0.14.17
-  configChecksum: 9e6916b3ada3c27ba0a4bf09dd0c4858
+  releaseVersion: 0.14.18
+  configChecksum: c926abf5809bbd94ca1f7bca3a2cd6c1
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -73,7 +73,6 @@ generatedFiles:
   - docs/models/components/city.md
   - docs/models/components/colortag.md
   - docs/models/components/connection.md
-  - docs/models/components/connectionprovider.md
   - docs/models/components/country.md
   - docs/models/components/designtag.md
   - docs/models/components/developerapp.md
@@ -156,8 +155,6 @@ generatedFiles:
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagsresponsebody.md
-  - docs/models/components/v1connectrequestbody.md
-  - docs/models/components/v1connectresponsebody.md
   - docs/models/components/v1createsessionbody.md
   - docs/models/components/v1deleteconnectionrequestbody.md
   - docs/models/components/v1deleteconnectionresponsebody.md
@@ -185,6 +182,8 @@ generatedFiles:
   - docs/models/components/v1leaderboardlocationinfo.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1loginresponsebody.md
+  - docs/models/components/v1reconnectrequestbody.md
+  - docs/models/components/v1reconnectresponsebody.md
   - docs/models/components/v1searchrequest.md
   - docs/models/components/v1stats.md
   - docs/models/components/v1updateconnectionrequestbody.md
@@ -435,8 +434,6 @@ generatedFiles:
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagsresponsebody.ts
-  - src/models/components/v1connectrequestbody.ts
-  - src/models/components/v1connectresponsebody.ts
   - src/models/components/v1createsessionbody.ts
   - src/models/components/v1deleteconnectionrequestbody.ts
   - src/models/components/v1deleteconnectionresponsebody.ts
@@ -462,6 +459,8 @@ generatedFiles:
   - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1loginresponsebody.ts
+  - src/models/components/v1reconnectrequestbody.ts
+  - src/models/components/v1reconnectresponsebody.ts
   - src/models/components/v1searchrequest.ts
   - src/models/components/v1stats.ts
   - src/models/components/v1updateconnectionrequestbody.ts
@@ -563,10 +562,10 @@ examples:
   account.v1.connection.connect:
     speakeasy-default-account-v1-connection-connect:
       requestBody:
-        application/json: {"code": "123456", "provider": "discord"}
+        application/json: {"code": "123456", "connectionId": "123456"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
