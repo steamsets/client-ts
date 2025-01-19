@@ -24,6 +24,7 @@ let value: AccountV1SettingsGetResponse = {
           "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
         connectionId: "123456",
         externalId: "123456",
+        failed: true,
         hide: true,
         name: "steamsets",
         provider: "discord",
