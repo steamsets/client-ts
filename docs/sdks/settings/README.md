@@ -169,7 +169,6 @@ async function run() {
       email: "steamsets@example.com",
       hidden: true,
       language: "en",
-      role: "emerald",
       vanity: "flo",
     },
   });
@@ -201,7 +200,6 @@ async function run() {
       email: "steamsets@example.com",
       hidden: true,
       language: "en",
-      role: "emerald",
       vanity: "flo",
     },
   });

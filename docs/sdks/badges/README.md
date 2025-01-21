@@ -30,19 +30,21 @@ async function run() {
         id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
         remove: true,
       },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
     ],
     designs: [
       {
         id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
+        remove: true,
       },
       {
         id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
-      },
-      {
-        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
-        name: "cat",
+        remove: true,
       },
     ],
   });
@@ -80,19 +82,21 @@ async function run() {
         id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
         remove: true,
       },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
     ],
     designs: [
       {
         id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
+        remove: true,
       },
       {
         id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
         name: "cat",
-      },
-      {
-        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
-        name: "cat",
+        remove: true,
       },
     ],
   });

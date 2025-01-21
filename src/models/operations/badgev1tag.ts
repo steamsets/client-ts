@@ -11,6 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type BadgeV1TagResponse = {
   httpMeta: components.HTTPMetadata;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -20,15 +21,18 @@ export const BadgeV1TagResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
+    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type BadgeV1TagResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -38,9 +42,11 @@ export const BadgeV1TagResponse$outboundSchema: z.ZodType<
   BadgeV1TagResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
+    headers: "Headers",
   });
 });
 

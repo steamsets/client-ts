@@ -27,7 +27,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.getApps({});
+  const result = await steamSets.data.getApps({
+    page: 1,
+  });
 
   // Handle the result
   console.log(result);
@@ -51,7 +53,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataGetApps(steamSets, {});
+  const res = await dataGetApps(steamSets, {
+    page: 1,
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -99,7 +103,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.data.getBadges({});
+  const result = await steamSets.data.getBadges({
+    page: 1,
+  });
 
   // Handle the result
   console.log(result);
@@ -123,7 +129,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await dataGetBadges(steamSets, {});
+  const res = await dataGetBadges(steamSets, {
+    page: 1,
+  });
 
   if (!res.ok) {
     throw res.error;

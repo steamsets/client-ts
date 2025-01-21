@@ -21,7 +21,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.accounts.queue({
     force: true,
-    id: {},
   });
 
   // Handle the result
@@ -48,7 +47,6 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await accountsQueue(steamSets, {
     force: true,
-    id: {},
   });
 
   if (!res.ok) {
