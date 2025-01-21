@@ -26,13 +26,19 @@ async function run() {
       appId: 730,
     },
     badge: {
-      id: 4,
+      id: 279811,
       isFoil: true,
     },
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -70,13 +76,19 @@ async function run() {
       appId: 730,
     },
     badge: {
-      id: 4,
+      id: 279811,
       isFoil: true,
     },
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",

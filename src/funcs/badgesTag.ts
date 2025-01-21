@@ -129,7 +129,7 @@ export async function badgesTag(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.BadgeV1TagResponse$inboundSchema),
+    M.nil(204, operations.BadgeV1TagResponse$inboundSchema, { hdrs: true }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

@@ -316,8 +316,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.badge.badgeV1Search({
     filter: "<value>",
-    limit: 10,
-    offset: 0,
     query: "<value>",
   });
 
@@ -345,8 +343,6 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await badgeBadgeV1Search(steamSets, {
     filter: "<value>",
-    limit: 10,
-    offset: 0,
     query: "<value>",
   });
 
