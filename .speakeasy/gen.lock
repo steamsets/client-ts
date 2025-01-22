@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: f5e28e6fb367f07abc08a97a8377d06d
+  docChecksum: c58940c1debbbcc94def40cabcd289af
   docVersion: 1.0.0
-  speakeasyVersion: 1.469.12
+  speakeasyVersion: 1.470.0
   generationVersion: 2.493.34
-  releaseVersion: 0.14.19
-  configChecksum: 76ea26aad3c8009501a34f5b8e567a75
+  releaseVersion: 0.14.20
+  configChecksum: c2a4d58bff1f5a48934c0a81b6d5b33b
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -74,6 +74,7 @@ generatedFiles:
   - docs/models/components/colortag.md
   - docs/models/components/connection.md
   - docs/models/components/country.md
+  - docs/models/components/currentcolortag.md
   - docs/models/components/designtag.md
   - docs/models/components/developerapp.md
   - docs/models/components/developerappenvironment.md
@@ -154,6 +155,7 @@ generatedFiles:
   - docs/models/components/v1badgesrequestbody.md
   - docs/models/components/v1badgesresponsebody.md
   - docs/models/components/v1badgetagrequestbody.md
+  - docs/models/components/v1badgetagresponsebody.md
   - docs/models/components/v1badgetagsresponsebody.md
   - docs/models/components/v1createsessionbody.md
   - docs/models/components/v1deleteconnectionrequestbody.md
@@ -371,6 +373,7 @@ generatedFiles:
   - src/models/components/colortag.ts
   - src/models/components/connection.ts
   - src/models/components/country.ts
+  - src/models/components/currentcolortag.ts
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
@@ -433,6 +436,7 @@ generatedFiles:
   - src/models/components/v1badgesrequestbody.ts
   - src/models/components/v1badgesresponsebody.ts
   - src/models/components/v1badgetagrequestbody.ts
+  - src/models/components/v1badgetagresponsebody.ts
   - src/models/components/v1badgetagsresponsebody.ts
   - src/models/components/v1createsessionbody.ts
   - src/models/components/v1deleteconnectionrequestbody.ts
@@ -941,6 +945,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json", "colorTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}]}
   leaderboard.v1.getAccount:
     speakeasy-default-leaderboard-v1-get-account:
       requestBody:

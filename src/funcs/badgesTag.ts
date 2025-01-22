@@ -57,7 +57,7 @@ export async function badgesTag(
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/problem+json",
+    Accept: "application/json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -129,7 +129,9 @@ export async function badgesTag(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.BadgeV1TagResponse$inboundSchema, { hdrs: true }),
+    M.json(200, operations.BadgeV1TagResponse$inboundSchema, {
+      key: "V1BadgeTagResponseBody",
+    }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
