@@ -35,10 +35,6 @@ export type V1DeveloperAppCreateRequestBody = {
    */
   generateKey: boolean;
   /**
-   * The icon of the app
-   */
-  icon: string | null;
-  /**
    * The name of the app
    */
   name: string;
@@ -72,7 +68,6 @@ export const V1DeveloperAppCreateRequestBody$inboundSchema: z.ZodType<
   description: z.string(),
   environment: Environment$inboundSchema,
   generateKey: z.boolean(),
-  icon: z.nullable(z.string()),
   name: z.string(),
 });
 
@@ -81,7 +76,6 @@ export type V1DeveloperAppCreateRequestBody$Outbound = {
   description: string;
   environment: string;
   generateKey: boolean;
-  icon: string | null;
   name: string;
 };
 
@@ -94,7 +88,6 @@ export const V1DeveloperAppCreateRequestBody$outboundSchema: z.ZodType<
   description: z.string(),
   environment: Environment$outboundSchema,
   generateKey: z.boolean(),
-  icon: z.nullable(z.string()),
   name: z.string(),
 });
 

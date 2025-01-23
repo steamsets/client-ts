@@ -39,10 +39,6 @@ export type DeveloperApp = {
    */
   environment: DeveloperAppEnvironment;
   /**
-   * The icon of the developer app
-   */
-  icon: string | null;
-  /**
    * The id of the developer app
    */
   id: string;
@@ -82,7 +78,6 @@ export const DeveloperApp$inboundSchema: z.ZodType<
   apiKey: z.nullable(z.string()),
   description: z.string(),
   environment: DeveloperAppEnvironment$inboundSchema,
-  icon: z.nullable(z.string()),
   id: z.string(),
   name: z.string(),
 });
@@ -92,7 +87,6 @@ export type DeveloperApp$Outbound = {
   apiKey: string | null;
   description: string;
   environment: string;
-  icon: string | null;
   id: string;
   name: string;
 };
@@ -106,7 +100,6 @@ export const DeveloperApp$outboundSchema: z.ZodType<
   apiKey: z.nullable(z.string()),
   description: z.string(),
   environment: DeveloperAppEnvironment$outboundSchema,
-  icon: z.nullable(z.string()),
   id: z.string(),
   name: z.string(),
 });

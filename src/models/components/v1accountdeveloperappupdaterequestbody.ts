@@ -17,10 +17,6 @@ export type V1AccountDeveloperAppUpdateRequestBody = {
    */
   developerAppId: string;
   /**
-   * The new icon of the developer app
-   */
-  icon: string | null;
-  /**
    * The new name of the developer app
    */
   name: string | null;
@@ -38,7 +34,6 @@ export const V1AccountDeveloperAppUpdateRequestBody$inboundSchema: z.ZodType<
 > = z.object({
   description: z.nullable(z.string()),
   developerAppId: z.string(),
-  icon: z.nullable(z.string()),
   name: z.nullable(z.string()),
   regenerate: z.boolean(),
 });
@@ -47,7 +42,6 @@ export const V1AccountDeveloperAppUpdateRequestBody$inboundSchema: z.ZodType<
 export type V1AccountDeveloperAppUpdateRequestBody$Outbound = {
   description: string | null;
   developerAppId: string;
-  icon: string | null;
   name: string | null;
   regenerate: boolean;
 };
@@ -60,7 +54,6 @@ export const V1AccountDeveloperAppUpdateRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   description: z.nullable(z.string()),
   developerAppId: z.string(),
-  icon: z.nullable(z.string()),
   name: z.nullable(z.string()),
   regenerate: z.boolean(),
 });
