@@ -27,7 +27,6 @@ async function run() {
     description: "Your App Description",
     environment: "production",
     generateKey: true,
-    icon: "https://yoururl.com/icon.png",
     name: "Your App",
   });
 
@@ -57,7 +56,6 @@ async function run() {
     description: "Your App Description",
     environment: "production",
     generateKey: true,
-    icon: "https://yoururl.com/icon.png",
     name: "Your App",
   });
 
@@ -186,7 +184,6 @@ async function run() {
   const result = await steamSets.developer.updateApp({
     description: "My App Description",
     developerAppId: "da_123456",
-    icon: "https://yoururl.com/icon.png",
     name: "My App",
     regenerate: true,
   });
@@ -216,7 +213,6 @@ async function run() {
   const res = await developerUpdateApp(steamSets, {
     description: "My App Description",
     developerAppId: "da_123456",
-    icon: "https://yoururl.com/icon.png",
     name: "My App",
     regenerate: true,
   });

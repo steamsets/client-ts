@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: c58940c1debbbcc94def40cabcd289af
+  docChecksum: 241f556fbaa20ac2b00c72422b034b97
   docVersion: 1.0.0
-  speakeasyVersion: 1.470.0
+  speakeasyVersion: 1.472.1
   generationVersion: 2.493.34
-  releaseVersion: 0.14.20
-  configChecksum: c2a4d58bff1f5a48934c0a81b6d5b33b
+  releaseVersion: 0.14.21
+  configChecksum: 3ccfb39352f61f98b9ad944679a04c29
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -626,7 +626,7 @@ examples:
   account.v1.settings.developer-app-create:
     speakeasy-default-account-v1-settings-developer-app-create:
       requestBody:
-        application/json: {"description": "Your App Description", "environment": "production", "generateKey": true, "icon": "https://yoururl.com/icon.png", "name": "Your App"}
+        application/json: {"description": "Your App Description", "environment": "production", "generateKey": true, "name": "Your App"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeveloperAppCreateResponseBody.json", "apiKey": "api_123"}
@@ -648,7 +648,7 @@ examples:
   account.v1.settings.developer-app-update:
     speakeasy-default-account-v1-settings-developer-app-update:
       requestBody:
-        application/json: {"description": "My App Description", "developerAppId": "da_123456", "icon": "https://yoururl.com/icon.png", "name": "My App", "regenerate": true}
+        application/json: {"description": "My App Description", "developerAppId": "da_123456", "name": "My App", "regenerate": true}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
@@ -864,7 +864,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "icon": "https://yoururl.com/icon.png", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.update:

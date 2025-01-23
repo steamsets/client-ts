@@ -36,7 +36,6 @@ let value: AccountV1SettingsGetResponse = {
         apiKey: "api_123",
         description: "My App Description",
         environment: "production",
-        icon: "https://yoururl.com/icon.png",
         id: "da_123456",
         name: "My App",
       },
