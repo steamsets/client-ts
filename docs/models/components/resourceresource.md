@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "mini_background";
+let value: ResourceResource = "short_link_domain";
 ```
 
 ## Values

@@ -14,5 +14,6 @@ let value: AccountV1SessionCreateRequest = {};
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `userAgent`        | *string*           | :heavy_minus_sign: | N/A                |
 | `xForwardedFor`    | *string*           | :heavy_minus_sign: | N/A                |
+| `cfConnectingIP`   | *string*           | :heavy_minus_sign: | N/A                |
 | `xFingerprint`     | *string*           | :heavy_minus_sign: | N/A                |
 | `xSigned`          | *string*           | :heavy_minus_sign: | N/A                |

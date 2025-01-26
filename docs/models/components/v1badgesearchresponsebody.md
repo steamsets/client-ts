@@ -10,32 +10,34 @@ let value: V1BadgeSearchResponseBody = {
     "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json",
   badges: [
     {
-      appId: 735194,
+      appId: 248753,
       appImage: "<value>",
       appName: "<value>",
-      bookmarks: 962189,
+      bookmarks: 576157,
       colors: [
         "<value>",
       ],
       designs: [
         "<value>",
       ],
-      firstCompletion: 248753,
-      highestLevel: 576157,
+      firstCompletion: 592042,
+      highestLevel: 572252,
       id: "<id>",
-      image: "https://loremflickr.com/2368/2289?lock=8581600186491004",
+      image: "https://loremflickr.com/893/3811?lock=7623771563888255",
       isEvent: false,
       isFoil: false,
       isSale: false,
-      lastCompletion: 447125,
-      level: 846409,
+      lastCompletion: 699479,
+      level: 297437,
       name: "<value>",
-      price: 699479,
-      scarcity: 297437,
-      steamId: 813798,
-      xp: 3965.06,
+      price: 813798,
+      scarcity: 396506,
+      steamId: 881104,
+      xp: 5812.73,
     },
   ],
+  pages: 881736,
+  results: 692532,
 };
 ```
 
@@ -45,3 +47,5 @@ let value: V1BadgeSearchResponseBody = {
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `dollarSchema`                                                   | *string*                                                         | :heavy_minus_sign:                                               | A URL to the JSON Schema for this object.                        | https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json |
 | `badges`                                                         | [components.Badge](../../models/components/badge.md)[]           | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
+| `pages`                                                          | *number*                                                         | :heavy_check_mark:                                               | total number of pages                                            |                                                                  |
+| `results`                                                        | *number*                                                         | :heavy_check_mark:                                               | total number of results                                          |                                                                  |

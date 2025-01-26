@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 241f556fbaa20ac2b00c72422b034b97
+  docChecksum: f05e4719571f475ae04c52ad22bc5522
   docVersion: 1.0.0
-  speakeasyVersion: 1.472.1
-  generationVersion: 2.493.34
-  releaseVersion: 0.14.21
-  configChecksum: 3ccfb39352f61f98b9ad944679a04c29
+  speakeasyVersion: 1.476.1
+  generationVersion: 2.495.1
+  releaseVersion: 0.14.22
+  configChecksum: 3ec8cd0d5c72620e95e974e47eff84a5
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -607,7 +607,7 @@ examples:
         application/json: {"filter": "<value>", "query": "<value>"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": 3133.1}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": 3133.1}], "pages": 479485, "results": 446588}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

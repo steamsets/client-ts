@@ -20,6 +20,14 @@ export type V1BadgeSearchResponseBody = {
    */
   dollarSchema?: string | undefined;
   badges: Array<Badge> | null;
+  /**
+   * total number of pages
+   */
+  pages: number;
+  /**
+   * total number of results
+   */
+  results: number;
 };
 
 /** @internal */
@@ -30,6 +38,8 @@ export const V1BadgeSearchResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   badges: z.nullable(z.array(Badge$inboundSchema)),
+  pages: z.number().int(),
+  results: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -40,6 +50,8 @@ export const V1BadgeSearchResponseBody$inboundSchema: z.ZodType<
 export type V1BadgeSearchResponseBody$Outbound = {
   $schema?: string | undefined;
   badges: Array<Badge$Outbound> | null;
+  pages: number;
+  results: number;
 };
 
 /** @internal */
@@ -50,6 +62,8 @@ export const V1BadgeSearchResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   badges: z.nullable(z.array(Badge$outboundSchema)),
+  pages: z.number().int(),
+  results: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

@@ -19,13 +19,13 @@ let value: AccountV1SessionGetResponse = {
     name: "flo",
     resources: [
       {
-        resource: "developer_apps",
+        resource: "short_link_domain",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 96098,
+        rating: 468651,
         role: "badge_scout",
       },
     ],

@@ -6,30 +6,30 @@
 import { Badge } from "@steamsets/client-ts/models/components";
 
 let value: Badge = {
-  appId: 881104,
+  appId: 725255,
   appImage: "<value>",
   appName: "<value>",
-  bookmarks: 581273,
+  bookmarks: 501324,
   colors: [
     "<value>",
   ],
   designs: [
     "<value>",
   ],
-  firstCompletion: 881736,
-  highestLevel: 692532,
+  firstCompletion: 956084,
+  highestLevel: 643990,
   id: "<id>",
-  image: "https://picsum.photos/seed/qB1iEhCq/2901/2005",
+  image: "https://loremflickr.com/1695/2425?lock=2716344463999652",
   isEvent: false,
   isFoil: false,
   isSale: false,
-  lastCompletion: 135474,
-  level: 298282,
+  lastCompletion: 660174,
+  level: 290077,
   name: "<value>",
-  price: 569965,
-  scarcity: 590873,
-  steamId: 574325,
-  xp: 6532.01,
+  price: 618016,
+  scarcity: 428769,
+  steamId: 135474,
+  xp: 2982.82,
 };
 ```
 
