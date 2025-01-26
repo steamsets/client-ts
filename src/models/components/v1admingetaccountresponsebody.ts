@@ -44,6 +44,12 @@ import {
   V1AccountNameUpdate$Outbound,
   V1AccountNameUpdate$outboundSchema,
 } from "./v1accountnameupdate.js";
+import {
+  V1AccountVanityUpdate,
+  V1AccountVanityUpdate$inboundSchema,
+  V1AccountVanityUpdate$Outbound,
+  V1AccountVanityUpdate$outboundSchema,
+} from "./v1accountvanityupdate.js";
 
 /**
  * The privacy of the account
@@ -125,6 +131,10 @@ export type V1AdminGetAccountResponseBody = {
    * The vanity of the account
    */
   vanity: string | null;
+  /**
+   * The vanity updates the user has
+   */
+  vanityUpdates: Array<V1AccountVanityUpdate> | null;
 };
 
 /** @internal */
@@ -173,6 +183,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   sessions: z.nullable(z.array(Session$inboundSchema)),
   state: z.nullable(z.string()),
   vanity: z.nullable(z.string()),
+  vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -197,6 +208,7 @@ export type V1AdminGetAccountResponseBody$Outbound = {
   sessions: Array<Session$Outbound> | null;
   state: string | null;
   vanity: string | null;
+  vanityUpdates: Array<V1AccountVanityUpdate$Outbound> | null;
 };
 
 /** @internal */
@@ -221,6 +233,7 @@ export const V1AdminGetAccountResponseBody$outboundSchema: z.ZodType<
   sessions: z.nullable(z.array(Session$outboundSchema)),
   state: z.nullable(z.string()),
   vanity: z.nullable(z.string()),
+  vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$outboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

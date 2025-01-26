@@ -6,12 +6,15 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HistoryValue,
+  HistoryValue$inboundSchema,
+  HistoryValue$Outbound,
+  HistoryValue$outboundSchema,
+} from "./historyvalue.js";
 
 export type V1AccountNameUpdate = {
-  /**
-   * The name of the account
-   */
-  name: string;
+  name: HistoryValue;
   /**
    * The time the name was updated
    */
@@ -24,13 +27,13 @@ export const V1AccountNameUpdate$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  name: z.string(),
+  name: HistoryValue$inboundSchema,
   updatedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
 });
 
 /** @internal */
 export type V1AccountNameUpdate$Outbound = {
-  name: string;
+  name: HistoryValue$Outbound;
   updatedAt: string;
 };
 
@@ -40,7 +43,7 @@ export const V1AccountNameUpdate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountNameUpdate
 > = z.object({
-  name: z.string(),
+  name: HistoryValue$outboundSchema,
   updatedAt: z.date().transform(v => v.toISOString()),
 });
 

@@ -6,11 +6,26 @@
 import { V1AccountLocationUpdate } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountLocationUpdate = {
-  city: "Bad Krozingen",
-  countryCode: "DE",
-  countryName: "Germany",
-  region: "Europe",
-  state: "Baden-Wurttemberg",
+  city: {
+    new: "steamsets",
+    old: "steamsets",
+  },
+  countryCode: {
+    new: "steamsets",
+    old: "steamsets",
+  },
+  countryName: {
+    new: "steamsets",
+    old: "steamsets",
+  },
+  region: {
+    new: "steamsets",
+    old: "steamsets",
+  },
+  state: {
+    new: "steamsets",
+    old: "steamsets",
+  },
   updatedAt: new Date("2023-01-01T00:00:00Z"),
 };
 ```
@@ -19,9 +34,9 @@ let value: V1AccountLocationUpdate = {
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `city`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | The city name of the location                                                                 | Bad Krozingen                                                                                 |
-| `countryCode`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | The country code of the location                                                              | DE                                                                                            |
-| `countryName`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | The country name of the location                                                              | Germany                                                                                       |
-| `region`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | The region name of the location                                                               | Europe                                                                                        |
-| `state`                                                                                       | *string*                                                                                      | :heavy_check_mark:                                                                            | The state name of the location                                                                | Baden-Wurttemberg                                                                             |
+| `city`                                                                                        | [components.HistoryValue](../../models/components/historyvalue.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
+| `countryCode`                                                                                 | [components.HistoryValue](../../models/components/historyvalue.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
+| `countryName`                                                                                 | [components.HistoryValue](../../models/components/historyvalue.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
+| `region`                                                                                      | [components.HistoryValue](../../models/components/historyvalue.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
+| `state`                                                                                       | [components.HistoryValue](../../models/components/historyvalue.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | The time the location was updated                                                             | 2023-01-01T00:00:00Z                                                                          |

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: f05e4719571f475ae04c52ad22bc5522
+  docChecksum: 75f181ed83f1609b33b7a51a6349c037
   docVersion: 1.0.0
   speakeasyVersion: 1.476.1
   generationVersion: 2.495.1
-  releaseVersion: 0.14.22
-  configChecksum: 3ec8cd0d5c72620e95e974e47eff84a5
+  releaseVersion: 0.14.23
+  configChecksum: e540110cabe38ffc4764c78d638784f6
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -83,6 +83,7 @@ generatedFiles:
   - docs/models/components/errordetail.md
   - docs/models/components/filter.md
   - docs/models/components/friendprivacy.md
+  - docs/models/components/historyvalue.md
   - docs/models/components/httpmetadata.md
   - docs/models/components/idstruct.md
   - docs/models/components/image.md
@@ -137,6 +138,7 @@ generatedFiles:
   - docs/models/components/v1accountqueuerequestbody.md
   - docs/models/components/v1accountsappsrequestbody.md
   - docs/models/components/v1accountsappsresponsebody.md
+  - docs/models/components/v1accountvanityupdate.md
   - docs/models/components/v1admingetaccountresponsebody.md
   - docs/models/components/v1admingetaccountresponsebodyprivacy.md
   - docs/models/components/v1admingeteventsresponsebody.md
@@ -377,6 +379,7 @@ generatedFiles:
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
+  - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idstruct.ts
   - src/models/components/image.ts
@@ -422,6 +425,7 @@ generatedFiles:
   - src/models/components/v1accountqueuerequestbody.ts
   - src/models/components/v1accountsappsrequestbody.ts
   - src/models/components/v1accountsappsresponsebody.ts
+  - src/models/components/v1accountvanityupdate.ts
   - src/models/components/v1admingetaccountresponsebody.ts
   - src/models/components/v1admingeteventsresponsebody.ts
   - src/models/components/v1adminupdateeventrequestbody.ts
@@ -893,7 +897,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "state": "Baden-Wurttemberg", "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}, {"name": "steamsets", "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "mini_background", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}, {"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 438722, "role": "badge_scout"}, {"rating": 161646, "role": "sapphire"}], "sessions": [], "state": "Baden-Wurttemberg", "vanity": "steamsets"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "mini_background", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}, {"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 438722, "role": "badge_scout"}, {"rating": 161646, "role": "sapphire"}], "sessions": [], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
