@@ -20,6 +20,7 @@ export type V1BadgeSearchResponseBody = {
    */
   dollarSchema?: string | undefined;
   badges: Array<Badge> | null;
+  facets?: any | undefined;
   /**
    * total number of pages
    */
@@ -38,6 +39,7 @@ export const V1BadgeSearchResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   badges: z.nullable(z.array(Badge$inboundSchema)),
+  facets: z.any().optional(),
   pages: z.number().int(),
   results: z.number().int(),
 }).transform((v) => {
@@ -50,6 +52,7 @@ export const V1BadgeSearchResponseBody$inboundSchema: z.ZodType<
 export type V1BadgeSearchResponseBody$Outbound = {
   $schema?: string | undefined;
   badges: Array<Badge$Outbound> | null;
+  facets?: any | undefined;
   pages: number;
   results: number;
 };
@@ -62,6 +65,7 @@ export const V1BadgeSearchResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   badges: z.nullable(z.array(Badge$outboundSchema)),
+  facets: z.any().optional(),
   pages: z.number().int(),
   results: z.number().int(),
 }).transform((v) => {

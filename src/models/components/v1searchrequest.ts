@@ -8,6 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1SearchRequest = {
+  facets?: Array<string> | null | undefined;
   /**
    * The filter to apply to the search
    */
@@ -27,6 +28,7 @@ export const V1SearchRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  facets: z.nullable(z.array(z.string())).optional(),
   filter: z.string(),
   limit: z.nullable(z.number().int()).optional(),
   offset: z.nullable(z.number().int()).optional(),
@@ -36,6 +38,7 @@ export const V1SearchRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type V1SearchRequest$Outbound = {
+  facets?: Array<string> | null | undefined;
   filter: string;
   limit?: number | null | undefined;
   offset?: number | null | undefined;
@@ -49,6 +52,7 @@ export const V1SearchRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1SearchRequest
 > = z.object({
+  facets: z.nullable(z.array(z.string())).optional(),
   filter: z.string(),
   limit: z.nullable(z.number().int()).optional(),
   offset: z.nullable(z.number().int()).optional(),
