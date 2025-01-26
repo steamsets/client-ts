@@ -6,28 +6,19 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  HistoryValue,
+  HistoryValue$inboundSchema,
+  HistoryValue$Outbound,
+  HistoryValue$outboundSchema,
+} from "./historyvalue.js";
 
 export type V1AccountLocationUpdate = {
-  /**
-   * The city name of the location
-   */
-  city: string | null;
-  /**
-   * The country code of the location
-   */
-  countryCode: string | null;
-  /**
-   * The country name of the location
-   */
-  countryName: string | null;
-  /**
-   * The region name of the location
-   */
-  region: string | null;
-  /**
-   * The state name of the location
-   */
-  state: string | null;
+  city: HistoryValue;
+  countryCode: HistoryValue;
+  countryName: HistoryValue;
+  region: HistoryValue;
+  state: HistoryValue;
   /**
    * The time the location was updated
    */
@@ -40,21 +31,21 @@ export const V1AccountLocationUpdate$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  city: z.nullable(z.string()),
-  countryCode: z.nullable(z.string()),
-  countryName: z.nullable(z.string()),
-  region: z.nullable(z.string()),
-  state: z.nullable(z.string()),
+  city: HistoryValue$inboundSchema,
+  countryCode: HistoryValue$inboundSchema,
+  countryName: HistoryValue$inboundSchema,
+  region: HistoryValue$inboundSchema,
+  state: HistoryValue$inboundSchema,
   updatedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
 });
 
 /** @internal */
 export type V1AccountLocationUpdate$Outbound = {
-  city: string | null;
-  countryCode: string | null;
-  countryName: string | null;
-  region: string | null;
-  state: string | null;
+  city: HistoryValue$Outbound;
+  countryCode: HistoryValue$Outbound;
+  countryName: HistoryValue$Outbound;
+  region: HistoryValue$Outbound;
+  state: HistoryValue$Outbound;
   updatedAt: string;
 };
 
@@ -64,11 +55,11 @@ export const V1AccountLocationUpdate$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountLocationUpdate
 > = z.object({
-  city: z.nullable(z.string()),
-  countryCode: z.nullable(z.string()),
-  countryName: z.nullable(z.string()),
-  region: z.nullable(z.string()),
-  state: z.nullable(z.string()),
+  city: HistoryValue$outboundSchema,
+  countryCode: HistoryValue$outboundSchema,
+  countryName: HistoryValue$outboundSchema,
+  region: HistoryValue$outboundSchema,
+  state: HistoryValue$outboundSchema,
   updatedAt: z.date().transform(v => v.toISOString()),
 });
 

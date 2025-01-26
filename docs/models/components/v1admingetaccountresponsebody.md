@@ -27,18 +27,36 @@ let value: V1AdminGetAccountResponseBody = {
   email: "steamsets@example.com",
   locationUpdates: [
     {
-      city: "Bad Krozingen",
-      countryCode: "DE",
-      countryName: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
+      city: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      countryCode: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      countryName: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      region: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      state: {
+        new: "steamsets",
+        old: "steamsets",
+      },
       updatedAt: new Date("2023-01-01T00:00:00Z"),
     },
   ],
   name: "steamsets",
   nameUpdates: [
     {
-      name: "steamsets",
+      name: {
+        new: "steamsets",
+        old: "steamsets",
+      },
       updatedAt: new Date("2023-01-01T00:00:00Z"),
     },
   ],
@@ -69,6 +87,15 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
+  vanityUpdates: [
+    {
+      updatedAt: new Date("2023-01-01T00:00:00Z"),
+      vanity: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+    },
+  ],
 };
 ```
 
@@ -92,3 +119,4 @@ let value: V1AdminGetAccountResponseBody = {
 | `sessions`                                                                                                         | [components.Session](../../models/components/session.md)[]                                                         | :heavy_check_mark:                                                                                                 | The sessions the user has                                                                                          |                                                                                                                    |
 | `state`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The state of the account                                                                                           | Baden-Wurttemberg                                                                                                  |
 | `vanity`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The vanity of the account                                                                                          | steamsets                                                                                                          |
+| `vanityUpdates`                                                                                                    | [components.V1AccountVanityUpdate](../../models/components/v1accountvanityupdate.md)[]                             | :heavy_check_mark:                                                                                                 | The vanity updates the user has                                                                                    |                                                                                                                    |

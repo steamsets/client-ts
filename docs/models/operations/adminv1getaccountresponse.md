@@ -34,18 +34,36 @@ let value: AdminV1GetAccountResponse = {
     email: "steamsets@example.com",
     locationUpdates: [
       {
-        city: "Bad Krozingen",
-        countryCode: "DE",
-        countryName: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
+        city: {
+          new: "steamsets",
+          old: "steamsets",
+        },
+        countryCode: {
+          new: "steamsets",
+          old: "steamsets",
+        },
+        countryName: {
+          new: "steamsets",
+          old: "steamsets",
+        },
+        region: {
+          new: "steamsets",
+          old: "steamsets",
+        },
+        state: {
+          new: "steamsets",
+          old: "steamsets",
+        },
         updatedAt: new Date("2023-01-01T00:00:00Z"),
       },
     ],
     name: "steamsets",
     nameUpdates: [
       {
-        name: "steamsets",
+        name: {
+          new: "steamsets",
+          old: "steamsets",
+        },
         updatedAt: new Date("2023-01-01T00:00:00Z"),
       },
     ],
@@ -76,6 +94,15 @@ let value: AdminV1GetAccountResponse = {
     ],
     state: "Baden-Wurttemberg",
     vanity: "steamsets",
+    vanityUpdates: [
+      {
+        updatedAt: new Date("2023-01-01T00:00:00Z"),
+        vanity: {
+          new: "steamsets",
+          old: "steamsets",
+        },
+      },
+    ],
   },
 };
 ```
