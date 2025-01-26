@@ -36,6 +36,7 @@ let value: V1BadgeSearchResponseBody = {
       xp: 5812.73,
     },
   ],
+  facets: "<value>",
   pages: 881736,
   results: 692532,
 };
@@ -47,5 +48,6 @@ let value: V1BadgeSearchResponseBody = {
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | `dollarSchema`                                                   | *string*                                                         | :heavy_minus_sign:                                               | A URL to the JSON Schema for this object.                        | https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json |
 | `badges`                                                         | [components.Badge](../../models/components/badge.md)[]           | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
+| `facets`                                                         | *any*                                                            | :heavy_check_mark:                                               | N/A                                                              |                                                                  |
 | `pages`                                                          | *number*                                                         | :heavy_check_mark:                                               | total number of pages                                            |                                                                  |
 | `results`                                                        | *number*                                                         | :heavy_check_mark:                                               | total number of results                                          |                                                                  |

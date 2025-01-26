@@ -15,6 +15,7 @@ let value: V1SearchRequest = {
 
 | Field                             | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `facets`                          | *string*[]                        | :heavy_minus_sign:                | N/A                               |
 | `filter`                          | *string*                          | :heavy_check_mark:                | The filter to apply to the search |
 | `limit`                           | *number*                          | :heavy_minus_sign:                | N/A                               |
 | `offset`                          | *number*                          | :heavy_minus_sign:                | N/A                               |
