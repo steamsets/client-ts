@@ -5,7 +5,7 @@
 ```typescript
 import { RoleRole } from "@steamsets/client-ts/models/components";
 
-let value: RoleRole = "amber";
+let value: RoleRole = "emerald";
 ```
 
 ## Values

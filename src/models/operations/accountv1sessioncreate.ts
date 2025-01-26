@@ -12,6 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type AccountV1SessionCreateRequest = {
   userAgent?: string | undefined;
   xForwardedFor?: string | undefined;
+  cfConnectingIP?: string | undefined;
   xFingerprint?: string | undefined;
   xSigned?: string | undefined;
 };
@@ -32,12 +33,14 @@ export const AccountV1SessionCreateRequest$inboundSchema: z.ZodType<
 > = z.object({
   "User-Agent": z.string().optional(),
   "X-Forwarded-For": z.string().optional(),
+  "CF-Connecting-IP": z.string().optional(),
   "X-Fingerprint": z.string().optional(),
   "X-Signed": z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "User-Agent": "userAgent",
     "X-Forwarded-For": "xForwardedFor",
+    "CF-Connecting-IP": "cfConnectingIP",
     "X-Fingerprint": "xFingerprint",
     "X-Signed": "xSigned",
   });
@@ -47,6 +50,7 @@ export const AccountV1SessionCreateRequest$inboundSchema: z.ZodType<
 export type AccountV1SessionCreateRequest$Outbound = {
   "User-Agent"?: string | undefined;
   "X-Forwarded-For"?: string | undefined;
+  "CF-Connecting-IP"?: string | undefined;
   "X-Fingerprint"?: string | undefined;
   "X-Signed"?: string | undefined;
 };
@@ -59,12 +63,14 @@ export const AccountV1SessionCreateRequest$outboundSchema: z.ZodType<
 > = z.object({
   userAgent: z.string().optional(),
   xForwardedFor: z.string().optional(),
+  cfConnectingIP: z.string().optional(),
   xFingerprint: z.string().optional(),
   xSigned: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     userAgent: "User-Agent",
     xForwardedFor: "X-Forwarded-For",
+    cfConnectingIP: "CF-Connecting-IP",
     xFingerprint: "X-Fingerprint",
     xSigned: "X-Signed",
   });

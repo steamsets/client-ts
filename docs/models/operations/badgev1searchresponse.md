@@ -43,6 +43,8 @@ let value: BadgeV1SearchResponse = {
         xp: 9255.97,
       },
     ],
+    pages: 71036,
+    results: 87129,
   },
 };
 ```

@@ -57,6 +57,11 @@ export async function sessionCreate(
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
+    "CF-Connecting-IP": encodeSimple(
+      "CF-Connecting-IP",
+      payload["CF-Connecting-IP"],
+      { explode: false, charEncoding: "none" },
+    ),
     "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
       explode: false,
       charEncoding: "none",

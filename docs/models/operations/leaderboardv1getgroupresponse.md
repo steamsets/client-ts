@@ -30,7 +30,7 @@ let value: LeaderboardV1GetGroupResponse = {
           awardsGiven: 123456,
           awardsReceived: 123456,
           badges: 123456,
-          bans: 318569,
+          bans: 131797,
           city: {
             id: 1,
             name: "Bad Krozingen",
@@ -46,7 +46,7 @@ let value: LeaderboardV1GetGroupResponse = {
           foilBadgeCost: 123456,
           foilBadges: 123456,
           friends: 123456,
-          gameBans: 667411,
+          gameBans: 716327,
           level: 123456,
           name: "steamsets",
           normalBadgeCost: 123456,
@@ -61,8 +61,8 @@ let value: LeaderboardV1GetGroupResponse = {
           },
           roles: [
             {
-              rating: 131797,
-              role: "contributor",
+              rating: 289406,
+              role: "developer",
             },
           ],
           state: {
@@ -70,10 +70,10 @@ let value: LeaderboardV1GetGroupResponse = {
             name: "Baden-Wurttemberg",
           },
           steamId: "76561198842603734",
-          steamSetsScore: 289406,
+          steamSetsScore: 586513,
           steamSetsVanity: "steamsets",
           steamVanity: "steamsets",
-          vacBans: 183191,
+          vacBans: 20107,
           xp: 123456,
         },
         privacy: "public",
@@ -96,7 +96,7 @@ let value: LeaderboardV1GetGroupResponse = {
         awardsGiven: 123456,
         awardsReceived: 123456,
         badges: 123456,
-        bans: 586513,
+        bans: 828940,
         city: {
           id: 1,
           name: "Bad Krozingen",
@@ -112,7 +112,7 @@ let value: LeaderboardV1GetGroupResponse = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        gameBans: 20107,
+        gameBans: 4695,
         level: 123456,
         name: "steamsets",
         normalBadgeCost: 123456,
@@ -127,8 +127,8 @@ let value: LeaderboardV1GetGroupResponse = {
         },
         roles: [
           {
-            rating: 828940,
-            role: "user",
+            rating: 677817,
+            role: "partner",
           },
         ],
         state: {
@@ -136,10 +136,10 @@ let value: LeaderboardV1GetGroupResponse = {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 677817,
+        steamSetsScore: 735194,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 270008,
+        vacBans: 962189,
         xp: 123456,
       },
       privacy: "public",
