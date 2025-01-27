@@ -24,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function connectionsConnect(
+export async function accountAccountV1ConnectionReconnect(
   client: SteamSetsCore,
-  request: components.V1ConnectRequestBody,
+  request: components.V1ReconnectRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1ConnectionConnectResponse,
+    operations.AccountV1ConnectionReconnectResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -44,7 +44,7 @@ export async function connectionsConnect(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.V1ConnectRequestBody$outboundSchema.parse(value),
+    (value) => components.V1ReconnectRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -53,7 +53,7 @@ export async function connectionsConnect(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/Connect")();
+  const path = pathToFunc("/account.v1.AccountService/Reconnect")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export async function connectionsConnect(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.connection.connect",
+    operationID: "account.v1.connection.reconnect",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -118,7 +118,7 @@ export async function connectionsConnect(
   };
 
   const [result] = await M.match<
-    operations.AccountV1ConnectionConnectResponse,
+    operations.AccountV1ConnectionReconnectResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,8 +129,8 @@ export async function connectionsConnect(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1ConnectionConnectResponse$inboundSchema, {
-      key: "V1ConnectResponseBody",
+    M.json(200, operations.AccountV1ConnectionReconnectResponse$inboundSchema, {
+      key: "V1ReconnectResponseBody",
     }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

@@ -5,6 +5,7 @@
 export * from "./accountv1bookmarkbadge.js";
 export * from "./accountv1connectionconnect.js";
 export * from "./accountv1connectiondeleteconnection.js";
+export * from "./accountv1connectionreconnect.js";
 export * from "./accountv1connectionupdateconnection.js";
 export * from "./accountv1connectionverifyconnection.js";
 export * from "./accountv1getapps.js";

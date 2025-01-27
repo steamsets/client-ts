@@ -86,6 +86,7 @@ run();
 * [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
 * [accountV1GetOwnedBadges](docs/sdks/account/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/account/README.md#getstaff)
+* [accountV1ConnectionReconnect](docs/sdks/account/README.md#accountv1connectionreconnect)
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
 * [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
@@ -118,6 +119,7 @@ run();
 ### [connection](docs/sdks/connection/README.md)
 
 * [delete](docs/sdks/connection/README.md#delete)
+* [accountV1ConnectionReconnect](docs/sdks/connection/README.md#accountv1connectionreconnect)
 * [update](docs/sdks/connection/README.md#update)
 * [verify](docs/sdks/connection/README.md#verify)
 
@@ -551,6 +553,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountV1ConnectionReconnect`](docs/sdks/account/README.md#accountv1connectionreconnect)
 - [`accountAccountV1GetBadgeBookmarks`](docs/sdks/account/README.md#accountv1getbadgebookmarks)
 - [`accountAccountV1GetOwnedBadges`](docs/sdks/account/README.md#accountv1getownedbadges)
 - [`accountAccountV1ImagesGet`](docs/sdks/account/README.md#accountv1imagesget)
@@ -578,6 +581,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgeBadgeV1Search`](docs/sdks/badge/README.md#badgev1search)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
+- [`connectionAccountV1ConnectionReconnect`](docs/sdks/connection/README.md#accountv1connectionreconnect)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)
 - [`connectionsConnect`](docs/sdks/connections/README.md#connect)
 - [`connectionUpdate`](docs/sdks/connection/README.md#update)

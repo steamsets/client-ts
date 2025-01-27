@@ -80,6 +80,8 @@ export * from "./v1badgesresponsebody.js";
 export * from "./v1badgetagrequestbody.js";
 export * from "./v1badgetagresponsebody.js";
 export * from "./v1badgetagsresponsebody.js";
+export * from "./v1connectrequestbody.js";
+export * from "./v1connectresponsebody.js";
 export * from "./v1createsessionbody.js";
 export * from "./v1deleteconnectionrequestbody.js";
 export * from "./v1deleteconnectionresponsebody.js";
