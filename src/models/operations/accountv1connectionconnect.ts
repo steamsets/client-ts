@@ -14,7 +14,7 @@ export type AccountV1ConnectionConnectResponse = {
   /**
    * OK
    */
-  v1ReconnectResponseBody?: components.V1ReconnectResponseBody | undefined;
+  v1ConnectResponseBody?: components.V1ConnectResponseBody | undefined;
 };
 
 /** @internal */
@@ -24,21 +24,19 @@ export const AccountV1ConnectionConnectResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  V1ReconnectResponseBody: components.V1ReconnectResponseBody$inboundSchema
+  V1ConnectResponseBody: components.V1ConnectResponseBody$inboundSchema
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "V1ReconnectResponseBody": "v1ReconnectResponseBody",
+    "V1ConnectResponseBody": "v1ConnectResponseBody",
   });
 });
 
 /** @internal */
 export type AccountV1ConnectionConnectResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  V1ReconnectResponseBody?:
-    | components.V1ReconnectResponseBody$Outbound
-    | undefined;
+  V1ConnectResponseBody?: components.V1ConnectResponseBody$Outbound | undefined;
 };
 
 /** @internal */
@@ -48,12 +46,12 @@ export const AccountV1ConnectionConnectResponse$outboundSchema: z.ZodType<
   AccountV1ConnectionConnectResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  v1ReconnectResponseBody: components.V1ReconnectResponseBody$outboundSchema
+  v1ConnectResponseBody: components.V1ConnectResponseBody$outboundSchema
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    v1ReconnectResponseBody: "V1ReconnectResponseBody",
+    v1ConnectResponseBody: "V1ConnectResponseBody",
   });
 });
 

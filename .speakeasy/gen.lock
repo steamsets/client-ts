@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 6c7fd94e145bb8a0e975301e04c66abc
+  docChecksum: 56f76be625bc62791ba17b2a6688b8a8
   docVersion: 1.0.0
-  speakeasyVersion: 1.476.1
+  speakeasyVersion: 1.476.2
   generationVersion: 2.495.1
-  releaseVersion: 0.14.24
-  configChecksum: ab0dcf351601017561f6531d7c4ad7ad
+  releaseVersion: 0.14.25
+  configChecksum: 5848c623844f3b88ec658ebcab64b8c0
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -73,6 +73,7 @@ generatedFiles:
   - docs/models/components/city.md
   - docs/models/components/colortag.md
   - docs/models/components/connection.md
+  - docs/models/components/connectionprovider.md
   - docs/models/components/country.md
   - docs/models/components/currentcolortag.md
   - docs/models/components/designtag.md
@@ -159,6 +160,8 @@ generatedFiles:
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagresponsebody.md
   - docs/models/components/v1badgetagsresponsebody.md
+  - docs/models/components/v1connectrequestbody.md
+  - docs/models/components/v1connectresponsebody.md
   - docs/models/components/v1createsessionbody.md
   - docs/models/components/v1deleteconnectionrequestbody.md
   - docs/models/components/v1deleteconnectionresponsebody.md
@@ -212,6 +215,7 @@ generatedFiles:
   - docs/models/operations/accountv1bookmarkbadgeresponse.md
   - docs/models/operations/accountv1connectionconnectresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
+  - docs/models/operations/accountv1connectionreconnectresponse.md
   - docs/models/operations/accountv1connectionupdateconnectionresponse.md
   - docs/models/operations/accountv1connectionverifyconnectionresponse.md
   - docs/models/operations/accountv1getappsresponse.md
@@ -279,6 +283,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1ConnectionReconnect.ts
   - src/funcs/accountAccountV1GetBadgeBookmarks.ts
   - src/funcs/accountAccountV1GetOwnedBadges.ts
   - src/funcs/accountAccountV1ImagesGet.ts
@@ -306,6 +311,7 @@ generatedFiles:
   - src/funcs/badgeBadgeV1Search.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesTag.ts
+  - src/funcs/connectionAccountV1ConnectionReconnect.ts
   - src/funcs/connectionDelete.ts
   - src/funcs/connectionUpdate.ts
   - src/funcs/connectionVerify.ts
@@ -442,6 +448,8 @@ generatedFiles:
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagresponsebody.ts
   - src/models/components/v1badgetagsresponsebody.ts
+  - src/models/components/v1connectrequestbody.ts
+  - src/models/components/v1connectresponsebody.ts
   - src/models/components/v1createsessionbody.ts
   - src/models/components/v1deleteconnectionrequestbody.ts
   - src/models/components/v1deleteconnectionresponsebody.ts
@@ -495,6 +503,7 @@ generatedFiles:
   - src/models/operations/accountv1bookmarkbadge.ts
   - src/models/operations/accountv1connectionconnect.ts
   - src/models/operations/accountv1connectiondeleteconnection.ts
+  - src/models/operations/accountv1connectionreconnect.ts
   - src/models/operations/accountv1connectionupdateconnection.ts
   - src/models/operations/accountv1connectionverifyconnection.ts
   - src/models/operations/accountv1getapps.ts
@@ -619,10 +628,10 @@ examples:
   account.v1.connection.connect:
     speakeasy-default-account-v1-connection-connect:
       requestBody:
-        application/json: {"code": "123456", "connectionId": "123456"}
+        application/json: {"code": "123456", "provider": "discord"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1005,6 +1014,17 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.connection.reconnect:
+    speakeasy-default-account-v1-connection-reconnect:
+      requestBody:
+        application/json: {"code": "123456", "connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.0

@@ -10,7 +10,7 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Connections extends ClientSDK {
   async connect(
-    request: components.V1ReconnectRequestBody,
+    request: components.V1ConnectRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ConnectionConnectResponse> {
     return unwrapAsync(connectionsConnect(

@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * The provider to connect with
  */
-export const Provider = {
+export const ConnectionProvider = {
   Discord: "discord",
   Patreon: "patreon",
   Kick: "kick",
@@ -24,7 +24,7 @@ export const Provider = {
 /**
  * The provider to connect with
  */
-export type Provider = ClosedEnum<typeof Provider>;
+export type ConnectionProvider = ClosedEnum<typeof ConnectionProvider>;
 
 export type Connection = {
   /**
@@ -54,7 +54,7 @@ export type Connection = {
   /**
    * The provider to connect with
    */
-  provider: Provider;
+  provider: ConnectionProvider;
   /**
    * Whether the connection has been verified or not
    */
@@ -62,22 +62,24 @@ export type Connection = {
 };
 
 /** @internal */
-export const Provider$inboundSchema: z.ZodNativeEnum<typeof Provider> = z
-  .nativeEnum(Provider);
+export const ConnectionProvider$inboundSchema: z.ZodNativeEnum<
+  typeof ConnectionProvider
+> = z.nativeEnum(ConnectionProvider);
 
 /** @internal */
-export const Provider$outboundSchema: z.ZodNativeEnum<typeof Provider> =
-  Provider$inboundSchema;
+export const ConnectionProvider$outboundSchema: z.ZodNativeEnum<
+  typeof ConnectionProvider
+> = ConnectionProvider$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Provider$ {
-  /** @deprecated use `Provider$inboundSchema` instead. */
-  export const inboundSchema = Provider$inboundSchema;
-  /** @deprecated use `Provider$outboundSchema` instead. */
-  export const outboundSchema = Provider$outboundSchema;
+export namespace ConnectionProvider$ {
+  /** @deprecated use `ConnectionProvider$inboundSchema` instead. */
+  export const inboundSchema = ConnectionProvider$inboundSchema;
+  /** @deprecated use `ConnectionProvider$outboundSchema` instead. */
+  export const outboundSchema = ConnectionProvider$outboundSchema;
 }
 
 /** @internal */
@@ -92,7 +94,7 @@ export const Connection$inboundSchema: z.ZodType<
   failed: z.boolean(),
   hide: z.boolean(),
   name: z.string(),
-  provider: Provider$inboundSchema,
+  provider: ConnectionProvider$inboundSchema,
   verified: z.boolean(),
 });
 
@@ -120,7 +122,7 @@ export const Connection$outboundSchema: z.ZodType<
   failed: z.boolean(),
   hide: z.boolean(),
   name: z.string(),
-  provider: Provider$outboundSchema,
+  provider: ConnectionProvider$outboundSchema,
   verified: z.boolean(),
 });
 
