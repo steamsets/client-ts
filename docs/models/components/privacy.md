@@ -13,5 +13,5 @@ let value: Privacy = "public";
 ## Values
 
 ```typescript
-"private" | "public" | "friends_only"
+"public" | "private" | "friends_only"
 ```

@@ -11,10 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SettingsVerfyEmailResponse = {
   httpMeta: components.HTTPMetadata;
-  /**
-   * OK
-   */
-  v1VerifyEmailResponseBody?: components.V1VerifyEmailResponseBody | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -24,21 +21,18 @@ export const AccountV1SettingsVerfyEmailResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  V1VerifyEmailResponseBody: components.V1VerifyEmailResponseBody$inboundSchema
-    .optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "V1VerifyEmailResponseBody": "v1VerifyEmailResponseBody",
+    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsVerfyEmailResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  V1VerifyEmailResponseBody?:
-    | components.V1VerifyEmailResponseBody$Outbound
-    | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -48,12 +42,11 @@ export const AccountV1SettingsVerfyEmailResponse$outboundSchema: z.ZodType<
   AccountV1SettingsVerfyEmailResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  v1VerifyEmailResponseBody: components.V1VerifyEmailResponseBody$outboundSchema
-    .optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    v1VerifyEmailResponseBody: "V1VerifyEmailResponseBody",
+    headers: "Headers",
   });
 });
 

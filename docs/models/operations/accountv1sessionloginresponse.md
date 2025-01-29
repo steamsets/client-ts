@@ -20,6 +20,11 @@ let value: AccountV1SessionLoginResponse = {
     sessionToken: "123456",
     steamId: "76561198842603734",
   },
+  headers: {
+    "key": [
+      "<value>",
+    ],
+  },
 };
 ```
 
@@ -29,3 +34,4 @@ let value: AccountV1SessionLoginResponse = {
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | `httpMeta`                                                                       | [components.HTTPMetadata](../../models/components/httpmetadata.md)               | :heavy_check_mark:                                                               | N/A                                                                              |
 | `v1LoginResponseBody`                                                            | [components.V1LoginResponseBody](../../models/components/v1loginresponsebody.md) | :heavy_minus_sign:                                                               | OK                                                                               |
+| `headers`                                                                        | Record<string, *string*[]>                                                       | :heavy_check_mark:                                                               | N/A                                                                              |

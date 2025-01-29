@@ -96,7 +96,7 @@ export type LastQueueStatus = ClosedEnum<typeof LastQueueStatus>;
 /**
  * The privacy of the account
  */
-export const Privacy = {
+export const V1AccountInfoResponseBodyPrivacy = {
   Private: "private",
   Public: "public",
   FriendsOnly: "friends_only",
@@ -104,7 +104,9 @@ export const Privacy = {
 /**
  * The privacy of the account
  */
-export type Privacy = ClosedEnum<typeof Privacy>;
+export type V1AccountInfoResponseBodyPrivacy = ClosedEnum<
+  typeof V1AccountInfoResponseBodyPrivacy
+>;
 
 export type V1AccountInfoResponseBody = {
   /**
@@ -257,7 +259,7 @@ export type V1AccountInfoResponseBody = {
   /**
    * The privacy of the account
    */
-  privacy: Privacy;
+  privacy: V1AccountInfoResponseBodyPrivacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -364,22 +366,24 @@ export namespace LastQueueStatus$ {
 }
 
 /** @internal */
-export const Privacy$inboundSchema: z.ZodNativeEnum<typeof Privacy> = z
-  .nativeEnum(Privacy);
+export const V1AccountInfoResponseBodyPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof V1AccountInfoResponseBodyPrivacy
+> = z.nativeEnum(V1AccountInfoResponseBodyPrivacy);
 
 /** @internal */
-export const Privacy$outboundSchema: z.ZodNativeEnum<typeof Privacy> =
-  Privacy$inboundSchema;
+export const V1AccountInfoResponseBodyPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof V1AccountInfoResponseBodyPrivacy
+> = V1AccountInfoResponseBodyPrivacy$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Privacy$ {
-  /** @deprecated use `Privacy$inboundSchema` instead. */
-  export const inboundSchema = Privacy$inboundSchema;
-  /** @deprecated use `Privacy$outboundSchema` instead. */
-  export const outboundSchema = Privacy$outboundSchema;
+export namespace V1AccountInfoResponseBodyPrivacy$ {
+  /** @deprecated use `V1AccountInfoResponseBodyPrivacy$inboundSchema` instead. */
+  export const inboundSchema = V1AccountInfoResponseBodyPrivacy$inboundSchema;
+  /** @deprecated use `V1AccountInfoResponseBodyPrivacy$outboundSchema` instead. */
+  export const outboundSchema = V1AccountInfoResponseBodyPrivacy$outboundSchema;
 }
 
 /** @internal */
@@ -431,7 +435,7 @@ export const V1AccountInfoResponseBody$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: Privacy$inboundSchema,
+  privacy: V1AccountInfoResponseBodyPrivacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   shortlinkDomain: z.nullable(z.string()),
@@ -553,7 +557,7 @@ export const V1AccountInfoResponseBody$outboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: Privacy$outboundSchema,
+  privacy: V1AccountInfoResponseBodyPrivacy$outboundSchema,
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
   shortlinkDomain: z.nullable(z.string()),

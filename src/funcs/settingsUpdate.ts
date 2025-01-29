@@ -59,7 +59,7 @@ export async function settingsUpdate(
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
     "X-Forwarded-For": encodeSimple(
       "X-Forwarded-For",
       payload["X-Forwarded-For"],
@@ -136,8 +136,8 @@ export async function settingsUpdate(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SettingsUpdateResponse$inboundSchema, {
-      key: "V1UpdateSettingsResponseBody",
+    M.nil(204, operations.AccountV1SettingsUpdateResponse$inboundSchema, {
+      hdrs: true,
     }),
     M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

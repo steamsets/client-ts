@@ -14,6 +14,18 @@ export type V1CreateSessionBody = {
    */
   dollarSchema?: string | undefined;
   /**
+   * The ratelimit limit
+   */
+  limit: number;
+  /**
+   * The ratelimit remain
+   */
+  remain: number;
+  /**
+   * The ratelimit reset
+   */
+  reset: string;
+  /**
    * The session token
    */
   sessionToken: string;
@@ -26,6 +38,9 @@ export const V1CreateSessionBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
+  limit: z.number().int(),
+  remain: z.number().int(),
+  reset: z.string(),
   sessionToken: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -36,6 +51,9 @@ export const V1CreateSessionBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1CreateSessionBody$Outbound = {
   $schema?: string | undefined;
+  limit: number;
+  remain: number;
+  reset: string;
   sessionToken: string;
 };
 
@@ -46,6 +64,9 @@ export const V1CreateSessionBody$outboundSchema: z.ZodType<
   V1CreateSessionBody
 > = z.object({
   dollarSchema: z.string().optional(),
+  limit: z.number().int(),
+  remain: z.number().int(),
+  reset: z.string(),
   sessionToken: z.string(),
 }).transform((v) => {
   return remap$(v, {

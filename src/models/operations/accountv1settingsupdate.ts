@@ -16,12 +16,7 @@ export type AccountV1SettingsUpdateRequest = {
 
 export type AccountV1SettingsUpdateResponse = {
   httpMeta: components.HTTPMetadata;
-  /**
-   * OK
-   */
-  v1UpdateSettingsResponseBody?:
-    | components.V1UpdateSettingsResponseBody
-    | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -102,21 +97,18 @@ export const AccountV1SettingsUpdateResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  V1UpdateSettingsResponseBody: components
-    .V1UpdateSettingsResponseBody$inboundSchema.optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "V1UpdateSettingsResponseBody": "v1UpdateSettingsResponseBody",
+    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsUpdateResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  V1UpdateSettingsResponseBody?:
-    | components.V1UpdateSettingsResponseBody$Outbound
-    | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -126,12 +118,11 @@ export const AccountV1SettingsUpdateResponse$outboundSchema: z.ZodType<
   AccountV1SettingsUpdateResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  v1UpdateSettingsResponseBody: components
-    .V1UpdateSettingsResponseBody$outboundSchema.optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    v1UpdateSettingsResponseBody: "V1UpdateSettingsResponseBody",
+    headers: "Headers",
   });
 });
 

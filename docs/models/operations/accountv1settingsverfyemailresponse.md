@@ -12,16 +12,17 @@ let value: AccountV1SettingsVerfyEmailResponse = {
     }),
     request: new Request("https://example.com"),
   },
-  v1VerifyEmailResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json",
+  headers: {
+    "key": [
+      "<value>",
+    ],
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `httpMeta`                                                                                   | [components.HTTPMetadata](../../models/components/httpmetadata.md)                           | :heavy_check_mark:                                                                           | N/A                                                                                          |
-| `v1VerifyEmailResponseBody`                                                                  | [components.V1VerifyEmailResponseBody](../../models/components/v1verifyemailresponsebody.md) | :heavy_minus_sign:                                                                           | OK                                                                                           |
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `httpMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |
+| `headers`                                                          | Record<string, *string*[]>                                         | :heavy_check_mark:                                                 | N/A                                                                |

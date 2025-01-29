@@ -4,6 +4,7 @@
 
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,6 +37,21 @@ import {
   Role$Outbound,
   Role$outboundSchema,
 } from "./role.js";
+
+/**
+ * The privacy of the account
+ */
+export const LeaderboardAccountPrivacy = {
+  Public: "public",
+  Private: "private",
+  FriendsOnly: "friends_only",
+} as const;
+/**
+ * The privacy of the account
+ */
+export type LeaderboardAccountPrivacy = ClosedEnum<
+  typeof LeaderboardAccountPrivacy
+>;
 
 export type LeaderboardAccount = {
   /**
@@ -131,7 +147,7 @@ export type LeaderboardAccount = {
   /**
    * The privacy of the account
    */
-  privacy: string;
+  privacy: LeaderboardAccountPrivacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -165,6 +181,27 @@ export type LeaderboardAccount = {
 };
 
 /** @internal */
+export const LeaderboardAccountPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof LeaderboardAccountPrivacy
+> = z.nativeEnum(LeaderboardAccountPrivacy);
+
+/** @internal */
+export const LeaderboardAccountPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof LeaderboardAccountPrivacy
+> = LeaderboardAccountPrivacy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace LeaderboardAccountPrivacy$ {
+  /** @deprecated use `LeaderboardAccountPrivacy$inboundSchema` instead. */
+  export const inboundSchema = LeaderboardAccountPrivacy$inboundSchema;
+  /** @deprecated use `LeaderboardAccountPrivacy$outboundSchema` instead. */
+  export const outboundSchema = LeaderboardAccountPrivacy$outboundSchema;
+}
+
+/** @internal */
 export const LeaderboardAccount$inboundSchema: z.ZodType<
   LeaderboardAccount,
   z.ZodTypeDef,
@@ -194,7 +231,7 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: LeaderboardAccountPrivacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   state: z.nullable(LeaderboardState$inboundSchema).optional(),
@@ -274,7 +311,7 @@ export const LeaderboardAccount$outboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: LeaderboardAccountPrivacy$outboundSchema,
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
   state: z.nullable(LeaderboardState$outboundSchema).optional(),
