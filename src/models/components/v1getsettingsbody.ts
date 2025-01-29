@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -44,6 +45,21 @@ import {
   V1VanityAnalytics$outboundSchema,
 } from "./v1vanityanalytics.js";
 
+/**
+ * The privacy of the account
+ */
+export const V1GetSettingsBodyPrivacy = {
+  Public: "public",
+  Private: "private",
+  FriendsOnly: "friends_only",
+} as const;
+/**
+ * The privacy of the account
+ */
+export type V1GetSettingsBodyPrivacy = ClosedEnum<
+  typeof V1GetSettingsBodyPrivacy
+>;
+
 export type V1GetSettingsBody = {
   /**
    * A URL to the JSON Schema for this object.
@@ -81,6 +97,10 @@ export type V1GetSettingsBody = {
    */
   language: string;
   /**
+   * The privacy of the account
+   */
+  privacy: V1GetSettingsBodyPrivacy;
+  /**
    * The sessions the account has
    */
   sessions: Array<Session> | null;
@@ -90,6 +110,27 @@ export type V1GetSettingsBody = {
   vanity: string;
   vanityAnalytics: V1VanityAnalytics | null;
 };
+
+/** @internal */
+export const V1GetSettingsBodyPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof V1GetSettingsBodyPrivacy
+> = z.nativeEnum(V1GetSettingsBodyPrivacy);
+
+/** @internal */
+export const V1GetSettingsBodyPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof V1GetSettingsBodyPrivacy
+> = V1GetSettingsBodyPrivacy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace V1GetSettingsBodyPrivacy$ {
+  /** @deprecated use `V1GetSettingsBodyPrivacy$inboundSchema` instead. */
+  export const inboundSchema = V1GetSettingsBodyPrivacy$inboundSchema;
+  /** @deprecated use `V1GetSettingsBodyPrivacy$outboundSchema` instead. */
+  export const outboundSchema = V1GetSettingsBodyPrivacy$outboundSchema;
+}
 
 /** @internal */
 export const V1GetSettingsBody$inboundSchema: z.ZodType<
@@ -108,6 +149,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$inboundSchema)),
   language: z.string(),
+  privacy: V1GetSettingsBodyPrivacy$inboundSchema,
   sessions: z.nullable(z.array(Session$inboundSchema)),
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
@@ -128,6 +170,7 @@ export type V1GetSettingsBody$Outbound = {
   hidden: boolean;
   images: Array<Image$Outbound> | null;
   language: string;
+  privacy: string;
   sessions: Array<Session$Outbound> | null;
   vanity: string;
   vanityAnalytics: V1VanityAnalytics$Outbound | null;
@@ -148,6 +191,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   hidden: z.boolean(),
   images: z.nullable(z.array(Image$outboundSchema)),
   language: z.string(),
+  privacy: V1GetSettingsBodyPrivacy$outboundSchema,
   sessions: z.nullable(z.array(Session$outboundSchema)),
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$outboundSchema),

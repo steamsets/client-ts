@@ -139,6 +139,7 @@ export async function sessionLogin(
     | ConnectionError
   >(
     M.json(200, operations.AccountV1SessionLoginResponse$inboundSchema, {
+      hdrs: true,
       key: "V1LoginResponseBody",
     }),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {

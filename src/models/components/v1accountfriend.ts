@@ -4,6 +4,7 @@
 
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,6 +37,19 @@ import {
   Role$Outbound,
   Role$outboundSchema,
 } from "./role.js";
+
+/**
+ * The privacy of the account
+ */
+export const Privacy = {
+  Public: "public",
+  Private: "private",
+  FriendsOnly: "friends_only",
+} as const;
+/**
+ * The privacy of the account
+ */
+export type Privacy = ClosedEnum<typeof Privacy>;
 
 export type V1AccountFriend = {
   /**
@@ -132,7 +146,7 @@ export type V1AccountFriend = {
   /**
    * The privacy of the account
    */
-  privacy: string;
+  privacy: Privacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -164,6 +178,25 @@ export type V1AccountFriend = {
    */
   xp: number;
 };
+
+/** @internal */
+export const Privacy$inboundSchema: z.ZodNativeEnum<typeof Privacy> = z
+  .nativeEnum(Privacy);
+
+/** @internal */
+export const Privacy$outboundSchema: z.ZodNativeEnum<typeof Privacy> =
+  Privacy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Privacy$ {
+  /** @deprecated use `Privacy$inboundSchema` instead. */
+  export const inboundSchema = Privacy$inboundSchema;
+  /** @deprecated use `Privacy$outboundSchema` instead. */
+  export const outboundSchema = Privacy$outboundSchema;
+}
 
 /** @internal */
 export const V1AccountFriend$inboundSchema: z.ZodType<
@@ -198,7 +231,7 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: Privacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   state: z.nullable(LeaderboardState$inboundSchema).optional(),
@@ -280,7 +313,7 @@ export const V1AccountFriend$outboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: Privacy$outboundSchema,
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
   state: z.nullable(LeaderboardState$outboundSchema).optional(),

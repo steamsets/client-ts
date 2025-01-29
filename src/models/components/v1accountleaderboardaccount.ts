@@ -4,6 +4,7 @@
 
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -42,6 +43,21 @@ import {
   Role$Outbound,
   Role$outboundSchema,
 } from "./role.js";
+
+/**
+ * The privacy of the account
+ */
+export const V1AccountLeaderboardAccountPrivacy = {
+  Public: "public",
+  Private: "private",
+  FriendsOnly: "friends_only",
+} as const;
+/**
+ * The privacy of the account
+ */
+export type V1AccountLeaderboardAccountPrivacy = ClosedEnum<
+  typeof V1AccountLeaderboardAccountPrivacy
+>;
 
 export type V1AccountLeaderboardAccount = {
   /**
@@ -142,7 +158,7 @@ export type V1AccountLeaderboardAccount = {
   /**
    * The privacy of the account
    */
-  privacy: string;
+  privacy: V1AccountLeaderboardAccountPrivacy;
   /**
    * The rank of the account
    */
@@ -180,6 +196,28 @@ export type V1AccountLeaderboardAccount = {
 };
 
 /** @internal */
+export const V1AccountLeaderboardAccountPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof V1AccountLeaderboardAccountPrivacy
+> = z.nativeEnum(V1AccountLeaderboardAccountPrivacy);
+
+/** @internal */
+export const V1AccountLeaderboardAccountPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof V1AccountLeaderboardAccountPrivacy
+> = V1AccountLeaderboardAccountPrivacy$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace V1AccountLeaderboardAccountPrivacy$ {
+  /** @deprecated use `V1AccountLeaderboardAccountPrivacy$inboundSchema` instead. */
+  export const inboundSchema = V1AccountLeaderboardAccountPrivacy$inboundSchema;
+  /** @deprecated use `V1AccountLeaderboardAccountPrivacy$outboundSchema` instead. */
+  export const outboundSchema =
+    V1AccountLeaderboardAccountPrivacy$outboundSchema;
+}
+
+/** @internal */
 export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   V1AccountLeaderboardAccount,
   z.ZodTypeDef,
@@ -211,7 +249,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: V1AccountLeaderboardAccountPrivacy$inboundSchema,
   rank: z.number().int(),
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
@@ -297,7 +335,7 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: z.string(),
+  privacy: V1AccountLeaderboardAccountPrivacy$outboundSchema,
   rank: z.number().int(),
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),

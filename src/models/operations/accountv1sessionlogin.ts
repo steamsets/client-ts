@@ -21,6 +21,7 @@ export type AccountV1SessionLoginResponse = {
    * OK
    */
   v1LoginResponseBody?: components.V1LoginResponseBody | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -105,10 +106,12 @@ export const AccountV1SessionLoginResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   V1LoginResponseBody: components.V1LoginResponseBody$inboundSchema.optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "V1LoginResponseBody": "v1LoginResponseBody",
+    "Headers": "headers",
   });
 });
 
@@ -116,6 +119,7 @@ export const AccountV1SessionLoginResponse$inboundSchema: z.ZodType<
 export type AccountV1SessionLoginResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   V1LoginResponseBody?: components.V1LoginResponseBody$Outbound | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -126,10 +130,12 @@ export const AccountV1SessionLoginResponse$outboundSchema: z.ZodType<
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   v1LoginResponseBody: components.V1LoginResponseBody$outboundSchema.optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     v1LoginResponseBody: "V1LoginResponseBody",
+    headers: "Headers",
   });
 });
 

@@ -57,7 +57,7 @@ export async function settingsVerifyEmail(
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -129,8 +129,8 @@ export async function settingsVerifyEmail(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
-      key: "V1VerifyEmailResponseBody",
+    M.nil(204, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
+      hdrs: true,
     }),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

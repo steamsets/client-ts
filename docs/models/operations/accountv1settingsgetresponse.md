@@ -52,6 +52,7 @@ let value: AccountV1SettingsGetResponse = {
       },
     ],
     language: "en",
+    privacy: "public",
     sessions: [
       {
         createdAt: new Date("2023-01-01T00:00:00Z"),

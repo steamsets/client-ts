@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 56f76be625bc62791ba17b2a6688b8a8
+  docChecksum: 0b5562fe3233f7351c8e6a2bcc9fd215
   docVersion: 1.0.0
-  speakeasyVersion: 1.476.2
-  generationVersion: 2.495.1
-  releaseVersion: 0.14.25
-  configChecksum: 5848c623844f3b88ec658ebcab64b8c0
+  speakeasyVersion: 1.477.0
+  generationVersion: 2.497.0
+  releaseVersion: 0.14.26
+  configChecksum: 75b58477bc9541cdfa4dfaed82f94f39
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.17
+    core: 3.18.18
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -92,6 +92,7 @@ generatedFiles:
   - docs/models/components/lastqueuestatus.md
   - docs/models/components/leaderboard.md
   - docs/models/components/leaderboardaccount.md
+  - docs/models/components/leaderboardaccountprivacy.md
   - docs/models/components/leaderboardcity.md
   - docs/models/components/leaderboardcountry.md
   - docs/models/components/leaderboardregion.md
@@ -126,7 +127,9 @@ generatedFiles:
   - docs/models/components/v1accountfriend.md
   - docs/models/components/v1accountfriendsresponsebody.md
   - docs/models/components/v1accountinforesponsebody.md
+  - docs/models/components/v1accountinforesponsebodyprivacy.md
   - docs/models/components/v1accountleaderboardaccount.md
+  - docs/models/components/v1accountleaderboardaccountprivacy.md
   - docs/models/components/v1accountleaderboardappsearch.md
   - docs/models/components/v1accountleaderboardbadgesearch.md
   - docs/models/components/v1accountleaderboardhistoryresponsebody.md
@@ -175,6 +178,7 @@ generatedFiles:
   - docs/models/components/v1getimagesresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
+  - docs/models/components/v1getsettingsbodyprivacy.md
   - docs/models/components/v1groupleaderboardgroup.md
   - docs/models/components/v1groupleaderboardgroupprivacy.md
   - docs/models/components/v1groupleaderboardrequestbody.md
@@ -200,7 +204,6 @@ generatedFiles:
   - docs/models/components/v1updateimageresponsebody.md
   - docs/models/components/v1updatesettingsrequestbody.md
   - docs/models/components/v1updatesettingsrequestbodyrole.md
-  - docs/models/components/v1updatesettingsresponsebody.md
   - docs/models/components/v1uploadedimage.md
   - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
@@ -209,7 +212,6 @@ generatedFiles:
   - docs/models/components/v1verifyconnectionrequestbody.md
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
-  - docs/models/components/v1verifyemailresponsebody.md
   - docs/models/components/vanitystruct.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1bookmarkbadgeresponse.md
@@ -485,7 +487,6 @@ generatedFiles:
   - src/models/components/v1updateimagerequestbody.ts
   - src/models/components/v1updateimageresponsebody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
-  - src/models/components/v1updatesettingsresponsebody.ts
   - src/models/components/v1uploadedimage.ts
   - src/models/components/v1uploadimagesrequestbody.ts
   - src/models/components/v1uploadimagesresponsebody.ts
@@ -493,7 +494,6 @@ generatedFiles:
   - src/models/components/v1verifyconnectionrequestbody.ts
   - src/models/components/v1verifyconnectionresponsebody.ts
   - src/models/components/v1verifyemailrequestbody.ts
-  - src/models/components/v1verifyemailresponsebody.ts
   - src/models/components/vanitystruct.ts
   - src/models/errors/errormodel.ts
   - src/models/errors/httpclienterrors.ts
@@ -673,7 +673,7 @@ examples:
     speakeasy-default-account-v1-session-create:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "sessionToken": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "limit": 1, "remain": 1, "reset": "1", "sessionToken": "ABC123"}
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -877,7 +877,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.update:
