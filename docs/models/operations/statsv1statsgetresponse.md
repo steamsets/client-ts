@@ -16,7 +16,6 @@ let value: StatsV1StatsGetResponse = {
     dollarSchema: "https://api.steamsets.com/schemas/V1Stats.json",
     accountsAdded: 1,
     accountsUpdated: 1,
-    appCost: 1,
     appPlaytime: 1,
     apps: 1,
     awardsGiven: 1,

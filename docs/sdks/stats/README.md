@@ -3,7 +3,7 @@
 
 ## Overview
 
-Stats related endpoints
+Any endpoint that return some sort of statistical data.
 
 ### Available Operations
 

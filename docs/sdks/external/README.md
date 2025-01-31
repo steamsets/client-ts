@@ -1,9 +1,9 @@
-# Public
-(*public*)
+# External
+(*external*)
 
 ## Overview
 
-This API can be accessed by anyone with an API Key
+Any requests here may be accessed by anyone with an API Key.
 
 ### Available Operations
 
@@ -13,6 +13,7 @@ This API can be accessed by anyone with an API Key
 * [getFriends](#getfriends)
 * [getInfo](#getinfo)
 * [getLeaderboardHistory](#getleaderboardhistory)
+* [statsV1StatsGet](#statsv1statsget)
 
 ## getApps
 
@@ -26,7 +27,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getApps({
+  const result = await steamSets.external.getApps({
     page: 1,
   });
 
@@ -43,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetApps } from "@steamsets/client-ts/funcs/publicGetApps.js";
+import { externalGetApps } from "@steamsets/client-ts/funcs/externalGetApps.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +53,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetApps(steamSets, {
+  const res = await externalGetApps(steamSets, {
     page: 1,
   });
 
@@ -102,7 +103,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getBadges({
+  const result = await steamSets.external.getBadges({
     page: 1,
   });
 
@@ -119,7 +120,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetBadges } from "@steamsets/client-ts/funcs/publicGetBadges.js";
+import { externalGetBadges } from "@steamsets/client-ts/funcs/externalGetBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -128,7 +129,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetBadges(steamSets, {
+  const res = await externalGetBadges(steamSets, {
     page: 1,
   });
 
@@ -178,7 +179,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getDataPoints({});
+  const result = await steamSets.external.getDataPoints({});
 
   // Handle the result
   console.log(result);
@@ -193,7 +194,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetDataPoints } from "@steamsets/client-ts/funcs/publicGetDataPoints.js";
+import { externalGetDataPoints } from "@steamsets/client-ts/funcs/externalGetDataPoints.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -202,7 +203,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetDataPoints(steamSets, {});
+  const res = await externalGetDataPoints(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -250,7 +251,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getFriends({});
+  const result = await steamSets.external.getFriends({});
 
   // Handle the result
   console.log(result);
@@ -265,7 +266,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetFriends } from "@steamsets/client-ts/funcs/publicGetFriends.js";
+import { externalGetFriends } from "@steamsets/client-ts/funcs/externalGetFriends.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -274,7 +275,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetFriends(steamSets, {});
+  const res = await externalGetFriends(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -322,7 +323,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getInfo({});
+  const result = await steamSets.external.getInfo({});
 
   // Handle the result
   console.log(result);
@@ -337,7 +338,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetInfo } from "@steamsets/client-ts/funcs/publicGetInfo.js";
+import { externalGetInfo } from "@steamsets/client-ts/funcs/externalGetInfo.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -346,7 +347,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetInfo(steamSets, {});
+  const res = await externalGetInfo(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -394,7 +395,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.public.getLeaderboardHistory({});
+  const result = await steamSets.external.getLeaderboardHistory({});
 
   // Handle the result
   console.log(result);
@@ -409,7 +410,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { publicGetLeaderboardHistory } from "@steamsets/client-ts/funcs/publicGetLeaderboardHistory.js";
+import { externalGetLeaderboardHistory } from "@steamsets/client-ts/funcs/externalGetLeaderboardHistory.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -418,7 +419,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await publicGetLeaderboardHistory(steamSets, {});
+  const res = await externalGetLeaderboardHistory(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -451,5 +452,76 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## statsV1StatsGet
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.external.statsV1StatsGet();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { externalStatsV1StatsGet } from "@steamsets/client-ts/funcs/externalStatsV1StatsGet.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await externalStatsV1StatsGet(steamSets);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.StatsV1StatsGetResponse](../../models/operations/statsv1statsgetresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 404, 429                 | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

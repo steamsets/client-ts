@@ -24,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function publicGetDataPoints(
+export async function internalAdminV1UpdateResources(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1AdminUpdateResourcesRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetDataPointsResponse,
+    operations.AdminV1UpdateResourcesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -44,7 +44,8 @@ export async function publicGetDataPoints(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) =>
+      components.V1AdminUpdateResourcesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -53,11 +54,11 @@ export async function publicGetDataPoints(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetDataPoints")();
+  const path = pathToFunc("/admin.v1.AdminService/UpdateResources")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -65,7 +66,7 @@ export async function publicGetDataPoints(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.getDataPoints",
+    operationID: "admin.v1.update-resources",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -104,7 +105,7 @@ export async function publicGetDataPoints(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -118,7 +119,7 @@ export async function publicGetDataPoints(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetDataPointsResponse,
+    operations.AdminV1UpdateResourcesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,10 +130,8 @@ export async function publicGetDataPoints(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetDataPointsResponse$inboundSchema, {
-      key: "V1AccountDataPointsResponseBody",
-    }),
-    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.nil(204, operations.AdminV1UpdateResourcesResponse$inboundSchema),
+    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

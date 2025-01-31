@@ -3,14 +3,11 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -24,13 +21,12 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function publicGetFriends(
+export async function internalGetTags(
   client: SteamSetsCore,
-  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetFriendsResponse,
+    operations.BadgeV1TagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -42,21 +38,9 @@ export async function publicGetFriends(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/account.v1.AccountService/GetFriends")();
+  const path = pathToFunc("/badge.v1.BadgeService/GetTags")();
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -65,7 +49,7 @@ export async function publicGetFriends(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.getFriends",
+    operationID: "badge.v1.tags",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -93,7 +77,6 @@ export async function publicGetFriends(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -104,7 +87,7 @@ export async function publicGetFriends(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -118,7 +101,7 @@ export async function publicGetFriends(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetFriendsResponse,
+    operations.BadgeV1TagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,10 +112,10 @@ export async function publicGetFriends(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetFriendsResponse$inboundSchema, {
-      key: "V1AccountFriendsResponseBody",
+    M.json(200, operations.BadgeV1TagsResponse$inboundSchema, {
+      key: "V1BadgeTagsResponseBody",
     }),
-    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

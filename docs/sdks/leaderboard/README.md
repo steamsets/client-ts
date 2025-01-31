@@ -3,6 +3,8 @@
 
 ## Overview
 
+Any requests that is somehow used for getting leaderboard data.
+
 ### Available Operations
 
 * [getAccount](#getaccount)

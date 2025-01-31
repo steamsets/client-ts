@@ -22,10 +22,6 @@ export type V1Stats = {
    */
   accountsUpdated: number;
   /**
-   * The total cost of apps
-   */
-  appCost: number;
-  /**
    * The total playtime of apps
    */
   appPlaytime: number;
@@ -105,7 +101,6 @@ export const V1Stats$inboundSchema: z.ZodType<V1Stats, z.ZodTypeDef, unknown> =
     $schema: z.string().optional(),
     accountsAdded: z.number().int(),
     accountsUpdated: z.number().int(),
-    appCost: z.number().int(),
     appPlaytime: z.number().int(),
     apps: z.number().int(),
     awardsGiven: z.number().int(),
@@ -135,7 +130,6 @@ export type V1Stats$Outbound = {
   $schema?: string | undefined;
   accountsAdded: number;
   accountsUpdated: number;
-  appCost: number;
   appPlaytime: number;
   apps: number;
   awardsGiven: number;
@@ -165,7 +159,6 @@ export const V1Stats$outboundSchema: z.ZodType<
   dollarSchema: z.string().optional(),
   accountsAdded: z.number().int(),
   accountsUpdated: z.number().int(),
-  appCost: z.number().int(),
   appPlaytime: z.number().int(),
   apps: z.number().int(),
   awardsGiven: z.number().int(),

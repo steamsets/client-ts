@@ -24,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function publicGetInfo(
+export async function internalBadgeV1Search(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1SearchRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetInfoResponse,
+    operations.BadgeV1SearchResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -44,7 +44,7 @@ export async function publicGetInfo(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) => components.V1SearchRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -53,7 +53,7 @@ export async function publicGetInfo(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetInfo")();
+  const path = pathToFunc("/badge.v1.BadgeService/Search")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export async function publicGetInfo(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.getInfo",
+    operationID: "badge.v1.search",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -104,7 +104,7 @@ export async function publicGetInfo(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -118,7 +118,7 @@ export async function publicGetInfo(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetInfoResponse,
+    operations.BadgeV1SearchResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,10 +129,10 @@ export async function publicGetInfo(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetInfoResponse$inboundSchema, {
-      key: "V1AccountInfoResponseBody",
+    M.json(200, operations.BadgeV1SearchResponse$inboundSchema, {
+      key: "V1BadgeSearchResponseBody",
     }),
-    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

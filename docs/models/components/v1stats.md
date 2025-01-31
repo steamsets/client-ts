@@ -9,7 +9,6 @@ let value: V1Stats = {
   dollarSchema: "https://api.steamsets.com/schemas/V1Stats.json",
   accountsAdded: 1,
   accountsUpdated: 1,
-  appCost: 1,
   appPlaytime: 1,
   apps: 1,
   awardsGiven: 1,
@@ -38,7 +37,6 @@ let value: V1Stats = {
 | `dollarSchema`                                 | *string*                                       | :heavy_minus_sign:                             | A URL to the JSON Schema for this object.      | https://api.steamsets.com/schemas/V1Stats.json |
 | `accountsAdded`                                | *number*                                       | :heavy_check_mark:                             | The total number of accounts added             | 1                                              |
 | `accountsUpdated`                              | *number*                                       | :heavy_check_mark:                             | The total number of accounts updated           | 1                                              |
-| `appCost`                                      | *number*                                       | :heavy_check_mark:                             | The total cost of apps                         | 1                                              |
 | `appPlaytime`                                  | *number*                                       | :heavy_check_mark:                             | The total playtime of apps                     | 1                                              |
 | `apps`                                         | *number*                                       | :heavy_check_mark:                             | The total number of apps                       | 1                                              |
 | `awardsGiven`                                  | *number*                                       | :heavy_check_mark:                             | The total awards given                         | 1                                              |

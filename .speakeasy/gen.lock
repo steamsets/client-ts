@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0b5562fe3233f7351c8e6a2bcc9fd215
+  docChecksum: 94c73d4f4b9708670a35e0e30c83a7aa
   docVersion: 1.0.0
-  speakeasyVersion: 1.477.0
-  generationVersion: 2.497.0
-  releaseVersion: 0.14.26
-  configChecksum: 75b58477bc9541cdfa4dfaed82f94f39
+  speakeasyVersion: 1.480.0
+  generationVersion: 2.499.0
+  releaseVersion: 0.14.27
+  configChecksum: 88ad39dc93327103dbaea6291911da58
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.18
+    core: 3.18.20
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -50,7 +50,6 @@ generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
-  - .eslintrc.cjs
   - .gitattributes
   - .npmignore
   - FUNCTIONS.md
@@ -272,16 +271,19 @@ generatedFiles:
   - docs/sdks/connections/README.md
   - docs/sdks/data/README.md
   - docs/sdks/developer/README.md
+  - docs/sdks/event/README.md
+  - docs/sdks/external/README.md
   - docs/sdks/images/README.md
+  - docs/sdks/internal/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/locations/README.md
-  - docs/sdks/public/README.md
   - docs/sdks/session/README.md
   - docs/sdks/sessions/README.md
   - docs/sdks/settings/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/steamsets/README.md
+  - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
@@ -290,7 +292,12 @@ generatedFiles:
   - src/funcs/accountAccountV1GetOwnedBadges.ts
   - src/funcs/accountAccountV1ImagesGet.ts
   - src/funcs/accountAccountV1ImagesUpdate.ts
+  - src/funcs/accountAdminV1UpdateResources.ts
+  - src/funcs/accountAdminV1UpdateRoles.ts
+  - src/funcs/accountCreateDeveloperApp.ts
+  - src/funcs/accountDeleteDeveloperApp.ts
   - src/funcs/accountDeleteImages.ts
+  - src/funcs/accountGetAccount.ts
   - src/funcs/accountGetApps.ts
   - src/funcs/accountGetBadges.ts
   - src/funcs/accountGetDataPoints.ts
@@ -299,6 +306,7 @@ generatedFiles:
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
   - src/funcs/accountSendEmailVerification.ts
+  - src/funcs/accountUpdateApp.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
@@ -324,25 +332,49 @@ generatedFiles:
   - src/funcs/dataGetFriends.ts
   - src/funcs/dataGetInfo.ts
   - src/funcs/dataGetLeaderboardHistory.ts
-  - src/funcs/dataGetStaff.ts
   - src/funcs/developerCreateDeveloperApp.ts
   - src/funcs/developerDeleteDeveloperApp.ts
   - src/funcs/developerUpdateApp.ts
+  - src/funcs/eventAdminV1GetEvents.ts
+  - src/funcs/eventAdminV1UpdateEvent.ts
+  - src/funcs/externalGetApps.ts
+  - src/funcs/externalGetBadges.ts
+  - src/funcs/externalGetDataPoints.ts
+  - src/funcs/externalGetFriends.ts
+  - src/funcs/externalGetInfo.ts
+  - src/funcs/externalGetLeaderboardHistory.ts
+  - src/funcs/externalStatsV1StatsGet.ts
   - src/funcs/imagesAccountV1ImagesGet.ts
   - src/funcs/imagesAccountV1ImagesUpdate.ts
   - src/funcs/imagesDeleteImages.ts
   - src/funcs/imagesUploadImages.ts
+  - src/funcs/internalAccountV1BookmarkBadge.ts
+  - src/funcs/internalAccountV1ConnectionReconnect.ts
+  - src/funcs/internalAccountV1GetBadgeBookmarks.ts
+  - src/funcs/internalAccountV1GetOwnedBadges.ts
+  - src/funcs/internalAccountV1ImagesGet.ts
+  - src/funcs/internalAccountV1ImagesUpdate.ts
+  - src/funcs/internalAdminV1GetEvents.ts
+  - src/funcs/internalAdminV1UpdateEvent.ts
+  - src/funcs/internalAdminV1UpdateResources.ts
+  - src/funcs/internalAdminV1UpdateRoles.ts
+  - src/funcs/internalBadgeV1Search.ts
+  - src/funcs/internalCheck.ts
+  - src/funcs/internalCreateDeveloperApp.ts
+  - src/funcs/internalDeleteDeveloperApp.ts
+  - src/funcs/internalDeleteImages.ts
+  - src/funcs/internalGetAccount.ts
+  - src/funcs/internalGetStaff.ts
+  - src/funcs/internalGetTags.ts
+  - src/funcs/internalSendEmailVerification.ts
+  - src/funcs/internalUpdateApp.ts
+  - src/funcs/internalUploadImages.ts
+  - src/funcs/internalVerifyEmail.ts
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetBadges.ts
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
-  - src/funcs/publicGetApps.ts
-  - src/funcs/publicGetBadges.ts
-  - src/funcs/publicGetDataPoints.ts
-  - src/funcs/publicGetFriends.ts
-  - src/funcs/publicGetInfo.ts
-  - src/funcs/publicGetLeaderboardHistory.ts
   - src/funcs/sessionCreate.ts
   - src/funcs/sessionLogin.ts
   - src/funcs/sessionsDelete.ts
@@ -555,12 +587,14 @@ generatedFiles:
   - src/sdk/connections.ts
   - src/sdk/data.ts
   - src/sdk/developer.ts
+  - src/sdk/event.ts
+  - src/sdk/external.ts
   - src/sdk/images.ts
   - src/sdk/index.ts
+  - src/sdk/internal.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
   - src/sdk/locations.ts
-  - src/sdk/public.ts
   - src/sdk/sdk.ts
   - src/sdk/session.ts
   - src/sdk/sessions.ts
@@ -1004,7 +1038,7 @@ examples:
     speakeasy-default-stats-v1-stats-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1Stats.json", "accountsAdded": 1, "accountsUpdated": 1, "appCost": 1, "appPlaytime": 1, "apps": 1, "awardsGiven": 1, "awardsReceived": 1, "badges": 1, "bans": 1, "foilBadges": 1, "friends": 1, "gameBans": 1, "level": 1, "normalBadges": 1, "playtime": 1, "pointsGiven": 1, "pointsReceived": 1, "steamSetsScore": 1, "totalAccounts": 1, "vacBans": 1, "xp": 1}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1Stats.json", "accountsAdded": 1, "accountsUpdated": 1, "appPlaytime": 1, "apps": 1, "awardsGiven": 1, "awardsReceived": 1, "badges": 1, "bans": 1, "foilBadges": 1, "friends": 1, "gameBans": 1, "level": 1, "normalBadges": 1, "playtime": 1, "pointsGiven": 1, "pointsReceived": 1, "steamSetsScore": 1, "totalAccounts": 1, "vacBans": 1, "xp": 1}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

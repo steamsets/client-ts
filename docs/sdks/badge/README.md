@@ -3,6 +3,8 @@
 
 ## Overview
 
+Any request that is related to steam badges, mostly badge search/tagging related.
+
 ### Available Operations
 
 * [accountV1BookmarkBadge](#accountv1bookmarkbadge)
