@@ -65,10 +65,6 @@ export type V1AccountFriend = {
    */
   avatar: string;
   /**
-   * The average playtime of the account
-   */
-  averagePlaytime: number;
-  /**
    * The number of awards the account has
    */
   awardsGiven: number;
@@ -207,7 +203,6 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badges: z.number().int(),
@@ -248,7 +243,6 @@ export type V1AccountFriend$Outbound = {
   appCost: number;
   apps: number;
   avatar: string;
-  averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
   badges: number;
@@ -291,7 +285,6 @@ export const V1AccountFriend$outboundSchema: z.ZodType<
   appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badges: z.number().int(),

@@ -67,10 +67,6 @@ export type LeaderboardAccount = {
    */
   avatar: string;
   /**
-   * The average playtime of the account
-   */
-  averagePlaytime: number;
-  /**
    * The number of awards the account has
    */
   awardsGiven: number;
@@ -210,7 +206,6 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badges: z.number().int(),
@@ -248,7 +243,6 @@ export type LeaderboardAccount$Outbound = {
   appCost: number;
   apps: number;
   avatar: string;
-  averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
   badges: number;
@@ -290,7 +284,6 @@ export const LeaderboardAccount$outboundSchema: z.ZodType<
   appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badges: z.number().int(),

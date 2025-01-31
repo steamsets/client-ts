@@ -22,7 +22,6 @@ let value: AccountV1GetInfoResponse = {
     apps: 123456,
     avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
     avatarFrame: "steamsets",
-    averagePlaytime: 123456,
     awardsGiven: 123456,
     awardsReceived: 123456,
     background: "steamsets",

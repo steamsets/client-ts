@@ -77,10 +77,6 @@ export type V1AccountLeaderboardAccount = {
    */
   avatar: string;
   /**
-   * The average playtime of the account
-   */
-  averagePlaytime: number;
-  /**
    * The number of awards the account has
    */
   awardsGiven: number;
@@ -227,7 +223,6 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   appPlaytime: z.nullable(z.number().int()),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badgeInfo: z.nullable(AccountBadgeInfo$inboundSchema).optional(),
@@ -268,7 +263,6 @@ export type V1AccountLeaderboardAccount$Outbound = {
   appPlaytime: number | null;
   apps: number;
   avatar: string;
-  averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
   badgeInfo?: AccountBadgeInfo$Outbound | null | undefined;
@@ -313,7 +307,6 @@ export const V1AccountLeaderboardAccount$outboundSchema: z.ZodType<
   appPlaytime: z.nullable(z.number().int()),
   apps: z.number().int(),
   avatar: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   badgeInfo: z.nullable(AccountBadgeInfo$outboundSchema).optional(),
