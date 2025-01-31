@@ -3,7 +3,7 @@
 
 ## Overview
 
-Developer App related operations
+Developer App related operations.
 
 ### Available Operations
 

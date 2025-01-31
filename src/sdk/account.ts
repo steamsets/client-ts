@@ -7,7 +7,12 @@ import { accountAccountV1GetBadgeBookmarks } from "../funcs/accountAccountV1GetB
 import { accountAccountV1GetOwnedBadges } from "../funcs/accountAccountV1GetOwnedBadges.js";
 import { accountAccountV1ImagesGet } from "../funcs/accountAccountV1ImagesGet.js";
 import { accountAccountV1ImagesUpdate } from "../funcs/accountAccountV1ImagesUpdate.js";
+import { accountAdminV1UpdateResources } from "../funcs/accountAdminV1UpdateResources.js";
+import { accountAdminV1UpdateRoles } from "../funcs/accountAdminV1UpdateRoles.js";
+import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
+import { accountDeleteDeveloperApp } from "../funcs/accountDeleteDeveloperApp.js";
 import { accountDeleteImages } from "../funcs/accountDeleteImages.js";
+import { accountGetAccount } from "../funcs/accountGetAccount.js";
 import { accountGetApps } from "../funcs/accountGetApps.js";
 import { accountGetBadges } from "../funcs/accountGetBadges.js";
 import { accountGetDataPoints } from "../funcs/accountGetDataPoints.js";
@@ -16,6 +21,7 @@ import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
+import { accountUpdateApp } from "../funcs/accountUpdateApp.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -24,11 +30,44 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Account extends ClientSDK {
+  async createDeveloperApp(
+    request: components.V1DeveloperAppCreateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsDeveloperAppCreateResponse> {
+    return unwrapAsync(accountCreateDeveloperApp(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async deleteDeveloperApp(
+    request: components.V1AccountDeveloperAppDeleteRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsDeveloperAppDeleteResponse> {
+    return unwrapAsync(accountDeleteDeveloperApp(
+      this,
+      request,
+      options,
+    ));
+  }
+
   async deleteImages(
     request: components.V1DeleteImagesRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesDeleteResponse> {
     return unwrapAsync(accountDeleteImages(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async updateApp(
+    request: components.V1AccountDeveloperAppUpdateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsDeveloperAppUpdateResponse> {
+    return unwrapAsync(accountUpdateApp(
       this,
       request,
       options,
@@ -186,6 +225,39 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
     return unwrapAsync(accountVerifyEmail(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async getAccount(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AdminV1GetAccountResponse> {
+    return unwrapAsync(accountGetAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async adminV1UpdateResources(
+    request: components.V1AdminUpdateResourcesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminV1UpdateResourcesResponse> {
+    return unwrapAsync(accountAdminV1UpdateResources(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async adminV1UpdateRoles(
+    request: components.V1AdminUpdateRolessRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminV1UpdateRolesResponse> {
+    return unwrapAsync(accountAdminV1UpdateRoles(
       this,
       request,
       options,

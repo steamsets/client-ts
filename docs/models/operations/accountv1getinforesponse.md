@@ -27,7 +27,7 @@ let value: AccountV1GetInfoResponse = {
     awardsReceived: 123456,
     background: "steamsets",
     badges: 123456,
-    bans: 438601,
+    bans: 656330,
     city: {
       id: 1,
       name: "Bad Krozingen",
@@ -54,13 +54,13 @@ let value: AccountV1GetInfoResponse = {
     createdAt: new Date("2023-01-01T00:00:00Z"),
     currentBestRanks: [
       {
-        leaderboard: "xp",
+        leaderboard: "awards_given",
         ranks: "1,1,1,1,1",
       },
     ],
     currentRanks: [
       {
-        leaderboard: "app_playtime",
+        leaderboard: "awards_received",
         ranks: "1,1,1,1,1",
       },
     ],
@@ -70,7 +70,7 @@ let value: AccountV1GetInfoResponse = {
     foilBadges: 123456,
     friendPrivacy: "public",
     friends: 123456,
-    gameBans: 208876,
+    gameBans: 368725,
     images: [
       {
         active: true,
@@ -80,7 +80,7 @@ let value: AccountV1GetInfoResponse = {
       },
     ],
     lastBanDate: new Date("2024-03-07 07:31:46"),
-    lastQueueStatus: "undefined",
+    lastQueueStatus: "failed",
     level: 123456,
     miniBackground: "steamsets",
     name: "steamsets",
@@ -96,8 +96,8 @@ let value: AccountV1GetInfoResponse = {
     },
     roles: [
       {
-        rating: 653108,
-        role: "partner",
+        rating: 97101,
+        role: "translator",
       },
     ],
     shortlinkDomain: "steamsets.link",
@@ -106,12 +106,12 @@ let value: AccountV1GetInfoResponse = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 466311,
+    steamSetsScore: 96098,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     theme: "steamsets",
     updatedAt: new Date("2023-01-01T00:00:00Z"),
-    vacBans: 244425,
+    vacBans: 976460,
     xp: 123456,
   },
 };

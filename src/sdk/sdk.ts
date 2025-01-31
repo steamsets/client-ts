@@ -12,11 +12,13 @@ import { Connection } from "./connection.js";
 import { Connections } from "./connections.js";
 import { Data } from "./data.js";
 import { Developer } from "./developer.js";
+import { Event } from "./event.js";
+import { External } from "./external.js";
 import { Images } from "./images.js";
+import { Internal } from "./internal.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Locations } from "./locations.js";
-import { Public } from "./public.js";
 import { Session } from "./session.js";
 import { Sessions } from "./sessions.js";
 import { Settings } from "./settings.js";
@@ -28,9 +30,19 @@ export class SteamSets extends ClientSDK {
     return (this._badge ??= new Badge(this._options));
   }
 
+  private _internal?: Internal;
+  get internal(): Internal {
+    return (this._internal ??= new Internal(this._options));
+  }
+
   private _connections?: Connections;
   get connections(): Connections {
     return (this._connections ??= new Connections(this._options));
+  }
+
+  private _account?: Account;
+  get account(): Account {
+    return (this._account ??= new Account(this._options));
   }
 
   private _developer?: Developer;
@@ -48,11 +60,6 @@ export class SteamSets extends ClientSDK {
     return (this._connection ??= new Connection(this._options));
   }
 
-  private _account?: Account;
-  get account(): Account {
-    return (this._account ??= new Account(this._options));
-  }
-
   private _images?: Images;
   get images(): Images {
     return (this._images ??= new Images(this._options));
@@ -68,9 +75,9 @@ export class SteamSets extends ClientSDK {
     return (this._data ??= new Data(this._options));
   }
 
-  private _public?: Public;
-  get public(): Public {
-    return (this._public ??= new Public(this._options));
+  private _external?: External;
+  get external(): External {
+    return (this._external ??= new External(this._options));
   }
 
   private _settings?: Settings;
@@ -86,6 +93,11 @@ export class SteamSets extends ClientSDK {
   private _admin?: Admin;
   get admin(): Admin {
     return (this._admin ??= new Admin(this._options));
+  }
+
+  private _event?: Event;
+  get event(): Event {
+    return (this._event ??= new Event(this._options));
   }
 
   private _badges?: Badges;

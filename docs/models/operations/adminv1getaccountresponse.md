@@ -71,13 +71,13 @@ let value: AdminV1GetAccountResponse = {
     region: "Europe",
     resources: [
       {
-        resource: "animated_avatar",
+        resource: "max_leaderboard_entries",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 282807,
+        rating: 780529,
         role: "staff",
       },
     ],

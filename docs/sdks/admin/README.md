@@ -3,7 +3,7 @@
 
 ## Overview
 
-Admin related operations
+Admin related operations, stay away from these.
 
 ### Available Operations
 

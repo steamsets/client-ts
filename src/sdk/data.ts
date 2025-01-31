@@ -8,7 +8,6 @@ import { dataGetDataPoints } from "../funcs/dataGetDataPoints.js";
 import { dataGetFriends } from "../funcs/dataGetFriends.js";
 import { dataGetInfo } from "../funcs/dataGetInfo.js";
 import { dataGetLeaderboardHistory } from "../funcs/dataGetLeaderboardHistory.js";
-import { dataGetStaff } from "../funcs/dataGetStaff.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -77,15 +76,6 @@ export class Data extends ClientSDK {
     return unwrapAsync(dataGetLeaderboardHistory(
       this,
       request,
-      options,
-    ));
-  }
-
-  async getStaff(
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1GetStaffResponse> {
-    return unwrapAsync(dataGetStaff(
-      this,
       options,
     ));
   }

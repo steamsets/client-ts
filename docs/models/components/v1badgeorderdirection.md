@@ -5,7 +5,7 @@
 ```typescript
 import { V1BadgeOrderDirection } from "@steamsets/client-ts/models/components";
 
-let value: V1BadgeOrderDirection = "asc";
+let value: V1BadgeOrderDirection = "desc";
 ```
 
 ## Values

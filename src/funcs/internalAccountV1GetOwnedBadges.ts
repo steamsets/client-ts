@@ -3,14 +3,11 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -24,13 +21,12 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function publicGetLeaderboardHistory(
+export async function internalAccountV1GetOwnedBadges(
   client: SteamSetsCore,
-  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetLeaderboardHistoryResponse,
+    operations.AccountV1GetOwnedBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -42,21 +38,9 @@ export async function publicGetLeaderboardHistory(
     | ConnectionError
   >
 > {
-  const parsed = safeParse(
-    request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return parsed;
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/account.v1.AccountService/GetLeaderboardHistory")();
+  const path = pathToFunc("/account.v1.AccountService/GetOwnedBadges")();
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -65,7 +49,7 @@ export async function publicGetLeaderboardHistory(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.getLeaderboardHistory",
+    operationID: "account.v1.getOwnedBadges",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -93,7 +77,6 @@ export async function publicGetLeaderboardHistory(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -104,7 +87,7 @@ export async function publicGetLeaderboardHistory(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -118,7 +101,7 @@ export async function publicGetLeaderboardHistory(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetLeaderboardHistoryResponse,
+    operations.AccountV1GetOwnedBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,12 +112,10 @@ export async function publicGetLeaderboardHistory(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.AccountV1GetLeaderboardHistoryResponse$inboundSchema,
-      { key: "V1AccountLeaderboardHistoryResponseBody" },
-    ),
-    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.json(200, operations.AccountV1GetOwnedBadgesResponse$inboundSchema, {
+      key: "V1AccountBadgeOwnedBadgesResponseBody",
+    }),
+    M.jsonErr([403, 404], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

@@ -24,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function publicGetApps(
+export async function accountGetAccount(
   client: SteamSetsCore,
-  request: components.V1AccountsAppsRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1GetAppsResponse,
+    operations.AdminV1GetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -44,7 +44,7 @@ export async function publicGetApps(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.V1AccountsAppsRequestBody$outboundSchema.parse(value),
+    (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -53,7 +53,7 @@ export async function publicGetApps(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetApps")();
+  const path = pathToFunc("/admin.v1.AdminService/GetAccount")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export async function publicGetApps(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.getApps",
+    operationID: "admin.v1.get-account",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -104,7 +104,7 @@ export async function publicGetApps(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -118,7 +118,7 @@ export async function publicGetApps(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetAppsResponse,
+    operations.AdminV1GetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,10 +129,10 @@ export async function publicGetApps(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetAppsResponse$inboundSchema, {
-      key: "V1AccountsAppsResponseBody",
+    M.json(200, operations.AdminV1GetAccountResponse$inboundSchema, {
+      key: "V1AdminGetAccountResponseBody",
     }),
-    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

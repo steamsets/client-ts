@@ -3,7 +3,7 @@
 
 ## Overview
 
-Liveness check
+Are we still alive? I hope so :^)
 
 ### Available Operations
 
