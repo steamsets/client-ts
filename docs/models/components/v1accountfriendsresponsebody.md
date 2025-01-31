@@ -13,7 +13,6 @@ let value: V1AccountFriendsResponseBody = {
       appCost: 123456,
       apps: 123456,
       avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
-      averagePlaytime: 123456,
       awardsGiven: 123456,
       awardsReceived: 123456,
       badges: 123456,

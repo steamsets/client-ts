@@ -142,10 +142,6 @@ export type V1AccountInfoResponseBody = {
    */
   avatarFrame: string;
   /**
-   * The average playtime of the account
-   */
-  averagePlaytime: number;
-  /**
    * The number of awards the account has
    */
   awardsGiven: number;
@@ -400,7 +396,6 @@ export const V1AccountInfoResponseBody$inboundSchema: z.ZodType<
   apps: z.number().int(),
   avatar: z.string(),
   avatarFrame: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   background: z.string(),
@@ -466,7 +461,6 @@ export type V1AccountInfoResponseBody$Outbound = {
   apps: number;
   avatar: string;
   avatarFrame: string;
-  averagePlaytime: number;
   awardsGiven: number;
   awardsReceived: number;
   background: string;
@@ -526,7 +520,6 @@ export const V1AccountInfoResponseBody$outboundSchema: z.ZodType<
   apps: z.number().int(),
   avatar: z.string(),
   avatarFrame: z.string(),
-  averagePlaytime: z.number().int(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
   background: z.string(),
