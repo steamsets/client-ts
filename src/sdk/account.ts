@@ -7,6 +7,7 @@ import { accountAccountV1GetBadgeBookmarks } from "../funcs/accountAccountV1GetB
 import { accountAccountV1GetOwnedBadges } from "../funcs/accountAccountV1GetOwnedBadges.js";
 import { accountAccountV1ImagesGet } from "../funcs/accountAccountV1ImagesGet.js";
 import { accountAccountV1ImagesUpdate } from "../funcs/accountAccountV1ImagesUpdate.js";
+import { accountAccountV1SettingsUpdateRole } from "../funcs/accountAccountV1SettingsUpdateRole.js";
 import { accountAdminV1UpdateResources } from "../funcs/accountAdminV1UpdateResources.js";
 import { accountAdminV1UpdateRoles } from "../funcs/accountAdminV1UpdateRoles.js";
 import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
@@ -203,6 +204,17 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesUpdateResponse> {
     return unwrapAsync(accountAccountV1ImagesUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsUpdateRole(
+    request: components.V1UpdateRoleRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateRoleResponse> {
+    return unwrapAsync(accountAccountV1SettingsUpdateRole(
       this,
       request,
       options,

@@ -5,7 +5,7 @@
 ```typescript
 import { V1AdminUpdateResourcesRequestBodyResource } from "@steamsets/client-ts/models/components";
 
-let value: V1AdminUpdateResourcesRequestBodyResource = "auto_refresh";
+let value: V1AdminUpdateResourcesRequestBodyResource = "animated_avatar";
 ```
 
 ## Values

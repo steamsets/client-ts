@@ -8,6 +8,7 @@ import { internalAccountV1GetBadgeBookmarks } from "../funcs/internalAccountV1Ge
 import { internalAccountV1GetOwnedBadges } from "../funcs/internalAccountV1GetOwnedBadges.js";
 import { internalAccountV1ImagesGet } from "../funcs/internalAccountV1ImagesGet.js";
 import { internalAccountV1ImagesUpdate } from "../funcs/internalAccountV1ImagesUpdate.js";
+import { internalAccountV1SettingsUpdateRole } from "../funcs/internalAccountV1SettingsUpdateRole.js";
 import { internalAdminV1GetEvents } from "../funcs/internalAdminV1GetEvents.js";
 import { internalAdminV1UpdateEvent } from "../funcs/internalAdminV1UpdateEvent.js";
 import { internalAdminV1UpdateResources } from "../funcs/internalAdminV1UpdateResources.js";
@@ -148,6 +149,17 @@ export class Internal extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesUpdateResponse> {
     return unwrapAsync(internalAccountV1ImagesUpdate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsUpdateRole(
+    request: components.V1UpdateRoleRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsUpdateRoleResponse> {
+    return unwrapAsync(internalAccountV1SettingsUpdateRole(
       this,
       request,
       options,

@@ -10,7 +10,7 @@ let value: V1AccountLeaderboardRequestBody = {
     appId: 730,
   },
   badge: {
-    id: 281730,
+    id: 148141,
     isFoil: true,
   },
   end: 10,

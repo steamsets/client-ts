@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: eef8661271080f3598839249aaaa96f4
+  docChecksum: c9a8e2f890e70437d340ec0b84397089
   docVersion: 1.0.0
   speakeasyVersion: 1.481.1
   generationVersion: 2.500.5
-  releaseVersion: 0.14.28
-  configChecksum: 1a7710c460273d2b4f6dd7f4ae414800
+  releaseVersion: 0.14.29
+  configChecksum: acde0dd3f3d7197ead436d6855ff0db7
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -201,8 +201,9 @@ generatedFiles:
   - docs/models/components/v1updateimage.md
   - docs/models/components/v1updateimagerequestbody.md
   - docs/models/components/v1updateimageresponsebody.md
+  - docs/models/components/v1updaterolerequestbody.md
+  - docs/models/components/v1updaterolerequestbodyrole.md
   - docs/models/components/v1updatesettingsrequestbody.md
-  - docs/models/components/v1updatesettingsrequestbodyrole.md
   - docs/models/components/v1uploadedimage.md
   - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
@@ -247,6 +248,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingssendemailverificationresponse.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
+  - docs/models/operations/accountv1settingsupdateroleresponse.md
   - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1geteventsresponse.md
@@ -292,6 +294,7 @@ generatedFiles:
   - src/funcs/accountAccountV1GetOwnedBadges.ts
   - src/funcs/accountAccountV1ImagesGet.ts
   - src/funcs/accountAccountV1ImagesUpdate.ts
+  - src/funcs/accountAccountV1SettingsUpdateRole.ts
   - src/funcs/accountAdminV1UpdateResources.ts
   - src/funcs/accountAdminV1UpdateRoles.ts
   - src/funcs/accountCreateDeveloperApp.ts
@@ -354,6 +357,7 @@ generatedFiles:
   - src/funcs/internalAccountV1GetOwnedBadges.ts
   - src/funcs/internalAccountV1ImagesGet.ts
   - src/funcs/internalAccountV1ImagesUpdate.ts
+  - src/funcs/internalAccountV1SettingsUpdateRole.ts
   - src/funcs/internalAdminV1GetEvents.ts
   - src/funcs/internalAdminV1UpdateEvent.ts
   - src/funcs/internalAdminV1UpdateResources.ts
@@ -379,6 +383,7 @@ generatedFiles:
   - src/funcs/sessionLogin.ts
   - src/funcs/sessionsDelete.ts
   - src/funcs/sessionsGet.ts
+  - src/funcs/settingsAccountV1SettingsUpdateRole.ts
   - src/funcs/settingsGet.ts
   - src/funcs/settingsSendEmailVerification.ts
   - src/funcs/settingsUpdate.ts
@@ -518,6 +523,7 @@ generatedFiles:
   - src/models/components/v1updateimage.ts
   - src/models/components/v1updateimagerequestbody.ts
   - src/models/components/v1updateimageresponsebody.ts
+  - src/models/components/v1updaterolerequestbody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
   - src/models/components/v1uploadedimage.ts
   - src/models/components/v1uploadimagesrequestbody.ts
@@ -562,6 +568,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts
+  - src/models/operations/accountv1settingsupdaterole.ts
   - src/models/operations/accountv1settingsverfyemail.ts
   - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1getevents.ts
@@ -824,7 +831,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 560592, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "bans", "ranks": "1,1,1,1,1"}, {"leaderboard": "xp", "ranks": "1,1,1,1,1"}], "currentRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}, {"leaderboard": "steam_sets", "ranks": "1,1,1,1,1"}], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 565193, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 190809, "role": "owner"}, {"rating": 106951, "role": "emerald"}], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 509023, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 681206, "xp": 123456}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 560592, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "bans", "ranks": "1,1,1,1,1"}, {"leaderboard": "xp", "ranks": "1,1,1,1,1"}], "currentRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}, {"leaderboard": "steam_sets", "ranks": "1,1,1,1,1"}], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 565193, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2024-09-06T09:49:21.884Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 190809, "role": "owner"}, {"rating": 106951, "role": "emerald"}], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 509023, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 681206, "xp": 123456}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1058,6 +1065,15 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
         "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update-role:
+    speakeasy-default-account-v1-settings-update-role:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

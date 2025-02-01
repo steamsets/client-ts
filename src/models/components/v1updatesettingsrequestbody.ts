@@ -4,27 +4,8 @@
 
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-
-/**
- * The role the account should have between one of the 6 donation roles
- */
-export const V1UpdateSettingsRequestBodyRole = {
-  Amber: "amber",
-  Amethyst: "amethyst",
-  Emerald: "emerald",
-  Sapphire: "sapphire",
-  Ruby: "ruby",
-  Diamond: "diamond",
-} as const;
-/**
- * The role the account should have between one of the 6 donation roles
- */
-export type V1UpdateSettingsRequestBodyRole = ClosedEnum<
-  typeof V1UpdateSettingsRequestBodyRole
->;
 
 export type V1UpdateSettingsRequestBody = {
   /**
@@ -40,35 +21,10 @@ export type V1UpdateSettingsRequestBody = {
    */
   language: string;
   /**
-   * The role the account should have between one of the 6 donation roles
-   */
-  role?: V1UpdateSettingsRequestBodyRole | null | undefined;
-  /**
    * The vanity the account should use
    */
   vanity: string | null;
 };
-
-/** @internal */
-export const V1UpdateSettingsRequestBodyRole$inboundSchema: z.ZodNativeEnum<
-  typeof V1UpdateSettingsRequestBodyRole
-> = z.nativeEnum(V1UpdateSettingsRequestBodyRole);
-
-/** @internal */
-export const V1UpdateSettingsRequestBodyRole$outboundSchema: z.ZodNativeEnum<
-  typeof V1UpdateSettingsRequestBodyRole
-> = V1UpdateSettingsRequestBodyRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V1UpdateSettingsRequestBodyRole$ {
-  /** @deprecated use `V1UpdateSettingsRequestBodyRole$inboundSchema` instead. */
-  export const inboundSchema = V1UpdateSettingsRequestBodyRole$inboundSchema;
-  /** @deprecated use `V1UpdateSettingsRequestBodyRole$outboundSchema` instead. */
-  export const outboundSchema = V1UpdateSettingsRequestBodyRole$outboundSchema;
-}
 
 /** @internal */
 export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
@@ -79,7 +35,6 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
   email: z.nullable(z.string()),
   hidden: z.boolean(),
   language: z.string(),
-  role: z.nullable(V1UpdateSettingsRequestBodyRole$inboundSchema).optional(),
   vanity: z.nullable(z.string()),
 });
 
@@ -88,7 +43,6 @@ export type V1UpdateSettingsRequestBody$Outbound = {
   email: string | null;
   hidden: boolean;
   language: string;
-  role?: string | null | undefined;
   vanity: string | null;
 };
 
@@ -101,7 +55,6 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
   email: z.nullable(z.string()),
   hidden: z.boolean(),
   language: z.string(),
-  role: z.nullable(V1UpdateSettingsRequestBodyRole$outboundSchema).optional(),
   vanity: z.nullable(z.string()),
 });
 

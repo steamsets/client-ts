@@ -7,7 +7,7 @@ Which type of vanity to search for
 ```typescript
 import { AccountSearchVanityStructType } from "@steamsets/client-ts/models/components";
 
-let value: AccountSearchVanityStructType = "internal";
+let value: AccountSearchVanityStructType = "steam";
 ```
 
 ## Values

@@ -1,13 +1,13 @@
-# V1UpdateSettingsRequestBodyRole
+# V1UpdateRoleRequestBodyRole
 
 The role the account should have between one of the 6 donation roles
 
 ## Example Usage
 
 ```typescript
-import { V1UpdateSettingsRequestBodyRole } from "@steamsets/client-ts/models/components";
+import { V1UpdateRoleRequestBodyRole } from "@steamsets/client-ts/models/components";
 
-let value: V1UpdateSettingsRequestBodyRole = "amethyst";
+let value: V1UpdateRoleRequestBodyRole = "emerald";
 ```
 
 ## Values
