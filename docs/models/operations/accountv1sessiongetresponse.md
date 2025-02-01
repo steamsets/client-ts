@@ -19,14 +19,14 @@ let value: AccountV1SessionGetResponse = {
     name: "flo",
     resources: [
       {
-        resource: "animated_avatar",
+        resource: "background",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 282807,
-        role: "staff",
+        rating: 120196,
+        role: "owner",
       },
     ],
     sessionData: {

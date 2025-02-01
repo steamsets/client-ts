@@ -32,6 +32,7 @@ export * from "./accountv1settingsdeveloperappupdate.js";
 export * from "./accountv1settingsget.js";
 export * from "./accountv1settingssendemailverification.js";
 export * from "./accountv1settingsupdate.js";
+export * from "./accountv1settingsupdaterole.js";
 export * from "./accountv1settingsverfyemail.js";
 export * from "./adminv1getaccount.js";
 export * from "./adminv1getevents.js";

@@ -233,6 +233,10 @@ export type V1AccountInfoResponseBody = {
    */
   name: string;
   /**
+   * The time the account is allowed to be refreshed
+   */
+  nextAllowedTime: Date;
+  /**
    * The cost of a normal badge
    */
   normalBadgeCost: number;
@@ -425,6 +429,9 @@ export const V1AccountInfoResponseBody$inboundSchema: z.ZodType<
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
+  nextAllowedTime: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
   playtime: z.number().int(),
@@ -486,6 +493,7 @@ export type V1AccountInfoResponseBody$Outbound = {
   level: number;
   miniBackground: string;
   name: string;
+  nextAllowedTime: string;
   normalBadgeCost: number;
   normalBadges: number;
   playtime: number;
@@ -545,6 +553,7 @@ export const V1AccountInfoResponseBody$outboundSchema: z.ZodType<
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
+  nextAllowedTime: z.date().transform(v => v.toISOString()),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
   playtime: z.number().int(),

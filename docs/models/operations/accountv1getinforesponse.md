@@ -83,6 +83,7 @@ let value: AccountV1GetInfoResponse = {
     level: 123456,
     miniBackground: "steamsets",
     name: "steamsets",
+    nextAllowedTime: new Date("2023-04-17T10:09:07.050Z"),
     normalBadgeCost: 123456,
     normalBadges: 123456,
     playtime: 123456,
@@ -95,8 +96,8 @@ let value: AccountV1GetInfoResponse = {
     },
     roles: [
       {
-        rating: 97101,
-        role: "translator",
+        rating: 837945,
+        role: "donator",
       },
     ],
     shortlinkDomain: "steamsets.link",
@@ -105,12 +106,12 @@ let value: AccountV1GetInfoResponse = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 96098,
+    steamSetsScore: 976460,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     theme: "steamsets",
     updatedAt: new Date("2023-01-01T00:00:00Z"),
-    vacBans: 976460,
+    vacBans: 468651,
     xp: 123456,
   },
 };
