@@ -3,13 +3,14 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeSimple } from "../lib/encodings.js";
+import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -23,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function settingsSendEmailVerification(
+export async function internalAccountV1SettingsEmailVerify(
   client: SteamSetsCore,
-  request: operations.AccountV1SettingsSendEmailVerificationRequest,
+  request: components.V1VerifyEmailRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsSendEmailVerificationResponse,
+    operations.AccountV1SettingsEmailVerifyResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -43,26 +44,20 @@ export async function settingsSendEmailVerification(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      operations.AccountV1SettingsSendEmailVerificationRequest$outboundSchema
-        .parse(value),
+    (value) => components.V1VerifyEmailRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/SendEmailVerification")();
+  const path = pathToFunc("/account.v1.AccountService/EmailVerify")();
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/problem+json",
-    "X-Forwarded-For": encodeSimple(
-      "X-Forwarded-For",
-      payload["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -70,7 +65,7 @@ export async function settingsSendEmailVerification(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.send-email-verification",
+    operationID: "account.v1.settings.email-verify",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -123,7 +118,7 @@ export async function settingsSendEmailVerification(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsSendEmailVerificationResponse,
+    operations.AccountV1SettingsEmailVerifyResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -134,11 +129,9 @@ export async function settingsSendEmailVerification(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(
-      204,
-      operations.AccountV1SettingsSendEmailVerificationResponse$inboundSchema,
-      { hdrs: true },
-    ),
+    M.nil(204, operations.AccountV1SettingsEmailVerifyResponse$inboundSchema, {
+      hdrs: true,
+    }),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

@@ -90,6 +90,7 @@ export const LastQueueStatus = {
   Retrying: "retrying",
   Failed: "failed",
   Completed: "completed",
+  Cooldown: "cooldown",
 } as const;
 export type LastQueueStatus = ClosedEnum<typeof LastQueueStatus>;
 

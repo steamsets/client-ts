@@ -1,11 +1,11 @@
-# AccountV1SettingsSendEmailVerificationRequest
+# AccountV1SettingsEmailSendVerificationRequest
 
 ## Example Usage
 
 ```typescript
-import { AccountV1SettingsSendEmailVerificationRequest } from "@steamsets/client-ts/models/operations";
+import { AccountV1SettingsEmailSendVerificationRequest } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1SettingsSendEmailVerificationRequest = {};
+let value: AccountV1SettingsEmailSendVerificationRequest = {};
 ```
 
 ## Fields
