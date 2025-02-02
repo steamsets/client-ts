@@ -67,7 +67,7 @@ let value: AccountV1SettingsGetResponse = {
     subscribed: false,
     vanity: "flo",
     vanityAnalytics: {
-      clicks: 317983,
+      clicks: 296140,
     },
   },
 };

@@ -20,9 +20,8 @@ specific category of applications.
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { resendWebhook } from "@steamsets/client-ts/funcs/resendWebhook.js";
+import { badgesBookmark } from "@steamsets/client-ts/funcs/badgesBookmark.js";
 import { SDKValidationError } from "@steamsets/client-ts/models/errors/sdkvalidationerror.js";
-import { openAsBlob } from "node:fs";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -31,8 +30,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await resendWebhook(steamSets, {
-    requestBody: await openAsBlob("example.file"),
+  const res = await badgesBookmark(steamSets, {
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   switch (true) {

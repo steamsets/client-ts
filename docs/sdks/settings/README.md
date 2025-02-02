@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [accountV1SettingsEmailSendVerification](#accountv1settingsemailsendverification)
-* [accountV1SettingsEmailSubscribe](#accountv1settingsemailsubscribe)
-* [accountV1SettingsEmailVerify](#accountv1settingsemailverify)
+* [sendVerification](#sendverification)
+* [subscribeEmail](#subscribeemail)
+* [verifyEmail](#verifyemail)
 * [get](#get)
-* [accountV1SettingsUpdateRole](#accountv1settingsupdaterole)
+* [updateRole](#updaterole)
 * [update](#update)
 
-## accountV1SettingsEmailSendVerification
+## sendVerification
 
 ### Example Usage
 
@@ -24,7 +24,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsEmailSendVerification({});
+  const result = await steamSets.settings.sendVerification({});
 
   // Handle the result
   console.log(result);
@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsEmailSendVerification } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsEmailSendVerification.js";
+import { settingsSendVerification } from "@steamsets/client-ts/funcs/settingsSendVerification.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -48,7 +48,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsEmailSendVerification(steamSets, {});
+  const res = await settingsSendVerification(steamSets, {});
 
   if (!res.ok) {
     throw res.error;
@@ -84,7 +84,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsEmailSubscribe
+## subscribeEmail
 
 ### Example Usage
 
@@ -96,7 +96,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsEmailSubscribe({
+  const result = await steamSets.settings.subscribeEmail({
     v1EmailSubscriptionRequestBody: {
       email: "steamsets@example.com",
       subscribed: true,
@@ -116,7 +116,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsEmailSubscribe } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsEmailSubscribe.js";
+import { settingsSubscribeEmail } from "@steamsets/client-ts/funcs/settingsSubscribeEmail.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -125,7 +125,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsEmailSubscribe(steamSets, {
+  const res = await settingsSubscribeEmail(steamSets, {
     v1EmailSubscriptionRequestBody: {
       email: "steamsets@example.com",
       subscribed: true,
@@ -166,7 +166,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsEmailVerify
+## verifyEmail
 
 ### Example Usage
 
@@ -178,7 +178,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsEmailVerify({
+  const result = await steamSets.settings.verifyEmail({
     code: "123456",
   });
 
@@ -195,7 +195,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsEmailVerify } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsEmailVerify.js";
+import { settingsVerifyEmail } from "@steamsets/client-ts/funcs/settingsVerifyEmail.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -204,7 +204,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsEmailVerify(steamSets, {
+  const res = await settingsVerifyEmail(steamSets, {
     code: "123456",
   });
 
@@ -312,7 +312,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SettingsUpdateRole
+## updateRole
 
 ### Example Usage
 
@@ -324,7 +324,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.settings.accountV1SettingsUpdateRole({});
+  const result = await steamSets.settings.updateRole({});
 
   // Handle the result
   console.log(result);
@@ -339,7 +339,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { settingsAccountV1SettingsUpdateRole } from "@steamsets/client-ts/funcs/settingsAccountV1SettingsUpdateRole.js";
+import { settingsUpdateRole } from "@steamsets/client-ts/funcs/settingsUpdateRole.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -348,7 +348,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await settingsAccountV1SettingsUpdateRole(steamSets, {});
+  const res = await settingsUpdateRole(steamSets, {});
 
   if (!res.ok) {
     throw res.error;

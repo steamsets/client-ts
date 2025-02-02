@@ -23,7 +23,7 @@ let value: AccountV1GetFriendsResponse = {
         awardsGiven: 123456,
         awardsReceived: 123456,
         badges: 123456,
-        bans: 161309,
+        bans: 666767,
         city: {
           id: 1,
           name: "Bad Krozingen",
@@ -39,8 +39,8 @@ let value: AccountV1GetFriendsResponse = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        friendsSince: new Date("2024-12-16T19:21:41.015Z"),
-        gameBans: 253291,
+        friendsSince: new Date("2025-01-05T00:27:30.681Z"),
+        gameBans: 210382,
         level: 123456,
         name: "steamsets",
         normalBadgeCost: 123456,
@@ -55,8 +55,8 @@ let value: AccountV1GetFriendsResponse = {
         },
         roles: [
           {
-            rating: 466311,
-            role: "partner",
+            rating: 128926,
+            role: "owner",
           },
         ],
         state: {
@@ -64,10 +64,10 @@ let value: AccountV1GetFriendsResponse = {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 158969,
+        steamSetsScore: 363711,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 110375,
+        vacBans: 570197,
         xp: 123456,
       },
     ],

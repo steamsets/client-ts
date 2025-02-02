@@ -6,8 +6,8 @@
 ### Available Operations
 
 * [deleteImages](#deleteimages)
-* [accountV1ImagesGet](#accountv1imagesget)
-* [accountV1ImagesUpdate](#accountv1imagesupdate)
+* [get](#get)
+* [update](#update)
 * [uploadImages](#uploadimages)
 
 ## deleteImages
@@ -92,7 +92,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1ImagesGet
+## get
 
 ### Example Usage
 
@@ -104,7 +104,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.images.accountV1ImagesGet();
+  const result = await steamSets.images.get();
 
   // Handle the result
   console.log(result);
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { imagesAccountV1ImagesGet } from "@steamsets/client-ts/funcs/imagesAccountV1ImagesGet.js";
+import { imagesGet } from "@steamsets/client-ts/funcs/imagesGet.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -128,7 +128,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await imagesAccountV1ImagesGet(steamSets);
+  const res = await imagesGet(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -162,7 +162,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1ImagesUpdate
+## update
 
 ### Example Usage
 
@@ -174,7 +174,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.images.accountV1ImagesUpdate({
+  const result = await steamSets.images.update({
     images: [
 
     ],
@@ -193,7 +193,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { imagesAccountV1ImagesUpdate } from "@steamsets/client-ts/funcs/imagesAccountV1ImagesUpdate.js";
+import { imagesUpdate } from "@steamsets/client-ts/funcs/imagesUpdate.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -202,7 +202,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await imagesAccountV1ImagesUpdate(steamSets, {
+  const res = await imagesUpdate(steamSets, {
     images: [
   
     ],

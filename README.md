@@ -47,15 +47,15 @@ yarn add @steamsets/client-ts zod
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -79,26 +79,15 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
 * [updateApp](docs/sdks/account/README.md#updateapp)
-* [accountV1SettingsEmailSendVerification](docs/sdks/account/README.md#accountv1settingsemailsendverification)
-* [accountV1SettingsEmailSubscribe](docs/sdks/account/README.md#accountv1settingsemailsubscribe)
-* [accountV1SettingsEmailVerify](docs/sdks/account/README.md#accountv1settingsemailverify)
 * [getApps](docs/sdks/account/README.md#getapps)
-* [accountV1GetBadgeBookmarks](docs/sdks/account/README.md#accountv1getbadgebookmarks)
 * [getBadges](docs/sdks/account/README.md#getbadges)
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints)
 * [getFriends](docs/sdks/account/README.md#getfriends)
-* [accountV1ImagesGet](docs/sdks/account/README.md#accountv1imagesget)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
-* [accountV1GetOwnedBadges](docs/sdks/account/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/account/README.md#getstaff)
-* [accountV1ConnectionReconnect](docs/sdks/account/README.md#accountv1connectionreconnect)
-* [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
-* [accountV1SettingsUpdateRole](docs/sdks/account/README.md#accountv1settingsupdaterole)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [getAccount](docs/sdks/account/README.md#getaccount)
-* [adminV1UpdateResources](docs/sdks/account/README.md#adminv1updateresources)
-* [adminV1UpdateRoles](docs/sdks/account/README.md#adminv1updateroles)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -107,27 +96,25 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
-* [adminV1GetEvents](docs/sdks/admin/README.md#adminv1getevents)
-* [adminV1UpdateEvent](docs/sdks/admin/README.md#adminv1updateevent)
-* [adminV1UpdateResources](docs/sdks/admin/README.md#adminv1updateresources)
-* [adminV1UpdateRoles](docs/sdks/admin/README.md#adminv1updateroles)
+* [updateResources](docs/sdks/admin/README.md#updateresources)
+* [updateRoles](docs/sdks/admin/README.md#updateroles)
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [accountV1BookmarkBadge](docs/sdks/badge/README.md#accountv1bookmarkbadge)
-* [accountV1GetBadgeBookmarks](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
-* [accountV1GetOwnedBadges](docs/sdks/badge/README.md#accountv1getownedbadges)
 * [getTags](docs/sdks/badge/README.md#gettags)
-* [badgeV1Search](docs/sdks/badge/README.md#badgev1search)
 
 ### [badges](docs/sdks/badges/README.md)
 
+* [bookmark](docs/sdks/badges/README.md#bookmark)
+* [getBookmarks](docs/sdks/badges/README.md#getbookmarks)
+* [getOwned](docs/sdks/badges/README.md#getowned)
+* [search](docs/sdks/badges/README.md#search)
 * [tag](docs/sdks/badges/README.md#tag)
 
 ### [connection](docs/sdks/connection/README.md)
 
 * [delete](docs/sdks/connection/README.md#delete)
-* [accountV1ConnectionReconnect](docs/sdks/connection/README.md#accountv1connectionreconnect)
+* [reconnect](docs/sdks/connection/README.md#reconnect)
 * [update](docs/sdks/connection/README.md#update)
 * [verify](docs/sdks/connection/README.md#verify)
 
@@ -150,10 +137,10 @@ run();
 * [deleteDeveloperApp](docs/sdks/developer/README.md#deletedeveloperapp)
 * [updateApp](docs/sdks/developer/README.md#updateapp)
 
-### [event](docs/sdks/event/README.md)
+### [events](docs/sdks/events/README.md)
 
-* [adminV1GetEvents](docs/sdks/event/README.md#adminv1getevents)
-* [adminV1UpdateEvent](docs/sdks/event/README.md#adminv1updateevent)
+* [get](docs/sdks/events/README.md#get)
+* [update](docs/sdks/events/README.md#update)
 
 ### [external](docs/sdks/external/README.md)
 
@@ -163,40 +150,25 @@ run();
 * [getFriends](docs/sdks/external/README.md#getfriends)
 * [getInfo](docs/sdks/external/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/external/README.md#getleaderboardhistory)
-* [statsV1StatsGet](docs/sdks/external/README.md#statsv1statsget)
+* [get](docs/sdks/external/README.md#get)
 
 ### [images](docs/sdks/images/README.md)
 
 * [deleteImages](docs/sdks/images/README.md#deleteimages)
-* [accountV1ImagesGet](docs/sdks/images/README.md#accountv1imagesget)
-* [accountV1ImagesUpdate](docs/sdks/images/README.md#accountv1imagesupdate)
+* [get](docs/sdks/images/README.md#get)
+* [update](docs/sdks/images/README.md#update)
 * [uploadImages](docs/sdks/images/README.md#uploadimages)
 
 ### [internal](docs/sdks/internal/README.md)
 
-* [accountV1BookmarkBadge](docs/sdks/internal/README.md#accountv1bookmarkbadge)
 * [createDeveloperApp](docs/sdks/internal/README.md#createdeveloperapp)
 * [deleteDeveloperApp](docs/sdks/internal/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/internal/README.md#deleteimages)
 * [updateApp](docs/sdks/internal/README.md#updateapp)
-* [accountV1SettingsEmailSendVerification](docs/sdks/internal/README.md#accountv1settingsemailsendverification)
-* [accountV1SettingsEmailSubscribe](docs/sdks/internal/README.md#accountv1settingsemailsubscribe)
-* [accountV1SettingsEmailVerify](docs/sdks/internal/README.md#accountv1settingsemailverify)
-* [accountV1GetBadgeBookmarks](docs/sdks/internal/README.md#accountv1getbadgebookmarks)
-* [accountV1ImagesGet](docs/sdks/internal/README.md#accountv1imagesget)
-* [accountV1GetOwnedBadges](docs/sdks/internal/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/internal/README.md#getstaff)
-* [accountV1ConnectionReconnect](docs/sdks/internal/README.md#accountv1connectionreconnect)
-* [accountV1ImagesUpdate](docs/sdks/internal/README.md#accountv1imagesupdate)
-* [accountV1SettingsUpdateRole](docs/sdks/internal/README.md#accountv1settingsupdaterole)
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
-* [adminV1GetEvents](docs/sdks/internal/README.md#adminv1getevents)
-* [adminV1UpdateEvent](docs/sdks/internal/README.md#adminv1updateevent)
-* [adminV1UpdateResources](docs/sdks/internal/README.md#adminv1updateresources)
-* [adminV1UpdateRoles](docs/sdks/internal/README.md#adminv1updateroles)
 * [getTags](docs/sdks/internal/README.md#gettags)
-* [badgeV1Search](docs/sdks/internal/README.md#badgev1search)
 * [check](docs/sdks/internal/README.md#check) - Liveness check
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
@@ -225,20 +197,21 @@ run();
 
 ### [settings](docs/sdks/settings/README.md)
 
-* [accountV1SettingsEmailSendVerification](docs/sdks/settings/README.md#accountv1settingsemailsendverification)
-* [accountV1SettingsEmailSubscribe](docs/sdks/settings/README.md#accountv1settingsemailsubscribe)
-* [accountV1SettingsEmailVerify](docs/sdks/settings/README.md#accountv1settingsemailverify)
+* [sendVerification](docs/sdks/settings/README.md#sendverification)
+* [subscribeEmail](docs/sdks/settings/README.md#subscribeemail)
+* [verifyEmail](docs/sdks/settings/README.md#verifyemail)
 * [get](docs/sdks/settings/README.md#get)
-* [accountV1SettingsUpdateRole](docs/sdks/settings/README.md#accountv1settingsupdaterole)
+* [updateRole](docs/sdks/settings/README.md#updaterole)
 * [update](docs/sdks/settings/README.md#update)
 
 ### [stats](docs/sdks/stats/README.md)
 
-* [statsV1StatsGet](docs/sdks/stats/README.md#statsv1statsget)
+* [get](docs/sdks/stats/README.md#get)
 
-### [SteamSets SDK](docs/sdks/steamsets/README.md)
 
-* [resendWebhook](docs/sdks/steamsets/README.md#resendwebhook)
+### [webhooks](docs/sdks/webhooks/README.md)
+
+* [resend](docs/sdks/webhooks/README.md#resend)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -266,7 +239,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
+  const result = await steamSets.webhooks.resend({
     requestBody: await openAsBlob("example.file"),
   });
 
@@ -287,15 +260,15 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   }, {
     retries: {
       strategy: "backoff",
@@ -320,7 +293,6 @@ run();
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   retryConfig: {
@@ -337,8 +309,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -353,7 +326,7 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `accountV1BookmarkBadge` method may throw the following errors:
+Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `bookmark` method may throw the following errors:
 
 | Error Type        | Status Code   | Content Type             |
 | ----------------- | ------------- | ------------------------ |
@@ -377,7 +350,7 @@ const steamSets = new SteamSets({
 async function run() {
   let result;
   try {
-    result = await steamSets.badge.accountV1BookmarkBadge({
+    result = await steamSets.badges.bookmark({
       badgeId: "bdg_123",
       bookmark: true,
     });
@@ -445,7 +418,6 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   serverIdx: 1,
@@ -453,8 +425,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -470,7 +443,6 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   serverURL: "https://api.steamsets.com",
@@ -478,8 +450,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -554,15 +527,15 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `token` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.resendWebhook({
-    requestBody: await openAsBlob("example.file"),
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
   });
 
   // Handle the result
@@ -634,17 +607,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountV1ConnectionReconnect`](docs/sdks/account/README.md#accountv1connectionreconnect)
-- [`accountAccountV1GetBadgeBookmarks`](docs/sdks/account/README.md#accountv1getbadgebookmarks)
-- [`accountAccountV1GetOwnedBadges`](docs/sdks/account/README.md#accountv1getownedbadges)
-- [`accountAccountV1ImagesGet`](docs/sdks/account/README.md#accountv1imagesget)
-- [`accountAccountV1ImagesUpdate`](docs/sdks/account/README.md#accountv1imagesupdate)
-- [`accountAccountV1SettingsEmailSendVerification`](docs/sdks/account/README.md#accountv1settingsemailsendverification)
-- [`accountAccountV1SettingsEmailSubscribe`](docs/sdks/account/README.md#accountv1settingsemailsubscribe)
-- [`accountAccountV1SettingsEmailVerify`](docs/sdks/account/README.md#accountv1settingsemailverify)
-- [`accountAccountV1SettingsUpdateRole`](docs/sdks/account/README.md#accountv1settingsupdaterole)
-- [`accountAdminV1UpdateResources`](docs/sdks/account/README.md#adminv1updateresources)
-- [`accountAdminV1UpdateRoles`](docs/sdks/account/README.md#adminv1updateroles)
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
@@ -659,19 +621,17 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateApp`](docs/sdks/account/README.md#updateapp)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
-- [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
-- [`adminAdminV1UpdateEvent`](docs/sdks/admin/README.md#adminv1updateevent)
-- [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
-- [`adminAdminV1UpdateRoles`](docs/sdks/admin/README.md#adminv1updateroles)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
-- [`badgeAccountV1BookmarkBadge`](docs/sdks/badge/README.md#accountv1bookmarkbadge)
-- [`badgeAccountV1GetBadgeBookmarks`](docs/sdks/badge/README.md#accountv1getbadgebookmarks)
-- [`badgeAccountV1GetOwnedBadges`](docs/sdks/badge/README.md#accountv1getownedbadges)
-- [`badgeBadgeV1Search`](docs/sdks/badge/README.md#badgev1search)
+- [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
+- [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
+- [`badgesBookmark`](docs/sdks/badges/README.md#bookmark)
+- [`badgesGetBookmarks`](docs/sdks/badges/README.md#getbookmarks)
+- [`badgesGetOwned`](docs/sdks/badges/README.md#getowned)
+- [`badgesSearch`](docs/sdks/badges/README.md#search)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
-- [`connectionAccountV1ConnectionReconnect`](docs/sdks/connection/README.md#accountv1connectionreconnect)
 - [`connectionDelete`](docs/sdks/connection/README.md#delete)
+- [`connectionReconnect`](docs/sdks/connection/README.md#reconnect)
 - [`connectionsConnect`](docs/sdks/connections/README.md#connect)
 - [`connectionUpdate`](docs/sdks/connection/README.md#update)
 - [`connectionVerify`](docs/sdks/connection/README.md#verify)
@@ -684,34 +644,19 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
 - [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
-- [`eventAdminV1GetEvents`](docs/sdks/event/README.md#adminv1getevents)
-- [`eventAdminV1UpdateEvent`](docs/sdks/event/README.md#adminv1updateevent)
+- [`eventsGet`](docs/sdks/events/README.md#get)
+- [`eventsUpdate`](docs/sdks/events/README.md#update)
+- [`externalGet`](docs/sdks/external/README.md#get)
 - [`externalGetApps`](docs/sdks/external/README.md#getapps)
 - [`externalGetBadges`](docs/sdks/external/README.md#getbadges)
 - [`externalGetDataPoints`](docs/sdks/external/README.md#getdatapoints)
 - [`externalGetFriends`](docs/sdks/external/README.md#getfriends)
 - [`externalGetInfo`](docs/sdks/external/README.md#getinfo)
 - [`externalGetLeaderboardHistory`](docs/sdks/external/README.md#getleaderboardhistory)
-- [`externalStatsV1StatsGet`](docs/sdks/external/README.md#statsv1statsget)
-- [`imagesAccountV1ImagesGet`](docs/sdks/images/README.md#accountv1imagesget)
-- [`imagesAccountV1ImagesUpdate`](docs/sdks/images/README.md#accountv1imagesupdate)
 - [`imagesDeleteImages`](docs/sdks/images/README.md#deleteimages)
+- [`imagesGet`](docs/sdks/images/README.md#get)
+- [`imagesUpdate`](docs/sdks/images/README.md#update)
 - [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
-- [`internalAccountV1BookmarkBadge`](docs/sdks/internal/README.md#accountv1bookmarkbadge)
-- [`internalAccountV1ConnectionReconnect`](docs/sdks/internal/README.md#accountv1connectionreconnect)
-- [`internalAccountV1GetBadgeBookmarks`](docs/sdks/internal/README.md#accountv1getbadgebookmarks)
-- [`internalAccountV1GetOwnedBadges`](docs/sdks/internal/README.md#accountv1getownedbadges)
-- [`internalAccountV1ImagesGet`](docs/sdks/internal/README.md#accountv1imagesget)
-- [`internalAccountV1ImagesUpdate`](docs/sdks/internal/README.md#accountv1imagesupdate)
-- [`internalAccountV1SettingsEmailSendVerification`](docs/sdks/internal/README.md#accountv1settingsemailsendverification)
-- [`internalAccountV1SettingsEmailSubscribe`](docs/sdks/internal/README.md#accountv1settingsemailsubscribe)
-- [`internalAccountV1SettingsEmailVerify`](docs/sdks/internal/README.md#accountv1settingsemailverify)
-- [`internalAccountV1SettingsUpdateRole`](docs/sdks/internal/README.md#accountv1settingsupdaterole)
-- [`internalAdminV1GetEvents`](docs/sdks/internal/README.md#adminv1getevents)
-- [`internalAdminV1UpdateEvent`](docs/sdks/internal/README.md#adminv1updateevent)
-- [`internalAdminV1UpdateResources`](docs/sdks/internal/README.md#adminv1updateresources)
-- [`internalAdminV1UpdateRoles`](docs/sdks/internal/README.md#adminv1updateroles)
-- [`internalBadgeV1Search`](docs/sdks/internal/README.md#badgev1search)
 - [`internalCheck`](docs/sdks/internal/README.md#check) - Liveness check
 - [`internalCreateDeveloperApp`](docs/sdks/internal/README.md#createdeveloperapp)
 - [`internalDeleteDeveloperApp`](docs/sdks/internal/README.md#deletedeveloperapp)
@@ -726,18 +671,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
-- [`resendWebhook`](docs/sdks/steamsets/README.md#resendwebhook)
 - [`sessionCreate`](docs/sdks/session/README.md#create)
 - [`sessionLogin`](docs/sdks/session/README.md#login)
 - [`sessionsDelete`](docs/sdks/sessions/README.md#delete)
 - [`sessionsGet`](docs/sdks/sessions/README.md#get)
-- [`settingsAccountV1SettingsEmailSendVerification`](docs/sdks/settings/README.md#accountv1settingsemailsendverification)
-- [`settingsAccountV1SettingsEmailSubscribe`](docs/sdks/settings/README.md#accountv1settingsemailsubscribe)
-- [`settingsAccountV1SettingsEmailVerify`](docs/sdks/settings/README.md#accountv1settingsemailverify)
-- [`settingsAccountV1SettingsUpdateRole`](docs/sdks/settings/README.md#accountv1settingsupdaterole)
 - [`settingsGet`](docs/sdks/settings/README.md#get)
+- [`settingsSendVerification`](docs/sdks/settings/README.md#sendverification)
+- [`settingsSubscribeEmail`](docs/sdks/settings/README.md#subscribeemail)
 - [`settingsUpdate`](docs/sdks/settings/README.md#update)
-- [`statsStatsV1StatsGet`](docs/sdks/stats/README.md#statsv1statsget)
+- [`settingsUpdateRole`](docs/sdks/settings/README.md#updaterole)
+- [`settingsVerifyEmail`](docs/sdks/settings/README.md#verifyemail)
+- [`statsGet`](docs/sdks/stats/README.md#get)
+- [`webhooksResend`](docs/sdks/webhooks/README.md#resend)
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

@@ -6,7 +6,7 @@
 import { BestLeaderboardRank } from "@steamsets/client-ts/models/components";
 
 let value: BestLeaderboardRank = {
-  leaderboard: "donations",
+  leaderboard: "xp",
   ranks: "1,1,1,1,1",
 };
 ```

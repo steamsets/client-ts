@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9ce87ea59c467404db43b399f6526931
+  docChecksum: d928ac2dee48e55919d92054c3fe9227
   docVersion: 1.0.0
   speakeasyVersion: 1.481.1
   generationVersion: 2.500.5
-  releaseVersion: 0.15.0
-  configChecksum: 95b31d9865ba3607e9c149bdd4965fa9
+  releaseVersion: 0.15.3
+  configChecksum: 12e178406df6d0caf0443145a25b8d7c
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -280,7 +280,7 @@ generatedFiles:
   - docs/sdks/connections/README.md
   - docs/sdks/data/README.md
   - docs/sdks/developer/README.md
-  - docs/sdks/event/README.md
+  - docs/sdks/events/README.md
   - docs/sdks/external/README.md
   - docs/sdks/images/README.md
   - docs/sdks/internal/README.md
@@ -292,21 +292,11 @@ generatedFiles:
   - docs/sdks/settings/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/steamsets/README.md
+  - docs/sdks/webhooks/README.md
   - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountV1ConnectionReconnect.ts
-  - src/funcs/accountAccountV1GetBadgeBookmarks.ts
-  - src/funcs/accountAccountV1GetOwnedBadges.ts
-  - src/funcs/accountAccountV1ImagesGet.ts
-  - src/funcs/accountAccountV1ImagesUpdate.ts
-  - src/funcs/accountAccountV1SettingsEmailSendVerification.ts
-  - src/funcs/accountAccountV1SettingsEmailSubscribe.ts
-  - src/funcs/accountAccountV1SettingsEmailVerify.ts
-  - src/funcs/accountAccountV1SettingsUpdateRole.ts
-  - src/funcs/accountAdminV1UpdateResources.ts
-  - src/funcs/accountAdminV1UpdateRoles.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteDeveloperApp.ts
   - src/funcs/accountDeleteImages.ts
@@ -321,19 +311,17 @@ generatedFiles:
   - src/funcs/accountUpdateApp.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountsQueue.ts
-  - src/funcs/adminAdminV1GetEvents.ts
-  - src/funcs/adminAdminV1UpdateEvent.ts
-  - src/funcs/adminAdminV1UpdateResources.ts
-  - src/funcs/adminAdminV1UpdateRoles.ts
   - src/funcs/adminGetAccount.ts
-  - src/funcs/badgeAccountV1BookmarkBadge.ts
-  - src/funcs/badgeAccountV1GetBadgeBookmarks.ts
-  - src/funcs/badgeAccountV1GetOwnedBadges.ts
-  - src/funcs/badgeBadgeV1Search.ts
+  - src/funcs/adminUpdateResources.ts
+  - src/funcs/adminUpdateRoles.ts
   - src/funcs/badgeGetTags.ts
+  - src/funcs/badgesBookmark.ts
+  - src/funcs/badgesGetBookmarks.ts
+  - src/funcs/badgesGetOwned.ts
+  - src/funcs/badgesSearch.ts
   - src/funcs/badgesTag.ts
-  - src/funcs/connectionAccountV1ConnectionReconnect.ts
   - src/funcs/connectionDelete.ts
+  - src/funcs/connectionReconnect.ts
   - src/funcs/connectionUpdate.ts
   - src/funcs/connectionVerify.ts
   - src/funcs/connectionsConnect.ts
@@ -346,34 +334,19 @@ generatedFiles:
   - src/funcs/developerCreateDeveloperApp.ts
   - src/funcs/developerDeleteDeveloperApp.ts
   - src/funcs/developerUpdateApp.ts
-  - src/funcs/eventAdminV1GetEvents.ts
-  - src/funcs/eventAdminV1UpdateEvent.ts
+  - src/funcs/eventsGet.ts
+  - src/funcs/eventsUpdate.ts
+  - src/funcs/externalGet.ts
   - src/funcs/externalGetApps.ts
   - src/funcs/externalGetBadges.ts
   - src/funcs/externalGetDataPoints.ts
   - src/funcs/externalGetFriends.ts
   - src/funcs/externalGetInfo.ts
   - src/funcs/externalGetLeaderboardHistory.ts
-  - src/funcs/externalStatsV1StatsGet.ts
-  - src/funcs/imagesAccountV1ImagesGet.ts
-  - src/funcs/imagesAccountV1ImagesUpdate.ts
   - src/funcs/imagesDeleteImages.ts
+  - src/funcs/imagesGet.ts
+  - src/funcs/imagesUpdate.ts
   - src/funcs/imagesUploadImages.ts
-  - src/funcs/internalAccountV1BookmarkBadge.ts
-  - src/funcs/internalAccountV1ConnectionReconnect.ts
-  - src/funcs/internalAccountV1GetBadgeBookmarks.ts
-  - src/funcs/internalAccountV1GetOwnedBadges.ts
-  - src/funcs/internalAccountV1ImagesGet.ts
-  - src/funcs/internalAccountV1ImagesUpdate.ts
-  - src/funcs/internalAccountV1SettingsEmailSendVerification.ts
-  - src/funcs/internalAccountV1SettingsEmailSubscribe.ts
-  - src/funcs/internalAccountV1SettingsEmailVerify.ts
-  - src/funcs/internalAccountV1SettingsUpdateRole.ts
-  - src/funcs/internalAdminV1GetEvents.ts
-  - src/funcs/internalAdminV1UpdateEvent.ts
-  - src/funcs/internalAdminV1UpdateResources.ts
-  - src/funcs/internalAdminV1UpdateRoles.ts
-  - src/funcs/internalBadgeV1Search.ts
   - src/funcs/internalCheck.ts
   - src/funcs/internalCreateDeveloperApp.ts
   - src/funcs/internalDeleteDeveloperApp.ts
@@ -388,18 +361,18 @@ generatedFiles:
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
-  - src/funcs/resendWebhook.ts
   - src/funcs/sessionCreate.ts
   - src/funcs/sessionLogin.ts
   - src/funcs/sessionsDelete.ts
   - src/funcs/sessionsGet.ts
-  - src/funcs/settingsAccountV1SettingsEmailSendVerification.ts
-  - src/funcs/settingsAccountV1SettingsEmailSubscribe.ts
-  - src/funcs/settingsAccountV1SettingsEmailVerify.ts
-  - src/funcs/settingsAccountV1SettingsUpdateRole.ts
   - src/funcs/settingsGet.ts
+  - src/funcs/settingsSendVerification.ts
+  - src/funcs/settingsSubscribeEmail.ts
   - src/funcs/settingsUpdate.ts
-  - src/funcs/statsStatsV1StatsGet.ts
+  - src/funcs/settingsUpdateRole.ts
+  - src/funcs/settingsVerifyEmail.ts
+  - src/funcs/statsGet.ts
+  - src/funcs/webhooksResend.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -609,7 +582,7 @@ generatedFiles:
   - src/sdk/connections.ts
   - src/sdk/data.ts
   - src/sdk/developer.ts
-  - src/sdk/event.ts
+  - src/sdk/events.ts
   - src/sdk/external.ts
   - src/sdk/images.ts
   - src/sdk/index.ts
@@ -622,6 +595,7 @@ generatedFiles:
   - src/sdk/sessions.ts
   - src/sdk/settings.ts
   - src/sdk/stats.ts
+  - src/sdk/webhooks.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts

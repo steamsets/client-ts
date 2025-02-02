@@ -8,7 +8,7 @@ Operations related to oauth2/custom connections.
 ### Available Operations
 
 * [delete](#delete)
-* [accountV1ConnectionReconnect](#accountv1connectionreconnect)
+* [reconnect](#reconnect)
 * [update](#update)
 * [verify](#verify)
 
@@ -88,7 +88,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1ConnectionReconnect
+## reconnect
 
 ### Example Usage
 
@@ -100,7 +100,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.connection.accountV1ConnectionReconnect({
+  const result = await steamSets.connection.reconnect({
     code: "123456",
     connectionId: "123456",
   });
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { connectionAccountV1ConnectionReconnect } from "@steamsets/client-ts/funcs/connectionAccountV1ConnectionReconnect.js";
+import { connectionReconnect } from "@steamsets/client-ts/funcs/connectionReconnect.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -127,7 +127,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await connectionAccountV1ConnectionReconnect(steamSets, {
+  const res = await connectionReconnect(steamSets, {
     code: "123456",
     connectionId: "123456",
   });

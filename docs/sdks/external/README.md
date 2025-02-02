@@ -13,7 +13,7 @@ Any requests here may be accessed by anyone with an API Key.
 * [getFriends](#getfriends)
 * [getInfo](#getinfo)
 * [getLeaderboardHistory](#getleaderboardhistory)
-* [statsV1StatsGet](#statsv1statsget)
+* [get](#get)
 
 ## getApps
 
@@ -447,7 +447,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## statsV1StatsGet
+## get
 
 ### Example Usage
 
@@ -459,7 +459,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.external.statsV1StatsGet();
+  const result = await steamSets.external.get();
 
   // Handle the result
   console.log(result);
@@ -474,7 +474,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { externalStatsV1StatsGet } from "@steamsets/client-ts/funcs/externalStatsV1StatsGet.js";
+import { externalGet } from "@steamsets/client-ts/funcs/externalGet.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -483,7 +483,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await externalStatsV1StatsGet(steamSets);
+  const res = await externalGet(steamSets);
 
   if (!res.ok) {
     throw res.error;

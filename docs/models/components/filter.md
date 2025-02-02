@@ -5,7 +5,7 @@
 ```typescript
 import { Filter } from "@steamsets/client-ts/models/components";
 
-let value: Filter = "event";
+let value: Filter = "foil";
 ```
 
 ## Values

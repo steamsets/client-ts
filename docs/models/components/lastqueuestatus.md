@@ -5,7 +5,7 @@
 ```typescript
 import { LastQueueStatus } from "@steamsets/client-ts/models/components";
 
-let value: LastQueueStatus = "retrying";
+let value: LastQueueStatus = "in_progress";
 ```
 
 ## Values
