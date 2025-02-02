@@ -24,13 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function settingsVerifyEmail(
+export async function accountAccountV1SettingsEmailVerify(
   client: SteamSetsCore,
   request: components.V1VerifyEmailRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1SettingsVerfyEmailResponse,
+    operations.AccountV1SettingsEmailVerifyResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -53,7 +53,7 @@ export async function settingsVerifyEmail(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/VerifyEmail")();
+  const path = pathToFunc("/account.v1.AccountService/EmailVerify")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export async function settingsVerifyEmail(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.settings.verfy-email",
+    operationID: "account.v1.settings.email-verify",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -118,7 +118,7 @@ export async function settingsVerifyEmail(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsVerfyEmailResponse,
+    operations.AccountV1SettingsEmailVerifyResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -129,7 +129,7 @@ export async function settingsVerifyEmail(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1SettingsVerfyEmailResponse$inboundSchema, {
+    M.nil(204, operations.AccountV1SettingsEmailVerifyResponse$inboundSchema, {
       hdrs: true,
     }),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {

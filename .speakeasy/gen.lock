@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: c9a8e2f890e70437d340ec0b84397089
+  docChecksum: 9ce87ea59c467404db43b399f6526931
   docVersion: 1.0.0
   speakeasyVersion: 1.481.1
   generationVersion: 2.500.5
-  releaseVersion: 0.14.29
-  configChecksum: acde0dd3f3d7197ead436d6855ff0db7
+  releaseVersion: 0.15.0
+  configChecksum: 95b31d9865ba3607e9c149bdd4965fa9
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -46,6 +46,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
+    uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -81,6 +82,7 @@ generatedFiles:
   - docs/models/components/direction.md
   - docs/models/components/environment.md
   - docs/models/components/errordetail.md
+  - docs/models/components/errormodel.md
   - docs/models/components/filter.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/historyvalue.md
@@ -173,6 +175,7 @@ generatedFiles:
   - docs/models/components/v1deletesessionresponsebody.md
   - docs/models/components/v1developerappcreaterequestbody.md
   - docs/models/components/v1developerappcreateresponsebody.md
+  - docs/models/components/v1emailsubscriptionrequestbody.md
   - docs/models/components/v1event.md
   - docs/models/components/v1getimagesresponsebody.md
   - docs/models/components/v1getsessionbody.md
@@ -243,13 +246,15 @@ generatedFiles:
   - docs/models/operations/accountv1settingsdeveloperappcreateresponse.md
   - docs/models/operations/accountv1settingsdeveloperappdeleteresponse.md
   - docs/models/operations/accountv1settingsdeveloperappupdateresponse.md
+  - docs/models/operations/accountv1settingsemailsendverificationrequest.md
+  - docs/models/operations/accountv1settingsemailsendverificationresponse.md
+  - docs/models/operations/accountv1settingsemailsubscriberequest.md
+  - docs/models/operations/accountv1settingsemailsubscriberesponse.md
+  - docs/models/operations/accountv1settingsemailverifyresponse.md
   - docs/models/operations/accountv1settingsgetresponse.md
-  - docs/models/operations/accountv1settingssendemailverificationrequest.md
-  - docs/models/operations/accountv1settingssendemailverificationresponse.md
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
   - docs/models/operations/accountv1settingsupdateroleresponse.md
-  - docs/models/operations/accountv1settingsverfyemailresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1geteventsresponse.md
   - docs/models/operations/adminv1updateeventresponse.md
@@ -263,6 +268,8 @@ generatedFiles:
   - docs/models/operations/leaderboardv1getgroupresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
+  - docs/models/operations/resendwebhookrequest.md
+  - docs/models/operations/resendwebhookresponse.md
   - docs/models/operations/statsv1statsgetresponse.md
   - docs/sdks/account/README.md
   - docs/sdks/accounts/README.md
@@ -294,6 +301,9 @@ generatedFiles:
   - src/funcs/accountAccountV1GetOwnedBadges.ts
   - src/funcs/accountAccountV1ImagesGet.ts
   - src/funcs/accountAccountV1ImagesUpdate.ts
+  - src/funcs/accountAccountV1SettingsEmailSendVerification.ts
+  - src/funcs/accountAccountV1SettingsEmailSubscribe.ts
+  - src/funcs/accountAccountV1SettingsEmailVerify.ts
   - src/funcs/accountAccountV1SettingsUpdateRole.ts
   - src/funcs/accountAdminV1UpdateResources.ts
   - src/funcs/accountAdminV1UpdateRoles.ts
@@ -308,10 +318,8 @@ generatedFiles:
   - src/funcs/accountGetInfo.ts
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
-  - src/funcs/accountSendEmailVerification.ts
   - src/funcs/accountUpdateApp.ts
   - src/funcs/accountUploadImages.ts
-  - src/funcs/accountVerifyEmail.ts
   - src/funcs/accountsQueue.ts
   - src/funcs/adminAdminV1GetEvents.ts
   - src/funcs/adminAdminV1UpdateEvent.ts
@@ -357,6 +365,9 @@ generatedFiles:
   - src/funcs/internalAccountV1GetOwnedBadges.ts
   - src/funcs/internalAccountV1ImagesGet.ts
   - src/funcs/internalAccountV1ImagesUpdate.ts
+  - src/funcs/internalAccountV1SettingsEmailSendVerification.ts
+  - src/funcs/internalAccountV1SettingsEmailSubscribe.ts
+  - src/funcs/internalAccountV1SettingsEmailVerify.ts
   - src/funcs/internalAccountV1SettingsUpdateRole.ts
   - src/funcs/internalAdminV1GetEvents.ts
   - src/funcs/internalAdminV1UpdateEvent.ts
@@ -370,24 +381,24 @@ generatedFiles:
   - src/funcs/internalGetAccount.ts
   - src/funcs/internalGetStaff.ts
   - src/funcs/internalGetTags.ts
-  - src/funcs/internalSendEmailVerification.ts
   - src/funcs/internalUpdateApp.ts
   - src/funcs/internalUploadImages.ts
-  - src/funcs/internalVerifyEmail.ts
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetBadges.ts
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
+  - src/funcs/resendWebhook.ts
   - src/funcs/sessionCreate.ts
   - src/funcs/sessionLogin.ts
   - src/funcs/sessionsDelete.ts
   - src/funcs/sessionsGet.ts
+  - src/funcs/settingsAccountV1SettingsEmailSendVerification.ts
+  - src/funcs/settingsAccountV1SettingsEmailSubscribe.ts
+  - src/funcs/settingsAccountV1SettingsEmailVerify.ts
   - src/funcs/settingsAccountV1SettingsUpdateRole.ts
   - src/funcs/settingsGet.ts
-  - src/funcs/settingsSendEmailVerification.ts
   - src/funcs/settingsUpdate.ts
-  - src/funcs/settingsVerifyEmail.ts
   - src/funcs/statsStatsV1StatsGet.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
@@ -424,6 +435,7 @@ generatedFiles:
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
+  - src/models/components/errormodel.ts
   - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idstruct.ts
@@ -498,6 +510,7 @@ generatedFiles:
   - src/models/components/v1deletesessionresponsebody.ts
   - src/models/components/v1developerappcreaterequestbody.ts
   - src/models/components/v1developerappcreateresponsebody.ts
+  - src/models/components/v1emailsubscriptionrequestbody.ts
   - src/models/components/v1event.ts
   - src/models/components/v1getimagesresponsebody.ts
   - src/models/components/v1getsessionbody.ts
@@ -565,11 +578,12 @@ generatedFiles:
   - src/models/operations/accountv1settingsdeveloperappcreate.ts
   - src/models/operations/accountv1settingsdeveloperappdelete.ts
   - src/models/operations/accountv1settingsdeveloperappupdate.ts
+  - src/models/operations/accountv1settingsemailsendverification.ts
+  - src/models/operations/accountv1settingsemailsubscribe.ts
+  - src/models/operations/accountv1settingsemailverify.ts
   - src/models/operations/accountv1settingsget.ts
-  - src/models/operations/accountv1settingssendemailverification.ts
   - src/models/operations/accountv1settingsupdate.ts
   - src/models/operations/accountv1settingsupdaterole.ts
-  - src/models/operations/accountv1settingsverfyemail.ts
   - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1getevents.ts
   - src/models/operations/adminv1updateevent.ts
@@ -584,6 +598,7 @@ generatedFiles:
   - src/models/operations/leaderboardv1getgroup.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
+  - src/models/operations/resendwebhook.ts
   - src/models/operations/statsv1statsget.ts
   - src/sdk/account.ts
   - src/sdk/accounts.ts
@@ -918,7 +933,7 @@ examples:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": false, "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.update:
@@ -1074,6 +1089,38 @@ examples:
         application/json: {}
       responses:
         "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  resend-webhook:
+    speakeasy-default-resend-webhook:
+      requestBody:
+        application/octet-stream: "x-file: example.file"
+      responses:
+        default:
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-send-verification:
+    speakeasy-default-account-v1-settings-email-send-verification:
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-subscribe:
+    speakeasy-default-account-v1-settings-email-subscribe:
+      requestBody:
+        application/json: {"email": "steamsets@example.com", "subscribed": true}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-verify:
+    speakeasy-default-account-v1-settings-email-verify:
+      requestBody:
+        application/json: {"code": "123456"}
+      responses:
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

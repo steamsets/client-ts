@@ -1,11 +1,11 @@
-# AccountV1SettingsSendEmailVerificationResponse
+# AccountV1SettingsEmailSubscribeResponse
 
 ## Example Usage
 
 ```typescript
-import { AccountV1SettingsSendEmailVerificationResponse } from "@steamsets/client-ts/models/operations";
+import { AccountV1SettingsEmailSubscribeResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountV1SettingsSendEmailVerificationResponse = {
+let value: AccountV1SettingsEmailSubscribeResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },

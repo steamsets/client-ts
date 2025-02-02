@@ -79,7 +79,7 @@ let value: AccountV1GetInfoResponse = {
       },
     ],
     lastBanDate: new Date("2024-03-07 07:31:46"),
-    lastQueueStatus: "failed",
+    lastQueueStatus: "completed",
     level: 123456,
     miniBackground: "steamsets",
     name: "steamsets",

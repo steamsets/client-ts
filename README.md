@@ -47,15 +47,15 @@ yarn add @steamsets/client-ts zod
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   });
 
   // Handle the result
@@ -79,6 +79,9 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
 * [updateApp](docs/sdks/account/README.md#updateapp)
+* [accountV1SettingsEmailSendVerification](docs/sdks/account/README.md#accountv1settingsemailsendverification)
+* [accountV1SettingsEmailSubscribe](docs/sdks/account/README.md#accountv1settingsemailsubscribe)
+* [accountV1SettingsEmailVerify](docs/sdks/account/README.md#accountv1settingsemailverify)
 * [getApps](docs/sdks/account/README.md#getapps)
 * [accountV1GetBadgeBookmarks](docs/sdks/account/README.md#accountv1getbadgebookmarks)
 * [getBadges](docs/sdks/account/README.md#getbadges)
@@ -90,11 +93,9 @@ run();
 * [accountV1GetOwnedBadges](docs/sdks/account/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [accountV1ConnectionReconnect](docs/sdks/account/README.md#accountv1connectionreconnect)
-* [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
 * [accountV1ImagesUpdate](docs/sdks/account/README.md#accountv1imagesupdate)
 * [accountV1SettingsUpdateRole](docs/sdks/account/README.md#accountv1settingsupdaterole)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
-* [verifyEmail](docs/sdks/account/README.md#verifyemail)
 * [getAccount](docs/sdks/account/README.md#getaccount)
 * [adminV1UpdateResources](docs/sdks/account/README.md#adminv1updateresources)
 * [adminV1UpdateRoles](docs/sdks/account/README.md#adminv1updateroles)
@@ -178,16 +179,17 @@ run();
 * [deleteDeveloperApp](docs/sdks/internal/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/internal/README.md#deleteimages)
 * [updateApp](docs/sdks/internal/README.md#updateapp)
+* [accountV1SettingsEmailSendVerification](docs/sdks/internal/README.md#accountv1settingsemailsendverification)
+* [accountV1SettingsEmailSubscribe](docs/sdks/internal/README.md#accountv1settingsemailsubscribe)
+* [accountV1SettingsEmailVerify](docs/sdks/internal/README.md#accountv1settingsemailverify)
 * [accountV1GetBadgeBookmarks](docs/sdks/internal/README.md#accountv1getbadgebookmarks)
 * [accountV1ImagesGet](docs/sdks/internal/README.md#accountv1imagesget)
 * [accountV1GetOwnedBadges](docs/sdks/internal/README.md#accountv1getownedbadges)
 * [getStaff](docs/sdks/internal/README.md#getstaff)
 * [accountV1ConnectionReconnect](docs/sdks/internal/README.md#accountv1connectionreconnect)
-* [sendEmailVerification](docs/sdks/internal/README.md#sendemailverification)
 * [accountV1ImagesUpdate](docs/sdks/internal/README.md#accountv1imagesupdate)
 * [accountV1SettingsUpdateRole](docs/sdks/internal/README.md#accountv1settingsupdaterole)
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
-* [verifyEmail](docs/sdks/internal/README.md#verifyemail)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
 * [adminV1GetEvents](docs/sdks/internal/README.md#adminv1getevents)
 * [adminV1UpdateEvent](docs/sdks/internal/README.md#adminv1updateevent)
@@ -223,19 +225,59 @@ run();
 
 ### [settings](docs/sdks/settings/README.md)
 
+* [accountV1SettingsEmailSendVerification](docs/sdks/settings/README.md#accountv1settingsemailsendverification)
+* [accountV1SettingsEmailSubscribe](docs/sdks/settings/README.md#accountv1settingsemailsubscribe)
+* [accountV1SettingsEmailVerify](docs/sdks/settings/README.md#accountv1settingsemailverify)
 * [get](docs/sdks/settings/README.md#get)
-* [sendEmailVerification](docs/sdks/settings/README.md#sendemailverification)
 * [accountV1SettingsUpdateRole](docs/sdks/settings/README.md#accountv1settingsupdaterole)
 * [update](docs/sdks/settings/README.md#update)
-* [verifyEmail](docs/sdks/settings/README.md#verifyemail)
 
 ### [stats](docs/sdks/stats/README.md)
 
 * [statsV1StatsGet](docs/sdks/stats/README.md#statsv1statsget)
 
+### [SteamSets SDK](docs/sdks/steamsets/README.md)
+
+* [resendWebhook](docs/sdks/steamsets/README.md#resendwebhook)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start File uploads [file-upload] -->
+## File uploads
+
+Certain SDK methods accept files as part of a multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
+
+> [!TIP]
+>
+> Depending on your JavaScript runtime, there are convenient utilities that return a handle to a file without reading the entire contents into memory:
+>
+> - **Node.js v20+:** Since v20, Node.js comes with a native `openAsBlob` function in [`node:fs`](https://nodejs.org/docs/latest-v20.x/api/fs.html#fsopenasblobpath-options).
+> - **Bun:** The native [`Bun.file`](https://bun.sh/docs/api/file-io#reading-files-bun-file) function produces a file handle that can be used for streaming file uploads.
+> - **Browsers:** All supported browsers return an instance to a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) when reading the value from an `<input type="file">` element.
+> - **Node.js v18:** A file stream can be created using the `fileFrom` helper from [`fetch-blob/from.js`](https://www.npmjs.com/package/fetch-blob).
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
+<!-- End File uploads [file-upload] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -245,15 +287,15 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   }, {
     retries: {
       strategy: "backoff",
@@ -278,6 +320,7 @@ run();
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   retryConfig: {
@@ -294,9 +337,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   });
 
   // Handle the result
@@ -403,6 +445,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   serverIdx: 1,
@@ -410,9 +453,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   });
 
   // Handle the result
@@ -428,6 +470,7 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   serverURL: "https://api.steamsets.com",
@@ -435,9 +478,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   });
 
   // Handle the result
@@ -512,15 +554,15 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `token` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
+import { openAsBlob } from "node:fs";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  const result = await steamSets.badge.accountV1BookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
+  const result = await steamSets.resendWebhook({
+    requestBody: await openAsBlob("example.file"),
   });
 
   // Handle the result
@@ -597,6 +639,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountAccountV1GetOwnedBadges`](docs/sdks/account/README.md#accountv1getownedbadges)
 - [`accountAccountV1ImagesGet`](docs/sdks/account/README.md#accountv1imagesget)
 - [`accountAccountV1ImagesUpdate`](docs/sdks/account/README.md#accountv1imagesupdate)
+- [`accountAccountV1SettingsEmailSendVerification`](docs/sdks/account/README.md#accountv1settingsemailsendverification)
+- [`accountAccountV1SettingsEmailSubscribe`](docs/sdks/account/README.md#accountv1settingsemailsubscribe)
+- [`accountAccountV1SettingsEmailVerify`](docs/sdks/account/README.md#accountv1settingsemailverify)
 - [`accountAccountV1SettingsUpdateRole`](docs/sdks/account/README.md#accountv1settingsupdaterole)
 - [`accountAdminV1UpdateResources`](docs/sdks/account/README.md#adminv1updateresources)
 - [`accountAdminV1UpdateRoles`](docs/sdks/account/README.md#adminv1updateroles)
@@ -611,11 +656,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
 - [`accountGetLeaderboardHistory`](docs/sdks/account/README.md#getleaderboardhistory)
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
-- [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateApp`](docs/sdks/account/README.md#updateapp)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
-- [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
 - [`adminAdminV1GetEvents`](docs/sdks/admin/README.md#adminv1getevents)
 - [`adminAdminV1UpdateEvent`](docs/sdks/admin/README.md#adminv1updateevent)
 - [`adminAdminV1UpdateResources`](docs/sdks/admin/README.md#adminv1updateresources)
@@ -660,6 +703,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`internalAccountV1GetOwnedBadges`](docs/sdks/internal/README.md#accountv1getownedbadges)
 - [`internalAccountV1ImagesGet`](docs/sdks/internal/README.md#accountv1imagesget)
 - [`internalAccountV1ImagesUpdate`](docs/sdks/internal/README.md#accountv1imagesupdate)
+- [`internalAccountV1SettingsEmailSendVerification`](docs/sdks/internal/README.md#accountv1settingsemailsendverification)
+- [`internalAccountV1SettingsEmailSubscribe`](docs/sdks/internal/README.md#accountv1settingsemailsubscribe)
+- [`internalAccountV1SettingsEmailVerify`](docs/sdks/internal/README.md#accountv1settingsemailverify)
 - [`internalAccountV1SettingsUpdateRole`](docs/sdks/internal/README.md#accountv1settingsupdaterole)
 - [`internalAdminV1GetEvents`](docs/sdks/internal/README.md#adminv1getevents)
 - [`internalAdminV1UpdateEvent`](docs/sdks/internal/README.md#adminv1updateevent)
@@ -673,24 +719,24 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`internalGetAccount`](docs/sdks/internal/README.md#getaccount)
 - [`internalGetStaff`](docs/sdks/internal/README.md#getstaff)
 - [`internalGetTags`](docs/sdks/internal/README.md#gettags)
-- [`internalSendEmailVerification`](docs/sdks/internal/README.md#sendemailverification)
 - [`internalUpdateApp`](docs/sdks/internal/README.md#updateapp)
 - [`internalUploadImages`](docs/sdks/internal/README.md#uploadimages)
-- [`internalVerifyEmail`](docs/sdks/internal/README.md#verifyemail)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
+- [`resendWebhook`](docs/sdks/steamsets/README.md#resendwebhook)
 - [`sessionCreate`](docs/sdks/session/README.md#create)
 - [`sessionLogin`](docs/sdks/session/README.md#login)
 - [`sessionsDelete`](docs/sdks/sessions/README.md#delete)
 - [`sessionsGet`](docs/sdks/sessions/README.md#get)
+- [`settingsAccountV1SettingsEmailSendVerification`](docs/sdks/settings/README.md#accountv1settingsemailsendverification)
+- [`settingsAccountV1SettingsEmailSubscribe`](docs/sdks/settings/README.md#accountv1settingsemailsubscribe)
+- [`settingsAccountV1SettingsEmailVerify`](docs/sdks/settings/README.md#accountv1settingsemailverify)
 - [`settingsAccountV1SettingsUpdateRole`](docs/sdks/settings/README.md#accountv1settingsupdaterole)
 - [`settingsGet`](docs/sdks/settings/README.md#get)
-- [`settingsSendEmailVerification`](docs/sdks/settings/README.md#sendemailverification)
 - [`settingsUpdate`](docs/sdks/settings/README.md#update)
-- [`settingsVerifyEmail`](docs/sdks/settings/README.md#verifyemail)
 - [`statsStatsV1StatsGet`](docs/sdks/stats/README.md#statsv1statsget)
 
 </details>
@@ -726,6 +772,7 @@ const sdk = new SteamSets({ debugLogger: console });
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [File uploads](#file-uploads)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)

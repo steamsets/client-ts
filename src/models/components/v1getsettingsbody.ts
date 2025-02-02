@@ -105,6 +105,10 @@ export type V1GetSettingsBody = {
    */
   sessions: Array<Session> | null;
   /**
+   * Whether the account is subscribed to marketing emails
+   */
+  subscribed: boolean;
+  /**
    * The vanity the account is using
    */
   vanity: string;
@@ -151,6 +155,7 @@ export const V1GetSettingsBody$inboundSchema: z.ZodType<
   language: z.string(),
   privacy: V1GetSettingsBodyPrivacy$inboundSchema,
   sessions: z.nullable(z.array(Session$inboundSchema)),
+  subscribed: z.boolean(),
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
 }).transform((v) => {
@@ -172,6 +177,7 @@ export type V1GetSettingsBody$Outbound = {
   language: string;
   privacy: string;
   sessions: Array<Session$Outbound> | null;
+  subscribed: boolean;
   vanity: string;
   vanityAnalytics: V1VanityAnalytics$Outbound | null;
 };
@@ -193,6 +199,7 @@ export const V1GetSettingsBody$outboundSchema: z.ZodType<
   language: z.string(),
   privacy: V1GetSettingsBodyPrivacy$outboundSchema,
   sessions: z.nullable(z.array(Session$outboundSchema)),
+  subscribed: z.boolean(),
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$outboundSchema),
 }).transform((v) => {

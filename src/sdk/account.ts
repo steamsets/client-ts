@@ -7,6 +7,9 @@ import { accountAccountV1GetBadgeBookmarks } from "../funcs/accountAccountV1GetB
 import { accountAccountV1GetOwnedBadges } from "../funcs/accountAccountV1GetOwnedBadges.js";
 import { accountAccountV1ImagesGet } from "../funcs/accountAccountV1ImagesGet.js";
 import { accountAccountV1ImagesUpdate } from "../funcs/accountAccountV1ImagesUpdate.js";
+import { accountAccountV1SettingsEmailSendVerification } from "../funcs/accountAccountV1SettingsEmailSendVerification.js";
+import { accountAccountV1SettingsEmailSubscribe } from "../funcs/accountAccountV1SettingsEmailSubscribe.js";
+import { accountAccountV1SettingsEmailVerify } from "../funcs/accountAccountV1SettingsEmailVerify.js";
 import { accountAccountV1SettingsUpdateRole } from "../funcs/accountAccountV1SettingsUpdateRole.js";
 import { accountAdminV1UpdateResources } from "../funcs/accountAdminV1UpdateResources.js";
 import { accountAdminV1UpdateRoles } from "../funcs/accountAdminV1UpdateRoles.js";
@@ -21,10 +24,8 @@ import { accountGetFriends } from "../funcs/accountGetFriends.js";
 import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
-import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
 import { accountUpdateApp } from "../funcs/accountUpdateApp.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
-import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -69,6 +70,39 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1SettingsDeveloperAppUpdateResponse> {
     return unwrapAsync(accountUpdateApp(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsEmailSendVerification(
+    request: operations.AccountV1SettingsEmailSendVerificationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailSendVerificationResponse> {
+    return unwrapAsync(accountAccountV1SettingsEmailSendVerification(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsEmailSubscribe(
+    request: operations.AccountV1SettingsEmailSubscribeRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailSubscribeResponse> {
+    return unwrapAsync(accountAccountV1SettingsEmailSubscribe(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsEmailVerify(
+    request: components.V1VerifyEmailRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailVerifyResponse> {
+    return unwrapAsync(accountAccountV1SettingsEmailVerify(
       this,
       request,
       options,
@@ -188,17 +222,6 @@ export class Account extends ClientSDK {
     ));
   }
 
-  async sendEmailVerification(
-    request: operations.AccountV1SettingsSendEmailVerificationRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
-    return unwrapAsync(accountSendEmailVerification(
-      this,
-      request,
-      options,
-    ));
-  }
-
   async accountV1ImagesUpdate(
     request: components.V1UpdateImageRequestBody,
     options?: RequestOptions,
@@ -226,17 +249,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesUploadResponse> {
     return unwrapAsync(accountUploadImages(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async verifyEmail(
-    request: components.V1VerifyEmailRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
-    return unwrapAsync(accountVerifyEmail(
       this,
       request,
       options,

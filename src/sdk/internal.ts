@@ -8,6 +8,9 @@ import { internalAccountV1GetBadgeBookmarks } from "../funcs/internalAccountV1Ge
 import { internalAccountV1GetOwnedBadges } from "../funcs/internalAccountV1GetOwnedBadges.js";
 import { internalAccountV1ImagesGet } from "../funcs/internalAccountV1ImagesGet.js";
 import { internalAccountV1ImagesUpdate } from "../funcs/internalAccountV1ImagesUpdate.js";
+import { internalAccountV1SettingsEmailSendVerification } from "../funcs/internalAccountV1SettingsEmailSendVerification.js";
+import { internalAccountV1SettingsEmailSubscribe } from "../funcs/internalAccountV1SettingsEmailSubscribe.js";
+import { internalAccountV1SettingsEmailVerify } from "../funcs/internalAccountV1SettingsEmailVerify.js";
 import { internalAccountV1SettingsUpdateRole } from "../funcs/internalAccountV1SettingsUpdateRole.js";
 import { internalAdminV1GetEvents } from "../funcs/internalAdminV1GetEvents.js";
 import { internalAdminV1UpdateEvent } from "../funcs/internalAdminV1UpdateEvent.js";
@@ -21,10 +24,8 @@ import { internalDeleteImages } from "../funcs/internalDeleteImages.js";
 import { internalGetAccount } from "../funcs/internalGetAccount.js";
 import { internalGetStaff } from "../funcs/internalGetStaff.js";
 import { internalGetTags } from "../funcs/internalGetTags.js";
-import { internalSendEmailVerification } from "../funcs/internalSendEmailVerification.js";
 import { internalUpdateApp } from "../funcs/internalUpdateApp.js";
 import { internalUploadImages } from "../funcs/internalUploadImages.js";
-import { internalVerifyEmail } from "../funcs/internalVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -86,6 +87,39 @@ export class Internal extends ClientSDK {
     ));
   }
 
+  async accountV1SettingsEmailSendVerification(
+    request: operations.AccountV1SettingsEmailSendVerificationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailSendVerificationResponse> {
+    return unwrapAsync(internalAccountV1SettingsEmailSendVerification(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsEmailSubscribe(
+    request: operations.AccountV1SettingsEmailSubscribeRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailSubscribeResponse> {
+    return unwrapAsync(internalAccountV1SettingsEmailSubscribe(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async accountV1SettingsEmailVerify(
+    request: components.V1VerifyEmailRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountV1SettingsEmailVerifyResponse> {
+    return unwrapAsync(internalAccountV1SettingsEmailVerify(
+      this,
+      request,
+      options,
+    ));
+  }
+
   async accountV1GetBadgeBookmarks(
     options?: RequestOptions,
   ): Promise<operations.AccountV1GetBadgeBookmarksResponse> {
@@ -133,17 +167,6 @@ export class Internal extends ClientSDK {
     ));
   }
 
-  async sendEmailVerification(
-    request: operations.AccountV1SettingsSendEmailVerificationRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsSendEmailVerificationResponse> {
-    return unwrapAsync(internalSendEmailVerification(
-      this,
-      request,
-      options,
-    ));
-  }
-
   async accountV1ImagesUpdate(
     request: components.V1UpdateImageRequestBody,
     options?: RequestOptions,
@@ -171,17 +194,6 @@ export class Internal extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesUploadResponse> {
     return unwrapAsync(internalUploadImages(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async verifyEmail(
-    request: components.V1VerifyEmailRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountV1SettingsVerfyEmailResponse> {
-    return unwrapAsync(internalVerifyEmail(
       this,
       request,
       options,

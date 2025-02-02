@@ -9,14 +9,14 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountV1SettingsVerfyEmailResponse = {
+export type AccountV1SettingsEmailVerifyResponse = {
   httpMeta: components.HTTPMetadata;
   headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
-export const AccountV1SettingsVerfyEmailResponse$inboundSchema: z.ZodType<
-  AccountV1SettingsVerfyEmailResponse,
+export const AccountV1SettingsEmailVerifyResponse$inboundSchema: z.ZodType<
+  AccountV1SettingsEmailVerifyResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -30,16 +30,16 @@ export const AccountV1SettingsVerfyEmailResponse$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountV1SettingsVerfyEmailResponse$Outbound = {
+export type AccountV1SettingsEmailVerifyResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
-export const AccountV1SettingsVerfyEmailResponse$outboundSchema: z.ZodType<
-  AccountV1SettingsVerfyEmailResponse$Outbound,
+export const AccountV1SettingsEmailVerifyResponse$outboundSchema: z.ZodType<
+  AccountV1SettingsEmailVerifyResponse$Outbound,
   z.ZodTypeDef,
-  AccountV1SettingsVerfyEmailResponse
+  AccountV1SettingsEmailVerifyResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   headers: z.record(z.array(z.string())),
@@ -54,34 +54,34 @@ export const AccountV1SettingsVerfyEmailResponse$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountV1SettingsVerfyEmailResponse$ {
-  /** @deprecated use `AccountV1SettingsVerfyEmailResponse$inboundSchema` instead. */
+export namespace AccountV1SettingsEmailVerifyResponse$ {
+  /** @deprecated use `AccountV1SettingsEmailVerifyResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AccountV1SettingsVerfyEmailResponse$inboundSchema;
-  /** @deprecated use `AccountV1SettingsVerfyEmailResponse$outboundSchema` instead. */
+    AccountV1SettingsEmailVerifyResponse$inboundSchema;
+  /** @deprecated use `AccountV1SettingsEmailVerifyResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AccountV1SettingsVerfyEmailResponse$outboundSchema;
-  /** @deprecated use `AccountV1SettingsVerfyEmailResponse$Outbound` instead. */
-  export type Outbound = AccountV1SettingsVerfyEmailResponse$Outbound;
+    AccountV1SettingsEmailVerifyResponse$outboundSchema;
+  /** @deprecated use `AccountV1SettingsEmailVerifyResponse$Outbound` instead. */
+  export type Outbound = AccountV1SettingsEmailVerifyResponse$Outbound;
 }
 
-export function accountV1SettingsVerfyEmailResponseToJSON(
-  accountV1SettingsVerfyEmailResponse: AccountV1SettingsVerfyEmailResponse,
+export function accountV1SettingsEmailVerifyResponseToJSON(
+  accountV1SettingsEmailVerifyResponse: AccountV1SettingsEmailVerifyResponse,
 ): string {
   return JSON.stringify(
-    AccountV1SettingsVerfyEmailResponse$outboundSchema.parse(
-      accountV1SettingsVerfyEmailResponse,
+    AccountV1SettingsEmailVerifyResponse$outboundSchema.parse(
+      accountV1SettingsEmailVerifyResponse,
     ),
   );
 }
 
-export function accountV1SettingsVerfyEmailResponseFromJSON(
+export function accountV1SettingsEmailVerifyResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AccountV1SettingsVerfyEmailResponse, SDKValidationError> {
+): SafeParseResult<AccountV1SettingsEmailVerifyResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AccountV1SettingsVerfyEmailResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountV1SettingsVerfyEmailResponse' from JSON`,
+      AccountV1SettingsEmailVerifyResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountV1SettingsEmailVerifyResponse' from JSON`,
   );
 }
