@@ -23,7 +23,6 @@ import { Session } from "./session.js";
 import { Sessions } from "./sessions.js";
 import { Settings } from "./settings.js";
 import { Stats } from "./stats.js";
-import { Webhooks } from "./webhooks.js";
 
 export class SteamSets extends ClientSDK {
   private _badges?: Badges;
@@ -124,10 +123,5 @@ export class SteamSets extends ClientSDK {
   private _liveness?: Liveness;
   get liveness(): Liveness {
     return (this._liveness ??= new Liveness(this._options));
-  }
-
-  private _webhooks?: Webhooks;
-  get webhooks(): Webhooks {
-    return (this._webhooks ??= new Webhooks(this._options));
   }
 }

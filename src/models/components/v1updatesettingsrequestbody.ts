@@ -11,7 +11,7 @@ export type V1UpdateSettingsRequestBody = {
   /**
    * The email the account should use, only if the account is private
    */
-  email: string | null;
+  email?: string | null | undefined;
   /**
    * Whether the account should be hidden in the leaderboards, only possible if the account is private
    */
@@ -32,7 +32,7 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  email: z.nullable(z.string()),
+  email: z.nullable(z.string()).optional(),
   hidden: z.boolean(),
   language: z.string(),
   vanity: z.nullable(z.string()),
@@ -40,7 +40,7 @@ export const V1UpdateSettingsRequestBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type V1UpdateSettingsRequestBody$Outbound = {
-  email: string | null;
+  email?: string | null | undefined;
   hidden: boolean;
   language: string;
   vanity: string | null;
@@ -52,7 +52,7 @@ export const V1UpdateSettingsRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1UpdateSettingsRequestBody
 > = z.object({
-  email: z.nullable(z.string()),
+  email: z.nullable(z.string()).optional(),
   hidden: z.boolean(),
   language: z.string(),
   vanity: z.nullable(z.string()),

@@ -18,7 +18,6 @@ export * from "./currentcolortag.js";
 export * from "./designtag.js";
 export * from "./developerapp.js";
 export * from "./errordetail.js";
-export * from "./errormodel.js";
 export * from "./historyvalue.js";
 export * from "./httpmetadata.js";
 export * from "./idstruct.js";

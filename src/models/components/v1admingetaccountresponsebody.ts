@@ -15,6 +15,12 @@ import {
   Connection$outboundSchema,
 } from "./connection.js";
 import {
+  DeveloperApp,
+  DeveloperApp$inboundSchema,
+  DeveloperApp$Outbound,
+  DeveloperApp$outboundSchema,
+} from "./developerapp.js";
+import {
   Resource,
   Resource$inboundSchema,
   Resource$Outbound,
@@ -80,7 +86,7 @@ export type V1AdminGetAccountResponseBody = {
    */
   city: string | null;
   /**
-   * The connections the user has
+   * The connections the account has
    */
   connections: Array<Connection> | null;
   /**
@@ -88,11 +94,15 @@ export type V1AdminGetAccountResponseBody = {
    */
   country: string | null;
   /**
+   * The developer apps the account has
+   */
+  developerApps: Array<DeveloperApp> | null;
+  /**
    * The email of the account
    */
   email: string | null;
   /**
-   * The location updates the user has
+   * The location updates the account has
    */
   locationUpdates: Array<V1AccountLocationUpdate> | null;
   /**
@@ -100,7 +110,7 @@ export type V1AdminGetAccountResponseBody = {
    */
   name: string;
   /**
-   * The name updates the user has
+   * The name updates the account has
    */
   nameUpdates: Array<V1AccountNameUpdate> | null;
   /**
@@ -112,15 +122,15 @@ export type V1AdminGetAccountResponseBody = {
    */
   region: string | null;
   /**
-   * The resources the user has (permissions)
+   * The resources the account has (permissions)
    */
   resources: Array<Resource> | null;
   /**
-   * The roles the user has
+   * The roles the account has
    */
   roles: Array<Role> | null;
   /**
-   * The sessions the user has
+   * The sessions the account has
    */
   sessions: Array<Session> | null;
   /**
@@ -132,7 +142,7 @@ export type V1AdminGetAccountResponseBody = {
    */
   vanity: string | null;
   /**
-   * The vanity updates the user has
+   * The vanity updates the account has
    */
   vanityUpdates: Array<V1AccountVanityUpdate> | null;
 };
@@ -172,6 +182,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   city: z.nullable(z.string()),
   connections: z.nullable(z.array(Connection$inboundSchema)),
   country: z.nullable(z.string()),
+  developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.nullable(z.string()),
   locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
   name: z.string(),
@@ -197,6 +208,7 @@ export type V1AdminGetAccountResponseBody$Outbound = {
   city: string | null;
   connections: Array<Connection$Outbound> | null;
   country: string | null;
+  developerApps: Array<DeveloperApp$Outbound> | null;
   email: string | null;
   locationUpdates: Array<V1AccountLocationUpdate$Outbound> | null;
   name: string;
@@ -222,6 +234,7 @@ export const V1AdminGetAccountResponseBody$outboundSchema: z.ZodType<
   city: z.nullable(z.string()),
   connections: z.nullable(z.array(Connection$outboundSchema)),
   country: z.nullable(z.string()),
+  developerApps: z.nullable(z.array(DeveloperApp$outboundSchema)),
   email: z.nullable(z.string()),
   locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$outboundSchema)),
   name: z.string(),

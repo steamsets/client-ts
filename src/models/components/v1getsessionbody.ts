@@ -44,11 +44,11 @@ export type V1GetSessionBody = {
    */
   name: string;
   /**
-   * The resources the user has (permissions)
+   * The resources the account has (permissions)
    */
   resources: Array<Resource> | null;
   /**
-   * The roles the user has
+   * The roles the account has
    */
   roles: Array<Role> | null;
   sessionData: Session;

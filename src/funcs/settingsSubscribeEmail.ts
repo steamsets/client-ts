@@ -113,7 +113,7 @@ export async function settingsSubscribeEmail(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["400", "422", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -143,7 +143,7 @@ export async function settingsSubscribeEmail(
       operations.AccountV1SettingsEmailSubscribeResponse$inboundSchema,
       { hdrs: true },
     ),
-    M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

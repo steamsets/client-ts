@@ -14,11 +14,11 @@ export type V1LoginResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * The avatar of the user
+   * The avatar of the account
    */
   avatar: string;
   /**
-   * The name of the user
+   * The name of the account
    */
   name: string;
   /**
