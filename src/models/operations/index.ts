@@ -48,5 +48,4 @@ export * from "./leaderboardv1getbadges.js";
 export * from "./leaderboardv1getgroup.js";
 export * from "./liveness.js";
 export * from "./locationv1locationget.js";
-export * from "./resendwebhook.js";
 export * from "./statsv1statsget.js";

@@ -31,6 +31,15 @@ let value: AdminV1GetAccountResponse = {
       },
     ],
     country: "Germany",
+    developerApps: [
+      {
+        apiKey: "api_123",
+        description: "My App Description",
+        environment: "production",
+        id: "da_123456",
+        name: "My App",
+      },
+    ],
     email: "steamsets@example.com",
     locationUpdates: [
       {

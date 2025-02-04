@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: d928ac2dee48e55919d92054c3fe9227
+  docChecksum: 6b46fb22fea8cd7d9689426b72cbe694
   docVersion: 1.0.0
-  speakeasyVersion: 1.481.1
-  generationVersion: 2.500.5
-  releaseVersion: 0.15.4
-  configChecksum: 8a3489ee11c4fc8ea6884e3ae431bbe6
+  speakeasyVersion: 1.483.0
+  generationVersion: 2.502.0
+  releaseVersion: 0.16.0
+  configChecksum: ac6bf38f95d6be83ade14c8739c5f9bb
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -46,7 +46,6 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
-    uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -82,7 +81,6 @@ generatedFiles:
   - docs/models/components/direction.md
   - docs/models/components/environment.md
   - docs/models/components/errordetail.md
-  - docs/models/components/errormodel.md
   - docs/models/components/filter.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/historyvalue.md
@@ -268,8 +266,6 @@ generatedFiles:
   - docs/models/operations/leaderboardv1getgroupresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
-  - docs/models/operations/resendwebhookrequest.md
-  - docs/models/operations/resendwebhookresponse.md
   - docs/models/operations/statsv1statsgetresponse.md
   - docs/sdks/account/README.md
   - docs/sdks/accounts/README.md
@@ -292,7 +288,6 @@ generatedFiles:
   - docs/sdks/settings/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/steamsets/README.md
-  - docs/sdks/webhooks/README.md
   - eslint.config.mjs
   - jsr.json
   - package.json
@@ -372,7 +367,6 @@ generatedFiles:
   - src/funcs/settingsUpdateRole.ts
   - src/funcs/settingsVerifyEmail.ts
   - src/funcs/statsGet.ts
-  - src/funcs/webhooksResend.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -408,7 +402,6 @@ generatedFiles:
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
-  - src/models/components/errormodel.ts
   - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idstruct.ts
@@ -571,7 +564,6 @@ generatedFiles:
   - src/models/operations/leaderboardv1getgroup.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
-  - src/models/operations/resendwebhook.ts
   - src/models/operations/statsv1statsget.ts
   - src/sdk/account.ts
   - src/sdk/accounts.ts
@@ -595,7 +587,6 @@ generatedFiles:
   - src/sdk/sessions.ts
   - src/sdk/settings.ts
   - src/sdk/stats.ts
-  - src/sdk/webhooks.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts
@@ -936,7 +927,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "mini_background", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}, {"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 438722, "role": "badge_scout"}, {"rating": 161646, "role": "sapphire"}], "sessions": [], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "mini_background", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}, {"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 438722, "role": "badge_scout"}, {"rating": 161646, "role": "sapphire"}], "sessions": [], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1088,6 +1079,8 @@ examples:
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.email-verify:
     speakeasy-default-account-v1-settings-email-verify:

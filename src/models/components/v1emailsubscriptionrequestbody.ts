@@ -11,9 +11,9 @@ export type V1EmailSubscriptionRequestBody = {
   /**
    * The email address to subscribe to the newsletter (only for the landing page)
    */
-  email: string | null;
+  email?: string | null | undefined;
   /**
-   * Whether the user wants to be subscribed to the newsletter
+   * Whether the account wants to be subscribed to the newsletter
    */
   subscribed: boolean;
 };
@@ -24,13 +24,13 @@ export const V1EmailSubscriptionRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  email: z.nullable(z.string()),
+  email: z.nullable(z.string()).optional(),
   subscribed: z.boolean(),
 });
 
 /** @internal */
 export type V1EmailSubscriptionRequestBody$Outbound = {
-  email: string | null;
+  email?: string | null | undefined;
   subscribed: boolean;
 };
 
@@ -40,7 +40,7 @@ export const V1EmailSubscriptionRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1EmailSubscriptionRequestBody
 > = z.object({
-  email: z.nullable(z.string()),
+  email: z.nullable(z.string()).optional(),
   subscribed: z.boolean(),
 });
 

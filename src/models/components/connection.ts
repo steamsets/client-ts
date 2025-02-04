@@ -28,7 +28,7 @@ export type ConnectionProvider = ClosedEnum<typeof ConnectionProvider>;
 
 export type Connection = {
   /**
-   * The avatar of the connected user
+   * The avatar of the connected account
    */
   avatar: string;
   /**
@@ -36,7 +36,7 @@ export type Connection = {
    */
   connectionId: string;
   /**
-   * The external id of the connected user
+   * The external id of the connected account
    */
   externalId: string;
   /**
@@ -48,7 +48,7 @@ export type Connection = {
    */
   hide: boolean;
   /**
-   * The name of the connected user
+   * The name of the connected account
    */
   name: string;
   /**
