@@ -151,6 +151,7 @@ export async function sessionCreate(
     | ConnectionError
   >(
     M.json(200, operations.AccountV1SessionCreateResponse$inboundSchema, {
+      hdrs: true,
       key: "V1CreateSessionBody",
     }),
     M.jsonErr(422, errors.ErrorModel$inboundSchema, {
