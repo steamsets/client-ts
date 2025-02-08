@@ -79,8 +79,8 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   roles: [
     {
-      rating: 396060,
-      role: "ruby",
+      rating: 11427,
+      role: "early_supporter",
     },
   ],
   sessions: [
