@@ -85,6 +85,7 @@ run();
 * [getFriends](docs/sdks/account/README.md#getfriends)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/account/README.md#getleaderboardhistory)
+* [accountV1GetMeta](docs/sdks/account/README.md#accountv1getmeta)
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [getAccount](docs/sdks/account/README.md#getaccount)
@@ -130,6 +131,7 @@ run();
 * [getFriends](docs/sdks/data/README.md#getfriends)
 * [getInfo](docs/sdks/data/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/data/README.md#getleaderboardhistory)
+* [accountV1GetMeta](docs/sdks/data/README.md#accountv1getmeta)
 
 ### [developer](docs/sdks/developer/README.md)
 
@@ -165,6 +167,7 @@ run();
 * [deleteDeveloperApp](docs/sdks/internal/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/internal/README.md#deleteimages)
 * [updateApp](docs/sdks/internal/README.md#updateapp)
+* [accountV1GetMeta](docs/sdks/internal/README.md#accountv1getmeta)
 * [getStaff](docs/sdks/internal/README.md#getstaff)
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
@@ -567,6 +570,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountV1GetMeta`](docs/sdks/account/README.md#accountv1getmeta)
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
@@ -595,6 +599,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`connectionsConnect`](docs/sdks/connections/README.md#connect)
 - [`connectionUpdate`](docs/sdks/connection/README.md#update)
 - [`connectionVerify`](docs/sdks/connection/README.md#verify)
+- [`dataAccountV1GetMeta`](docs/sdks/data/README.md#accountv1getmeta)
 - [`dataGetApps`](docs/sdks/data/README.md#getapps)
 - [`dataGetBadges`](docs/sdks/data/README.md#getbadges)
 - [`dataGetDataPoints`](docs/sdks/data/README.md#getdatapoints)
@@ -617,6 +622,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`imagesGet`](docs/sdks/images/README.md#get)
 - [`imagesUpdate`](docs/sdks/images/README.md#update)
 - [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
+- [`internalAccountV1GetMeta`](docs/sdks/internal/README.md#accountv1getmeta)
 - [`internalCheck`](docs/sdks/internal/README.md#check) - Liveness check
 - [`internalCreateDeveloperApp`](docs/sdks/internal/README.md#createdeveloperapp)
 - [`internalDeleteDeveloperApp`](docs/sdks/internal/README.md#deletedeveloperapp)

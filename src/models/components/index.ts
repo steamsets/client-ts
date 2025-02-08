@@ -58,6 +58,7 @@ export * from "./v1accountleaderboardhistoryresponsebody.js";
 export * from "./v1accountleaderboardrequestbody.js";
 export * from "./v1accountleaderboardresponsebody.js";
 export * from "./v1accountlocationupdate.js";
+export * from "./v1accountmetaresponsebody.js";
 export * from "./v1accountnameupdate.js";
 export * from "./v1accountplaytimedatapoint.js";
 export * from "./v1accountqueuerequestbody.js";

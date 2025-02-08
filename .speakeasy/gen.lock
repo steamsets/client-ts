@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0b076178f31b3c807ac730c2e57b4391
+  docChecksum: 196af43f9ff0088a8b302911632bfbc9
   docVersion: 1.0.0
-  speakeasyVersion: 1.486.0
-  generationVersion: 2.505.0
-  releaseVersion: 0.17.0
-  configChecksum: 1b7c4933525514d5fa7691f31c8aed6f
+  speakeasyVersion: 1.487.1
+  generationVersion: 2.506.0
+  releaseVersion: 0.17.1
+  configChecksum: b8df8ca9b585933ff037ca30beee1c05
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -136,6 +136,7 @@ generatedFiles:
   - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1accountleaderboardresponsebody.md
   - docs/models/components/v1accountlocationupdate.md
+  - docs/models/components/v1accountmetaresponsebody.md
   - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
@@ -228,6 +229,7 @@ generatedFiles:
   - docs/models/operations/accountv1getfriendsresponse.md
   - docs/models/operations/accountv1getinforesponse.md
   - docs/models/operations/accountv1getleaderboardhistoryresponse.md
+  - docs/models/operations/accountv1getmetaresponse.md
   - docs/models/operations/accountv1getownedbadgesresponse.md
   - docs/models/operations/accountv1getstaffresponse.md
   - docs/models/operations/accountv1imagesdeleteresponse.md
@@ -292,6 +294,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1GetMeta.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteDeveloperApp.ts
   - src/funcs/accountDeleteImages.ts
@@ -320,6 +323,7 @@ generatedFiles:
   - src/funcs/connectionUpdate.ts
   - src/funcs/connectionVerify.ts
   - src/funcs/connectionsConnect.ts
+  - src/funcs/dataAccountV1GetMeta.ts
   - src/funcs/dataGetApps.ts
   - src/funcs/dataGetBadges.ts
   - src/funcs/dataGetDataPoints.ts
@@ -342,6 +346,7 @@ generatedFiles:
   - src/funcs/imagesGet.ts
   - src/funcs/imagesUpdate.ts
   - src/funcs/imagesUploadImages.ts
+  - src/funcs/internalAccountV1GetMeta.ts
   - src/funcs/internalCheck.ts
   - src/funcs/internalCreateDeveloperApp.ts
   - src/funcs/internalDeleteDeveloperApp.ts
@@ -443,6 +448,7 @@ generatedFiles:
   - src/models/components/v1accountleaderboardrequestbody.ts
   - src/models/components/v1accountleaderboardresponsebody.ts
   - src/models/components/v1accountlocationupdate.ts
+  - src/models/components/v1accountmetaresponsebody.ts
   - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
@@ -530,6 +536,7 @@ generatedFiles:
   - src/models/operations/accountv1getfriends.ts
   - src/models/operations/accountv1getinfo.ts
   - src/models/operations/accountv1getleaderboardhistory.ts
+  - src/models/operations/accountv1getmeta.ts
   - src/models/operations/accountv1getownedbadges.ts
   - src/models/operations/accountv1getstaff.ts
   - src/models/operations/accountv1imagesdelete.ts
@@ -1087,6 +1094,17 @@ examples:
       requestBody:
         application/json: {"code": "123456"}
       responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getMeta:
+    speakeasy-default-account-v1-get-meta:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "description": "exactly ha minor drat woot gracious", "og_image": "<value>"}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
