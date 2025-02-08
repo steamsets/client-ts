@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 196af43f9ff0088a8b302911632bfbc9
+  docChecksum: 03d45e4110ad196d0a38bb2e38326c26
   docVersion: 1.0.0
   speakeasyVersion: 1.487.1
   generationVersion: 2.506.0
-  releaseVersion: 0.17.1
-  configChecksum: b8df8ca9b585933ff037ca30beee1c05
+  releaseVersion: 0.17.2
+  configChecksum: 0e240ec03bee27baa646047a15373c49
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -1104,7 +1104,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "description": "exactly ha minor drat woot gracious", "og_image": "<value>"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "description": "exactly ha minor drat woot gracious", "steamId": "<id>", "title": "<value>"}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

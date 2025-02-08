@@ -16,7 +16,8 @@ let value: AccountV1GetMetaResponse = {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json",
     description: "worriedly whoa aw plus outside",
-    ogImage: "<value>",
+    steamId: "<id>",
+    title: "<value>",
   },
 };
 ```
