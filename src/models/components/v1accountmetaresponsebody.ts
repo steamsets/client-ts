@@ -14,7 +14,11 @@ export type V1AccountMetaResponseBody = {
    */
   dollarSchema?: string | undefined;
   description: string;
-  ogImage: string;
+  /**
+   * Use this + cdn.steamsets.com/og/account/steamId.png as url
+   */
+  steamId: string;
+  title: string;
 };
 
 /** @internal */
@@ -25,11 +29,11 @@ export const V1AccountMetaResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   description: z.string(),
-  og_image: z.string(),
+  steamId: z.string(),
+  title: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
-    "og_image": "ogImage",
   });
 });
 
@@ -37,7 +41,8 @@ export const V1AccountMetaResponseBody$inboundSchema: z.ZodType<
 export type V1AccountMetaResponseBody$Outbound = {
   $schema?: string | undefined;
   description: string;
-  og_image: string;
+  steamId: string;
+  title: string;
 };
 
 /** @internal */
@@ -48,11 +53,11 @@ export const V1AccountMetaResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   description: z.string(),
-  ogImage: z.string(),
+  steamId: z.string(),
+  title: z.string(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
-    ogImage: "og_image",
   });
 });
 
