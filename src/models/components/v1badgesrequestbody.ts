@@ -34,7 +34,7 @@ export const Filter = {
 export type Filter = ClosedEnum<typeof Filter>;
 
 export type V1BadgesRequestBody = {
-  filter?: Filter | null | undefined;
+  filter?: Array<Filter> | null | undefined;
   id?: IDStruct | undefined;
   order?: V1BadgeOrder | null | undefined;
   page?: number | undefined;
@@ -67,7 +67,7 @@ export const V1BadgesRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  filter: z.nullable(Filter$inboundSchema).optional(),
+  filter: z.nullable(z.array(Filter$inboundSchema)).optional(),
   id: IDStruct$inboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$inboundSchema).optional(),
   page: z.number().int().default(1),
@@ -77,7 +77,7 @@ export const V1BadgesRequestBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type V1BadgesRequestBody$Outbound = {
-  filter?: string | null | undefined;
+  filter?: Array<string> | null | undefined;
   id?: IDStruct$Outbound | undefined;
   order?: V1BadgeOrder$Outbound | null | undefined;
   page: number;
@@ -91,7 +91,7 @@ export const V1BadgesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1BadgesRequestBody
 > = z.object({
-  filter: z.nullable(Filter$outboundSchema).optional(),
+  filter: z.nullable(z.array(Filter$outboundSchema)).optional(),
   id: IDStruct$outboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$outboundSchema).optional(),
   page: z.number().int().default(1),
