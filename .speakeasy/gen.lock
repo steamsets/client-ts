@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: a495fd6fe7b6037ce37053b93e16d87b
+  docChecksum: fc1df63d43875940cdddfb0d2736942b
   docVersion: 1.0.0
-  speakeasyVersion: 1.487.1
+  speakeasyVersion: 1.488.0
   generationVersion: 2.506.0
-  releaseVersion: 0.17.3
-  configChecksum: 7550c0667bcbd62965b4e2514f0f4172
+  releaseVersion: 0.17.4
+  configChecksum: f45fb6ad5dae0b678be3500ba7681b33
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -111,6 +111,7 @@ generatedFiles:
   - docs/models/components/setremovedesigntag.md
   - docs/models/components/state.md
   - docs/models/components/type.md
+  - docs/models/components/v1accountablyauthenticatebody.md
   - docs/models/components/v1accountapp.md
   - docs/models/components/v1accountbadgebookmark.md
   - docs/models/components/v1accountbadgebookmarkrequestbody.md
@@ -216,6 +217,7 @@ generatedFiles:
   - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/vanitystruct.md
   - docs/models/errors/errormodel.md
+  - docs/models/operations/accountv1ablyauthenticateresponse.md
   - docs/models/operations/accountv1bookmarkbadgeresponse.md
   - docs/models/operations/accountv1connectionconnectresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
@@ -294,6 +296,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1AblyAuthenticate.ts
   - src/funcs/accountAccountV1GetMeta.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteDeveloperApp.ts
@@ -346,6 +349,7 @@ generatedFiles:
   - src/funcs/imagesGet.ts
   - src/funcs/imagesUpdate.ts
   - src/funcs/imagesUploadImages.ts
+  - src/funcs/internalAccountV1AblyAuthenticate.ts
   - src/funcs/internalAccountV1GetMeta.ts
   - src/funcs/internalCheck.ts
   - src/funcs/internalCreateDeveloperApp.ts
@@ -426,6 +430,7 @@ generatedFiles:
   - src/models/components/setremovecolortag.ts
   - src/models/components/setremovedesigntag.ts
   - src/models/components/state.ts
+  - src/models/components/v1accountablyauthenticatebody.ts
   - src/models/components/v1accountapp.ts
   - src/models/components/v1accountbadgebookmark.ts
   - src/models/components/v1accountbadgebookmarkrequestbody.ts
@@ -523,6 +528,7 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/accountv1ablyauthenticate.ts
   - src/models/operations/accountv1bookmarkbadge.ts
   - src/models/operations/accountv1connectionconnect.ts
   - src/models/operations/accountv1connectiondeleteconnection.ts
@@ -1106,6 +1112,15 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "description": "exactly ha minor drat woot gracious", "steamId": "<id>", "title": "<value>"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.ably-authenticate:
+    speakeasy-default-account-v1-ably-authenticate:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountAblyAuthenticateBody.json"}
+        "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

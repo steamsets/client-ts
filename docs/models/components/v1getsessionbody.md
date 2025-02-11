@@ -18,8 +18,8 @@ let value: V1GetSessionBody = {
   ],
   roles: [
     {
-      rating: 672048,
-      role: "partner",
+      rating: 862192,
+      role: "badge_scout",
     },
   ],
   sessionData: {

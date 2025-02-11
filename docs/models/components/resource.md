@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "auto_refresh",
+  resource: "developer_apps",
   value: "1",
 };
 ```
