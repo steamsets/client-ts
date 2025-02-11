@@ -36,6 +36,7 @@ export * from "./session.js";
 export * from "./setremovecolortag.js";
 export * from "./setremovedesigntag.js";
 export * from "./state.js";
+export * from "./v1accountablyauthenticatebody.js";
 export * from "./v1accountapp.js";
 export * from "./v1accountbadgebookmark.js";
 export * from "./v1accountbadgebookmarkrequestbody.js";

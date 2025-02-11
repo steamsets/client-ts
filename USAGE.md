@@ -7,10 +7,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badges.bookmark({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.accountV1AblyAuthenticate();
 
   // Handle the result
   console.log(result);

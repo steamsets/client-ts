@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { badgesBookmark } from "@steamsets/client-ts/funcs/badgesBookmark.js";
+import { accountAccountV1AblyAuthenticate } from "@steamsets/client-ts/funcs/accountAccountV1AblyAuthenticate.js";
 import { SDKValidationError } from "@steamsets/client-ts/models/errors/sdkvalidationerror.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
@@ -30,10 +30,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await badgesBookmark(steamSets, {
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const res = await accountAccountV1AblyAuthenticate(steamSets);
 
   switch (true) {
     case res.ok:
