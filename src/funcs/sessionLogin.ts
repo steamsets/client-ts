@@ -74,6 +74,7 @@ export async function sessionLogin(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.session.login",
     oAuth2Scopes: [],
 

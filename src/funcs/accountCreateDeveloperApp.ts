@@ -66,6 +66,7 @@ export async function accountCreateDeveloperApp(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.developer-app-create",
     oAuth2Scopes: [],
 

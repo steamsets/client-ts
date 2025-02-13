@@ -65,6 +65,7 @@ export async function badgesTag(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "badge.v1.tag",
     oAuth2Scopes: [],
 

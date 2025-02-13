@@ -65,6 +65,7 @@ export async function connectionsConnect(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.connection.connect",
     oAuth2Scopes: [],
 

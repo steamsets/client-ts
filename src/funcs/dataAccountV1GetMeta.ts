@@ -65,6 +65,7 @@ export async function dataAccountV1GetMeta(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getMeta",
     oAuth2Scopes: [],
 

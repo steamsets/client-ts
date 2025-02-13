@@ -65,6 +65,7 @@ export async function accountGetApps(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getApps",
     oAuth2Scopes: [],
 

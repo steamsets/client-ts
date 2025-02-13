@@ -65,6 +65,7 @@ export async function adminGetAccount(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "admin.v1.get-account",
     oAuth2Scopes: [],
 

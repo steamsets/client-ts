@@ -65,6 +65,7 @@ export async function badgesSearch(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "badge.v1.search",
     oAuth2Scopes: [],
 

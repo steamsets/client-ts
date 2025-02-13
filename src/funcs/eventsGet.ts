@@ -49,6 +49,7 @@ export async function eventsGet(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "admin.v1.get-events",
     oAuth2Scopes: [],
 

@@ -68,6 +68,7 @@ export async function internalUpdateApp(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.developer-app-update",
     oAuth2Scopes: [],
 

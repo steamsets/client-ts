@@ -66,6 +66,7 @@ export async function badgesBookmark(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.bookmark-badge",
     oAuth2Scopes: [],
 

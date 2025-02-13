@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: fc1df63d43875940cdddfb0d2736942b
+  docChecksum: 1f52e7b376929c6f994499ecf32dbccc
   docVersion: 1.0.0
-  speakeasyVersion: 1.488.0
-  generationVersion: 2.506.0
-  releaseVersion: 0.17.4
-  configChecksum: f45fb6ad5dae0b678be3500ba7681b33
+  speakeasyVersion: 1.491.0
+  generationVersion: 2.512.4
+  releaseVersion: 0.17.5
+  configChecksum: 9a6acae691f1f3a79af2c85f5bb50ad1
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -35,7 +35,7 @@ features:
     devContainers: 2.90.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    globalSecurity: 2.82.12
+    globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
@@ -111,7 +111,6 @@ generatedFiles:
   - docs/models/components/setremovedesigntag.md
   - docs/models/components/state.md
   - docs/models/components/type.md
-  - docs/models/components/v1accountablyauthenticatebody.md
   - docs/models/components/v1accountapp.md
   - docs/models/components/v1accountbadgebookmark.md
   - docs/models/components/v1accountbadgebookmarkrequestbody.md
@@ -186,6 +185,9 @@ generatedFiles:
   - docs/models/components/v1groupleaderboardrequestbody.md
   - docs/models/components/v1groupleaderboardrequestbodyleaderboard.md
   - docs/models/components/v1groupleaderboardresponsebody.md
+  - docs/models/components/v1leaderboardaccountmetarequestbody.md
+  - docs/models/components/v1leaderboardaccountmetarequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardaccountmetaresponsebody.md
   - docs/models/components/v1leaderboardappinfo.md
   - docs/models/components/v1leaderboardbadge.md
   - docs/models/components/v1leaderboardbadgeevent.md
@@ -217,7 +219,6 @@ generatedFiles:
   - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/vanitystruct.md
   - docs/models/errors/errormodel.md
-  - docs/models/operations/accountv1ablyauthenticateresponse.md
   - docs/models/operations/accountv1bookmarkbadgeresponse.md
   - docs/models/operations/accountv1connectionconnectresponse.md
   - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
@@ -265,6 +266,7 @@ generatedFiles:
   - docs/models/operations/badgev1searchresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
+  - docs/models/operations/leaderboardv1getaccountmetaresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
   - docs/models/operations/leaderboardv1getbadgesresponse.md
   - docs/models/operations/leaderboardv1getgroupresponse.md
@@ -296,7 +298,6 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountV1AblyAuthenticate.ts
   - src/funcs/accountAccountV1GetMeta.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteDeveloperApp.ts
@@ -309,6 +310,7 @@ generatedFiles:
   - src/funcs/accountGetInfo.ts
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
+  - src/funcs/accountLeaderboardV1GetAccountMeta.ts
   - src/funcs/accountUpdateApp.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountsQueue.ts
@@ -349,7 +351,6 @@ generatedFiles:
   - src/funcs/imagesGet.ts
   - src/funcs/imagesUpdate.ts
   - src/funcs/imagesUploadImages.ts
-  - src/funcs/internalAccountV1AblyAuthenticate.ts
   - src/funcs/internalAccountV1GetMeta.ts
   - src/funcs/internalCheck.ts
   - src/funcs/internalCreateDeveloperApp.ts
@@ -358,11 +359,13 @@ generatedFiles:
   - src/funcs/internalGetAccount.ts
   - src/funcs/internalGetStaff.ts
   - src/funcs/internalGetTags.ts
+  - src/funcs/internalLeaderboardV1GetAccountMeta.ts
   - src/funcs/internalUpdateApp.ts
   - src/funcs/internalUploadImages.ts
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetBadges.ts
   - src/funcs/leaderboardGetGroup.ts
+  - src/funcs/leaderboardLeaderboardV1GetAccountMeta.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
   - src/funcs/sessionCreate.ts
@@ -430,7 +433,6 @@ generatedFiles:
   - src/models/components/setremovecolortag.ts
   - src/models/components/setremovedesigntag.ts
   - src/models/components/state.ts
-  - src/models/components/v1accountablyauthenticatebody.ts
   - src/models/components/v1accountapp.ts
   - src/models/components/v1accountbadgebookmark.ts
   - src/models/components/v1accountbadgebookmarkrequestbody.ts
@@ -495,6 +497,8 @@ generatedFiles:
   - src/models/components/v1groupleaderboardgroup.ts
   - src/models/components/v1groupleaderboardrequestbody.ts
   - src/models/components/v1groupleaderboardresponsebody.ts
+  - src/models/components/v1leaderboardaccountmetarequestbody.ts
+  - src/models/components/v1leaderboardaccountmetaresponsebody.ts
   - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
   - src/models/components/v1leaderboardbadgeevent.ts
@@ -528,7 +532,6 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
-  - src/models/operations/accountv1ablyauthenticate.ts
   - src/models/operations/accountv1bookmarkbadge.ts
   - src/models/operations/accountv1connectionconnect.ts
   - src/models/operations/accountv1connectiondeleteconnection.ts
@@ -573,6 +576,7 @@ generatedFiles:
   - src/models/operations/badgev1tags.ts
   - src/models/operations/index.ts
   - src/models/operations/leaderboardv1getaccount.ts
+  - src/models/operations/leaderboardv1getaccountmeta.ts
   - src/models/operations/leaderboardv1getbadges.ts
   - src/models/operations/leaderboardv1getgroup.ts
   - src/models/operations/liveness.ts
@@ -665,7 +669,7 @@ examples:
         application/json: {"code": "123456", "provider": "discord"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ConnectResponseBody.json", "code": "ABC123", "connectionId": "ABC123"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1121,6 +1125,17 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountAblyAuthenticateBody.json"}
         "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getAccountMeta:
+    speakeasy-default-leaderboard-v1-get-account-meta:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 335243, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "yahoo via haversack orientate psst however", "title": "<value>"}
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

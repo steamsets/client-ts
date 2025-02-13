@@ -68,6 +68,7 @@ export async function leaderboardGetAccount(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "leaderboard.v1.getAccount",
     oAuth2Scopes: [],
 

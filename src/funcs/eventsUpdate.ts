@@ -66,6 +66,7 @@ export async function eventsUpdate(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "admin.v1.update-event",
     oAuth2Scopes: [],
 

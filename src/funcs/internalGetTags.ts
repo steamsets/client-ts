@@ -49,6 +49,7 @@ export async function internalGetTags(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "badge.v1.tags",
     oAuth2Scopes: [],
 

@@ -66,6 +66,7 @@ export async function adminUpdateResources(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "admin.v1.update-resources",
     oAuth2Scopes: [],
 

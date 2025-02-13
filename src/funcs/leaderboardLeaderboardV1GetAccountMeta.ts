@@ -3,11 +3,14 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -21,12 +24,13 @@ import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
-export async function accountAccountV1AblyAuthenticate(
+export async function leaderboardLeaderboardV1GetAccountMeta(
   client: SteamSetsCore,
+  request: components.V1LeaderboardAccountMetaRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.AccountV1AblyAuthenticateResponse,
+    operations.LeaderboardV1GetAccountMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -38,9 +42,26 @@ export async function accountAccountV1AblyAuthenticate(
     | ConnectionError
   >
 > {
-  const path = pathToFunc("/account.v1.AccountService/AblyAuthenticate")();
+  const parsed = safeParse(
+    request,
+    (value) =>
+      components.V1LeaderboardAccountMetaRequestBody$outboundSchema.parse(
+        value,
+      ),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return parsed;
+  }
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload, { explode: true });
+
+  const path = pathToFunc(
+    "/leaderboard.v1.LeaderboardService/GetAccountLeaderboardMeta",
+  )();
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -49,7 +70,8 @@ export async function accountAccountV1AblyAuthenticate(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "account.v1.ably-authenticate",
+    baseURL: options?.serverURL ?? "",
+    operationID: "leaderboard.v1.getAccountMeta",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -77,6 +99,7 @@ export async function accountAccountV1AblyAuthenticate(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -87,7 +110,7 @@ export async function accountAccountV1AblyAuthenticate(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "4XX", "500", "5XX"],
+    errorCodes: ["404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -101,7 +124,7 @@ export async function accountAccountV1AblyAuthenticate(
   };
 
   const [result] = await M.match<
-    operations.AccountV1AblyAuthenticateResponse,
+    operations.LeaderboardV1GetAccountMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -112,10 +135,10 @@ export async function accountAccountV1AblyAuthenticate(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1AblyAuthenticateResponse$inboundSchema, {
-      key: "V1AccountAblyAuthenticateBody",
+    M.json(200, operations.LeaderboardV1GetAccountMetaResponse$inboundSchema, {
+      key: "V1LeaderboardAccountMetaResponseBody",
     }),
-    M.jsonErr(403, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

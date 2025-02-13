@@ -65,6 +65,7 @@ export async function externalGetDataPoints(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getDataPoints",
     oAuth2Scopes: [],
 
