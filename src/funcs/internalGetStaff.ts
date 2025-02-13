@@ -49,6 +49,7 @@ export async function internalGetStaff(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getStaff",
     oAuth2Scopes: [],
 

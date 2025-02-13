@@ -65,6 +65,7 @@ export async function connectionReconnect(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.connection.reconnect",
     oAuth2Scopes: [],
 

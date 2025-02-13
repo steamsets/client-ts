@@ -70,6 +70,7 @@ export async function settingsSendVerification(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.email-send-verification",
     oAuth2Scopes: [],
 

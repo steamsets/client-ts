@@ -49,6 +49,7 @@ export async function statsGet(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "stats.v1.stats.get",
     oAuth2Scopes: [],
 

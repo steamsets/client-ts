@@ -65,6 +65,7 @@ export async function accountGetFriends(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getFriends",
     oAuth2Scopes: [],
 

@@ -15,7 +15,7 @@ let value: AccountV1SettingsGetResponse = {
   v1GetSettingsBody: {
     dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
     chosenRole: {
-      role: "contributor",
+      role: "beta",
       tier: "tier_1",
     },
     connections: [
@@ -67,7 +67,7 @@ let value: AccountV1SettingsGetResponse = {
     subscribed: false,
     vanity: "flo",
     vanityAnalytics: {
-      clicks: 725255,
+      clicks: 569101,
     },
   },
 };

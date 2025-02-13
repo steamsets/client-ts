@@ -25,16 +25,6 @@ import { Settings } from "./settings.js";
 import { Stats } from "./stats.js";
 
 export class SteamSets extends ClientSDK {
-  private _account?: Account;
-  get account(): Account {
-    return (this._account ??= new Account(this._options));
-  }
-
-  private _internal?: Internal;
-  get internal(): Internal {
-    return (this._internal ??= new Internal(this._options));
-  }
-
   private _badges?: Badges;
   get badges(): Badges {
     return (this._badges ??= new Badges(this._options));
@@ -45,9 +35,19 @@ export class SteamSets extends ClientSDK {
     return (this._connections ??= new Connections(this._options));
   }
 
+  private _account?: Account;
+  get account(): Account {
+    return (this._account ??= new Account(this._options));
+  }
+
   private _developer?: Developer;
   get developer(): Developer {
     return (this._developer ??= new Developer(this._options));
+  }
+
+  private _internal?: Internal;
+  get internal(): Internal {
+    return (this._internal ??= new Internal(this._options));
   }
 
   private _session?: Session;

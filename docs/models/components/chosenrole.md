@@ -6,7 +6,7 @@
 import { ChosenRole } from "@steamsets/client-ts/models/components";
 
 let value: ChosenRole = {
-  role: "donator",
+  role: "top_100",
   tier: "tier_1",
 };
 ```

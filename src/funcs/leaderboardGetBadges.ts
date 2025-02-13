@@ -49,6 +49,7 @@ export async function leaderboardGetBadges(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "leaderboard.v1.getBadges",
     oAuth2Scopes: [],
 

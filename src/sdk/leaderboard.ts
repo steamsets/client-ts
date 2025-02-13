@@ -5,6 +5,7 @@
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetBadges } from "../funcs/leaderboardGetBadges.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
+import { leaderboardLeaderboardV1GetAccountMeta } from "../funcs/leaderboardLeaderboardV1GetAccountMeta.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -16,6 +17,17 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardV1GetAccountResponse> {
     return unwrapAsync(leaderboardGetAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async leaderboardV1GetAccountMeta(
+    request: components.V1LeaderboardAccountMetaRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetAccountMetaResponse> {
+    return unwrapAsync(leaderboardLeaderboardV1GetAccountMeta(
       this,
       request,
       options,

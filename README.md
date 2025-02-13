@@ -53,7 +53,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate();
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  });
 
   // Handle the result
   console.log(result);
@@ -72,7 +75,6 @@ run();
 
 ### [account](docs/sdks/account/README.md)
 
-* [accountV1AblyAuthenticate](docs/sdks/account/README.md#accountv1ablyauthenticate)
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp)
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
@@ -87,6 +89,7 @@ run();
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [getAccount](docs/sdks/account/README.md#getaccount)
+* [leaderboardV1GetAccountMeta](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -161,7 +164,6 @@ run();
 
 ### [internal](docs/sdks/internal/README.md)
 
-* [accountV1AblyAuthenticate](docs/sdks/internal/README.md#accountv1ablyauthenticate)
 * [createDeveloperApp](docs/sdks/internal/README.md#createdeveloperapp)
 * [deleteDeveloperApp](docs/sdks/internal/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/internal/README.md#deleteimages)
@@ -171,11 +173,13 @@ run();
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
 * [getTags](docs/sdks/internal/README.md#gettags)
+* [leaderboardV1GetAccountMeta](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
 * [check](docs/sdks/internal/README.md#check) - Liveness check
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount)
+* [leaderboardV1GetAccountMeta](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
 * [getBadges](docs/sdks/leaderboard/README.md#getbadges)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 
@@ -228,7 +232,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate({
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  }, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -268,7 +275,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate();
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  });
 
   // Handle the result
   console.log(result);
@@ -282,13 +292,13 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `accountV1AblyAuthenticate` method may throw the following errors:
+Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `bookmark` method may throw the following errors:
 
-| Error Type        | Status Code | Content Type             |
-| ----------------- | ----------- | ------------------------ |
-| errors.ErrorModel | 403         | application/problem+json |
-| errors.ErrorModel | 500         | application/problem+json |
-| errors.SDKError   | 4XX, 5XX    | \*/\*                    |
+| Error Type        | Status Code   | Content Type             |
+| ----------------- | ------------- | ------------------------ |
+| errors.ErrorModel | 403, 404, 422 | application/problem+json |
+| errors.ErrorModel | 500           | application/problem+json |
+| errors.SDKError   | 4XX, 5XX      | \*/\*                    |
 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `SDKError`.
 
@@ -306,7 +316,10 @@ const steamSets = new SteamSets({
 async function run() {
   let result;
   try {
-    result = await steamSets.account.accountV1AblyAuthenticate();
+    result = await steamSets.badges.bookmark({
+      badgeId: "bdg_123",
+      bookmark: true,
+    });
 
     // Handle the result
     console.log(result);
@@ -378,7 +391,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate();
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  });
 
   // Handle the result
   console.log(result);
@@ -400,7 +416,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate();
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  });
 
   // Handle the result
   console.log(result);
@@ -480,7 +499,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1AblyAuthenticate();
+  const result = await steamSets.badges.bookmark({
+    badgeId: "bdg_123",
+    bookmark: true,
+  });
 
   // Handle the result
   console.log(result);
@@ -551,7 +573,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountV1AblyAuthenticate`](docs/sdks/account/README.md#accountv1ablyauthenticate)
 - [`accountAccountV1GetMeta`](docs/sdks/account/README.md#accountv1getmeta)
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp)
@@ -564,6 +585,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
 - [`accountGetLeaderboardHistory`](docs/sdks/account/README.md#getleaderboardhistory)
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
+- [`accountLeaderboardV1GetAccountMeta`](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateApp`](docs/sdks/account/README.md#updateapp)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
@@ -604,7 +626,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`imagesGet`](docs/sdks/images/README.md#get)
 - [`imagesUpdate`](docs/sdks/images/README.md#update)
 - [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
-- [`internalAccountV1AblyAuthenticate`](docs/sdks/internal/README.md#accountv1ablyauthenticate)
 - [`internalAccountV1GetMeta`](docs/sdks/internal/README.md#accountv1getmeta)
 - [`internalCheck`](docs/sdks/internal/README.md#check) - Liveness check
 - [`internalCreateDeveloperApp`](docs/sdks/internal/README.md#createdeveloperapp)
@@ -613,11 +634,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`internalGetAccount`](docs/sdks/internal/README.md#getaccount)
 - [`internalGetStaff`](docs/sdks/internal/README.md#getstaff)
 - [`internalGetTags`](docs/sdks/internal/README.md#gettags)
+- [`internalLeaderboardV1GetAccountMeta`](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
 - [`internalUpdateApp`](docs/sdks/internal/README.md#updateapp)
 - [`internalUploadImages`](docs/sdks/internal/README.md#uploadimages)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
+- [`leaderboardLeaderboardV1GetAccountMeta`](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
 - [`sessionCreate`](docs/sdks/session/README.md#create)

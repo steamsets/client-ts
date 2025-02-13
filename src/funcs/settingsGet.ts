@@ -48,6 +48,7 @@ export async function settingsGet(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.get",
     oAuth2Scopes: [],
 

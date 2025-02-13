@@ -86,6 +86,7 @@ export async function sessionCreate(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.session.create",
     oAuth2Scopes: [],
 

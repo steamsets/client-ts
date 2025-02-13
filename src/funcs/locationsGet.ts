@@ -49,6 +49,7 @@ export async function locationsGet(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "location.v1.location.get",
     oAuth2Scopes: [],
 

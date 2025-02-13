@@ -66,6 +66,7 @@ export async function adminUpdateRoles(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "admin.v1.update-roles",
     oAuth2Scopes: [],
 

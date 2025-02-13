@@ -66,6 +66,7 @@ export async function sessionsDelete(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.session.delete",
     oAuth2Scopes: [],
 

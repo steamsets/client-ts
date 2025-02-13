@@ -80,14 +80,14 @@ let value: AdminV1GetAccountResponse = {
     region: "Europe",
     resources: [
       {
-        resource: "social_links",
+        resource: "account_refresh_rate",
         value: "1",
       },
     ],
     roles: [
       {
-        rating: 131797,
-        role: "contributor",
+        rating: 223081,
+        role: "badge_scout",
       },
     ],
     sessions: [

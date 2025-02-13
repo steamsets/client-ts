@@ -65,6 +65,7 @@ export async function internalUploadImages(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.images.upload",
     oAuth2Scopes: [],
 

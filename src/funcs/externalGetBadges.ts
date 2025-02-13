@@ -65,6 +65,7 @@ export async function externalGetBadges(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.getBadges",
     oAuth2Scopes: [],
 

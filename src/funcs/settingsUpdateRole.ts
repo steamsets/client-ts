@@ -65,6 +65,7 @@ export async function settingsUpdateRole(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.update-role",
     oAuth2Scopes: [],
 

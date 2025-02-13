@@ -72,6 +72,7 @@ export async function settingsUpdate(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "account.v1.settings.update",
     oAuth2Scopes: [],
 
