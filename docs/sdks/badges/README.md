@@ -246,6 +246,10 @@ async function run() {
   const result = await steamSets.badges.search({
     filter: "<value>",
     query: "<value>",
+    sort: [
+      "\"sort\": [  \"price:asc\"",
+      "\"author:desc\" ]",
+    ],
   });
 
   // Handle the result
@@ -273,6 +277,10 @@ async function run() {
   const res = await badgesSearch(steamSets, {
     filter: "<value>",
     query: "<value>",
+    sort: [
+      "\"sort\": [  \"price:asc\"",
+      "\"author:desc\" ]",
+    ],
   });
 
   if (!res.ok) {

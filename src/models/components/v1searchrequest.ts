@@ -20,6 +20,10 @@ export type V1SearchRequest = {
    * The query to search for
    */
   query: string;
+  /**
+   * sort order
+   */
+  sort: Array<string> | null;
 };
 
 /** @internal */
@@ -34,6 +38,7 @@ export const V1SearchRequest$inboundSchema: z.ZodType<
   offset: z.nullable(z.number().int()).optional(),
   page: z.nullable(z.number().int()).optional(),
   query: z.string(),
+  sort: z.nullable(z.array(z.string())),
 });
 
 /** @internal */
@@ -44,6 +49,7 @@ export type V1SearchRequest$Outbound = {
   offset?: number | null | undefined;
   page?: number | null | undefined;
   query: string;
+  sort: Array<string> | null;
 };
 
 /** @internal */
@@ -58,6 +64,7 @@ export const V1SearchRequest$outboundSchema: z.ZodType<
   offset: z.nullable(z.number().int()).optional(),
   page: z.nullable(z.number().int()).optional(),
   query: z.string(),
+  sort: z.nullable(z.array(z.string())),
 });
 
 /**

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 1f52e7b376929c6f994499ecf32dbccc
+  docChecksum: cc05a90d9298e21b7052e24a8e5f6461
   docVersion: 1.0.0
-  speakeasyVersion: 1.491.0
+  speakeasyVersion: 1.493.0
   generationVersion: 2.512.4
-  releaseVersion: 0.17.5
-  configChecksum: 9a6acae691f1f3a79af2c85f5bb50ad1
+  releaseVersion: 0.17.6
+  configChecksum: 227306835d4c17fd43c407be2336b06e
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -655,7 +655,7 @@ examples:
   badge.v1.search:
     speakeasy-default-badge-v1-search:
       requestBody:
-        application/json: {"filter": "<value>", "query": "<value>"}
+        application/json: {"filter": "<value>", "query": "<value>", "sort": ["\"sort\": [  \"price:asc\"", "\"author:desc\" ]"]}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": 3133.1}], "facets": "<value>", "pages": 479485, "results": 446588}
