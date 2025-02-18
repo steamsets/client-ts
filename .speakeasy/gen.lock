@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: cc05a90d9298e21b7052e24a8e5f6461
+  docChecksum: b6e22ffeafb5b25df4d2251091b3f79e
   docVersion: 1.0.0
-  speakeasyVersion: 1.493.0
-  generationVersion: 2.512.4
-  releaseVersion: 0.17.6
-  configChecksum: 227306835d4c17fd43c407be2336b06e
+  speakeasyVersion: 1.494.0
+  generationVersion: 2.515.0
+  releaseVersion: 0.18.0
+  configChecksum: 9327ca0337b156e6ec2dc996d3895963
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.19.0
+    core: 3.20.0
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -152,6 +152,8 @@ generatedFiles:
   - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
+  - docs/models/components/v1appbadgelistrequestbody.md
+  - docs/models/components/v1appbadgelistresponsebody.md
   - docs/models/components/v1appeventmapping.md
   - docs/models/components/v1apporder.md
   - docs/models/components/v1badgeorder.md
@@ -263,6 +265,7 @@ generatedFiles:
   - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
+  - docs/models/operations/appv1listbadgesresponse.md
   - docs/models/operations/badgev1searchresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
@@ -276,6 +279,7 @@ generatedFiles:
   - docs/sdks/account/README.md
   - docs/sdks/accounts/README.md
   - docs/sdks/admin/README.md
+  - docs/sdks/app/README.md
   - docs/sdks/badge/README.md
   - docs/sdks/badges/README.md
   - docs/sdks/connection/README.md
@@ -317,6 +321,8 @@ generatedFiles:
   - src/funcs/adminGetAccount.ts
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
+  - src/funcs/appAppV1ListBadges.ts
+  - src/funcs/badgeAppV1ListBadges.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesBookmark.ts
   - src/funcs/badgesGetBookmarks.ts
@@ -340,6 +346,7 @@ generatedFiles:
   - src/funcs/developerUpdateApp.ts
   - src/funcs/eventsGet.ts
   - src/funcs/eventsUpdate.ts
+  - src/funcs/externalAppV1ListBadges.ts
   - src/funcs/externalGet.ts
   - src/funcs/externalGetApps.ts
   - src/funcs/externalGetBadges.ts
@@ -469,6 +476,8 @@ generatedFiles:
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
+  - src/models/components/v1appbadgelistrequestbody.ts
+  - src/models/components/v1appbadgelistresponsebody.ts
   - src/models/components/v1appeventmapping.ts
   - src/models/components/v1apporder.ts
   - src/models/components/v1badgeorder.ts
@@ -571,6 +580,7 @@ generatedFiles:
   - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
+  - src/models/operations/appv1listbadges.ts
   - src/models/operations/badgev1search.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
@@ -585,6 +595,7 @@ generatedFiles:
   - src/sdk/account.ts
   - src/sdk/accounts.ts
   - src/sdk/admin.ts
+  - src/sdk/app.ts
   - src/sdk/badge.ts
   - src/sdk/badges.ts
   - src/sdk/connection.ts
@@ -604,6 +615,7 @@ generatedFiles:
   - src/sdk/sessions.ts
   - src/sdk/settings.ts
   - src/sdk/stats.ts
+  - src/types/async.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts
@@ -655,7 +667,7 @@ examples:
   badge.v1.search:
     speakeasy-default-badge-v1-search:
       requestBody:
-        application/json: {"filter": "<value>", "query": "<value>", "sort": ["\"sort\": [  \"price:asc\"", "\"author:desc\" ]"]}
+        application/json: {"filter": "<value>", "query": "<value>", "sort": ["price:asc", "author:desc"]}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "price": 200004, "scarcity": 60456, "steamId": 722436, "xp": 3133.1}], "facets": "<value>", "pages": 479485, "results": 446588}
@@ -1136,6 +1148,17 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "yahoo via haversack orientate psst however", "title": "<value>"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  app.v1.listBadges:
+    speakeasy-default-app-v1-list-badges:
+      requestBody:
+        application/json: {"appId": 701216}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppBadgeListResponseBody.json", "badges": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 897833, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 848136, "baseXp": 577532, "firstCompletion": "2023-03-21T15:35:48.066Z", "highestLevel": 426705, "isEvent": true, "isFoil": true, "isSale": false, "lastCompletion": "2023-06-20T14:27:19.367Z", "name": "<value>", "price": 353088, "scarcity": 709651, "steamId": 436264}]}
+        "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

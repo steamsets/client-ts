@@ -8,7 +8,7 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   newResources: [
     {
-      resource: "social_links",
+      resource: "mini_background",
       value: "1",
     },
   ],

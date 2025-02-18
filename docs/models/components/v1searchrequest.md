@@ -9,20 +9,20 @@ let value: V1SearchRequest = {
   filter: "<value>",
   query: "<value>",
   sort: [
-    "\"sort\": [  \"price:asc\"",
-    "\"author:desc\" ]",
+    "price:asc",
+    "author:desc",
   ],
 };
 ```
 
 ## Fields
 
-| Field                                                 | Type                                                  | Required                                              | Description                                           | Example                                               |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `facets`                                              | *string*[]                                            | :heavy_minus_sign:                                    | N/A                                                   |                                                       |
-| `filter`                                              | *string*                                              | :heavy_check_mark:                                    | The filter to apply to the search                     |                                                       |
-| `limit`                                               | *number*                                              | :heavy_minus_sign:                                    | N/A                                                   |                                                       |
-| `offset`                                              | *number*                                              | :heavy_minus_sign:                                    | N/A                                                   |                                                       |
-| `page`                                                | *number*                                              | :heavy_minus_sign:                                    | N/A                                                   |                                                       |
-| `query`                                               | *string*                                              | :heavy_check_mark:                                    | The query to search for                               |                                                       |
-| `sort`                                                | *string*[]                                            | :heavy_check_mark:                                    | sort order                                            | [<br/>"\"sort\": [  \"price:asc\"",<br/>"\"author:desc\" ]"<br/>] |
+| Field                             | Type                              | Required                          | Description                       | Example                           |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `facets`                          | *string*[]                        | :heavy_minus_sign:                | N/A                               |                                   |
+| `filter`                          | *string*                          | :heavy_check_mark:                | The filter to apply to the search |                                   |
+| `limit`                           | *number*                          | :heavy_minus_sign:                | N/A                               |                                   |
+| `offset`                          | *number*                          | :heavy_minus_sign:                | N/A                               |                                   |
+| `page`                            | *number*                          | :heavy_minus_sign:                | N/A                               |                                   |
+| `query`                           | *string*                          | :heavy_check_mark:                | The query to search for           |                                   |
+| `sort`                            | *string*[]                        | :heavy_check_mark:                | sort order                        | [<br/>"price:asc",<br/>"author:desc"<br/>] |
