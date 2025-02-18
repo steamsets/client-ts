@@ -19,12 +19,13 @@ import * as errors from "../models/errors/index.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export async function sessionsGet(
+export function sessionsGet(
   client: SteamSetsCore,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     operations.AccountV1SessionGetResponse,
     | errors.ErrorModel
@@ -36,6 +37,31 @@ export async function sessionsGet(
     | RequestTimeoutError
     | ConnectionError
   >
+> {
+  return new APIPromise($do(
+    client,
+    options,
+  ));
+}
+
+async function $do(
+  client: SteamSetsCore,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      operations.AccountV1SessionGetResponse,
+      | errors.ErrorModel
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
 > {
   const path = pathToFunc("/account.v1.AccountService/GetSession")();
 
@@ -81,7 +107,7 @@ export async function sessionsGet(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -92,7 +118,7 @@ export async function sessionsGet(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -121,8 +147,8 @@ export async function sessionsGet(
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

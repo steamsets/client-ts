@@ -5,7 +5,7 @@
 ```typescript
 import { AccountLeaderboardHistoryLeaderboard } from "@steamsets/client-ts/models/components";
 
-let value: AccountLeaderboardHistoryLeaderboard = "game_bans";
+let value: AccountLeaderboardHistoryLeaderboard = "points_given";
 ```
 
 ## Values

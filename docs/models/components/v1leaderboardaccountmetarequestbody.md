@@ -10,7 +10,7 @@ let value: V1LeaderboardAccountMetaRequestBody = {
     appId: 730,
   },
   badge: {
-    id: 796392,
+    id: 68074,
     isFoil: true,
   },
   leaderboard: "xp",

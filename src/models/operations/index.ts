@@ -41,6 +41,7 @@ export * from "./adminv1getevents.js";
 export * from "./adminv1updateevent.js";
 export * from "./adminv1updateresources.js";
 export * from "./adminv1updateroles.js";
+export * from "./appv1listbadges.js";
 export * from "./badgev1search.js";
 export * from "./badgev1tag.js";
 export * from "./badgev1tags.js";

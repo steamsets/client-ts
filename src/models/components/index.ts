@@ -72,6 +72,8 @@ export * from "./v1adminupdateeventresponsebody.js";
 export * from "./v1adminupdateresourcesrequestbody.js";
 export * from "./v1adminupdaterolessrequestbody.js";
 export * from "./v1appbadge.js";
+export * from "./v1appbadgelistrequestbody.js";
+export * from "./v1appbadgelistresponsebody.js";
 export * from "./v1appeventmapping.js";
 export * from "./v1apporder.js";
 export * from "./v1badgeorder.js";

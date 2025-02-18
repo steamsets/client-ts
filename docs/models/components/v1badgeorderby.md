@@ -5,7 +5,7 @@
 ```typescript
 import { V1BadgeOrderBy } from "@steamsets/client-ts/models/components";
 
-let value: V1BadgeOrderBy = "level";
+let value: V1BadgeOrderBy = "name";
 ```
 
 ## Values

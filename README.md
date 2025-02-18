@@ -101,8 +101,13 @@ run();
 * [updateResources](docs/sdks/admin/README.md#updateresources)
 * [updateRoles](docs/sdks/admin/README.md#updateroles)
 
+### [app](docs/sdks/app/README.md)
+
+* [appV1ListBadges](docs/sdks/app/README.md#appv1listbadges)
+
 ### [badge](docs/sdks/badge/README.md)
 
+* [appV1ListBadges](docs/sdks/badge/README.md#appv1listbadges)
 * [getTags](docs/sdks/badge/README.md#gettags)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -153,6 +158,7 @@ run();
 * [getFriends](docs/sdks/external/README.md#getfriends)
 * [getInfo](docs/sdks/external/README.md#getinfo)
 * [getLeaderboardHistory](docs/sdks/external/README.md#getleaderboardhistory)
+* [appV1ListBadges](docs/sdks/external/README.md#appv1listbadges)
 * [get](docs/sdks/external/README.md#get)
 
 ### [images](docs/sdks/images/README.md)
@@ -375,10 +381,10 @@ In some rare cases, the SDK can fail to get a response from the server or even m
 
 You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                      |
-| --- | --------------------------- |
-| 0   | `https://api.steamsets.com` |
-| 1   | `http://localhost:7388`     |
+| #   | Server                      | Description |
+| --- | --------------------------- | ----------- |
+| 0   | `https://api.steamsets.com` |             |
+| 1   | `http://localhost:7388`     |             |
 
 #### Example
 
@@ -592,6 +598,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
+- [`appAppV1ListBadges`](docs/sdks/app/README.md#appv1listbadges)
+- [`badgeAppV1ListBadges`](docs/sdks/badge/README.md#appv1listbadges)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesBookmark`](docs/sdks/badges/README.md#bookmark)
 - [`badgesGetBookmarks`](docs/sdks/badges/README.md#getbookmarks)
@@ -615,6 +623,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
 - [`eventsGet`](docs/sdks/events/README.md#get)
 - [`eventsUpdate`](docs/sdks/events/README.md#update)
+- [`externalAppV1ListBadges`](docs/sdks/external/README.md#appv1listbadges)
 - [`externalGet`](docs/sdks/external/README.md#get)
 - [`externalGetApps`](docs/sdks/external/README.md#getapps)
 - [`externalGetBadges`](docs/sdks/external/README.md#getbadges)

@@ -8,7 +8,7 @@ import { V1LeaderboardAccountMetaResponseBody } from "@steamsets/client-ts/model
 let value: V1LeaderboardAccountMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json",
-  description: "beside motivate zowie tag even",
+  description: "provided rotating than optimistic as by summer horde",
   title: "<value>",
 };
 ```

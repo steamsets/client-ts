@@ -247,8 +247,8 @@ async function run() {
     filter: "<value>",
     query: "<value>",
     sort: [
-      "\"sort\": [  \"price:asc\"",
-      "\"author:desc\" ]",
+      "price:asc",
+      "author:desc",
     ],
   });
 
@@ -278,8 +278,8 @@ async function run() {
     filter: "<value>",
     query: "<value>",
     sort: [
-      "\"sort\": [  \"price:asc\"",
-      "\"author:desc\" ]",
+      "price:asc",
+      "author:desc",
     ],
   });
 

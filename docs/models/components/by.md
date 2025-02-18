@@ -5,7 +5,7 @@
 ```typescript
 import { By } from "@steamsets/client-ts/models/components";
 
-let value: By = "playtime";
+let value: By = "appId";
 ```
 
 ## Values

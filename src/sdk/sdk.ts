@@ -6,6 +6,7 @@ import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Accounts } from "./accounts.js";
 import { Admin } from "./admin.js";
+import { App } from "./app.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Connection } from "./connection.js";
@@ -103,6 +104,11 @@ export class SteamSets extends ClientSDK {
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
+  }
+
+  private _app?: App;
+  get app(): App {
+    return (this._app ??= new App(this._options));
   }
 
   private _leaderboard?: Leaderboard;
