@@ -24,7 +24,6 @@ export type Badge = {
   lastCompletion: number;
   level: number;
   name: string;
-  price: number;
   scarcity: number;
   steamId: number;
   xp: number;
@@ -49,7 +48,6 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     lastCompletion: z.number().int(),
     level: z.number().int(),
     name: z.string(),
-    price: z.number().int(),
     scarcity: z.number().int(),
     steamId: z.number().int(),
     xp: z.number(),
@@ -73,7 +71,6 @@ export type Badge$Outbound = {
   lastCompletion: number;
   level: number;
   name: string;
-  price: number;
   scarcity: number;
   steamId: number;
   xp: number;
@@ -101,7 +98,6 @@ export const Badge$outboundSchema: z.ZodType<
   lastCompletion: z.number().int(),
   level: z.number().int(),
   name: z.string(),
-  price: z.number().int(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
   xp: z.number(),

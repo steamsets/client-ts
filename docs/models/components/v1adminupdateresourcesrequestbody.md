@@ -8,12 +8,12 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   newResources: [
     {
-      resource: "mini_background",
+      resource: "account_queues",
       value: "1",
     },
   ],
   resource: [
-    "max_leaderboard_entries",
+    "background",
   ],
 };
 ```

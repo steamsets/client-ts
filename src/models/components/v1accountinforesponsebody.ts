@@ -124,6 +124,8 @@ export type V1AccountInfoResponseBody = {
   animatedAvatar: string;
   /**
    * The cost of an app
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   appCost: number;
   /**
@@ -194,6 +196,8 @@ export type V1AccountInfoResponseBody = {
   economyBan: string;
   /**
    * The cost of a foil badge
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   foilBadgeCost: number;
   /**
@@ -239,6 +243,8 @@ export type V1AccountInfoResponseBody = {
   nextAllowedTime: Date;
   /**
    * The cost of a normal badge
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   normalBadgeCost: number;
   /**

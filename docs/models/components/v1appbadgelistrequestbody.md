@@ -6,7 +6,7 @@
 import { V1AppBadgeListRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AppBadgeListRequestBody = {
-  appId: 246063,
+  appId: 985492,
 };
 ```
 

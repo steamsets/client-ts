@@ -66,7 +66,7 @@ export type V1LeaderboardAccountMetaRequestBody = {
   /**
    * The location(s)to get the leaderboard for, otherwise global
    */
-  location?: Array<V1LeaderboardLocation> | null | undefined;
+  location?: Array<V1LeaderboardLocation | null> | null | undefined;
 };
 
 /** @internal */
@@ -101,7 +101,8 @@ export const V1LeaderboardAccountMetaRequestBody$inboundSchema: z.ZodType<
   app: z.nullable(V1AccountLeaderboardAppSearch$inboundSchema).optional(),
   badge: z.nullable(V1AccountLeaderboardBadgeSearch$inboundSchema).optional(),
   leaderboard: V1LeaderboardAccountMetaRequestBodyLeaderboard$inboundSchema,
-  location: z.nullable(z.array(V1LeaderboardLocation$inboundSchema)).optional(),
+  location: z.nullable(z.array(z.nullable(V1LeaderboardLocation$inboundSchema)))
+    .optional(),
 });
 
 /** @internal */
@@ -109,7 +110,7 @@ export type V1LeaderboardAccountMetaRequestBody$Outbound = {
   app?: V1AccountLeaderboardAppSearch$Outbound | null | undefined;
   badge?: V1AccountLeaderboardBadgeSearch$Outbound | null | undefined;
   leaderboard: string;
-  location?: Array<V1LeaderboardLocation$Outbound> | null | undefined;
+  location?: Array<V1LeaderboardLocation$Outbound | null> | null | undefined;
 };
 
 /** @internal */
@@ -121,8 +122,9 @@ export const V1LeaderboardAccountMetaRequestBody$outboundSchema: z.ZodType<
   app: z.nullable(V1AccountLeaderboardAppSearch$outboundSchema).optional(),
   badge: z.nullable(V1AccountLeaderboardBadgeSearch$outboundSchema).optional(),
   leaderboard: V1LeaderboardAccountMetaRequestBodyLeaderboard$outboundSchema,
-  location: z.nullable(z.array(V1LeaderboardLocation$outboundSchema))
-    .optional(),
+  location: z.nullable(
+    z.array(z.nullable(V1LeaderboardLocation$outboundSchema)),
+  ).optional(),
 });
 
 /**
