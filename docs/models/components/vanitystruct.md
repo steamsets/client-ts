@@ -13,7 +13,7 @@ let value: VanityStruct = {
 
 ## Fields
 
-| Field                                              | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `type`                                             | [components.Type](../../models/components/type.md) | :heavy_check_mark:                                 | Which type of vanity to search for                 |
-| `value`                                            | *string*                                           | :heavy_check_mark:                                 | Vanity to search for                               |
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `type`                                                                     | [components.VanityStructType](../../models/components/vanitystructtype.md) | :heavy_check_mark:                                                         | Which type of vanity to search for                                         |
+| `value`                                                                    | *string*                                                                   | :heavy_check_mark:                                                         | Vanity to search for                                                       |

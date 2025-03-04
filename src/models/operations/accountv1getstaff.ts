@@ -14,7 +14,10 @@ export type AccountV1GetStaffResponse = {
   /**
    * OK
    */
-  leaderboardAccounts?: Array<components.LeaderboardAccount> | null | undefined;
+  leaderboardAccounts?:
+    | Array<components.LeaderboardAccount | null>
+    | null
+    | undefined;
 };
 
 /** @internal */
@@ -25,7 +28,7 @@ export const AccountV1GetStaffResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   LeaderboardAccounts: z.nullable(
-    z.array(components.LeaderboardAccount$inboundSchema),
+    z.array(z.nullable(components.LeaderboardAccount$inboundSchema)),
   ).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,7 +41,7 @@ export const AccountV1GetStaffResponse$inboundSchema: z.ZodType<
 export type AccountV1GetStaffResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   LeaderboardAccounts?:
-    | Array<components.LeaderboardAccount$Outbound>
+    | Array<components.LeaderboardAccount$Outbound | null>
     | null
     | undefined;
 };
@@ -51,7 +54,7 @@ export const AccountV1GetStaffResponse$outboundSchema: z.ZodType<
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   leaderboardAccounts: z.nullable(
-    z.array(components.LeaderboardAccount$outboundSchema),
+    z.array(z.nullable(components.LeaderboardAccount$outboundSchema)),
   ).optional(),
 }).transform((v) => {
   return remap$(v, {
