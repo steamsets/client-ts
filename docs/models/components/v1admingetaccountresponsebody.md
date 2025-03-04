@@ -73,13 +73,13 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "social_links",
+      resource: "max_leaderboard_entries",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 35362,
+      rating: 724168,
       role: "amber",
     },
   ],

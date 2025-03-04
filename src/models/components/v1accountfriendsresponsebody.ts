@@ -19,7 +19,7 @@ export type V1AccountFriendsResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  friends: Array<V1AccountFriend> | null;
+  friends: Array<V1AccountFriend | null> | null;
 };
 
 /** @internal */
@@ -29,7 +29,7 @@ export const V1AccountFriendsResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  friends: z.nullable(z.array(V1AccountFriend$inboundSchema)),
+  friends: z.nullable(z.array(z.nullable(V1AccountFriend$inboundSchema))),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -39,7 +39,7 @@ export const V1AccountFriendsResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountFriendsResponseBody$Outbound = {
   $schema?: string | undefined;
-  friends: Array<V1AccountFriend$Outbound> | null;
+  friends: Array<V1AccountFriend$Outbound | null> | null;
 };
 
 /** @internal */
@@ -49,7 +49,7 @@ export const V1AccountFriendsResponseBody$outboundSchema: z.ZodType<
   V1AccountFriendsResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  friends: z.nullable(z.array(V1AccountFriend$outboundSchema)),
+  friends: z.nullable(z.array(z.nullable(V1AccountFriend$outboundSchema))),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

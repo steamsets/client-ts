@@ -37,7 +37,7 @@ export type V1AccountLeaderboardResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  accounts: Array<V1AccountLeaderboardAccount> | null;
+  accounts: Array<V1AccountLeaderboardAccount | null> | null;
   app?: V1LeaderboardAppInfo | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
   /**
@@ -59,7 +59,9 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  accounts: z.nullable(z.array(V1AccountLeaderboardAccount$inboundSchema)),
+  accounts: z.nullable(
+    z.array(z.nullable(V1AccountLeaderboardAccount$inboundSchema)),
+  ),
   app: z.nullable(V1LeaderboardAppInfo$inboundSchema).optional(),
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$inboundSchema).optional(),
   hiddenRanks: z.nullable(z.array(z.number().int())).optional(),
@@ -76,7 +78,7 @@ export const V1AccountLeaderboardResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountLeaderboardResponseBody$Outbound = {
   $schema?: string | undefined;
-  accounts: Array<V1AccountLeaderboardAccount$Outbound> | null;
+  accounts: Array<V1AccountLeaderboardAccount$Outbound | null> | null;
   app?: V1LeaderboardAppInfo$Outbound | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo$Outbound | null | undefined;
   hiddenRanks?: Array<number> | null | undefined;
@@ -92,7 +94,9 @@ export const V1AccountLeaderboardResponseBody$outboundSchema: z.ZodType<
   V1AccountLeaderboardResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  accounts: z.nullable(z.array(V1AccountLeaderboardAccount$outboundSchema)),
+  accounts: z.nullable(
+    z.array(z.nullable(V1AccountLeaderboardAccount$outboundSchema)),
+  ),
   app: z.nullable(V1LeaderboardAppInfo$outboundSchema).optional(),
   badgeInfo: z.nullable(V1LeaderboardBadgeInfo$outboundSchema).optional(),
   hiddenRanks: z.nullable(z.array(z.number().int())).optional(),

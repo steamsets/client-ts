@@ -74,7 +74,7 @@ export type V1AccountLeaderboardRequestBody = {
   /**
    * The location(s)to get the leaderboard for, otherwise global
    */
-  location?: Array<V1LeaderboardLocation> | null | undefined;
+  location?: Array<V1LeaderboardLocation | null> | null | undefined;
   /**
    * The start index
    */
@@ -115,7 +115,8 @@ export const V1AccountLeaderboardRequestBody$inboundSchema: z.ZodType<
   end: z.nullable(z.number().int()).optional(),
   goToLeaderboardRank: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$inboundSchema,
-  location: z.nullable(z.array(V1LeaderboardLocation$inboundSchema)).optional(),
+  location: z.nullable(z.array(z.nullable(V1LeaderboardLocation$inboundSchema)))
+    .optional(),
   start: z.nullable(z.number().int()).optional(),
 });
 
@@ -126,7 +127,7 @@ export type V1AccountLeaderboardRequestBody$Outbound = {
   end?: number | null | undefined;
   goToLeaderboardRank?: number | null | undefined;
   leaderboard: string;
-  location?: Array<V1LeaderboardLocation$Outbound> | null | undefined;
+  location?: Array<V1LeaderboardLocation$Outbound | null> | null | undefined;
   start?: number | null | undefined;
 };
 
@@ -141,8 +142,9 @@ export const V1AccountLeaderboardRequestBody$outboundSchema: z.ZodType<
   end: z.nullable(z.number().int()).optional(),
   goToLeaderboardRank: z.nullable(z.number().int()).optional(),
   leaderboard: V1AccountLeaderboardRequestBodyLeaderboard$outboundSchema,
-  location: z.nullable(z.array(V1LeaderboardLocation$outboundSchema))
-    .optional(),
+  location: z.nullable(
+    z.array(z.nullable(V1LeaderboardLocation$outboundSchema)),
+  ).optional(),
   start: z.nullable(z.number().int()).optional(),
 });
 

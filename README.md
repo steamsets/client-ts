@@ -107,7 +107,6 @@ run();
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [appV1ListBadges](docs/sdks/badge/README.md#appv1listbadges)
 * [getTags](docs/sdks/badge/README.md#gettags)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -599,7 +598,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appAppV1ListBadges`](docs/sdks/app/README.md#appv1listbadges)
-- [`badgeAppV1ListBadges`](docs/sdks/badge/README.md#appv1listbadges)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesBookmark`](docs/sdks/badges/README.md#bookmark)
 - [`badgesGetBookmarks`](docs/sdks/badges/README.md#getbookmarks)

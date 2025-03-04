@@ -35,6 +35,9 @@ export type V1AppBadge = {
   isSale: boolean;
   lastCompletion: Date | null;
   name: string;
+  /**
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   */
   price: number;
   scarcity: number;
   steamId: number;

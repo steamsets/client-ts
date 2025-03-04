@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * The Image Type
  */
-export const V1UploadedImageType = {
+export const Type = {
   Avatar: "avatar",
   Background: "background",
   MiniBackground: "mini_background",
@@ -21,7 +21,7 @@ export const V1UploadedImageType = {
 /**
  * The Image Type
  */
-export type V1UploadedImageType = ClosedEnum<typeof V1UploadedImageType>;
+export type Type = ClosedEnum<typeof Type>;
 
 export type V1UploadedImage = {
   /**
@@ -31,28 +31,27 @@ export type V1UploadedImage = {
   /**
    * The Image Type
    */
-  type: V1UploadedImageType;
+  type: Type;
 };
 
 /** @internal */
-export const V1UploadedImageType$inboundSchema: z.ZodNativeEnum<
-  typeof V1UploadedImageType
-> = z.nativeEnum(V1UploadedImageType);
+export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
+  Type,
+);
 
 /** @internal */
-export const V1UploadedImageType$outboundSchema: z.ZodNativeEnum<
-  typeof V1UploadedImageType
-> = V1UploadedImageType$inboundSchema;
+export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> =
+  Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1UploadedImageType$ {
-  /** @deprecated use `V1UploadedImageType$inboundSchema` instead. */
-  export const inboundSchema = V1UploadedImageType$inboundSchema;
-  /** @deprecated use `V1UploadedImageType$outboundSchema` instead. */
-  export const outboundSchema = V1UploadedImageType$outboundSchema;
+export namespace Type$ {
+  /** @deprecated use `Type$inboundSchema` instead. */
+  export const inboundSchema = Type$inboundSchema;
+  /** @deprecated use `Type$outboundSchema` instead. */
+  export const outboundSchema = Type$outboundSchema;
 }
 
 /** @internal */
@@ -62,7 +61,7 @@ export const V1UploadedImage$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   data: z.string(),
-  type: V1UploadedImageType$inboundSchema,
+  type: Type$inboundSchema,
 });
 
 /** @internal */
@@ -78,7 +77,7 @@ export const V1UploadedImage$outboundSchema: z.ZodType<
   V1UploadedImage
 > = z.object({
   data: z.string(),
-  type: V1UploadedImageType$outboundSchema,
+  type: Type$outboundSchema,
 });
 
 /**

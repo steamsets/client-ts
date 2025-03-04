@@ -6,30 +6,29 @@
 import { Badge } from "@steamsets/client-ts/models/components";
 
 let value: Badge = {
-  appId: 896672,
+  appId: 20651,
   appImage: "<value>",
   appName: "<value>",
-  bookmarks: 990339,
+  bookmarks: 758379,
   colors: [
     "<value>",
   ],
   designs: [
     "<value>",
   ],
-  firstCompletion: 216897,
-  highestLevel: 663078,
+  firstCompletion: 320017,
+  highestLevel: 383464,
   id: "<id>",
-  image: "https://picsum.photos/seed/nAPCSg/1054/83",
+  image: "https://picsum.photos/seed/gNbXGdWJfd/2353/3324",
   isEvent: false,
   isFoil: false,
   isSale: false,
-  lastCompletion: 798047,
-  level: 185636,
+  lastCompletion: 518201,
+  level: 25662,
   name: "<value>",
-  price: 952792,
-  scarcity: 687488,
-  steamId: 215507,
-  xp: 9473.71,
+  scarcity: 207470,
+  steamId: 424685,
+  xp: 3741.7,
 };
 ```
 
@@ -53,7 +52,6 @@ let value: Badge = {
 | `lastCompletion`   | *number*           | :heavy_check_mark: | N/A                |
 | `level`            | *number*           | :heavy_check_mark: | N/A                |
 | `name`             | *string*           | :heavy_check_mark: | N/A                |
-| `price`            | *number*           | :heavy_check_mark: | N/A                |
 | `scarcity`         | *number*           | :heavy_check_mark: | N/A                |
 | `steamId`          | *number*           | :heavy_check_mark: | N/A                |
 | `xp`               | *number*           | :heavy_check_mark: | N/A                |
