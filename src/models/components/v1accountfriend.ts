@@ -54,6 +54,8 @@ export type Privacy = ClosedEnum<typeof Privacy>;
 export type V1AccountFriend = {
   /**
    * The cost of an app
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   appCost: number;
   /**
@@ -96,6 +98,8 @@ export type V1AccountFriend = {
   economyBan: string;
   /**
    * The cost of a foil badge
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   foilBadgeCost: number;
   /**
@@ -121,6 +125,8 @@ export type V1AccountFriend = {
   name: string;
   /**
    * The cost of a normal badge
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   normalBadgeCost: number;
   /**

@@ -101,14 +101,14 @@ export class SteamSets extends ClientSDK {
     return (this._events ??= new Events(this._options));
   }
 
-  private _badge?: Badge;
-  get badge(): Badge {
-    return (this._badge ??= new Badge(this._options));
-  }
-
   private _app?: App;
   get app(): App {
     return (this._app ??= new App(this._options));
+  }
+
+  private _badge?: Badge;
+  get badge(): Badge {
+    return (this._badge ??= new Badge(this._options));
   }
 
   private _leaderboard?: Leaderboard;
