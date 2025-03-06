@@ -3,6 +3,7 @@
  */
 
 import { internalAccountV1GetMeta } from "../funcs/internalAccountV1GetMeta.js";
+import { internalBadgeV1TagsSuggest } from "../funcs/internalBadgeV1TagsSuggest.js";
 import { internalCheck } from "../funcs/internalCheck.js";
 import { internalCreateDeveloperApp } from "../funcs/internalCreateDeveloperApp.js";
 import { internalDeleteDeveloperApp } from "../funcs/internalDeleteDeveloperApp.js";
@@ -110,6 +111,17 @@ export class Internal extends ClientSDK {
   ): Promise<operations.BadgeV1TagsResponse> {
     return unwrapAsync(internalGetTags(
       this,
+      options,
+    ));
+  }
+
+  async badgeV1TagsSuggest(
+    request: components.V1BadgeTagsSuggestRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeV1TagsSuggestResponse> {
+    return unwrapAsync(internalBadgeV1TagsSuggest(
+      this,
+      request,
       options,
     ));
   }

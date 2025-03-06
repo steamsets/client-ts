@@ -108,6 +108,7 @@ run();
 ### [badge](docs/sdks/badge/README.md)
 
 * [getTags](docs/sdks/badge/README.md#gettags)
+* [badgeV1TagsSuggest](docs/sdks/badge/README.md#badgev1tagssuggest)
 
 ### [badges](docs/sdks/badges/README.md)
 
@@ -178,6 +179,7 @@ run();
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
 * [getTags](docs/sdks/internal/README.md#gettags)
+* [badgeV1TagsSuggest](docs/sdks/internal/README.md#badgev1tagssuggest)
 * [leaderboardV1GetAccountMeta](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
 * [check](docs/sdks/internal/README.md#check) - Liveness check
 
@@ -598,6 +600,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appAppV1ListBadges`](docs/sdks/app/README.md#appv1listbadges)
+- [`badgeBadgeV1TagsSuggest`](docs/sdks/badge/README.md#badgev1tagssuggest)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesBookmark`](docs/sdks/badges/README.md#bookmark)
 - [`badgesGetBookmarks`](docs/sdks/badges/README.md#getbookmarks)
@@ -634,6 +637,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`imagesUpdate`](docs/sdks/images/README.md#update)
 - [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
 - [`internalAccountV1GetMeta`](docs/sdks/internal/README.md#accountv1getmeta)
+- [`internalBadgeV1TagsSuggest`](docs/sdks/internal/README.md#badgev1tagssuggest)
 - [`internalCheck`](docs/sdks/internal/README.md#check) - Liveness check
 - [`internalCreateDeveloperApp`](docs/sdks/internal/README.md#createdeveloperapp)
 - [`internalDeleteDeveloperApp`](docs/sdks/internal/README.md#deletedeveloperapp)
