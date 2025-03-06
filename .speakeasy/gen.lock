@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: cf8925b69fc7e512b8153a5ffb3f55d0
+  docChecksum: 9a60208f0841c2cff4457cce3732a035
   docVersion: 1.0.0
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.19.0
-  configChecksum: 816ce9d758e4484fe4453af1f3fce4cb
+  speakeasyVersion: 1.513.0
+  generationVersion: 2.545.1
+  releaseVersion: 0.19.1
+  configChecksum: c27152881353d89c589557ba934a26df
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -65,6 +65,7 @@ generatedFiles:
   - docs/models/components/accountsearchvanitystructtype.md
   - docs/models/components/appprivacy.md
   - docs/models/components/badge.md
+  - docs/models/components/badgesuggesttags.md
   - docs/models/components/bestleaderboardrank.md
   - docs/models/components/by.md
   - docs/models/components/chosenrole.md
@@ -165,6 +166,7 @@ generatedFiles:
   - docs/models/components/v1badgetagrequestbody.md
   - docs/models/components/v1badgetagresponsebody.md
   - docs/models/components/v1badgetagsresponsebody.md
+  - docs/models/components/v1badgetagssuggestrequestbody.md
   - docs/models/components/v1connectrequestbody.md
   - docs/models/components/v1connectresponsebody.md
   - docs/models/components/v1createsessionbody.md
@@ -269,6 +271,7 @@ generatedFiles:
   - docs/models/operations/badgev1searchresponse.md
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
+  - docs/models/operations/badgev1tagssuggestresponse.md
   - docs/models/operations/leaderboardv1getaccountmetaresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
   - docs/models/operations/leaderboardv1getbadgesresponse.md
@@ -322,6 +325,7 @@ generatedFiles:
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
   - src/funcs/appAppV1ListBadges.ts
+  - src/funcs/badgeBadgeV1TagsSuggest.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgesBookmark.ts
   - src/funcs/badgesGetBookmarks.ts
@@ -358,6 +362,7 @@ generatedFiles:
   - src/funcs/imagesUpdate.ts
   - src/funcs/imagesUploadImages.ts
   - src/funcs/internalAccountV1GetMeta.ts
+  - src/funcs/internalBadgeV1TagsSuggest.ts
   - src/funcs/internalCheck.ts
   - src/funcs/internalCreateDeveloperApp.ts
   - src/funcs/internalDeleteDeveloperApp.ts
@@ -410,6 +415,7 @@ generatedFiles:
   - src/models/components/accountsearchidstruct.ts
   - src/models/components/accountsearchvanitystruct.ts
   - src/models/components/badge.ts
+  - src/models/components/badgesuggesttags.ts
   - src/models/components/bestleaderboardrank.ts
   - src/models/components/chosenrole.ts
   - src/models/components/city.ts
@@ -486,6 +492,7 @@ generatedFiles:
   - src/models/components/v1badgetagrequestbody.ts
   - src/models/components/v1badgetagresponsebody.ts
   - src/models/components/v1badgetagsresponsebody.ts
+  - src/models/components/v1badgetagssuggestrequestbody.ts
   - src/models/components/v1connectrequestbody.ts
   - src/models/components/v1connectresponsebody.ts
   - src/models/components/v1createsessionbody.ts
@@ -583,6 +590,7 @@ generatedFiles:
   - src/models/operations/badgev1search.ts
   - src/models/operations/badgev1tag.ts
   - src/models/operations/badgev1tags.ts
+  - src/models/operations/badgev1tagssuggest.ts
   - src/models/operations/index.ts
   - src/models/operations/leaderboardv1getaccount.ts
   - src/models/operations/leaderboardv1getaccountmeta.ts
@@ -1157,6 +1165,17 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppBadgeListResponseBody.json", "badges": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 897833, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 848136, "baseXp": 577532, "firstCompletion": "2023-03-21T15:35:48.066Z", "highestLevel": 426705, "isEvent": true, "isFoil": true, "isSale": false, "lastCompletion": "2023-06-20T14:27:19.367Z", "name": "<value>", "price": 353088, "scarcity": 709651, "steamId": 436264}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.tags.suggest:
+    speakeasy-default-badge-v1-tags-suggest:
+      requestBody:
+        application/json: {"badgeId": "<id>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": ["<value>", "<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

@@ -45,6 +45,7 @@ export * from "./appv1listbadges.js";
 export * from "./badgev1search.js";
 export * from "./badgev1tag.js";
 export * from "./badgev1tags.js";
+export * from "./badgev1tagssuggest.js";
 export * from "./leaderboardv1getaccount.js";
 export * from "./leaderboardv1getaccountmeta.js";
 export * from "./leaderboardv1getbadges.js";
