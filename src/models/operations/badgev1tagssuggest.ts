@@ -15,6 +15,7 @@ export type BadgeV1TagsSuggestResponse = {
    * OK
    */
   badgeSuggestTags?: components.BadgeSuggestTags | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -25,10 +26,12 @@ export const BadgeV1TagsSuggestResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   BadgeSuggestTags: components.BadgeSuggestTags$inboundSchema.optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "BadgeSuggestTags": "badgeSuggestTags",
+    "Headers": "headers",
   });
 });
 
@@ -36,6 +39,7 @@ export const BadgeV1TagsSuggestResponse$inboundSchema: z.ZodType<
 export type BadgeV1TagsSuggestResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   BadgeSuggestTags?: components.BadgeSuggestTags$Outbound | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -46,10 +50,12 @@ export const BadgeV1TagsSuggestResponse$outboundSchema: z.ZodType<
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   badgeSuggestTags: components.BadgeSuggestTags$outboundSchema.optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     badgeSuggestTags: "BadgeSuggestTags",
+    headers: "Headers",
   });
 });
 
