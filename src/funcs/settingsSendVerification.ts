@@ -167,7 +167,6 @@ async function $do(
     M.nil(
       204,
       operations.AccountV1SettingsEmailSendVerificationResponse$inboundSchema,
-      { hdrs: true },
     ),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

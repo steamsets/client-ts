@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1QueueResponse$inboundSchema, { hdrs: true }),
+    M.nil(204, operations.AccountV1QueueResponse$inboundSchema),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

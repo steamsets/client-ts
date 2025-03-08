@@ -161,7 +161,6 @@ async function $do(
     | ConnectionError
   >(
     M.json(200, operations.BadgeV1TagsSuggestResponse$inboundSchema, {
-      hdrs: true,
       key: "BadgeSuggestTags",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

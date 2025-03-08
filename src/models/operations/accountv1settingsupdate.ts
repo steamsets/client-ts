@@ -16,7 +16,6 @@ export type AccountV1SettingsUpdateRequest = {
 
 export type AccountV1SettingsUpdateResponse = {
   httpMeta: components.HTTPMetadata;
-  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -97,18 +96,15 @@ export const AccountV1SettingsUpdateResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsUpdateResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -118,11 +114,9 @@ export const AccountV1SettingsUpdateResponse$outboundSchema: z.ZodType<
   AccountV1SettingsUpdateResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    headers: "Headers",
   });
 });
 

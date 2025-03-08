@@ -11,7 +11,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountV1SettingsEmailVerifyResponse = {
   httpMeta: components.HTTPMetadata;
-  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -21,18 +20,15 @@ export const AccountV1SettingsEmailVerifyResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsEmailVerifyResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -42,11 +38,9 @@ export const AccountV1SettingsEmailVerifyResponse$outboundSchema: z.ZodType<
   AccountV1SettingsEmailVerifyResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    headers: "Headers",
   });
 });
 

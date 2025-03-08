@@ -159,9 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1SettingsUpdateRoleResponse$inboundSchema, {
-      hdrs: true,
-    }),
+    M.nil(204, operations.AccountV1SettingsUpdateRoleResponse$inboundSchema),
     M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

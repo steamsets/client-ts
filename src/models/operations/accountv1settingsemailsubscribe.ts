@@ -16,7 +16,6 @@ export type AccountV1SettingsEmailSubscribeRequest = {
 
 export type AccountV1SettingsEmailSubscribeResponse = {
   httpMeta: components.HTTPMetadata;
-  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -102,18 +101,15 @@ export const AccountV1SettingsEmailSubscribeResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "Headers": "headers",
   });
 });
 
 /** @internal */
 export type AccountV1SettingsEmailSubscribeResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
-  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -123,11 +119,9 @@ export const AccountV1SettingsEmailSubscribeResponse$outboundSchema: z.ZodType<
   AccountV1SettingsEmailSubscribeResponse
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
-  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
-    headers: "Headers",
   });
 });
 
