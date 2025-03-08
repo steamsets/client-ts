@@ -14,7 +14,7 @@ import { accountGetFriends } from "../funcs/accountGetFriends.js";
 import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
-import { accountLeaderboardV1GetAccountMeta } from "../funcs/accountLeaderboardV1GetAccountMeta.js";
+import { accountLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/accountLeaderboardV1GetLeaderboardAccountMeta.js";
 import { accountUpdateApp } from "../funcs/accountUpdateApp.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -175,11 +175,11 @@ export class Account extends ClientSDK {
     ));
   }
 
-  async leaderboardV1GetAccountMeta(
+  async leaderboardV1GetLeaderboardAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountMetaResponse> {
-    return unwrapAsync(accountLeaderboardV1GetAccountMeta(
+  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
+    return unwrapAsync(accountLeaderboardV1GetLeaderboardAccountMeta(
       this,
       request,
       options,

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9ea6294855df79e9936e36de16f1be9c
+  docChecksum: 3ebaebcc7df63c4b4fb5ca8c9eeeb19e
   docVersion: 1.0.0
   speakeasyVersion: 1.513.4
   generationVersion: 2.545.4
-  releaseVersion: 0.19.3
-  configChecksum: 764f1b11183f83252e4a917ae3e0f42c
+  releaseVersion: 0.19.4
+  configChecksum: 64fe81797f83c05efb0d59bccc26e161
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -272,10 +272,10 @@ generatedFiles:
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/badgev1tagssuggestresponse.md
-  - docs/models/operations/leaderboardv1getaccountmetaresponse.md
   - docs/models/operations/leaderboardv1getaccountresponse.md
   - docs/models/operations/leaderboardv1getbadgesresponse.md
   - docs/models/operations/leaderboardv1getgroupresponse.md
+  - docs/models/operations/leaderboardv1getleaderboardaccountmetaresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
   - docs/models/operations/statsv1statsgetresponse.md
@@ -317,7 +317,7 @@ generatedFiles:
   - src/funcs/accountGetInfo.ts
   - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetStaff.ts
-  - src/funcs/accountLeaderboardV1GetAccountMeta.ts
+  - src/funcs/accountLeaderboardV1GetLeaderboardAccountMeta.ts
   - src/funcs/accountUpdateApp.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountsQueue.ts
@@ -370,13 +370,13 @@ generatedFiles:
   - src/funcs/internalGetAccount.ts
   - src/funcs/internalGetStaff.ts
   - src/funcs/internalGetTags.ts
-  - src/funcs/internalLeaderboardV1GetAccountMeta.ts
+  - src/funcs/internalLeaderboardV1GetLeaderboardAccountMeta.ts
   - src/funcs/internalUpdateApp.ts
   - src/funcs/internalUploadImages.ts
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetBadges.ts
   - src/funcs/leaderboardGetGroup.ts
-  - src/funcs/leaderboardLeaderboardV1GetAccountMeta.ts
+  - src/funcs/leaderboardLeaderboardV1GetLeaderboardAccountMeta.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationsGet.ts
   - src/funcs/sessionCreate.ts
@@ -593,9 +593,9 @@ generatedFiles:
   - src/models/operations/badgev1tagssuggest.ts
   - src/models/operations/index.ts
   - src/models/operations/leaderboardv1getaccount.ts
-  - src/models/operations/leaderboardv1getaccountmeta.ts
   - src/models/operations/leaderboardv1getbadges.ts
   - src/models/operations/leaderboardv1getgroup.ts
+  - src/models/operations/leaderboardv1getleaderboardaccountmeta.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
   - src/models/operations/statsv1statsget.ts
@@ -1177,6 +1177,17 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": ["<value>", "<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"]}
         "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getLeaderboardAccountMeta:
+    speakeasy-default-leaderboard-v1-get-leaderboard-account-meta:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 75458, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "ideal how pfft", "title": "<value>"}
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

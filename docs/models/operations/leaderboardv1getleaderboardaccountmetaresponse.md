@@ -1,11 +1,11 @@
-# LeaderboardV1GetAccountMetaResponse
+# LeaderboardV1GetLeaderboardAccountMetaResponse
 
 ## Example Usage
 
 ```typescript
-import { LeaderboardV1GetAccountMetaResponse } from "@steamsets/client-ts/models/operations";
+import { LeaderboardV1GetLeaderboardAccountMetaResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LeaderboardV1GetAccountMetaResponse = {
+let value: LeaderboardV1GetLeaderboardAccountMetaResponse = {
   httpMeta: {
     response: new Response("{\"message\": \"hello world\"}", {
       headers: { "Content-Type": "application/json" },

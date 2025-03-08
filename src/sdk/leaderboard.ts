@@ -5,7 +5,7 @@
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetBadges } from "../funcs/leaderboardGetBadges.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
-import { leaderboardLeaderboardV1GetAccountMeta } from "../funcs/leaderboardLeaderboardV1GetAccountMeta.js";
+import { leaderboardLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/leaderboardLeaderboardV1GetLeaderboardAccountMeta.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -23,11 +23,11 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
-  async leaderboardV1GetAccountMeta(
+  async leaderboardV1GetLeaderboardAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountMetaResponse> {
-    return unwrapAsync(leaderboardLeaderboardV1GetAccountMeta(
+  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
+    return unwrapAsync(leaderboardLeaderboardV1GetLeaderboardAccountMeta(
       this,
       request,
       options,
