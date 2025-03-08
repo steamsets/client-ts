@@ -8,7 +8,7 @@ Any requests that is somehow used for getting leaderboard data.
 ### Available Operations
 
 * [getAccount](#getaccount)
-* [leaderboardV1GetAccountMeta](#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](#leaderboardv1getleaderboardaccountmeta)
 * [getBadges](#getbadges)
 * [getGroup](#getgroup)
 
@@ -136,7 +136,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardV1GetAccountMeta
+## leaderboardV1GetLeaderboardAccountMeta
 
 ### Example Usage
 
@@ -148,16 +148,28 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardV1GetAccountMeta({
+  const result = await steamSets.leaderboard.leaderboardV1GetLeaderboardAccountMeta({
     app: {
       appId: 730,
     },
     badge: {
-      id: 335243,
+      id: 75458,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -180,7 +192,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardV1GetAccountMeta } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetAccountMeta.js";
+import { leaderboardLeaderboardV1GetLeaderboardAccountMeta } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetLeaderboardAccountMeta.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -189,16 +201,28 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardV1GetAccountMeta(steamSets, {
+  const res = await leaderboardLeaderboardV1GetLeaderboardAccountMeta(steamSets, {
     app: {
       appId: 730,
     },
     badge: {
-      id: 335243,
+      id: 75458,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -232,7 +256,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardV1GetAccountMetaResponse](../../models/operations/leaderboardv1getaccountmetaresponse.md)\>**
+**Promise\<[operations.LeaderboardV1GetLeaderboardAccountMetaResponse](../../models/operations/leaderboardv1getleaderboardaccountmetaresponse.md)\>**
 
 ### Errors
 

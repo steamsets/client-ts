@@ -11,7 +11,7 @@ import { internalDeleteImages } from "../funcs/internalDeleteImages.js";
 import { internalGetAccount } from "../funcs/internalGetAccount.js";
 import { internalGetStaff } from "../funcs/internalGetStaff.js";
 import { internalGetTags } from "../funcs/internalGetTags.js";
-import { internalLeaderboardV1GetAccountMeta } from "../funcs/internalLeaderboardV1GetAccountMeta.js";
+import { internalLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/internalLeaderboardV1GetLeaderboardAccountMeta.js";
 import { internalUpdateApp } from "../funcs/internalUpdateApp.js";
 import { internalUploadImages } from "../funcs/internalUploadImages.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -126,11 +126,11 @@ export class Internal extends ClientSDK {
     ));
   }
 
-  async leaderboardV1GetAccountMeta(
+  async leaderboardV1GetLeaderboardAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountMetaResponse> {
-    return unwrapAsync(internalLeaderboardV1GetAccountMeta(
+  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
+    return unwrapAsync(internalLeaderboardV1GetLeaderboardAccountMeta(
       this,
       request,
       options,

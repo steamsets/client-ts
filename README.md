@@ -89,7 +89,7 @@ run();
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [getAccount](docs/sdks/account/README.md#getaccount)
-* [leaderboardV1GetAccountMeta](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/account/README.md#leaderboardv1getleaderboardaccountmeta)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -180,13 +180,13 @@ run();
 * [getAccount](docs/sdks/internal/README.md#getaccount)
 * [getTags](docs/sdks/internal/README.md#gettags)
 * [badgeV1TagsSuggest](docs/sdks/internal/README.md#badgev1tagssuggest)
-* [leaderboardV1GetAccountMeta](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/internal/README.md#leaderboardv1getleaderboardaccountmeta)
 * [check](docs/sdks/internal/README.md#check) - Liveness check
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount)
-* [leaderboardV1GetAccountMeta](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/leaderboard/README.md#leaderboardv1getleaderboardaccountmeta)
 * [getBadges](docs/sdks/leaderboard/README.md#getbadges)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 
@@ -592,7 +592,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
 - [`accountGetLeaderboardHistory`](docs/sdks/account/README.md#getleaderboardhistory)
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
-- [`accountLeaderboardV1GetAccountMeta`](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
+- [`accountLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/account/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateApp`](docs/sdks/account/README.md#updateapp)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
@@ -645,13 +645,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`internalGetAccount`](docs/sdks/internal/README.md#getaccount)
 - [`internalGetStaff`](docs/sdks/internal/README.md#getstaff)
 - [`internalGetTags`](docs/sdks/internal/README.md#gettags)
-- [`internalLeaderboardV1GetAccountMeta`](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
+- [`internalLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/internal/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`internalUpdateApp`](docs/sdks/internal/README.md#updateapp)
 - [`internalUploadImages`](docs/sdks/internal/README.md#uploadimages)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
-- [`leaderboardLeaderboardV1GetAccountMeta`](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
+- [`leaderboardLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/leaderboard/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
 - [`sessionCreate`](docs/sdks/session/README.md#create)
