@@ -21,11 +21,6 @@ let value: BadgeV1TagsSuggestResponse = {
       "<value>",
     ],
   },
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
 };
 ```
 
@@ -35,4 +30,3 @@ let value: BadgeV1TagsSuggestResponse = {
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `httpMeta`                                                                 | [components.HTTPMetadata](../../models/components/httpmetadata.md)         | :heavy_check_mark:                                                         | N/A                                                                        |
 | `badgeSuggestTags`                                                         | [components.BadgeSuggestTags](../../models/components/badgesuggesttags.md) | :heavy_minus_sign:                                                         | OK                                                                         |
-| `headers`                                                                  | Record<string, *string*[]>                                                 | :heavy_check_mark:                                                         | N/A                                                                        |
