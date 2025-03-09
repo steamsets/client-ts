@@ -2,7 +2,7 @@
 
 {
   "name": "@steamsets/client-ts",
-  "version": "0.19.4",
+  "version": "0.19.5",
   "exports": {
     ".": "./src/index.ts",    
     "./models/errors": "./src/models/errors/index.ts",    
