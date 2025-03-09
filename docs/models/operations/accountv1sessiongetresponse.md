@@ -25,8 +25,8 @@ let value: AccountV1SessionGetResponse = {
     ],
     roles: [
       {
-        rating: 697429,
-        role: "emerald",
+        rating: 677817,
+        role: "partner",
       },
     ],
     sessionData: {

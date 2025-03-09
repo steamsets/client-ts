@@ -5,7 +5,7 @@
 ```typescript
 import { ResourceResource } from "@steamsets/client-ts/models/components";
 
-let value: ResourceResource = "account_queues";
+let value: ResourceResource = "developer_apps";
 ```
 
 ## Values

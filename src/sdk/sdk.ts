@@ -11,13 +11,8 @@ import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Connection } from "./connection.js";
 import { Connections } from "./connections.js";
-import { Data } from "./data.js";
-import { Developer } from "./developer.js";
-import { Event } from "./event.js";
 import { Events } from "./events.js";
-import { External } from "./external.js";
 import { Images } from "./images.js";
-import { Internal } from "./internal.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
 import { Locations } from "./locations.js";
@@ -42,16 +37,6 @@ export class SteamSets extends ClientSDK {
     return (this._account ??= new Account(this._options));
   }
 
-  private _developer?: Developer;
-  get developer(): Developer {
-    return (this._developer ??= new Developer(this._options));
-  }
-
-  private _internal?: Internal;
-  get internal(): Internal {
-    return (this._internal ??= new Internal(this._options));
-  }
-
   private _session?: Session;
   get session(): Session {
     return (this._session ??= new Session(this._options));
@@ -60,11 +45,6 @@ export class SteamSets extends ClientSDK {
   private _connection?: Connection;
   get connection(): Connection {
     return (this._connection ??= new Connection(this._options));
-  }
-
-  private _images?: Images;
-  get images(): Images {
-    return (this._images ??= new Images(this._options));
   }
 
   private _sessions?: Sessions;
@@ -77,14 +57,9 @@ export class SteamSets extends ClientSDK {
     return (this._settings ??= new Settings(this._options));
   }
 
-  private _data?: Data;
-  get data(): Data {
-    return (this._data ??= new Data(this._options));
-  }
-
-  private _external?: External;
-  get external(): External {
-    return (this._external ??= new External(this._options));
+  private _images?: Images;
+  get images(): Images {
+    return (this._images ??= new Images(this._options));
   }
 
   private _accounts?: Accounts;
@@ -100,11 +75,6 @@ export class SteamSets extends ClientSDK {
   private _events?: Events;
   get events(): Events {
     return (this._events ??= new Events(this._options));
-  }
-
-  private _event?: Event;
-  get event(): Event {
-    return (this._event ??= new Event(this._options));
   }
 
   private _app?: App;

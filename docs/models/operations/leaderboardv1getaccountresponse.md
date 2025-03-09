@@ -29,7 +29,7 @@ let value: LeaderboardV1GetAccountResponse = {
           xp: 123456,
         },
         badges: 123456,
-        bans: 223924,
+        bans: 881736,
         city: {
           id: 1,
           name: "Bad Krozingen",
@@ -45,7 +45,7 @@ let value: LeaderboardV1GetAccountResponse = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        gameBans: 345352,
+        gameBans: 692532,
         level: 123456,
         name: "steamsets",
         normalBadgeCost: 123456,
@@ -61,8 +61,8 @@ let value: LeaderboardV1GetAccountResponse = {
         },
         roles: [
           {
-            rating: 928082,
-            role: "contributor",
+            rating: 725255,
+            role: "sapphire",
           },
         ],
         state: {
@@ -70,10 +70,10 @@ let value: LeaderboardV1GetAccountResponse = {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 31838,
+        steamSetsScore: 956084,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 164694,
+        vacBans: 643990,
         xp: 123456,
       },
     ],
@@ -117,7 +117,7 @@ let value: LeaderboardV1GetAccountResponse = {
         xp: 123456,
       },
       badges: 123456,
-      bans: 621479,
+      bans: 423855,
       city: {
         id: 1,
         name: "Bad Krozingen",
@@ -133,7 +133,7 @@ let value: LeaderboardV1GetAccountResponse = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 577229,
+      gameBans: 606393,
       level: 123456,
       name: "steamsets",
       normalBadgeCost: 123456,
@@ -149,8 +149,8 @@ let value: LeaderboardV1GetAccountResponse = {
       },
       roles: [
         {
-          rating: 237893,
-          role: "top_100",
+          rating: 19193,
+          role: "owner",
         },
       ],
       state: {
@@ -158,10 +158,10 @@ let value: LeaderboardV1GetAccountResponse = {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 613966,
+      steamSetsScore: 660174,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 535633,
+      vacBans: 290077,
       xp: 123456,
     },
   },

@@ -6,7 +6,6 @@ import { accountAccountV1GetMeta } from "../funcs/accountAccountV1GetMeta.js";
 import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
 import { accountDeleteDeveloperApp } from "../funcs/accountDeleteDeveloperApp.js";
 import { accountDeleteImages } from "../funcs/accountDeleteImages.js";
-import { accountGetAccount } from "../funcs/accountGetAccount.js";
 import { accountGetApps } from "../funcs/accountGetApps.js";
 import { accountGetBadges } from "../funcs/accountGetBadges.js";
 import { accountGetDataPoints } from "../funcs/accountGetDataPoints.js";
@@ -14,7 +13,6 @@ import { accountGetFriends } from "../funcs/accountGetFriends.js";
 import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetLeaderboardHistory } from "../funcs/accountGetLeaderboardHistory.js";
 import { accountGetStaff } from "../funcs/accountGetStaff.js";
-import { accountLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/accountLeaderboardV1GetLeaderboardAccountMeta.js";
 import { accountUpdateApp } from "../funcs/accountUpdateApp.js";
 import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -158,28 +156,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountV1ImagesUploadResponse> {
     return unwrapAsync(accountUploadImages(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async getAccount(
-    request: components.AccountSearch,
-    options?: RequestOptions,
-  ): Promise<operations.AdminV1GetAccountResponse> {
-    return unwrapAsync(accountGetAccount(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async leaderboardV1GetLeaderboardAccountMeta(
-    request: components.V1LeaderboardAccountMetaRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
-    return unwrapAsync(accountLeaderboardV1GetLeaderboardAccountMeta(
       this,
       request,
       options,
