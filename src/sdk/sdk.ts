@@ -4,77 +4,23 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
-import { Accounts } from "./accounts.js";
 import { Admin } from "./admin.js";
 import { App } from "./app.js";
 import { Badge } from "./badge.js";
-import { Badges } from "./badges.js";
-import { Connection } from "./connection.js";
-import { Connections } from "./connections.js";
-import { Events } from "./events.js";
-import { Images } from "./images.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Liveness } from "./liveness.js";
-import { Locations } from "./locations.js";
-import { Session } from "./session.js";
-import { Sessions } from "./sessions.js";
-import { Settings } from "./settings.js";
+import { Location } from "./location.js";
 import { Stats } from "./stats.js";
 
 export class SteamSets extends ClientSDK {
-  private _badges?: Badges;
-  get badges(): Badges {
-    return (this._badges ??= new Badges(this._options));
-  }
-
-  private _connections?: Connections;
-  get connections(): Connections {
-    return (this._connections ??= new Connections(this._options));
-  }
-
   private _account?: Account;
   get account(): Account {
     return (this._account ??= new Account(this._options));
   }
 
-  private _session?: Session;
-  get session(): Session {
-    return (this._session ??= new Session(this._options));
-  }
-
-  private _connection?: Connection;
-  get connection(): Connection {
-    return (this._connection ??= new Connection(this._options));
-  }
-
-  private _sessions?: Sessions;
-  get sessions(): Sessions {
-    return (this._sessions ??= new Sessions(this._options));
-  }
-
-  private _settings?: Settings;
-  get settings(): Settings {
-    return (this._settings ??= new Settings(this._options));
-  }
-
-  private _images?: Images;
-  get images(): Images {
-    return (this._images ??= new Images(this._options));
-  }
-
-  private _accounts?: Accounts;
-  get accounts(): Accounts {
-    return (this._accounts ??= new Accounts(this._options));
-  }
-
   private _admin?: Admin;
   get admin(): Admin {
     return (this._admin ??= new Admin(this._options));
-  }
-
-  private _events?: Events;
-  get events(): Events {
-    return (this._events ??= new Events(this._options));
   }
 
   private _app?: App;
@@ -92,9 +38,9 @@ export class SteamSets extends ClientSDK {
     return (this._leaderboard ??= new Leaderboard(this._options));
   }
 
-  private _locations?: Locations;
-  get locations(): Locations {
-    return (this._locations ??= new Locations(this._options));
+  private _location?: Location;
+  get location(): Location {
+    return (this._location ??= new Location(this._options));
   }
 
   private _stats?: Stats;

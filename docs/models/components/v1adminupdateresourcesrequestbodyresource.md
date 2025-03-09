@@ -5,7 +5,8 @@
 ```typescript
 import { V1AdminUpdateResourcesRequestBodyResource } from "@steamsets/client-ts/models/components";
 
-let value: V1AdminUpdateResourcesRequestBodyResource = "social_links";
+let value: V1AdminUpdateResourcesRequestBodyResource =
+  "max_leaderboard_entries";
 ```
 
 ## Values

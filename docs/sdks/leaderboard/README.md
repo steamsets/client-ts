@@ -8,8 +8,7 @@ Any requests that is somehow used for getting leaderboard data.
 ### Available Operations
 
 * [getAccount](#getaccount)
-* [leaderboardV1GetLeaderboardAccountMeta](#leaderboardv1getleaderboardaccountmeta)
-* [getBadges](#getbadges)
+* [getAccountMeta](#getaccountmeta)
 * [getGroup](#getgroup)
 
 ## getAccount
@@ -136,7 +135,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardV1GetLeaderboardAccountMeta
+## getAccountMeta
 
 ### Example Usage
 
@@ -148,7 +147,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardV1GetLeaderboardAccountMeta({
+  const result = await steamSets.leaderboard.getAccountMeta({
     app: {
       appId: 730,
     },
@@ -192,7 +191,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardV1GetLeaderboardAccountMeta } from "@steamsets/client-ts/funcs/leaderboardLeaderboardV1GetLeaderboardAccountMeta.js";
+import { leaderboardGetAccountMeta } from "@steamsets/client-ts/funcs/leaderboardGetAccountMeta.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -201,7 +200,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardV1GetLeaderboardAccountMeta(steamSets, {
+  const res = await leaderboardGetAccountMeta(steamSets, {
     app: {
       appId: 730,
     },
@@ -263,77 +262,6 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 404, 422                 | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## getBadges
-
-### Example Usage
-
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.leaderboard.getBadges();
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardGetBadges } from "@steamsets/client-ts/funcs/leaderboardGetBadges.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await leaderboardGetBadges(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.LeaderboardV1GetBadgesResponse](../../models/operations/leaderboardv1getbadgesresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404                      | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

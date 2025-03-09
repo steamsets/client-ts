@@ -8,8 +8,10 @@ Any request that is related to steam badges, mostly badge search/tagging related
 ### Available Operations
 
 * [getTags](#gettags)
-* [badgeV1SearchSuggest](#badgev1searchsuggest)
-* [badgeV1TagsSuggest](#badgev1tagssuggest)
+* [search](#search)
+* [suggest](#suggest)
+* [suggestTags](#suggesttags)
+* [tag](#tag)
 
 ## getTags
 
@@ -82,7 +84,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## badgeV1SearchSuggest
+## search
 
 ### Example Usage
 
@@ -94,7 +96,93 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.badgeV1SearchSuggest({
+  const result = await steamSets.badge.search({
+    filter: "<value>",
+    query: "<value>",
+    sort: [
+      "price:asc",
+      "author:desc",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { badgeSearch } from "@steamsets/client-ts/funcs/badgeSearch.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await badgeSearch(steamSets, {
+    filter: "<value>",
+    query: "<value>",
+    sort: [
+      "price:asc",
+      "author:desc",
+    ],
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1SearchRequest](../../models/components/v1searchrequest.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.BadgeV1SearchResponse](../../models/operations/badgev1searchresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## suggest
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.badge.suggest({
     query: "<value>",
   });
 
@@ -111,7 +199,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { badgeBadgeV1SearchSuggest } from "@steamsets/client-ts/funcs/badgeBadgeV1SearchSuggest.js";
+import { badgeSuggest } from "@steamsets/client-ts/funcs/badgeSuggest.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -120,7 +208,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await badgeBadgeV1SearchSuggest(steamSets, {
+  const res = await badgeSuggest(steamSets, {
     query: "<value>",
   });
 
@@ -158,7 +246,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## badgeV1TagsSuggest
+## suggestTags
 
 ### Example Usage
 
@@ -170,7 +258,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.badge.badgeV1TagsSuggest({
+  const result = await steamSets.badge.suggestTags({
     badgeId: "<id>",
   });
 
@@ -187,7 +275,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { badgeBadgeV1TagsSuggest } from "@steamsets/client-ts/funcs/badgeBadgeV1TagsSuggest.js";
+import { badgeSuggestTags } from "@steamsets/client-ts/funcs/badgeSuggestTags.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -196,7 +284,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await badgeBadgeV1TagsSuggest(steamSets, {
+  const res = await badgeSuggestTags(steamSets, {
     badgeId: "<id>",
   });
 
@@ -225,6 +313,134 @@ run();
 ### Response
 
 **Promise\<[operations.BadgeV1TagsSuggestResponse](../../models/operations/badgev1tagssuggestresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## tag
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.badge.tag({
+    badgeId: "bdg_123",
+    colors: [
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+    ],
+    designs: [
+      {
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
+        name: "cat",
+        remove: true,
+      },
+      {
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
+        name: "cat",
+        remove: true,
+      },
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { badgeTag } from "@steamsets/client-ts/funcs/badgeTag.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await badgeTag(steamSets, {
+    badgeId: "bdg_123",
+    colors: [
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+    ],
+    designs: [
+      {
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
+        name: "cat",
+        remove: true,
+      },
+      {
+        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
+        name: "cat",
+        remove: true,
+      },
+    ],
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1BadgeTagRequestBody](../../models/components/v1badgetagrequestbody.md)                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.BadgeV1TagResponse](../../models/operations/badgev1tagresponse.md)\>**
 
 ### Errors
 

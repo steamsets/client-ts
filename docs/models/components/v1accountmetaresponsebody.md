@@ -8,7 +8,8 @@ import { V1AccountMetaResponseBody } from "@steamsets/client-ts/models/component
 let value: V1AccountMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json",
-  description: "calmly finished pace save",
+  description:
+    "phooey restfully circulate emphasize sarong in-joke oof behind gah runny",
   steamId: "<id>",
   title: "<value>",
 };

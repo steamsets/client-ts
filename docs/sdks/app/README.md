@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [appV1ListBadges](#appv1listbadges)
+* [listBadges](#listbadges)
 
-## appV1ListBadges
+## listBadges
 
 ### Example Usage
 
@@ -19,7 +19,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.app.appV1ListBadges({
+  const result = await steamSets.app.listBadges({
     appId: 701216,
   });
 
@@ -36,7 +36,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { appAppV1ListBadges } from "@steamsets/client-ts/funcs/appAppV1ListBadges.js";
+import { appListBadges } from "@steamsets/client-ts/funcs/appListBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -45,7 +45,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await appAppV1ListBadges(steamSets, {
+  const res = await appListBadges(steamSets, {
     appId: 701216,
   });
 

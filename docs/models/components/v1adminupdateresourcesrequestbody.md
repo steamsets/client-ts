@@ -13,7 +13,7 @@ let value: V1AdminUpdateResourcesRequestBody = {
     },
   ],
   resource: [
-    "auto_refresh",
+    "account_queues",
   ],
 };
 ```

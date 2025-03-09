@@ -3,15 +3,20 @@
  */
 
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
-import { leaderboardGetBadges } from "../funcs/leaderboardGetBadges.js";
+import { leaderboardGetAccountMeta } from "../funcs/leaderboardGetAccountMeta.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
-import { leaderboardLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/leaderboardLeaderboardV1GetLeaderboardAccountMeta.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { Badges } from "./badges.js";
 
 export class Leaderboard extends ClientSDK {
+  private _badges?: Badges;
+  get badges(): Badges {
+    return (this._badges ??= new Badges(this._options));
+  }
+
   async getAccount(
     request: components.V1AccountLeaderboardRequestBody,
     options?: RequestOptions,
@@ -23,22 +28,13 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
-  async leaderboardV1GetLeaderboardAccountMeta(
+  async getAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
   ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
-    return unwrapAsync(leaderboardLeaderboardV1GetLeaderboardAccountMeta(
+    return unwrapAsync(leaderboardGetAccountMeta(
       this,
       request,
-      options,
-    ));
-  }
-
-  async getBadges(
-    options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetBadgesResponse> {
-    return unwrapAsync(leaderboardGetBadges(
-      this,
       options,
     ));
   }

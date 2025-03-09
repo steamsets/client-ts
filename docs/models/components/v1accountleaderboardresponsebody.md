@@ -22,7 +22,7 @@ let value: V1AccountLeaderboardResponseBody = {
         xp: 123456,
       },
       badges: 123456,
-      bans: 240020,
+      bans: 232627,
       city: {
         id: 1,
         name: "Bad Krozingen",
@@ -38,7 +38,7 @@ let value: V1AccountLeaderboardResponseBody = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 160538,
+      gameBans: 348519,
       level: 123456,
       name: "steamsets",
       normalBadgeCost: 123456,
@@ -54,7 +54,7 @@ let value: V1AccountLeaderboardResponseBody = {
       },
       roles: [
         {
-          rating: 796392,
+          rating: 814967,
           role: "badge_scout",
         },
       ],
@@ -63,10 +63,10 @@ let value: V1AccountLeaderboardResponseBody = {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 458139,
+      steamSetsScore: 968972,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 590984,
+      vacBans: 904949,
       xp: 123456,
     },
   ],
@@ -110,7 +110,7 @@ let value: V1AccountLeaderboardResponseBody = {
       xp: 123456,
     },
     badges: 123456,
-    bans: 857723,
+    bans: 296556,
     city: {
       id: 1,
       name: "Bad Krozingen",
@@ -126,7 +126,7 @@ let value: V1AccountLeaderboardResponseBody = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 457223,
+    gameBans: 992012,
     level: 123456,
     name: "steamsets",
     normalBadgeCost: 123456,
@@ -142,8 +142,8 @@ let value: V1AccountLeaderboardResponseBody = {
     },
     roles: [
       {
-        rating: 951875,
-        role: "ruby",
+        rating: 249420,
+        role: "donator",
       },
     ],
     state: {
@@ -151,10 +151,10 @@ let value: V1AccountLeaderboardResponseBody = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 820767,
+    steamSetsScore: 950953,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 908844,
+    vacBans: 233420,
     xp: 123456,
   },
 };
