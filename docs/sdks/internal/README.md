@@ -15,9 +15,11 @@ There requests are just document for documentations sake, they are not meant to 
 * [getStaff](#getstaff)
 * [uploadImages](#uploadimages)
 * [getAccount](#getaccount)
+* [adminV1RemoveVanity](#adminv1removevanity)
 * [getTags](#gettags)
+* [badgeV1SearchSuggest](#badgev1searchsuggest)
 * [badgeV1TagsSuggest](#badgev1tagssuggest)
-* [leaderboardV1GetAccountMeta](#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](#leaderboardv1getleaderboardaccountmeta)
 * [check](#check) - Liveness check
 
 ## createDeveloperApp
@@ -637,6 +639,78 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## adminV1RemoveVanity
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.internal.adminV1RemoveVanity({});
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { internalAdminV1RemoveVanity } from "@steamsets/client-ts/funcs/internalAdminV1RemoveVanity.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await internalAdminV1RemoveVanity(steamSets, {});
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminV1RemoveVanityResponse](../../models/operations/adminv1removevanityresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 403, 404, 422, 429       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## getTags
 
 ### Example Usage
@@ -705,6 +779,82 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## badgeV1SearchSuggest
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.internal.badgeV1SearchSuggest({
+    query: "<value>",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { internalBadgeV1SearchSuggest } from "@steamsets/client-ts/funcs/internalBadgeV1SearchSuggest.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await internalBadgeV1SearchSuggest(steamSets, {
+    query: "<value>",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1BadgeSearchSuggesttRequestBody](../../models/components/v1badgesearchsuggesttrequestbody.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.BadgeV1SearchSuggestResponse](../../models/operations/badgev1searchsuggestresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -784,7 +934,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardV1GetAccountMeta
+## leaderboardV1GetLeaderboardAccountMeta
 
 ### Example Usage
 
@@ -796,16 +946,28 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.internal.leaderboardV1GetAccountMeta({
+  const result = await steamSets.internal.leaderboardV1GetLeaderboardAccountMeta({
     app: {
       appId: 730,
     },
     badge: {
-      id: 335243,
+      id: 75458,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -828,7 +990,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { internalLeaderboardV1GetAccountMeta } from "@steamsets/client-ts/funcs/internalLeaderboardV1GetAccountMeta.js";
+import { internalLeaderboardV1GetLeaderboardAccountMeta } from "@steamsets/client-ts/funcs/internalLeaderboardV1GetLeaderboardAccountMeta.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -837,16 +999,28 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await internalLeaderboardV1GetAccountMeta(steamSets, {
+  const res = await internalLeaderboardV1GetLeaderboardAccountMeta(steamSets, {
     app: {
       appId: 730,
     },
     badge: {
-      id: 335243,
+      id: 75458,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
+      {
+        city: "Bad Krozingen",
+        country: "Germany",
+        region: "Europe",
+        state: "Baden-Wurttemberg",
+      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -880,7 +1054,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardV1GetAccountMetaResponse](../../models/operations/leaderboardv1getaccountmetaresponse.md)\>**
+**Promise\<[operations.LeaderboardV1GetLeaderboardAccountMetaResponse](../../models/operations/leaderboardv1getleaderboardaccountmetaresponse.md)\>**
 
 ### Errors
 

@@ -3,6 +3,8 @@
  */
 
 import { internalAccountV1GetMeta } from "../funcs/internalAccountV1GetMeta.js";
+import { internalAdminV1RemoveVanity } from "../funcs/internalAdminV1RemoveVanity.js";
+import { internalBadgeV1SearchSuggest } from "../funcs/internalBadgeV1SearchSuggest.js";
 import { internalBadgeV1TagsSuggest } from "../funcs/internalBadgeV1TagsSuggest.js";
 import { internalCheck } from "../funcs/internalCheck.js";
 import { internalCreateDeveloperApp } from "../funcs/internalCreateDeveloperApp.js";
@@ -11,7 +13,7 @@ import { internalDeleteImages } from "../funcs/internalDeleteImages.js";
 import { internalGetAccount } from "../funcs/internalGetAccount.js";
 import { internalGetStaff } from "../funcs/internalGetStaff.js";
 import { internalGetTags } from "../funcs/internalGetTags.js";
-import { internalLeaderboardV1GetAccountMeta } from "../funcs/internalLeaderboardV1GetAccountMeta.js";
+import { internalLeaderboardV1GetLeaderboardAccountMeta } from "../funcs/internalLeaderboardV1GetLeaderboardAccountMeta.js";
 import { internalUpdateApp } from "../funcs/internalUpdateApp.js";
 import { internalUploadImages } from "../funcs/internalUploadImages.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -106,11 +108,33 @@ export class Internal extends ClientSDK {
     ));
   }
 
+  async adminV1RemoveVanity(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AdminV1RemoveVanityResponse> {
+    return unwrapAsync(internalAdminV1RemoveVanity(
+      this,
+      request,
+      options,
+    ));
+  }
+
   async getTags(
     options?: RequestOptions,
   ): Promise<operations.BadgeV1TagsResponse> {
     return unwrapAsync(internalGetTags(
       this,
+      options,
+    ));
+  }
+
+  async badgeV1SearchSuggest(
+    request: components.V1BadgeSearchSuggesttRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeV1SearchSuggestResponse> {
+    return unwrapAsync(internalBadgeV1SearchSuggest(
+      this,
+      request,
       options,
     ));
   }
@@ -126,11 +150,11 @@ export class Internal extends ClientSDK {
     ));
   }
 
-  async leaderboardV1GetAccountMeta(
+  async leaderboardV1GetLeaderboardAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountMetaResponse> {
-    return unwrapAsync(internalLeaderboardV1GetAccountMeta(
+  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
+    return unwrapAsync(internalLeaderboardV1GetLeaderboardAccountMeta(
       this,
       request,
       options,
