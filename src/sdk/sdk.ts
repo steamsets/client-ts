@@ -13,6 +13,7 @@ import { Connection } from "./connection.js";
 import { Connections } from "./connections.js";
 import { Data } from "./data.js";
 import { Developer } from "./developer.js";
+import { Event } from "./event.js";
 import { Events } from "./events.js";
 import { External } from "./external.js";
 import { Images } from "./images.js";
@@ -99,6 +100,11 @@ export class SteamSets extends ClientSDK {
   private _events?: Events;
   get events(): Events {
     return (this._events ??= new Events(this._options));
+  }
+
+  private _event?: Event;
+  get event(): Event {
+    return (this._event ??= new Event(this._options));
   }
 
   private _app?: App;

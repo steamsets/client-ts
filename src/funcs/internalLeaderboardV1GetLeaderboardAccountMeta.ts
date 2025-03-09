@@ -25,13 +25,13 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function leaderboardLeaderboardV1GetAccountMeta(
+export function internalLeaderboardV1GetLeaderboardAccountMeta(
   client: SteamSetsCore,
   request: components.V1LeaderboardAccountMetaRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardV1GetAccountMetaResponse,
+    operations.LeaderboardV1GetLeaderboardAccountMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.LeaderboardV1GetAccountMetaResponse,
+      operations.LeaderboardV1GetLeaderboardAccountMetaResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -100,7 +100,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.v1.getAccountMeta",
+    operationID: "leaderboard.v1.getLeaderboardAccountMeta",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -153,7 +153,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardV1GetAccountMetaResponse,
+    operations.LeaderboardV1GetLeaderboardAccountMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -164,9 +164,11 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LeaderboardV1GetAccountMetaResponse$inboundSchema, {
-      key: "V1LeaderboardAccountMetaResponseBody",
-    }),
+    M.json(
+      200,
+      operations.LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema,
+      { key: "V1LeaderboardAccountMetaResponseBody" },
+    ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

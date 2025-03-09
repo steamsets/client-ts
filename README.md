@@ -89,7 +89,7 @@ run();
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [getAccount](docs/sdks/account/README.md#getaccount)
-* [leaderboardV1GetAccountMeta](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/account/README.md#leaderboardv1getleaderboardaccountmeta)
 
 ### [accounts](docs/sdks/accounts/README.md)
 
@@ -98,6 +98,7 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
+* [adminV1RemoveVanity](docs/sdks/admin/README.md#adminv1removevanity)
 * [updateResources](docs/sdks/admin/README.md#updateresources)
 * [updateRoles](docs/sdks/admin/README.md#updateroles)
 
@@ -108,6 +109,7 @@ run();
 ### [badge](docs/sdks/badge/README.md)
 
 * [getTags](docs/sdks/badge/README.md#gettags)
+* [badgeV1SearchSuggest](docs/sdks/badge/README.md#badgev1searchsuggest)
 * [badgeV1TagsSuggest](docs/sdks/badge/README.md#badgev1tagssuggest)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -145,6 +147,10 @@ run();
 * [deleteDeveloperApp](docs/sdks/developer/README.md#deletedeveloperapp)
 * [updateApp](docs/sdks/developer/README.md#updateapp)
 
+### [event](docs/sdks/event/README.md)
+
+* [adminV1RemoveVanity](docs/sdks/event/README.md#adminv1removevanity)
+
 ### [events](docs/sdks/events/README.md)
 
 * [get](docs/sdks/events/README.md#get)
@@ -178,15 +184,17 @@ run();
 * [getStaff](docs/sdks/internal/README.md#getstaff)
 * [uploadImages](docs/sdks/internal/README.md#uploadimages)
 * [getAccount](docs/sdks/internal/README.md#getaccount)
+* [adminV1RemoveVanity](docs/sdks/internal/README.md#adminv1removevanity)
 * [getTags](docs/sdks/internal/README.md#gettags)
+* [badgeV1SearchSuggest](docs/sdks/internal/README.md#badgev1searchsuggest)
 * [badgeV1TagsSuggest](docs/sdks/internal/README.md#badgev1tagssuggest)
-* [leaderboardV1GetAccountMeta](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/internal/README.md#leaderboardv1getleaderboardaccountmeta)
 * [check](docs/sdks/internal/README.md#check) - Liveness check
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount)
-* [leaderboardV1GetAccountMeta](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
+* [leaderboardV1GetLeaderboardAccountMeta](docs/sdks/leaderboard/README.md#leaderboardv1getleaderboardaccountmeta)
 * [getBadges](docs/sdks/leaderboard/README.md#getbadges)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 
@@ -592,14 +600,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
 - [`accountGetLeaderboardHistory`](docs/sdks/account/README.md#getleaderboardhistory)
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
-- [`accountLeaderboardV1GetAccountMeta`](docs/sdks/account/README.md#leaderboardv1getaccountmeta)
+- [`accountLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/account/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`accountsQueue`](docs/sdks/accounts/README.md#queue)
 - [`accountUpdateApp`](docs/sdks/account/README.md#updateapp)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
+- [`adminAdminV1RemoveVanity`](docs/sdks/admin/README.md#adminv1removevanity)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appAppV1ListBadges`](docs/sdks/app/README.md#appv1listbadges)
+- [`badgeBadgeV1SearchSuggest`](docs/sdks/badge/README.md#badgev1searchsuggest)
 - [`badgeBadgeV1TagsSuggest`](docs/sdks/badge/README.md#badgev1tagssuggest)
 - [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgesBookmark`](docs/sdks/badges/README.md#bookmark)
@@ -622,6 +632,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`developerCreateDeveloperApp`](docs/sdks/developer/README.md#createdeveloperapp)
 - [`developerDeleteDeveloperApp`](docs/sdks/developer/README.md#deletedeveloperapp)
 - [`developerUpdateApp`](docs/sdks/developer/README.md#updateapp)
+- [`eventAdminV1RemoveVanity`](docs/sdks/event/README.md#adminv1removevanity)
 - [`eventsGet`](docs/sdks/events/README.md#get)
 - [`eventsUpdate`](docs/sdks/events/README.md#update)
 - [`externalAppV1ListBadges`](docs/sdks/external/README.md#appv1listbadges)
@@ -637,6 +648,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`imagesUpdate`](docs/sdks/images/README.md#update)
 - [`imagesUploadImages`](docs/sdks/images/README.md#uploadimages)
 - [`internalAccountV1GetMeta`](docs/sdks/internal/README.md#accountv1getmeta)
+- [`internalAdminV1RemoveVanity`](docs/sdks/internal/README.md#adminv1removevanity)
+- [`internalBadgeV1SearchSuggest`](docs/sdks/internal/README.md#badgev1searchsuggest)
 - [`internalBadgeV1TagsSuggest`](docs/sdks/internal/README.md#badgev1tagssuggest)
 - [`internalCheck`](docs/sdks/internal/README.md#check) - Liveness check
 - [`internalCreateDeveloperApp`](docs/sdks/internal/README.md#createdeveloperapp)
@@ -645,13 +658,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`internalGetAccount`](docs/sdks/internal/README.md#getaccount)
 - [`internalGetStaff`](docs/sdks/internal/README.md#getstaff)
 - [`internalGetTags`](docs/sdks/internal/README.md#gettags)
-- [`internalLeaderboardV1GetAccountMeta`](docs/sdks/internal/README.md#leaderboardv1getaccountmeta)
+- [`internalLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/internal/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`internalUpdateApp`](docs/sdks/internal/README.md#updateapp)
 - [`internalUploadImages`](docs/sdks/internal/README.md#uploadimages)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetBadges`](docs/sdks/leaderboard/README.md#getbadges)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
-- [`leaderboardLeaderboardV1GetAccountMeta`](docs/sdks/leaderboard/README.md#leaderboardv1getaccountmeta)
+- [`leaderboardLeaderboardV1GetLeaderboardAccountMeta`](docs/sdks/leaderboard/README.md#leaderboardv1getleaderboardaccountmeta)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationsGet`](docs/sdks/locations/README.md#get)
 - [`sessionCreate`](docs/sdks/session/README.md#create)

@@ -25,13 +25,13 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function accountLeaderboardV1GetAccountMeta(
+export function internalBadgeV1SearchSuggest(
   client: SteamSetsCore,
-  request: components.V1LeaderboardAccountMetaRequestBody,
+  request: components.V1BadgeSearchSuggesttRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardV1GetAccountMetaResponse,
+    operations.BadgeV1SearchSuggestResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountLeaderboardV1GetAccountMeta(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardAccountMetaRequestBody,
+  request: components.V1BadgeSearchSuggesttRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardV1GetAccountMetaResponse,
+      operations.BadgeV1SearchSuggestResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,9 +74,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1LeaderboardAccountMetaRequestBody$outboundSchema.parse(
-        value,
-      ),
+      components.V1BadgeSearchSuggesttRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -85,9 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc(
-    "/leaderboard.v1.LeaderboardService/GetAccountLeaderboardMeta",
-  )();
+  const path = pathToFunc("/badge.v1.BadgeService/SearchSuggest")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -100,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.v1.getAccountMeta",
+    operationID: "badge.v1.search.suggest",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -139,7 +135,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -153,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardV1GetAccountMetaResponse,
+    operations.BadgeV1SearchSuggestResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -164,10 +160,10 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LeaderboardV1GetAccountMetaResponse$inboundSchema, {
-      key: "V1LeaderboardAccountMetaResponseBody",
+    M.json(200, operations.BadgeV1SearchSuggestResponse$inboundSchema, {
+      key: "V1BadgeSearchSuggestBody",
     }),
-    M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
