@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.513.4
   generationVersion: 2.545.4
-  releaseVersion: 0.22.1
-  configChecksum: 626c4e9c540fc8c8d8e1f4eac3d4ad2a
+  releaseVersion: 0.22.2
+  configChecksum: 740a0e828016e7f696e5db2fed1c2add
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
