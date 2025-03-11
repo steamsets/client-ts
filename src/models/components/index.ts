@@ -120,6 +120,8 @@ export * from "./v1livenessresponsebody.js";
 export * from "./v1loginresponsebody.js";
 export * from "./v1reconnectrequestbody.js";
 export * from "./v1reconnectresponsebody.js";
+export * from "./v1refreshsessionbody.js";
+export * from "./v1refreshsessionrequestbody.js";
 export * from "./v1searchrequest.js";
 export * from "./v1stats.js";
 export * from "./v1updateconnectionrequestbody.js";

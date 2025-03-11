@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4d60c6566656f2fa07354e788c30e27c
+  docChecksum: 845c1027ebe623bf7633b5f85fb68b3d
   docVersion: 1.0.0
-  speakeasyVersion: 1.513.4
-  generationVersion: 2.545.4
-  releaseVersion: 0.22.2
-  configChecksum: 740a0e828016e7f696e5db2fed1c2add
+  speakeasyVersion: 1.517.0
+  generationVersion: 2.548.1
+  releaseVersion: 0.22.3
+  configChecksum: e8c904bf39af009bfb802721f1abe7cc
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.3
+    core: 3.21.4
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -206,6 +206,8 @@ generatedFiles:
   - docs/models/components/v1loginresponsebody.md
   - docs/models/components/v1reconnectrequestbody.md
   - docs/models/components/v1reconnectresponsebody.md
+  - docs/models/components/v1refreshsessionbody.md
+  - docs/models/components/v1refreshsessionrequestbody.md
   - docs/models/components/v1searchrequest.md
   - docs/models/components/v1stats.md
   - docs/models/components/v1updateconnectionrequestbody.md
@@ -253,6 +255,9 @@ generatedFiles:
   - docs/models/operations/accountv1sessiongetresponse.md
   - docs/models/operations/accountv1sessionloginrequest.md
   - docs/models/operations/accountv1sessionloginresponse.md
+  - docs/models/operations/accountv1sessionlogoutresponse.md
+  - docs/models/operations/accountv1sessionrefreshrequest.md
+  - docs/models/operations/accountv1sessionrefreshresponse.md
   - docs/models/operations/accountv1settingsdeveloperappcreateresponse.md
   - docs/models/operations/accountv1settingsdeveloperappdeleteresponse.md
   - docs/models/operations/accountv1settingsdeveloperappupdateresponse.md
@@ -303,6 +308,8 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1SessionLogout.ts
+  - src/funcs/accountAccountV1SessionRefresh.ts
   - src/funcs/accountBookmarkBadge.ts
   - src/funcs/accountConnect.ts
   - src/funcs/accountConnectionUpdate.ts
@@ -494,6 +501,8 @@ generatedFiles:
   - src/models/components/v1loginresponsebody.ts
   - src/models/components/v1reconnectrequestbody.ts
   - src/models/components/v1reconnectresponsebody.ts
+  - src/models/components/v1refreshsessionbody.ts
+  - src/models/components/v1refreshsessionrequestbody.ts
   - src/models/components/v1searchrequest.ts
   - src/models/components/v1stats.ts
   - src/models/components/v1updateconnectionrequestbody.ts
@@ -541,6 +550,8 @@ generatedFiles:
   - src/models/operations/accountv1sessiondelete.ts
   - src/models/operations/accountv1sessionget.ts
   - src/models/operations/accountv1sessionlogin.ts
+  - src/models/operations/accountv1sessionlogout.ts
+  - src/models/operations/accountv1sessionrefresh.ts
   - src/models/operations/accountv1settingsdeveloperappcreate.ts
   - src/models/operations/accountv1settingsdeveloperappdelete.ts
   - src/models/operations/accountv1settingsdeveloperappupdate.ts
@@ -705,7 +716,7 @@ examples:
         application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://example.com", "openid_sig": "123456", "openid_signed": "123456"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "sessionToken": "123456", "steamId": "76561198842603734"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_", "steamId": "76561198842603734"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1174,6 +1185,24 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchSuggestBody.json", "filter": "<value>"}
         "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.logout:
+    speakeasy-default-account-v1-session-logout:
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.refresh:
+    speakeasy-default-account-v1-session-refresh:
+      requestBody:
+        application/json: {"refreshToken": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1RefreshSessionBody.json", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_"}
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

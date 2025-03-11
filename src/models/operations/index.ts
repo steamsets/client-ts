@@ -27,6 +27,8 @@ export * from "./accountv1sessioncreate.js";
 export * from "./accountv1sessiondelete.js";
 export * from "./accountv1sessionget.js";
 export * from "./accountv1sessionlogin.js";
+export * from "./accountv1sessionlogout.js";
+export * from "./accountv1sessionrefresh.js";
 export * from "./accountv1settingsdeveloperappcreate.js";
 export * from "./accountv1settingsdeveloperappdelete.js";
 export * from "./accountv1settingsdeveloperappupdate.js";
