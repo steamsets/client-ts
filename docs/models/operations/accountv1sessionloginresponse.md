@@ -17,7 +17,10 @@ let value: AccountV1SessionLoginResponse = {
     avatar:
       "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
     name: "SteamSets",
-    sessionToken: "123456",
+    refreshExpiresAt: new Date("2023-01-01T00:00:00Z"),
+    refreshToken: "<value>",
+    sessionExpiresAt: new Date("2023-01-01T00:00:00Z"),
+    sessionToken: "auth_",
     steamId: "76561198842603734",
   },
 };

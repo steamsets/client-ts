@@ -8,19 +8,11 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type V1LoginResponseBody = {
+export type V1RefreshSessionBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  /**
-   * The avatar of the account
-   */
-  avatar: string;
-  /**
-   * The name of the account
-   */
-  name: string;
   /**
    * The expiration time of the refresh token
    */
@@ -37,21 +29,15 @@ export type V1LoginResponseBody = {
    * The session token
    */
   sessionToken: string;
-  /**
-   * The steam id
-   */
-  steamId: string;
 };
 
 /** @internal */
-export const V1LoginResponseBody$inboundSchema: z.ZodType<
-  V1LoginResponseBody,
+export const V1RefreshSessionBody$inboundSchema: z.ZodType<
+  V1RefreshSessionBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  avatar: z.string(),
-  name: z.string(),
   refreshExpiresAt: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ),
@@ -60,7 +46,6 @@ export const V1LoginResponseBody$inboundSchema: z.ZodType<
     new Date(v)
   ),
   sessionToken: z.string(),
-  steamId: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -68,31 +53,25 @@ export const V1LoginResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type V1LoginResponseBody$Outbound = {
+export type V1RefreshSessionBody$Outbound = {
   $schema?: string | undefined;
-  avatar: string;
-  name: string;
   refreshExpiresAt: string;
   refreshToken: string;
   sessionExpiresAt: string;
   sessionToken: string;
-  steamId: string;
 };
 
 /** @internal */
-export const V1LoginResponseBody$outboundSchema: z.ZodType<
-  V1LoginResponseBody$Outbound,
+export const V1RefreshSessionBody$outboundSchema: z.ZodType<
+  V1RefreshSessionBody$Outbound,
   z.ZodTypeDef,
-  V1LoginResponseBody
+  V1RefreshSessionBody
 > = z.object({
   dollarSchema: z.string().optional(),
-  avatar: z.string(),
-  name: z.string(),
   refreshExpiresAt: z.date().transform(v => v.toISOString()),
   refreshToken: z.string(),
   sessionExpiresAt: z.date().transform(v => v.toISOString()),
   sessionToken: z.string(),
-  steamId: z.string(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
@@ -103,29 +82,29 @@ export const V1LoginResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1LoginResponseBody$ {
-  /** @deprecated use `V1LoginResponseBody$inboundSchema` instead. */
-  export const inboundSchema = V1LoginResponseBody$inboundSchema;
-  /** @deprecated use `V1LoginResponseBody$outboundSchema` instead. */
-  export const outboundSchema = V1LoginResponseBody$outboundSchema;
-  /** @deprecated use `V1LoginResponseBody$Outbound` instead. */
-  export type Outbound = V1LoginResponseBody$Outbound;
+export namespace V1RefreshSessionBody$ {
+  /** @deprecated use `V1RefreshSessionBody$inboundSchema` instead. */
+  export const inboundSchema = V1RefreshSessionBody$inboundSchema;
+  /** @deprecated use `V1RefreshSessionBody$outboundSchema` instead. */
+  export const outboundSchema = V1RefreshSessionBody$outboundSchema;
+  /** @deprecated use `V1RefreshSessionBody$Outbound` instead. */
+  export type Outbound = V1RefreshSessionBody$Outbound;
 }
 
-export function v1LoginResponseBodyToJSON(
-  v1LoginResponseBody: V1LoginResponseBody,
+export function v1RefreshSessionBodyToJSON(
+  v1RefreshSessionBody: V1RefreshSessionBody,
 ): string {
   return JSON.stringify(
-    V1LoginResponseBody$outboundSchema.parse(v1LoginResponseBody),
+    V1RefreshSessionBody$outboundSchema.parse(v1RefreshSessionBody),
   );
 }
 
-export function v1LoginResponseBodyFromJSON(
+export function v1RefreshSessionBodyFromJSON(
   jsonString: string,
-): SafeParseResult<V1LoginResponseBody, SDKValidationError> {
+): SafeParseResult<V1RefreshSessionBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => V1LoginResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'V1LoginResponseBody' from JSON`,
+    (x) => V1RefreshSessionBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1RefreshSessionBody' from JSON`,
   );
 }
