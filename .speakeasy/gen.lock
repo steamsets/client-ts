@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 845c1027ebe623bf7633b5f85fb68b3d
+  docChecksum: 8d28bfb466ee1ae47f1b64d1e7589a2e
   docVersion: 1.0.0
-  speakeasyVersion: 1.517.0
-  generationVersion: 2.548.1
-  releaseVersion: 0.22.3
-  configChecksum: e8c904bf39af009bfb802721f1abe7cc
+  speakeasyVersion: 1.520.1
+  generationVersion: 2.556.1
+  releaseVersion: 0.22.4
+  configChecksum: 2ab4b05e1483574746221abfef878513
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -219,6 +219,7 @@ generatedFiles:
   - docs/models/components/v1updaterolerequestbodyrole.md
   - docs/models/components/v1updatesettingsrequestbody.md
   - docs/models/components/v1uploadedimage.md
+  - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
   - docs/models/components/v1uploadimagesresponsebody.md
   - docs/models/components/v1vanityanalytics.md
@@ -226,7 +227,6 @@ generatedFiles:
   - docs/models/components/v1verifyconnectionresponsebody.md
   - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/vanitystruct.md
-  - docs/models/components/vanitystructtype.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountv1bookmarkbadgeresponse.md
   - docs/models/operations/accountv1connectionconnectresponse.md
@@ -282,10 +282,10 @@ generatedFiles:
   - docs/models/operations/badgev1tagresponse.md
   - docs/models/operations/badgev1tagsresponse.md
   - docs/models/operations/badgev1tagssuggestresponse.md
-  - docs/models/operations/leaderboardv1getaccountresponse.md
+  - docs/models/operations/leaderboardv1getaccountleaderboardmetaresponse.md
+  - docs/models/operations/leaderboardv1getaccountleaderboardresponse.md
   - docs/models/operations/leaderboardv1getbadgesresponse.md
   - docs/models/operations/leaderboardv1getgroupresponse.md
-  - docs/models/operations/leaderboardv1getleaderboardaccountmetaresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
   - docs/models/operations/statsv1statsgetresponse.md
@@ -574,10 +574,10 @@ generatedFiles:
   - src/models/operations/badgev1tags.ts
   - src/models/operations/badgev1tagssuggest.ts
   - src/models/operations/index.ts
-  - src/models/operations/leaderboardv1getaccount.ts
+  - src/models/operations/leaderboardv1getaccountleaderboard.ts
+  - src/models/operations/leaderboardv1getaccountleaderboardmeta.ts
   - src/models/operations/leaderboardv1getbadges.ts
   - src/models/operations/leaderboardv1getgroup.ts
-  - src/models/operations/leaderboardv1getleaderboardaccountmeta.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
   - src/models/operations/statsv1statsget.ts
@@ -902,14 +902,14 @@ examples:
     speakeasy-default-account-v1-session-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "flo", "resources": [{"resource": "account_refresh_rate", "value": "1"}, {"resource": "account_refresh_rate", "value": "1"}], "roles": [{"rating": 969961, "role": "emerald"}, {"rating": 450824, "role": "partner"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "level": 1, "name": "flo", "resources": [{"resource": "account_refresh_rate", "value": "1"}, {"resource": "account_refresh_rate", "value": "1"}], "roles": [{"rating": 969961, "role": "emerald"}, {"rating": 450824, "role": "partner"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.get:
     speakeasy-default-account-v1-settings-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": false, "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": false, "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.settings.update:
@@ -1203,6 +1203,28 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1RefreshSessionBody.json", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_"}
         "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getAccountLeaderboard:
+    speakeasy-default-leaderboard-v1-get-account-leaderboard:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 279811, "isFoil": true}, "end": 10, "goToLeaderboardRank": 1, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json", "accounts": [{"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 921914, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 480084, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 117086, "role": "ruby"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 438722, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 998261, "xp": 123456}, {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 161646, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 512332, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 766801, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 518072, "xp": 123456}, {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 276494, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 715380, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 412258, "role": "top_100"}, {"rating": 853537, "role": "contributor"}, {"rating": 919985, "role": "emerald"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 660851, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 242017, "xp": 123456}], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": [{"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}, {"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}], "ownAccount": {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 243737, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 86683, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 416431, "role": "translator"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 804993, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 837070, "xp": 123456}, "rankedOutOf": 0}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getAccountLeaderboardMeta:
+    speakeasy-default-leaderboard-v1-get-account-leaderboard-meta:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 835004, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "oh self-confidence sup lobotomise impressive sightseeing unless", "title": "<value>"}
+        "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

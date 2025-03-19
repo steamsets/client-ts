@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type LeaderboardV1GetLeaderboardAccountMetaResponse = {
+export type LeaderboardV1GetAccountLeaderboardMetaResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -20,9 +20,9 @@ export type LeaderboardV1GetLeaderboardAccountMetaResponse = {
 };
 
 /** @internal */
-export const LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema:
+export const LeaderboardV1GetAccountLeaderboardMetaResponse$inboundSchema:
   z.ZodType<
-    LeaderboardV1GetLeaderboardAccountMetaResponse,
+    LeaderboardV1GetAccountLeaderboardMetaResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -38,7 +38,7 @@ export const LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema:
   });
 
 /** @internal */
-export type LeaderboardV1GetLeaderboardAccountMetaResponse$Outbound = {
+export type LeaderboardV1GetAccountLeaderboardMetaResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   V1LeaderboardAccountMetaResponseBody?:
     | components.V1LeaderboardAccountMetaResponseBody$Outbound
@@ -46,11 +46,11 @@ export type LeaderboardV1GetLeaderboardAccountMetaResponse$Outbound = {
 };
 
 /** @internal */
-export const LeaderboardV1GetLeaderboardAccountMetaResponse$outboundSchema:
+export const LeaderboardV1GetAccountLeaderboardMetaResponse$outboundSchema:
   z.ZodType<
-    LeaderboardV1GetLeaderboardAccountMetaResponse$Outbound,
+    LeaderboardV1GetAccountLeaderboardMetaResponse$Outbound,
     z.ZodTypeDef,
-    LeaderboardV1GetLeaderboardAccountMetaResponse
+    LeaderboardV1GetAccountLeaderboardMetaResponse
   > = z.object({
     httpMeta: components.HTTPMetadata$outboundSchema,
     v1LeaderboardAccountMetaResponseBody: components
@@ -67,41 +67,41 @@ export const LeaderboardV1GetLeaderboardAccountMetaResponse$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace LeaderboardV1GetLeaderboardAccountMetaResponse$ {
-  /** @deprecated use `LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema` instead. */
+export namespace LeaderboardV1GetAccountLeaderboardMetaResponse$ {
+  /** @deprecated use `LeaderboardV1GetAccountLeaderboardMetaResponse$inboundSchema` instead. */
   export const inboundSchema =
-    LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema;
-  /** @deprecated use `LeaderboardV1GetLeaderboardAccountMetaResponse$outboundSchema` instead. */
+    LeaderboardV1GetAccountLeaderboardMetaResponse$inboundSchema;
+  /** @deprecated use `LeaderboardV1GetAccountLeaderboardMetaResponse$outboundSchema` instead. */
   export const outboundSchema =
-    LeaderboardV1GetLeaderboardAccountMetaResponse$outboundSchema;
-  /** @deprecated use `LeaderboardV1GetLeaderboardAccountMetaResponse$Outbound` instead. */
+    LeaderboardV1GetAccountLeaderboardMetaResponse$outboundSchema;
+  /** @deprecated use `LeaderboardV1GetAccountLeaderboardMetaResponse$Outbound` instead. */
   export type Outbound =
-    LeaderboardV1GetLeaderboardAccountMetaResponse$Outbound;
+    LeaderboardV1GetAccountLeaderboardMetaResponse$Outbound;
 }
 
-export function leaderboardV1GetLeaderboardAccountMetaResponseToJSON(
-  leaderboardV1GetLeaderboardAccountMetaResponse:
-    LeaderboardV1GetLeaderboardAccountMetaResponse,
+export function leaderboardV1GetAccountLeaderboardMetaResponseToJSON(
+  leaderboardV1GetAccountLeaderboardMetaResponse:
+    LeaderboardV1GetAccountLeaderboardMetaResponse,
 ): string {
   return JSON.stringify(
-    LeaderboardV1GetLeaderboardAccountMetaResponse$outboundSchema.parse(
-      leaderboardV1GetLeaderboardAccountMetaResponse,
+    LeaderboardV1GetAccountLeaderboardMetaResponse$outboundSchema.parse(
+      leaderboardV1GetAccountLeaderboardMetaResponse,
     ),
   );
 }
 
-export function leaderboardV1GetLeaderboardAccountMetaResponseFromJSON(
+export function leaderboardV1GetAccountLeaderboardMetaResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  LeaderboardV1GetLeaderboardAccountMetaResponse,
+  LeaderboardV1GetAccountLeaderboardMetaResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      LeaderboardV1GetLeaderboardAccountMetaResponse$inboundSchema.parse(
+      LeaderboardV1GetAccountLeaderboardMetaResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'LeaderboardV1GetLeaderboardAccountMetaResponse' from JSON`,
+    `Failed to parse 'LeaderboardV1GetAccountLeaderboardMetaResponse' from JSON`,
   );
 }
