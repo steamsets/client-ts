@@ -125,7 +125,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardV1GetAccountResponse](../../models/operations/leaderboardv1getaccountresponse.md)\>**
+**Promise\<[operations.LeaderboardV1GetAccountLeaderboardResponse](../../models/operations/leaderboardv1getaccountleaderboardresponse.md)\>**
 
 ### Errors
 
@@ -152,23 +152,11 @@ async function run() {
       appId: 730,
     },
     badge: {
-      id: 75458,
+      id: 835004,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -205,23 +193,11 @@ async function run() {
       appId: 730,
     },
     badge: {
-      id: 75458,
+      id: 835004,
       isFoil: true,
     },
     leaderboard: "xp",
     location: [
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
       {
         city: "Bad Krozingen",
         country: "Germany",
@@ -255,7 +231,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardV1GetLeaderboardAccountMetaResponse](../../models/operations/leaderboardv1getleaderboardaccountmetaresponse.md)\>**
+**Promise\<[operations.LeaderboardV1GetAccountLeaderboardMetaResponse](../../models/operations/leaderboardv1getaccountleaderboardmetaresponse.md)\>**
 
 ### Errors
 

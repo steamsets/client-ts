@@ -9,6 +9,8 @@ let value: V1GetSessionBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1GetSessionBody.json",
   accountId: 123456,
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+  email: "flo@example.com",
+  level: 1,
   name: "flo",
   resources: [
     {
@@ -27,6 +29,7 @@ let value: V1GetSessionBody = {
     expiresAt: new Date("2023-01-01T00:00:00Z"),
     ip: "127.0.0.1",
     lastSeen: new Date("2023-01-01T00:00:00Z"),
+    level: 1,
     sessionId: "123456",
     userAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -42,7 +45,9 @@ let value: V1GetSessionBody = {
 | `dollarSchema`                                               | *string*                                                     | :heavy_minus_sign:                                           | A URL to the JSON Schema for this object.                    | https://api.steamsets.com/schemas/V1GetSessionBody.json      |
 | `accountId`                                                  | *number*                                                     | :heavy_check_mark:                                           | The account id                                               | 123456                                                       |
 | `avatar`                                                     | *string*                                                     | :heavy_check_mark:                                           | The avatar of the account                                    | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                         |
-| `name`                                                       | *string*                                                     | :heavy_check_mark:                                           | The name of the accountt                                     | flo                                                          |
+| `email`                                                      | *string*                                                     | :heavy_minus_sign:                                           | The email of the account                                     | flo@example.com                                              |
+| `level`                                                      | *number*                                                     | :heavy_check_mark:                                           | The level of the account                                     | 1                                                            |
+| `name`                                                       | *string*                                                     | :heavy_check_mark:                                           | The name of the account                                      | flo                                                          |
 | `resources`                                                  | [components.Resource](../../models/components/resource.md)[] | :heavy_check_mark:                                           | The resources the account has (permissions)                  |                                                              |
 | `roles`                                                      | [components.Role](../../models/components/role.md)[]         | :heavy_check_mark:                                           | The roles the account has                                    |                                                              |
 | `sessionData`                                                | [components.Session](../../models/components/session.md)     | :heavy_check_mark:                                           | N/A                                                          |                                                              |

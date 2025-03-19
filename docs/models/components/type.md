@@ -1,17 +1,17 @@
 # Type
 
-The Image Type
+Which type of vanity to search for
 
 ## Example Usage
 
 ```typescript
 import { Type } from "@steamsets/client-ts/models/components";
 
-let value: Type = "avatar";
+let value: Type = "steam";
 ```
 
 ## Values
 
 ```typescript
-"avatar" | "background" | "mini_background" | "animated_avatar" | "avatar_frame"
+"steam" | "internal"
 ```

@@ -11,20 +11,20 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * Which type of vanity to search for
  */
-export const VanityStructType = {
+export const Type = {
   Steam: "steam",
   Internal: "internal",
 } as const;
 /**
  * Which type of vanity to search for
  */
-export type VanityStructType = ClosedEnum<typeof VanityStructType>;
+export type Type = ClosedEnum<typeof Type>;
 
 export type VanityStruct = {
   /**
    * Which type of vanity to search for
    */
-  type: VanityStructType;
+  type: Type;
   /**
    * Vanity to search for
    */
@@ -32,24 +32,23 @@ export type VanityStruct = {
 };
 
 /** @internal */
-export const VanityStructType$inboundSchema: z.ZodNativeEnum<
-  typeof VanityStructType
-> = z.nativeEnum(VanityStructType);
+export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
+  Type,
+);
 
 /** @internal */
-export const VanityStructType$outboundSchema: z.ZodNativeEnum<
-  typeof VanityStructType
-> = VanityStructType$inboundSchema;
+export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> =
+  Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace VanityStructType$ {
-  /** @deprecated use `VanityStructType$inboundSchema` instead. */
-  export const inboundSchema = VanityStructType$inboundSchema;
-  /** @deprecated use `VanityStructType$outboundSchema` instead. */
-  export const outboundSchema = VanityStructType$outboundSchema;
+export namespace Type$ {
+  /** @deprecated use `Type$inboundSchema` instead. */
+  export const inboundSchema = Type$inboundSchema;
+  /** @deprecated use `Type$outboundSchema` instead. */
+  export const outboundSchema = Type$outboundSchema;
 }
 
 /** @internal */
@@ -58,7 +57,7 @@ export const VanityStruct$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  type: VanityStructType$inboundSchema,
+  type: Type$inboundSchema,
   value: z.string(),
 });
 
@@ -74,7 +73,7 @@ export const VanityStruct$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   VanityStruct
 > = z.object({
-  type: VanityStructType$outboundSchema,
+  type: Type$outboundSchema,
   value: z.string(),
 });
 

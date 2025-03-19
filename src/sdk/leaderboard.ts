@@ -20,7 +20,7 @@ export class Leaderboard extends ClientSDK {
   async getAccount(
     request: components.V1AccountLeaderboardRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountResponse> {
+  ): Promise<operations.LeaderboardV1GetAccountLeaderboardResponse> {
     return unwrapAsync(leaderboardGetAccount(
       this,
       request,
@@ -31,7 +31,7 @@ export class Leaderboard extends ClientSDK {
   async getAccountMeta(
     request: components.V1LeaderboardAccountMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetLeaderboardAccountMetaResponse> {
+  ): Promise<operations.LeaderboardV1GetAccountLeaderboardMetaResponse> {
     return unwrapAsync(leaderboardGetAccountMeta(
       this,
       request,

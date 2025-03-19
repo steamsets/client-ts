@@ -40,7 +40,15 @@ export type V1GetSessionBody = {
    */
   avatar: string;
   /**
-   * The name of the accountt
+   * The email of the account
+   */
+  email?: string | null | undefined;
+  /**
+   * The level of the account
+   */
+  level: number;
+  /**
+   * The name of the account
    */
   name: string;
   /**
@@ -67,6 +75,8 @@ export const V1GetSessionBody$inboundSchema: z.ZodType<
   $schema: z.string().optional(),
   accountId: z.number().int(),
   avatar: z.string(),
+  email: z.nullable(z.string()).optional(),
+  level: z.number().int(),
   name: z.string(),
   resources: z.nullable(z.array(Resource$inboundSchema)),
   roles: z.nullable(z.array(Role$inboundSchema)),
@@ -83,6 +93,8 @@ export type V1GetSessionBody$Outbound = {
   $schema?: string | undefined;
   accountId: number;
   avatar: string;
+  email?: string | null | undefined;
+  level: number;
   name: string;
   resources: Array<Resource$Outbound> | null;
   roles: Array<Role$Outbound> | null;
@@ -99,6 +111,8 @@ export const V1GetSessionBody$outboundSchema: z.ZodType<
   dollarSchema: z.string().optional(),
   accountId: z.number().int(),
   avatar: z.string(),
+  email: z.nullable(z.string()).optional(),
+  level: z.number().int(),
   name: z.string(),
   resources: z.nullable(z.array(Resource$outboundSchema)),
   roles: z.nullable(z.array(Role$outboundSchema)),
