@@ -114,6 +114,8 @@ export * from "./v1leaderboardbadge.js";
 export * from "./v1leaderboardbadgeevent.js";
 export * from "./v1leaderboardbadgeinfo.js";
 export * from "./v1leaderboardbadgeresponsebody.js";
+export * from "./v1leaderboardgroupmetarequestbody.js";
+export * from "./v1leaderboardgroupmetaresponsebody.js";
 export * from "./v1leaderboardlocation.js";
 export * from "./v1leaderboardlocationinfo.js";
 export * from "./v1livenessresponsebody.js";

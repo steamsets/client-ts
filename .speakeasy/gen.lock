@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 872a8293640762c952b54479289198c3
+  docChecksum: 8aa9c41b85ecc8183fdc7f5b1aa0c920
   docVersion: 1.0.0
   speakeasyVersion: 1.521.0
   generationVersion: 2.558.2
-  releaseVersion: 0.22.8
-  configChecksum: 256d0bb105a4528a9949b6d93bfabcc7
+  releaseVersion: 0.22.11
+  configChecksum: 612153f1e67a1b91737dbf4e409c7ee2
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -200,6 +200,9 @@ generatedFiles:
   - docs/models/components/v1leaderboardbadgeevent.md
   - docs/models/components/v1leaderboardbadgeinfo.md
   - docs/models/components/v1leaderboardbadgeresponsebody.md
+  - docs/models/components/v1leaderboardgroupmetarequestbody.md
+  - docs/models/components/v1leaderboardgroupmetarequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardgroupmetaresponsebody.md
   - docs/models/components/v1leaderboardlocation.md
   - docs/models/components/v1leaderboardlocationinfo.md
   - docs/models/components/v1livenessresponsebody.md
@@ -285,6 +288,7 @@ generatedFiles:
   - docs/models/operations/leaderboardv1getaccountleaderboardmetaresponse.md
   - docs/models/operations/leaderboardv1getaccountleaderboardresponse.md
   - docs/models/operations/leaderboardv1getbadgesresponse.md
+  - docs/models/operations/leaderboardv1getgroupleaderboardmetaresponse.md
   - docs/models/operations/leaderboardv1getgroupresponse.md
   - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationv1locationgetresponse.md
@@ -360,6 +364,7 @@ generatedFiles:
   - src/funcs/leaderboardGetAccount.ts
   - src/funcs/leaderboardGetAccountMeta.ts
   - src/funcs/leaderboardGetGroup.ts
+  - src/funcs/leaderboardGetGroupMeta.ts
   - src/funcs/livenessGet.ts
   - src/funcs/locationGet.ts
   - src/funcs/statsGet.ts
@@ -495,6 +500,8 @@ generatedFiles:
   - src/models/components/v1leaderboardbadgeevent.ts
   - src/models/components/v1leaderboardbadgeinfo.ts
   - src/models/components/v1leaderboardbadgeresponsebody.ts
+  - src/models/components/v1leaderboardgroupmetarequestbody.ts
+  - src/models/components/v1leaderboardgroupmetaresponsebody.ts
   - src/models/components/v1leaderboardlocation.ts
   - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1livenessresponsebody.ts
@@ -578,6 +585,7 @@ generatedFiles:
   - src/models/operations/leaderboardv1getaccountleaderboardmeta.ts
   - src/models/operations/leaderboardv1getbadges.ts
   - src/models/operations/leaderboardv1getgroup.ts
+  - src/models/operations/leaderboardv1getgroupleaderboardmeta.ts
   - src/models/operations/liveness.ts
   - src/models/operations/locationv1locationget.ts
   - src/models/operations/statsv1statsget.ts
@@ -1224,6 +1232,17 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "oh self-confidence sup lobotomise impressive sightseeing unless", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getGroupLeaderboardMeta:
+    speakeasy-default-leaderboard-v1-get-group-leaderboard-meta:
+      requestBody:
+        application/json: {"leaderboard": "most_members"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json", "description": "version miserly char entomb below video aha frugal defiantly meh", "title": "<value>"}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

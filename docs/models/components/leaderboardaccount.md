@@ -12,7 +12,7 @@ let value: LeaderboardAccount = {
   awardsGiven: 123456,
   awardsReceived: 123456,
   badges: 123456,
-  bans: 457223,
+  bans: 536178,
   city: {
     id: 1,
     name: "Bad Krozingen",
@@ -28,7 +28,7 @@ let value: LeaderboardAccount = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  gameBans: 951875,
+  gameBans: 681393,
   level: 123456,
   name: "steamsets",
   normalBadgeCost: 123456,
@@ -43,8 +43,8 @@ let value: LeaderboardAccount = {
   },
   roles: [
     {
-      rating: 575751,
-      role: "beta",
+      rating: 277596,
+      role: "staff",
     },
   ],
   state: {
@@ -52,10 +52,10 @@ let value: LeaderboardAccount = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 908844,
+  steamSetsScore: 392676,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 815524,
+  vacBans: 956406,
   xp: 123456,
 };
 ```

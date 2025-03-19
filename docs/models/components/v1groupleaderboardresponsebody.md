@@ -22,7 +22,7 @@ let value: V1GroupLeaderboardResponseBody = {
         awardsGiven: 123456,
         awardsReceived: 123456,
         badges: 123456,
-        bans: 552078,
+        bans: 455444,
         city: {
           id: 1,
           name: "Bad Krozingen",
@@ -38,7 +38,7 @@ let value: V1GroupLeaderboardResponseBody = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        gameBans: 271653,
+        gameBans: 401713,
         level: 123456,
         name: "steamsets",
         normalBadgeCost: 123456,
@@ -53,8 +53,8 @@ let value: V1GroupLeaderboardResponseBody = {
         },
         roles: [
           {
-            rating: 455444,
-            role: "amber",
+            rating: 248413,
+            role: "sapphire",
           },
         ],
         state: {
@@ -62,10 +62,10 @@ let value: V1GroupLeaderboardResponseBody = {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 248413,
+        steamSetsScore: 310381,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 505866,
+        vacBans: 373035,
         xp: 123456,
       },
       privacy: "public",
@@ -87,7 +87,7 @@ let value: V1GroupLeaderboardResponseBody = {
       awardsGiven: 123456,
       awardsReceived: 123456,
       badges: 123456,
-      bans: 310381,
+      bans: 524970,
       city: {
         id: 1,
         name: "Bad Krozingen",
@@ -103,7 +103,7 @@ let value: V1GroupLeaderboardResponseBody = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 373035,
+      gameBans: 750595,
       level: 123456,
       name: "steamsets",
       normalBadgeCost: 123456,
@@ -118,8 +118,8 @@ let value: V1GroupLeaderboardResponseBody = {
       },
       roles: [
         {
-          rating: 524970,
-          role: "early_supporter",
+          rating: 333507,
+          role: "top_100",
         },
       ],
       state: {
@@ -127,10 +127,10 @@ let value: V1GroupLeaderboardResponseBody = {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 333507,
+      steamSetsScore: 862319,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 924159,
+      vacBans: 48690,
       xp: 123456,
     },
     privacy: "public",

@@ -5,6 +5,7 @@
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetAccountMeta } from "../funcs/leaderboardGetAccountMeta.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
+import { leaderboardGetGroupMeta } from "../funcs/leaderboardGetGroupMeta.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -44,6 +45,17 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardV1GetGroupResponse> {
     return unwrapAsync(leaderboardGetGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async getGroupMeta(
+    request: components.V1LeaderboardGroupMetaRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardV1GetGroupLeaderboardMetaResponse> {
+    return unwrapAsync(leaderboardGetGroupMeta(
       this,
       request,
       options,

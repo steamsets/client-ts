@@ -5,7 +5,7 @@
 ```typescript
 import { Direction } from "@steamsets/client-ts/models/components";
 
-let value: Direction = "asc";
+let value: Direction = "desc";
 ```
 
 ## Values
