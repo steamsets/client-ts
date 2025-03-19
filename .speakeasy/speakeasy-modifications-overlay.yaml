@@ -2,7 +2,7 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.2
+  version: 0.0.4
   x-speakeasy-metadata:
     after: ""
     before: ""
@@ -491,4 +491,22 @@ actions:
       before: sdk.account.account.v1.getStaff()
       created_at: 1741518495041
       reviewed_at: 1741518503740
+      type: method-name
+  - target: $["paths"]["/account.v1.AccountService/RefreshSession"]["post"]
+    update:
+      x-speakeasy-name-override: refreshSession
+    x-speakeasy-metadata:
+      after: sdk.account.refreshSession()
+      before: sdk.account.account.v1.session.refresh()
+      created_at: 1742414742779
+      reviewed_at: 1742414799469
+      type: method-name
+  - target: $["paths"]["/account.v1.AccountService/Logout"]["post"]
+    update:
+      x-speakeasy-name-override: logout
+    x-speakeasy-metadata:
+      after: sdk.account.logout()
+      before: sdk.account.account.v1.session.logout()
+      created_at: 1742414742779
+      reviewed_at: 1742414799469
       type: method-name

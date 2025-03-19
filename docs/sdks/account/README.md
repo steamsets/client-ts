@@ -30,10 +30,10 @@ All Requests related to account(s) are grouped here.
 * [getSettings](#getsettings)
 * [getStaff](#getstaff)
 * [login](#login)
-* [accountV1SessionLogout](#accountv1sessionlogout)
+* [logout](#logout)
 * [queue](#queue)
 * [reconnect](#reconnect)
-* [accountV1SessionRefresh](#accountv1sessionrefresh)
+* [refreshSession](#refreshsession)
 * [updateImages](#updateimages)
 * [updateSettings](#updatesettings)
 * [uploadImages](#uploadimages)
@@ -1762,7 +1762,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SessionLogout
+## logout
 
 ### Example Usage
 
@@ -1774,7 +1774,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1SessionLogout();
+  const result = await steamSets.account.logout();
 
   // Handle the result
   console.log(result);
@@ -1789,7 +1789,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountV1SessionLogout } from "@steamsets/client-ts/funcs/accountAccountV1SessionLogout.js";
+import { accountLogout } from "@steamsets/client-ts/funcs/accountLogout.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1798,7 +1798,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountV1SessionLogout(steamSets);
+  const res = await accountLogout(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -1987,7 +1987,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountV1SessionRefresh
+## refreshSession
 
 ### Example Usage
 
@@ -1999,7 +1999,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountV1SessionRefresh({
+  const result = await steamSets.account.refreshSession({
     v1RefreshSessionRequestBody: {
       refreshToken: "<value>",
     },
@@ -2018,7 +2018,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountV1SessionRefresh } from "@steamsets/client-ts/funcs/accountAccountV1SessionRefresh.js";
+import { accountRefreshSession } from "@steamsets/client-ts/funcs/accountRefreshSession.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2027,7 +2027,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountV1SessionRefresh(steamSets, {
+  const res = await accountRefreshSession(steamSets, {
     v1RefreshSessionRequestBody: {
       refreshToken: "<value>",
     },

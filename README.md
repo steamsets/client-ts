@@ -98,10 +98,10 @@ run();
 * [getSettings](docs/sdks/account/README.md#getsettings)
 * [getStaff](docs/sdks/account/README.md#getstaff)
 * [login](docs/sdks/account/README.md#login)
-* [accountV1SessionLogout](docs/sdks/account/README.md#accountv1sessionlogout)
+* [logout](docs/sdks/account/README.md#logout)
 * [queue](docs/sdks/account/README.md#queue)
 * [reconnect](docs/sdks/account/README.md#reconnect)
-* [accountV1SessionRefresh](docs/sdks/account/README.md#accountv1sessionrefresh)
+* [refreshSession](docs/sdks/account/README.md#refreshsession)
 * [updateImages](docs/sdks/account/README.md#updateimages)
 * [updateSettings](docs/sdks/account/README.md#updatesettings)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
@@ -529,8 +529,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountV1SessionLogout`](docs/sdks/account/README.md#accountv1sessionlogout)
-- [`accountAccountV1SessionRefresh`](docs/sdks/account/README.md#accountv1sessionrefresh)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
 - [`accountConnect`](docs/sdks/account/README.md#connect)
 - [`accountConnectionUpdate`](docs/sdks/connection/README.md#update)
@@ -557,8 +555,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetSettings`](docs/sdks/account/README.md#getsettings)
 - [`accountGetStaff`](docs/sdks/account/README.md#getstaff)
 - [`accountLogin`](docs/sdks/account/README.md#login)
+- [`accountLogout`](docs/sdks/account/README.md#logout)
 - [`accountQueue`](docs/sdks/account/README.md#queue)
 - [`accountReconnect`](docs/sdks/account/README.md#reconnect)
+- [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession)
 - [`accountRolesUpdate`](docs/sdks/roles/README.md#update)
 - [`accountSessionDelete`](docs/sdks/session/README.md#delete)
 - [`accountUpdateImages`](docs/sdks/account/README.md#updateimages)

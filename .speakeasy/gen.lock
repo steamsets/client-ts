@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 8d28bfb466ee1ae47f1b64d1e7589a2e
+  docChecksum: 872a8293640762c952b54479289198c3
   docVersion: 1.0.0
-  speakeasyVersion: 1.520.1
-  generationVersion: 2.556.1
-  releaseVersion: 0.22.4
-  configChecksum: 2ab4b05e1483574746221abfef878513
+  speakeasyVersion: 1.521.0
+  generationVersion: 2.558.2
+  releaseVersion: 0.22.7
+  configChecksum: bd75d7012e7a903d360248919af9496b
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -308,8 +308,6 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountV1SessionLogout.ts
-  - src/funcs/accountAccountV1SessionRefresh.ts
   - src/funcs/accountBookmarkBadge.ts
   - src/funcs/accountConnect.ts
   - src/funcs/accountConnectionUpdate.ts
@@ -336,8 +334,10 @@ generatedFiles:
   - src/funcs/accountGetSettings.ts
   - src/funcs/accountGetStaff.ts
   - src/funcs/accountLogin.ts
+  - src/funcs/accountLogout.ts
   - src/funcs/accountQueue.ts
   - src/funcs/accountReconnect.ts
+  - src/funcs/accountRefreshSession.ts
   - src/funcs/accountRolesUpdate.ts
   - src/funcs/accountSessionDelete.ts
   - src/funcs/accountUpdateImages.ts

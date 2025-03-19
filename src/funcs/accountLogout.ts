@@ -3,10 +3,8 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -24,13 +22,12 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function accountAccountV1SessionRefresh(
+export function accountLogout(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionRefreshRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SessionRefreshResponse,
+    operations.AccountV1SessionLogoutResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -44,19 +41,17 @@ export function accountAccountV1SessionRefresh(
 > {
   return new APIPromise($do(
     client,
-    request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionRefreshRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1SessionRefreshResponse,
+      operations.AccountV1SessionLogoutResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -70,34 +65,10 @@ async function $do(
     APICall,
   ]
 > {
-  const parsed = safeParse(
-    request,
-    (value) =>
-      operations.AccountV1SessionRefreshRequest$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return [parsed, { status: "invalid" }];
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload.V1RefreshSessionRequestBody, {
-    explode: true,
-  });
-
-  const path = pathToFunc("/account.v1.AccountService/RefreshSession")();
+  const path = pathToFunc("/account.v1.AccountService/Logout")();
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
-    Accept: "application/json",
-    "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
-      explode: false,
-      charEncoding: "none",
-    }),
-    "X-Forwarded-For": encodeSimple(
-      "X-Forwarded-For",
-      payload["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -106,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.session.refresh",
+    operationID: "account.v1.session.logout",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -134,7 +105,6 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
@@ -145,7 +115,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["422", "4XX", "500", "5XX"],
+    errorCodes: ["400", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -159,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SessionRefreshResponse,
+    operations.AccountV1SessionLogoutResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -170,10 +140,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SessionRefreshResponse$inboundSchema, {
-      key: "V1RefreshSessionBody",
-    }),
-    M.jsonErr(422, errors.ErrorModel$inboundSchema, {
+    M.nil(204, operations.AccountV1SessionLogoutResponse$inboundSchema),
+    M.jsonErr([400, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
