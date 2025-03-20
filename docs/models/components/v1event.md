@@ -8,7 +8,7 @@ import { V1Event } from "@steamsets/client-ts/models/components";
 let value: V1Event = {
   bodyImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
   downvotes: 123456,
-  endsAt: new Date("2023-12-26T04:21:26.793Z"),
+  endsAt: new Date("2025-01-26T06:25:05.272Z"),
   eventId: "<id>",
   gid: "123456",
   headerImage: "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
@@ -20,7 +20,7 @@ let value: V1Event = {
   ],
   name: "Steam Summer Sale 2024",
   postedAt: new Date("2023-01-01T00:00:00Z"),
-  startsAt: new Date("2025-04-09T10:18:19.507Z"),
+  startsAt: new Date("2025-02-05T18:51:30.654Z"),
   title: "Steam Summer Sale 2024",
   upvotes: 123456,
 };

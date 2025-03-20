@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 8aa9c41b85ecc8183fdc7f5b1aa0c920
+  docChecksum: 1d42ca8e43de6e1f21ef223e7cf20f99
   docVersion: 1.0.0
-  speakeasyVersion: 1.521.0
-  generationVersion: 2.558.2
-  releaseVersion: 0.22.11
-  configChecksum: 612153f1e67a1b91737dbf4e409c7ee2
+  speakeasyVersion: 1.521.1
+  generationVersion: 2.558.5
+  releaseVersion: 0.22.12
+  configChecksum: 6e764e9443f3488b4702325da6803c53
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -151,7 +151,6 @@ generatedFiles:
   - docs/models/components/v1adminupdateeventrequestbody.md
   - docs/models/components/v1adminupdateeventresponsebody.md
   - docs/models/components/v1adminupdateresourcesrequestbody.md
-  - docs/models/components/v1adminupdateresourcesrequestbodyresource.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appbadgelistrequestbody.md
@@ -974,7 +973,7 @@ examples:
   admin.v1.update-resources:
     speakeasy-default-admin-v1-update-resources:
       requestBody:
-        application/json: {"newResources": [{"resource": "max_leaderboard_entries", "value": "1"}], "resource": ["short_link_domain", "background"]}
+        application/json: {"resources": []}
       responses:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

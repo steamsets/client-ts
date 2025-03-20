@@ -258,15 +258,8 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.updateResources({
-    newResources: [
-      {
-        resource: "max_leaderboard_entries",
-        value: "1",
-      },
-    ],
-    resource: [
-      "short_link_domain",
-      "background",
+    resources: [
+
     ],
   });
 
@@ -293,15 +286,8 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminUpdateResources(steamSets, {
-    newResources: [
-      {
-        resource: "max_leaderboard_entries",
-        value: "1",
-      },
-    ],
-    resource: [
-      "short_link_domain",
-      "background",
+    resources: [
+  
     ],
   });
 

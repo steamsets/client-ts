@@ -4,7 +4,6 @@
 
 import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,57 +25,14 @@ import {
   VanityStruct$outboundSchema,
 } from "./vanitystruct.js";
 
-export const V1AdminUpdateResourcesRequestBodyResource = {
-  AnimatedAvatar: "animated_avatar",
-  AutoRefresh: "auto_refresh",
-  AvatarFrame: "avatar_frame",
-  Background: "background",
-  GoToLeaderboardEntry: "go_to_leaderboard_entry",
-  MaxLeaderboardEntries: "max_leaderboard_entries",
-  MiniBackground: "mini_background",
-  AccountRefreshRate: "account_refresh_rate",
-  SocialLinks: "social_links",
-  Vanity: "vanity",
-  DeveloperApps: "developer_apps",
-  AccountQueues: "account_queues",
-  ShortLinkDomain: "short_link_domain",
-} as const;
-export type V1AdminUpdateResourcesRequestBodyResource = ClosedEnum<
-  typeof V1AdminUpdateResourcesRequestBodyResource
->;
-
 export type V1AdminUpdateResourcesRequestBody = {
   id?: IDStruct | undefined;
   /**
    * The resources to add for this account
    */
-  newResources: Array<Resource> | null;
-  resource: Array<V1AdminUpdateResourcesRequestBodyResource> | null;
+  resources: Array<Resource> | null;
   vanity?: VanityStruct | undefined;
 };
-
-/** @internal */
-export const V1AdminUpdateResourcesRequestBodyResource$inboundSchema:
-  z.ZodNativeEnum<typeof V1AdminUpdateResourcesRequestBodyResource> = z
-    .nativeEnum(V1AdminUpdateResourcesRequestBodyResource);
-
-/** @internal */
-export const V1AdminUpdateResourcesRequestBodyResource$outboundSchema:
-  z.ZodNativeEnum<typeof V1AdminUpdateResourcesRequestBodyResource> =
-    V1AdminUpdateResourcesRequestBodyResource$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace V1AdminUpdateResourcesRequestBodyResource$ {
-  /** @deprecated use `V1AdminUpdateResourcesRequestBodyResource$inboundSchema` instead. */
-  export const inboundSchema =
-    V1AdminUpdateResourcesRequestBodyResource$inboundSchema;
-  /** @deprecated use `V1AdminUpdateResourcesRequestBodyResource$outboundSchema` instead. */
-  export const outboundSchema =
-    V1AdminUpdateResourcesRequestBodyResource$outboundSchema;
-}
 
 /** @internal */
 export const V1AdminUpdateResourcesRequestBody$inboundSchema: z.ZodType<
@@ -85,18 +41,14 @@ export const V1AdminUpdateResourcesRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   id: IDStruct$inboundSchema.optional(),
-  newResources: z.nullable(z.array(Resource$inboundSchema)),
-  resource: z.nullable(
-    z.array(V1AdminUpdateResourcesRequestBodyResource$inboundSchema),
-  ),
+  resources: z.nullable(z.array(Resource$inboundSchema)),
   vanity: VanityStruct$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AdminUpdateResourcesRequestBody$Outbound = {
   id?: IDStruct$Outbound | undefined;
-  newResources: Array<Resource$Outbound> | null;
-  resource: Array<string> | null;
+  resources: Array<Resource$Outbound> | null;
   vanity?: VanityStruct$Outbound | undefined;
 };
 
@@ -107,10 +59,7 @@ export const V1AdminUpdateResourcesRequestBody$outboundSchema: z.ZodType<
   V1AdminUpdateResourcesRequestBody
 > = z.object({
   id: IDStruct$outboundSchema.optional(),
-  newResources: z.nullable(z.array(Resource$outboundSchema)),
-  resource: z.nullable(
-    z.array(V1AdminUpdateResourcesRequestBodyResource$outboundSchema),
-  ),
+  resources: z.nullable(z.array(Resource$outboundSchema)),
   vanity: VanityStruct$outboundSchema.optional(),
 });
 
