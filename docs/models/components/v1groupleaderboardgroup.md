@@ -18,7 +18,7 @@ let value: V1GroupLeaderboardGroup = {
     awardsGiven: 123456,
     awardsReceived: 123456,
     badges: 123456,
-    bans: 253642,
+    bans: 994401,
     city: {
       id: 1,
       name: "Bad Krozingen",
@@ -34,7 +34,7 @@ let value: V1GroupLeaderboardGroup = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 446135,
+    gameBans: 451822,
     level: 123456,
     name: "steamsets",
     normalBadgeCost: 123456,
@@ -49,8 +49,8 @@ let value: V1GroupLeaderboardGroup = {
     },
     roles: [
       {
-        rating: 104627,
-        role: "amethyst",
+        rating: 70869,
+        role: "owner",
       },
     ],
     state: {
@@ -58,10 +58,10 @@ let value: V1GroupLeaderboardGroup = {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 740098,
+    steamSetsScore: 152354,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 680515,
+    vacBans: 417486,
     xp: 123456,
   },
   privacy: "public",

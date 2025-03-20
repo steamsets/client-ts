@@ -8,8 +8,7 @@ import { V1LeaderboardAccountMetaResponseBody } from "@steamsets/client-ts/model
 let value: V1LeaderboardAccountMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json",
-  description:
-    "innocently hence pish hyphenation trim bravely teammate marketplace",
+  description: "mid athletic frequent and everlasting",
   title: "<value>",
 };
 ```
