@@ -6,7 +6,7 @@
 import { BestLeaderboardRank } from "@steamsets/client-ts/models/components";
 
 let value: BestLeaderboardRank = {
-  leaderboard: "app_playtime",
+  leaderboard: "bans",
   ranks: "1,1,1,1,1",
 };
 ```

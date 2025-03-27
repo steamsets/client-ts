@@ -13,6 +13,7 @@ export type V1AccountMetaResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  steamAvatarHashOfTheAccount: string;
   description: string;
   /**
    * Use this + cdn.steamsets.com/og/account/steamId.png as url
@@ -28,18 +29,21 @@ export const V1AccountMetaResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
+  "Steam Avatar hash of the account": z.string(),
   description: z.string(),
   steamId: z.string(),
   title: z.string(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
+    "Steam Avatar hash of the account": "steamAvatarHashOfTheAccount",
   });
 });
 
 /** @internal */
 export type V1AccountMetaResponseBody$Outbound = {
   $schema?: string | undefined;
+  "Steam Avatar hash of the account": string;
   description: string;
   steamId: string;
   title: string;
@@ -52,12 +56,14 @@ export const V1AccountMetaResponseBody$outboundSchema: z.ZodType<
   V1AccountMetaResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
+  steamAvatarHashOfTheAccount: z.string(),
   description: z.string(),
   steamId: z.string(),
   title: z.string(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
+    steamAvatarHashOfTheAccount: "Steam Avatar hash of the account",
   });
 });
 

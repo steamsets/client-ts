@@ -15,7 +15,7 @@ let value: LeaderboardV1GetGroupLeaderboardMetaResponse = {
   v1LeaderboardGroupMetaResponseBody: {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json",
-    description: "trustworthy underplay hippodrome",
+    description: "finally aside however aha roundabout embarrassment",
     title: "<value>",
   },
 };

@@ -141,3 +141,4 @@ export * from "./v1verifyconnectionrequestbody.js";
 export * from "./v1verifyconnectionresponsebody.js";
 export * from "./v1verifyemailrequestbody.js";
 export * from "./vanitystruct.js";
+export * from "./vectors.js";

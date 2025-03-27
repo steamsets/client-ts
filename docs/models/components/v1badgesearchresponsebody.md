@@ -10,34 +10,39 @@ let value: V1BadgeSearchResponseBody = {
     "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json",
   badges: [
     {
-      appId: 457223,
+      vectors: {
+        image: [
+          6658.59,
+        ],
+      },
+      appId: 517309,
       appImage: "<value>",
       appName: "<value>",
-      bookmarks: 951875,
+      bookmarks: 424089,
       colors: [
         "<value>",
       ],
       designs: [
         "<value>",
       ],
-      firstCompletion: 575751,
-      highestLevel: 820767,
+      firstCompletion: 554688,
+      highestLevel: 287051,
       id: "<id>",
-      image: "https://loremflickr.com/3635/3262?lock=5664613551624321",
+      image: "https://loremflickr.com/2826/1660?lock=7463877943222411",
       isEvent: false,
       isFoil: false,
       isSale: false,
-      lastCompletion: 398434,
-      level: 62713,
+      lastCompletion: 924967,
+      level: 46007,
       name: "<value>",
-      scarcity: 424032,
-      steamId: 258684,
-      xp: 8490.39,
+      scarcity: 232627,
+      steamId: 348519,
+      xp: 8149.67,
     },
   ],
   facets: "<value>",
-  pages: 33304,
-  results: 958983,
+  pages: 985492,
+  results: 968972,
 };
 ```
 

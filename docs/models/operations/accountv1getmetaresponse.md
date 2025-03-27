@@ -15,6 +15,7 @@ let value: AccountV1GetMetaResponse = {
   v1AccountMetaResponseBody: {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json",
+    steamAvatarHashOfTheAccount: "<value>",
     description: "reassuringly amongst wedge colorfully orientate",
     steamId: "<id>",
     title: "<value>",

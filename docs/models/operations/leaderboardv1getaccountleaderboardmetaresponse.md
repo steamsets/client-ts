@@ -15,7 +15,7 @@ let value: LeaderboardV1GetAccountLeaderboardMetaResponse = {
   v1LeaderboardAccountMetaResponseBody: {
     dollarSchema:
       "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json",
-    description: "even as advanced afterwards coliseum overcooked what unless",
+    description: "whether seriously huzzah immediately geez justly pfft oh",
     title: "<value>",
   },
 };
