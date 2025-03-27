@@ -14,14 +14,14 @@ let value: V1GetSessionBody = {
   name: "flo",
   resources: [
     {
-      resource: "developer_apps",
+      resource: "go_to_leaderboard_entry",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 76956,
-      role: "sapphire",
+      rating: 356707,
+      role: "user",
     },
   ],
   sessionData: {

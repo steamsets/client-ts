@@ -8,7 +8,7 @@ import { V1LeaderboardGroupMetaResponseBody } from "@steamsets/client-ts/models/
 let value: V1LeaderboardGroupMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json",
-  description: "near digestive traffic ouch",
+  description: "topsail diligently thigh arraign into defenseless geez",
   title: "<value>",
 };
 ```

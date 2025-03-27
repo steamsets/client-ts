@@ -5,7 +5,7 @@
 ```typescript
 import { LastQueueStatus } from "@steamsets/client-ts/models/components";
 
-let value: LastQueueStatus = "cooldown";
+let value: LastQueueStatus = "pending";
 ```
 
 ## Values

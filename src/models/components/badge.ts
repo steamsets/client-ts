@@ -3,11 +3,19 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  Vectors,
+  Vectors$inboundSchema,
+  Vectors$Outbound,
+  Vectors$outboundSchema,
+} from "./vectors.js";
 
 export type Badge = {
+  vectors: Vectors;
   appId: number;
   appImage: string;
   appName: string;
@@ -32,6 +40,7 @@ export type Badge = {
 /** @internal */
 export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
   .object({
+    _vectors: Vectors$inboundSchema,
     appId: z.number().int(),
     appImage: z.string(),
     appName: z.string(),
@@ -51,10 +60,15 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     scarcity: z.number().int(),
     steamId: z.number().int(),
     xp: z.number(),
+  }).transform((v) => {
+    return remap$(v, {
+      "_vectors": "vectors",
+    });
   });
 
 /** @internal */
 export type Badge$Outbound = {
+  _vectors: Vectors$Outbound;
   appId: number;
   appImage: string;
   appName: string;
@@ -82,6 +96,7 @@ export const Badge$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Badge
 > = z.object({
+  vectors: Vectors$outboundSchema,
   appId: z.number().int(),
   appImage: z.string(),
   appName: z.string(),
@@ -101,6 +116,10 @@ export const Badge$outboundSchema: z.ZodType<
   scarcity: z.number().int(),
   steamId: z.number().int(),
   xp: z.number(),
+}).transform((v) => {
+  return remap$(v, {
+    vectors: "_vectors",
+  });
 });
 
 /**

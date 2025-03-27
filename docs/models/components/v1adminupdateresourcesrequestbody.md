@@ -8,7 +8,7 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   resources: [
     {
-      resource: "account_queues",
+      resource: "auto_refresh",
       value: "1",
     },
   ],
