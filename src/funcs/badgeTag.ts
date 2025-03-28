@@ -96,7 +96,7 @@ async function $do(
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "badge.v1.tag",
-    oAuth2Scopes: null,
+    oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
 

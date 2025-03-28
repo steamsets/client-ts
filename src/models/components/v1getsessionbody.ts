@@ -44,6 +44,10 @@ export type V1GetSessionBody = {
    */
   email?: string | null | undefined;
   /**
+   * Whether the account is new
+   */
+  isNew: boolean;
+  /**
    * The level of the account
    */
   level: number;
@@ -76,6 +80,7 @@ export const V1GetSessionBody$inboundSchema: z.ZodType<
   accountId: z.number().int(),
   avatar: z.string(),
   email: z.nullable(z.string()).optional(),
+  isNew: z.boolean(),
   level: z.number().int(),
   name: z.string(),
   resources: z.nullable(z.array(Resource$inboundSchema)),
@@ -94,6 +99,7 @@ export type V1GetSessionBody$Outbound = {
   accountId: number;
   avatar: string;
   email?: string | null | undefined;
+  isNew: boolean;
   level: number;
   name: string;
   resources: Array<Resource$Outbound> | null;
@@ -112,6 +118,7 @@ export const V1GetSessionBody$outboundSchema: z.ZodType<
   accountId: z.number().int(),
   avatar: z.string(),
   email: z.nullable(z.string()).optional(),
+  isNew: z.boolean(),
   level: z.number().int(),
   name: z.string(),
   resources: z.nullable(z.array(Resource$outboundSchema)),

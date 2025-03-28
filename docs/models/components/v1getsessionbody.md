@@ -10,6 +10,7 @@ let value: V1GetSessionBody = {
   accountId: 123456,
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
   email: "flo@example.com",
+  isNew: true,
   level: 1,
   name: "flo",
   resources: [
@@ -46,6 +47,7 @@ let value: V1GetSessionBody = {
 | `accountId`                                                  | *number*                                                     | :heavy_check_mark:                                           | The account id                                               | 123456                                                       |
 | `avatar`                                                     | *string*                                                     | :heavy_check_mark:                                           | The avatar of the account                                    | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                         |
 | `email`                                                      | *string*                                                     | :heavy_minus_sign:                                           | The email of the account                                     | flo@example.com                                              |
+| `isNew`                                                      | *boolean*                                                    | :heavy_check_mark:                                           | Whether the account is new                                   | true                                                         |
 | `level`                                                      | *number*                                                     | :heavy_check_mark:                                           | The level of the account                                     | 1                                                            |
 | `name`                                                       | *string*                                                     | :heavy_check_mark:                                           | The name of the account                                      | flo                                                          |
 | `resources`                                                  | [components.Resource](../../models/components/resource.md)[] | :heavy_check_mark:                                           | The resources the account has (permissions)                  |                                                              |
