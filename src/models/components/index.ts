@@ -133,6 +133,7 @@ export * from "./v1updateimagerequestbody.js";
 export * from "./v1updateimageresponsebody.js";
 export * from "./v1updaterolerequestbody.js";
 export * from "./v1updatesettingsrequestbody.js";
+export * from "./v1updatevanityrequestbody.js";
 export * from "./v1uploadedimage.js";
 export * from "./v1uploadimagesrequestbody.js";
 export * from "./v1uploadimagesresponsebody.js";
