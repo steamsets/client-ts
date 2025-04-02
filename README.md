@@ -104,6 +104,7 @@ run();
 * [refreshSession](docs/sdks/account/README.md#refreshsession)
 * [updateImages](docs/sdks/account/README.md#updateimages)
 * [updateSettings](docs/sdks/account/README.md#updatesettings)
+* [accountV1SettingsUpdateVanity](docs/sdks/account/README.md#accountv1settingsupdatevanity)
 * [uploadImages](docs/sdks/account/README.md#uploadimages)
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection)
 
@@ -530,6 +531,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountV1SettingsUpdateVanity`](docs/sdks/account/README.md#accountv1settingsupdatevanity)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
 - [`accountConnect`](docs/sdks/account/README.md#connect)
 - [`accountConnectionUpdate`](docs/sdks/connection/README.md#update)

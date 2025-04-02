@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 17e29d468cda82b4a45c1df8cab22324
+  docChecksum: e5d7001d3409f8d639e1dfcdb207e29b
   docVersion: 1.0.0
-  speakeasyVersion: 1.526.0
-  generationVersion: 2.563.0
-  releaseVersion: 0.22.14
-  configChecksum: fc51c7e7a1e3617913392c4f985b1969
+  speakeasyVersion: 1.527.3
+  generationVersion: 2.564.12
+  releaseVersion: 0.22.15
+  configChecksum: d6eff5bf707e30a73b42f1ecb569b2da
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -220,6 +220,7 @@ generatedFiles:
   - docs/models/components/v1updaterolerequestbody.md
   - docs/models/components/v1updaterolerequestbodyrole.md
   - docs/models/components/v1updatesettingsrequestbody.md
+  - docs/models/components/v1updatevanityrequestbody.md
   - docs/models/components/v1uploadedimage.md
   - docs/models/components/v1uploadedimagetype.md
   - docs/models/components/v1uploadimagesrequestbody.md
@@ -273,6 +274,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingsupdaterequest.md
   - docs/models/operations/accountv1settingsupdateresponse.md
   - docs/models/operations/accountv1settingsupdateroleresponse.md
+  - docs/models/operations/accountv1settingsupdatevanityresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
   - docs/models/operations/adminv1geteventsresponse.md
   - docs/models/operations/adminv1removevanityresponse.md
@@ -312,6 +314,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountV1SettingsUpdateVanity.ts
   - src/funcs/accountBookmarkBadge.ts
   - src/funcs/accountConnect.ts
   - src/funcs/accountConnectionUpdate.ts
@@ -519,6 +522,7 @@ generatedFiles:
   - src/models/components/v1updateimageresponsebody.ts
   - src/models/components/v1updaterolerequestbody.ts
   - src/models/components/v1updatesettingsrequestbody.ts
+  - src/models/components/v1updatevanityrequestbody.ts
   - src/models/components/v1uploadedimage.ts
   - src/models/components/v1uploadimagesrequestbody.ts
   - src/models/components/v1uploadimagesresponsebody.ts
@@ -569,6 +573,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsget.ts
   - src/models/operations/accountv1settingsupdate.ts
   - src/models/operations/accountv1settingsupdaterole.ts
+  - src/models/operations/accountv1settingsupdatevanity.ts
   - src/models/operations/adminv1getaccount.ts
   - src/models/operations/adminv1getevents.ts
   - src/models/operations/adminv1removevanity.ts
@@ -1245,6 +1250,15 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json", "description": "version miserly char entomb below video aha frugal defiantly meh", "title": "<value>"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update-vanity:
+    speakeasy-default-account-v1-settings-update-vanity:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
