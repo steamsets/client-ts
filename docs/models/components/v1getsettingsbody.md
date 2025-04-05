@@ -8,7 +8,7 @@ import { V1GetSettingsBody } from "@steamsets/client-ts/models/components";
 let value: V1GetSettingsBody = {
   dollarSchema: "https://api.steamsets.com/schemas/V1GetSettingsBody.json",
   chosenRole: {
-    role: "top_100",
+    role: "diamond",
     tier: "tier_1",
   },
   connections: [
@@ -61,7 +61,7 @@ let value: V1GetSettingsBody = {
   subscribed: false,
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 99615,
+    clicks: 551649,
   },
 };
 ```

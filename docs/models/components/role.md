@@ -6,7 +6,7 @@
 import { Role } from "@steamsets/client-ts/models/components";
 
 let value: Role = {
-  rating: 55374,
+  rating: 310006,
   role: "owner",
 };
 ```

@@ -20,7 +20,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.app.listBadges({
-    appId: 701216,
+    appId: 194325,
   });
 
   // Handle the result
@@ -46,7 +46,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await appListBadges(steamSets, {
-    appId: 701216,
+    appId: 194325,
   });
 
   if (!res.ok) {

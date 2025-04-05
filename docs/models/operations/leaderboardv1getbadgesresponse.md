@@ -22,18 +22,6 @@ let value: LeaderboardV1GetBadgesResponse = {
           "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg",
         appName: "Counter-Strike: Global Offensive",
         badgeId: "bdg_123",
-        event: {
-          bodyImage: "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg",
-          downvotes: 123456,
-          endsAt: new Date("2023-01-01T00:00:00Z"),
-          gid: "123456",
-          headerImage: "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg",
-          name: "Counter-Strike: Global Offensive",
-          postedAt: new Date("2023-01-01T00:00:00Z"),
-          startsAt: new Date("2023-01-01T00:00:00Z"),
-          title: "Counter-Strike: Global Offensive",
-          upvotes: 123456,
-        },
         firstCompletion: new Date("2023-01-01T00:00:00Z"),
         highestLevel: 123456,
         image:

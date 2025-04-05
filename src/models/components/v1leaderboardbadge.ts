@@ -6,12 +6,6 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  V1LeaderboardBadgeEvent,
-  V1LeaderboardBadgeEvent$inboundSchema,
-  V1LeaderboardBadgeEvent$Outbound,
-  V1LeaderboardBadgeEvent$outboundSchema,
-} from "./v1leaderboardbadgeevent.js";
 
 export type V1LeaderboardBadge = {
   /**
@@ -30,7 +24,6 @@ export type V1LeaderboardBadge = {
    * The public id of the badge
    */
   badgeId: string;
-  event?: V1LeaderboardBadgeEvent | null | undefined;
   /**
    * The time the badge was completed
    */
@@ -97,7 +90,6 @@ export const V1LeaderboardBadge$inboundSchema: z.ZodType<
   appImage: z.string(),
   appName: z.string(),
   badgeId: z.string(),
-  event: z.nullable(V1LeaderboardBadgeEvent$inboundSchema).optional(),
   firstCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
@@ -123,7 +115,6 @@ export type V1LeaderboardBadge$Outbound = {
   appImage: string;
   appName: string;
   badgeId: string;
-  event?: V1LeaderboardBadgeEvent$Outbound | null | undefined;
   firstCompletion: string | null;
   highestLevel: number | null;
   image: string;
@@ -149,7 +140,6 @@ export const V1LeaderboardBadge$outboundSchema: z.ZodType<
   appImage: z.string(),
   appName: z.string(),
   badgeId: z.string(),
-  event: z.nullable(V1LeaderboardBadgeEvent$outboundSchema).optional(),
   firstCompletion: z.nullable(z.date().transform(v => v.toISOString())),
   highestLevel: z.nullable(z.number().int()),
   image: z.string(),

@@ -8,6 +8,12 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Stats extends ClientSDK {
+  /**
+   * Liveness check
+   *
+   * @remarks
+   * This endpoint checks if the service is alive.
+   */
   async get(
     options?: RequestOptions,
   ): Promise<operations.StatsV1StatsGetResponse> {

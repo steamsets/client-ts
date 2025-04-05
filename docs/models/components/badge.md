@@ -8,32 +8,32 @@ import { Badge } from "@steamsets/client-ts/models/components";
 let value: Badge = {
   vectors: {
     image: [
-      9049.49,
+      3539.36,
     ],
   },
-  appId: 296556,
+  appId: 775541,
   appImage: "<value>",
   appName: "<value>",
-  bookmarks: 992012,
+  bookmarks: 241602,
   colors: [
     "<value>",
   ],
   designs: [
     "<value>",
   ],
-  firstCompletion: 249420,
-  highestLevel: 105906,
+  firstCompletion: 681817,
+  highestLevel: 781012,
   id: "<id>",
-  image: "https://picsum.photos/seed/JSgnn/3803/934",
+  image: "https://picsum.photos/seed/x3vJGZhEw/3499/1098",
   isEvent: false,
   isFoil: false,
   isSale: false,
-  lastCompletion: 748789,
-  level: 237807,
+  lastCompletion: 822916,
+  level: 237125,
   name: "<value>",
-  scarcity: 171853,
-  steamId: 449292,
-  xp: 3044.68,
+  scarcity: 464394,
+  steamId: 445428,
+  xp: 2933.58,
 };
 ```
 
