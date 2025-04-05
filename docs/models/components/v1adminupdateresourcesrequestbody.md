@@ -8,7 +8,7 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   resources: [
     {
-      resource: "auto_refresh",
+      resource: "go_to_leaderboard_entry",
       value: "1",
     },
   ],

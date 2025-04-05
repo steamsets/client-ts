@@ -8,7 +8,8 @@ import { V1LeaderboardAccountMetaResponseBody } from "@steamsets/client-ts/model
 let value: V1LeaderboardAccountMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json",
-  description: "nor sizzling cheerfully hungrily accessorise fly gadzooks",
+  description:
+    "positively that snoopy ew unless dispose rowdy consign substantial",
   title: "<value>",
 };
 ```

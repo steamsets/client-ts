@@ -86,8 +86,8 @@ let value: AdminV1GetAccountResponse = {
     ],
     roles: [
       {
-        rating: 20107,
-        role: "beta",
+        rating: 318645,
+        role: "developer",
       },
     ],
     sessions: [

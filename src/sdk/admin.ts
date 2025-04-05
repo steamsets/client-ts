@@ -4,21 +4,14 @@
 
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
-import { adminUpdateEvent } from "../funcs/adminUpdateEvent.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
 import { adminUpdateRoles } from "../funcs/adminUpdateRoles.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
-import { Events } from "./events.js";
 
 export class Admin extends ClientSDK {
-  private _events?: Events;
-  get events(): Events {
-    return (this._events ??= new Events(this._options));
-  }
-
   async getAccount(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -35,17 +28,6 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminV1RemoveVanityResponse> {
     return unwrapAsync(adminRemoveVanity(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async updateEvent(
-    request: components.V1AdminUpdateEventRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AdminV1UpdateEventResponse> {
-    return unwrapAsync(adminUpdateEvent(
       this,
       request,
       options,

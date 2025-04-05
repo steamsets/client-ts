@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e5d7001d3409f8d639e1dfcdb207e29b
+  docChecksum: 8b014d497a5037465b1b4a4fed021090
   docVersion: 1.0.0
-  speakeasyVersion: 1.527.3
-  generationVersion: 2.564.12
-  releaseVersion: 0.22.15
-  configChecksum: d6eff5bf707e30a73b42f1ecb569b2da
+  speakeasyVersion: 1.529.1
+  generationVersion: 2.566.5
+  releaseVersion: 0.22.16
+  configChecksum: a64617c6c7e3d5eaeb05fb4cacf233bd
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.4
+    core: 3.21.5
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -146,16 +146,12 @@ generatedFiles:
   - docs/models/components/v1accountvanityupdate.md
   - docs/models/components/v1admingetaccountresponsebody.md
   - docs/models/components/v1admingetaccountresponsebodyprivacy.md
-  - docs/models/components/v1admingeteventsresponsebody.md
   - docs/models/components/v1adminremovevanityresponsebody.md
-  - docs/models/components/v1adminupdateeventrequestbody.md
-  - docs/models/components/v1adminupdateeventresponsebody.md
   - docs/models/components/v1adminupdateresourcesrequestbody.md
   - docs/models/components/v1adminupdaterolessrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appbadgelistrequestbody.md
   - docs/models/components/v1appbadgelistresponsebody.md
-  - docs/models/components/v1appeventmapping.md
   - docs/models/components/v1apporder.md
   - docs/models/components/v1badgeorder.md
   - docs/models/components/v1badgeorderby.md
@@ -181,7 +177,6 @@ generatedFiles:
   - docs/models/components/v1developerappcreaterequestbody.md
   - docs/models/components/v1developerappcreateresponsebody.md
   - docs/models/components/v1emailsubscriptionrequestbody.md
-  - docs/models/components/v1event.md
   - docs/models/components/v1getimagesresponsebody.md
   - docs/models/components/v1getsessionbody.md
   - docs/models/components/v1getsettingsbody.md
@@ -196,7 +191,6 @@ generatedFiles:
   - docs/models/components/v1leaderboardaccountmetaresponsebody.md
   - docs/models/components/v1leaderboardappinfo.md
   - docs/models/components/v1leaderboardbadge.md
-  - docs/models/components/v1leaderboardbadgeevent.md
   - docs/models/components/v1leaderboardbadgeinfo.md
   - docs/models/components/v1leaderboardbadgeresponsebody.md
   - docs/models/components/v1leaderboardgroupmetarequestbody.md
@@ -276,9 +270,7 @@ generatedFiles:
   - docs/models/operations/accountv1settingsupdateroleresponse.md
   - docs/models/operations/accountv1settingsupdatevanityresponse.md
   - docs/models/operations/adminv1getaccountresponse.md
-  - docs/models/operations/adminv1geteventsresponse.md
   - docs/models/operations/adminv1removevanityresponse.md
-  - docs/models/operations/adminv1updateeventresponse.md
   - docs/models/operations/adminv1updateresourcesresponse.md
   - docs/models/operations/adminv1updaterolesresponse.md
   - docs/models/operations/appv1listbadgesresponse.md
@@ -302,7 +294,6 @@ generatedFiles:
   - docs/sdks/badges/README.md
   - docs/sdks/connection/README.md
   - docs/sdks/developerapps/README.md
-  - docs/sdks/events/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/location/README.md
@@ -351,10 +342,8 @@ generatedFiles:
   - src/funcs/accountUpdateSettings.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyConnection.ts
-  - src/funcs/adminEventsGet.ts
   - src/funcs/adminGetAccount.ts
   - src/funcs/adminRemoveVanity.ts
-  - src/funcs/adminUpdateEvent.ts
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
   - src/funcs/appListBadges.ts
@@ -456,16 +445,12 @@ generatedFiles:
   - src/models/components/v1accountsappsresponsebody.ts
   - src/models/components/v1accountvanityupdate.ts
   - src/models/components/v1admingetaccountresponsebody.ts
-  - src/models/components/v1admingeteventsresponsebody.ts
   - src/models/components/v1adminremovevanityresponsebody.ts
-  - src/models/components/v1adminupdateeventrequestbody.ts
-  - src/models/components/v1adminupdateeventresponsebody.ts
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolessrequestbody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appbadgelistrequestbody.ts
   - src/models/components/v1appbadgelistresponsebody.ts
-  - src/models/components/v1appeventmapping.ts
   - src/models/components/v1apporder.ts
   - src/models/components/v1badgeorder.ts
   - src/models/components/v1badgesearchresponsebody.ts
@@ -489,7 +474,6 @@ generatedFiles:
   - src/models/components/v1developerappcreaterequestbody.ts
   - src/models/components/v1developerappcreateresponsebody.ts
   - src/models/components/v1emailsubscriptionrequestbody.ts
-  - src/models/components/v1event.ts
   - src/models/components/v1getimagesresponsebody.ts
   - src/models/components/v1getsessionbody.ts
   - src/models/components/v1getsettingsbody.ts
@@ -500,7 +484,6 @@ generatedFiles:
   - src/models/components/v1leaderboardaccountmetaresponsebody.ts
   - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
-  - src/models/components/v1leaderboardbadgeevent.ts
   - src/models/components/v1leaderboardbadgeinfo.ts
   - src/models/components/v1leaderboardbadgeresponsebody.ts
   - src/models/components/v1leaderboardgroupmetarequestbody.ts
@@ -575,9 +558,7 @@ generatedFiles:
   - src/models/operations/accountv1settingsupdaterole.ts
   - src/models/operations/accountv1settingsupdatevanity.ts
   - src/models/operations/adminv1getaccount.ts
-  - src/models/operations/adminv1getevents.ts
   - src/models/operations/adminv1removevanity.ts
-  - src/models/operations/adminv1updateevent.ts
   - src/models/operations/adminv1updateresources.ts
   - src/models/operations/adminv1updateroles.ts
   - src/models/operations/appv1listbadges.ts
@@ -602,7 +583,6 @@ generatedFiles:
   - src/sdk/badges.ts
   - src/sdk/connection.ts
   - src/sdk/developerapps.ts
-  - src/sdk/events.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
@@ -633,44 +613,6 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.getBadgeBookmarks:
-    speakeasy-default-account-v1-get-badge-bookmarks:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarksResponseBody.json", "bookmarks": [{"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}, {"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}]}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.getOwnedBadges:
-    speakeasy-default-account-v1-get-owned-badges:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json", "ownedBadges": []}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  badge.v1.tags:
-    speakeasy-default-badge-v1-tags:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [], "designTags": []}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  badge.v1.search:
-    speakeasy-default-badge-v1-search:
-      requestBody:
-        application/json: {"filter": "<value>", "query": "<value>", "sort": ["price:asc", "author:desc"]}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"_vectors": {"image": [3549.2]}, "appId": 446588, "appImage": "<value>", "appName": "<value>", "bookmarks": 928192, "colors": ["<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"], "firstCompletion": 445744, "highestLevel": 270349, "id": "<id>", "image": "https://loremflickr.com/3960/2205?lock=7970228800884651", "isEvent": false, "isFoil": true, "isSale": true, "lastCompletion": 716565, "level": 890817, "name": "<value>", "scarcity": 60456, "steamId": 722436, "xp": 3133.1}], "facets": "<value>", "pages": 479485, "results": 446588}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.connection.connect:
     speakeasy-default-account-v1-connection-connect:
       requestBody:
@@ -693,45 +635,12 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.developer-app-delete:
-    speakeasy-default-account-v1-settings-developer-app-delete:
-      requestBody:
-        application/json: {"developerAppId": "da_123456"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppDeleteResponseBody.json"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.developer-app-update:
-    speakeasy-default-account-v1-settings-developer-app-update:
-      requestBody:
-        application/json: {"description": "My App Description", "developerAppId": "da_123456", "name": "My App", "regenerate": true}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.session.create:
     speakeasy-default-account-v1-session-create:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1CreateSessionBody.json", "sessionToken": "ABC123"}
         "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.session.login:
-    speakeasy-default-account-v1-session-login:
-      requestBody:
-        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://example.com", "openid_sig": "123456", "openid_signed": "123456"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_", "steamId": "76561198842603734"}
-        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -742,28 +651,6 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1DeleteConnectionResponseBody.json"}
-        "400":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.connection.updateConnection:
-    speakeasy-default-account-v1-connection-update-connection:
-      requestBody:
-        application/json: {"connectionId": "123456", "hidden": true}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json"}
-        "400":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.connection.verifyConnection:
-    speakeasy-default-account-v1-connection-verify-connection:
-      requestBody:
-        application/json: {"connectionId": "123456"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json"}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -779,6 +666,31 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-send-verification:
+    speakeasy-default-account-v1-settings-email-send-verification:
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-subscribe:
+    speakeasy-default-account-v1-settings-email-subscribe:
+      requestBody:
+        application/json: {"email": "steamsets@example.com", "subscribed": true}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.email-verify:
+    speakeasy-default-account-v1-settings-email-verify:
+      requestBody:
+        application/json: {"code": "123456"}
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getApps:
     speakeasy-default-account-v1-get-apps:
       requestBody:
@@ -787,6 +699,15 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountsAppsResponseBody.json", "apps": [{"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "playtime": 123456, "price": 1200}], "pages": 1, "totalHits": 1}
         "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getBadgeBookmarks:
+    speakeasy-default-account-v1-get-badge-bookmarks:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarksResponseBody.json", "bookmarks": [{"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}]}
+        "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -827,7 +748,7 @@ examples:
     speakeasy-default-account-v1-images-get:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetImagesResponseBody.json", "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetImagesResponseBody.json", "images": []}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getInfo:
@@ -836,7 +757,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 560592, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "bans", "ranks": "1,1,1,1,1"}, {"leaderboard": "xp", "ranks": "1,1,1,1,1"}], "currentRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}, {"leaderboard": "steam_sets", "ranks": "1,1,1,1,1"}], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 565193, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2024-09-06T09:49:21.884Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 190809, "role": "owner"}, {"rating": 106951, "role": "emerald"}], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 509023, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 681206, "xp": 123456}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 560592, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "bans", "ranks": "1,1,1,1,1"}, {"leaderboard": "xp", "ranks": "1,1,1,1,1"}], "currentRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}, {"leaderboard": "steam_sets", "ranks": "1,1,1,1,1"}], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 565193, "images": [], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "failed", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2024-11-22T18:46:32.730Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 323377, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 106951, "xp": 123456}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -852,6 +773,40 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getMeta:
+    speakeasy-default-account-v1-get-meta:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "Steam Avatar hash of the account": "<value>", "description": "mmm hollow remark castanet kick shakily gadzooks shakily crossly abaft", "steamId": "<id>", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.getOwnedBadges:
+    speakeasy-default-account-v1-get-owned-badges:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json", "ownedBadges": [{"appId": 730, "badgeId": "bdg_123", "isFoil": true, "level": 123456, "steamId": 13}, {"appId": 730, "badgeId": "bdg_123", "isFoil": true, "level": 123456, "steamId": 13}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.get:
+    speakeasy-default-account-v1-session-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "vanity", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}], "roles": [{"rating": 271123, "role": "emerald"}, {"rating": 829760, "role": "amethyst"}, {"rating": 161267, "role": "ruby"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.get:
+    speakeasy-default-account-v1-settings-get:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "beta", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 864485}}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.getStaff:
     speakeasy-default-account-v1-get-staff:
       responses:
@@ -861,21 +816,81 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.send-email-verification:
-    speakeasy-default-account-v1-settings-send-email-verification:
+  account.v1.session.login:
+    speakeasy-default-account-v1-session-login:
+      requestBody:
+        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://example.com", "openid_sig": "123456", "openid_signed": "123456"}
       responses:
-        "404":
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_", "steamId": "76561198842603734"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.logout:
+    speakeasy-default-account-v1-session-logout:
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.queue:
+    speakeasy-default-account-v1-queue:
+      requestBody:
+        application/json: {"force": true}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.connection.reconnect:
+    speakeasy-default-account-v1-connection-reconnect:
+      requestBody:
+        application/json: {"code": "123456", "connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.session.refresh:
+    speakeasy-default-account-v1-session-refresh:
+      requestBody:
+        application/json: {"refreshToken": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1RefreshSessionBody.json", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_"}
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.v1.images.update:
     speakeasy-default-account-v1-images-update:
       requestBody:
-        application/json: {"images": []}
+        application/json: {"images": [{"active": true, "imageId": "123456"}]}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateImageResponseBody.json"}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update:
+    speakeasy-default-account-v1-settings-update:
+      requestBody:
+        application/json: {"email": "steamsets@example.com", "hidden": true, "language": "en", "vanity": "flo"}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update-vanity:
+    speakeasy-default-account-v1-settings-update-vanity:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -890,13 +905,35 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.verfy-email:
-    speakeasy-default-account-v1-settings-verfy-email:
+  account.v1.connection.verifyConnection:
+    speakeasy-default-account-v1-connection-verify-connection:
       requestBody:
-        application/json: {"code": "123456"}
+        application/json: {"connectionId": "123456"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1VerifyEmailResponseBody.json"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1VerifyConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.developer-app-delete:
+    speakeasy-default-account-v1-settings-developer-app-delete:
+      requestBody:
+        application/json: {"developerAppId": "da_123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppDeleteResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.developer-app-update:
+    speakeasy-default-account-v1-settings-developer-app-update:
+      requestBody:
+        application/json: {"description": "My App Description", "developerAppId": "da_123456", "name": "My App", "regenerate": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -912,37 +949,23 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.session.get:
-    speakeasy-default-account-v1-session-get:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "account_refresh_rate", "value": "1"}, {"resource": "account_refresh_rate", "value": "1"}], "roles": [{"rating": 969961, "role": "emerald"}, {"rating": 450824, "role": "partner"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.get:
-    speakeasy-default-account-v1-settings-get:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1GetSettingsBody.json", "chosenRole": {"role": "contributor", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}, {"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": false, "vanity": "flo", "vanityAnalytics": {"clicks": 458049}}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.update:
-    speakeasy-default-account-v1-settings-update:
+  account.v1.connection.updateConnection:
+    speakeasy-default-account-v1-connection-update-connection:
       requestBody:
-        application/json: {"email": "steamsets@example.com", "hidden": true, "language": "en", "vanity": "flo"}
+        application/json: {"connectionId": "123456", "hidden": true}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateSettingsResponseBody.json"}
-        "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.queue:
-    speakeasy-default-account-v1-queue:
-      requestBody:
-        application/json: {"force": true}
-      responses:
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1UpdateConnectionResponseBody.json"}
         "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.v1.settings.update-role:
+    speakeasy-default-account-v1-settings-update-role:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -952,27 +975,18 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "mini_background", "value": "1"}, {"resource": "go_to_leaderboard_entry", "value": "1"}, {"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 438722, "role": "badge_scout"}, {"rating": 161646, "role": "sapphire"}], "sessions": [], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [{"resource": "go_to_leaderboard_entry", "value": "1"}], "roles": [], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  admin.v1.get-events:
-    speakeasy-default-admin-v1-get-events:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetEventsResponseBody.json", "events": [{"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2024-07-27T19:44:24.488Z", "eventId": "<id>", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "mappings": [{"appId": 730, "steamId": 76561198842603730}, {"appId": 730, "steamId": 76561198842603730}], "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2025-07-11T00:16:57.819Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}, {"bodyImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "downvotes": 123456, "endsAt": "2025-03-22T15:15:23.156Z", "eventId": "<id>", "gid": "123456", "headerImage": "a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "mappings": [{"appId": 730, "steamId": 76561198842603730}], "name": "Steam Summer Sale 2024", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-12-20T11:40:25.081Z", "title": "Steam Summer Sale 2024", "upvotes": 123456}]}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  admin.v1.update-event:
-    speakeasy-default-admin-v1-update-event:
+  admin.v1.remove-vanity:
+    speakeasy-default-admin-v1-remove-vanity:
       requestBody:
-        application/json: {"eventId": "evt_123456", "mappings": [{"appId": 730, "steamId": 76561198842603730}]}
+        application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminUpdateEventResponseBody.json"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminRemoveVanityResponseBody.json"}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -989,8 +1003,61 @@ examples:
   admin.v1.update-roles:
     speakeasy-default-admin-v1-update-roles:
       requestBody:
-        application/json: {"roles": []}
+        application/json: {"roles": ["user", "beta"]}
       responses:
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  app.v1.listBadges:
+    speakeasy-default-app-v1-list-badges:
+      requestBody:
+        application/json: {"appId": 194325}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppBadgeListResponseBody.json", "badges": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 36295, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 438906, "baseXp": 526736, "firstCompletion": "2023-10-21T23:43:22.617Z", "highestLevel": 598786, "isEvent": true, "isFoil": true, "isSale": false, "lastCompletion": "2024-06-09T10:17:37.226Z", "name": "<value>", "price": 952579, "scarcity": 371657, "steamId": 589630}, {"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 329222, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 464020, "baseXp": 126233, "firstCompletion": "2023-06-11T02:18:37.552Z", "highestLevel": 934437, "isEvent": false, "isFoil": false, "isSale": false, "lastCompletion": "2023-12-19T01:47:41.317Z", "name": "<value>", "price": 977254, "scarcity": 606443, "steamId": 636197}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.tags:
+    speakeasy-default-badge-v1-tags:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagsResponseBody.json", "colorTags": [], "designTags": []}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.search:
+    speakeasy-default-badge-v1-search:
+      requestBody:
+        application/json: {"filter": "<value>", "query": "<value>", "sort": ["price:asc", "author:desc"]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchResponseBody.json", "badges": [{"_vectors": {"image": [1894.3]}, "appId": 61397, "appImage": "<value>", "appName": "<value>", "bookmarks": 36332, "colors": [], "designs": ["<value>", "<value>"], "firstCompletion": 551169, "highestLevel": 648975, "id": "<id>", "image": "https://loremflickr.com/756/753?lock=7617350545171169", "isEvent": false, "isFoil": false, "isSale": false, "lastCompletion": 945020, "level": 773769, "name": "<value>", "scarcity": 968044, "steamId": 382955, "xp": 8505.01}], "facets": "<value>", "pages": 553862, "results": 786735}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.search.suggest:
+    speakeasy-default-badge-v1-search-suggest:
+      requestBody:
+        application/json: {"query": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchSuggestBody.json", "filter": "<value>"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.v1.tags.suggest:
+    speakeasy-default-badge-v1-tags-suggest:
+      requestBody:
+        application/json: {"badgeId": "<id>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": ["<value>", "<value>", "<value>"], "designs": ["<value>", "<value>"]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1000,14 +1067,14 @@ examples:
       requestBody:
         application/json: {"badgeId": "bdg_123", "colors": [{"id": "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS", "remove": true}, {"id": "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS", "remove": true}, {"id": "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS", "remove": true}], "designs": [{"id": "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL", "name": "cat", "remove": true}, {"id": "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL", "name": "cat", "remove": true}]}
       responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json", "colorTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagResponseBody.json", "colorTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}]}
-  leaderboard.v1.getAccount:
-    speakeasy-default-leaderboard-v1-get-account:
+  leaderboard.v1.getAccountLeaderboard:
+    speakeasy-default-leaderboard-v1-get-account-leaderboard:
       requestBody:
         application/json: {"app": {"appId": 730}, "badge": {"id": 279811, "isFoil": true}, "end": 10, "goToLeaderboardRank": 1, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
       responses:
@@ -1017,11 +1084,13 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getBadges:
-    speakeasy-default-leaderboard-v1-get-badges:
+  leaderboard.v1.getAccountLeaderboardMeta:
+    speakeasy-default-leaderboard-v1-get-account-leaderboard-meta:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 835004, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}, {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "event": {"bodyImage": "8659ea8bf04142fb4634342b24fd3288008a3b4b.jpg", "downvotes": 123456, "endsAt": "2023-01-01T00:00:00Z", "gid": "123456", "headerImage": "9d6874c4a700cee137b22c60604eb4443f41ce54.jpg", "name": "Counter-Strike: Global Offensive", "postedAt": "2023-01-01T00:00:00Z", "startsAt": "2023-01-01T00:00:00Z", "title": "Counter-Strike: Global Offensive", "upvotes": 123456}, "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "oh self-confidence sup lobotomise impressive sightseeing unless", "title": "<value>"}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1033,6 +1102,26 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1GroupLeaderboardResponseBody.json", "groups": [{"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 797868, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 526160, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 759296, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 495204, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}, {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 91266, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 438882, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 513531, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 157142, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}, {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 364297, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 231462, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 272685, "role": "early_supporter"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 999926, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 807867, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 248913, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 641539, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 569133, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 135090, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getGroupLeaderboardMeta:
+    speakeasy-default-leaderboard-v1-get-group-leaderboard-meta:
+      requestBody:
+        application/json: {"leaderboard": "most_members"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json", "description": "version miserly char entomb below video aha frugal defiantly meh", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.v1.getBadges:
+    speakeasy-default-leaderboard-v1-get-badges:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardBadgeResponseBody.json", "badges": [{"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "badgeId": "bdg_123", "firstCompletion": "2023-01-01T00:00:00Z", "highestLevel": 123456, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/2861690/088ef3b86f9529b031929eab0a2e60bf30d1b904.png", "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-01-01T00:00:00Z", "level": 123456, "name": "Sommer Sale 2024 Foil 1+", "price": 1200, "scarcity": 123456, "steamId": 76561198842603730, "xp": 123456}]}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1062,205 +1151,5 @@ examples:
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.connection.reconnect:
-    speakeasy-default-account-v1-connection-reconnect:
-      requestBody:
-        application/json: {"code": "123456", "connectionId": "123456"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1ReconnectResponseBody.json"}
-        "400":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.update-role:
-    speakeasy-default-account-v1-settings-update-role:
-      requestBody:
-        application/json: {}
-      responses:
-        "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  resend-webhook:
-    speakeasy-default-resend-webhook:
-      requestBody:
-        application/octet-stream: "x-file: example.file"
-      responses:
-        default:
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.email-send-verification:
-    speakeasy-default-account-v1-settings-email-send-verification:
-      responses:
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.email-subscribe:
-    speakeasy-default-account-v1-settings-email-subscribe:
-      requestBody:
-        application/json: {"email": "steamsets@example.com", "subscribed": true}
-      responses:
-        "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "400":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.email-verify:
-    speakeasy-default-account-v1-settings-email-verify:
-      requestBody:
-        application/json: {"code": "123456"}
-      responses:
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.getMeta:
-    speakeasy-default-account-v1-get-meta:
-      requestBody:
-        application/json: {}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json", "Steam Avatar hash of the account": "<value>", "description": "exactly ha minor drat woot gracious", "steamId": "<id>", "title": "<value>"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.ably-authenticate:
-    speakeasy-default-account-v1-ably-authenticate:
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountAblyAuthenticateBody.json"}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getAccountMeta:
-    speakeasy-default-leaderboard-v1-get-account-meta:
-      requestBody:
-        application/json: {"app": {"appId": 730}, "badge": {"id": 335243, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "yahoo via haversack orientate psst however", "title": "<value>"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  app.v1.listBadges:
-    speakeasy-default-app-v1-list-badges:
-      requestBody:
-        application/json: {"appId": 701216}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppBadgeListResponseBody.json", "badges": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 897833, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 848136, "baseXp": 577532, "firstCompletion": "2023-03-21T15:35:48.066Z", "highestLevel": 426705, "isEvent": true, "isFoil": true, "isSale": false, "lastCompletion": "2023-06-20T14:27:19.367Z", "name": "<value>", "price": 353088, "scarcity": 709651, "steamId": 436264}]}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  badge.v1.tags.suggest:
-    speakeasy-default-badge-v1-tags-suggest:
-      requestBody:
-        application/json: {"badgeId": "<id>"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": ["<value>", "<value>", "<value>"], "designs": ["<value>", "<value>", "<value>"]}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getLeaderboardAccountMeta:
-    speakeasy-default-leaderboard-v1-get-leaderboard-account-meta:
-      requestBody:
-        application/json: {"app": {"appId": 730}, "badge": {"id": 75458, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "ideal how pfft", "title": "<value>"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  admin.v1.remove-vanity:
-    speakeasy-default-admin-v1-remove-vanity:
-      requestBody:
-        application/json: {}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminRemoveVanityResponseBody.json"}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  badge.v1.search.suggest:
-    speakeasy-default-badge-v1-search-suggest:
-      requestBody:
-        application/json: {"query": "<value>"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchSuggestBody.json", "filter": "<value>"}
-        "403":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.session.logout:
-    speakeasy-default-account-v1-session-logout:
-      responses:
-        "400":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.session.refresh:
-    speakeasy-default-account-v1-session-refresh:
-      requestBody:
-        application/json: {"refreshToken": "<value>"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1RefreshSessionBody.json", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_"}
-        "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getAccountLeaderboard:
-    speakeasy-default-leaderboard-v1-get-account-leaderboard:
-      requestBody:
-        application/json: {"app": {"appId": 730}, "badge": {"id": 279811, "isFoil": true}, "end": 10, "goToLeaderboardRank": 1, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountLeaderboardResponseBody.json", "accounts": [{"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 921914, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 480084, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 117086, "role": "ruby"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 438722, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 998261, "xp": 123456}, {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 161646, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 512332, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 766801, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 518072, "xp": 123456}, {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 276494, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 715380, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 412258, "role": "top_100"}, {"rating": 853537, "role": "contributor"}, {"rating": 919985, "role": "emerald"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 660851, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 242017, "xp": 123456}], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": [{"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}, {"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}], "ownAccount": {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 243737, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 86683, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 416431, "role": "translator"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 804993, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 837070, "xp": 123456}, "rankedOutOf": 0}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getAccountLeaderboardMeta:
-    speakeasy-default-leaderboard-v1-get-account-leaderboard-meta:
-      requestBody:
-        application/json: {"app": {"appId": 730}, "badge": {"id": 835004, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardAccountMetaResponseBody.json", "description": "oh self-confidence sup lobotomise impressive sightseeing unless", "title": "<value>"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  leaderboard.v1.getGroupLeaderboardMeta:
-    speakeasy-default-leaderboard-v1-get-group-leaderboard-meta:
-      requestBody:
-        application/json: {"leaderboard": "most_members"}
-      responses:
-        "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGroupMetaResponseBody.json", "description": "version miserly char entomb below video aha frugal defiantly meh", "title": "<value>"}
-        "404":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-  account.v1.settings.update-vanity:
-    speakeasy-default-account-v1-settings-update-vanity:
-      requestBody:
-        application/json: {}
-      responses:
-        "422":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-        "500":
-          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
-examplesVersion: 1.0.0
+examplesVersion: 1.0.1
 generatedTests: {}

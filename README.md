@@ -129,13 +129,8 @@ run();
 
 * [getAccount](docs/sdks/admin/README.md#getaccount)
 * [removeVanity](docs/sdks/admin/README.md#removevanity)
-* [updateEvent](docs/sdks/admin/README.md#updateevent)
 * [updateResources](docs/sdks/admin/README.md#updateresources)
 * [updateRoles](docs/sdks/admin/README.md#updateroles)
-
-#### [admin.events](docs/sdks/events/README.md)
-
-* [get](docs/sdks/events/README.md#get)
 
 ### [app](docs/sdks/app/README.md)
 
@@ -568,10 +563,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings)
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection)
-- [`adminEventsGet`](docs/sdks/events/README.md#get)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity)
-- [`adminUpdateEvent`](docs/sdks/admin/README.md#updateevent)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appListBadges`](docs/sdks/app/README.md#listbadges)

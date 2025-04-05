@@ -73,14 +73,14 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "background",
+      resource: "avatar_frame",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 221161,
-      role: "partner",
+      rating: 772285,
+      role: "top_100",
     },
   ],
   sessions: [

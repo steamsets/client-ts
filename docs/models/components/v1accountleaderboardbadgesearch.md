@@ -6,7 +6,7 @@
 import { V1AccountLeaderboardBadgeSearch } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountLeaderboardBadgeSearch = {
-  id: 967795,
+  id: 33515,
   isFoil: true,
 };
 ```

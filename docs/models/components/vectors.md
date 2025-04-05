@@ -7,7 +7,7 @@ import { Vectors } from "@steamsets/client-ts/models/components";
 
 let value: Vectors = {
   image: [
-    8391.89,
+    1684.51,
   ],
 };
 ```

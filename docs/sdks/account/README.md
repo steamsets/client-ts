@@ -2082,7 +2082,10 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.updateImages({
     images: [
-
+      {
+        active: true,
+        imageId: "123456",
+      },
     ],
   });
 
@@ -2110,7 +2113,10 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await accountUpdateImages(steamSets, {
     images: [
-  
+      {
+        active: true,
+        imageId: "123456",
+      },
     ],
   });
 

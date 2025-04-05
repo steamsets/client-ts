@@ -9,7 +9,8 @@ let value: V1AccountMetaResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountMetaResponseBody.json",
   steamAvatarHashOfTheAccount: "<value>",
-  description: "nearly creaking impish exalted late quickly oof",
+  description:
+    "giant busy intermix gracefully elver timely if atop pricey bleach",
   steamId: "<id>",
   title: "<value>",
 };
