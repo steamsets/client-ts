@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     API:
         inputs:
-            - location: http://127.0.0.1:7388/openapi.json
+            - location: https://api.steamsets.com/openapi.json
         overlays:
             - location: .speakeasy/speakeasy-modifications-overlay.yaml
         registry:
