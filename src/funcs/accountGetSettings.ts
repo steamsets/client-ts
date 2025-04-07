@@ -27,7 +27,7 @@ export function accountGetSettings(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SettingsGetResponse,
+    operations.PostV1AccountGetSettingsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -50,7 +50,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AccountV1SettingsGetResponse,
+      operations.PostV1AccountGetSettingsResponse,
       | errors.ErrorModel
       | SDKError
       | SDKValidationError
@@ -63,7 +63,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/account.v1.AccountService/GetSettings")();
+  const path = pathToFunc("/v1/account.getSettings")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -75,7 +75,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.settings.get",
+    operationID: "post-v1-account-get-settings",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -127,7 +127,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsGetResponse,
+    operations.PostV1AccountGetSettingsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -137,8 +137,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SettingsGetResponse$inboundSchema, {
-      key: "V1GetSettingsBody",
+    M.json(200, operations.PostV1AccountGetSettingsResponse$inboundSchema, {
+      key: "V1AccountGetSettingsBody",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

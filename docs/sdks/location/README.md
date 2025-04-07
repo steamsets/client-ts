@@ -70,7 +70,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LocationV1LocationGetResponse](../../models/operations/locationv1locationgetresponse.md)\>**
+**Promise\<[operations.ListV1LocationGetLocationsResponse](../../models/operations/listv1locationgetlocationsresponse.md)\>**
 
 ### Errors
 

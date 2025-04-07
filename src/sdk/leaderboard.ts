@@ -3,25 +3,20 @@
  */
 
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
-import { leaderboardGetAccountMeta } from "../funcs/leaderboardGetAccountMeta.js";
+import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
-import { leaderboardGetGroupMeta } from "../funcs/leaderboardGetGroupMeta.js";
+import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
+import { leaderboardListBadges33 } from "../funcs/leaderboardListBadges33.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
-import { Badges } from "./badges.js";
 
 export class Leaderboard extends ClientSDK {
-  private _badges?: Badges;
-  get badges(): Badges {
-    return (this._badges ??= new Badges(this._options));
-  }
-
   async getAccount(
-    request: components.V1AccountLeaderboardRequestBody,
+    request: components.V1LeaderboardGetAccountLeaderboardRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountLeaderboardResponse> {
+  ): Promise<operations.PostV1LeaderboardGetAccountLeaderboardResponse> {
     return unwrapAsync(leaderboardGetAccount(
       this,
       request,
@@ -29,11 +24,11 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
-  async getAccountMeta(
-    request: components.V1LeaderboardAccountMetaRequestBody,
+  async getAccountsMeta(
+    request: components.V1LeaderboardGetAccountsMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetAccountLeaderboardMetaResponse> {
-    return unwrapAsync(leaderboardGetAccountMeta(
+  ): Promise<operations.PostV1LeaderboardGetAccountsMetaResponse> {
+    return unwrapAsync(leaderboardGetAccountsMeta(
       this,
       request,
       options,
@@ -41,9 +36,9 @@ export class Leaderboard extends ClientSDK {
   }
 
   async getGroup(
-    request: components.V1GroupLeaderboardRequestBody,
+    request: components.V1LeaderboardGetGroupLeaderboardRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetGroupResponse> {
+  ): Promise<operations.PostV1LeaderboardGetGroupLeaderboardResponse> {
     return unwrapAsync(leaderboardGetGroup(
       this,
       request,
@@ -51,13 +46,22 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
-  async getGroupMeta(
-    request: components.V1LeaderboardGroupMetaRequestBody,
+  async getGroupsMeta(
+    request: components.V1LeaderboardGetGroupsMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardV1GetGroupLeaderboardMetaResponse> {
-    return unwrapAsync(leaderboardGetGroupMeta(
+  ): Promise<operations.PostV1LeaderboardGetGroupsMetaResponse> {
+    return unwrapAsync(leaderboardGetGroupsMeta(
       this,
       request,
+      options,
+    ));
+  }
+
+  async listBadges33(
+    options?: RequestOptions,
+  ): Promise<operations.PostV1LeaderboardListBadges33Response> {
+    return unwrapAsync(leaderboardListBadges33(
+      this,
       options,
     ));
   }

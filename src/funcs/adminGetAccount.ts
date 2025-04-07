@@ -31,7 +31,7 @@ export function adminGetAccount(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AdminV1GetAccountResponse,
+    operations.PostV1AdminGetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AdminV1GetAccountResponse,
+      operations.PostV1AdminGetAccountResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -82,7 +82,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/admin.v1.AdminService/GetAccount")();
+  const path = pathToFunc("/v1/admin.getAccount")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "admin.v1.get-account",
+    operationID: "post-v1-admin-get-account",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AdminV1GetAccountResponse,
+    operations.PostV1AdminGetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AdminV1GetAccountResponse$inboundSchema, {
+    M.json(200, operations.PostV1AdminGetAccountResponse$inboundSchema, {
       key: "V1AdminGetAccountResponseBody",
     }),
     M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {

@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function accountCreateDeveloperApp(
   client: SteamSetsCore,
-  request: components.V1DeveloperAppCreateRequestBody,
+  request: components.V1AccountCreateDeveloperAppRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SettingsDeveloperAppCreateResponse,
+    operations.PostV1AccountCreateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountCreateDeveloperApp(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1DeveloperAppCreateRequestBody,
+  request: components.V1AccountCreateDeveloperAppRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1SettingsDeveloperAppCreateResponse,
+      operations.PostV1AccountCreateDeveloperAppResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,9 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1DeveloperAppCreateRequestBody$outboundSchema.parse(value),
+      components.V1AccountCreateDeveloperAppRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +85,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/CreateDeveloperApp")();
+  const path = pathToFunc("/v1/account.createDeveloperApp")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.settings.developer-app-create",
+    operationID: "post-v1-account-create-developer-app",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SettingsDeveloperAppCreateResponse,
+    operations.PostV1AccountCreateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,8 +164,8 @@ async function $do(
   >(
     M.json(
       200,
-      operations.AccountV1SettingsDeveloperAppCreateResponse$inboundSchema,
-      { key: "V1DeveloperAppCreateResponseBody" },
+      operations.PostV1AccountCreateDeveloperAppResponse$inboundSchema,
+      { key: "V1AccountCreateDeveloperAppResponseBody" },
     ),
     M.jsonErr([400, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

@@ -27,7 +27,7 @@ export function badgeGetTags(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.BadgeV1TagsResponse,
+    operations.PostV1BadgeGetTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.BadgeV1TagsResponse,
+      operations.PostV1BadgeGetTagsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -65,7 +65,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/badge.v1.BadgeService/GetTags")();
+  const path = pathToFunc("/v1/badge.getTags")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "badge.v1.tags",
+    operationID: "post-v1-badge-get-tags",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.BadgeV1TagsResponse,
+    operations.PostV1BadgeGetTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,8 +140,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.BadgeV1TagsResponse$inboundSchema, {
-      key: "V1BadgeTagsResponseBody",
+    M.json(200, operations.PostV1BadgeGetTagsResponse$inboundSchema, {
+      key: "V1BadgeGetTagsResponseBody",
     }),
     M.jsonErr([403, 404], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

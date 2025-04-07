@@ -74,7 +74,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AdminV1GetAccountResponse](../../models/operations/adminv1getaccountresponse.md)\>**
+**Promise\<[operations.PostV1AdminGetAccountResponse](../../models/operations/postv1admingetaccountresponse.md)\>**
 
 ### Errors
 
@@ -146,7 +146,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AdminV1RemoveVanityResponse](../../models/operations/adminv1removevanityresponse.md)\>**
+**Promise\<[operations.PostV1AdminRemoveVanityResponse](../../models/operations/postv1adminremovevanityresponse.md)\>**
 
 ### Errors
 
@@ -170,7 +170,10 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.updateResources({
     resources: [
-
+      {
+        resource: "account_queues",
+        value: "1",
+      },
     ],
   });
 
@@ -198,7 +201,10 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminUpdateResources(steamSets, {
     resources: [
-  
+      {
+        resource: "account_queues",
+        value: "1",
+      },
     ],
   });
 
@@ -226,7 +232,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.AdminV1UpdateResourcesResponse](../../models/operations/adminv1updateresourcesresponse.md)\>**
+**Promise\<[operations.PostV1AdminUpdateResourcesResponse](../../models/operations/postv1adminupdateresourcesresponse.md)\>**
 
 ### Errors
 
@@ -250,8 +256,9 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.updateRoles({
     roles: [
-      "user",
-      "beta",
+      "early_supporter",
+      "translator",
+      "amber",
     ],
   });
 
@@ -279,8 +286,9 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminUpdateRoles(steamSets, {
     roles: [
-      "user",
-      "beta",
+      "early_supporter",
+      "translator",
+      "amber",
     ],
   });
 
@@ -301,14 +309,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AdminUpdateRolessRequestBody](../../models/components/v1adminupdaterolessrequestbody.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.V1AdminUpdateRolesRequestBody](../../models/components/v1adminupdaterolesrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.AdminV1UpdateRolesResponse](../../models/operations/adminv1updaterolesresponse.md)\>**
+**Promise\<[operations.PostV1AdminUpdateRolesResponse](../../models/operations/postv1adminupdaterolesresponse.md)\>**
 
 ### Errors
 

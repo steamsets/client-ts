@@ -41,7 +41,7 @@ import {
 /**
  * The privacy of the account
  */
-export const Privacy = {
+export const V1AccountFriendPrivacy = {
   Public: "public",
   Private: "private",
   FriendsOnly: "friends_only",
@@ -49,7 +49,7 @@ export const Privacy = {
 /**
  * The privacy of the account
  */
-export type Privacy = ClosedEnum<typeof Privacy>;
+export type V1AccountFriendPrivacy = ClosedEnum<typeof V1AccountFriendPrivacy>;
 
 export type V1AccountFriend = {
   /**
@@ -148,7 +148,7 @@ export type V1AccountFriend = {
   /**
    * The privacy of the account
    */
-  privacy: Privacy;
+  privacy: V1AccountFriendPrivacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -182,22 +182,24 @@ export type V1AccountFriend = {
 };
 
 /** @internal */
-export const Privacy$inboundSchema: z.ZodNativeEnum<typeof Privacy> = z
-  .nativeEnum(Privacy);
+export const V1AccountFriendPrivacy$inboundSchema: z.ZodNativeEnum<
+  typeof V1AccountFriendPrivacy
+> = z.nativeEnum(V1AccountFriendPrivacy);
 
 /** @internal */
-export const Privacy$outboundSchema: z.ZodNativeEnum<typeof Privacy> =
-  Privacy$inboundSchema;
+export const V1AccountFriendPrivacy$outboundSchema: z.ZodNativeEnum<
+  typeof V1AccountFriendPrivacy
+> = V1AccountFriendPrivacy$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Privacy$ {
-  /** @deprecated use `Privacy$inboundSchema` instead. */
-  export const inboundSchema = Privacy$inboundSchema;
-  /** @deprecated use `Privacy$outboundSchema` instead. */
-  export const outboundSchema = Privacy$outboundSchema;
+export namespace V1AccountFriendPrivacy$ {
+  /** @deprecated use `V1AccountFriendPrivacy$inboundSchema` instead. */
+  export const inboundSchema = V1AccountFriendPrivacy$inboundSchema;
+  /** @deprecated use `V1AccountFriendPrivacy$outboundSchema` instead. */
+  export const outboundSchema = V1AccountFriendPrivacy$outboundSchema;
 }
 
 /** @internal */
@@ -232,7 +234,7 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: Privacy$inboundSchema,
+  privacy: V1AccountFriendPrivacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   state: z.nullable(LeaderboardState$inboundSchema).optional(),
@@ -312,7 +314,7 @@ export const V1AccountFriend$outboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: Privacy$outboundSchema,
+  privacy: V1AccountFriendPrivacy$outboundSchema,
   region: z.nullable(LeaderboardRegion$outboundSchema).optional(),
   roles: z.nullable(z.array(Role$outboundSchema)),
   state: z.nullable(LeaderboardState$outboundSchema).optional(),

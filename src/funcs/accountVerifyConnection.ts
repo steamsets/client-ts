@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function accountVerifyConnection(
   client: SteamSetsCore,
-  request: components.V1VerifyConnectionRequestBody,
+  request: components.V1AccountVerifyConnectionRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1ConnectionVerifyConnectionResponse,
+    operations.PostV1AccountVerifyConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountVerifyConnection(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1VerifyConnectionRequestBody,
+  request: components.V1AccountVerifyConnectionRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1ConnectionVerifyConnectionResponse,
+      operations.PostV1AccountVerifyConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,9 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1VerifyConnectionRequestBody$outboundSchema.parse(value),
+      components.V1AccountVerifyConnectionRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +85,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/VerifyConnection")();
+  const path = pathToFunc("/v1/account.verifyConnection")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.connection.verifyConnection",
+    operationID: "post-v1-account-verify-connection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1ConnectionVerifyConnectionResponse,
+    operations.PostV1AccountVerifyConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,8 +164,8 @@ async function $do(
   >(
     M.json(
       200,
-      operations.AccountV1ConnectionVerifyConnectionResponse$inboundSchema,
-      { key: "V1VerifyConnectionResponseBody" },
+      operations.PostV1AccountVerifyConnectionResponse$inboundSchema,
+      { key: "V1AccountVerifyConnectionResponseBody" },
     ),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

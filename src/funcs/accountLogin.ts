@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountLogin(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionLoginRequest,
+  request: operations.PostV1AccountLoginRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SessionLoginResponse,
+    operations.PostV1AccountLoginResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountLogin(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionLoginRequest,
+  request: operations.PostV1AccountLoginRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1SessionLoginResponse,
+      operations.PostV1AccountLoginResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -72,8 +72,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      operations.AccountV1SessionLoginRequest$outboundSchema.parse(value),
+    (value) => operations.PostV1AccountLoginRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -82,7 +81,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload.LoginRequestBody, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/Login")();
+  const path = pathToFunc("/v1/account.login")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +103,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.session.login",
+    operationID: "post-v1-account-login",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -157,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SessionLoginResponse,
+    operations.PostV1AccountLoginResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -168,7 +167,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SessionLoginResponse$inboundSchema, {
+    M.json(200, operations.PostV1AccountLoginResponse$inboundSchema, {
       key: "V1LoginResponseBody",
     }),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {

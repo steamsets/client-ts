@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 8b014d497a5037465b1b4a4fed021090
+  docChecksum: c20feea616069595557a246145ca8738
   docVersion: 1.0.0
   speakeasyVersion: 1.529.1
   generationVersion: 2.566.5
-  releaseVersion: 0.22.16
-  configChecksum: a64617c6c7e3d5eaeb05fb4cacf233bd
+  releaseVersion: 0.25.1
+  configChecksum: 4b354259a1eef958f45181bc3e63915d
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -62,7 +62,6 @@ generatedFiles:
   - docs/models/components/accountsearch.md
   - docs/models/components/accountsearchidstruct.md
   - docs/models/components/accountsearchvanitystruct.md
-  - docs/models/components/accountsearchvanitystructtype.md
   - docs/models/components/appprivacy.md
   - docs/models/components/badge.md
   - docs/models/components/badgesuggesttags.md
@@ -114,251 +113,250 @@ generatedFiles:
   - docs/models/components/type.md
   - docs/models/components/v1accountapp.md
   - docs/models/components/v1accountbadgebookmark.md
-  - docs/models/components/v1accountbadgebookmarkrequestbody.md
-  - docs/models/components/v1accountbadgebookmarkresponsebody.md
   - docs/models/components/v1accountbadgebookmarksresponsebody.md
   - docs/models/components/v1accountbadgeownedbadge.md
   - docs/models/components/v1accountbadgeownedbadgesresponsebody.md
-  - docs/models/components/v1accountdatapointsresponsebody.md
-  - docs/models/components/v1accountdeveloperappdeleterequestbody.md
-  - docs/models/components/v1accountdeveloperappdeleteresponsebody.md
+  - docs/models/components/v1accountbookmarkbadgerequestbody.md
+  - docs/models/components/v1accountbookmarkbadgeresponsebody.md
+  - docs/models/components/v1accountcreateconnectionrequestbody.md
+  - docs/models/components/v1accountcreateconnectionresponsebody.md
+  - docs/models/components/v1accountcreatedeveloperapprequestbody.md
+  - docs/models/components/v1accountcreatedeveloperappresponsebody.md
+  - docs/models/components/v1accountcreatesessionbody.md
+  - docs/models/components/v1accountdeleteconnectionrequestbody.md
+  - docs/models/components/v1accountdeleteconnectionresponsebody.md
+  - docs/models/components/v1accountdeletedeveloperapprequestbody.md
+  - docs/models/components/v1accountdeletedeveloperappresponsebody.md
+  - docs/models/components/v1accountdeleteimagesrequestbody.md
+  - docs/models/components/v1accountdeleteimagesresponsebody.md
+  - docs/models/components/v1accountdeletesessionrequestbody.md
+  - docs/models/components/v1accountdeletesessionresponsebody.md
   - docs/models/components/v1accountdeveloperappupdaterequestbody.md
   - docs/models/components/v1accountdeveloperappupdateresponsebody.md
   - docs/models/components/v1accountfriend.md
-  - docs/models/components/v1accountfriendsresponsebody.md
-  - docs/models/components/v1accountinforesponsebody.md
-  - docs/models/components/v1accountinforesponsebodyprivacy.md
+  - docs/models/components/v1accountfriendprivacy.md
+  - docs/models/components/v1accountgetdatapointsresponsebody.md
+  - docs/models/components/v1accountgetinforesponsebody.md
+  - docs/models/components/v1accountgetmetaresponsebody.md
+  - docs/models/components/v1accountgetsessionbody.md
+  - docs/models/components/v1accountgetsettingsbody.md
+  - docs/models/components/v1accountgetsettingsbodyprivacy.md
   - docs/models/components/v1accountleaderboardaccount.md
   - docs/models/components/v1accountleaderboardaccountprivacy.md
   - docs/models/components/v1accountleaderboardappsearch.md
   - docs/models/components/v1accountleaderboardbadgesearch.md
-  - docs/models/components/v1accountleaderboardhistoryresponsebody.md
-  - docs/models/components/v1accountleaderboardrequestbody.md
-  - docs/models/components/v1accountleaderboardrequestbodyleaderboard.md
-  - docs/models/components/v1accountleaderboardresponsebody.md
+  - docs/models/components/v1accountlistappsrequestbody.md
+  - docs/models/components/v1accountlistappsresponsebody.md
+  - docs/models/components/v1accountlistbadgesrequestbody.md
+  - docs/models/components/v1accountlistbadgesresponsebody.md
+  - docs/models/components/v1accountlistfriendsresponsebody.md
+  - docs/models/components/v1accountlistimagesresponsebody.md
+  - docs/models/components/v1accountlistleaderboardhistoryresponsebody.md
   - docs/models/components/v1accountlocationupdate.md
-  - docs/models/components/v1accountmetaresponsebody.md
   - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueuerequestbody.md
-  - docs/models/components/v1accountsappsrequestbody.md
-  - docs/models/components/v1accountsappsresponsebody.md
+  - docs/models/components/v1accountreconnectrequestbody.md
+  - docs/models/components/v1accountreconnectresponsebody.md
+  - docs/models/components/v1accountrefreshsessionbody.md
+  - docs/models/components/v1accountrefreshsessionrequestbody.md
+  - docs/models/components/v1accountsubscribeemailrequestbody.md
+  - docs/models/components/v1accountupdateconnectionrequestbody.md
+  - docs/models/components/v1accountupdateconnectionresponsebody.md
+  - docs/models/components/v1accountupdateimage.md
+  - docs/models/components/v1accountupdateimagerequestbody.md
+  - docs/models/components/v1accountupdateimageresponsebody.md
+  - docs/models/components/v1accountupdaterolerequestbody.md
+  - docs/models/components/v1accountupdaterolerequestbodyrole.md
+  - docs/models/components/v1accountupdatesettingsrequestbody.md
+  - docs/models/components/v1accountupdatevanityrequestbody.md
+  - docs/models/components/v1accountuploadedimage.md
+  - docs/models/components/v1accountuploadedimagetype.md
+  - docs/models/components/v1accountuploadimagesrequestbody.md
+  - docs/models/components/v1accountuploadimagesresponsebody.md
   - docs/models/components/v1accountvanityupdate.md
+  - docs/models/components/v1accountverifyconnectionrequestbody.md
+  - docs/models/components/v1accountverifyconnectionresponsebody.md
+  - docs/models/components/v1accountverifyemailrequestbody.md
   - docs/models/components/v1admingetaccountresponsebody.md
   - docs/models/components/v1admingetaccountresponsebodyprivacy.md
   - docs/models/components/v1adminremovevanityresponsebody.md
   - docs/models/components/v1adminupdateresourcesrequestbody.md
-  - docs/models/components/v1adminupdaterolessrequestbody.md
+  - docs/models/components/v1adminupdaterolesrequestbody.md
   - docs/models/components/v1appbadge.md
-  - docs/models/components/v1appbadgelistrequestbody.md
-  - docs/models/components/v1appbadgelistresponsebody.md
+  - docs/models/components/v1applistbadgesrequestbody.md
+  - docs/models/components/v1applistbadgesresponsebody.md
   - docs/models/components/v1apporder.md
+  - docs/models/components/v1badgegettagsresponsebody.md
   - docs/models/components/v1badgeorder.md
   - docs/models/components/v1badgeorderby.md
   - docs/models/components/v1badgeorderdirection.md
-  - docs/models/components/v1badgesearchresponsebody.md
-  - docs/models/components/v1badgesearchsuggestbody.md
-  - docs/models/components/v1badgesearchsuggesttrequestbody.md
-  - docs/models/components/v1badgesrequestbody.md
-  - docs/models/components/v1badgesresponsebody.md
-  - docs/models/components/v1badgetagrequestbody.md
-  - docs/models/components/v1badgetagresponsebody.md
-  - docs/models/components/v1badgetagsresponsebody.md
-  - docs/models/components/v1badgetagssuggestrequestbody.md
-  - docs/models/components/v1connectrequestbody.md
-  - docs/models/components/v1connectresponsebody.md
-  - docs/models/components/v1createsessionbody.md
-  - docs/models/components/v1deleteconnectionrequestbody.md
-  - docs/models/components/v1deleteconnectionresponsebody.md
-  - docs/models/components/v1deleteimagesrequestbody.md
-  - docs/models/components/v1deleteimagesresponsebody.md
-  - docs/models/components/v1deletesessionrequestbody.md
-  - docs/models/components/v1deletesessionresponsebody.md
-  - docs/models/components/v1developerappcreaterequestbody.md
-  - docs/models/components/v1developerappcreateresponsebody.md
-  - docs/models/components/v1emailsubscriptionrequestbody.md
-  - docs/models/components/v1getimagesresponsebody.md
-  - docs/models/components/v1getsessionbody.md
-  - docs/models/components/v1getsettingsbody.md
-  - docs/models/components/v1getsettingsbodyprivacy.md
+  - docs/models/components/v1badgesearchbadgesresponsebody.md
+  - docs/models/components/v1badgesuggestsearchbody.md
+  - docs/models/components/v1badgesuggestsearchrequestbody.md
+  - docs/models/components/v1badgesuggesttagsrequestbody.md
+  - docs/models/components/v1badgetagbadgerequestbody.md
+  - docs/models/components/v1badgetagbadgeresponsebody.md
   - docs/models/components/v1groupleaderboardgroup.md
   - docs/models/components/v1groupleaderboardgroupprivacy.md
-  - docs/models/components/v1groupleaderboardrequestbody.md
-  - docs/models/components/v1groupleaderboardrequestbodyleaderboard.md
-  - docs/models/components/v1groupleaderboardresponsebody.md
-  - docs/models/components/v1leaderboardaccountmetarequestbody.md
-  - docs/models/components/v1leaderboardaccountmetarequestbodyleaderboard.md
-  - docs/models/components/v1leaderboardaccountmetaresponsebody.md
   - docs/models/components/v1leaderboardappinfo.md
   - docs/models/components/v1leaderboardbadge.md
   - docs/models/components/v1leaderboardbadgeinfo.md
-  - docs/models/components/v1leaderboardbadgeresponsebody.md
-  - docs/models/components/v1leaderboardgroupmetarequestbody.md
-  - docs/models/components/v1leaderboardgroupmetarequestbodyleaderboard.md
-  - docs/models/components/v1leaderboardgroupmetaresponsebody.md
+  - docs/models/components/v1leaderboardgetaccountleaderboardrequestbody.md
+  - docs/models/components/v1leaderboardgetaccountleaderboardrequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardgetaccountleaderboardresponsebody.md
+  - docs/models/components/v1leaderboardgetaccountsmetarequestbody.md
+  - docs/models/components/v1leaderboardgetaccountsmetarequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardgetaccountsmetaresponsebody.md
+  - docs/models/components/v1leaderboardgetgroupleaderboardrequestbody.md
+  - docs/models/components/v1leaderboardgetgroupleaderboardrequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardgetgroupleaderboardresponsebody.md
+  - docs/models/components/v1leaderboardgetgroupsmetarequestbody.md
+  - docs/models/components/v1leaderboardgetgroupsmetarequestbodyleaderboard.md
+  - docs/models/components/v1leaderboardgetgroupsmetaresponsebody.md
+  - docs/models/components/v1leaderboardlistbadgesresponsebody.md
   - docs/models/components/v1leaderboardlocation.md
   - docs/models/components/v1leaderboardlocationinfo.md
   - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1loginresponsebody.md
-  - docs/models/components/v1reconnectrequestbody.md
-  - docs/models/components/v1reconnectresponsebody.md
-  - docs/models/components/v1refreshsessionbody.md
-  - docs/models/components/v1refreshsessionrequestbody.md
   - docs/models/components/v1searchrequest.md
   - docs/models/components/v1stats.md
-  - docs/models/components/v1updateconnectionrequestbody.md
-  - docs/models/components/v1updateconnectionresponsebody.md
-  - docs/models/components/v1updateimage.md
-  - docs/models/components/v1updateimagerequestbody.md
-  - docs/models/components/v1updateimageresponsebody.md
-  - docs/models/components/v1updaterolerequestbody.md
-  - docs/models/components/v1updaterolerequestbodyrole.md
-  - docs/models/components/v1updatesettingsrequestbody.md
-  - docs/models/components/v1updatevanityrequestbody.md
-  - docs/models/components/v1uploadedimage.md
-  - docs/models/components/v1uploadedimagetype.md
-  - docs/models/components/v1uploadimagesrequestbody.md
-  - docs/models/components/v1uploadimagesresponsebody.md
   - docs/models/components/v1vanityanalytics.md
-  - docs/models/components/v1verifyconnectionrequestbody.md
-  - docs/models/components/v1verifyconnectionresponsebody.md
-  - docs/models/components/v1verifyemailrequestbody.md
   - docs/models/components/vanitystruct.md
+  - docs/models/components/vanitystructtype.md
   - docs/models/components/vectors.md
   - docs/models/errors/errormodel.md
-  - docs/models/operations/accountv1bookmarkbadgeresponse.md
-  - docs/models/operations/accountv1connectionconnectresponse.md
-  - docs/models/operations/accountv1connectiondeleteconnectionresponse.md
-  - docs/models/operations/accountv1connectionreconnectresponse.md
-  - docs/models/operations/accountv1connectionupdateconnectionresponse.md
-  - docs/models/operations/accountv1connectionverifyconnectionresponse.md
-  - docs/models/operations/accountv1getappsresponse.md
-  - docs/models/operations/accountv1getbadgebookmarksresponse.md
-  - docs/models/operations/accountv1getbadgesresponse.md
-  - docs/models/operations/accountv1getdatapointsresponse.md
-  - docs/models/operations/accountv1getfriendsresponse.md
-  - docs/models/operations/accountv1getinforesponse.md
-  - docs/models/operations/accountv1getleaderboardhistoryresponse.md
-  - docs/models/operations/accountv1getmetaresponse.md
-  - docs/models/operations/accountv1getownedbadgesresponse.md
-  - docs/models/operations/accountv1getstaffresponse.md
-  - docs/models/operations/accountv1imagesdeleteresponse.md
-  - docs/models/operations/accountv1imagesgetresponse.md
-  - docs/models/operations/accountv1imagesupdateresponse.md
-  - docs/models/operations/accountv1imagesuploadresponse.md
-  - docs/models/operations/accountv1queueresponse.md
-  - docs/models/operations/accountv1sessioncreaterequest.md
-  - docs/models/operations/accountv1sessioncreateresponse.md
-  - docs/models/operations/accountv1sessiondeleteresponse.md
-  - docs/models/operations/accountv1sessiongetresponse.md
-  - docs/models/operations/accountv1sessionloginrequest.md
-  - docs/models/operations/accountv1sessionloginresponse.md
-  - docs/models/operations/accountv1sessionlogoutresponse.md
-  - docs/models/operations/accountv1sessionrefreshrequest.md
-  - docs/models/operations/accountv1sessionrefreshresponse.md
-  - docs/models/operations/accountv1settingsdeveloperappcreateresponse.md
-  - docs/models/operations/accountv1settingsdeveloperappdeleteresponse.md
-  - docs/models/operations/accountv1settingsdeveloperappupdateresponse.md
-  - docs/models/operations/accountv1settingsemailsendverificationrequest.md
-  - docs/models/operations/accountv1settingsemailsendverificationresponse.md
-  - docs/models/operations/accountv1settingsemailsubscriberequest.md
-  - docs/models/operations/accountv1settingsemailsubscriberesponse.md
-  - docs/models/operations/accountv1settingsemailverifyresponse.md
-  - docs/models/operations/accountv1settingsgetresponse.md
-  - docs/models/operations/accountv1settingsupdaterequest.md
-  - docs/models/operations/accountv1settingsupdateresponse.md
-  - docs/models/operations/accountv1settingsupdateroleresponse.md
-  - docs/models/operations/accountv1settingsupdatevanityresponse.md
-  - docs/models/operations/adminv1getaccountresponse.md
-  - docs/models/operations/adminv1removevanityresponse.md
-  - docs/models/operations/adminv1updateresourcesresponse.md
-  - docs/models/operations/adminv1updaterolesresponse.md
-  - docs/models/operations/appv1listbadgesresponse.md
-  - docs/models/operations/badgev1searchresponse.md
-  - docs/models/operations/badgev1searchsuggestresponse.md
-  - docs/models/operations/badgev1tagresponse.md
-  - docs/models/operations/badgev1tagsresponse.md
-  - docs/models/operations/badgev1tagssuggestresponse.md
-  - docs/models/operations/leaderboardv1getaccountleaderboardmetaresponse.md
-  - docs/models/operations/leaderboardv1getaccountleaderboardresponse.md
-  - docs/models/operations/leaderboardv1getbadgesresponse.md
-  - docs/models/operations/leaderboardv1getgroupleaderboardmetaresponse.md
-  - docs/models/operations/leaderboardv1getgroupresponse.md
-  - docs/models/operations/livenessresponse.md
-  - docs/models/operations/locationv1locationgetresponse.md
-  - docs/models/operations/statsv1statsgetresponse.md
+  - docs/models/operations/getv1livenessresponse.md
+  - docs/models/operations/listv1locationgetlocationsresponse.md
+  - docs/models/operations/postv1accountbookmarkbadgeresponse.md
+  - docs/models/operations/postv1accountcreateconnectionresponse.md
+  - docs/models/operations/postv1accountcreatedeveloperappresponse.md
+  - docs/models/operations/postv1accountcreatesessionrequest.md
+  - docs/models/operations/postv1accountcreatesessionresponse.md
+  - docs/models/operations/postv1accountdeleteconnectionresponse.md
+  - docs/models/operations/postv1accountdeletedeveloperappresponse.md
+  - docs/models/operations/postv1accountdeleteimagesresponse.md
+  - docs/models/operations/postv1accountdeletesessionresponse.md
+  - docs/models/operations/postv1accountgetdatapointsresponse.md
+  - docs/models/operations/postv1accountgetinforesponse.md
+  - docs/models/operations/postv1accountgetmetaresponse.md
+  - docs/models/operations/postv1accountgetsessionresponse.md
+  - docs/models/operations/postv1accountgetsettingsresponse.md
+  - docs/models/operations/postv1accountlistappsresponse.md
+  - docs/models/operations/postv1accountlistbadgebookmarksresponse.md
+  - docs/models/operations/postv1accountlistbadgesresponse.md
+  - docs/models/operations/postv1accountlistfriendsresponse.md
+  - docs/models/operations/postv1accountlistimagesresponse.md
+  - docs/models/operations/postv1accountlistleaderboardhistoryresponse.md
+  - docs/models/operations/postv1accountlistownedbadgesresponse.md
+  - docs/models/operations/postv1accountloginrequest.md
+  - docs/models/operations/postv1accountloginresponse.md
+  - docs/models/operations/postv1accountlogoutresponse.md
+  - docs/models/operations/postv1accountqueueresponse.md
+  - docs/models/operations/postv1accountreconnectconnectionresponse.md
+  - docs/models/operations/postv1accountrefreshsessionrequest.md
+  - docs/models/operations/postv1accountrefreshsessionresponse.md
+  - docs/models/operations/postv1accountsendemailverificationrequest.md
+  - docs/models/operations/postv1accountsendemailverificationresponse.md
+  - docs/models/operations/postv1accountsubscribeemailrequest.md
+  - docs/models/operations/postv1accountsubscribeemailresponse.md
+  - docs/models/operations/postv1accountupdateconnectionresponse.md
+  - docs/models/operations/postv1accountupdatedeveloperappresponse.md
+  - docs/models/operations/postv1accountupdateimagesresponse.md
+  - docs/models/operations/postv1accountupdateroleresponse.md
+  - docs/models/operations/postv1accountupdatesettingsrequest.md
+  - docs/models/operations/postv1accountupdatesettingsresponse.md
+  - docs/models/operations/postv1accountupdatevanityresponse.md
+  - docs/models/operations/postv1accountuploadimagesresponse.md
+  - docs/models/operations/postv1accountverifyconnectionresponse.md
+  - docs/models/operations/postv1accountverifyemailresponse.md
+  - docs/models/operations/postv1admingetaccountresponse.md
+  - docs/models/operations/postv1adminremovevanityresponse.md
+  - docs/models/operations/postv1adminupdateresourcesresponse.md
+  - docs/models/operations/postv1adminupdaterolesresponse.md
+  - docs/models/operations/postv1applistbadgesresponse.md
+  - docs/models/operations/postv1badgegettagsresponse.md
+  - docs/models/operations/postv1badgesearchbadgesresponse.md
+  - docs/models/operations/postv1badgesuggestsearchresponse.md
+  - docs/models/operations/postv1badgesuggesttagsresponse.md
+  - docs/models/operations/postv1badgetagresponse.md
+  - docs/models/operations/postv1leaderboardgetaccountleaderboardresponse.md
+  - docs/models/operations/postv1leaderboardgetaccountsmetaresponse.md
+  - docs/models/operations/postv1leaderboardgetgroupleaderboardresponse.md
+  - docs/models/operations/postv1leaderboardgetgroupsmetaresponse.md
+  - docs/models/operations/postv1leaderboardlistbadges33response.md
+  - docs/models/operations/postv1staffliststaffresponse.md
+  - docs/models/operations/postv1statsgetstatsresponse.md
   - docs/sdks/account/README.md
   - docs/sdks/admin/README.md
-  - docs/sdks/app/README.md
+  - docs/sdks/apps/README.md
+  - docs/sdks/auth/README.md
   - docs/sdks/badge/README.md
   - docs/sdks/badges/README.md
-  - docs/sdks/connection/README.md
-  - docs/sdks/developerapps/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/liveness/README.md
   - docs/sdks/location/README.md
-  - docs/sdks/roles/README.md
-  - docs/sdks/session/README.md
+  - docs/sdks/staff/README.md
   - docs/sdks/stats/README.md
   - docs/sdks/steamsets/README.md
   - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountV1SettingsUpdateVanity.ts
   - src/funcs/accountBookmarkBadge.ts
-  - src/funcs/accountConnect.ts
-  - src/funcs/accountConnectionUpdate.ts
+  - src/funcs/accountCreateConnection.ts
   - src/funcs/accountCreateDeveloperApp.ts
-  - src/funcs/accountCreateSession.ts
   - src/funcs/accountDeleteConnection.ts
+  - src/funcs/accountDeleteDeveloperApp.ts
   - src/funcs/accountDeleteImages.ts
-  - src/funcs/accountDeveloperAppsDelete.ts
-  - src/funcs/accountDeveloperAppsUpdate.ts
-  - src/funcs/accountEmailSendVerification.ts
-  - src/funcs/accountEmailSubscription.ts
-  - src/funcs/accountEmailVerify.ts
-  - src/funcs/accountGetApps.ts
-  - src/funcs/accountGetBadgeBookmarks.ts
-  - src/funcs/accountGetBadges.ts
+  - src/funcs/accountDeleteSession.ts
   - src/funcs/accountGetDataPoints.ts
-  - src/funcs/accountGetFriends.ts
-  - src/funcs/accountGetImages.ts
   - src/funcs/accountGetInfo.ts
-  - src/funcs/accountGetLeaderboardHistory.ts
   - src/funcs/accountGetMeta.ts
-  - src/funcs/accountGetOwnedBadges.ts
   - src/funcs/accountGetSession.ts
   - src/funcs/accountGetSettings.ts
-  - src/funcs/accountGetStaff.ts
+  - src/funcs/accountListApps.ts
+  - src/funcs/accountListBadgeBookmarks.ts
+  - src/funcs/accountListBadges.ts
+  - src/funcs/accountListFriends.ts
+  - src/funcs/accountListImages.ts
+  - src/funcs/accountListLeaderboardHistory.ts
+  - src/funcs/accountListOwnedBadges.ts
   - src/funcs/accountLogin.ts
   - src/funcs/accountLogout.ts
   - src/funcs/accountQueue.ts
-  - src/funcs/accountReconnect.ts
+  - src/funcs/accountReconnectConnection.ts
   - src/funcs/accountRefreshSession.ts
-  - src/funcs/accountRolesUpdate.ts
-  - src/funcs/accountSessionDelete.ts
+  - src/funcs/accountSendEmailVerification.ts
+  - src/funcs/accountSubscribeEmail.ts
+  - src/funcs/accountUpdateConnection.ts
+  - src/funcs/accountUpdateDeveloperApp.ts
   - src/funcs/accountUpdateImages.ts
+  - src/funcs/accountUpdateRole.ts
   - src/funcs/accountUpdateSettings.ts
+  - src/funcs/accountUpdateVanity.ts
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyConnection.ts
+  - src/funcs/accountVerifyEmail.ts
   - src/funcs/adminGetAccount.ts
   - src/funcs/adminRemoveVanity.ts
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
-  - src/funcs/appListBadges.ts
+  - src/funcs/appsListBadges.ts
+  - src/funcs/authCreateSession.ts
   - src/funcs/badgeGetTags.ts
   - src/funcs/badgeSearch.ts
-  - src/funcs/badgeSuggest.ts
+  - src/funcs/badgeSuggestSearch.ts
   - src/funcs/badgeSuggestTags.ts
-  - src/funcs/badgeTag.ts
-  - src/funcs/leaderboardBadgesGetList.ts
+  - src/funcs/badgesTag.ts
   - src/funcs/leaderboardGetAccount.ts
-  - src/funcs/leaderboardGetAccountMeta.ts
+  - src/funcs/leaderboardGetAccountsMeta.ts
   - src/funcs/leaderboardGetGroup.ts
-  - src/funcs/leaderboardGetGroupMeta.ts
-  - src/funcs/livenessGet.ts
+  - src/funcs/leaderboardGetGroupsMeta.ts
+  - src/funcs/leaderboardListBadges33.ts
+  - src/funcs/livenessCheck.ts
   - src/funcs/locationGet.ts
+  - src/funcs/staffList.ts
   - src/funcs/statsGet.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
@@ -417,102 +415,102 @@ generatedFiles:
   - src/models/components/state.ts
   - src/models/components/v1accountapp.ts
   - src/models/components/v1accountbadgebookmark.ts
-  - src/models/components/v1accountbadgebookmarkrequestbody.ts
-  - src/models/components/v1accountbadgebookmarkresponsebody.ts
   - src/models/components/v1accountbadgebookmarksresponsebody.ts
   - src/models/components/v1accountbadgeownedbadge.ts
   - src/models/components/v1accountbadgeownedbadgesresponsebody.ts
-  - src/models/components/v1accountdatapointsresponsebody.ts
-  - src/models/components/v1accountdeveloperappdeleterequestbody.ts
-  - src/models/components/v1accountdeveloperappdeleteresponsebody.ts
+  - src/models/components/v1accountbookmarkbadgerequestbody.ts
+  - src/models/components/v1accountbookmarkbadgeresponsebody.ts
+  - src/models/components/v1accountcreateconnectionrequestbody.ts
+  - src/models/components/v1accountcreateconnectionresponsebody.ts
+  - src/models/components/v1accountcreatedeveloperapprequestbody.ts
+  - src/models/components/v1accountcreatedeveloperappresponsebody.ts
+  - src/models/components/v1accountcreatesessionbody.ts
+  - src/models/components/v1accountdeleteconnectionrequestbody.ts
+  - src/models/components/v1accountdeleteconnectionresponsebody.ts
+  - src/models/components/v1accountdeletedeveloperapprequestbody.ts
+  - src/models/components/v1accountdeletedeveloperappresponsebody.ts
+  - src/models/components/v1accountdeleteimagesrequestbody.ts
+  - src/models/components/v1accountdeleteimagesresponsebody.ts
+  - src/models/components/v1accountdeletesessionrequestbody.ts
+  - src/models/components/v1accountdeletesessionresponsebody.ts
   - src/models/components/v1accountdeveloperappupdaterequestbody.ts
   - src/models/components/v1accountdeveloperappupdateresponsebody.ts
   - src/models/components/v1accountfriend.ts
-  - src/models/components/v1accountfriendsresponsebody.ts
-  - src/models/components/v1accountinforesponsebody.ts
+  - src/models/components/v1accountgetdatapointsresponsebody.ts
+  - src/models/components/v1accountgetinforesponsebody.ts
+  - src/models/components/v1accountgetmetaresponsebody.ts
+  - src/models/components/v1accountgetsessionbody.ts
+  - src/models/components/v1accountgetsettingsbody.ts
   - src/models/components/v1accountleaderboardaccount.ts
   - src/models/components/v1accountleaderboardappsearch.ts
   - src/models/components/v1accountleaderboardbadgesearch.ts
-  - src/models/components/v1accountleaderboardhistoryresponsebody.ts
-  - src/models/components/v1accountleaderboardrequestbody.ts
-  - src/models/components/v1accountleaderboardresponsebody.ts
+  - src/models/components/v1accountlistappsrequestbody.ts
+  - src/models/components/v1accountlistappsresponsebody.ts
+  - src/models/components/v1accountlistbadgesrequestbody.ts
+  - src/models/components/v1accountlistbadgesresponsebody.ts
+  - src/models/components/v1accountlistfriendsresponsebody.ts
+  - src/models/components/v1accountlistimagesresponsebody.ts
+  - src/models/components/v1accountlistleaderboardhistoryresponsebody.ts
   - src/models/components/v1accountlocationupdate.ts
-  - src/models/components/v1accountmetaresponsebody.ts
   - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueuerequestbody.ts
-  - src/models/components/v1accountsappsrequestbody.ts
-  - src/models/components/v1accountsappsresponsebody.ts
+  - src/models/components/v1accountreconnectrequestbody.ts
+  - src/models/components/v1accountreconnectresponsebody.ts
+  - src/models/components/v1accountrefreshsessionbody.ts
+  - src/models/components/v1accountrefreshsessionrequestbody.ts
+  - src/models/components/v1accountsubscribeemailrequestbody.ts
+  - src/models/components/v1accountupdateconnectionrequestbody.ts
+  - src/models/components/v1accountupdateconnectionresponsebody.ts
+  - src/models/components/v1accountupdateimage.ts
+  - src/models/components/v1accountupdateimagerequestbody.ts
+  - src/models/components/v1accountupdateimageresponsebody.ts
+  - src/models/components/v1accountupdaterolerequestbody.ts
+  - src/models/components/v1accountupdatesettingsrequestbody.ts
+  - src/models/components/v1accountupdatevanityrequestbody.ts
+  - src/models/components/v1accountuploadedimage.ts
+  - src/models/components/v1accountuploadimagesrequestbody.ts
+  - src/models/components/v1accountuploadimagesresponsebody.ts
   - src/models/components/v1accountvanityupdate.ts
+  - src/models/components/v1accountverifyconnectionrequestbody.ts
+  - src/models/components/v1accountverifyconnectionresponsebody.ts
+  - src/models/components/v1accountverifyemailrequestbody.ts
   - src/models/components/v1admingetaccountresponsebody.ts
   - src/models/components/v1adminremovevanityresponsebody.ts
   - src/models/components/v1adminupdateresourcesrequestbody.ts
-  - src/models/components/v1adminupdaterolessrequestbody.ts
+  - src/models/components/v1adminupdaterolesrequestbody.ts
   - src/models/components/v1appbadge.ts
-  - src/models/components/v1appbadgelistrequestbody.ts
-  - src/models/components/v1appbadgelistresponsebody.ts
+  - src/models/components/v1applistbadgesrequestbody.ts
+  - src/models/components/v1applistbadgesresponsebody.ts
   - src/models/components/v1apporder.ts
+  - src/models/components/v1badgegettagsresponsebody.ts
   - src/models/components/v1badgeorder.ts
-  - src/models/components/v1badgesearchresponsebody.ts
-  - src/models/components/v1badgesearchsuggestbody.ts
-  - src/models/components/v1badgesearchsuggesttrequestbody.ts
-  - src/models/components/v1badgesrequestbody.ts
-  - src/models/components/v1badgesresponsebody.ts
-  - src/models/components/v1badgetagrequestbody.ts
-  - src/models/components/v1badgetagresponsebody.ts
-  - src/models/components/v1badgetagsresponsebody.ts
-  - src/models/components/v1badgetagssuggestrequestbody.ts
-  - src/models/components/v1connectrequestbody.ts
-  - src/models/components/v1connectresponsebody.ts
-  - src/models/components/v1createsessionbody.ts
-  - src/models/components/v1deleteconnectionrequestbody.ts
-  - src/models/components/v1deleteconnectionresponsebody.ts
-  - src/models/components/v1deleteimagesrequestbody.ts
-  - src/models/components/v1deleteimagesresponsebody.ts
-  - src/models/components/v1deletesessionrequestbody.ts
-  - src/models/components/v1deletesessionresponsebody.ts
-  - src/models/components/v1developerappcreaterequestbody.ts
-  - src/models/components/v1developerappcreateresponsebody.ts
-  - src/models/components/v1emailsubscriptionrequestbody.ts
-  - src/models/components/v1getimagesresponsebody.ts
-  - src/models/components/v1getsessionbody.ts
-  - src/models/components/v1getsettingsbody.ts
+  - src/models/components/v1badgesearchbadgesresponsebody.ts
+  - src/models/components/v1badgesuggestsearchbody.ts
+  - src/models/components/v1badgesuggestsearchrequestbody.ts
+  - src/models/components/v1badgesuggesttagsrequestbody.ts
+  - src/models/components/v1badgetagbadgerequestbody.ts
+  - src/models/components/v1badgetagbadgeresponsebody.ts
   - src/models/components/v1groupleaderboardgroup.ts
-  - src/models/components/v1groupleaderboardrequestbody.ts
-  - src/models/components/v1groupleaderboardresponsebody.ts
-  - src/models/components/v1leaderboardaccountmetarequestbody.ts
-  - src/models/components/v1leaderboardaccountmetaresponsebody.ts
   - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
   - src/models/components/v1leaderboardbadgeinfo.ts
-  - src/models/components/v1leaderboardbadgeresponsebody.ts
-  - src/models/components/v1leaderboardgroupmetarequestbody.ts
-  - src/models/components/v1leaderboardgroupmetaresponsebody.ts
+  - src/models/components/v1leaderboardgetaccountleaderboardrequestbody.ts
+  - src/models/components/v1leaderboardgetaccountleaderboardresponsebody.ts
+  - src/models/components/v1leaderboardgetaccountsmetarequestbody.ts
+  - src/models/components/v1leaderboardgetaccountsmetaresponsebody.ts
+  - src/models/components/v1leaderboardgetgroupleaderboardrequestbody.ts
+  - src/models/components/v1leaderboardgetgroupleaderboardresponsebody.ts
+  - src/models/components/v1leaderboardgetgroupsmetarequestbody.ts
+  - src/models/components/v1leaderboardgetgroupsmetaresponsebody.ts
+  - src/models/components/v1leaderboardlistbadgesresponsebody.ts
   - src/models/components/v1leaderboardlocation.ts
   - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1loginresponsebody.ts
-  - src/models/components/v1reconnectrequestbody.ts
-  - src/models/components/v1reconnectresponsebody.ts
-  - src/models/components/v1refreshsessionbody.ts
-  - src/models/components/v1refreshsessionrequestbody.ts
   - src/models/components/v1searchrequest.ts
   - src/models/components/v1stats.ts
-  - src/models/components/v1updateconnectionrequestbody.ts
-  - src/models/components/v1updateconnectionresponsebody.ts
-  - src/models/components/v1updateimage.ts
-  - src/models/components/v1updateimagerequestbody.ts
-  - src/models/components/v1updateimageresponsebody.ts
-  - src/models/components/v1updaterolerequestbody.ts
-  - src/models/components/v1updatesettingsrequestbody.ts
-  - src/models/components/v1updatevanityrequestbody.ts
-  - src/models/components/v1uploadedimage.ts
-  - src/models/components/v1uploadimagesrequestbody.ts
-  - src/models/components/v1uploadimagesresponsebody.ts
   - src/models/components/v1vanityanalytics.ts
-  - src/models/components/v1verifyconnectionrequestbody.ts
-  - src/models/components/v1verifyconnectionresponsebody.ts
-  - src/models/components/v1verifyemailrequestbody.ts
   - src/models/components/vanitystruct.ts
   - src/models/components/vectors.ts
   - src/models/errors/errormodel.ts
@@ -520,76 +518,74 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
-  - src/models/operations/accountv1bookmarkbadge.ts
-  - src/models/operations/accountv1connectionconnect.ts
-  - src/models/operations/accountv1connectiondeleteconnection.ts
-  - src/models/operations/accountv1connectionreconnect.ts
-  - src/models/operations/accountv1connectionupdateconnection.ts
-  - src/models/operations/accountv1connectionverifyconnection.ts
-  - src/models/operations/accountv1getapps.ts
-  - src/models/operations/accountv1getbadgebookmarks.ts
-  - src/models/operations/accountv1getbadges.ts
-  - src/models/operations/accountv1getdatapoints.ts
-  - src/models/operations/accountv1getfriends.ts
-  - src/models/operations/accountv1getinfo.ts
-  - src/models/operations/accountv1getleaderboardhistory.ts
-  - src/models/operations/accountv1getmeta.ts
-  - src/models/operations/accountv1getownedbadges.ts
-  - src/models/operations/accountv1getstaff.ts
-  - src/models/operations/accountv1imagesdelete.ts
-  - src/models/operations/accountv1imagesget.ts
-  - src/models/operations/accountv1imagesupdate.ts
-  - src/models/operations/accountv1imagesupload.ts
-  - src/models/operations/accountv1queue.ts
-  - src/models/operations/accountv1sessioncreate.ts
-  - src/models/operations/accountv1sessiondelete.ts
-  - src/models/operations/accountv1sessionget.ts
-  - src/models/operations/accountv1sessionlogin.ts
-  - src/models/operations/accountv1sessionlogout.ts
-  - src/models/operations/accountv1sessionrefresh.ts
-  - src/models/operations/accountv1settingsdeveloperappcreate.ts
-  - src/models/operations/accountv1settingsdeveloperappdelete.ts
-  - src/models/operations/accountv1settingsdeveloperappupdate.ts
-  - src/models/operations/accountv1settingsemailsendverification.ts
-  - src/models/operations/accountv1settingsemailsubscribe.ts
-  - src/models/operations/accountv1settingsemailverify.ts
-  - src/models/operations/accountv1settingsget.ts
-  - src/models/operations/accountv1settingsupdate.ts
-  - src/models/operations/accountv1settingsupdaterole.ts
-  - src/models/operations/accountv1settingsupdatevanity.ts
-  - src/models/operations/adminv1getaccount.ts
-  - src/models/operations/adminv1removevanity.ts
-  - src/models/operations/adminv1updateresources.ts
-  - src/models/operations/adminv1updateroles.ts
-  - src/models/operations/appv1listbadges.ts
-  - src/models/operations/badgev1search.ts
-  - src/models/operations/badgev1searchsuggest.ts
-  - src/models/operations/badgev1tag.ts
-  - src/models/operations/badgev1tags.ts
-  - src/models/operations/badgev1tagssuggest.ts
+  - src/models/operations/getv1liveness.ts
   - src/models/operations/index.ts
-  - src/models/operations/leaderboardv1getaccountleaderboard.ts
-  - src/models/operations/leaderboardv1getaccountleaderboardmeta.ts
-  - src/models/operations/leaderboardv1getbadges.ts
-  - src/models/operations/leaderboardv1getgroup.ts
-  - src/models/operations/leaderboardv1getgroupleaderboardmeta.ts
-  - src/models/operations/liveness.ts
-  - src/models/operations/locationv1locationget.ts
-  - src/models/operations/statsv1statsget.ts
+  - src/models/operations/listv1locationgetlocations.ts
+  - src/models/operations/postv1accountbookmarkbadge.ts
+  - src/models/operations/postv1accountcreateconnection.ts
+  - src/models/operations/postv1accountcreatedeveloperapp.ts
+  - src/models/operations/postv1accountcreatesession.ts
+  - src/models/operations/postv1accountdeleteconnection.ts
+  - src/models/operations/postv1accountdeletedeveloperapp.ts
+  - src/models/operations/postv1accountdeleteimages.ts
+  - src/models/operations/postv1accountdeletesession.ts
+  - src/models/operations/postv1accountgetdatapoints.ts
+  - src/models/operations/postv1accountgetinfo.ts
+  - src/models/operations/postv1accountgetmeta.ts
+  - src/models/operations/postv1accountgetsession.ts
+  - src/models/operations/postv1accountgetsettings.ts
+  - src/models/operations/postv1accountlistapps.ts
+  - src/models/operations/postv1accountlistbadgebookmarks.ts
+  - src/models/operations/postv1accountlistbadges.ts
+  - src/models/operations/postv1accountlistfriends.ts
+  - src/models/operations/postv1accountlistimages.ts
+  - src/models/operations/postv1accountlistleaderboardhistory.ts
+  - src/models/operations/postv1accountlistownedbadges.ts
+  - src/models/operations/postv1accountlogin.ts
+  - src/models/operations/postv1accountlogout.ts
+  - src/models/operations/postv1accountqueue.ts
+  - src/models/operations/postv1accountreconnectconnection.ts
+  - src/models/operations/postv1accountrefreshsession.ts
+  - src/models/operations/postv1accountsendemailverification.ts
+  - src/models/operations/postv1accountsubscribeemail.ts
+  - src/models/operations/postv1accountupdateconnection.ts
+  - src/models/operations/postv1accountupdatedeveloperapp.ts
+  - src/models/operations/postv1accountupdateimages.ts
+  - src/models/operations/postv1accountupdaterole.ts
+  - src/models/operations/postv1accountupdatesettings.ts
+  - src/models/operations/postv1accountupdatevanity.ts
+  - src/models/operations/postv1accountuploadimages.ts
+  - src/models/operations/postv1accountverifyconnection.ts
+  - src/models/operations/postv1accountverifyemail.ts
+  - src/models/operations/postv1admingetaccount.ts
+  - src/models/operations/postv1adminremovevanity.ts
+  - src/models/operations/postv1adminupdateresources.ts
+  - src/models/operations/postv1adminupdateroles.ts
+  - src/models/operations/postv1applistbadges.ts
+  - src/models/operations/postv1badgegettags.ts
+  - src/models/operations/postv1badgesearchbadges.ts
+  - src/models/operations/postv1badgesuggestsearch.ts
+  - src/models/operations/postv1badgesuggesttags.ts
+  - src/models/operations/postv1badgetag.ts
+  - src/models/operations/postv1leaderboardgetaccountleaderboard.ts
+  - src/models/operations/postv1leaderboardgetaccountsmeta.ts
+  - src/models/operations/postv1leaderboardgetgroupleaderboard.ts
+  - src/models/operations/postv1leaderboardgetgroupsmeta.ts
+  - src/models/operations/postv1leaderboardlistbadges33.ts
+  - src/models/operations/postv1staffliststaff.ts
+  - src/models/operations/postv1statsgetstats.ts
   - src/sdk/account.ts
   - src/sdk/admin.ts
-  - src/sdk/app.ts
+  - src/sdk/apps.ts
+  - src/sdk/auth.ts
   - src/sdk/badge.ts
   - src/sdk/badges.ts
-  - src/sdk/connection.ts
-  - src/sdk/developerapps.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/liveness.ts
   - src/sdk/location.ts
-  - src/sdk/roles.ts
   - src/sdk/sdk.ts
-  - src/sdk/session.ts
+  - src/sdk/staff.ts
   - src/sdk/stats.ts
   - src/types/async.ts
   - src/types/blobs.ts
@@ -1149,6 +1145,555 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-bookmark-badge:
+    speakeasy-default-post-v1-account-bookmark-badge:
+      requestBody:
+        application/json: {"badgeId": "bdg_123", "bookmark": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBookmarkBadgeResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-create-connection:
+    speakeasy-default-post-v1-account-create-connection:
+      requestBody:
+        application/json: {"code": "123456", "provider": "discord"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCreateConnectionResponseBody.json", "code": "ABC123", "connectionId": "ABC123"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-create-developer-app:
+    speakeasy-default-post-v1-account-create-developer-app:
+      requestBody:
+        application/json: {"description": "Your App Description", "environment": "production", "generateKey": true, "name": "Your App"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCreateDeveloperAppResponseBody.json", "apiKey": "api_123"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-delete-connection:
+    speakeasy-default-post-v1-account-delete-connection:
+      requestBody:
+        application/json: {"connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeleteConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-delete-developer-app:
+    speakeasy-default-post-v1-account-delete-developer-app:
+      requestBody:
+        application/json: {"developerAppId": "da_123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeleteDeveloperAppResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-delete-images:
+    speakeasy-default-post-v1-account-delete-images:
+      requestBody:
+        application/json: {"imageIds": ["<value>"]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeleteImagesResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-delete-session:
+    speakeasy-default-post-v1-account-delete-session:
+      requestBody:
+        application/json: {"sessionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeleteSessionResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-get-data-points:
+    speakeasy-default-post-v1-account-get-data-points:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetDataPointsResponseBody.json", "mostXp": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 885900, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 16995, "baseXp": 487317, "firstCompletion": "2023-03-09T14:50:04.101Z", "highestLevel": 435569, "isEvent": true, "isFoil": true, "isSale": true, "lastCompletion": "2023-03-24T12:51:02.380Z", "name": "<value>", "price": 857246, "scarcity": 409349, "steamId": 880279}, {"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 300822, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 810304, "baseXp": 809051, "firstCompletion": "2025-10-01T16:41:06.879Z", "highestLevel": 245413, "isEvent": false, "isFoil": true, "isSale": false, "lastCompletion": "2024-03-29T05:51:54.821Z", "name": "<value>", "price": 345384, "scarcity": 973900, "steamId": 197125}], "playtime": [{"appId": 730, "image": "someHash.idk", "name": "CS2", "playtime": 15}, {"appId": 730, "image": "someHash.idk", "name": "CS2", "playtime": 15}, {"appId": 730, "image": "someHash.idk", "name": "CS2", "playtime": 15}], "scarcity": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 414914, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 73262, "baseXp": 754694, "firstCompletion": "2024-08-25T03:25:24.532Z", "highestLevel": 833557, "isEvent": false, "isFoil": false, "isSale": true, "lastCompletion": "2023-09-16T08:12:37.398Z", "name": "<value>", "price": 965249, "scarcity": 672846, "steamId": 795331}, {"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 686950, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 202826, "baseXp": 98606, "firstCompletion": "2025-11-22T22:59:42.276Z", "highestLevel": 403484, "isEvent": false, "isFoil": true, "isSale": false, "lastCompletion": "2025-07-06T05:06:42.477Z", "name": "<value>", "price": 252932, "scarcity": 405217, "steamId": 832391}], "xp": {"key": {}, "key1": {"key": 40247, "key1": 819808, "key2": 820406}, "key2": {"key": 358001, "key1": 196397, "key2": 298845}}}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-get-info:
+    speakeasy-default-post-v1-account-get-info:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 100365, "city": {"id": 1, "name": "Bad Krozingen"}, "communityBan": false, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [], "currentRanks": [{"leaderboard": "playtime", "ranks": "1,1,1,1,1"}, {"leaderboard": "game_bans", "ranks": "1,1,1,1,1"}, {"leaderboard": "apps", "ranks": "1,1,1,1,1"}], "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 101323, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "retrying", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2023-01-19T05:52:20.787Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 994480, "role": "developer"}], "shortlinkDomain": "steamsets.link", "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 828077, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 368108, "xp": 123456}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-get-meta:
+    speakeasy-default-post-v1-account-get-meta:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetMetaResponseBody.json", "Steam Avatar hash of the account": "<value>", "description": "for ha vainly a whereas up masquerade pale", "steamId": "<id>", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-get-session:
+    speakeasy-default-post-v1-account-get-session:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [], "roles": [{"rating": 405554, "role": "user"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-get-settings:
+    speakeasy-default-post-v1-account-get-settings:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "donator", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}, {"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": false, "vanity": "flo", "vanityAnalytics": {"clicks": 39626}}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-apps:
+    speakeasy-default-post-v1-account-list-apps:
+      requestBody:
+        application/json: {"page": 1}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListAppsResponseBody.json", "apps": [{"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "playtime": 123456, "price": 1200}, {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "playtime": 123456, "price": 1200}], "pages": 1, "totalHits": 1}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-badge-bookmarks:
+    speakeasy-default-post-v1-account-list-badge-bookmarks:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeBookmarksResponseBody.json", "bookmarks": [{"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}, {"badgeId": "bdg_123", "bookmarkedAt": "2023-01-01T00:00:00Z"}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-badges:
+    speakeasy-default-post-v1-account-list-badges:
+      requestBody:
+        application/json: {"page": 1}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListBadgesResponseBody.json", "badges": [{"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 470066, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 678854, "baseXp": 302941, "firstCompletion": "2024-08-09T16:31:33.295Z", "highestLevel": 626221, "isEvent": false, "isFoil": true, "isSale": false, "lastCompletion": "2023-08-11T16:53:19.246Z", "name": "<value>", "price": 630619, "scarcity": 162745, "steamId": 851407}, {"accountInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "appId": 887116, "appImage": "<value>", "appName": "<value>", "badgeId": "<id>", "badgeImage": "<value>", "baseLevel": 360495, "baseXp": 327209, "firstCompletion": "2025-07-31T13:23:00.066Z", "highestLevel": 811518, "isEvent": false, "isFoil": false, "isSale": false, "lastCompletion": "2023-12-11T10:06:58.607Z", "name": "<value>", "price": 145341, "scarcity": 29373, "steamId": 416744}], "pages": 1, "totalHits": 1}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-friends:
+    speakeasy-default-post-v1-account-list-friends:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json", "friends": [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 467760, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "friendsSince": "2023-10-23T17:34:17.875Z", "gameBans": 83806, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 92874, "role": "partner"}, {"rating": 615794, "role": "sapphire"}, {"rating": 517651, "role": "sapphire"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 566123, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 386020, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 36009, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "friendsSince": "2024-07-26T19:29:08.001Z", "gameBans": 818749, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 777831, "role": "developer"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 39646, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 965693, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 949605, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "friendsSince": "2025-08-16T05:15:43.641Z", "gameBans": 580288, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 454263, "role": "ruby"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 188965, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 799224, "xp": 123456}]}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-images:
+    speakeasy-default-post-v1-account-list-images:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListImagesResponseBody.json", "images": []}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-leaderboard-history:
+    speakeasy-default-post-v1-account-list-leaderboard-history:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListLeaderboardHistoryResponseBody.json", "histories": [{"date": "2024-11-03T10:31:34.373Z", "leaderboard": "apps", "rank": 643810, "score": 699304}]}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-list-owned-badges:
+    speakeasy-default-post-v1-account-list-owned-badges:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json", "ownedBadges": [{"appId": 730, "badgeId": "bdg_123", "isFoil": true, "level": 123456, "steamId": 13}, {"appId": 730, "badgeId": "bdg_123", "isFoil": true, "level": 123456, "steamId": 13}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-login:
+    speakeasy-default-post-v1-account-login:
+      requestBody:
+        application/json: {"openid_assoc_handle": "123456", "openid_claimed_id": "76561198842603734", "openid_identity": "https://steamsets.com/api/v1/openid/login", "openid_mode": "checkid_setup", "openid_ns": "http://specs.openid.net/auth/2.0", "openid_op_endpoint": "https://steamsets.com/api/v1/openid/login", "openid_response_nonce": "123456", "openid_return_to": "https://example.com", "openid_sig": "123456", "openid_signed": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LoginResponseBody.json", "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "name": "SteamSets", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_", "steamId": "76561198842603734"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-logout:
+    speakeasy-default-post-v1-account-logout:
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-queue:
+    speakeasy-default-post-v1-account-queue:
+      requestBody:
+        application/json: {"force": true}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-reconnect-connection:
+    speakeasy-default-post-v1-account-reconnect-connection:
+      requestBody:
+        application/json: {"code": "123456", "connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountReconnectResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-refresh-session:
+    speakeasy-default-post-v1-account-refresh-session:
+      requestBody:
+        application/json: {"refreshToken": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountRefreshSessionBody.json", "refreshExpiresAt": "2023-01-01T00:00:00Z", "refreshToken": "<value>", "sessionExpiresAt": "2023-01-01T00:00:00Z", "sessionToken": "auth_"}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-send-email-verification:
+    speakeasy-default-post-v1-account-send-email-verification:
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-subscribe-email:
+    speakeasy-default-post-v1-account-subscribe-email:
+      requestBody:
+        application/json: {"email": "steamsets@example.com", "subscribed": true}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-connection:
+    speakeasy-default-post-v1-account-update-connection:
+      requestBody:
+        application/json: {"connectionId": "123456", "hidden": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountUpdateConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-developer-app:
+    speakeasy-default-post-v1-account-update-developer-app:
+      requestBody:
+        application/json: {"description": "My App Description", "developerAppId": "da_123456", "name": "My App", "regenerate": true}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountDeveloperAppUpdateResponseBody.json", "apiKey": "api_123"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-images:
+    speakeasy-default-post-v1-account-update-images:
+      requestBody:
+        application/json: {"images": [{"active": true, "imageId": "123456"}, {"active": true, "imageId": "123456"}, {"active": true, "imageId": "123456"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountUpdateImageResponseBody.json"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-role:
+    speakeasy-default-post-v1-account-update-role:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-settings:
+    speakeasy-default-post-v1-account-update-settings:
+      requestBody:
+        application/json: {"email": "steamsets@example.com", "hidden": true, "language": "en", "vanity": "flo"}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-update-vanity:
+    speakeasy-default-post-v1-account-update-vanity:
+      requestBody:
+        application/json: {}
+      responses:
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-upload-images:
+    speakeasy-default-post-v1-account-upload-images:
+      requestBody:
+        application/json: {"images": [{"data": "base64_encoded_image", "type": "avatar"}, {"data": "base64_encoded_image", "type": "avatar"}, {"data": "base64_encoded_image", "type": "avatar"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountUploadImagesResponseBody.json", "images": []}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-verify-connection:
+    speakeasy-default-post-v1-account-verify-connection:
+      requestBody:
+        application/json: {"connectionId": "123456"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountVerifyConnectionResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-verify-email:
+    speakeasy-default-post-v1-account-verify-email:
+      requestBody:
+        application/json: {"code": "123456"}
+      responses:
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-staff-list-staff:
+    speakeasy-default-post-v1-staff-list-staff:
+      responses:
+        "200":
+          application/json: [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 39237, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 527794, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 336267, "role": "emerald"}, {"rating": 730448, "role": "amber"}, {"rating": 611747, "role": "sapphire"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 643456, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 137541, "xp": 123456}, {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 165473, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 38587, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 680476, "role": "sapphire"}, {"rating": 194718, "role": "early_supporter"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 750391, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 138632, "xp": 123456}]
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-account-create-session:
+    speakeasy-default-post-v1-account-create-session:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCreateSessionBody.json", "sessionToken": "ABC123"}
+        "422":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-admin-get-account:
+    speakeasy-default-post-v1-admin-get-account:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json", "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "city": "Bad Krozingen", "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "country": "Germany", "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}, {"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "locationUpdates": [{"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"city": {"new": "steamsets", "old": "steamsets"}, "countryCode": {"new": "steamsets", "old": "steamsets"}, "countryName": {"new": "steamsets", "old": "steamsets"}, "region": {"new": "steamsets", "old": "steamsets"}, "state": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "name": "steamsets", "nameUpdates": [{"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}, {"name": {"new": "steamsets", "old": "steamsets"}, "updatedAt": "2023-01-01T00:00:00Z"}], "privacy": "public", "region": "Europe", "resources": [], "roles": [], "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "state": "Baden-Wurttemberg", "vanity": "steamsets", "vanityUpdates": [{"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}, {"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}, {"updatedAt": "2023-01-01T00:00:00Z", "vanity": {"new": "steamsets", "old": "steamsets"}}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-admin-remove-vanity:
+    speakeasy-default-post-v1-admin-remove-vanity:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminRemoveVanityResponseBody.json"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-admin-update-resources:
+    speakeasy-default-post-v1-admin-update-resources:
+      requestBody:
+        application/json: {"resources": [{"resource": "account_queues", "value": "1"}]}
+      responses:
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-admin-update-roles:
+    speakeasy-default-post-v1-admin-update-roles:
+      requestBody:
+        application/json: {"roles": ["early_supporter", "translator", "amber"]}
+      responses:
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-app-list-badges:
+    speakeasy-default-post-v1-app-list-badges:
+      requestBody:
+        application/json: {"appId": 315591}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AppListBadgesResponseBody.json", "badges": []}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-badge-get-tags:
+    speakeasy-default-post-v1-badge-get-tags:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeGetTagsResponseBody.json", "colorTags": [{"group": "<value>", "groupOwner": true, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}, {"group": "<value>", "groupOwner": false, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}, {"group": "<value>", "groupOwner": false, "hex": "<value>", "hsl": "<value>", "id": "<id>", "name": "<value>"}], "designTags": [{"id": "<id>", "name": "<value>"}, {"id": "<id>", "name": "<value>"}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-badge-search-badges:
+    speakeasy-default-post-v1-badge-search-badges:
+      requestBody:
+        application/json: {"filter": "<value>", "query": "<value>", "sort": ["price:asc", "author:desc"]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSearchBadgesResponseBody.json", "badges": [{"_vectors": {"image": [4881.87, 649.45, 5441.54]}, "appId": 843704, "appImage": "<value>", "appName": "<value>", "bookmarks": 122940, "colors": ["<value>"], "designs": ["<value>"], "firstCompletion": 656548, "highestLevel": 593329, "id": "<id>", "image": "https://picsum.photos/seed/ESGowU3bek/1985/2672", "isEvent": false, "isFoil": false, "isSale": false, "lastCompletion": 454166, "level": 437332, "name": "<value>", "scarcity": 285294, "steamId": 402911, "xp": 5514.88}, {"_vectors": {"image": [6443.94, 1887.86, 9627.81]}, "appId": 326604, "appImage": "<value>", "appName": "<value>", "bookmarks": 411688, "colors": ["<value>", "<value>", "<value>"], "designs": ["<value>", "<value>"], "firstCompletion": 625457, "highestLevel": 722963, "id": "<id>", "image": "https://loremflickr.com/1198/29?lock=7550987139446011", "isEvent": true, "isFoil": false, "isSale": false, "lastCompletion": 567943, "level": 475321, "name": "<value>", "scarcity": 440880, "steamId": 816372, "xp": 1224.14}], "facets": "<value>", "pages": 290544, "results": 505563}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-badge-suggest-search:
+    speakeasy-default-post-v1-badge-suggest-search:
+      requestBody:
+        application/json: {"query": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeSuggestSearchBody.json", "filter": "<value>"}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-badge-suggest-tags:
+    speakeasy-default-post-v1-badge-suggest-tags:
+      requestBody:
+        application/json: {"badgeId": "<id>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": [], "designs": ["<value>", "<value>"]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-badge-tag:
+    speakeasy-default-post-v1-badge-tag:
+      requestBody:
+        application/json: {"badgeId": "bdg_123", "colors": [{"id": "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS", "remove": true}, {"id": "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS", "remove": true}], "designs": []}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeTagBadgeResponseBody.json", "colorTags": [], "designTags": [{"id": "<id>", "name": "<value>"}]}
+        "403":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-leaderboard-get-account-leaderboard:
+    speakeasy-default-post-v1-leaderboard-get-account-leaderboard:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 979963, "isFoil": true}, "end": 10, "goToLeaderboardRank": 1, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetAccountLeaderboardResponseBody.json", "accounts": [], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": [{"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}, {"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}, {"cityName": "Bad Krozingen", "countryCode": "DE", "countryName": "Germany", "region": "Europe", "stateName": "Baden-Wurttemberg"}], "ownAccount": {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 819469, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 587108, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 421980, "role": "amethyst"}, {"rating": 594576, "role": "translator"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 756108, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 847006, "xp": 123456}, "rankedOutOf": 0}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-leaderboard-get-accounts-meta:
+    speakeasy-default-post-v1-leaderboard-get-accounts-meta:
+      requestBody:
+        application/json: {"app": {"appId": 730}, "badge": {"id": 750917, "isFoil": true}, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}, {"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}]}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetAccountsMetaResponseBody.json", "description": "yuck intrigue twist slide gee", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-leaderboard-get-group-leaderboard:
+    speakeasy-default-post-v1-leaderboard-get-group-leaderboard:
+      requestBody:
+        application/json: {"end": 10, "goToLeaderboardRank": 1, "leaderboard": "most_members", "start": 1}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupLeaderboardResponseBody.json", "groups": [{"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 516545, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 158568, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 775304, "role": "early_supporter"}, {"rating": 633913, "role": "badge_scout"}, {"rating": 603592, "role": "developer"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 850080, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 119533, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}, {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 940200, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 517158, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 923825, "role": "developer"}, {"rating": 542133, "role": "user"}, {"rating": 311918, "role": "owner"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 569555, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 28254, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}, {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 727480, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 52431, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 426694, "role": "emerald"}, {"rating": 803303, "role": "ruby"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 253908, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 605804, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 310471, "city": {"id": 1, "name": "Bad Krozingen"}, "country": {"code": "DE", "id": 1, "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 603859, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"id": 1, "name": "Europe"}, "roles": [{"rating": 531765, "role": "sapphire"}, {"rating": 814621, "role": "developer"}], "state": {"id": 1, "name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 891772, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 23791, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-leaderboard-get-groups-meta:
+    speakeasy-default-post-v1-leaderboard-get-groups-meta:
+      requestBody:
+        application/json: {"leaderboard": "most_members"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupsMetaResponseBody.json", "description": "aboard against hunt worth sew like petal perp amid", "title": "<value>"}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-leaderboard-list-badges33:
+    speakeasy-default-post-v1-leaderboard-list-badges33:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardListBadgesResponseBody.json", "badges": []}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  get-v1-liveness:
+    speakeasy-default-get-v1-liveness:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  list-v1-location-get-locations:
+    speakeasy-default-list-v1-location-get-locations:
+      responses:
+        "200":
+          application/json: [{"countries": [{"code": "<value>", "name": "<value>", "states": [{"cities": [{"name": "<value>"}, {"name": "<value>"}], "code": "<value>", "name": "<value>"}]}, {"code": "<value>", "name": "<value>", "states": [{"cities": [{"name": "<value>"}, {"name": "<value>"}], "code": "<value>", "name": "<value>"}]}, {"code": "<value>", "name": "<value>", "states": []}], "name": "Europe"}, {"countries": [], "name": "Europe"}, {"countries": [{"code": "<value>", "name": "<value>", "states": []}, {"code": "<value>", "name": "<value>", "states": [{"cities": [], "code": "<value>", "name": "<value>"}, {"cities": [], "code": "<value>", "name": "<value>"}, {"cities": [], "code": "<value>", "name": "<value>"}]}, {"code": "<value>", "name": "<value>", "states": [{"cities": [], "code": "<value>", "name": "<value>"}, {"cities": [{"name": "<value>"}], "code": "<value>", "name": "<value>"}, {"cities": [{"name": "<value>"}, {"name": "<value>"}], "code": "<value>", "name": "<value>"}]}], "name": "Europe"}]
+        "401":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  post-v1-stats-get-stats:
+    speakeasy-default-post-v1-stats-get-stats:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1Stats.json", "accountsAdded": 1, "accountsUpdated": 1, "appPlaytime": 1, "apps": 1, "awardsGiven": 1, "awardsReceived": 1, "badges": 1, "bans": 1, "foilBadges": 1, "friends": 1, "gameBans": 1, "level": 1, "normalBadges": 1, "playtime": 1, "pointsGiven": 1, "pointsReceived": 1, "steamSetsScore": 1, "totalAccounts": 1, "vacBans": 1, "xp": 1}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.1

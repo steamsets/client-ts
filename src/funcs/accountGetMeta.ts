@@ -31,7 +31,7 @@ export function accountGetMeta(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1GetMetaResponse,
+    operations.PostV1AccountGetMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AccountV1GetMetaResponse,
+      operations.PostV1AccountGetMetaResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -82,7 +82,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/GetMeta")();
+  const path = pathToFunc("/v1/account.getMeta")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.getMeta",
+    operationID: "post-v1-account-get-meta",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1GetMetaResponse,
+    operations.PostV1AccountGetMetaResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,8 +159,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1GetMetaResponse$inboundSchema, {
-      key: "V1AccountMetaResponseBody",
+    M.json(200, operations.PostV1AccountGetMetaResponse$inboundSchema, {
+      key: "V1AccountGetMetaResponseBody",
     }),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

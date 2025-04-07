@@ -27,7 +27,7 @@ export function locationGet(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LocationV1LocationGetResponse,
+    operations.ListV1LocationGetLocationsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.LocationV1LocationGetResponse,
+      operations.ListV1LocationGetLocationsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -65,7 +65,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/location.v1.LocationService/GetLocations")();
+  const path = pathToFunc("/v1/location.getLocations")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "location.v1.location.get",
+    operationID: "list-v1-location-get-locations",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LocationV1LocationGetResponse,
+    operations.ListV1LocationGetLocationsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,7 +140,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LocationV1LocationGetResponse$inboundSchema, {
+    M.json(200, operations.ListV1LocationGetLocationsResponse$inboundSchema, {
       key: "Regions",
     }),
     M.jsonErr(401, errors.ErrorModel$inboundSchema, {

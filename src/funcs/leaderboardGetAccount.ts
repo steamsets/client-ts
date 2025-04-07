@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function leaderboardGetAccount(
   client: SteamSetsCore,
-  request: components.V1AccountLeaderboardRequestBody,
+  request: components.V1LeaderboardGetAccountLeaderboardRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardV1GetAccountLeaderboardResponse,
+    operations.PostV1LeaderboardGetAccountLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function leaderboardGetAccount(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountLeaderboardRequestBody,
+  request: components.V1LeaderboardGetAccountLeaderboardRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardV1GetAccountLeaderboardResponse,
+      operations.PostV1LeaderboardGetAccountLeaderboardResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,8 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AccountLeaderboardRequestBody$outboundSchema.parse(value),
+      components.V1LeaderboardGetAccountLeaderboardRequestBody$outboundSchema
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,9 +84,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc(
-    "/leaderboard.v1.LeaderboardService/GetAccountLeaderboard",
-  )();
+  const path = pathToFunc("/v1/leaderboard.getAccountLeaderboard")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -98,7 +97,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.v1.getAccountLeaderboard",
+    operationID: "post-v1-leaderboard-get-account-leaderboard",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +150,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardV1GetAccountLeaderboardResponse,
+    operations.PostV1LeaderboardGetAccountLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -164,8 +163,8 @@ async function $do(
   >(
     M.json(
       200,
-      operations.LeaderboardV1GetAccountLeaderboardResponse$inboundSchema,
-      { key: "V1AccountLeaderboardResponseBody" },
+      operations.PostV1LeaderboardGetAccountLeaderboardResponse$inboundSchema,
+      { key: "V1LeaderboardGetAccountLeaderboardResponseBody" },
     ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

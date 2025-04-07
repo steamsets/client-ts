@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function adminUpdateRoles(
   client: SteamSetsCore,
-  request: components.V1AdminUpdateRolessRequestBody,
+  request: components.V1AdminUpdateRolesRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AdminV1UpdateRolesResponse,
+    operations.PostV1AdminUpdateRolesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function adminUpdateRoles(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AdminUpdateRolessRequestBody,
+  request: components.V1AdminUpdateRolesRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AdminV1UpdateRolesResponse,
+      operations.PostV1AdminUpdateRolesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AdminUpdateRolessRequestBody$outboundSchema.parse(value),
+      components.V1AdminUpdateRolesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/admin.v1.AdminService/UpdateRoles")();
+  const path = pathToFunc("/v1/admin.updateRoles")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "admin.v1.update-roles",
+    operationID: "post-v1-admin-update-roles",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AdminV1UpdateRolesResponse,
+    operations.PostV1AdminUpdateRolesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AdminV1UpdateRolesResponse$inboundSchema),
+    M.nil(204, operations.PostV1AdminUpdateRolesResponse$inboundSchema),
     M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

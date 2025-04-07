@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function leaderboardGetGroup(
   client: SteamSetsCore,
-  request: components.V1GroupLeaderboardRequestBody,
+  request: components.V1LeaderboardGetGroupLeaderboardRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardV1GetGroupResponse,
+    operations.PostV1LeaderboardGetGroupLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function leaderboardGetGroup(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1GroupLeaderboardRequestBody,
+  request: components.V1LeaderboardGetGroupLeaderboardRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardV1GetGroupResponse,
+      operations.PostV1LeaderboardGetGroupLeaderboardResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,8 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1GroupLeaderboardRequestBody$outboundSchema.parse(value),
+      components.V1LeaderboardGetGroupLeaderboardRequestBody$outboundSchema
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,9 +84,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc(
-    "/leaderboard.v1.LeaderboardService/GetGroupLeaderboard",
-  )();
+  const path = pathToFunc("/v1/leaderboard.getGroupLeaderboard")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -98,7 +97,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.v1.getGroup",
+    operationID: "post-v1-leaderboard-get-group-leaderboard",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +150,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardV1GetGroupResponse,
+    operations.PostV1LeaderboardGetGroupLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,9 +161,11 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LeaderboardV1GetGroupResponse$inboundSchema, {
-      key: "V1GroupLeaderboardResponseBody",
-    }),
+    M.json(
+      200,
+      operations.PostV1LeaderboardGetGroupLeaderboardResponse$inboundSchema,
+      { key: "V1LeaderboardGetGroupLeaderboardResponseBody" },
+    ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

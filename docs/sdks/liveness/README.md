@@ -7,9 +7,9 @@ Are we still alive? I hope so :^)
 
 ### Available Operations
 
-* [get](#get) - Liveness check
+* [check](#check) - Liveness check
 
-## get
+## check
 
 This endpoint checks if the service is alive.
 
@@ -23,7 +23,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.liveness.get();
+  const result = await steamSets.liveness.check();
 
   // Handle the result
   console.log(result);
@@ -38,7 +38,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { livenessGet } from "@steamsets/client-ts/funcs/livenessGet.js";
+import { livenessCheck } from "@steamsets/client-ts/funcs/livenessCheck.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -47,7 +47,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await livenessGet(steamSets);
+  const res = await livenessCheck(steamSets);
 
   if (!res.ok) {
     throw res.error;
@@ -72,7 +72,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LivenessResponse](../../models/operations/livenessresponse.md)\>**
+**Promise\<[operations.GetV1LivenessResponse](../../models/operations/getv1livenessresponse.md)\>**
 
 ### Errors
 

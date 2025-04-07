@@ -31,7 +31,7 @@ export function accountQueue(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1QueueResponse,
+    operations.PostV1AccountQueueResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AccountV1QueueResponse,
+      operations.PostV1AccountQueueResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -82,7 +82,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/Queue")();
+  const path = pathToFunc("/v1/account.queue")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.queue",
+    operationID: "post-v1-account-queue",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1QueueResponse,
+    operations.PostV1AccountQueueResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AccountV1QueueResponse$inboundSchema),
+    M.nil(204, operations.PostV1AccountQueueResponse$inboundSchema),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

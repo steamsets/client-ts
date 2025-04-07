@@ -27,7 +27,7 @@ export function accountGetSession(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SessionGetResponse,
+    operations.PostV1AccountGetSessionResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -50,7 +50,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AccountV1SessionGetResponse,
+      operations.PostV1AccountGetSessionResponse,
       | errors.ErrorModel
       | SDKError
       | SDKValidationError
@@ -63,7 +63,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/account.v1.AccountService/GetSession")();
+  const path = pathToFunc("/v1/account.getSession")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -75,7 +75,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.session.get",
+    operationID: "post-v1-account-get-session",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -127,7 +127,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SessionGetResponse,
+    operations.PostV1AccountGetSessionResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -137,8 +137,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SessionGetResponse$inboundSchema, {
-      key: "V1GetSessionBody",
+    M.json(200, operations.PostV1AccountGetSessionResponse$inboundSchema, {
+      key: "V1AccountGetSessionBody",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

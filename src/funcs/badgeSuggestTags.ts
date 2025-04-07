@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function badgeSuggestTags(
   client: SteamSetsCore,
-  request: components.V1BadgeTagsSuggestRequestBody,
+  request: components.V1BadgeSuggestTagsRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.BadgeV1TagsSuggestResponse,
+    operations.PostV1BadgeSuggestTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function badgeSuggestTags(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1BadgeTagsSuggestRequestBody,
+  request: components.V1BadgeSuggestTagsRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.BadgeV1TagsSuggestResponse,
+      operations.PostV1BadgeSuggestTagsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1BadgeTagsSuggestRequestBody$outboundSchema.parse(value),
+      components.V1BadgeSuggestTagsRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/badge.v1.BadgeService/SuggestTags")();
+  const path = pathToFunc("/v1/badge.suggestTags")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "badge.v1.tags.suggest",
+    operationID: "post-v1-badge-suggest-tags",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.BadgeV1TagsSuggestResponse,
+    operations.PostV1BadgeSuggestTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.BadgeV1TagsSuggestResponse$inboundSchema, {
+    M.json(200, operations.PostV1BadgeSuggestTagsResponse$inboundSchema, {
       key: "BadgeSuggestTags",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

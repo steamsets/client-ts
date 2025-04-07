@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function accountDeleteConnection(
   client: SteamSetsCore,
-  request: components.V1DeleteConnectionRequestBody,
+  request: components.V1AccountDeleteConnectionRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1ConnectionDeleteConnectionResponse,
+    operations.PostV1AccountDeleteConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountDeleteConnection(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1DeleteConnectionRequestBody,
+  request: components.V1AccountDeleteConnectionRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1ConnectionDeleteConnectionResponse,
+      operations.PostV1AccountDeleteConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,9 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1DeleteConnectionRequestBody$outboundSchema.parse(value),
+      components.V1AccountDeleteConnectionRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +85,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/DeleteConnection")();
+  const path = pathToFunc("/v1/account.deleteConnection")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.connection.deleteConnection",
+    operationID: "post-v1-account-delete-connection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1ConnectionDeleteConnectionResponse,
+    operations.PostV1AccountDeleteConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,8 +164,8 @@ async function $do(
   >(
     M.json(
       200,
-      operations.AccountV1ConnectionDeleteConnectionResponse$inboundSchema,
-      { key: "V1DeleteConnectionResponseBody" },
+      operations.PostV1AccountDeleteConnectionResponse$inboundSchema,
+      { key: "V1AccountDeleteConnectionResponseBody" },
     ),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

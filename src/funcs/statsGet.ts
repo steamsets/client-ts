@@ -27,7 +27,7 @@ export function statsGet(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.StatsV1StatsGetResponse,
+    operations.PostV1StatsGetStatsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.StatsV1StatsGetResponse,
+      operations.PostV1StatsGetStatsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -65,7 +65,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/stats.v1.StatsService/GetStats")();
+  const path = pathToFunc("/v1/stats.getStats")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "stats.v1.stats.get",
+    operationID: "post-v1-stats-get-stats",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.StatsV1StatsGetResponse,
+    operations.PostV1StatsGetStatsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,7 +140,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.StatsV1StatsGetResponse$inboundSchema, {
+    M.json(200, operations.PostV1StatsGetStatsResponse$inboundSchema, {
       key: "V1Stats",
     }),
     M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {

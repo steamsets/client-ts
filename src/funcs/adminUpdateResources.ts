@@ -31,7 +31,7 @@ export function adminUpdateResources(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AdminV1UpdateResourcesResponse,
+    operations.PostV1AdminUpdateResourcesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AdminV1UpdateResourcesResponse,
+      operations.PostV1AdminUpdateResourcesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -83,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/admin.v1.AdminService/UpdateResources")();
+  const path = pathToFunc("/v1/admin.updateResources")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "admin.v1.update-resources",
+    operationID: "post-v1-admin-update-resources",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AdminV1UpdateResourcesResponse,
+    operations.PostV1AdminUpdateResourcesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.AdminV1UpdateResourcesResponse$inboundSchema),
+    M.nil(204, operations.PostV1AdminUpdateResourcesResponse$inboundSchema),
     M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

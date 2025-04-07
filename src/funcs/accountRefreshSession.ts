@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountRefreshSession(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionRefreshRequest,
+  request: operations.PostV1AccountRefreshSessionRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1SessionRefreshResponse,
+    operations.PostV1AccountRefreshSessionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountRefreshSession(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.AccountV1SessionRefreshRequest,
+  request: operations.PostV1AccountRefreshSessionRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1SessionRefreshResponse,
+      operations.PostV1AccountRefreshSessionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,18 +73,18 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AccountV1SessionRefreshRequest$outboundSchema.parse(value),
+      operations.PostV1AccountRefreshSessionRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.V1RefreshSessionRequestBody, {
+  const body = encodeJSON("body", payload.V1AccountRefreshSessionRequestBody, {
     explode: true,
   });
 
-  const path = pathToFunc("/account.v1.AccountService/RefreshSession")();
+  const path = pathToFunc("/v1/account.refreshSession")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -106,7 +106,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.session.refresh",
+    operationID: "post-v1-account-refresh-session",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1SessionRefreshResponse,
+    operations.PostV1AccountRefreshSessionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -170,8 +170,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1SessionRefreshResponse$inboundSchema, {
-      key: "V1RefreshSessionBody",
+    M.json(200, operations.PostV1AccountRefreshSessionResponse$inboundSchema, {
+      key: "V1AccountRefreshSessionBody",
     }),
     M.jsonErr(422, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

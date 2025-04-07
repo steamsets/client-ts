@@ -4,9 +4,8 @@
 
 import { badgeGetTags } from "../funcs/badgeGetTags.js";
 import { badgeSearch } from "../funcs/badgeSearch.js";
-import { badgeSuggest } from "../funcs/badgeSuggest.js";
+import { badgeSuggestSearch } from "../funcs/badgeSuggestSearch.js";
 import { badgeSuggestTags } from "../funcs/badgeSuggestTags.js";
-import { badgeTag } from "../funcs/badgeTag.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -15,7 +14,7 @@ import { unwrapAsync } from "../types/fp.js";
 export class Badge extends ClientSDK {
   async getTags(
     options?: RequestOptions,
-  ): Promise<operations.BadgeV1TagsResponse> {
+  ): Promise<operations.PostV1BadgeGetTagsResponse> {
     return unwrapAsync(badgeGetTags(
       this,
       options,
@@ -25,7 +24,7 @@ export class Badge extends ClientSDK {
   async search(
     request: components.V1SearchRequest,
     options?: RequestOptions,
-  ): Promise<operations.BadgeV1SearchResponse> {
+  ): Promise<operations.PostV1BadgeSearchBadgesResponse> {
     return unwrapAsync(badgeSearch(
       this,
       request,
@@ -33,11 +32,11 @@ export class Badge extends ClientSDK {
     ));
   }
 
-  async suggest(
-    request: components.V1BadgeSearchSuggesttRequestBody,
+  async suggestSearch(
+    request: components.V1BadgeSuggestSearchRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.BadgeV1SearchSuggestResponse> {
-    return unwrapAsync(badgeSuggest(
+  ): Promise<operations.PostV1BadgeSuggestSearchResponse> {
+    return unwrapAsync(badgeSuggestSearch(
       this,
       request,
       options,
@@ -45,21 +44,10 @@ export class Badge extends ClientSDK {
   }
 
   async suggestTags(
-    request: components.V1BadgeTagsSuggestRequestBody,
+    request: components.V1BadgeSuggestTagsRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.BadgeV1TagsSuggestResponse> {
+  ): Promise<operations.PostV1BadgeSuggestTagsResponse> {
     return unwrapAsync(badgeSuggestTags(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async tag(
-    request: components.V1BadgeTagRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.BadgeV1TagResponse> {
-    return unwrapAsync(badgeTag(
       this,
       request,
       options,

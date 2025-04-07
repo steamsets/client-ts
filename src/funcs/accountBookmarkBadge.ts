@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function accountBookmarkBadge(
   client: SteamSetsCore,
-  request: components.V1AccountBadgeBookmarkRequestBody,
+  request: components.V1AccountBookmarkBadgeRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1BookmarkBadgeResponse,
+    operations.PostV1AccountBookmarkBadgeResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountBookmarkBadge(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountBadgeBookmarkRequestBody,
+  request: components.V1AccountBookmarkBadgeRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1BookmarkBadgeResponse,
+      operations.PostV1AccountBookmarkBadgeResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AccountBadgeBookmarkRequestBody$outboundSchema.parse(value),
+      components.V1AccountBookmarkBadgeRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/BookmarkBadge")();
+  const path = pathToFunc("/v1/account.bookmarkBadge")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.bookmark-badge",
+    operationID: "post-v1-account-bookmark-badge",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1BookmarkBadgeResponse,
+    operations.PostV1AccountBookmarkBadgeResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,8 +160,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1BookmarkBadgeResponse$inboundSchema, {
-      key: "V1AccountBadgeBookmarkResponseBody",
+    M.json(200, operations.PostV1AccountBookmarkBadgeResponse$inboundSchema, {
+      key: "V1AccountBookmarkBadgeResponseBody",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

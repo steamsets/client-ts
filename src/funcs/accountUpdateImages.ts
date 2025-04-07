@@ -27,11 +27,11 @@ import { Result } from "../types/fp.js";
 
 export function accountUpdateImages(
   client: SteamSetsCore,
-  request: components.V1UpdateImageRequestBody,
+  request: components.V1AccountUpdateImageRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountV1ImagesUpdateResponse,
+    operations.PostV1AccountUpdateImagesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountUpdateImages(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1UpdateImageRequestBody,
+  request: components.V1AccountUpdateImageRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountV1ImagesUpdateResponse,
+      operations.PostV1AccountUpdateImagesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,7 +73,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.V1UpdateImageRequestBody$outboundSchema.parse(value),
+    (value) =>
+      components.V1AccountUpdateImageRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -82,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/account.v1.AccountService/UpdateImages")();
+  const path = pathToFunc("/v1/account.updateImages")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -95,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.v1.images.update",
+    operationID: "post-v1-account-update-images",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountV1ImagesUpdateResponse,
+    operations.PostV1AccountUpdateImagesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,8 +160,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountV1ImagesUpdateResponse$inboundSchema, {
-      key: "V1UpdateImageResponseBody",
+    M.json(200, operations.PostV1AccountUpdateImagesResponse$inboundSchema, {
+      key: "V1AccountUpdateImageResponseBody",
     }),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

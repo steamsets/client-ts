@@ -1,13 +1,13 @@
 # Badges
-(*leaderboard.badges*)
+(*badges*)
 
 ## Overview
 
 ### Available Operations
 
-* [getList](#getlist)
+* [tag](#tag)
 
-## getList
+## tag
 
 ### Example Usage
 
@@ -19,7 +19,22 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.badges.getList();
+  const result = await steamSets.badges.tag({
+    badgeId: "bdg_123",
+    colors: [
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+    ],
+    designs: [
+
+    ],
+  });
 
   // Handle the result
   console.log(result);
@@ -34,7 +49,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardBadgesGetList } from "@steamsets/client-ts/funcs/leaderboardBadgesGetList.js";
+import { badgesTag } from "@steamsets/client-ts/funcs/badgesTag.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -43,7 +58,22 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardBadgesGetList(steamSets);
+  const res = await badgesTag(steamSets, {
+    badgeId: "bdg_123",
+    colors: [
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+      {
+        id: "bdg_col_2r2pqaIpB1zllfZIvUE3OWadIOS",
+        remove: true,
+      },
+    ],
+    designs: [
+  
+    ],
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -62,18 +92,19 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1BadgeTagBadgeRequestBody](../../models/components/v1badgetagbadgerequestbody.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.LeaderboardV1GetBadgesResponse](../../models/operations/leaderboardv1getbadgesresponse.md)\>**
+**Promise\<[operations.PostV1BadgeTagResponse](../../models/operations/postv1badgetagresponse.md)\>**
 
 ### Errors
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404                      | application/problem+json |
+| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

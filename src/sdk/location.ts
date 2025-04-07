@@ -8,15 +8,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Location extends ClientSDK {
-  /**
-   * Liveness check
-   *
-   * @remarks
-   * This endpoint checks if the service is alive.
-   */
   async get(
     options?: RequestOptions,
-  ): Promise<operations.LocationV1LocationGetResponse> {
+  ): Promise<operations.ListV1LocationGetLocationsResponse> {
     return unwrapAsync(locationGet(
       this,
       options,
