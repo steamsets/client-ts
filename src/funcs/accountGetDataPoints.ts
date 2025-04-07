@@ -31,7 +31,7 @@ export function accountGetDataPoints(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountGetDataPointsResponse,
+    operations.AccountGetDataPointsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountGetDataPointsResponse,
+      operations.AccountGetDataPointsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-get-data-points",
+    operationID: "account.getDataPoints",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountGetDataPointsResponse,
+    operations.AccountGetDataPointsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountGetDataPointsResponse$inboundSchema, {
+    M.json(200, operations.AccountGetDataPointsResponse$inboundSchema, {
       key: "V1AccountGetDataPointsResponseBody",
     }),
     M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {

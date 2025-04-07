@@ -31,7 +31,7 @@ export function leaderboardGetAccount(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1LeaderboardGetAccountLeaderboardResponse,
+    operations.LeaderboardGetAccountLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1LeaderboardGetAccountLeaderboardResponse,
+      operations.LeaderboardGetAccountLeaderboardResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -97,7 +97,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-leaderboard-get-account-leaderboard",
+    operationID: "leaderboard.getAccountLeaderboard",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -150,7 +150,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1LeaderboardGetAccountLeaderboardResponse,
+    operations.LeaderboardGetAccountLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -163,7 +163,7 @@ async function $do(
   >(
     M.json(
       200,
-      operations.PostV1LeaderboardGetAccountLeaderboardResponse$inboundSchema,
+      operations.LeaderboardGetAccountLeaderboardResponse$inboundSchema,
       { key: "V1LeaderboardGetAccountLeaderboardResponseBody" },
     ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {

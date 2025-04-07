@@ -31,7 +31,7 @@ export function accountListLeaderboardHistory(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountListLeaderboardHistoryResponse,
+    operations.AccountListLeaderboardHistoryResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountListLeaderboardHistoryResponse,
+      operations.AccountListLeaderboardHistoryResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-list-leaderboard-history",
+    operationID: "account.listLeaderboardHistory",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountListLeaderboardHistoryResponse,
+    operations.AccountListLeaderboardHistoryResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -161,7 +161,7 @@ async function $do(
   >(
     M.json(
       200,
-      operations.PostV1AccountListLeaderboardHistoryResponse$inboundSchema,
+      operations.AccountListLeaderboardHistoryResponse$inboundSchema,
       { key: "V1AccountListLeaderboardHistoryResponseBody" },
     ),
     M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {

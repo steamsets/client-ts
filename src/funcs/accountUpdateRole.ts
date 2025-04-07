@@ -31,7 +31,7 @@ export function accountUpdateRole(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountUpdateRoleResponse,
+    operations.AccountUpdateRoleResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountUpdateRoleResponse,
+      operations.AccountUpdateRoleResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-update-role",
+    operationID: "account.updateRole",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountUpdateRoleResponse,
+    operations.AccountUpdateRoleResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.PostV1AccountUpdateRoleResponse$inboundSchema),
+    M.nil(204, operations.AccountUpdateRoleResponse$inboundSchema),
     M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

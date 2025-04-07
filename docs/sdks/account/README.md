@@ -28,7 +28,7 @@ All Requests related to account(s) are grouped here.
 * [listOwnedBadges](#listownedbadges)
 * [login](#login)
 * [logout](#logout)
-* [queue](#queue)
+* [queueUpdate](#queueupdate)
 * [reconnectConnection](#reconnectconnection)
 * [refreshSession](#refreshsession)
 * [sendEmailVerification](#sendemailverification)
@@ -111,7 +111,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountBookmarkBadgeResponse](../../models/operations/postv1accountbookmarkbadgeresponse.md)\>**
+**Promise\<[operations.AccountBookmarkBadgeResponse](../../models/operations/accountbookmarkbadgeresponse.md)\>**
 
 ### Errors
 
@@ -189,7 +189,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountCreateConnectionResponse](../../models/operations/postv1accountcreateconnectionresponse.md)\>**
+**Promise\<[operations.AccountCreateConnectionResponse](../../models/operations/accountcreateconnectionresponse.md)\>**
 
 ### Errors
 
@@ -271,7 +271,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountCreateDeveloperAppResponse](../../models/operations/postv1accountcreatedeveloperappresponse.md)\>**
+**Promise\<[operations.AccountCreateDeveloperAppResponse](../../models/operations/accountcreatedeveloperappresponse.md)\>**
 
 ### Errors
 
@@ -347,7 +347,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountDeleteConnectionResponse](../../models/operations/postv1accountdeleteconnectionresponse.md)\>**
+**Promise\<[operations.AccountDeleteConnectionResponse](../../models/operations/accountdeleteconnectionresponse.md)\>**
 
 ### Errors
 
@@ -423,7 +423,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountDeleteDeveloperAppResponse](../../models/operations/postv1accountdeletedeveloperappresponse.md)\>**
+**Promise\<[operations.AccountDeleteDeveloperAppResponse](../../models/operations/accountdeletedeveloperappresponse.md)\>**
 
 ### Errors
 
@@ -447,6 +447,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.deleteImages({
     imageIds: [
+      "<value>",
       "<value>",
     ],
   });
@@ -476,6 +477,7 @@ async function run() {
   const res = await accountDeleteImages(steamSets, {
     imageIds: [
       "<value>",
+      "<value>",
     ],
   });
 
@@ -503,7 +505,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountDeleteImagesResponse](../../models/operations/postv1accountdeleteimagesresponse.md)\>**
+**Promise\<[operations.AccountDeleteImagesResponse](../../models/operations/accountdeleteimagesresponse.md)\>**
 
 ### Errors
 
@@ -579,7 +581,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountDeleteSessionResponse](../../models/operations/postv1accountdeletesessionresponse.md)\>**
+**Promise\<[operations.AccountDeleteSessionResponse](../../models/operations/accountdeletesessionresponse.md)\>**
 
 ### Errors
 
@@ -651,7 +653,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountGetDataPointsResponse](../../models/operations/postv1accountgetdatapointsresponse.md)\>**
+**Promise\<[operations.AccountGetDataPointsResponse](../../models/operations/accountgetdatapointsresponse.md)\>**
 
 ### Errors
 
@@ -723,7 +725,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountGetInfoResponse](../../models/operations/postv1accountgetinforesponse.md)\>**
+**Promise\<[operations.AccountGetInfoResponse](../../models/operations/accountgetinforesponse.md)\>**
 
 ### Errors
 
@@ -795,7 +797,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountGetMetaResponse](../../models/operations/postv1accountgetmetaresponse.md)\>**
+**Promise\<[operations.AccountGetMetaResponse](../../models/operations/accountgetmetaresponse.md)\>**
 
 ### Errors
 
@@ -866,7 +868,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountGetSessionResponse](../../models/operations/postv1accountgetsessionresponse.md)\>**
+**Promise\<[operations.AccountGetSessionResponse](../../models/operations/accountgetsessionresponse.md)\>**
 
 ### Errors
 
@@ -936,7 +938,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountGetSettingsResponse](../../models/operations/postv1accountgetsettingsresponse.md)\>**
+**Promise\<[operations.AccountGetSettingsResponse](../../models/operations/accountgetsettingsresponse.md)\>**
 
 ### Errors
 
@@ -1007,7 +1009,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListAppsResponse](../../models/operations/postv1accountlistappsresponse.md)\>**
+**Promise\<[operations.AccountListAppsResponse](../../models/operations/accountlistappsresponse.md)\>**
 
 ### Errors
 
@@ -1078,7 +1080,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListBadgeBookmarksResponse](../../models/operations/postv1accountlistbadgebookmarksresponse.md)\>**
+**Promise\<[operations.AccountListBadgeBookmarksResponse](../../models/operations/accountlistbadgebookmarksresponse.md)\>**
 
 ### Errors
 
@@ -1150,7 +1152,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListBadgesResponse](../../models/operations/postv1accountlistbadgesresponse.md)\>**
+**Promise\<[operations.AccountListBadgesResponse](../../models/operations/accountlistbadgesresponse.md)\>**
 
 ### Errors
 
@@ -1222,7 +1224,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListFriendsResponse](../../models/operations/postv1accountlistfriendsresponse.md)\>**
+**Promise\<[operations.AccountListFriendsResponse](../../models/operations/accountlistfriendsresponse.md)\>**
 
 ### Errors
 
@@ -1293,7 +1295,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListImagesResponse](../../models/operations/postv1accountlistimagesresponse.md)\>**
+**Promise\<[operations.AccountListImagesResponse](../../models/operations/accountlistimagesresponse.md)\>**
 
 ### Errors
 
@@ -1364,7 +1366,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListLeaderboardHistoryResponse](../../models/operations/postv1accountlistleaderboardhistoryresponse.md)\>**
+**Promise\<[operations.AccountListLeaderboardHistoryResponse](../../models/operations/accountlistleaderboardhistoryresponse.md)\>**
 
 ### Errors
 
@@ -1435,7 +1437,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountListOwnedBadgesResponse](../../models/operations/postv1accountlistownedbadgesresponse.md)\>**
+**Promise\<[operations.AccountListOwnedBadgesResponse](../../models/operations/accountlistownedbadgesresponse.md)\>**
 
 ### Errors
 
@@ -1526,14 +1528,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostV1AccountLoginRequest](../../models/operations/postv1accountloginrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountLoginRequest](../../models/operations/accountloginrequest.md)                                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountLoginResponse](../../models/operations/postv1accountloginresponse.md)\>**
+**Promise\<[operations.AccountLoginResponse](../../models/operations/accountloginresponse.md)\>**
 
 ### Errors
 
@@ -1604,7 +1606,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountLogoutResponse](../../models/operations/postv1accountlogoutresponse.md)\>**
+**Promise\<[operations.AccountLogoutResponse](../../models/operations/accountlogoutresponse.md)\>**
 
 ### Errors
 
@@ -1614,7 +1616,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## queue
+## queueUpdate
 
 ### Example Usage
 
@@ -1626,7 +1628,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.queue({
+  const result = await steamSets.account.queueUpdate({
     force: true,
   });
 
@@ -1643,7 +1645,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountQueue } from "@steamsets/client-ts/funcs/accountQueue.js";
+import { accountQueueUpdate } from "@steamsets/client-ts/funcs/accountQueueUpdate.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1652,7 +1654,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountQueue(steamSets, {
+  const res = await accountQueueUpdate(steamSets, {
     force: true,
   });
 
@@ -1673,14 +1675,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountQueueRequestBody](../../models/components/v1accountqueuerequestbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.V1AccountQueueUpdateRequestBody](../../models/components/v1accountqueueupdaterequestbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountQueueResponse](../../models/operations/postv1accountqueueresponse.md)\>**
+**Promise\<[operations.AccountQueueUpdateResponse](../../models/operations/accountqueueupdateresponse.md)\>**
 
 ### Errors
 
@@ -1758,7 +1760,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountReconnectConnectionResponse](../../models/operations/postv1accountreconnectconnectionresponse.md)\>**
+**Promise\<[operations.AccountReconnectConnectionResponse](../../models/operations/accountreconnectconnectionresponse.md)\>**
 
 ### Errors
 
@@ -1831,14 +1833,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostV1AccountRefreshSessionRequest](../../models/operations/postv1accountrefreshsessionrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountRefreshSessionRequest](../../models/operations/accountrefreshsessionrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountRefreshSessionResponse](../../models/operations/postv1accountrefreshsessionresponse.md)\>**
+**Promise\<[operations.AccountRefreshSessionResponse](../../models/operations/accountrefreshsessionresponse.md)\>**
 
 ### Errors
 
@@ -1903,14 +1905,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostV1AccountSendEmailVerificationRequest](../../models/operations/postv1accountsendemailverificationrequest.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountSendEmailVerificationRequest](../../models/operations/accountsendemailverificationrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountSendEmailVerificationResponse](../../models/operations/postv1accountsendemailverificationresponse.md)\>**
+**Promise\<[operations.AccountSendEmailVerificationResponse](../../models/operations/accountsendemailverificationresponse.md)\>**
 
 ### Errors
 
@@ -1985,14 +1987,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostV1AccountSubscribeEmailRequest](../../models/operations/postv1accountsubscribeemailrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountSubscribeEmailRequest](../../models/operations/accountsubscribeemailrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountSubscribeEmailResponse](../../models/operations/postv1accountsubscribeemailresponse.md)\>**
+**Promise\<[operations.AccountSubscribeEmailResponse](../../models/operations/accountsubscribeemailresponse.md)\>**
 
 ### Errors
 
@@ -2070,7 +2072,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateConnectionResponse](../../models/operations/postv1accountupdateconnectionresponse.md)\>**
+**Promise\<[operations.AccountUpdateConnectionResponse](../../models/operations/accountupdateconnectionresponse.md)\>**
 
 ### Errors
 
@@ -2152,7 +2154,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateDeveloperAppResponse](../../models/operations/postv1accountupdatedeveloperappresponse.md)\>**
+**Promise\<[operations.AccountUpdateDeveloperAppResponse](../../models/operations/accountupdatedeveloperappresponse.md)\>**
 
 ### Errors
 
@@ -2176,14 +2178,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.updateImages({
     images: [
-      {
-        active: true,
-        imageId: "123456",
-      },
-      {
-        active: true,
-        imageId: "123456",
-      },
       {
         active: true,
         imageId: "123456",
@@ -2219,14 +2213,6 @@ async function run() {
         active: true,
         imageId: "123456",
       },
-      {
-        active: true,
-        imageId: "123456",
-      },
-      {
-        active: true,
-        imageId: "123456",
-      },
     ],
   });
 
@@ -2254,7 +2240,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateImagesResponse](../../models/operations/postv1accountupdateimagesresponse.md)\>**
+**Promise\<[operations.AccountUpdateImagesResponse](../../models/operations/accountupdateimagesresponse.md)\>**
 
 ### Errors
 
@@ -2326,7 +2312,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateRoleResponse](../../models/operations/postv1accountupdateroleresponse.md)\>**
+**Promise\<[operations.AccountUpdateRoleResponse](../../models/operations/accountupdateroleresponse.md)\>**
 
 ### Errors
 
@@ -2405,14 +2391,14 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PostV1AccountUpdateSettingsRequest](../../models/operations/postv1accountupdatesettingsrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountUpdateSettingsRequest](../../models/operations/accountupdatesettingsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateSettingsResponse](../../models/operations/postv1accountupdatesettingsresponse.md)\>**
+**Promise\<[operations.AccountUpdateSettingsResponse](../../models/operations/accountupdatesettingsresponse.md)\>**
 
 ### Errors
 
@@ -2484,7 +2470,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUpdateVanityResponse](../../models/operations/postv1accountupdatevanityresponse.md)\>**
+**Promise\<[operations.AccountUpdateVanityResponse](../../models/operations/accountupdatevanityresponse.md)\>**
 
 ### Errors
 
@@ -2508,18 +2494,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.uploadImages({
     images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
+
     ],
   });
 
@@ -2547,18 +2522,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await accountUploadImages(steamSets, {
     images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
+  
     ],
   });
 
@@ -2586,7 +2550,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountUploadImagesResponse](../../models/operations/postv1accountuploadimagesresponse.md)\>**
+**Promise\<[operations.AccountUploadImagesResponse](../../models/operations/accountuploadimagesresponse.md)\>**
 
 ### Errors
 
@@ -2662,7 +2626,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountVerifyConnectionResponse](../../models/operations/postv1accountverifyconnectionresponse.md)\>**
+**Promise\<[operations.AccountVerifyConnectionResponse](../../models/operations/accountverifyconnectionresponse.md)\>**
 
 ### Errors
 
@@ -2738,7 +2702,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AccountVerifyEmailResponse](../../models/operations/postv1accountverifyemailresponse.md)\>**
+**Promise\<[operations.AccountVerifyEmailResponse](../../models/operations/accountverifyemailresponse.md)\>**
 
 ### Errors
 

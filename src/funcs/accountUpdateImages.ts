@@ -31,7 +31,7 @@ export function accountUpdateImages(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountUpdateImagesResponse,
+    operations.AccountUpdateImagesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountUpdateImagesResponse,
+      operations.AccountUpdateImagesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-update-images",
+    operationID: "account.updateImages",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountUpdateImagesResponse,
+    operations.AccountUpdateImagesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountUpdateImagesResponse$inboundSchema, {
+    M.json(200, operations.AccountUpdateImagesResponse$inboundSchema, {
       key: "V1AccountUpdateImageResponseBody",
     }),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {

@@ -2,7 +2,7 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.2
+  version: 0.0.4
   x-speakeasy-metadata:
     after: ""
     before: ""
@@ -505,4 +505,43 @@ actions:
       before: sdk.account.post-v1-account-create-connection()
       created_at: 1744045785080
       reviewed_at: 1744045822020
+      type: method-name
+  - target: $["paths"]["/v1/badge.tagBadge"]["post"]
+    update:
+      x-speakeasy-group: badges
+      x-speakeasy-name-override: tag
+    x-speakeasy-metadata:
+      after: sdk.badges.tag()
+      before: sdk.badge.badge.tagBadge()
+      created_at: 1744049671936
+      reviewed_at: 1744049684763
+      type: method-name
+  - target: $["paths"]["/v1/leaderboard.listBadges"]["post"]
+    update:
+      x-speakeasy-group: leaderboards
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.leaderboards.list()
+      before: sdk.leaderboard.leaderboard.listBadges()
+      created_at: 1744049671936
+      reviewed_at: 1744049684763
+      type: method-name
+  - target: $["paths"]["/v1/account.queueUpdate"]["post"]
+    update:
+      x-speakeasy-name-override: queueUpdate
+    x-speakeasy-metadata:
+      after: sdk.account.queueUpdate()
+      before: sdk.account.account.queueUpdate()
+      created_at: 1744049671936
+      reviewed_at: 1744049684763
+      type: method-name
+  - target: $["paths"]["/v1/badge.listTags"]["post"]
+    update:
+      x-speakeasy-group: badges
+      x-speakeasy-name-override: listTags
+    x-speakeasy-metadata:
+      after: sdk.badges.listTags()
+      before: sdk.badge.badge.listTags()
+      created_at: 1744049671936
+      reviewed_at: 1744049684763
       type: method-name

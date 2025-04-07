@@ -23,7 +23,7 @@ import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHi
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
-import { accountQueue } from "../funcs/accountQueue.js";
+import { accountQueueUpdate } from "../funcs/accountQueueUpdate.js";
 import { accountReconnectConnection } from "../funcs/accountReconnectConnection.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
@@ -46,7 +46,7 @@ export class Account extends ClientSDK {
   async bookmarkBadge(
     request: components.V1AccountBookmarkBadgeRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountBookmarkBadgeResponse> {
+  ): Promise<operations.AccountBookmarkBadgeResponse> {
     return unwrapAsync(accountBookmarkBadge(
       this,
       request,
@@ -57,7 +57,7 @@ export class Account extends ClientSDK {
   async createConnection(
     request: components.V1AccountCreateConnectionRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountCreateConnectionResponse> {
+  ): Promise<operations.AccountCreateConnectionResponse> {
     return unwrapAsync(accountCreateConnection(
       this,
       request,
@@ -68,7 +68,7 @@ export class Account extends ClientSDK {
   async createDeveloperApp(
     request: components.V1AccountCreateDeveloperAppRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountCreateDeveloperAppResponse> {
+  ): Promise<operations.AccountCreateDeveloperAppResponse> {
     return unwrapAsync(accountCreateDeveloperApp(
       this,
       request,
@@ -79,7 +79,7 @@ export class Account extends ClientSDK {
   async deleteConnection(
     request: components.V1AccountDeleteConnectionRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountDeleteConnectionResponse> {
+  ): Promise<operations.AccountDeleteConnectionResponse> {
     return unwrapAsync(accountDeleteConnection(
       this,
       request,
@@ -90,7 +90,7 @@ export class Account extends ClientSDK {
   async deleteDeveloperApp(
     request: components.V1AccountDeleteDeveloperAppRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountDeleteDeveloperAppResponse> {
+  ): Promise<operations.AccountDeleteDeveloperAppResponse> {
     return unwrapAsync(accountDeleteDeveloperApp(
       this,
       request,
@@ -101,7 +101,7 @@ export class Account extends ClientSDK {
   async deleteImages(
     request: components.V1AccountDeleteImagesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountDeleteImagesResponse> {
+  ): Promise<operations.AccountDeleteImagesResponse> {
     return unwrapAsync(accountDeleteImages(
       this,
       request,
@@ -112,7 +112,7 @@ export class Account extends ClientSDK {
   async deleteSession(
     request: components.V1AccountDeleteSessionRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountDeleteSessionResponse> {
+  ): Promise<operations.AccountDeleteSessionResponse> {
     return unwrapAsync(accountDeleteSession(
       this,
       request,
@@ -123,7 +123,7 @@ export class Account extends ClientSDK {
   async getDataPoints(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountGetDataPointsResponse> {
+  ): Promise<operations.AccountGetDataPointsResponse> {
     return unwrapAsync(accountGetDataPoints(
       this,
       request,
@@ -134,7 +134,7 @@ export class Account extends ClientSDK {
   async getInfo(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountGetInfoResponse> {
+  ): Promise<operations.AccountGetInfoResponse> {
     return unwrapAsync(accountGetInfo(
       this,
       request,
@@ -145,7 +145,7 @@ export class Account extends ClientSDK {
   async getMeta(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountGetMetaResponse> {
+  ): Promise<operations.AccountGetMetaResponse> {
     return unwrapAsync(accountGetMeta(
       this,
       request,
@@ -155,7 +155,7 @@ export class Account extends ClientSDK {
 
   async getSession(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountGetSessionResponse> {
+  ): Promise<operations.AccountGetSessionResponse> {
     return unwrapAsync(accountGetSession(
       this,
       options,
@@ -164,7 +164,7 @@ export class Account extends ClientSDK {
 
   async getSettings(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountGetSettingsResponse> {
+  ): Promise<operations.AccountGetSettingsResponse> {
     return unwrapAsync(accountGetSettings(
       this,
       options,
@@ -174,7 +174,7 @@ export class Account extends ClientSDK {
   async listApps(
     request: components.V1AccountListAppsRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListAppsResponse> {
+  ): Promise<operations.AccountListAppsResponse> {
     return unwrapAsync(accountListApps(
       this,
       request,
@@ -184,7 +184,7 @@ export class Account extends ClientSDK {
 
   async listBadgeBookmarks(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListBadgeBookmarksResponse> {
+  ): Promise<operations.AccountListBadgeBookmarksResponse> {
     return unwrapAsync(accountListBadgeBookmarks(
       this,
       options,
@@ -194,7 +194,7 @@ export class Account extends ClientSDK {
   async listBadges(
     request: components.V1AccountListBadgesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListBadgesResponse> {
+  ): Promise<operations.AccountListBadgesResponse> {
     return unwrapAsync(accountListBadges(
       this,
       request,
@@ -205,7 +205,7 @@ export class Account extends ClientSDK {
   async listFriends(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListFriendsResponse> {
+  ): Promise<operations.AccountListFriendsResponse> {
     return unwrapAsync(accountListFriends(
       this,
       request,
@@ -215,7 +215,7 @@ export class Account extends ClientSDK {
 
   async listImages(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListImagesResponse> {
+  ): Promise<operations.AccountListImagesResponse> {
     return unwrapAsync(accountListImages(
       this,
       options,
@@ -225,7 +225,7 @@ export class Account extends ClientSDK {
   async listLeaderboardHistory(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListLeaderboardHistoryResponse> {
+  ): Promise<operations.AccountListLeaderboardHistoryResponse> {
     return unwrapAsync(accountListLeaderboardHistory(
       this,
       request,
@@ -235,7 +235,7 @@ export class Account extends ClientSDK {
 
   async listOwnedBadges(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountListOwnedBadgesResponse> {
+  ): Promise<operations.AccountListOwnedBadgesResponse> {
     return unwrapAsync(accountListOwnedBadges(
       this,
       options,
@@ -243,9 +243,9 @@ export class Account extends ClientSDK {
   }
 
   async login(
-    request: operations.PostV1AccountLoginRequest,
+    request: operations.AccountLoginRequest,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountLoginResponse> {
+  ): Promise<operations.AccountLoginResponse> {
     return unwrapAsync(accountLogin(
       this,
       request,
@@ -255,18 +255,18 @@ export class Account extends ClientSDK {
 
   async logout(
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountLogoutResponse> {
+  ): Promise<operations.AccountLogoutResponse> {
     return unwrapAsync(accountLogout(
       this,
       options,
     ));
   }
 
-  async queue(
-    request: components.V1AccountQueueRequestBody,
+  async queueUpdate(
+    request: components.V1AccountQueueUpdateRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountQueueResponse> {
-    return unwrapAsync(accountQueue(
+  ): Promise<operations.AccountQueueUpdateResponse> {
+    return unwrapAsync(accountQueueUpdate(
       this,
       request,
       options,
@@ -276,7 +276,7 @@ export class Account extends ClientSDK {
   async reconnectConnection(
     request: components.V1AccountReconnectRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountReconnectConnectionResponse> {
+  ): Promise<operations.AccountReconnectConnectionResponse> {
     return unwrapAsync(accountReconnectConnection(
       this,
       request,
@@ -285,9 +285,9 @@ export class Account extends ClientSDK {
   }
 
   async refreshSession(
-    request: operations.PostV1AccountRefreshSessionRequest,
+    request: operations.AccountRefreshSessionRequest,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountRefreshSessionResponse> {
+  ): Promise<operations.AccountRefreshSessionResponse> {
     return unwrapAsync(accountRefreshSession(
       this,
       request,
@@ -296,9 +296,9 @@ export class Account extends ClientSDK {
   }
 
   async sendEmailVerification(
-    request: operations.PostV1AccountSendEmailVerificationRequest,
+    request: operations.AccountSendEmailVerificationRequest,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountSendEmailVerificationResponse> {
+  ): Promise<operations.AccountSendEmailVerificationResponse> {
     return unwrapAsync(accountSendEmailVerification(
       this,
       request,
@@ -307,9 +307,9 @@ export class Account extends ClientSDK {
   }
 
   async subscribeEmail(
-    request: operations.PostV1AccountSubscribeEmailRequest,
+    request: operations.AccountSubscribeEmailRequest,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountSubscribeEmailResponse> {
+  ): Promise<operations.AccountSubscribeEmailResponse> {
     return unwrapAsync(accountSubscribeEmail(
       this,
       request,
@@ -320,7 +320,7 @@ export class Account extends ClientSDK {
   async updateConnection(
     request: components.V1AccountUpdateConnectionRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateConnectionResponse> {
+  ): Promise<operations.AccountUpdateConnectionResponse> {
     return unwrapAsync(accountUpdateConnection(
       this,
       request,
@@ -331,7 +331,7 @@ export class Account extends ClientSDK {
   async updateDeveloperApp(
     request: components.V1AccountDeveloperAppUpdateRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateDeveloperAppResponse> {
+  ): Promise<operations.AccountUpdateDeveloperAppResponse> {
     return unwrapAsync(accountUpdateDeveloperApp(
       this,
       request,
@@ -342,7 +342,7 @@ export class Account extends ClientSDK {
   async updateImages(
     request: components.V1AccountUpdateImageRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateImagesResponse> {
+  ): Promise<operations.AccountUpdateImagesResponse> {
     return unwrapAsync(accountUpdateImages(
       this,
       request,
@@ -353,7 +353,7 @@ export class Account extends ClientSDK {
   async updateRole(
     request: components.V1AccountUpdateRoleRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateRoleResponse> {
+  ): Promise<operations.AccountUpdateRoleResponse> {
     return unwrapAsync(accountUpdateRole(
       this,
       request,
@@ -362,9 +362,9 @@ export class Account extends ClientSDK {
   }
 
   async updateSettings(
-    request: operations.PostV1AccountUpdateSettingsRequest,
+    request: operations.AccountUpdateSettingsRequest,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateSettingsResponse> {
+  ): Promise<operations.AccountUpdateSettingsResponse> {
     return unwrapAsync(accountUpdateSettings(
       this,
       request,
@@ -375,7 +375,7 @@ export class Account extends ClientSDK {
   async updateVanity(
     request: components.V1AccountUpdateVanityRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUpdateVanityResponse> {
+  ): Promise<operations.AccountUpdateVanityResponse> {
     return unwrapAsync(accountUpdateVanity(
       this,
       request,
@@ -386,7 +386,7 @@ export class Account extends ClientSDK {
   async uploadImages(
     request: components.V1AccountUploadImagesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountUploadImagesResponse> {
+  ): Promise<operations.AccountUploadImagesResponse> {
     return unwrapAsync(accountUploadImages(
       this,
       request,
@@ -397,7 +397,7 @@ export class Account extends ClientSDK {
   async verifyConnection(
     request: components.V1AccountVerifyConnectionRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountVerifyConnectionResponse> {
+  ): Promise<operations.AccountVerifyConnectionResponse> {
     return unwrapAsync(accountVerifyConnection(
       this,
       request,
@@ -408,7 +408,7 @@ export class Account extends ClientSDK {
   async verifyEmail(
     request: components.V1AccountVerifyEmailRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AccountVerifyEmailResponse> {
+  ): Promise<operations.AccountVerifyEmailResponse> {
     return unwrapAsync(accountVerifyEmail(
       this,
       request,

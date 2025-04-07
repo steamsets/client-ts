@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountLogin(
   client: SteamSetsCore,
-  request: operations.PostV1AccountLoginRequest,
+  request: operations.AccountLoginRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountLoginResponse,
+    operations.AccountLoginResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountLogin(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.PostV1AccountLoginRequest,
+  request: operations.AccountLoginRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.PostV1AccountLoginResponse,
+      operations.AccountLoginResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -72,7 +72,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.PostV1AccountLoginRequest$outboundSchema.parse(value),
+    (value) => operations.AccountLoginRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -103,7 +103,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-login",
+    operationID: "account.login",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -156,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountLoginResponse,
+    operations.AccountLoginResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -167,8 +167,8 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountLoginResponse$inboundSchema, {
-      key: "V1LoginResponseBody",
+    M.json(200, operations.AccountLoginResponse$inboundSchema, {
+      key: "V1AccountLoginResponseBody",
     }),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

@@ -10,7 +10,7 @@ import { unwrapAsync } from "../types/fp.js";
 export class Location extends ClientSDK {
   async get(
     options?: RequestOptions,
-  ): Promise<operations.ListV1LocationGetLocationsResponse> {
+  ): Promise<operations.LocationGetLocationsResponse> {
     return unwrapAsync(locationGet(
       this,
       options,

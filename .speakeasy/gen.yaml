@@ -39,7 +39,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.25.1
+  version: 0.25.4
   additionalDependencies:
     dependencies: {}
     devDependencies: {}

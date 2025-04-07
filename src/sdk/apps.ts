@@ -12,7 +12,7 @@ export class Apps extends ClientSDK {
   async listBadges(
     request: components.V1AppListBadgesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AppListBadgesResponse> {
+  ): Promise<operations.AppListBadgesResponse> {
     return unwrapAsync(appsListBadges(
       this,
       request,

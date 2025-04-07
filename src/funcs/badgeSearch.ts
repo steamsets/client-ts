@@ -31,7 +31,7 @@ export function badgeSearch(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1BadgeSearchBadgesResponse,
+    operations.BadgeSearchBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1BadgeSearchBadgesResponse,
+      operations.BadgeSearchBadgesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-badge-search-badges",
+    operationID: "badge.searchBadges",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1BadgeSearchBadgesResponse,
+    operations.BadgeSearchBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1BadgeSearchBadgesResponse$inboundSchema, {
+    M.json(200, operations.BadgeSearchBadgesResponse$inboundSchema, {
       key: "V1BadgeSearchBadgesResponseBody",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

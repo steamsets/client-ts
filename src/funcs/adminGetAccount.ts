@@ -31,7 +31,7 @@ export function adminGetAccount(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AdminGetAccountResponse,
+    operations.AdminGetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AdminGetAccountResponse,
+      operations.AdminGetAccountResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-admin-get-account",
+    operationID: "admin.getAccount",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AdminGetAccountResponse,
+    operations.AdminGetAccountResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AdminGetAccountResponse$inboundSchema, {
+    M.json(200, operations.AdminGetAccountResponse$inboundSchema, {
       key: "V1AdminGetAccountResponseBody",
     }),
     M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {

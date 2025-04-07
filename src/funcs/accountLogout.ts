@@ -27,7 +27,7 @@ export function accountLogout(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountLogoutResponse,
+    operations.AccountLogoutResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountLogoutResponse,
+      operations.AccountLogoutResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-logout",
+    operationID: "account.logout",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountLogoutResponse,
+    operations.AccountLogoutResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,7 +140,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.PostV1AccountLogoutResponse$inboundSchema),
+    M.nil(204, operations.AccountLogoutResponse$inboundSchema),
     M.jsonErr([400, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

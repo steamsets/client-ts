@@ -10,7 +10,7 @@ import { unwrapAsync } from "../types/fp.js";
 export class Stats extends ClientSDK {
   async get(
     options?: RequestOptions,
-  ): Promise<operations.PostV1StatsGetStatsResponse> {
+  ): Promise<operations.StatsGetStatsResponse> {
     return unwrapAsync(statsGet(
       this,
       options,

@@ -74,7 +74,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AdminGetAccountResponse](../../models/operations/postv1admingetaccountresponse.md)\>**
+**Promise\<[operations.AdminGetAccountResponse](../../models/operations/admingetaccountresponse.md)\>**
 
 ### Errors
 
@@ -146,7 +146,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AdminRemoveVanityResponse](../../models/operations/postv1adminremovevanityresponse.md)\>**
+**Promise\<[operations.AdminRemoveVanityResponse](../../models/operations/adminremovevanityresponse.md)\>**
 
 ### Errors
 
@@ -170,10 +170,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.updateResources({
     resources: [
-      {
-        resource: "account_queues",
-        value: "1",
-      },
+
     ],
   });
 
@@ -201,10 +198,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminUpdateResources(steamSets, {
     resources: [
-      {
-        resource: "account_queues",
-        value: "1",
-      },
+  
     ],
   });
 
@@ -232,7 +226,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AdminUpdateResourcesResponse](../../models/operations/postv1adminupdateresourcesresponse.md)\>**
+**Promise\<[operations.AdminUpdateResourcesResponse](../../models/operations/adminupdateresourcesresponse.md)\>**
 
 ### Errors
 
@@ -256,9 +250,8 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.updateRoles({
     roles: [
-      "early_supporter",
-      "translator",
-      "amber",
+      "user",
+      "beta",
     ],
   });
 
@@ -286,9 +279,8 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminUpdateRoles(steamSets, {
     roles: [
-      "early_supporter",
-      "translator",
-      "amber",
+      "user",
+      "beta",
     ],
   });
 
@@ -316,7 +308,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1AdminUpdateRolesResponse](../../models/operations/postv1adminupdaterolesresponse.md)\>**
+**Promise\<[operations.AdminUpdateRolesResponse](../../models/operations/adminupdaterolesresponse.md)\>**
 
 ### Errors
 

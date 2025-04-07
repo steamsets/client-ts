@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountSubscribeEmail(
   client: SteamSetsCore,
-  request: operations.PostV1AccountSubscribeEmailRequest,
+  request: operations.AccountSubscribeEmailRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountSubscribeEmailResponse,
+    operations.AccountSubscribeEmailResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountSubscribeEmail(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.PostV1AccountSubscribeEmailRequest,
+  request: operations.AccountSubscribeEmailRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.PostV1AccountSubscribeEmailResponse,
+      operations.AccountSubscribeEmailResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,7 +73,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.PostV1AccountSubscribeEmailRequest$outboundSchema.parse(value),
+      operations.AccountSubscribeEmailRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -102,7 +102,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-subscribe-email",
+    operationID: "account.subscribeEmail",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -155,7 +155,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountSubscribeEmailResponse,
+    operations.AccountSubscribeEmailResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -166,7 +166,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.PostV1AccountSubscribeEmailResponse$inboundSchema),
+    M.nil(204, operations.AccountSubscribeEmailResponse$inboundSchema),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

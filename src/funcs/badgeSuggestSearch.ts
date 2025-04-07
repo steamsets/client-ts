@@ -31,7 +31,7 @@ export function badgeSuggestSearch(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1BadgeSuggestSearchResponse,
+    operations.BadgeSuggestSearchResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1BadgeSuggestSearchResponse,
+      operations.BadgeSuggestSearchResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-badge-suggest-search",
+    operationID: "badge.suggestSearch",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1BadgeSuggestSearchResponse,
+    operations.BadgeSuggestSearchResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1BadgeSuggestSearchResponse$inboundSchema, {
+    M.json(200, operations.BadgeSuggestSearchResponse$inboundSchema, {
       key: "V1BadgeSuggestSearchBody",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

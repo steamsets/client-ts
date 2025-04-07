@@ -31,7 +31,7 @@ export function accountReconnectConnection(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountReconnectConnectionResponse,
+    operations.AccountReconnectConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountReconnectConnectionResponse,
+      operations.AccountReconnectConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-reconnect-connection",
+    operationID: "account.reconnectConnection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountReconnectConnectionResponse,
+    operations.AccountReconnectConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,11 +160,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountReconnectConnectionResponse$inboundSchema,
-      { key: "V1AccountReconnectResponseBody" },
-    ),
+    M.json(200, operations.AccountReconnectConnectionResponse$inboundSchema, {
+      key: "V1AccountReconnectResponseBody",
+    }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

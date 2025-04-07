@@ -10,7 +10,7 @@ import { unwrapAsync } from "../types/fp.js";
 export class Staff extends ClientSDK {
   async list(
     options?: RequestOptions,
-  ): Promise<operations.PostV1StaffListStaffResponse> {
+  ): Promise<operations.StaffListStaffResponse> {
     return unwrapAsync(staffList(
       this,
       options,

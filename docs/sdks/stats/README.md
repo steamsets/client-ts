@@ -70,7 +70,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1StatsGetStatsResponse](../../models/operations/postv1statsgetstatsresponse.md)\>**
+**Promise\<[operations.StatsGetStatsResponse](../../models/operations/statsgetstatsresponse.md)\>**
 
 ### Errors
 

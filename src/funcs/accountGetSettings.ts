@@ -27,7 +27,7 @@ export function accountGetSettings(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountGetSettingsResponse,
+    operations.AccountGetSettingsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -50,7 +50,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountGetSettingsResponse,
+      operations.AccountGetSettingsResponse,
       | errors.ErrorModel
       | SDKError
       | SDKValidationError
@@ -75,7 +75,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-get-settings",
+    operationID: "account.getSettings",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -127,7 +127,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountGetSettingsResponse,
+    operations.AccountGetSettingsResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -137,7 +137,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountGetSettingsResponse$inboundSchema, {
+    M.json(200, operations.AccountGetSettingsResponse$inboundSchema, {
       key: "V1AccountGetSettingsBody",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountRefreshSession(
   client: SteamSetsCore,
-  request: operations.PostV1AccountRefreshSessionRequest,
+  request: operations.AccountRefreshSessionRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountRefreshSessionResponse,
+    operations.AccountRefreshSessionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountRefreshSession(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.PostV1AccountRefreshSessionRequest,
+  request: operations.AccountRefreshSessionRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.PostV1AccountRefreshSessionResponse,
+      operations.AccountRefreshSessionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,7 +73,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.PostV1AccountRefreshSessionRequest$outboundSchema.parse(value),
+      operations.AccountRefreshSessionRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -106,7 +106,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-refresh-session",
+    operationID: "account.refreshSession",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountRefreshSessionResponse,
+    operations.AccountRefreshSessionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -170,7 +170,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountRefreshSessionResponse$inboundSchema, {
+    M.json(200, operations.AccountRefreshSessionResponse$inboundSchema, {
       key: "V1AccountRefreshSessionBody",
     }),
     M.jsonErr(422, errors.ErrorModel$inboundSchema, {

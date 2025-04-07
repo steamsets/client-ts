@@ -27,7 +27,7 @@ export function accountListImages(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountListImagesResponse,
+    operations.AccountListImagesResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -50,7 +50,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountListImagesResponse,
+      operations.AccountListImagesResponse,
       | errors.ErrorModel
       | SDKError
       | SDKValidationError
@@ -75,7 +75,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-list-images",
+    operationID: "account.listImages",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -127,7 +127,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountListImagesResponse,
+    operations.AccountListImagesResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -137,7 +137,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountListImagesResponse$inboundSchema, {
+    M.json(200, operations.AccountListImagesResponse$inboundSchema, {
       key: "V1AccountListImagesResponseBody",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

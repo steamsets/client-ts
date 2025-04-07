@@ -6,7 +6,6 @@ import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
 import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
-import { leaderboardListBadges33 } from "../funcs/leaderboardListBadges33.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -16,7 +15,7 @@ export class Leaderboard extends ClientSDK {
   async getAccount(
     request: components.V1LeaderboardGetAccountLeaderboardRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1LeaderboardGetAccountLeaderboardResponse> {
+  ): Promise<operations.LeaderboardGetAccountLeaderboardResponse> {
     return unwrapAsync(leaderboardGetAccount(
       this,
       request,
@@ -27,7 +26,7 @@ export class Leaderboard extends ClientSDK {
   async getAccountsMeta(
     request: components.V1LeaderboardGetAccountsMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1LeaderboardGetAccountsMetaResponse> {
+  ): Promise<operations.LeaderboardGetAccountsMetaResponse> {
     return unwrapAsync(leaderboardGetAccountsMeta(
       this,
       request,
@@ -38,7 +37,7 @@ export class Leaderboard extends ClientSDK {
   async getGroup(
     request: components.V1LeaderboardGetGroupLeaderboardRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1LeaderboardGetGroupLeaderboardResponse> {
+  ): Promise<operations.LeaderboardGetGroupLeaderboardResponse> {
     return unwrapAsync(leaderboardGetGroup(
       this,
       request,
@@ -49,19 +48,10 @@ export class Leaderboard extends ClientSDK {
   async getGroupsMeta(
     request: components.V1LeaderboardGetGroupsMetaRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1LeaderboardGetGroupsMetaResponse> {
+  ): Promise<operations.LeaderboardGetGroupsMetaResponse> {
     return unwrapAsync(leaderboardGetGroupsMeta(
       this,
       request,
-      options,
-    ));
-  }
-
-  async listBadges33(
-    options?: RequestOptions,
-  ): Promise<operations.PostV1LeaderboardListBadges33Response> {
-    return unwrapAsync(leaderboardListBadges33(
-      this,
       options,
     ));
   }

@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountUpdateSettings(
   client: SteamSetsCore,
-  request: operations.PostV1AccountUpdateSettingsRequest,
+  request: operations.AccountUpdateSettingsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountUpdateSettingsResponse,
+    operations.AccountUpdateSettingsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountUpdateSettings(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.PostV1AccountUpdateSettingsRequest,
+  request: operations.AccountUpdateSettingsRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.PostV1AccountUpdateSettingsResponse,
+      operations.AccountUpdateSettingsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,7 +73,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.PostV1AccountUpdateSettingsRequest$outboundSchema.parse(value),
+      operations.AccountUpdateSettingsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -102,7 +102,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-update-settings",
+    operationID: "account.updateSettings",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -155,7 +155,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountUpdateSettingsResponse,
+    operations.AccountUpdateSettingsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -166,7 +166,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(204, operations.PostV1AccountUpdateSettingsResponse$inboundSchema),
+    M.nil(204, operations.AccountUpdateSettingsResponse$inboundSchema),
     M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

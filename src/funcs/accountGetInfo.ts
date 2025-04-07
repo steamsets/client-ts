@@ -31,7 +31,7 @@ export function accountGetInfo(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountGetInfoResponse,
+    operations.AccountGetInfoResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountGetInfoResponse,
+      operations.AccountGetInfoResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -95,7 +95,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-get-info",
+    operationID: "account.getInfo",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -148,7 +148,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountGetInfoResponse,
+    operations.AccountGetInfoResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -159,7 +159,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountGetInfoResponse$inboundSchema, {
+    M.json(200, operations.AccountGetInfoResponse$inboundSchema, {
       key: "V1AccountGetInfoResponseBody",
     }),
     M.jsonErr([403, 404, 422, 429], errors.ErrorModel$inboundSchema, {

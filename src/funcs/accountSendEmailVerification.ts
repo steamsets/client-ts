@@ -26,11 +26,11 @@ import { Result } from "../types/fp.js";
 
 export function accountSendEmailVerification(
   client: SteamSetsCore,
-  request: operations.PostV1AccountSendEmailVerificationRequest,
+  request: operations.AccountSendEmailVerificationRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountSendEmailVerificationResponse,
+    operations.AccountSendEmailVerificationResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,12 +51,12 @@ export function accountSendEmailVerification(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.PostV1AccountSendEmailVerificationRequest,
+  request: operations.AccountSendEmailVerificationRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.PostV1AccountSendEmailVerificationResponse,
+      operations.AccountSendEmailVerificationResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -73,7 +73,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.PostV1AccountSendEmailVerificationRequest$outboundSchema.parse(
+      operations.AccountSendEmailVerificationRequest$outboundSchema.parse(
         value,
       ),
     "Input validation failed",
@@ -101,7 +101,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-send-email-verification",
+    operationID: "account.sendEmailVerification",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -154,7 +154,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountSendEmailVerificationResponse,
+    operations.AccountSendEmailVerificationResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -165,10 +165,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(
-      204,
-      operations.PostV1AccountSendEmailVerificationResponse$inboundSchema,
-    ),
+    M.nil(204, operations.AccountSendEmailVerificationResponse$inboundSchema),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

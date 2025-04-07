@@ -27,7 +27,7 @@ export function staffList(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1StaffListStaffResponse,
+    operations.StaffListStaffResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1StaffListStaffResponse,
+      operations.StaffListStaffResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-staff-list-staff",
+    operationID: "staff.listStaff",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1StaffListStaffResponse,
+    operations.StaffListStaffResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,7 +140,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1StaffListStaffResponse$inboundSchema, {
+    M.json(200, operations.StaffListStaffResponse$inboundSchema, {
       key: "LeaderboardAccounts",
     }),
     M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {

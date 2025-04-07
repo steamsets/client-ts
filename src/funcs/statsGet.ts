@@ -27,7 +27,7 @@ export function statsGet(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1StatsGetStatsResponse,
+    operations.StatsGetStatsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -51,7 +51,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1StatsGetStatsResponse,
+      operations.StatsGetStatsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -77,7 +77,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-stats-get-stats",
+    operationID: "stats.getStats",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -129,7 +129,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1StatsGetStatsResponse,
+    operations.StatsGetStatsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -140,7 +140,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1StatsGetStatsResponse$inboundSchema, {
+    M.json(200, operations.StatsGetStatsResponse$inboundSchema, {
       key: "V1Stats",
     }),
     M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {

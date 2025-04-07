@@ -31,7 +31,7 @@ export function accountBookmarkBadge(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountBookmarkBadgeResponse,
+    operations.AccountBookmarkBadgeResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountBookmarkBadgeResponse,
+      operations.AccountBookmarkBadgeResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-bookmark-badge",
+    operationID: "account.bookmarkBadge",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountBookmarkBadgeResponse,
+    operations.AccountBookmarkBadgeResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountBookmarkBadgeResponse$inboundSchema, {
+    M.json(200, operations.AccountBookmarkBadgeResponse$inboundSchema, {
       key: "V1AccountBookmarkBadgeResponseBody",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

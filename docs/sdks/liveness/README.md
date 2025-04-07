@@ -72,7 +72,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetV1LivenessResponse](../../models/operations/getv1livenessresponse.md)\>**
+**Promise\<[operations.LivenessResponse](../../models/operations/livenessresponse.md)\>**
 
 ### Errors
 

@@ -68,7 +68,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.PostV1StaffListStaffResponse](../../models/operations/postv1staffliststaffresponse.md)\>**
+**Promise\<[operations.StaffListStaffResponse](../../models/operations/staffliststaffresponse.md)\>**
 
 ### Errors
 

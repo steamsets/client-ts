@@ -31,7 +31,7 @@ export function accountVerifyConnection(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountVerifyConnectionResponse,
+    operations.AccountVerifyConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountVerifyConnectionResponse,
+      operations.AccountVerifyConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -98,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-verify-connection",
+    operationID: "account.verifyConnection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountVerifyConnectionResponse,
+    operations.AccountVerifyConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,11 +162,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountVerifyConnectionResponse$inboundSchema,
-      { key: "V1AccountVerifyConnectionResponseBody" },
-    ),
+    M.json(200, operations.AccountVerifyConnectionResponse$inboundSchema, {
+      key: "V1AccountVerifyConnectionResponseBody",
+    }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

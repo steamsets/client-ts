@@ -16,7 +16,7 @@ export class Liveness extends ClientSDK {
    */
   async check(
     options?: RequestOptions,
-  ): Promise<operations.GetV1LivenessResponse> {
+  ): Promise<operations.LivenessResponse> {
     return unwrapAsync(livenessCheck(
       this,
       options,

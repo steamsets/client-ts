@@ -31,7 +31,7 @@ export function accountListBadges(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountListBadgesResponse,
+    operations.AccountListBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountListBadgesResponse,
+      operations.AccountListBadgesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-list-badges",
+    operationID: "account.listBadges",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountListBadgesResponse,
+    operations.AccountListBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1AccountListBadgesResponse$inboundSchema, {
+    M.json(200, operations.AccountListBadgesResponse$inboundSchema, {
       key: "V1AccountListBadgesResponseBody",
     }),
     M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {

@@ -31,7 +31,7 @@ export function accountCreateDeveloperApp(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountCreateDeveloperAppResponse,
+    operations.AccountCreateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountCreateDeveloperAppResponse,
+      operations.AccountCreateDeveloperAppResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -98,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-create-developer-app",
+    operationID: "account.createDeveloperApp",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountCreateDeveloperAppResponse,
+    operations.AccountCreateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,11 +162,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountCreateDeveloperAppResponse$inboundSchema,
-      { key: "V1AccountCreateDeveloperAppResponseBody" },
-    ),
+    M.json(200, operations.AccountCreateDeveloperAppResponse$inboundSchema, {
+      key: "V1AccountCreateDeveloperAppResponseBody",
+    }),
     M.jsonErr([400, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

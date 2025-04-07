@@ -31,7 +31,7 @@ export function accountCreateConnection(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountCreateConnectionResponse,
+    operations.AccountCreateConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountCreateConnectionResponse,
+      operations.AccountCreateConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -98,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-create-connection",
+    operationID: "account.CreateConnection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountCreateConnectionResponse,
+    operations.AccountCreateConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,11 +162,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountCreateConnectionResponse$inboundSchema,
-      { key: "V1AccountCreateConnectionResponseBody" },
-    ),
+    M.json(200, operations.AccountCreateConnectionResponse$inboundSchema, {
+      key: "V1AccountCreateConnectionResponseBody",
+    }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

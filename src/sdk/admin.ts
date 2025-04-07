@@ -15,7 +15,7 @@ export class Admin extends ClientSDK {
   async getAccount(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AdminGetAccountResponse> {
+  ): Promise<operations.AdminGetAccountResponse> {
     return unwrapAsync(adminGetAccount(
       this,
       request,
@@ -26,7 +26,7 @@ export class Admin extends ClientSDK {
   async removeVanity(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AdminRemoveVanityResponse> {
+  ): Promise<operations.AdminRemoveVanityResponse> {
     return unwrapAsync(adminRemoveVanity(
       this,
       request,
@@ -37,7 +37,7 @@ export class Admin extends ClientSDK {
   async updateResources(
     request: components.V1AdminUpdateResourcesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AdminUpdateResourcesResponse> {
+  ): Promise<operations.AdminUpdateResourcesResponse> {
     return unwrapAsync(adminUpdateResources(
       this,
       request,
@@ -48,7 +48,7 @@ export class Admin extends ClientSDK {
   async updateRoles(
     request: components.V1AdminUpdateRolesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.PostV1AdminUpdateRolesResponse> {
+  ): Promise<operations.AdminUpdateRolesResponse> {
     return unwrapAsync(adminUpdateRoles(
       this,
       request,

@@ -96,7 +96,7 @@ run();
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges)
 * [login](docs/sdks/account/README.md#login)
 * [logout](docs/sdks/account/README.md#logout)
-* [queue](docs/sdks/account/README.md#queue)
+* [queueUpdate](docs/sdks/account/README.md#queueupdate)
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection)
 * [refreshSession](docs/sdks/account/README.md#refreshsession)
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
@@ -122,19 +122,15 @@ run();
 
 * [listBadges](docs/sdks/apps/README.md#listbadges)
 
-### [auth](docs/sdks/auth/README.md)
-
-* [createSession](docs/sdks/auth/README.md#createsession)
-
 ### [badge](docs/sdks/badge/README.md)
 
-* [getTags](docs/sdks/badge/README.md#gettags)
 * [search](docs/sdks/badge/README.md#search)
 * [suggestSearch](docs/sdks/badge/README.md#suggestsearch)
 * [suggestTags](docs/sdks/badge/README.md#suggesttags)
 
 ### [badges](docs/sdks/badges/README.md)
 
+* [listTags](docs/sdks/badges/README.md#listtags)
 * [tag](docs/sdks/badges/README.md#tag)
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
@@ -143,7 +139,10 @@ run();
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta)
-* [listBadges33](docs/sdks/leaderboard/README.md#listbadges33)
+
+### [leaderboards](docs/sdks/leaderboards/README.md)
+
+* [list](docs/sdks/leaderboards/README.md#list)
 
 ### [liveness](docs/sdks/liveness/README.md)
 
@@ -541,7 +540,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges)
 - [`accountLogin`](docs/sdks/account/README.md#login)
 - [`accountLogout`](docs/sdks/account/README.md#logout)
-- [`accountQueue`](docs/sdks/account/README.md#queue)
+- [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate)
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection)
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession)
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
@@ -560,9 +559,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges)
-- [`authCreateSession`](docs/sdks/auth/README.md#createsession)
-- [`badgeGetTags`](docs/sdks/badge/README.md#gettags)
 - [`badgeSearch`](docs/sdks/badge/README.md#search)
+- [`badgesListTags`](docs/sdks/badges/README.md#listtags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`badgeSuggestSearch`](docs/sdks/badge/README.md#suggestsearch)
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags)
@@ -570,7 +568,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta)
-- [`leaderboardListBadges33`](docs/sdks/leaderboard/README.md#listbadges33)
+- [`leaderboardsList`](docs/sdks/leaderboards/README.md#list)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationGet`](docs/sdks/location/README.md#get)
 - [`staffList`](docs/sdks/staff/README.md#list)

@@ -31,7 +31,7 @@ export function leaderboardGetGroup(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1LeaderboardGetGroupLeaderboardResponse,
+    operations.LeaderboardGetGroupLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1LeaderboardGetGroupLeaderboardResponse,
+      operations.LeaderboardGetGroupLeaderboardResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -97,7 +97,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-leaderboard-get-group-leaderboard",
+    operationID: "leaderboard.getGroupLeaderboard",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -150,7 +150,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1LeaderboardGetGroupLeaderboardResponse,
+    operations.LeaderboardGetGroupLeaderboardResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -163,7 +163,7 @@ async function $do(
   >(
     M.json(
       200,
-      operations.PostV1LeaderboardGetGroupLeaderboardResponse$inboundSchema,
+      operations.LeaderboardGetGroupLeaderboardResponse$inboundSchema,
       { key: "V1LeaderboardGetGroupLeaderboardResponseBody" },
     ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {

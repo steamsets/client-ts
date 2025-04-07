@@ -31,7 +31,7 @@ export function accountDeleteConnection(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountDeleteConnectionResponse,
+    operations.AccountDeleteConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountDeleteConnectionResponse,
+      operations.AccountDeleteConnectionResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -98,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-delete-connection",
+    operationID: "account.deleteConnection",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountDeleteConnectionResponse,
+    operations.AccountDeleteConnectionResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,11 +162,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountDeleteConnectionResponse$inboundSchema,
-      { key: "V1AccountDeleteConnectionResponseBody" },
-    ),
+    M.json(200, operations.AccountDeleteConnectionResponse$inboundSchema, {
+      key: "V1AccountDeleteConnectionResponseBody",
+    }),
     M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

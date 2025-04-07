@@ -33,7 +33,7 @@ export function livenessCheck(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.GetV1LivenessResponse,
+    operations.LivenessResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -56,7 +56,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.GetV1LivenessResponse,
+      operations.LivenessResponse,
       | errors.ErrorModel
       | SDKError
       | SDKValidationError
@@ -81,7 +81,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "get-v1-liveness",
+    operationID: "liveness",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -133,7 +133,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.GetV1LivenessResponse,
+    operations.LivenessResponse,
     | errors.ErrorModel
     | SDKError
     | SDKValidationError
@@ -143,7 +143,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.GetV1LivenessResponse$inboundSchema, {
+    M.json(200, operations.LivenessResponse$inboundSchema, {
       key: "V1LivenessResponseBody",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

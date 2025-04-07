@@ -31,7 +31,7 @@ export function badgeSuggestTags(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1BadgeSuggestTagsResponse,
+    operations.BadgeSuggestTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1BadgeSuggestTagsResponse,
+      operations.BadgeSuggestTagsResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -96,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-badge-suggest-tags",
+    operationID: "badge.suggestTags",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -149,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1BadgeSuggestTagsResponse,
+    operations.BadgeSuggestTagsResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,7 +160,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.PostV1BadgeSuggestTagsResponse$inboundSchema, {
+    M.json(200, operations.BadgeSuggestTagsResponse$inboundSchema, {
       key: "BadgeSuggestTags",
     }),
     M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {

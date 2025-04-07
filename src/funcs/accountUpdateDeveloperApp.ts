@@ -31,7 +31,7 @@ export function accountUpdateDeveloperApp(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.PostV1AccountUpdateDeveloperAppResponse,
+    operations.AccountUpdateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -57,7 +57,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.PostV1AccountUpdateDeveloperAppResponse,
+      operations.AccountUpdateDeveloperAppResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -98,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "post-v1-account-update-developer-app",
+    operationID: "account.updateDeveloperApp",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.PostV1AccountUpdateDeveloperAppResponse,
+    operations.AccountUpdateDeveloperAppResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,11 +162,9 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.PostV1AccountUpdateDeveloperAppResponse$inboundSchema,
-      { key: "V1AccountDeveloperAppUpdateResponseBody" },
-    ),
+    M.json(200, operations.AccountUpdateDeveloperAppResponse$inboundSchema, {
+      key: "V1AccountDeveloperAppUpdateResponseBody",
+    }),
     M.jsonErr([404, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
