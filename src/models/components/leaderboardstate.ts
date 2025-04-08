@@ -9,10 +9,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LeaderboardState = {
   /**
-   * The id of the state
-   */
-  id: number;
-  /**
    * The name of the state
    */
   name: string;
@@ -24,13 +20,11 @@ export const LeaderboardState$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: z.number().int(),
   name: z.string(),
 });
 
 /** @internal */
 export type LeaderboardState$Outbound = {
-  id: number;
   name: string;
 };
 
@@ -40,7 +34,6 @@ export const LeaderboardState$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LeaderboardState
 > = z.object({
-  id: z.number().int(),
   name: z.string(),
 });
 

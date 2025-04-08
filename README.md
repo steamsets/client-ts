@@ -139,6 +139,7 @@ run();
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta)
+* [leaderboardPreviewAccountRank](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
 
 ### [leaderboards](docs/sdks/leaderboards/README.md)
 
@@ -568,6 +569,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta)
+- [`leaderboardLeaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationGet`](docs/sdks/location/README.md#get)

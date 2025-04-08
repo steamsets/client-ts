@@ -52,6 +52,7 @@ export * from "./leaderboardgetaccountsmeta.js";
 export * from "./leaderboardgetgroupleaderboard.js";
 export * from "./leaderboardgetgroupsmeta.js";
 export * from "./leaderboardlistbadges.js";
+export * from "./leaderboardpreviewaccountrank.js";
 export * from "./liveness.js";
 export * from "./locationgetlocations.js";
 export * from "./staffliststaff.js";

@@ -14,12 +14,10 @@ let value: V1AccountFriend = {
   badges: 123456,
   bans: 772320,
   city: {
-    id: 1,
     name: "Bad Krozingen",
   },
   country: {
     code: "DE",
-    id: 1,
     name: "Germany",
   },
   createdAt: new Date("2023-01-01T00:00:00Z"),
@@ -39,7 +37,6 @@ let value: V1AccountFriend = {
   pointsReceived: 123456,
   privacy: "public",
   region: {
-    id: 1,
     name: "Europe",
   },
   roles: [
@@ -49,7 +46,6 @@ let value: V1AccountFriend = {
     },
   ],
   state: {
-    id: 1,
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",

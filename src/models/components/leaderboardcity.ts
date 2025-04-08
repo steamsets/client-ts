@@ -9,10 +9,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LeaderboardCity = {
   /**
-   * The id of the city
-   */
-  id: number;
-  /**
    * The name of the city
    */
   name: string;
@@ -24,13 +20,11 @@ export const LeaderboardCity$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: z.number().int(),
   name: z.string(),
 });
 
 /** @internal */
 export type LeaderboardCity$Outbound = {
-  id: number;
   name: string;
 };
 
@@ -40,7 +34,6 @@ export const LeaderboardCity$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LeaderboardCity
 > = z.object({
-  id: z.number().int(),
   name: z.string(),
 });
 
