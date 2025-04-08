@@ -25,12 +25,10 @@ let value: AccountListFriendsResponse = {
         badges: 123456,
         bans: 976319,
         city: {
-          id: 1,
           name: "Bad Krozingen",
         },
         country: {
           code: "DE",
-          id: 1,
           name: "Germany",
         },
         createdAt: new Date("2023-01-01T00:00:00Z"),
@@ -50,7 +48,6 @@ let value: AccountListFriendsResponse = {
         pointsReceived: 123456,
         privacy: "public",
         region: {
-          id: 1,
           name: "Europe",
         },
         roles: [
@@ -60,7 +57,6 @@ let value: AccountListFriendsResponse = {
           },
         ],
         state: {
-          id: 1,
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",

@@ -28,7 +28,6 @@ let value: AccountGetInfoResponse = {
     badges: 123456,
     bans: 196121,
     city: {
-      id: 1,
       name: "Bad Krozingen",
     },
     communityBan: false,
@@ -47,7 +46,6 @@ let value: AccountGetInfoResponse = {
     ],
     country: {
       code: "DE",
-      id: 1,
       name: "Germany",
     },
     createdAt: new Date("2023-01-01T00:00:00Z"),
@@ -91,7 +89,6 @@ let value: AccountGetInfoResponse = {
     pointsReceived: 123456,
     privacy: "public",
     region: {
-      id: 1,
       name: "Europe",
     },
     roles: [
@@ -102,7 +99,6 @@ let value: AccountGetInfoResponse = {
     ],
     shortlinkDomain: "steamsets.link",
     state: {
-      id: 1,
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",

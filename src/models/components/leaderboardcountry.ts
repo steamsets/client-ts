@@ -13,10 +13,6 @@ export type LeaderboardCountry = {
    */
   code?: string | undefined;
   /**
-   * The id of the country
-   */
-  id: number;
-  /**
    * The name of the country
    */
   name: string;
@@ -29,14 +25,12 @@ export const LeaderboardCountry$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   code: z.string().optional(),
-  id: z.number().int(),
   name: z.string(),
 });
 
 /** @internal */
 export type LeaderboardCountry$Outbound = {
   code?: string | undefined;
-  id: number;
   name: string;
 };
 
@@ -47,7 +41,6 @@ export const LeaderboardCountry$outboundSchema: z.ZodType<
   LeaderboardCountry
 > = z.object({
   code: z.string().optional(),
-  id: z.number().int(),
   name: z.string(),
 });
 
