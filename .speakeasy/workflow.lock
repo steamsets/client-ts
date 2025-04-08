@@ -2,11 +2,10 @@ speakeasyVersion: 1.531.0
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:2e8012403e5b9219ba2748c80ba57adc44285d59af3cd7522aae220625673a63
+        sourceRevisionDigest: sha256:1dbd4d26e54c383367fda28394826bc7c88a82c91dceecf9a2c16e6d2a420eda
         sourceBlobDigest: sha256:eea2336e97847d57027204deb6a4c4e553570414837714e2f17fe0e23e2bff3f
         tags:
             - latest
-            - speakeasy-sdk-regen-1744052714
             - 1.0.0
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
@@ -19,10 +18,10 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:2e8012403e5b9219ba2748c80ba57adc44285d59af3cd7522aae220625673a63
+        sourceRevisionDigest: sha256:1dbd4d26e54c383367fda28394826bc7c88a82c91dceecf9a2c16e6d2a420eda
         sourceBlobDigest: sha256:eea2336e97847d57027204deb6a4c4e553570414837714e2f17fe0e23e2bff3f
         codeSamplesNamespace: api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:6a1fa299e6e35113bcb71c32b20b57776d01759d814ac30a522aab887e908df5
+        codeSamplesRevisionDigest: sha256:54719f5120930cf364b4af4620521684dffc7ee8773014f62dcd00f8f1af84a0
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
