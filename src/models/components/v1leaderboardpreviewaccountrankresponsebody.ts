@@ -19,9 +19,9 @@ export type V1LeaderboardPreviewAccountRankResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  ownAccount: PreviewAccount | null;
-  rankedAbove: PreviewAccount | null;
-  rankedBelow: PreviewAccount | null;
+  ownAccount?: PreviewAccount | null | undefined;
+  rankedAbove?: PreviewAccount | null | undefined;
+  rankedBelow?: PreviewAccount | null | undefined;
   /**
    * The number of accounts that are ranked in the leaderboard
    */
@@ -36,25 +36,22 @@ export const V1LeaderboardPreviewAccountRankResponseBody$inboundSchema:
     unknown
   > = z.object({
     $schema: z.string().optional(),
-    OwnAccount: z.nullable(PreviewAccount$inboundSchema),
-    RankedAbove: z.nullable(PreviewAccount$inboundSchema),
-    RankedBelow: z.nullable(PreviewAccount$inboundSchema),
+    ownAccount: z.nullable(PreviewAccount$inboundSchema).optional(),
+    rankedAbove: z.nullable(PreviewAccount$inboundSchema).optional(),
+    rankedBelow: z.nullable(PreviewAccount$inboundSchema).optional(),
     rankedOutOf: z.number().int().default(0),
   }).transform((v) => {
     return remap$(v, {
       "$schema": "dollarSchema",
-      "OwnAccount": "ownAccount",
-      "RankedAbove": "rankedAbove",
-      "RankedBelow": "rankedBelow",
     });
   });
 
 /** @internal */
 export type V1LeaderboardPreviewAccountRankResponseBody$Outbound = {
   $schema?: string | undefined;
-  OwnAccount: PreviewAccount$Outbound | null;
-  RankedAbove: PreviewAccount$Outbound | null;
-  RankedBelow: PreviewAccount$Outbound | null;
+  ownAccount?: PreviewAccount$Outbound | null | undefined;
+  rankedAbove?: PreviewAccount$Outbound | null | undefined;
+  rankedBelow?: PreviewAccount$Outbound | null | undefined;
   rankedOutOf: number;
 };
 
@@ -66,16 +63,13 @@ export const V1LeaderboardPreviewAccountRankResponseBody$outboundSchema:
     V1LeaderboardPreviewAccountRankResponseBody
   > = z.object({
     dollarSchema: z.string().optional(),
-    ownAccount: z.nullable(PreviewAccount$outboundSchema),
-    rankedAbove: z.nullable(PreviewAccount$outboundSchema),
-    rankedBelow: z.nullable(PreviewAccount$outboundSchema),
+    ownAccount: z.nullable(PreviewAccount$outboundSchema).optional(),
+    rankedAbove: z.nullable(PreviewAccount$outboundSchema).optional(),
+    rankedBelow: z.nullable(PreviewAccount$outboundSchema).optional(),
     rankedOutOf: z.number().int().default(0),
   }).transform((v) => {
     return remap$(v, {
       dollarSchema: "$schema",
-      ownAccount: "OwnAccount",
-      rankedAbove: "RankedAbove",
-      rankedBelow: "RankedBelow",
     });
   });
 
