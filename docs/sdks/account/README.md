@@ -1628,9 +1628,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.queueUpdate({
-    force: true,
-  });
+  const result = await steamSets.account.queueUpdate({});
 
   // Handle the result
   console.log(result);
@@ -1654,9 +1652,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountQueueUpdate(steamSets, {
-    force: true,
-  });
+  const res = await accountQueueUpdate(steamSets, {});
 
   if (!res.ok) {
     throw res.error;

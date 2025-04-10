@@ -54,9 +54,9 @@ export type V1LeaderboardPreviewAccountRankRequestBody = {
    */
   leaderboard: V1LeaderboardPreviewAccountRankRequestBodyLeaderboard;
   /**
-   * What their leaderboard score would be
+   * What their leaderboard score would be, will use their current rank if not set
    */
-  value?: number | undefined;
+  value?: number | null | undefined;
   vanity?: VanityStruct | undefined;
 };
 
@@ -92,7 +92,7 @@ export const V1LeaderboardPreviewAccountRankRequestBody$inboundSchema:
       id: IDStruct$inboundSchema.optional(),
       leaderboard:
         V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$inboundSchema,
-      value: z.number().int().optional(),
+      value: z.nullable(z.number().int()).optional(),
       vanity: VanityStruct$inboundSchema.optional(),
     });
 
@@ -100,7 +100,7 @@ export const V1LeaderboardPreviewAccountRankRequestBody$inboundSchema:
 export type V1LeaderboardPreviewAccountRankRequestBody$Outbound = {
   id?: IDStruct$Outbound | undefined;
   leaderboard: string;
-  value?: number | undefined;
+  value?: number | null | undefined;
   vanity?: VanityStruct$Outbound | undefined;
 };
 
@@ -114,7 +114,7 @@ export const V1LeaderboardPreviewAccountRankRequestBody$outboundSchema:
     id: IDStruct$outboundSchema.optional(),
     leaderboard:
       V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema,
-    value: z.number().int().optional(),
+    value: z.nullable(z.number().int()).optional(),
     vanity: VanityStruct$outboundSchema.optional(),
   });
 
