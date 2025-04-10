@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 7790af31511bcce6e78f0872e6b9179e
+  docChecksum: 13e427afcdf482e222922d5eaff1d7a5
   docVersion: 1.0.0
-  speakeasyVersion: 1.531.0
-  generationVersion: 2.568.2
-  releaseVersion: 0.25.7
-  configChecksum: 9f888baf4db20013a82eb0eb947d1123
+  speakeasyVersion: 1.531.2
+  generationVersion: 2.570.0
+  releaseVersion: 0.25.8
+  configChecksum: 8c1335fc746b8de40dcc1f3cb34331a5
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -1915,7 +1915,7 @@ examples:
   account.queueUpdate:
     speakeasy-default-account-queue-update:
       requestBody:
-        application/json: {"force": true}
+        application/json: {"force": false}
       responses:
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
