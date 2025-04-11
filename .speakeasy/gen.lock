@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 13e427afcdf482e222922d5eaff1d7a5
+  docChecksum: 6bec5782a01d5197242d96b30bc48263
   docVersion: 1.0.0
-  speakeasyVersion: 1.531.2
-  generationVersion: 2.570.0
-  releaseVersion: 0.25.8
-  configChecksum: 8c1335fc746b8de40dcc1f3cb34331a5
+  speakeasyVersion: 1.531.3
+  generationVersion: 2.570.3
+  releaseVersion: 0.25.9
+  configChecksum: 9ff67fcfa9b73a11e9270762f9c84c78
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.5
+    core: 3.21.6
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -216,6 +216,8 @@ generatedFiles:
   - docs/models/components/v1leaderboardgetgroupsmetarequestbody.md
   - docs/models/components/v1leaderboardgetgroupsmetarequestbodyleaderboard.md
   - docs/models/components/v1leaderboardgetgroupsmetaresponsebody.md
+  - docs/models/components/v1leaderboardgetlowestranksrequestbody.md
+  - docs/models/components/v1leaderboardgetlowestranksrequestbodyleaderboard.md
   - docs/models/components/v1leaderboardlistbadgesresponsebody.md
   - docs/models/components/v1leaderboardlocation.md
   - docs/models/components/v1leaderboardlocationinfo.md
@@ -284,6 +286,7 @@ generatedFiles:
   - docs/models/operations/leaderboardgetaccountsmetaresponse.md
   - docs/models/operations/leaderboardgetgroupleaderboardresponse.md
   - docs/models/operations/leaderboardgetgroupsmetaresponse.md
+  - docs/models/operations/leaderboardgetlowestranksresponse.md
   - docs/models/operations/leaderboardlistbadgesresponse.md
   - docs/models/operations/leaderboardpreviewaccountrankresponse.md
   - docs/models/operations/livenessresponse.md
@@ -355,6 +358,7 @@ generatedFiles:
   - src/funcs/leaderboardGetAccountsMeta.ts
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/leaderboardGetGroupsMeta.ts
+  - src/funcs/leaderboardLeaderboardGetLowestRanks.ts
   - src/funcs/leaderboardLeaderboardPreviewAccountRank.ts
   - src/funcs/leaderboardsList.ts
   - src/funcs/livenessCheck.ts
@@ -507,6 +511,7 @@ generatedFiles:
   - src/models/components/v1leaderboardgetgroupleaderboardresponsebody.ts
   - src/models/components/v1leaderboardgetgroupsmetarequestbody.ts
   - src/models/components/v1leaderboardgetgroupsmetaresponsebody.ts
+  - src/models/components/v1leaderboardgetlowestranksrequestbody.ts
   - src/models/components/v1leaderboardlistbadgesresponsebody.ts
   - src/models/components/v1leaderboardlocation.ts
   - src/models/components/v1leaderboardlocationinfo.ts
@@ -573,6 +578,7 @@ generatedFiles:
   - src/models/operations/leaderboardgetaccountsmeta.ts
   - src/models/operations/leaderboardgetgroupleaderboard.ts
   - src/models/operations/leaderboardgetgroupsmeta.ts
+  - src/models/operations/leaderboardgetlowestranks.ts
   - src/models/operations/leaderboardlistbadges.ts
   - src/models/operations/leaderboardpreviewaccountrank.ts
   - src/models/operations/liveness.ts
@@ -2252,6 +2258,17 @@ examples:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardPreviewAccountRankResponseBody.json", "ownAccount": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 538397, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 695547, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 833017, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 508478, "xp": 123456}, "rankedAbove": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 940265, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 743414, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 113207, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 913296, "xp": 123456}, "rankedBelow": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 125579, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 540450, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 435077, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 619549, "xp": 123456}, "rankedOutOf": 0}
+        "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  leaderboard.getLowestRanks:
+    speakeasy-default-leaderboard-get-lowest-ranks:
+      requestBody:
+        application/json: {"leaderboard": "xp"}
+      responses:
+        "200":
+          application/json: {"key": 568344}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
