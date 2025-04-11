@@ -6,6 +6,7 @@ import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
 import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
+import { leaderboardLeaderboardGetLowestRanks } from "../funcs/leaderboardLeaderboardGetLowestRanks.js";
 import { leaderboardLeaderboardPreviewAccountRank } from "../funcs/leaderboardLeaderboardPreviewAccountRank.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -51,6 +52,17 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardGetGroupsMetaResponse> {
     return unwrapAsync(leaderboardGetGroupsMeta(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  async leaderboardGetLowestRanks(
+    request: components.V1LeaderboardGetLowestRanksRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardGetLowestRanksResponse> {
+    return unwrapAsync(leaderboardLeaderboardGetLowestRanks(
       this,
       request,
       options,

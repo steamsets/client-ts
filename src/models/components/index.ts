@@ -128,6 +128,7 @@ export * from "./v1leaderboardgetgroupleaderboardrequestbody.js";
 export * from "./v1leaderboardgetgroupleaderboardresponsebody.js";
 export * from "./v1leaderboardgetgroupsmetarequestbody.js";
 export * from "./v1leaderboardgetgroupsmetaresponsebody.js";
+export * from "./v1leaderboardgetlowestranksrequestbody.js";
 export * from "./v1leaderboardlistbadgesresponsebody.js";
 export * from "./v1leaderboardlocation.js";
 export * from "./v1leaderboardlocationinfo.js";

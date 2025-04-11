@@ -139,6 +139,7 @@ run();
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta)
+* [leaderboardGetLowestRanks](docs/sdks/leaderboard/README.md#leaderboardgetlowestranks)
 * [leaderboardPreviewAccountRank](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
 
 ### [leaderboards](docs/sdks/leaderboards/README.md)
@@ -569,6 +570,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta)
+- [`leaderboardLeaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#leaderboardgetlowestranks)
 - [`leaderboardLeaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
