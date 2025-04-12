@@ -25,13 +25,13 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function leaderboardLeaderboardPreviewAccountRank(
+export function accountCompareBadges(
   client: SteamSetsCore,
-  request: components.V1LeaderboardPreviewAccountRankRequestBody,
+  request: components.V1AccountCompareBadgesRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardPreviewAccountRankResponse,
+    operations.AccountCompareBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function leaderboardLeaderboardPreviewAccountRank(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardPreviewAccountRankRequestBody,
+  request: components.V1AccountCompareBadgesRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardPreviewAccountRankResponse,
+      operations.AccountCompareBadgesResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,8 +74,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1LeaderboardPreviewAccountRankRequestBody$outboundSchema
-        .parse(value),
+      components.V1AccountCompareBadgesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -84,7 +83,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.previewAccountRank")();
+  const path = pathToFunc("/v1/account.compareBadges")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -97,7 +96,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.previewAccountRank",
+    operationID: "account.compareBadges",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -136,7 +135,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -150,7 +149,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardPreviewAccountRankResponse,
+    operations.AccountCompareBadgesResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -161,12 +160,10 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.LeaderboardPreviewAccountRankResponse$inboundSchema,
-      { key: "V1LeaderboardPreviewAccountRankResponseBody" },
-    ),
-    M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
+    M.json(200, operations.AccountCompareBadgesResponse$inboundSchema, {
+      key: "V1AccountCompareBadgesResponseBody",
+    }),
+    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

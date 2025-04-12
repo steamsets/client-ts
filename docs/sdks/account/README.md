@@ -8,7 +8,7 @@ All Requests related to account(s) are grouped here.
 ### Available Operations
 
 * [bookmarkBadge](#bookmarkbadge)
-* [accountCompareBadges](#accountcomparebadges)
+* [compareBadges](#comparebadges)
 * [createConnection](#createconnection)
 * [createDeveloperApp](#createdeveloperapp)
 * [deleteConnection](#deleteconnection)
@@ -122,7 +122,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountCompareBadges
+## compareBadges
 
 ### Example Usage
 
@@ -134,7 +134,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountCompareBadges({
+  const result = await steamSets.account.compareBadges({
     comparing: [
 
     ],
@@ -153,7 +153,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountCompareBadges } from "@steamsets/client-ts/funcs/accountAccountCompareBadges.js";
+import { accountCompareBadges } from "@steamsets/client-ts/funcs/accountCompareBadges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -162,7 +162,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountCompareBadges(steamSets, {
+  const res = await accountCompareBadges(steamSets, {
     comparing: [
   
     ],

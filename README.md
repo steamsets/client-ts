@@ -76,7 +76,7 @@ run();
 ### [account](docs/sdks/account/README.md)
 
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge)
-* [accountCompareBadges](docs/sdks/account/README.md#accountcomparebadges)
+* [compareBadges](docs/sdks/account/README.md#comparebadges)
 * [createConnection](docs/sdks/account/README.md#createconnection)
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp)
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection)
@@ -140,8 +140,8 @@ run();
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta)
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup)
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta)
-* [leaderboardGetLowestRanks](docs/sdks/leaderboard/README.md#leaderboardgetlowestranks)
-* [leaderboardPreviewAccountRank](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
+* [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks)
+* [previewAccountRank](docs/sdks/leaderboard/README.md#previewaccountrank)
 
 ### [leaderboards](docs/sdks/leaderboards/README.md)
 
@@ -522,8 +522,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountCompareBadges`](docs/sdks/account/README.md#accountcomparebadges)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
+- [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges)
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection)
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)
 - [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection)
@@ -572,8 +572,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta)
-- [`leaderboardLeaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#leaderboardgetlowestranks)
-- [`leaderboardLeaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#leaderboardpreviewaccountrank)
+- [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks)
+- [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank)
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list)
 - [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
 - [`locationGet`](docs/sdks/location/README.md#get)

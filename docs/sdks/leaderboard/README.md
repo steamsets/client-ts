@@ -11,8 +11,8 @@ Any requests that is somehow used for getting leaderboard data.
 * [getAccountsMeta](#getaccountsmeta)
 * [getGroup](#getgroup)
 * [getGroupsMeta](#getgroupsmeta)
-* [leaderboardGetLowestRanks](#leaderboardgetlowestranks)
-* [leaderboardPreviewAccountRank](#leaderboardpreviewaccountrank)
+* [getLowestRanks](#getlowestranks)
+* [previewAccountRank](#previewaccountrank)
 
 ## getAccount
 
@@ -414,7 +414,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardGetLowestRanks
+## getLowestRanks
 
 ### Example Usage
 
@@ -426,7 +426,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardGetLowestRanks({
+  const result = await steamSets.leaderboard.getLowestRanks({
     leaderboard: "xp",
   });
 
@@ -443,7 +443,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardGetLowestRanks } from "@steamsets/client-ts/funcs/leaderboardLeaderboardGetLowestRanks.js";
+import { leaderboardGetLowestRanks } from "@steamsets/client-ts/funcs/leaderboardGetLowestRanks.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardGetLowestRanks(steamSets, {
+  const res = await leaderboardGetLowestRanks(steamSets, {
     leaderboard: "xp",
   });
 
@@ -490,7 +490,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardPreviewAccountRank
+## previewAccountRank
 
 ### Example Usage
 
@@ -502,7 +502,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardPreviewAccountRank({
+  const result = await steamSets.leaderboard.previewAccountRank({
     leaderboard: "xp",
   });
 
@@ -519,7 +519,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardPreviewAccountRank } from "@steamsets/client-ts/funcs/leaderboardLeaderboardPreviewAccountRank.js";
+import { leaderboardPreviewAccountRank } from "@steamsets/client-ts/funcs/leaderboardPreviewAccountRank.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -528,7 +528,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardPreviewAccountRank(steamSets, {
+  const res = await leaderboardPreviewAccountRank(steamSets, {
     leaderboard: "xp",
   });
 

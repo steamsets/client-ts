@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 705d496c863cae25bece5d93b15412a1
+  docChecksum: 681e85714e0d70163808060f411bfa65
   docVersion: 1.0.0
   speakeasyVersion: 1.531.4
   generationVersion: 2.570.4
-  releaseVersion: 0.25.10
-  configChecksum: 7209219084dd8338994cbd590d1c4440
+  releaseVersion: 0.25.13
+  configChecksum: d8659ac37e02155fb71456586374e179
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -313,8 +313,8 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountCompareBadges.ts
   - src/funcs/accountBookmarkBadge.ts
+  - src/funcs/accountCompareBadges.ts
   - src/funcs/accountCreateConnection.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteConnection.ts
@@ -363,8 +363,8 @@ generatedFiles:
   - src/funcs/leaderboardGetAccountsMeta.ts
   - src/funcs/leaderboardGetGroup.ts
   - src/funcs/leaderboardGetGroupsMeta.ts
-  - src/funcs/leaderboardLeaderboardGetLowestRanks.ts
-  - src/funcs/leaderboardLeaderboardPreviewAccountRank.ts
+  - src/funcs/leaderboardGetLowestRanks.ts
+  - src/funcs/leaderboardPreviewAccountRank.ts
   - src/funcs/leaderboardsList.ts
   - src/funcs/livenessCheck.ts
   - src/funcs/locationGet.ts
@@ -2277,7 +2277,7 @@ examples:
         application/json: {"leaderboard": "xp"}
       responses:
         "200":
-          application/json: {"key": 568344}
+          application/json: {"key": 176408, "key1": 685364, "key2": 14333}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

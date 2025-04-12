@@ -25,13 +25,13 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function accountAccountCompareBadges(
+export function leaderboardGetLowestRanks(
   client: SteamSetsCore,
-  request: components.V1AccountCompareBadgesRequestBody,
+  request: components.V1LeaderboardGetLowestRanksRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountCompareBadgesResponse,
+    operations.LeaderboardGetLowestRanksResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function accountAccountCompareBadges(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountCompareBadgesRequestBody,
+  request: components.V1LeaderboardGetLowestRanksRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountCompareBadgesResponse,
+      operations.LeaderboardGetLowestRanksResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,7 +74,9 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AccountCompareBadgesRequestBody$outboundSchema.parse(value),
+      components.V1LeaderboardGetLowestRanksRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -83,7 +85,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.compareBadges")();
+  const path = pathToFunc("/v1/leaderboard.getLowestRanks")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -96,7 +98,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.compareBadges",
+    operationID: "leaderboard.getLowestRanks",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -135,7 +137,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -149,7 +151,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountCompareBadgesResponse,
+    operations.LeaderboardGetLowestRanksResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -160,10 +162,10 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.AccountCompareBadgesResponse$inboundSchema, {
-      key: "V1AccountCompareBadgesResponseBody",
+    M.json(200, operations.LeaderboardGetLowestRanksResponse$inboundSchema, {
+      key: "object",
     }),
-    M.jsonErr([400, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

@@ -25,13 +25,13 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function leaderboardLeaderboardGetLowestRanks(
+export function leaderboardPreviewAccountRank(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetLowestRanksRequestBody,
+  request: components.V1LeaderboardPreviewAccountRankRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetLowestRanksResponse,
+    operations.LeaderboardPreviewAccountRankResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -52,12 +52,12 @@ export function leaderboardLeaderboardGetLowestRanks(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetLowestRanksRequestBody,
+  request: components.V1LeaderboardPreviewAccountRankRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetLowestRanksResponse,
+      operations.LeaderboardPreviewAccountRankResponse,
       | errors.ErrorModel
       | errors.ErrorModel
       | SDKError
@@ -74,9 +74,8 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1LeaderboardGetLowestRanksRequestBody$outboundSchema.parse(
-        value,
-      ),
+      components.V1LeaderboardPreviewAccountRankRequestBody$outboundSchema
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -85,7 +84,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getLowestRanks")();
+  const path = pathToFunc("/v1/leaderboard.previewAccountRank")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -98,7 +97,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getLowestRanks",
+    operationID: "leaderboard.previewAccountRank",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -151,7 +150,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetLowestRanksResponse,
+    operations.LeaderboardPreviewAccountRankResponse,
     | errors.ErrorModel
     | errors.ErrorModel
     | SDKError
@@ -162,9 +161,11 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, operations.LeaderboardGetLowestRanksResponse$inboundSchema, {
-      key: "object",
-    }),
+    M.json(
+      200,
+      operations.LeaderboardPreviewAccountRankResponse$inboundSchema,
+      { key: "V1LeaderboardPreviewAccountRankResponseBody" },
+    ),
     M.jsonErr([404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),

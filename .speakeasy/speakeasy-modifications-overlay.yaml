@@ -2,7 +2,7 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.4
+  version: 0.0.6
   x-speakeasy-metadata:
     after: ""
     before: ""
@@ -544,4 +544,31 @@ actions:
       before: sdk.badge.badge.listTags()
       created_at: 1744049671936
       reviewed_at: 1744049684763
+      type: method-name
+  - target: $["paths"]["/v1/leaderboard.previewAccountRank"]["post"]
+    update:
+      x-speakeasy-name-override: previewAccountRank
+    x-speakeasy-metadata:
+      after: sdk.leaderboard.previewAccountRank()
+      before: sdk.leaderboard.leaderboard.previewAccountRank()
+      created_at: 1744491547138
+      reviewed_at: 1744491551644
+      type: method-name
+  - target: $["paths"]["/v1/account.compareBadges"]["post"]
+    update:
+      x-speakeasy-name-override: compareBadges
+    x-speakeasy-metadata:
+      after: sdk.account.compareBadges()
+      before: sdk.account.account.compareBadges()
+      created_at: 1744491547138
+      reviewed_at: 1744491551644
+      type: method-name
+  - target: $["paths"]["/v1/leaderboard.getLowestRanks"]["post"]
+    update:
+      x-speakeasy-name-override: getLowestRanks
+    x-speakeasy-metadata:
+      after: sdk.leaderboard.getLowestRanks()
+      before: sdk.leaderboard.leaderboard.getLowestRanks()
+      created_at: 1744491547138
+      reviewed_at: 1744491551644
       type: method-name
