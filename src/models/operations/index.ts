@@ -3,6 +3,7 @@
  */
 
 export * from "./accountbookmarkbadge.js";
+export * from "./accountcomparebadges.js";
 export * from "./accountcreateconnection.js";
 export * from "./accountcreatedeveloperapp.js";
 export * from "./accountdeleteconnection.js";
