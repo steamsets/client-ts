@@ -76,6 +76,7 @@ run();
 ### [account](docs/sdks/account/README.md)
 
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge)
+* [accountCompareBadges](docs/sdks/account/README.md#accountcomparebadges)
 * [createConnection](docs/sdks/account/README.md#createconnection)
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp)
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection)
@@ -521,6 +522,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountCompareBadges`](docs/sdks/account/README.md#accountcomparebadges)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection)
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)

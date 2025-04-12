@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 6bec5782a01d5197242d96b30bc48263
+  docChecksum: 705d496c863cae25bece5d93b15412a1
   docVersion: 1.0.0
-  speakeasyVersion: 1.531.3
-  generationVersion: 2.570.3
-  releaseVersion: 0.25.9
-  configChecksum: 9ff67fcfa9b73a11e9270762f9c84c78
+  speakeasyVersion: 1.531.4
+  generationVersion: 2.570.4
+  releaseVersion: 0.25.10
+  configChecksum: 7209219084dd8338994cbd590d1c4440
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -120,6 +120,9 @@ generatedFiles:
   - docs/models/components/v1accountbadgeownedbadgesresponsebody.md
   - docs/models/components/v1accountbookmarkbadgerequestbody.md
   - docs/models/components/v1accountbookmarkbadgeresponsebody.md
+  - docs/models/components/v1accountcomparebadgesrequestbody.md
+  - docs/models/components/v1accountcomparebadgesresponsebody.md
+  - docs/models/components/v1accountcomparedappbadge.md
   - docs/models/components/v1accountcreateconnectionrequestbody.md
   - docs/models/components/v1accountcreateconnectionresponsebody.md
   - docs/models/components/v1accountcreatedeveloperapprequestbody.md
@@ -233,6 +236,7 @@ generatedFiles:
   - docs/models/components/vectors.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountbookmarkbadgeresponse.md
+  - docs/models/operations/accountcomparebadgesresponse.md
   - docs/models/operations/accountcreateconnectionresponse.md
   - docs/models/operations/accountcreatedeveloperappresponse.md
   - docs/models/operations/accountdeleteconnectionresponse.md
@@ -309,6 +313,7 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/accountAccountCompareBadges.ts
   - src/funcs/accountBookmarkBadge.ts
   - src/funcs/accountCreateConnection.ts
   - src/funcs/accountCreateDeveloperApp.ts
@@ -428,6 +433,9 @@ generatedFiles:
   - src/models/components/v1accountbadgeownedbadgesresponsebody.ts
   - src/models/components/v1accountbookmarkbadgerequestbody.ts
   - src/models/components/v1accountbookmarkbadgeresponsebody.ts
+  - src/models/components/v1accountcomparebadgesrequestbody.ts
+  - src/models/components/v1accountcomparebadgesresponsebody.ts
+  - src/models/components/v1accountcomparedappbadge.ts
   - src/models/components/v1accountcreateconnectionrequestbody.ts
   - src/models/components/v1accountcreateconnectionresponsebody.ts
   - src/models/components/v1accountcreatedeveloperapprequestbody.ts
@@ -529,6 +537,7 @@ generatedFiles:
   - src/models/errors/sdkerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/accountbookmarkbadge.ts
+  - src/models/operations/accountcomparebadges.ts
   - src/models/operations/accountcreateconnection.ts
   - src/models/operations/accountcreatedeveloperapp.ts
   - src/models/operations/accountdeleteconnection.ts
@@ -2270,6 +2279,17 @@ examples:
         "200":
           application/json: {"key": 568344}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.compareBadges:
+    speakeasy-default-account-compare-badges:
+      requestBody:
+        application/json: {"Comparing": []}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCompareBadgesResponseBody.json", "appBadges": []}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
