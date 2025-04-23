@@ -169,9 +169,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.updateResources({
-    resources: [
-
-    ],
+    resources: [],
   });
 
   // Handle the result
@@ -197,9 +195,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminUpdateResources(steamSets, {
-    resources: [
-  
-    ],
+    resources: [],
   });
 
   if (!res.ok) {

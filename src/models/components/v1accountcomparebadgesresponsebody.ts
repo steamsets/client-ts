@@ -20,6 +20,14 @@ export type V1AccountCompareBadgesResponseBody = {
    */
   dollarSchema?: string | undefined;
   appBadges: Array<V1AccountComparedAppBadge> | null;
+  /**
+   * The number of pages
+   */
+  pages: number;
+  /**
+   * The total number of hits for all pages
+   */
+  totalHits: number;
 };
 
 /** @internal */
@@ -30,6 +38,8 @@ export const V1AccountCompareBadgesResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   appBadges: z.nullable(z.array(V1AccountComparedAppBadge$inboundSchema)),
+  pages: z.number().int(),
+  totalHits: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -40,6 +50,8 @@ export const V1AccountCompareBadgesResponseBody$inboundSchema: z.ZodType<
 export type V1AccountCompareBadgesResponseBody$Outbound = {
   $schema?: string | undefined;
   appBadges: Array<V1AccountComparedAppBadge$Outbound> | null;
+  pages: number;
+  totalHits: number;
 };
 
 /** @internal */
@@ -50,6 +62,8 @@ export const V1AccountCompareBadgesResponseBody$outboundSchema: z.ZodType<
 > = z.object({
   dollarSchema: z.string().optional(),
   appBadges: z.nullable(z.array(V1AccountComparedAppBadge$outboundSchema)),
+  pages: z.number().int(),
+  totalHits: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

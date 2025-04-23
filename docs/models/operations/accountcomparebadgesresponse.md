@@ -30,6 +30,8 @@ let value: AccountCompareBadgesResponse = {
         steamId: 332813,
       },
     ],
+    pages: 1,
+    totalHits: 1,
   },
 };
 ```

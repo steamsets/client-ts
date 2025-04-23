@@ -45,6 +45,8 @@ export * from "./v1accountbadgeownedbadge.js";
 export * from "./v1accountbadgeownedbadgesresponsebody.js";
 export * from "./v1accountbookmarkbadgerequestbody.js";
 export * from "./v1accountbookmarkbadgeresponsebody.js";
+export * from "./v1accountcompare.js";
+export * from "./v1accountcomparebadgeorder.js";
 export * from "./v1accountcomparebadgesrequestbody.js";
 export * from "./v1accountcomparebadgesresponsebody.js";
 export * from "./v1accountcomparedappbadge.js";
