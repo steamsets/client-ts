@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 681e85714e0d70163808060f411bfa65
+  docChecksum: 34bad074e92c4616d29811889689396d
   docVersion: 1.0.0
-  speakeasyVersion: 1.531.4
-  generationVersion: 2.570.4
-  releaseVersion: 0.25.13
-  configChecksum: d8659ac37e02155fb71456586374e179
+  speakeasyVersion: 1.538.0
+  generationVersion: 2.591.1
+  releaseVersion: 0.25.14
+  configChecksum: 6a3a9911b49cf23440a1f9f2fe8520f7
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -86,6 +86,7 @@ generatedFiles:
   - docs/models/components/historyvalue.md
   - docs/models/components/httpmetadata.md
   - docs/models/components/idstruct.md
+  - docs/models/components/ignore.md
   - docs/models/components/image.md
   - docs/models/components/imagetype.md
   - docs/models/components/lastqueuestatus.md
@@ -97,6 +98,7 @@ generatedFiles:
   - docs/models/components/leaderboardregion.md
   - docs/models/components/leaderboardstate.md
   - docs/models/components/loginrequestbody.md
+  - docs/models/components/mode.md
   - docs/models/components/previewaccount.md
   - docs/models/components/previewaccountprivacy.md
   - docs/models/components/privacy.md
@@ -120,6 +122,8 @@ generatedFiles:
   - docs/models/components/v1accountbadgeownedbadgesresponsebody.md
   - docs/models/components/v1accountbookmarkbadgerequestbody.md
   - docs/models/components/v1accountbookmarkbadgeresponsebody.md
+  - docs/models/components/v1accountcompare.md
+  - docs/models/components/v1accountcomparebadgeorder.md
   - docs/models/components/v1accountcomparebadgesrequestbody.md
   - docs/models/components/v1accountcomparebadgesresponsebody.md
   - docs/models/components/v1accountcomparedappbadge.md
@@ -152,6 +156,7 @@ generatedFiles:
   - docs/models/components/v1accountlistappsrequestbody.md
   - docs/models/components/v1accountlistappsresponsebody.md
   - docs/models/components/v1accountlistbadgesrequestbody.md
+  - docs/models/components/v1accountlistbadgesrequestbodyfilter.md
   - docs/models/components/v1accountlistbadgesresponsebody.md
   - docs/models/components/v1accountlistfriendsresponsebody.md
   - docs/models/components/v1accountlistimagesresponsebody.md
@@ -192,6 +197,8 @@ generatedFiles:
   - docs/models/components/v1applistbadgesrequestbody.md
   - docs/models/components/v1applistbadgesresponsebody.md
   - docs/models/components/v1apporder.md
+  - docs/models/components/v1apporderby.md
+  - docs/models/components/v1apporderdirection.md
   - docs/models/components/v1badgelisttagsresponsebody.md
   - docs/models/components/v1badgeorder.md
   - docs/models/components/v1badgeorderby.md
@@ -433,6 +440,8 @@ generatedFiles:
   - src/models/components/v1accountbadgeownedbadgesresponsebody.ts
   - src/models/components/v1accountbookmarkbadgerequestbody.ts
   - src/models/components/v1accountbookmarkbadgeresponsebody.ts
+  - src/models/components/v1accountcompare.ts
+  - src/models/components/v1accountcomparebadgeorder.ts
   - src/models/components/v1accountcomparebadgesrequestbody.ts
   - src/models/components/v1accountcomparebadgesresponsebody.ts
   - src/models/components/v1accountcomparedappbadge.ts
@@ -2285,10 +2294,10 @@ examples:
   account.compareBadges:
     speakeasy-default-account-compare-badges:
       requestBody:
-        application/json: {"Comparing": []}
+        application/json: {"Comparing": [], "compare": {"against": "<value>", "mode": "missing"}, "filter": "all", "ignore": ["event", "steam", "sale"], "order": {"by": "xp", "direction": "desc"}, "page": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCompareBadgesResponseBody.json", "appBadges": []}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountCompareBadgesResponseBody.json", "appBadges": [], "pages": 1, "totalHits": 1}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

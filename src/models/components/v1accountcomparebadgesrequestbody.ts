@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -13,10 +14,79 @@ import {
   AccountSearch$Outbound,
   AccountSearch$outboundSchema,
 } from "./accountsearch.js";
+import {
+  V1AccountCompare,
+  V1AccountCompare$inboundSchema,
+  V1AccountCompare$Outbound,
+  V1AccountCompare$outboundSchema,
+} from "./v1accountcompare.js";
+import {
+  V1AccountCompareBadgeOrder,
+  V1AccountCompareBadgeOrder$inboundSchema,
+  V1AccountCompareBadgeOrder$Outbound,
+  V1AccountCompareBadgeOrder$outboundSchema,
+} from "./v1accountcomparebadgeorder.js";
+
+export const Filter = {
+  All: "all",
+  Normal: "normal",
+  Foil: "foil",
+} as const;
+export type Filter = ClosedEnum<typeof Filter>;
+
+export const Ignore = {
+  Event: "event",
+  Sale: "sale",
+  Steam: "steam",
+} as const;
+export type Ignore = ClosedEnum<typeof Ignore>;
 
 export type V1AccountCompareBadgesRequestBody = {
   comparing: Array<AccountSearch> | null;
+  compare: V1AccountCompare | null;
+  filter?: Filter | undefined;
+  ignore: Array<Ignore> | null;
+  order: V1AccountCompareBadgeOrder | null;
+  page?: number | undefined;
 };
+
+/** @internal */
+export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
+  .nativeEnum(Filter);
+
+/** @internal */
+export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> =
+  Filter$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Filter$ {
+  /** @deprecated use `Filter$inboundSchema` instead. */
+  export const inboundSchema = Filter$inboundSchema;
+  /** @deprecated use `Filter$outboundSchema` instead. */
+  export const outboundSchema = Filter$outboundSchema;
+}
+
+/** @internal */
+export const Ignore$inboundSchema: z.ZodNativeEnum<typeof Ignore> = z
+  .nativeEnum(Ignore);
+
+/** @internal */
+export const Ignore$outboundSchema: z.ZodNativeEnum<typeof Ignore> =
+  Ignore$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Ignore$ {
+  /** @deprecated use `Ignore$inboundSchema` instead. */
+  export const inboundSchema = Ignore$inboundSchema;
+  /** @deprecated use `Ignore$outboundSchema` instead. */
+  export const outboundSchema = Ignore$outboundSchema;
+}
 
 /** @internal */
 export const V1AccountCompareBadgesRequestBody$inboundSchema: z.ZodType<
@@ -25,6 +95,11 @@ export const V1AccountCompareBadgesRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Comparing: z.nullable(z.array(AccountSearch$inboundSchema)),
+  compare: z.nullable(V1AccountCompare$inboundSchema),
+  filter: Filter$inboundSchema.default("all"),
+  ignore: z.nullable(z.array(Ignore$inboundSchema)),
+  order: z.nullable(V1AccountCompareBadgeOrder$inboundSchema),
+  page: z.number().int().default(1),
 }).transform((v) => {
   return remap$(v, {
     "Comparing": "comparing",
@@ -34,6 +109,11 @@ export const V1AccountCompareBadgesRequestBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1AccountCompareBadgesRequestBody$Outbound = {
   Comparing: Array<AccountSearch$Outbound> | null;
+  compare: V1AccountCompare$Outbound | null;
+  filter: string;
+  ignore: Array<string> | null;
+  order: V1AccountCompareBadgeOrder$Outbound | null;
+  page: number;
 };
 
 /** @internal */
@@ -43,6 +123,11 @@ export const V1AccountCompareBadgesRequestBody$outboundSchema: z.ZodType<
   V1AccountCompareBadgesRequestBody
 > = z.object({
   comparing: z.nullable(z.array(AccountSearch$outboundSchema)),
+  compare: z.nullable(V1AccountCompare$outboundSchema),
+  filter: Filter$outboundSchema.default("all"),
+  ignore: z.nullable(z.array(Ignore$outboundSchema)),
+  order: z.nullable(V1AccountCompareBadgeOrder$outboundSchema),
+  page: z.number().int().default(1),
 }).transform((v) => {
   return remap$(v, {
     comparing: "Comparing",
