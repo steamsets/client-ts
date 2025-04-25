@@ -135,9 +135,16 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.compareBadges({
-    comparing: [
-
+    comparing: [],
+    compare: {
+      against: "<value>",
+    },
+    ignore: [
+      "event",
+      "steam",
+      "sale",
     ],
+    order: {},
   });
 
   // Handle the result
@@ -163,9 +170,16 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountCompareBadges(steamSets, {
-    comparing: [
-  
+    comparing: [],
+    compare: {
+      against: "<value>",
+    },
+    ignore: [
+      "event",
+      "steam",
+      "sale",
     ],
+    order: {},
   });
 
   if (!res.ok) {
@@ -2570,9 +2584,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.uploadImages({
-    images: [
-
-    ],
+    images: [],
   });
 
   // Handle the result
@@ -2598,9 +2610,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountUploadImages(steamSets, {
-    images: [
-  
-    ],
+    images: [],
   });
 
   if (!res.ok) {
