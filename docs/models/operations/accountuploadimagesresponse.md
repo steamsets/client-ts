@@ -5,26 +5,7 @@
 ```typescript
 import { AccountUploadImagesResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountUploadImagesResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountUploadImagesResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountUploadImagesResponseBody.json",
-    images: [
-      {
-        active: true,
-        fileName: "avatar.png",
-        imageId: "img_wasd123",
-        imageType: "avatar",
-      },
-    ],
-  },
-};
+let value: AccountUploadImagesResponse = {};
 ```
 
 ## Fields

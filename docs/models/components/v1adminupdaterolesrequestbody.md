@@ -7,7 +7,7 @@ import { V1AdminUpdateRolesRequestBody } from "@steamsets/client-ts/models/compo
 
 let value: V1AdminUpdateRolesRequestBody = {
   roles: [
-    "contributor",
+    "amethyst",
   ],
 };
 ```

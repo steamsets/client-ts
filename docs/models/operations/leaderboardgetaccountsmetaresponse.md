@@ -5,20 +5,7 @@
 ```typescript
 import { LeaderboardGetAccountsMetaResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LeaderboardGetAccountsMetaResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1LeaderboardGetAccountsMetaResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1LeaderboardGetAccountsMetaResponseBody.json",
-    description: "front archaeology anxiously eek wash hourly dreary aw",
-    title: "<value>",
-  },
-};
+let value: LeaderboardGetAccountsMetaResponse = {};
 ```
 
 ## Fields

@@ -26,7 +26,7 @@ let value: LeaderboardAccount = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  gameBans: 151312,
+  gameBans: 748882,
   level: 123456,
   name: "steamsets",
   normalBadgeCost: 123456,
@@ -38,20 +38,15 @@ let value: LeaderboardAccount = {
   region: {
     name: "Europe",
   },
-  roles: [
-    {
-      rating: 538708,
-      role: "early_supporter",
-    },
-  ],
+  roles: [],
   state: {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 756551,
+  steamSetsScore: 835117,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 378713,
+  vacBans: 719219,
   xp: 123456,
 };
 ```

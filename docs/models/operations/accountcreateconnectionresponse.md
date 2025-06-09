@@ -5,20 +5,7 @@
 ```typescript
 import { AccountCreateConnectionResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountCreateConnectionResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountCreateConnectionResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountCreateConnectionResponseBody.json",
-    code: "ABC123",
-    connectionId: "ABC123",
-  },
-};
+let value: AccountCreateConnectionResponse = {};
 ```
 
 ## Fields

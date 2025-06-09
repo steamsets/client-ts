@@ -8,64 +8,7 @@ import { V1LeaderboardGetAccountLeaderboardResponseBody } from "@steamsets/clien
 let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1LeaderboardGetAccountLeaderboardResponseBody.json",
-  accounts: [
-    {
-      appCost: 123456,
-      appPlaytime: 1000,
-      apps: 123456,
-      avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
-      awardsGiven: 123456,
-      awardsReceived: 123456,
-      badgeInfo: {
-        completionTime: new Date("2023-01-01T00:00:00Z"),
-        level: 123456,
-        xp: 123456,
-      },
-      badges: 123456,
-      bans: 927948,
-      city: {
-        name: "Bad Krozingen",
-      },
-      country: {
-        code: "DE",
-        name: "Germany",
-      },
-      createdAt: new Date("2023-01-01T00:00:00Z"),
-      donated: 123456,
-      economyBan: "steam",
-      foilBadgeCost: 123456,
-      foilBadges: 123456,
-      friends: 123456,
-      gameBans: 555091,
-      level: 123456,
-      name: "steamsets",
-      normalBadgeCost: 123456,
-      normalBadges: 123456,
-      playtime: 123456,
-      pointsGiven: 123456,
-      pointsReceived: 123456,
-      privacy: "public",
-      rank: 1,
-      region: {
-        name: "Europe",
-      },
-      roles: [
-        {
-          rating: 663608,
-          role: "owner",
-        },
-      ],
-      state: {
-        name: "Baden-Wurttemberg",
-      },
-      steamId: "76561198842603734",
-      steamSetsScore: 293511,
-      steamSetsVanity: "steamsets",
-      steamVanity: "steamsets",
-      vacBans: 945350,
-      xp: 123456,
-    },
-  ],
+  accounts: [],
   app: {
     id: 730,
     image:
@@ -100,27 +43,20 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
     awardsGiven: 123456,
     awardsReceived: 123456,
-    badgeInfo: {
-      completionTime: new Date("2023-01-01T00:00:00Z"),
-      level: 123456,
-      xp: 123456,
-    },
+    badgeInfo: null,
     badges: 123456,
-    bans: 473891,
+    bans: 131194,
     city: {
       name: "Bad Krozingen",
     },
-    country: {
-      code: "DE",
-      name: "Germany",
-    },
+    country: null,
     createdAt: new Date("2023-01-01T00:00:00Z"),
     donated: 123456,
     economyBan: "steam",
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 712106,
+    gameBans: 918832,
     level: 123456,
     name: "steamsets",
     normalBadgeCost: 123456,
@@ -133,20 +69,15 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     region: {
       name: "Europe",
     },
-    roles: [
-      {
-        rating: 909154,
-        role: "donator",
-      },
-    ],
+    roles: [],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 959808,
+    steamSetsScore: 823597,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 483048,
+    vacBans: 294927,
     xp: 123456,
   },
 };

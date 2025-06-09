@@ -5,18 +5,7 @@
 ```typescript
 import { AccountUpdateConnectionResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountUpdateConnectionResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountUpdateConnectionResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountUpdateConnectionResponseBody.json",
-  },
-};
+let value: AccountUpdateConnectionResponse = {};
 ```
 
 ## Fields

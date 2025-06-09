@@ -5,27 +5,7 @@
 ```typescript
 import { AccountListOwnedBadgesResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountListOwnedBadgesResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountBadgeOwnedBadgesResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json",
-    ownedBadges: [
-      {
-        appId: 730,
-        badgeId: "bdg_123",
-        isFoil: true,
-        level: 123456,
-        steamId: 13,
-      },
-    ],
-  },
-};
+let value: AccountListOwnedBadgesResponse = {};
 ```
 
 ## Fields

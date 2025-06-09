@@ -11,7 +11,7 @@ let value: V1BadgeListTagsResponseBody = {
   colorTags: [
     {
       group: "<value>",
-      groupOwner: false,
+      groupOwner: true,
       hex: "<value>",
       hsl: "<value>",
       id: "<id>",

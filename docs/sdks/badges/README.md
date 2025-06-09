@@ -22,7 +22,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.badges.listTags();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -45,15 +44,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await badgesListTags(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesListTags failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -105,15 +101,9 @@ async function run() {
         name: "cat",
         remove: true,
       },
-      {
-        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
-        name: "cat",
-        remove: true,
-      },
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -149,22 +139,14 @@ async function run() {
         name: "cat",
         remove: true,
       },
-      {
-        id: "bdg_des_2r3yFWjSJzH89FKbYgpkJxF24ZL",
-        name: "cat",
-        remove: true,
-      },
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("badgesTag failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

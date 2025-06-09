@@ -23,7 +23,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.stats.get();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -46,15 +45,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await statsGet(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("statsGet failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

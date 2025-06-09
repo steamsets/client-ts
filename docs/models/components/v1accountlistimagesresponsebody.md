@@ -8,14 +8,7 @@ import { V1AccountListImagesResponseBody } from "@steamsets/client-ts/models/com
 let value: V1AccountListImagesResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountListImagesResponseBody.json",
-  images: [
-    {
-      active: true,
-      fileName: "avatar.png",
-      imageId: "img_wasd123",
-      imageType: "avatar",
-    },
-  ],
+  images: [],
 };
 ```
 

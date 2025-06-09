@@ -5,30 +5,7 @@
 ```typescript
 import { BadgeTagBadgeResponse } from "@steamsets/client-ts/models/operations";
 
-let value: BadgeTagBadgeResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1BadgeTagBadgeResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1BadgeTagBadgeResponseBody.json",
-    colorTags: [
-      {
-        id: "<id>",
-        name: "<value>",
-      },
-    ],
-    designTags: [
-      {
-        id: "<id>",
-        name: "<value>",
-      },
-    ],
-  },
-};
+let value: BadgeTagBadgeResponse = {};
 ```
 
 ## Fields

@@ -5,18 +5,7 @@
 ```typescript
 import { AccountVerifyConnectionResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountVerifyConnectionResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountVerifyConnectionResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountVerifyConnectionResponseBody.json",
-  },
-};
+let value: AccountVerifyConnectionResponse = {};
 ```
 
 ## Fields

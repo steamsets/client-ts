@@ -5,20 +5,7 @@
 ```typescript
 import { LeaderboardGetGroupsMetaResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LeaderboardGetGroupsMetaResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1LeaderboardGetGroupsMetaResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1LeaderboardGetGroupsMetaResponseBody.json",
-    description: "faint aw silent misjudge clean pace ah",
-    title: "<value>",
-  },
-};
+let value: LeaderboardGetGroupsMetaResponse = {};
 ```
 
 ## Fields

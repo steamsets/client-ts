@@ -14,18 +14,8 @@ let value: V1AccountGetSessionBody = {
   isNew: true,
   level: 1,
   name: "flo",
-  resources: [
-    {
-      resource: "animated_avatar",
-      value: "1",
-    },
-  ],
-  roles: [
-    {
-      rating: 294501,
-      role: "emerald",
-    },
-  ],
+  resources: [],
+  roles: [],
   sessionData: {
     createdAt: new Date("2023-01-01T00:00:00Z"),
     expiresAt: new Date("2023-01-01T00:00:00Z"),

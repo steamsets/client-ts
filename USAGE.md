@@ -12,7 +12,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 

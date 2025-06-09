@@ -5,14 +5,7 @@
 ```typescript
 import { AdminUpdateRolesResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AdminUpdateRolesResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-};
+let value: AdminUpdateRolesResponse = {};
 ```
 
 ## Fields

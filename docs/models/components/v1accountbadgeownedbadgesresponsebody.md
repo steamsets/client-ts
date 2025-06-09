@@ -8,15 +8,7 @@ import { V1AccountBadgeOwnedBadgesResponseBody } from "@steamsets/client-ts/mode
 let value: V1AccountBadgeOwnedBadgesResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountBadgeOwnedBadgesResponseBody.json",
-  ownedBadges: [
-    {
-      appId: 730,
-      badgeId: "bdg_123",
-      isFoil: true,
-      level: 123456,
-      steamId: 13,
-    },
-  ],
+  ownedBadges: null,
 };
 ```
 

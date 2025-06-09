@@ -18,8 +18,9 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import * as errors from "../models/errors/index.js";
-import { SDKError } from "../models/errors/sdkerror.js";
+import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import { SteamSetsError } from "../models/errors/steamsetserror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
@@ -32,14 +33,14 @@ export function accountSubscribeEmail(
   Result<
     operations.AccountSubscribeEmailResponse,
     | errors.ErrorModel
-    | errors.ErrorModel
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | SteamSetsError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -58,14 +59,14 @@ async function $do(
     Result<
       operations.AccountSubscribeEmailResponse,
       | errors.ErrorModel
-      | errors.ErrorModel
-      | SDKError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | SteamSetsError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -101,6 +102,7 @@ async function $do(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "account.subscribeEmail",
     oAuth2Scopes: [],
@@ -132,6 +134,7 @@ async function $do(
     headers: headers,
     body: body,
     uaHeader: "x-speakeasy-user-agent",
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -157,14 +160,14 @@ async function $do(
   const [result] = await M.match<
     operations.AccountSubscribeEmailResponse,
     | errors.ErrorModel
-    | errors.ErrorModel
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | SteamSetsError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.nil(204, operations.AccountSubscribeEmailResponse$inboundSchema),
     M.jsonErr([400, 422, 429], errors.ErrorModel$inboundSchema, {

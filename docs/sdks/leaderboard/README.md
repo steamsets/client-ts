@@ -30,10 +30,7 @@ async function run() {
     app: {
       appId: 730,
     },
-    badge: {
-      id: 279811,
-      isFoil: true,
-    },
+    badge: null,
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "xp",
@@ -44,17 +41,10 @@ async function run() {
         region: "Europe",
         state: "Baden-Wurttemberg",
       },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
     ],
     start: 1,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -80,10 +70,7 @@ async function run() {
     app: {
       appId: 730,
     },
-    badge: {
-      id: 279811,
-      isFoil: true,
-    },
+    badge: null,
     end: 10,
     goToLeaderboardRank: 1,
     leaderboard: "xp",
@@ -94,24 +81,15 @@ async function run() {
         region: "Europe",
         state: "Baden-Wurttemberg",
       },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
     ],
     start: 1,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardGetAccount failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -151,11 +129,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.leaderboard.getAccountsMeta({
-    app: {
-      appId: 730,
-    },
+    app: null,
     badge: {
-      id: 178474,
+      id: 563969,
       isFoil: true,
     },
     leaderboard: "xp",
@@ -166,16 +142,9 @@ async function run() {
         region: "Europe",
         state: "Baden-Wurttemberg",
       },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -198,11 +167,9 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await leaderboardGetAccountsMeta(steamSets, {
-    app: {
-      appId: 730,
-    },
+    app: null,
     badge: {
-      id: 178474,
+      id: 563969,
       isFoil: true,
     },
     leaderboard: "xp",
@@ -213,23 +180,14 @@ async function run() {
         region: "Europe",
         state: "Baden-Wurttemberg",
       },
-      {
-        city: "Bad Krozingen",
-        country: "Germany",
-        region: "Europe",
-        state: "Baden-Wurttemberg",
-      },
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardGetAccountsMeta failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -275,7 +233,6 @@ async function run() {
     start: 1,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -303,15 +260,12 @@ async function run() {
     leaderboard: "most_members",
     start: 1,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardGetGroup failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -354,7 +308,6 @@ async function run() {
     leaderboard: "most_members",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -379,15 +332,12 @@ async function run() {
   const res = await leaderboardGetGroupsMeta(steamSets, {
     leaderboard: "most_members",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardGetGroupsMeta failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -430,7 +380,6 @@ async function run() {
     leaderboard: "xp",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -455,15 +404,12 @@ async function run() {
   const res = await leaderboardGetLowestRanks(steamSets, {
     leaderboard: "xp",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardGetLowestRanks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -506,7 +452,6 @@ async function run() {
     leaderboard: "xp",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -531,15 +476,12 @@ async function run() {
   const res = await leaderboardPreviewAccountRank(steamSets, {
     leaderboard: "xp",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("leaderboardPreviewAccountRank failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

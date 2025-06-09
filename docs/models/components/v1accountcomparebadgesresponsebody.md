@@ -8,21 +8,7 @@ import { V1AccountCompareBadgesResponseBody } from "@steamsets/client-ts/models/
 let value: V1AccountCompareBadgesResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountCompareBadgesResponseBody.json",
-  appBadges: [
-    {
-      appId: 896656,
-      appImage: "<value>",
-      appName: "<value>",
-      badgeImage: "<value>",
-      badgeName: "<value>",
-      foilScarcity: 643352,
-      hasFoil: false,
-      isEvent: false,
-      isSale: false,
-      normalScarcity: 613018,
-      steamId: 872969,
-    },
-  ],
+  appBadges: [],
   pages: 1,
   totalHits: 1,
 };

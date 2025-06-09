@@ -5,23 +5,7 @@
 ```typescript
 import { BadgeSuggestTagsResponse } from "@steamsets/client-ts/models/operations";
 
-let value: BadgeSuggestTagsResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  badgeSuggestTags: {
-    dollarSchema: "https://api.steamsets.com/schemas/BadgeSuggestTags.json",
-    colors: [
-      "<value>",
-    ],
-    designs: [
-      "<value>",
-    ],
-  },
-};
+let value: BadgeSuggestTagsResponse = {};
 ```
 
 ## Fields

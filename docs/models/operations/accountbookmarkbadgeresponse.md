@@ -5,18 +5,7 @@
 ```typescript
 import { AccountBookmarkBadgeResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountBookmarkBadgeResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountBookmarkBadgeResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountBookmarkBadgeResponseBody.json",
-  },
-};
+let value: AccountBookmarkBadgeResponse = {};
 ```
 
 ## Fields
