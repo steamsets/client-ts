@@ -10,18 +10,11 @@ let value: V1LeaderboardGetAccountsMetaRequestBody = {
     appId: 730,
   },
   badge: {
-    id: 887487,
+    id: 280171,
     isFoil: true,
   },
   leaderboard: "xp",
-  location: [
-    {
-      city: "Bad Krozingen",
-      country: "Germany",
-      region: "Europe",
-      state: "Baden-Wurttemberg",
-    },
-  ],
+  location: null,
 };
 ```
 

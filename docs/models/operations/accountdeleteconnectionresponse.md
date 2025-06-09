@@ -5,18 +5,7 @@
 ```typescript
 import { AccountDeleteConnectionResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountDeleteConnectionResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountDeleteConnectionResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountDeleteConnectionResponseBody.json",
-  },
-};
+let value: AccountDeleteConnectionResponse = {};
 ```
 
 ## Fields

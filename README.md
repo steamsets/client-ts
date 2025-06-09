@@ -58,7 +58,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -83,6 +82,7 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
 * [deleteSession](docs/sdks/account/README.md#deletesession)
+* [accountGetBadgeStats](docs/sdks/account/README.md#accountgetbadgestats)
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getMeta](docs/sdks/account/README.md#getmeta)
@@ -125,6 +125,7 @@ run();
 
 ### [badge](docs/sdks/badge/README.md)
 
+* [badgeListBadgePrices](docs/sdks/badge/README.md#badgelistbadgeprices)
 * [search](docs/sdks/badge/README.md#search)
 * [suggestSearch](docs/sdks/badge/README.md#suggestsearch)
 * [suggestTags](docs/sdks/badge/README.md#suggesttags)
@@ -197,7 +198,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -229,7 +229,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -241,60 +240,47 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `bookmarkBadge` method may throw the following errors:
+[`SteamSetsError`](./src/models/errors/steamsetserror.ts) is the base class for all HTTP error responses. It has the following properties:
 
-| Error Type        | Status Code   | Content Type             |
-| ----------------- | ------------- | ------------------------ |
-| errors.ErrorModel | 403, 404, 422 | application/problem+json |
-| errors.ErrorModel | 500           | application/problem+json |
-| errors.SDKError   | 4XX, 5XX      | \*/\*                    |
+| Property                  | Type       | Description                                                                             |
+| ------------------------- | ---------- | --------------------------------------------------------------------------------------- |
+| `error.message`           | `string`   | Error message                                                                           |
+| `error.httpMeta.response` | `Response` | HTTP response. Access to headers and more.                                              |
+| `error.httpMeta.request`  | `Request`  | HTTP request. Access to headers and more.                                               |
+| `error.data$`             |            | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
 
-If the method throws an error and it is not captured by the known errors, it will default to throwing a `SDKError`.
-
+### Example
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
-import {
-  ErrorModel,
-  SDKValidationError,
-} from "@steamsets/client-ts/models/errors";
+import * as errors from "@steamsets/client-ts/models/errors";
 
 const steamSets = new SteamSets({
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
 async function run() {
-  let result;
   try {
-    result = await steamSets.account.bookmarkBadge({
+    const result = await steamSets.account.bookmarkBadge({
       badgeId: "bdg_123",
       bookmark: true,
     });
 
-    // Handle the result
     console.log(result);
-  } catch (err) {
-    switch (true) {
-      // The server response does not match the expected SDK schema
-      case (err instanceof SDKValidationError): {
-        // Pretty-print will provide a human-readable multi-line error message
-        console.error(err.pretty());
-        // Raw value may also be inspected
-        console.error(err.rawValue);
-        return;
-      }
-      case (err instanceof ErrorModel): {
-        // Handle err.data$: ErrorModelData
-        console.error(err);
-        return;
-      }
-      case (err instanceof ErrorModel): {
-        // Handle err.data$: ErrorModelData
-        console.error(err);
-        return;
-      }
-      default: {
-        // Other errors such as network errors, see HTTPClientErrors for more details
-        throw err;
+  } catch (error) {
+    // The base class for HTTP error responses
+    if (error instanceof errors.SteamSetsError) {
+      console.log(error.message);
+      console.log(error.httpMeta.response.status);
+      console.log(error.httpMeta.response.headers);
+      console.log(error.httpMeta.request);
+
+      // Depending on the method different errors may be thrown
+      if (error instanceof errors.ErrorModel) {
+        console.log(error.data$.dollarSchema); // string
+        console.log(error.data$.detail); // string
+        console.log(error.data$.errors); // ErrorDetail[]
+        console.log(error.data$.instance); // string
+        console.log(error.data$.status); // number
       }
     }
   }
@@ -304,17 +290,27 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+### Error Classes
+**Primary errors:**
+* [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
+  * [`ErrorModel`](docs/models/errors/errormodel.md): Generic error.
 
-In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `models/errors/httpclienterrors.ts` module:
+<details><summary>Less common errors (6)</summary>
 
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+<br />
+
+**Network errors:**
+* [`ConnectionError`](./src/models/errors/httpclienterrors.ts): HTTP client was unable to make a request to a server.
+* [`RequestTimeoutError`](./src/models/errors/httpclienterrors.ts): HTTP request timed out due to an AbortSignal signal.
+* [`RequestAbortedError`](./src/models/errors/httpclienterrors.ts): HTTP request was aborted by the client.
+* [`InvalidRequestError`](./src/models/errors/httpclienterrors.ts): Any input used to create a request is invalid.
+* [`UnexpectedClientError`](./src/models/errors/httpclienterrors.ts): Unrecognised or unexpected error.
+
+
+**Inherit from [`SteamSetsError`](./src/models/errors/steamsetserror.ts)**:
+* [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -345,7 +341,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -360,7 +355,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  serverURL: "https://api.steamsets.com",
+  serverURL: "http://localhost:7388",
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
@@ -370,7 +365,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -453,7 +447,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -522,6 +515,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountGetBadgeStats`](docs/sdks/account/README.md#accountgetbadgestats)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
 - [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges)
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection)
@@ -563,6 +557,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges)
+- [`badgeBadgeListBadgePrices`](docs/sdks/badge/README.md#badgelistbadgeprices)
 - [`badgeSearch`](docs/sdks/badge/README.md#search)
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)

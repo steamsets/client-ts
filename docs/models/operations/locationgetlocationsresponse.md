@@ -5,36 +5,7 @@
 ```typescript
 import { LocationGetLocationsResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LocationGetLocationsResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  regions: [
-    {
-      countries: [
-        {
-          code: "<value>",
-          name: "<value>",
-          states: [
-            {
-              cities: [
-                {
-                  name: "<value>",
-                },
-              ],
-              code: "<value>",
-              name: "<value>",
-            },
-          ],
-        },
-      ],
-      name: "Europe",
-    },
-  ],
-};
+let value: LocationGetLocationsResponse = {};
 ```
 
 ## Fields

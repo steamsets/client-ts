@@ -5,14 +5,7 @@
 ```typescript
 import { AccountSubscribeEmailResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountSubscribeEmailResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-};
+let value: AccountSubscribeEmailResponse = {};
 ```
 
 ## Fields

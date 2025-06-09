@@ -8,10 +8,12 @@ import { BadgeSuggestTags } from "@steamsets/client-ts/models/components";
 let value: BadgeSuggestTags = {
   dollarSchema: "https://api.steamsets.com/schemas/BadgeSuggestTags.json",
   colors: [
-    "<value>",
+    "<value 1>",
   ],
   designs: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```

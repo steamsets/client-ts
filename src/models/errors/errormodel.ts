@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../lib/primitives.js";
 import * as components from "../components/index.js";
+import { SteamSetsError } from "./steamsetserror.js";
 
 export type ErrorModelData = {
   /**
@@ -37,7 +38,7 @@ export type ErrorModelData = {
   type?: string;
 };
 
-export class ErrorModel extends Error {
+export class ErrorModel extends SteamSetsError {
   /**
    * A URL to the JSON Schema for this object.
    */
@@ -70,13 +71,15 @@ export class ErrorModel extends Error {
   /** The original data that was passed to this error instance. */
   data$: ErrorModelData;
 
-  constructor(err: ErrorModelData) {
+  constructor(
+    err: ErrorModelData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    super(message, httpMeta);
     this.data$ = err;
-
     if (err.dollarSchema != null) this.dollarSchema = err.dollarSchema;
     if (err.detail != null) this.detail = err.detail;
     if (err.errors != null) this.errors = err.errors;
@@ -102,13 +105,20 @@ export const ErrorModel$inboundSchema: z.ZodType<
   status: z.number().int().optional(),
   title: z.string().optional(),
   type: z.string().default("about:blank"),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
 })
   .transform((v) => {
     const remapped = remap$(v, {
       "$schema": "dollarSchema",
     });
 
-    return new ErrorModel(remapped);
+    return new ErrorModel(remapped, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
+    });
   });
 
 /** @internal */

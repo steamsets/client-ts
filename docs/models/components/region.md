@@ -6,23 +6,7 @@
 import { Region } from "@steamsets/client-ts/models/components";
 
 let value: Region = {
-  countries: [
-    {
-      code: "<value>",
-      name: "<value>",
-      states: [
-        {
-          cities: [
-            {
-              name: "<value>",
-            },
-          ],
-          code: "<value>",
-          name: "<value>",
-        },
-      ],
-    },
-  ],
+  countries: null,
   name: "Europe",
 };
 ```

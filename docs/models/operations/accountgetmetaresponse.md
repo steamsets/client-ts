@@ -5,22 +5,7 @@
 ```typescript
 import { AccountGetMetaResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountGetMetaResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-  v1AccountGetMetaResponseBody: {
-    dollarSchema:
-      "https://api.steamsets.com/schemas/V1AccountGetMetaResponseBody.json",
-    steamAvatarHashOfTheAccount: "<value>",
-    description: "for past blindly apt adolescent",
-    steamId: "<id>",
-    title: "<value>",
-  },
-};
+let value: AccountGetMetaResponse = {};
 ```
 
 ## Fields

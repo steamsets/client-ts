@@ -9,7 +9,7 @@ let value: V1AccountGetSettingsBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json",
   chosenRole: {
-    role: "amethyst",
+    role: "emerald",
     tier: "tier_1",
   },
   connections: [
@@ -37,14 +37,7 @@ let value: V1AccountGetSettingsBody = {
   email: "steamsets@example.com",
   emailVerifiedAt: new Date("2023-01-01T00:00:00Z"),
   hidden: true,
-  images: [
-    {
-      active: true,
-      fileName: "avatar.png",
-      imageId: "img_wasd123",
-      imageType: "avatar",
-    },
-  ],
+  images: [],
   language: "en",
   privacy: "public",
   sessions: [
@@ -62,7 +55,7 @@ let value: V1AccountGetSettingsBody = {
   subscribed: false,
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 767243,
+    clicks: 668281,
   },
 };
 ```

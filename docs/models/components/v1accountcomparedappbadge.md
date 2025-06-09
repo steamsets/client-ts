@@ -15,8 +15,8 @@ let value: V1AccountComparedAppBadge = {
   hasFoil: false,
   isEvent: false,
   isSale: false,
-  normalScarcity: 863300,
-  steamId: 682385,
+  normalScarcity: 618455,
+  steamId: 138819,
 };
 ```
 

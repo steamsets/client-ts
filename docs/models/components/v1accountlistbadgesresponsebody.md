@@ -8,32 +8,7 @@ import { V1AccountListBadgesResponseBody } from "@steamsets/client-ts/models/com
 let value: V1AccountListBadgesResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountListBadgesResponseBody.json",
-  badges: [
-    {
-      accountInfo: {
-        completionTime: new Date("2023-01-01T00:00:00Z"),
-        level: 123456,
-        xp: 123456,
-      },
-      appId: 450708,
-      appImage: "<value>",
-      appName: "<value>",
-      badgeId: "<id>",
-      badgeImage: "<value>",
-      baseLevel: 339393,
-      baseXp: 56565,
-      firstCompletion: new Date("2024-03-10T13:52:34.450Z"),
-      highestLevel: 349849,
-      isEvent: false,
-      isFoil: false,
-      isSale: false,
-      lastCompletion: new Date("2024-12-12T22:38:08.219Z"),
-      name: "<value>",
-      price: 332343,
-      scarcity: 315543,
-      steamId: 320559,
-    },
-  ],
+  badges: [],
   pages: 1,
   totalHits: 1,
 };

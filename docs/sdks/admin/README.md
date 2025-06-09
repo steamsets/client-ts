@@ -26,7 +26,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.getAccount({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -49,15 +48,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminGetAccount(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminGetAccount failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -98,7 +94,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.removeVanity({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -121,15 +116,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminRemoveVanity(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminRemoveVanity failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -169,10 +161,14 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.updateResources({
-    resources: [],
+    resources: [
+      {
+        resource: "developer_apps",
+        value: "1",
+      },
+    ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -195,17 +191,19 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminUpdateResources(steamSets, {
-    resources: [],
+    resources: [
+      {
+        resource: "developer_apps",
+        value: "1",
+      },
+    ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminUpdateResources failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -245,13 +243,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.updateRoles({
-    roles: [
-      "user",
-      "beta",
-    ],
+    roles: null,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -274,20 +268,14 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminUpdateRoles(steamSets, {
-    roles: [
-      "user",
-      "beta",
-    ],
+    roles: null,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminUpdateRoles failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

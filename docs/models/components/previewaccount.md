@@ -16,10 +16,7 @@ let value: PreviewAccount = {
   city: {
     name: "Bad Krozingen",
   },
-  country: {
-    code: "DE",
-    name: "Germany",
-  },
+  country: null,
   createdAt: new Date("2023-01-01T00:00:00Z"),
   differenceToUs: 10,
   donated: 123456,
@@ -27,7 +24,7 @@ let value: PreviewAccount = {
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friends: 123456,
-  gameBans: 274874,
+  gameBans: 235906,
   level: 123456,
   name: "steamsets",
   normalBadgeCost: 123456,
@@ -42,8 +39,8 @@ let value: PreviewAccount = {
   },
   roles: [
     {
-      rating: 38636,
-      role: "partner",
+      rating: 661918,
+      role: "contributor",
     },
   ],
   score: 100,
@@ -51,10 +48,10 @@ let value: PreviewAccount = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 297464,
+  steamSetsScore: 205839,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 608598,
+  vacBans: 852142,
   xp: 123456,
 };
 ```

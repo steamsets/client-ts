@@ -5,14 +5,7 @@
 ```typescript
 import { AccountQueueUpdateResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountQueueUpdateResponse = {
-  httpMeta: {
-    response: new Response("{\"message\": \"hello world\"}", {
-      headers: { "Content-Type": "application/json" },
-    }),
-    request: new Request("https://example.com"),
-  },
-};
+let value: AccountQueueUpdateResponse = {};
 ```
 
 ## Fields

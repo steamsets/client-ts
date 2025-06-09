@@ -13,7 +13,7 @@ let value: V1AccountCompareBadgesRequestBody = {
     against: "<value>",
   },
   ignore: [
-    "sale",
+    "steam",
   ],
   order: {},
 };

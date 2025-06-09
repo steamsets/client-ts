@@ -6,12 +6,7 @@
 import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AdminUpdateResourcesRequestBody = {
-  resources: [
-    {
-      resource: "go_to_leaderboard_entry",
-      value: "1",
-    },
-  ],
+  resources: [],
 };
 ```
 

@@ -9,10 +9,7 @@ let value: V1LeaderboardGetAccountLeaderboardRequestBody = {
   app: {
     appId: 730,
   },
-  badge: {
-    id: 284660,
-    isFoil: true,
-  },
+  badge: null,
   end: 10,
   goToLeaderboardRank: 1,
   leaderboard: "xp",

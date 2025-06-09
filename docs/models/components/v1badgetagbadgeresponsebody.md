@@ -14,12 +14,7 @@ let value: V1BadgeTagBadgeResponseBody = {
       name: "<value>",
     },
   ],
-  designTags: [
-    {
-      id: "<id>",
-      name: "<value>",
-    },
-  ],
+  designTags: [],
 };
 ```
 

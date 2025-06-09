@@ -19,7 +19,7 @@ let value: V1AccountGetInfoResponseBody = {
   awardsReceived: 123456,
   background: "steamsets",
   badges: 123456,
-  bans: 425291,
+  bans: 196121,
   city: {
     name: "Bad Krozingen",
   },
@@ -44,37 +44,25 @@ let value: V1AccountGetInfoResponseBody = {
   createdAt: new Date("2023-01-01T00:00:00Z"),
   currentBestRanks: [
     {
-      leaderboard: "awards_received",
+      leaderboard: "vac_bans",
       ranks: "1,1,1,1,1",
     },
   ],
-  currentRanks: [
-    {
-      leaderboard: "normal_badges",
-      ranks: "1,1,1,1,1",
-    },
-  ],
+  currentRanks: null,
   donated: 123456,
   economyBan: "steam",
   foilBadgeCost: 123456,
   foilBadges: 123456,
   friendPrivacy: "public",
   friends: 123456,
-  gameBans: 31563,
-  images: [
-    {
-      active: true,
-      fileName: "avatar.png",
-      imageId: "img_wasd123",
-      imageType: "avatar",
-    },
-  ],
+  gameBans: 244914,
+  images: [],
   lastBanDate: new Date("2024-03-07 07:31:46"),
-  lastQueueStatus: "in_progress",
+  lastQueueStatus: "cooldown",
   level: 123456,
   miniBackground: "steamsets",
   name: "steamsets",
-  nextAllowedTime: new Date("2024-09-16T01:30:18.897Z"),
+  nextAllowedTime: new Date("2025-12-27T15:59:27.822Z"),
   normalBadgeCost: 123456,
   normalBadges: 123456,
   playtime: 123456,
@@ -84,23 +72,18 @@ let value: V1AccountGetInfoResponseBody = {
   region: {
     name: "Europe",
   },
-  roles: [
-    {
-      rating: 826151,
-      role: "translator",
-    },
-  ],
+  roles: [],
   shortlinkDomain: "steamsets.link",
   state: {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 324235,
+  steamSetsScore: 454393,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   theme: "steamsets",
   updatedAt: new Date("2023-01-01T00:00:00Z"),
-  vacBans: 191882,
+  vacBans: 393885,
   xp: 123456,
 };
 ```

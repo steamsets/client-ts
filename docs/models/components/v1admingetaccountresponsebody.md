@@ -10,55 +10,11 @@ let value: V1AdminGetAccountResponseBody = {
     "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json",
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
   city: "Bad Krozingen",
-  connections: [
-    {
-      avatar:
-        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
-      connectionId: "123456",
-      externalId: "123456",
-      failed: true,
-      hide: true,
-      name: "steamsets",
-      provider: "discord",
-      verified: true,
-    },
-  ],
+  connections: [],
   country: "Germany",
-  developerApps: [
-    {
-      apiKey: "api_123",
-      description: "My App Description",
-      environment: "production",
-      id: "da_123456",
-      name: "My App",
-    },
-  ],
+  developerApps: [],
   email: "steamsets@example.com",
-  locationUpdates: [
-    {
-      city: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-      countryCode: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-      countryName: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-      region: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-      state: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-      updatedAt: new Date("2023-01-01T00:00:00Z"),
-    },
-  ],
+  locationUpdates: [],
   name: "steamsets",
   nameUpdates: [
     {
@@ -73,28 +29,17 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "avatar_frame",
+      resource: "short_link_domain",
       value: "1",
     },
   ],
   roles: [
     {
-      rating: 772285,
-      role: "top_100",
+      rating: 661918,
+      role: "contributor",
     },
   ],
-  sessions: [
-    {
-      createdAt: new Date("2023-01-01T00:00:00Z"),
-      expiresAt: new Date("2023-01-01T00:00:00Z"),
-      ip: "127.0.0.1",
-      lastSeen: new Date("2023-01-01T00:00:00Z"),
-      level: 1,
-      sessionId: "123456",
-      userAgent:
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-    },
-  ],
+  sessions: [],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
   vanityUpdates: [

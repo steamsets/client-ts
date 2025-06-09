@@ -13,6 +13,10 @@ export type V1SearchRequest = {
    * The filter to apply to the search
    */
   filter: string;
+  /**
+   * The image to reverse search
+   */
+  image?: string | null | undefined;
   limit?: number | null | undefined;
   offset?: number | null | undefined;
   page?: number | null | undefined;
@@ -34,6 +38,7 @@ export const V1SearchRequest$inboundSchema: z.ZodType<
 > = z.object({
   facets: z.nullable(z.array(z.string())).optional(),
   filter: z.string(),
+  image: z.nullable(z.string()).optional(),
   limit: z.nullable(z.number().int()).optional(),
   offset: z.nullable(z.number().int()).optional(),
   page: z.nullable(z.number().int()).optional(),
@@ -45,6 +50,7 @@ export const V1SearchRequest$inboundSchema: z.ZodType<
 export type V1SearchRequest$Outbound = {
   facets?: Array<string> | null | undefined;
   filter: string;
+  image?: string | null | undefined;
   limit?: number | null | undefined;
   offset?: number | null | undefined;
   page?: number | null | undefined;
@@ -60,6 +66,7 @@ export const V1SearchRequest$outboundSchema: z.ZodType<
 > = z.object({
   facets: z.nullable(z.array(z.string())).optional(),
   filter: z.string(),
+  image: z.nullable(z.string()).optional(),
   limit: z.nullable(z.number().int()).optional(),
   offset: z.nullable(z.number().int()).optional(),
   page: z.nullable(z.number().int()).optional(),

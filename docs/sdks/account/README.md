@@ -15,6 +15,7 @@ All Requests related to account(s) are grouped here.
 * [deleteDeveloperApp](#deletedeveloperapp)
 * [deleteImages](#deleteimages)
 * [deleteSession](#deletesession)
+* [accountGetBadgeStats](#accountgetbadgestats)
 * [getDataPoints](#getdatapoints)
 * [getInfo](#getinfo)
 * [getMeta](#getmeta)
@@ -61,7 +62,6 @@ async function run() {
     bookmark: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -87,15 +87,12 @@ async function run() {
     badgeId: "bdg_123",
     bookmark: true,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountBookmarkBadge failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -135,19 +132,16 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.compareBadges({
-    comparing: [],
+    comparing: [
+      {},
+    ],
     compare: {
       against: "<value>",
     },
-    ignore: [
-      "event",
-      "steam",
-      "sale",
-    ],
+    ignore: [],
     order: {},
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -170,26 +164,21 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountCompareBadges(steamSets, {
-    comparing: [],
+    comparing: [
+      {},
+    ],
     compare: {
       against: "<value>",
     },
-    ignore: [
-      "event",
-      "steam",
-      "sale",
-    ],
+    ignore: [],
     order: {},
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountCompareBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -233,7 +222,6 @@ async function run() {
     provider: "discord",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -259,15 +247,12 @@ async function run() {
     code: "123456",
     provider: "discord",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountCreateConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -313,7 +298,6 @@ async function run() {
     name: "Your App",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -341,15 +325,12 @@ async function run() {
     generateKey: true,
     name: "Your App",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountCreateDeveloperApp failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -392,7 +373,6 @@ async function run() {
     connectionId: "123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -417,15 +397,12 @@ async function run() {
   const res = await accountDeleteConnection(steamSets, {
     connectionId: "123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountDeleteConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -468,7 +445,6 @@ async function run() {
     developerAppId: "da_123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -493,15 +469,12 @@ async function run() {
   const res = await accountDeleteDeveloperApp(steamSets, {
     developerAppId: "da_123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountDeleteDeveloperApp failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -542,12 +515,12 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.deleteImages({
     imageIds: [
-      "<value>",
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -571,19 +544,17 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await accountDeleteImages(steamSets, {
     imageIds: [
-      "<value>",
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountDeleteImages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -626,7 +597,6 @@ async function run() {
     sessionId: "123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -651,15 +621,12 @@ async function run() {
   const res = await accountDeleteSession(steamSets, {
     sessionId: "123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountDeleteSession failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -686,6 +653,74 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## accountGetBadgeStats
+
+### Example Usage
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.accountGetBadgeStats({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAccountGetBadgeStats } from "@steamsets/client-ts/funcs/accountAccountGetBadgeStats.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAccountGetBadgeStats(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountAccountGetBadgeStats failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountGetBadgeStatsResponse](../../models/operations/accountgetbadgestatsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## getDataPoints
 
 ### Example Usage
@@ -700,7 +735,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.getDataPoints({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -723,15 +757,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountGetDataPoints(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountGetDataPoints failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -772,7 +803,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.getInfo({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -795,15 +825,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountGetInfo(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountGetInfo failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -844,7 +871,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.getMeta({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -867,15 +893,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountGetMeta(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountGetMeta failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -916,7 +939,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.getSession();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -939,15 +961,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountGetSession(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountGetSession failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -986,7 +1005,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.getSettings();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1009,15 +1027,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountGetSettings(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountGetSettings failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1056,7 +1071,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listApps({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1079,15 +1093,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListApps(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListApps failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1128,7 +1139,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listBadgeBookmarks();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1151,15 +1161,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListBadgeBookmarks(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListBadgeBookmarks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1199,7 +1206,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listBadges({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1222,15 +1228,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListBadges(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1271,7 +1274,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listFriends({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1294,15 +1296,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListFriends(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListFriends failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1343,7 +1342,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listImages();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1366,15 +1364,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListImages(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListImages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1413,7 +1408,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listLeaderboardHistory({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1436,15 +1430,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListLeaderboardHistory(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListLeaderboardHistory failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1485,7 +1476,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.listOwnedBadges();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1508,15 +1498,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountListOwnedBadges(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListOwnedBadges failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1569,7 +1556,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1605,15 +1591,12 @@ async function run() {
       openidSigned: "123456",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountLogin failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1654,7 +1637,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.logout();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1677,15 +1659,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountLogout(steamSets);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountLogout failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1725,7 +1704,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.queueUpdate({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1748,15 +1726,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountQueueUpdate(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountQueueUpdate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1800,7 +1775,6 @@ async function run() {
     connectionId: "123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1826,15 +1800,12 @@ async function run() {
     code: "123456",
     connectionId: "123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountReconnectConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1879,7 +1850,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1906,15 +1876,12 @@ async function run() {
       refreshToken: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountRefreshSession failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1955,7 +1922,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.sendEmailVerification({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1978,15 +1944,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountSendEmailVerification(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountSendEmailVerification failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2032,7 +1995,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2060,15 +2022,12 @@ async function run() {
       subscribed: true,
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountSubscribeEmail failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2112,7 +2071,6 @@ async function run() {
     hidden: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2138,15 +2096,12 @@ async function run() {
     connectionId: "123456",
     hidden: true,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2192,7 +2147,6 @@ async function run() {
     regenerate: true,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2220,15 +2174,12 @@ async function run() {
     name: "My App",
     regenerate: true,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateDeveloperApp failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2268,15 +2219,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.updateImages({
-    images: [
-      {
-        active: true,
-        imageId: "123456",
-      },
-    ],
+    images: [],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2299,22 +2244,14 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountUpdateImages(steamSets, {
-    images: [
-      {
-        active: true,
-        imageId: "123456",
-      },
-    ],
+    images: [],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateImages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2355,7 +2292,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.updateRole({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2378,15 +2314,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountUpdateRole(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateRole failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2434,7 +2367,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2464,15 +2396,12 @@ async function run() {
       vanity: "flo",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateSettings failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2513,7 +2442,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.account.updateVanity({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2536,15 +2464,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountUpdateVanity(steamSets, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateVanity failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2584,10 +2509,14 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.account.uploadImages({
-    images: [],
+    images: [
+      {
+        data: "base64_encoded_image",
+        type: "avatar",
+      },
+    ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2610,17 +2539,19 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await accountUploadImages(steamSets, {
-    images: [],
+    images: [
+      {
+        data: "base64_encoded_image",
+        type: "avatar",
+      },
+    ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUploadImages failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2663,7 +2594,6 @@ async function run() {
     connectionId: "123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2688,15 +2618,12 @@ async function run() {
   const res = await accountVerifyConnection(steamSets, {
     connectionId: "123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountVerifyConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -2739,7 +2666,6 @@ async function run() {
     code: "123456",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2764,15 +2690,12 @@ async function run() {
   const res = await accountVerifyEmail(steamSets, {
     code: "123456",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountVerifyEmail failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
