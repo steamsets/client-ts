@@ -26,7 +26,7 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-export function badgeBadgeListBadgePrices(
+export function badgesListPrices(
   client: SteamSetsCore,
   request: components.V1BadgeListBadgePricesRequestBody,
   options?: RequestOptions,

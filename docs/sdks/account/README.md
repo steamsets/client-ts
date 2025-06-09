@@ -15,7 +15,7 @@ All Requests related to account(s) are grouped here.
 * [deleteDeveloperApp](#deletedeveloperapp)
 * [deleteImages](#deleteimages)
 * [deleteSession](#deletesession)
-* [accountGetBadgeStats](#accountgetbadgestats)
+* [getBadgeStats](#getbadgestats)
 * [getDataPoints](#getdatapoints)
 * [getInfo](#getinfo)
 * [getMeta](#getmeta)
@@ -653,7 +653,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountGetBadgeStats
+## getBadgeStats
 
 ### Example Usage
 
@@ -665,7 +665,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountGetBadgeStats({});
+  const result = await steamSets.account.getBadgeStats({});
 
   console.log(result);
 }
@@ -679,7 +679,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountGetBadgeStats } from "@steamsets/client-ts/funcs/accountAccountGetBadgeStats.js";
+import { accountGetBadgeStats } from "@steamsets/client-ts/funcs/accountGetBadgeStats.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -688,12 +688,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountGetBadgeStats(steamSets, {});
+  const res = await accountGetBadgeStats(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountGetBadgeStats failed:", res.error);
+    console.log("accountGetBadgeStats failed:", res.error);
   }
 }
 

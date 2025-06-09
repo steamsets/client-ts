@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: b5d4dce23ea4b2f42c8b41ab61855424
+  docChecksum: 6c1b84e350cdc323392ae833b91094a9
   docVersion: 1.0.0
   speakeasyVersion: 1.557.1
   generationVersion: 2.623.2
-  releaseVersion: 0.26.0
-  configChecksum: 2eb78d6e804012f85c587ac986244d21
+  releaseVersion: 0.26.3
+  configChecksum: 68cf2ead4e98297e57660d8483d6a3b6
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -329,7 +329,6 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/accountAccountGetBadgeStats.ts
   - src/funcs/accountBookmarkBadge.ts
   - src/funcs/accountCompareBadges.ts
   - src/funcs/accountCreateConnection.ts
@@ -338,6 +337,7 @@ generatedFiles:
   - src/funcs/accountDeleteDeveloperApp.ts
   - src/funcs/accountDeleteImages.ts
   - src/funcs/accountDeleteSession.ts
+  - src/funcs/accountGetBadgeStats.ts
   - src/funcs/accountGetDataPoints.ts
   - src/funcs/accountGetInfo.ts
   - src/funcs/accountGetMeta.ts
@@ -371,10 +371,10 @@ generatedFiles:
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
   - src/funcs/appsListBadges.ts
-  - src/funcs/badgeBadgeListBadgePrices.ts
   - src/funcs/badgeSearch.ts
   - src/funcs/badgeSuggestSearch.ts
   - src/funcs/badgeSuggestTags.ts
+  - src/funcs/badgesListPrices.ts
   - src/funcs/badgesListTags.ts
   - src/funcs/badgesTag.ts
   - src/funcs/leaderboardGetAccount.ts

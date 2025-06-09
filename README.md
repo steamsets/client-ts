@@ -82,7 +82,7 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
 * [deleteImages](docs/sdks/account/README.md#deleteimages)
 * [deleteSession](docs/sdks/account/README.md#deletesession)
-* [accountGetBadgeStats](docs/sdks/account/README.md#accountgetbadgestats)
+* [getBadgeStats](docs/sdks/account/README.md#getbadgestats)
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints)
 * [getInfo](docs/sdks/account/README.md#getinfo)
 * [getMeta](docs/sdks/account/README.md#getmeta)
@@ -125,13 +125,13 @@ run();
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeListBadgePrices](docs/sdks/badge/README.md#badgelistbadgeprices)
 * [search](docs/sdks/badge/README.md#search)
 * [suggestSearch](docs/sdks/badge/README.md#suggestsearch)
 * [suggestTags](docs/sdks/badge/README.md#suggesttags)
 
 ### [badges](docs/sdks/badges/README.md)
 
+* [listPrices](docs/sdks/badges/README.md#listprices)
 * [listTags](docs/sdks/badges/README.md#listtags)
 * [tag](docs/sdks/badges/README.md#tag)
 
@@ -515,7 +515,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountGetBadgeStats`](docs/sdks/account/README.md#accountgetbadgestats)
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
 - [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges)
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection)
@@ -524,6 +523,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp)
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
 - [`accountDeleteSession`](docs/sdks/account/README.md#deletesession)
+- [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats)
 - [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints)
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
 - [`accountGetMeta`](docs/sdks/account/README.md#getmeta)
@@ -557,8 +557,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges)
-- [`badgeBadgeListBadgePrices`](docs/sdks/badge/README.md#badgelistbadgeprices)
 - [`badgeSearch`](docs/sdks/badge/README.md#search)
+- [`badgesListPrices`](docs/sdks/badges/README.md#listprices)
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`badgeSuggestSearch`](docs/sdks/badge/README.md#suggestsearch)
