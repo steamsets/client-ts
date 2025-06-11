@@ -48,7 +48,7 @@ export type V1AccountGetSessionBody = {
    */
   isNew: boolean;
   /**
-   * The level of the account
+   * The XP of the account
    */
   level: number;
   /**

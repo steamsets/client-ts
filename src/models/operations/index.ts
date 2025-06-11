@@ -44,6 +44,7 @@ export * from "./adminremovevanity.js";
 export * from "./adminupdateresources.js";
 export * from "./adminupdateroles.js";
 export * from "./applistbadges.js";
+export * from "./badgelistaccounts.js";
 export * from "./badgelistbadgeprices.js";
 export * from "./badgelisttags.js";
 export * from "./badgesearchbadges.js";

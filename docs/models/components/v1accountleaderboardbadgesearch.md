@@ -13,7 +13,7 @@ let value: V1AccountLeaderboardBadgeSearch = {
 
 ## Fields
 
-| Field                                   | Type                                    | Required                                | Description                             | Example                                 |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| `id`                                    | *number*                                | :heavy_check_mark:                      | The badge id to get the leaderboard for |                                         |
-| `isFoil`                                | *boolean*                               | :heavy_check_mark:                      | Whether the badge is foil or not        | true                                    |
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `id`                                                       | *number*                                                   | :heavy_check_mark:                                         | The badge id to get the leaderboard for (appId) or id 1-64 |                                                            |
+| `isFoil`                                                   | *boolean*                                                  | :heavy_check_mark:                                         | Whether the badge is foil or not                           | true                                                       |
