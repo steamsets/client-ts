@@ -25,10 +25,6 @@ export type Session = {
    */
   lastSeen: Date;
   /**
-   * The level of the logged in account on steam
-   */
-  level: number;
-  /**
    * The session id
    */
   sessionId: string;
@@ -49,7 +45,6 @@ export const Session$inboundSchema: z.ZodType<Session, z.ZodTypeDef, unknown> =
     ),
     ip: z.string(),
     lastSeen: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-    level: z.number().int(),
     sessionId: z.string(),
     userAgent: z.string(),
   });
@@ -60,7 +55,6 @@ export type Session$Outbound = {
   expiresAt: string;
   ip: string;
   lastSeen: string;
-  level: number;
   sessionId: string;
   userAgent: string;
 };
@@ -75,7 +69,6 @@ export const Session$outboundSchema: z.ZodType<
   expiresAt: z.date().transform(v => v.toISOString()),
   ip: z.string(),
   lastSeen: z.date().transform(v => v.toISOString()),
-  level: z.number().int(),
   sessionId: z.string(),
   userAgent: z.string(),
 });

@@ -48,7 +48,7 @@ export type V1AccountGetSessionBody = {
    */
   isNew: boolean;
   /**
-   * The XP of the account
+   * The level of the account
    */
   level: number;
   /**
@@ -68,6 +68,10 @@ export type V1AccountGetSessionBody = {
    * The steam id
    */
   steamId: string;
+  /**
+   * The XP of the account
+   */
+  xp: number;
 };
 
 /** @internal */
@@ -87,6 +91,7 @@ export const V1AccountGetSessionBody$inboundSchema: z.ZodType<
   roles: z.nullable(z.array(Role$inboundSchema)),
   sessionData: Session$inboundSchema,
   steamId: z.string(),
+  xp: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -106,6 +111,7 @@ export type V1AccountGetSessionBody$Outbound = {
   roles: Array<Role$Outbound> | null;
   sessionData: Session$Outbound;
   steamId: string;
+  xp: number;
 };
 
 /** @internal */
@@ -125,6 +131,7 @@ export const V1AccountGetSessionBody$outboundSchema: z.ZodType<
   roles: z.nullable(z.array(Role$outboundSchema)),
   sessionData: Session$outboundSchema,
   steamId: z.string(),
+  xp: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

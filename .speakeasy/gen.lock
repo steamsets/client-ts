@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4b100f2e5ab001685ea521df2889eb64
+  docChecksum: dc672c5cefb6642613c8057d16540bc7
   docVersion: 1.0.0
   speakeasyVersion: 1.561.0
   generationVersion: 2.628.0
-  releaseVersion: 0.26.4
-  configChecksum: 9381c58d815af80ee292f236a9b47317
+  releaseVersion: 0.26.5
+  configChecksum: 7affd3b4eaac99394610b1db298fa508
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -796,14 +796,14 @@ examples:
     speakeasy-default-account-get-session:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 10000, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734", "xp": 10000}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getSettings:
     speakeasy-default-account-get-settings:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "partner", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 993290}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "partner", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 993290}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.listApps:
