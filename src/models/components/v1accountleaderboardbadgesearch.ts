@@ -9,7 +9,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountLeaderboardBadgeSearch = {
   /**
-   * The badge id to get the leaderboard for
+   * The badge id to get the leaderboard for (appId) or id 1-64
    */
   id: number;
   /**
