@@ -31,14 +31,14 @@ export class SteamSets extends ClientSDK {
     return (this._apps ??= new Apps(this._options));
   }
 
-  private _badges?: Badges;
-  get badges(): Badges {
-    return (this._badges ??= new Badges(this._options));
-  }
-
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
+  }
+
+  private _badges?: Badges;
+  get badges(): Badges {
+    return (this._badges ??= new Badges(this._options));
   }
 
   private _leaderboard?: Leaderboard;

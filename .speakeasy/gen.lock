@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 6c1b84e350cdc323392ae833b91094a9
+  docChecksum: 4b100f2e5ab001685ea521df2889eb64
   docVersion: 1.0.0
-  speakeasyVersion: 1.557.1
-  generationVersion: 2.623.2
-  releaseVersion: 0.26.3
-  configChecksum: 68cf2ead4e98297e57660d8483d6a3b6
+  speakeasyVersion: 1.561.0
+  generationVersion: 2.628.0
+  releaseVersion: 0.26.4
+  configChecksum: 9381c58d815af80ee292f236a9b47317
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -29,7 +29,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.10
+    core: 3.21.11
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -201,12 +201,17 @@ generatedFiles:
   - docs/models/components/v1apporder.md
   - docs/models/components/v1apporderby.md
   - docs/models/components/v1apporderdirection.md
+  - docs/models/components/v1badgeaccount.md
+  - docs/models/components/v1badgeaccountprivacy.md
+  - docs/models/components/v1badgelistaccountsrequestbody.md
+  - docs/models/components/v1badgelistaccountsresponsebody.md
   - docs/models/components/v1badgelistbadgepricefilters.md
   - docs/models/components/v1badgelistbadgepriceorder.md
   - docs/models/components/v1badgelistbadgepriceorderdirection.md
   - docs/models/components/v1badgelistbadgepricesrequestbody.md
   - docs/models/components/v1badgelistbadgepricesresponsebody.md
   - docs/models/components/v1badgelisttagsresponsebody.md
+  - docs/models/components/v1badgelookup.md
   - docs/models/components/v1badgeorder.md
   - docs/models/components/v1badgeorderby.md
   - docs/models/components/v1badgeorderdirection.md
@@ -296,6 +301,7 @@ generatedFiles:
   - docs/models/operations/adminupdateresourcesresponse.md
   - docs/models/operations/adminupdaterolesresponse.md
   - docs/models/operations/applistbadgesresponse.md
+  - docs/models/operations/badgelistaccountsresponse.md
   - docs/models/operations/badgelistbadgepricesresponse.md
   - docs/models/operations/badgelisttagsresponse.md
   - docs/models/operations/badgesearchbadgesresponse.md
@@ -371,6 +377,7 @@ generatedFiles:
   - src/funcs/adminUpdateResources.ts
   - src/funcs/adminUpdateRoles.ts
   - src/funcs/appsListBadges.ts
+  - src/funcs/badgeBadgeListAccounts.ts
   - src/funcs/badgeSearch.ts
   - src/funcs/badgeSuggestSearch.ts
   - src/funcs/badgeSuggestTags.ts
@@ -521,11 +528,15 @@ generatedFiles:
   - src/models/components/v1applistbadgesrequestbody.ts
   - src/models/components/v1applistbadgesresponsebody.ts
   - src/models/components/v1apporder.ts
+  - src/models/components/v1badgeaccount.ts
+  - src/models/components/v1badgelistaccountsrequestbody.ts
+  - src/models/components/v1badgelistaccountsresponsebody.ts
   - src/models/components/v1badgelistbadgepricefilters.ts
   - src/models/components/v1badgelistbadgepriceorder.ts
   - src/models/components/v1badgelistbadgepricesrequestbody.ts
   - src/models/components/v1badgelistbadgepricesresponsebody.ts
   - src/models/components/v1badgelisttagsresponsebody.ts
+  - src/models/components/v1badgelookup.ts
   - src/models/components/v1badgeorder.ts
   - src/models/components/v1badgesearchbadgesresponsebody.ts
   - src/models/components/v1badgesuggestsearchbody.ts
@@ -606,6 +617,7 @@ generatedFiles:
   - src/models/operations/adminupdateresources.ts
   - src/models/operations/adminupdateroles.ts
   - src/models/operations/applistbadges.ts
+  - src/models/operations/badgelistaccounts.ts
   - src/models/operations/badgelistbadgeprices.ts
   - src/models/operations/badgelisttags.ts
   - src/models/operations/badgesearchbadges.ts
@@ -784,7 +796,7 @@ examples:
     speakeasy-default-account-get-session:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 10000, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "level": 1, "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getSettings:
@@ -1240,6 +1252,17 @@ examples:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1Stats.json", "accountsAdded": 1, "accountsUpdated": 1, "appPlaytime": 1, "apps": 1, "awardsGiven": 1, "awardsReceived": 1, "badges": 1, "bans": 1, "foilBadges": 1, "friends": 1, "gameBans": 1, "level": 1, "normalBadges": 1, "playtime": 1, "pointsGiven": 1, "pointsReceived": 1, "steamSetsScore": 1, "totalAccounts": 1, "vacBans": 1, "xp": 1}
         "404":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.listAccounts:
+    speakeasy-default-badge-list-accounts:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeListAccountsResponseBody.json", "accounts": [], "badge": null, "totalAccounts": 551431}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}

@@ -12,7 +12,7 @@ let value: V1AccountGetSessionBody = {
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
   email: "flo@example.com",
   isNew: true,
-  level: 1,
+  level: 10000,
   name: "flo",
   resources: [],
   roles: [],
@@ -39,7 +39,7 @@ let value: V1AccountGetSessionBody = {
 | `avatar`                                                       | *string*                                                       | :heavy_check_mark:                                             | The avatar of the account                                      | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                           |
 | `email`                                                        | *string*                                                       | :heavy_minus_sign:                                             | The email of the account                                       | flo@example.com                                                |
 | `isNew`                                                        | *boolean*                                                      | :heavy_check_mark:                                             | Whether the account is new                                     | true                                                           |
-| `level`                                                        | *number*                                                       | :heavy_check_mark:                                             | The level of the account                                       | 1                                                              |
+| `level`                                                        | *number*                                                       | :heavy_check_mark:                                             | The XP of the account                                          | 10000                                                          |
 | `name`                                                         | *string*                                                       | :heavy_check_mark:                                             | The name of the account                                        | flo                                                            |
 | `resources`                                                    | [components.Resource](../../models/components/resource.md)[]   | :heavy_check_mark:                                             | The resources the account has (permissions)                    |                                                                |
 | `roles`                                                        | [components.Role](../../models/components/role.md)[]           | :heavy_check_mark:                                             | The roles the account has                                      |                                                                |
