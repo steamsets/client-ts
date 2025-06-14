@@ -6,9 +6,9 @@
 import { V1AccountBadgeCountStats } from "@steamsets/client-ts/models/components";
 
 let value: V1AccountBadgeCountStats = {
-  foils: 84709,
-  normals: 495850,
-  specials: 410109,
+  foil: 84709,
+  normal: 495850,
+  special: 410109,
 };
 ```
 
@@ -16,6 +16,6 @@ let value: V1AccountBadgeCountStats = {
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `foils`            | *number*           | :heavy_check_mark: | N/A                |
-| `normals`          | *number*           | :heavy_check_mark: | N/A                |
-| `specials`         | *number*           | :heavy_check_mark: | N/A                |
+| `foil`             | *number*           | :heavy_check_mark: | N/A                |
+| `normal`           | *number*           | :heavy_check_mark: | N/A                |
+| `special`          | *number*           | :heavy_check_mark: | N/A                |

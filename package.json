@@ -1,6 +1,6 @@
 {
   "name": "@steamsets/client-ts",
-  "version": "0.26.5",
+  "version": "0.26.6",
   "author": "Speakeasy",
   "main": "./index.js",
   "sideEffects": false,

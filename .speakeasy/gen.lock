@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: dc672c5cefb6642613c8057d16540bc7
+  docChecksum: 2409e532b4881ff9b8193e9b01e3c7a3
   docVersion: 1.0.0
-  speakeasyVersion: 1.561.0
-  generationVersion: 2.628.0
-  releaseVersion: 0.26.5
-  configChecksum: 7affd3b4eaac99394610b1db298fa508
+  speakeasyVersion: 1.563.0
+  generationVersion: 2.629.1
+  releaseVersion: 0.26.6
+  configChecksum: 6aea268a8a08df302c550a9c91791c59
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -122,6 +122,7 @@ generatedFiles:
   - docs/models/components/v1accountbadgeownedbadge.md
   - docs/models/components/v1accountbadgeownedbadgesresponsebody.md
   - docs/models/components/v1accountbadgestats.md
+  - docs/models/components/v1accountbadgexpstats.md
   - docs/models/components/v1accountbookmarkbadgerequestbody.md
   - docs/models/components/v1accountbookmarkbadgeresponsebody.md
   - docs/models/components/v1accountcompare.md
@@ -458,6 +459,7 @@ generatedFiles:
   - src/models/components/v1accountbadgeownedbadge.ts
   - src/models/components/v1accountbadgeownedbadgesresponsebody.ts
   - src/models/components/v1accountbadgestats.ts
+  - src/models/components/v1accountbadgexpstats.ts
   - src/models/components/v1accountbookmarkbadgerequestbody.ts
   - src/models/components/v1accountbookmarkbadgeresponsebody.ts
   - src/models/components/v1accountcompare.ts
@@ -754,7 +756,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeStats.json", "count": {"foils": 92113, "normals": 277102, "specials": 880282}, "levels": {"key": 676915, "key1": 23629, "key2": 828010}, "scarcities": {}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountBadgeStats.json", "count": {"foil": 92113, "normal": 277102, "special": 880282}, "levels": {"key": 676915, "key1": 23629, "key2": 828010}, "scarcities": {}, "totalBadges": 123456, "xp": {"foil": 828807, "normal": 676915}}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
