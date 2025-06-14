@@ -8,9 +8,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1AccountBadgeCountStats = {
-  foils: number;
-  normals: number;
-  specials: number;
+  foil: number;
+  normal: number;
+  special: number;
 };
 
 /** @internal */
@@ -19,16 +19,16 @@ export const V1AccountBadgeCountStats$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  foils: z.number().int(),
-  normals: z.number().int(),
-  specials: z.number().int(),
+  foil: z.number().int(),
+  normal: z.number().int(),
+  special: z.number().int(),
 });
 
 /** @internal */
 export type V1AccountBadgeCountStats$Outbound = {
-  foils: number;
-  normals: number;
-  specials: number;
+  foil: number;
+  normal: number;
+  special: number;
 };
 
 /** @internal */
@@ -37,9 +37,9 @@ export const V1AccountBadgeCountStats$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountBadgeCountStats
 > = z.object({
-  foils: z.number().int(),
-  normals: z.number().int(),
-  specials: z.number().int(),
+  foil: z.number().int(),
+  normal: z.number().int(),
+  special: z.number().int(),
 });
 
 /**

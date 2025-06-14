@@ -13,6 +13,12 @@ import {
   V1AccountBadgeCountStats$Outbound,
   V1AccountBadgeCountStats$outboundSchema,
 } from "./v1accountbadgecountstats.js";
+import {
+  V1AccountBadgeXpStats,
+  V1AccountBadgeXpStats$inboundSchema,
+  V1AccountBadgeXpStats$Outbound,
+  V1AccountBadgeXpStats$outboundSchema,
+} from "./v1accountbadgexpstats.js";
 
 export type V1AccountBadgeStats = {
   /**
@@ -22,6 +28,11 @@ export type V1AccountBadgeStats = {
   count: V1AccountBadgeCountStats;
   levels: { [k: string]: number };
   scarcities: { [k: string]: number };
+  /**
+   * The total number of badges
+   */
+  totalBadges: number;
+  xp: V1AccountBadgeXpStats;
 };
 
 /** @internal */
@@ -34,6 +45,8 @@ export const V1AccountBadgeStats$inboundSchema: z.ZodType<
   count: V1AccountBadgeCountStats$inboundSchema,
   levels: z.record(z.number().int()),
   scarcities: z.record(z.number().int()),
+  totalBadges: z.number().int(),
+  xp: V1AccountBadgeXpStats$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -46,6 +59,8 @@ export type V1AccountBadgeStats$Outbound = {
   count: V1AccountBadgeCountStats$Outbound;
   levels: { [k: string]: number };
   scarcities: { [k: string]: number };
+  totalBadges: number;
+  xp: V1AccountBadgeXpStats$Outbound;
 };
 
 /** @internal */
@@ -58,6 +73,8 @@ export const V1AccountBadgeStats$outboundSchema: z.ZodType<
   count: V1AccountBadgeCountStats$outboundSchema,
   levels: z.record(z.number().int()),
   scarcities: z.record(z.number().int()),
+  totalBadges: z.number().int(),
+  xp: V1AccountBadgeXpStats$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",
