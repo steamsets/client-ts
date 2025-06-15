@@ -14,6 +14,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export const Leaderboard = {
   Apps: "apps",
   AppPlaytime: "app_playtime",
+  AppValidPlaytime: "app_valid_playtime",
   AwardsGiven: "awards_given",
   AwardsReceived: "awards_received",
   Bans: "bans",
@@ -24,11 +25,11 @@ export const Leaderboard = {
   NormalBadges: "normal_badges",
   Badges: "badges",
   Playtime: "playtime",
+  ValidPlaytime: "valid_playtime",
   PointsGiven: "points_given",
   PointsReceived: "points_received",
   SteamSets: "steam_sets",
   Xp: "xp",
-  ValidPlaytime: "valid_playtime",
 } as const;
 /**
  * The leaderboard of the best leaderboard
