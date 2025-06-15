@@ -44,7 +44,7 @@ let value: V1AccountGetInfoResponseBody = {
   createdAt: new Date("2023-01-01T00:00:00Z"),
   currentBestRanks: [
     {
-      leaderboard: "vac_bans",
+      leaderboard: "donations",
       ranks: "1,1,1,1,1",
     },
   ],
