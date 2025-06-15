@@ -32,6 +32,7 @@ import {
 export const V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard = {
   Apps: "apps",
   AppPlaytime: "app_playtime",
+  AppValidPlaytime: "app_valid_playtime",
   AwardsGiven: "awards_given",
   AwardsReceived: "awards_received",
   Bans: "bans",
@@ -42,6 +43,7 @@ export const V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard = {
   NormalBadges: "normal_badges",
   Badges: "badges",
   Playtime: "playtime",
+  ValidPlaytime: "valid_playtime",
   PointsGiven: "points_given",
   PointsReceived: "points_received",
   SteamSets: "steam_sets",
