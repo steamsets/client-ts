@@ -28,6 +28,7 @@ export const Leaderboard = {
   PointsReceived: "points_received",
   SteamSets: "steam_sets",
   Xp: "xp",
+  ValidPlaytime: "valid_playtime",
 } as const;
 /**
  * The leaderboard of the best leaderboard
