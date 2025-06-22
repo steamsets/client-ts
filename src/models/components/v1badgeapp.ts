@@ -13,6 +13,7 @@ export type V1BadgeApp = {
   emoteAvg: number;
   image: string;
   name: string;
+  owned: boolean;
 };
 
 /** @internal */
@@ -26,6 +27,7 @@ export const V1BadgeApp$inboundSchema: z.ZodType<
   emoteAvg: z.number().int(),
   image: z.string(),
   name: z.string(),
+  owned: z.boolean(),
 });
 
 /** @internal */
@@ -35,6 +37,7 @@ export type V1BadgeApp$Outbound = {
   emoteAvg: number;
   image: string;
   name: string;
+  owned: boolean;
 };
 
 /** @internal */
@@ -48,6 +51,7 @@ export const V1BadgeApp$outboundSchema: z.ZodType<
   emoteAvg: z.number().int(),
   image: z.string(),
   name: z.string(),
+  owned: z.boolean(),
 });
 
 /**

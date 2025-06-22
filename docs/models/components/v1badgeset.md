@@ -20,8 +20,8 @@ let value: V1BadgeSet = {
   price: 705811,
   priceDiff: 317206,
   setCount: {
-    duplicateSets: 838751,
-    uniqueSets: 384992,
+    duplicateSets: 519486,
+    uniqueSets: 176774,
   },
 };
 ```
