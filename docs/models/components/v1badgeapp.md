@@ -11,6 +11,7 @@ let value: V1BadgeApp = {
   emoteAvg: 326609,
   image: "https://picsum.photos/seed/kOSVvFH/1536/1109",
   name: "<value>",
+  owned: true,
 };
 ```
 
@@ -23,3 +24,4 @@ let value: V1BadgeApp = {
 | `emoteAvg`         | *number*           | :heavy_check_mark: | N/A                |
 | `image`            | *string*           | :heavy_check_mark: | N/A                |
 | `name`             | *string*           | :heavy_check_mark: | N/A                |
+| `owned`            | *boolean*          | :heavy_check_mark: | N/A                |

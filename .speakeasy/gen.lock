@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 12dd1caa4614cab4bdc8930cec8803f3
+  docChecksum: f57be86597e28c2d93651f91f9d90a90
   docVersion: 1.0.0
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.27.0
-  configChecksum: 48292471466db28a34a8e14cd9d4a7e6
+  releaseVersion: 0.27.1
+  configChecksum: 9bfe5b05feb6362d2d85fbb8ee6b3312
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -1100,7 +1100,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeListBadgePricesResponseBody.json", "apps": {"key": {"bgAvg": 379973, "boosterPrice": 891994, "emoteAvg": 929934, "image": "https://picsum.photos/seed/xaOp6G2/1884/1076", "name": "<value>"}}, "setCounts": {"duplicate": {"foil": 122917, "normal": 180195, "total": 281214}, "total": {"foil": 234985, "normal": 689716, "total": 29686}, "unique": {"foil": 42491, "normal": 919937, "total": 713051}}, "sets": null, "total": 914155}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeListBadgePricesResponseBody.json", "apps": {"key": {"bgAvg": 379973, "boosterPrice": 891994, "emoteAvg": 929934, "image": "https://picsum.photos/seed/xaOp6G2/1884/1076", "name": "<value>", "owned": false}}, "setCounts": {"duplicate": {"foil": 122917, "normal": 180195, "total": 281214}, "total": {"foil": 234985, "normal": 689716, "total": 29686}, "unique": {"foil": 42491, "normal": 919937, "total": 713051}}, "sets": null, "total": 914155}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":

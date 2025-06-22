@@ -7,19 +7,19 @@ import { V1BadgeSetCounts } from "@steamsets/client-ts/models/components";
 
 let value: V1BadgeSetCounts = {
   duplicate: {
-    foil: 157710,
-    normal: 538702,
-    total: 573471,
+    foil: 538702,
+    normal: 573471,
+    total: 412969,
   },
   total: {
-    foil: 412969,
-    normal: 862978,
-    total: 336959,
+    foil: 862978,
+    normal: 336959,
+    total: 433942,
   },
   unique: {
-    foil: 433942,
-    normal: 587953,
-    total: 455747,
+    foil: 587953,
+    normal: 455747,
+    total: 312551,
   },
 };
 ```
