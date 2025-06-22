@@ -3,10 +3,8 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -18,7 +16,6 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
-import * as errors from "../models/errors/index.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { SteamSetsError } from "../models/errors/steamsetserror.js";
@@ -26,14 +23,24 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+export enum ListPricesAcceptEnum {
+  applicationJson = "application/json",
+  applicationProblemPlusJson = "application/problem+json",
+}
+
+/**
+ * List badge prices
+ *
+ * @remarks
+ * Get a list of all badge pricing information
+ */
 export function badgesListPrices(
   client: SteamSetsCore,
-  request: components.V1BadgeListBadgePricesRequestBody,
-  options?: RequestOptions,
+  _request: components.V1BadgeListBadgePricesRequestBody,
+  options?: RequestOptions & { acceptHeaderOverride?: ListPricesAcceptEnum },
 ): APIPromise<
   Result<
     operations.BadgeListBadgePricesResponse,
-    | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
     | ConnectionError
@@ -46,20 +53,19 @@ export function badgesListPrices(
 > {
   return new APIPromise($do(
     client,
-    request,
+    _request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1BadgeListBadgePricesRequestBody,
-  options?: RequestOptions,
+  _request: components.V1BadgeListBadgePricesRequestBody,
+  options?: RequestOptions & { acceptHeaderOverride?: ListPricesAcceptEnum },
 ): Promise<
   [
     Result<
       operations.BadgeListBadgePricesResponse,
-      | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
       | ConnectionError
@@ -72,23 +78,12 @@ async function $do(
     APICall,
   ]
 > {
-  const parsed = safeParse(
-    request,
-    (value) =>
-      components.V1BadgeListBadgePricesRequestBody$outboundSchema.parse(value),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return [parsed, { status: "invalid" }];
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
   const path = pathToFunc("/v1/badge.listBadgePrices")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: options?.acceptHeaderOverride
+      || "application/json;q=1, application/problem+json;q=0",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -126,7 +121,6 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -138,7 +132,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["4XX", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -153,7 +147,6 @@ async function $do(
 
   const [result] = await M.match<
     operations.BadgeListBadgePricesResponse,
-    | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
     | ConnectionError
@@ -166,14 +159,12 @@ async function $do(
     M.json(200, operations.BadgeListBadgePricesResponse$inboundSchema, {
       key: "V1BadgeListBadgePricesResponseBody",
     }),
-    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
-      ctype: "application/problem+json",
-    }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
-      ctype: "application/problem+json",
-    }),
     M.fail("4XX"),
     M.fail("5XX"),
+    M.json("default", operations.BadgeListBadgePricesResponse$inboundSchema, {
+      ctype: "application/problem+json",
+      key: "ErrorModel",
+    }),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];

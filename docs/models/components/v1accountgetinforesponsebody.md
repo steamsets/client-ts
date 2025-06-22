@@ -58,7 +58,7 @@ let value: V1AccountGetInfoResponseBody = {
   gameBans: 244914,
   images: [],
   lastBanDate: new Date("2024-03-07 07:31:46"),
-  lastQueueStatus: "cooldown",
+  lastQueueStatus: "completed",
   level: 123456,
   miniBackground: "steamsets",
   name: "steamsets",

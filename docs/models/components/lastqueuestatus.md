@@ -11,5 +11,5 @@ let value: LastQueueStatus = "undefined";
 ## Values
 
 ```typescript
-"undefined" | "pending" | "in_progress" | "retrying" | "failed" | "completed" | "cooldown"
+"undefined" | "pending" | "in_progress" | "completed"
 ```

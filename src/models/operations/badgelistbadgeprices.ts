@@ -17,6 +17,10 @@ export type BadgeListBadgePricesResponse = {
   v1BadgeListBadgePricesResponseBody?:
     | components.V1BadgeListBadgePricesResponseBody
     | undefined;
+  /**
+   * Error
+   */
+  errorModel?: components.ErrorModel | undefined;
 };
 
 /** @internal */
@@ -28,10 +32,12 @@ export const BadgeListBadgePricesResponse$inboundSchema: z.ZodType<
   HttpMeta: components.HTTPMetadata$inboundSchema,
   V1BadgeListBadgePricesResponseBody: components
     .V1BadgeListBadgePricesResponseBody$inboundSchema.optional(),
+  ErrorModel: components.ErrorModel$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "V1BadgeListBadgePricesResponseBody": "v1BadgeListBadgePricesResponseBody",
+    "ErrorModel": "errorModel",
   });
 });
 
@@ -41,6 +47,7 @@ export type BadgeListBadgePricesResponse$Outbound = {
   V1BadgeListBadgePricesResponseBody?:
     | components.V1BadgeListBadgePricesResponseBody$Outbound
     | undefined;
+  ErrorModel?: components.ErrorModel$Outbound | undefined;
 };
 
 /** @internal */
@@ -52,10 +59,12 @@ export const BadgeListBadgePricesResponse$outboundSchema: z.ZodType<
   httpMeta: components.HTTPMetadata$outboundSchema,
   v1BadgeListBadgePricesResponseBody: components
     .V1BadgeListBadgePricesResponseBody$outboundSchema.optional(),
+  errorModel: components.ErrorModel$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     v1BadgeListBadgePricesResponseBody: "V1BadgeListBadgePricesResponseBody",
+    errorModel: "ErrorModel",
   });
 });
 

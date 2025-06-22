@@ -87,10 +87,7 @@ export const LastQueueStatus = {
   Undefined: "undefined",
   Pending: "pending",
   InProgress: "in_progress",
-  Retrying: "retrying",
-  Failed: "failed",
   Completed: "completed",
-  Cooldown: "cooldown",
 } as const;
 export type LastQueueStatus = ClosedEnum<typeof LastQueueStatus>;
 

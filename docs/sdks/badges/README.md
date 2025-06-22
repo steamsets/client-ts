@@ -5,11 +5,13 @@
 
 ### Available Operations
 
-* [listPrices](#listprices)
+* [listPrices](#listprices) - List badge prices
 * [listTags](#listtags)
 * [tag](#tag)
 
 ## listPrices
+
+Get a list of all badge pricing information
 
 ### Example Usage
 
@@ -71,11 +73,9 @@ run();
 
 ### Errors
 
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## listTags
 
