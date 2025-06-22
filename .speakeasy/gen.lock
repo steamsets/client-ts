@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9726f227cb2c95f84dc7b2cdb1747724
+  docChecksum: 12dd1caa4614cab4bdc8930cec8803f3
   docVersion: 1.0.0
-  speakeasyVersion: 1.563.1
-  generationVersion: 2.629.1
-  releaseVersion: 0.26.8
-  configChecksum: 6724483bfd188ec39a7ff83ab599e86d
+  speakeasyVersion: 1.568.0
+  generationVersion: 2.632.2
+  releaseVersion: 0.27.0
+  configChecksum: 48292471466db28a34a8e14cd9d4a7e6
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -27,8 +27,9 @@ features:
     retries: 2.83.0
     sdkHooks: 0.1.0
   typescript:
+    acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.11
+    constsAndDefaults: 0.1.12
     core: 3.21.11
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
@@ -81,6 +82,7 @@ generatedFiles:
   - docs/models/components/direction.md
   - docs/models/components/environment.md
   - docs/models/components/errordetail.md
+  - docs/models/components/errormodel.md
   - docs/models/components/filter.md
   - docs/models/components/friendprivacy.md
   - docs/models/components/historyvalue.md
@@ -204,11 +206,10 @@ generatedFiles:
   - docs/models/components/v1apporderdirection.md
   - docs/models/components/v1badgeaccount.md
   - docs/models/components/v1badgeaccountprivacy.md
+  - docs/models/components/v1badgeapp.md
+  - docs/models/components/v1badgelevel.md
   - docs/models/components/v1badgelistaccountsrequestbody.md
   - docs/models/components/v1badgelistaccountsresponsebody.md
-  - docs/models/components/v1badgelistbadgepricefilters.md
-  - docs/models/components/v1badgelistbadgepriceorder.md
-  - docs/models/components/v1badgelistbadgepriceorderdirection.md
   - docs/models/components/v1badgelistbadgepricesrequestbody.md
   - docs/models/components/v1badgelistbadgepricesresponsebody.md
   - docs/models/components/v1badgelisttagsresponsebody.md
@@ -217,11 +218,15 @@ generatedFiles:
   - docs/models/components/v1badgeorderby.md
   - docs/models/components/v1badgeorderdirection.md
   - docs/models/components/v1badgesearchbadgesresponsebody.md
+  - docs/models/components/v1badgeset.md
+  - docs/models/components/v1badgesetcount.md
+  - docs/models/components/v1badgesetcounts.md
   - docs/models/components/v1badgesuggestsearchbody.md
   - docs/models/components/v1badgesuggestsearchrequestbody.md
   - docs/models/components/v1badgesuggesttagsrequestbody.md
   - docs/models/components/v1badgetagbadgerequestbody.md
   - docs/models/components/v1badgetagbadgeresponsebody.md
+  - docs/models/components/v1badgetypecount.md
   - docs/models/components/v1groupleaderboardgroup.md
   - docs/models/components/v1groupleaderboardgroupprivacy.md
   - docs/models/components/v1leaderboardappinfo.md
@@ -432,6 +437,7 @@ generatedFiles:
   - src/models/components/designtag.ts
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
+  - src/models/components/errormodel.ts
   - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idstruct.ts
@@ -531,21 +537,25 @@ generatedFiles:
   - src/models/components/v1applistbadgesresponsebody.ts
   - src/models/components/v1apporder.ts
   - src/models/components/v1badgeaccount.ts
+  - src/models/components/v1badgeapp.ts
+  - src/models/components/v1badgelevel.ts
   - src/models/components/v1badgelistaccountsrequestbody.ts
   - src/models/components/v1badgelistaccountsresponsebody.ts
-  - src/models/components/v1badgelistbadgepricefilters.ts
-  - src/models/components/v1badgelistbadgepriceorder.ts
   - src/models/components/v1badgelistbadgepricesrequestbody.ts
   - src/models/components/v1badgelistbadgepricesresponsebody.ts
   - src/models/components/v1badgelisttagsresponsebody.ts
   - src/models/components/v1badgelookup.ts
   - src/models/components/v1badgeorder.ts
   - src/models/components/v1badgesearchbadgesresponsebody.ts
+  - src/models/components/v1badgeset.ts
+  - src/models/components/v1badgesetcount.ts
+  - src/models/components/v1badgesetcounts.ts
   - src/models/components/v1badgesuggestsearchbody.ts
   - src/models/components/v1badgesuggestsearchrequestbody.ts
   - src/models/components/v1badgesuggesttagsrequestbody.ts
   - src/models/components/v1badgetagbadgerequestbody.ts
   - src/models/components/v1badgetagbadgeresponsebody.ts
+  - src/models/components/v1badgetypecount.ts
   - src/models/components/v1groupleaderboardgroup.ts
   - src/models/components/v1leaderboardappinfo.ts
   - src/models/components/v1leaderboardbadge.ts
@@ -1090,10 +1100,12 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeListBadgePricesResponseBody.json"}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1BadgeListBadgePricesResponseBody.json", "apps": {"key": {"bgAvg": 379973, "boosterPrice": 891994, "emoteAvg": 929934, "image": "https://picsum.photos/seed/xaOp6G2/1884/1076", "name": "<value>"}}, "setCounts": {"duplicate": {"foil": 122917, "normal": 180195, "total": 281214}, "total": {"foil": 234985, "normal": 689716, "total": 29686}, "unique": {"foil": 42491, "normal": 919937, "total": 713051}}, "sets": null, "total": 914155}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        default:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.searchBadges:
     speakeasy-default-badge-search-badges:

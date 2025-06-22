@@ -13,28 +13,31 @@ let value: Badge = {
   appImage: "<value>",
   appName: "<value>",
   bookmarks: 775541,
+  cardCount: 241602,
   colors: [
-    "<value 1>",
-    "<value 2>",
-  ],
-  designs: [
     "<value 1>",
     "<value 2>",
     "<value 3>",
   ],
-  firstCompletion: 274482,
-  highestLevel: 781190,
+  designs: [
+    "<value 1>",
+  ],
+  firstCompletion: 781190,
+  highestLevel: 719260,
+  highestPrice: 5340.83,
   id: "<id>",
-  image: "https://loremflickr.com/2877/2136?lock=4587574259201405",
-  isEvent: false,
-  isFoil: false,
-  isSale: false,
-  lastCompletion: 274437,
-  level: 650973,
+  image: "https://picsum.photos/seed/ZhEwPesri/198/2037",
+  isEvent: true,
+  isFoil: true,
+  isSale: true,
+  lastCompletion: 695081,
+  level: 554725,
+  lowestPrice: 7057.81,
   name: "<value>",
-  scarcity: 530830,
-  steamId: 822916,
-  xp: 2371.25,
+  price: 2532.46,
+  scarcity: 632242,
+  steamId: 11725,
+  xp: 2589.14,
 };
 ```
 
@@ -47,10 +50,12 @@ let value: Badge = {
 | `appImage`                                               | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `appName`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `bookmarks`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `cardCount`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `colors`                                                 | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
 | `designs`                                                | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
 | `firstCompletion`                                        | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `highestLevel`                                           | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `highestPrice`                                           | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `image`                                                  | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `isEvent`                                                | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
@@ -58,7 +63,9 @@ let value: Badge = {
 | `isSale`                                                 | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `lastCompletion`                                         | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `level`                                                  | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `lowestPrice`                                            | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `name`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `price`                                                  | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `scarcity`                                               | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `steamId`                                                | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `xp`                                                     | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |

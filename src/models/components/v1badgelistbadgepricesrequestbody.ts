@@ -6,49 +6,25 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  V1BadgeListBadgePriceFilters,
-  V1BadgeListBadgePriceFilters$inboundSchema,
-  V1BadgeListBadgePriceFilters$Outbound,
-  V1BadgeListBadgePriceFilters$outboundSchema,
-} from "./v1badgelistbadgepricefilters.js";
-import {
-  V1BadgeListBadgePriceOrder,
-  V1BadgeListBadgePriceOrder$inboundSchema,
-  V1BadgeListBadgePriceOrder$Outbound,
-  V1BadgeListBadgePriceOrder$outboundSchema,
-} from "./v1badgelistbadgepriceorder.js";
 
-export type V1BadgeListBadgePricesRequestBody = {
-  filters?: V1BadgeListBadgePriceFilters | null | undefined;
-  order?: V1BadgeListBadgePriceOrder | null | undefined;
-};
+export type V1BadgeListBadgePricesRequestBody = {};
 
 /** @internal */
 export const V1BadgeListBadgePricesRequestBody$inboundSchema: z.ZodType<
   V1BadgeListBadgePricesRequestBody,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  filters: z.nullable(V1BadgeListBadgePriceFilters$inboundSchema).optional(),
-  order: z.nullable(V1BadgeListBadgePriceOrder$inboundSchema).optional(),
-});
+> = z.object({});
 
 /** @internal */
-export type V1BadgeListBadgePricesRequestBody$Outbound = {
-  filters?: V1BadgeListBadgePriceFilters$Outbound | null | undefined;
-  order?: V1BadgeListBadgePriceOrder$Outbound | null | undefined;
-};
+export type V1BadgeListBadgePricesRequestBody$Outbound = {};
 
 /** @internal */
 export const V1BadgeListBadgePricesRequestBody$outboundSchema: z.ZodType<
   V1BadgeListBadgePricesRequestBody$Outbound,
   z.ZodTypeDef,
   V1BadgeListBadgePricesRequestBody
-> = z.object({
-  filters: z.nullable(V1BadgeListBadgePriceFilters$outboundSchema).optional(),
-  order: z.nullable(V1BadgeListBadgePriceOrder$outboundSchema).optional(),
-});
+> = z.object({});
 
 /**
  * @internal

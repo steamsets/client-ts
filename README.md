@@ -132,7 +132,7 @@ run();
 
 ### [badges](docs/sdks/badges/README.md)
 
-* [listPrices](docs/sdks/badges/README.md#listprices)
+* [listPrices](docs/sdks/badges/README.md#listprices) - List badge prices
 * [listTags](docs/sdks/badges/README.md#listtags)
 * [tag](docs/sdks/badges/README.md#tag)
 
@@ -294,7 +294,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](docs/models/errors/errormodel.md): Generic error.
+  * [`ErrorModel`](docs/models/errors/errormodel.md): *
 
 <details><summary>Less common errors (6)</summary>
 
@@ -312,6 +312,8 @@ run();
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -560,7 +562,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges)
 - [`badgeBadgeListAccounts`](docs/sdks/badge/README.md#badgelistaccounts)
 - [`badgeSearch`](docs/sdks/badge/README.md#search)
-- [`badgesListPrices`](docs/sdks/badges/README.md#listprices)
+- [`badgesListPrices`](docs/sdks/badges/README.md#listprices) - List badge prices
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
 - [`badgeSuggestSearch`](docs/sdks/badge/README.md#suggestsearch)

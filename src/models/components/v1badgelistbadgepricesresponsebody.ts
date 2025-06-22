@@ -7,12 +7,43 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  V1BadgeApp,
+  V1BadgeApp$inboundSchema,
+  V1BadgeApp$Outbound,
+  V1BadgeApp$outboundSchema,
+} from "./v1badgeapp.js";
+import {
+  V1BadgeSet,
+  V1BadgeSet$inboundSchema,
+  V1BadgeSet$Outbound,
+  V1BadgeSet$outboundSchema,
+} from "./v1badgeset.js";
+import {
+  V1BadgeSetCounts,
+  V1BadgeSetCounts$inboundSchema,
+  V1BadgeSetCounts$Outbound,
+  V1BadgeSetCounts$outboundSchema,
+} from "./v1badgesetcounts.js";
 
 export type V1BadgeListBadgePricesResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  /**
+   * App information indexed by app ID
+   */
+  apps: { [k: string]: V1BadgeApp };
+  setCounts: V1BadgeSetCounts;
+  /**
+   * Badge sets with pricing information
+   */
+  sets: Array<V1BadgeSet> | null;
+  /**
+   * Total number of badge sets
+   */
+  total: number;
 };
 
 /** @internal */
@@ -22,6 +53,10 @@ export const V1BadgeListBadgePricesResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
+  apps: z.record(V1BadgeApp$inboundSchema),
+  setCounts: V1BadgeSetCounts$inboundSchema,
+  sets: z.nullable(z.array(V1BadgeSet$inboundSchema)),
+  total: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
@@ -31,6 +66,10 @@ export const V1BadgeListBadgePricesResponseBody$inboundSchema: z.ZodType<
 /** @internal */
 export type V1BadgeListBadgePricesResponseBody$Outbound = {
   $schema?: string | undefined;
+  apps: { [k: string]: V1BadgeApp$Outbound };
+  setCounts: V1BadgeSetCounts$Outbound;
+  sets: Array<V1BadgeSet$Outbound> | null;
+  total: number;
 };
 
 /** @internal */
@@ -40,6 +79,10 @@ export const V1BadgeListBadgePricesResponseBody$outboundSchema: z.ZodType<
   V1BadgeListBadgePricesResponseBody
 > = z.object({
   dollarSchema: z.string().optional(),
+  apps: z.record(V1BadgeApp$outboundSchema),
+  setCounts: V1BadgeSetCounts$outboundSchema,
+  sets: z.nullable(z.array(V1BadgeSet$outboundSchema)),
+  total: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     dollarSchema: "$schema",

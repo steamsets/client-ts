@@ -41,7 +41,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.26.8
+  version: 0.27.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -50,6 +50,7 @@ typescript:
   author: Speakeasy
   baseErrorName: SteamSetsError
   clientServerStatusCodesAsErrors: true
+  constFieldsAlwaysOptional: true
   defaultErrorName: SDKError
   enableCustomCodeRegions: false
   enableMCPServer: true
