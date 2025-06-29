@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: f57be86597e28c2d93651f91f9d90a90
+  docChecksum: 95f6bd1e3c1ae2a3b57253f4dfdf5b0e
   docVersion: 1.0.0
-  speakeasyVersion: 1.568.0
-  generationVersion: 2.632.2
-  releaseVersion: 0.27.1
-  configChecksum: 9bfe5b05feb6362d2d85fbb8ee6b3312
+  speakeasyVersion: 1.571.2
+  generationVersion: 2.640.2
+  releaseVersion: 0.27.2
+  configChecksum: 8f986b8729a8cd9b6352486588c6a329
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -66,6 +66,8 @@ generatedFiles:
   - docs/models/components/appprivacy.md
   - docs/models/components/badge.md
   - docs/models/components/badgesuggesttags.md
+  - docs/models/components/badgevaluefilter.md
+  - docs/models/components/badgevaluefiltertype.md
   - docs/models/components/bestleaderboardrank.md
   - docs/models/components/by.md
   - docs/models/components/chosenrole.md
@@ -199,6 +201,7 @@ generatedFiles:
   - docs/models/components/v1adminupdateresourcesrequestbody.md
   - docs/models/components/v1adminupdaterolesrequestbody.md
   - docs/models/components/v1appbadge.md
+  - docs/models/components/v1appfilters.md
   - docs/models/components/v1applistbadgesrequestbody.md
   - docs/models/components/v1applistbadgesresponsebody.md
   - docs/models/components/v1apporder.md
@@ -207,6 +210,7 @@ generatedFiles:
   - docs/models/components/v1badgeaccount.md
   - docs/models/components/v1badgeaccountprivacy.md
   - docs/models/components/v1badgeapp.md
+  - docs/models/components/v1badgefilters.md
   - docs/models/components/v1badgelevel.md
   - docs/models/components/v1badgelistaccountsrequestbody.md
   - docs/models/components/v1badgelistaccountsresponsebody.md
@@ -221,8 +225,6 @@ generatedFiles:
   - docs/models/components/v1badgeset.md
   - docs/models/components/v1badgesetcount.md
   - docs/models/components/v1badgesetcounts.md
-  - docs/models/components/v1badgesuggestsearchbody.md
-  - docs/models/components/v1badgesuggestsearchrequestbody.md
   - docs/models/components/v1badgesuggesttagsrequestbody.md
   - docs/models/components/v1badgetagbadgerequestbody.md
   - docs/models/components/v1badgetagbadgeresponsebody.md
@@ -311,7 +313,6 @@ generatedFiles:
   - docs/models/operations/badgelistbadgepricesresponse.md
   - docs/models/operations/badgelisttagsresponse.md
   - docs/models/operations/badgesearchbadgesresponse.md
-  - docs/models/operations/badgesuggestsearchresponse.md
   - docs/models/operations/badgesuggesttagsresponse.md
   - docs/models/operations/badgetagbadgeresponse.md
   - docs/models/operations/leaderboardgetaccountleaderboardresponse.md
@@ -385,7 +386,6 @@ generatedFiles:
   - src/funcs/appsListBadges.ts
   - src/funcs/badgeBadgeListAccounts.ts
   - src/funcs/badgeSearch.ts
-  - src/funcs/badgeSuggestSearch.ts
   - src/funcs/badgeSuggestTags.ts
   - src/funcs/badgesListPrices.ts
   - src/funcs/badgesListTags.ts
@@ -427,6 +427,7 @@ generatedFiles:
   - src/models/components/accountsearchvanitystruct.ts
   - src/models/components/badge.ts
   - src/models/components/badgesuggesttags.ts
+  - src/models/components/badgevaluefilter.ts
   - src/models/components/bestleaderboardrank.ts
   - src/models/components/chosenrole.ts
   - src/models/components/city.ts
@@ -533,11 +534,13 @@ generatedFiles:
   - src/models/components/v1adminupdateresourcesrequestbody.ts
   - src/models/components/v1adminupdaterolesrequestbody.ts
   - src/models/components/v1appbadge.ts
+  - src/models/components/v1appfilters.ts
   - src/models/components/v1applistbadgesrequestbody.ts
   - src/models/components/v1applistbadgesresponsebody.ts
   - src/models/components/v1apporder.ts
   - src/models/components/v1badgeaccount.ts
   - src/models/components/v1badgeapp.ts
+  - src/models/components/v1badgefilters.ts
   - src/models/components/v1badgelevel.ts
   - src/models/components/v1badgelistaccountsrequestbody.ts
   - src/models/components/v1badgelistaccountsresponsebody.ts
@@ -550,8 +553,6 @@ generatedFiles:
   - src/models/components/v1badgeset.ts
   - src/models/components/v1badgesetcount.ts
   - src/models/components/v1badgesetcounts.ts
-  - src/models/components/v1badgesuggestsearchbody.ts
-  - src/models/components/v1badgesuggestsearchrequestbody.ts
   - src/models/components/v1badgesuggesttagsrequestbody.ts
   - src/models/components/v1badgetagbadgerequestbody.ts
   - src/models/components/v1badgetagbadgeresponsebody.ts
@@ -633,7 +634,6 @@ generatedFiles:
   - src/models/operations/badgelistbadgeprices.ts
   - src/models/operations/badgelisttags.ts
   - src/models/operations/badgesearchbadges.ts
-  - src/models/operations/badgesuggestsearch.ts
   - src/models/operations/badgesuggesttags.ts
   - src/models/operations/badgetagbadge.ts
   - src/models/operations/index.ts

@@ -15,6 +15,7 @@ export type LocationGetLocationsResponse = {
    * OK
    */
   regions?: Array<components.Region> | null | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -25,10 +26,12 @@ export const LocationGetLocationsResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   Regions: z.nullable(z.array(components.Region$inboundSchema)).optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "Regions": "regions",
+    "Headers": "headers",
   });
 });
 
@@ -36,6 +39,7 @@ export const LocationGetLocationsResponse$inboundSchema: z.ZodType<
 export type LocationGetLocationsResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   Regions?: Array<components.Region$Outbound> | null | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -46,10 +50,12 @@ export const LocationGetLocationsResponse$outboundSchema: z.ZodType<
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   regions: z.nullable(z.array(components.Region$outboundSchema)).optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     regions: "Regions",
+    headers: "Headers",
   });
 });
 

@@ -18,6 +18,7 @@ export type StaffListStaffResponse = {
     | Array<components.LeaderboardAccount | null>
     | null
     | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -30,10 +31,12 @@ export const StaffListStaffResponse$inboundSchema: z.ZodType<
   LeaderboardAccounts: z.nullable(
     z.array(z.nullable(components.LeaderboardAccount$inboundSchema)),
   ).optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "LeaderboardAccounts": "leaderboardAccounts",
+    "Headers": "headers",
   });
 });
 
@@ -44,6 +47,7 @@ export type StaffListStaffResponse$Outbound = {
     | Array<components.LeaderboardAccount$Outbound | null>
     | null
     | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -56,10 +60,12 @@ export const StaffListStaffResponse$outboundSchema: z.ZodType<
   leaderboardAccounts: z.nullable(
     z.array(z.nullable(components.LeaderboardAccount$outboundSchema)),
   ).optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     leaderboardAccounts: "LeaderboardAccounts",
+    headers: "Headers",
   });
 });
 
