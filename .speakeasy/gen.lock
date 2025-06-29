@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 95f6bd1e3c1ae2a3b57253f4dfdf5b0e
+  docChecksum: 8bff36285a1a55b9d7bac9cf94b83898
   docVersion: 1.0.0
   speakeasyVersion: 1.571.2
   generationVersion: 2.640.2
-  releaseVersion: 0.27.2
-  configChecksum: 8f986b8729a8cd9b6352486588c6a329
+  releaseVersion: 0.27.3
+  configChecksum: 5e6cab363b435e3eeb529591108c3474
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -107,6 +107,7 @@ generatedFiles:
   - docs/models/components/previewaccountprivacy.md
   - docs/models/components/privacy.md
   - docs/models/components/provider.md
+  - docs/models/components/range.md
   - docs/models/components/region.md
   - docs/models/components/resource.md
   - docs/models/components/resourceresource.md
@@ -451,6 +452,7 @@ generatedFiles:
   - src/models/components/leaderboardstate.ts
   - src/models/components/loginrequestbody.ts
   - src/models/components/previewaccount.ts
+  - src/models/components/range.ts
   - src/models/components/region.ts
   - src/models/components/resource.ts
   - src/models/components/role.ts

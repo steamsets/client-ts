@@ -6,6 +6,12 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  Range,
+  Range$inboundSchema,
+  Range$Outbound,
+  Range$outboundSchema,
+} from "./range.js";
 
 export type V1BadgeFilters = {
   /**
@@ -20,22 +26,8 @@ export type V1BadgeFilters = {
    * Filter by sale badges
    */
   isSale?: boolean | null | undefined;
-  /**
-   * Maximum badge level
-   */
-  maxLevel?: number | null | undefined;
-  /**
-   * Maximum scarcity value
-   */
-  maxScarcity?: number | null | undefined;
-  /**
-   * Minimum badge level
-   */
-  minLevel?: number | null | undefined;
-  /**
-   * Minimum scarcity value
-   */
-  minScarcity?: number | null | undefined;
+  level?: Range | undefined;
+  scarcity?: Range | undefined;
 };
 
 /** @internal */
@@ -47,10 +39,8 @@ export const V1BadgeFilters$inboundSchema: z.ZodType<
   isEvent: z.nullable(z.boolean()).optional(),
   isFoil: z.nullable(z.boolean()).optional(),
   isSale: z.nullable(z.boolean()).optional(),
-  maxLevel: z.nullable(z.number().int()).optional(),
-  maxScarcity: z.nullable(z.number().int()).optional(),
-  minLevel: z.nullable(z.number().int()).optional(),
-  minScarcity: z.nullable(z.number().int()).optional(),
+  level: Range$inboundSchema.optional(),
+  scarcity: Range$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -58,10 +48,8 @@ export type V1BadgeFilters$Outbound = {
   isEvent?: boolean | null | undefined;
   isFoil?: boolean | null | undefined;
   isSale?: boolean | null | undefined;
-  maxLevel?: number | null | undefined;
-  maxScarcity?: number | null | undefined;
-  minLevel?: number | null | undefined;
-  minScarcity?: number | null | undefined;
+  level?: Range$Outbound | undefined;
+  scarcity?: Range$Outbound | undefined;
 };
 
 /** @internal */
@@ -73,10 +61,8 @@ export const V1BadgeFilters$outboundSchema: z.ZodType<
   isEvent: z.nullable(z.boolean()).optional(),
   isFoil: z.nullable(z.boolean()).optional(),
   isSale: z.nullable(z.boolean()).optional(),
-  maxLevel: z.nullable(z.number().int()).optional(),
-  maxScarcity: z.nullable(z.number().int()).optional(),
-  minLevel: z.nullable(z.number().int()).optional(),
-  minScarcity: z.nullable(z.number().int()).optional(),
+  level: Range$outboundSchema.optional(),
+  scarcity: Range$outboundSchema.optional(),
 });
 
 /**
