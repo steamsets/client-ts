@@ -13,6 +13,12 @@ import {
   IDStruct$outboundSchema,
 } from "./idstruct.js";
 import {
+  V1AppFilters,
+  V1AppFilters$inboundSchema,
+  V1AppFilters$Outbound,
+  V1AppFilters$outboundSchema,
+} from "./v1appfilters.js";
+import {
   V1AppOrder,
   V1AppOrder$inboundSchema,
   V1AppOrder$Outbound,
@@ -26,6 +32,7 @@ import {
 } from "./vanitystruct.js";
 
 export type V1AccountListAppsRequestBody = {
+  filters?: V1AppFilters | undefined;
   id?: IDStruct | undefined;
   order?: V1AppOrder | null | undefined;
   page?: number | undefined;
@@ -39,6 +46,7 @@ export const V1AccountListAppsRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  filters: V1AppFilters$inboundSchema.optional(),
   id: IDStruct$inboundSchema.optional(),
   order: z.nullable(V1AppOrder$inboundSchema).optional(),
   page: z.number().int().default(1),
@@ -48,6 +56,7 @@ export const V1AccountListAppsRequestBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type V1AccountListAppsRequestBody$Outbound = {
+  filters?: V1AppFilters$Outbound | undefined;
   id?: IDStruct$Outbound | undefined;
   order?: V1AppOrder$Outbound | null | undefined;
   page: number;
@@ -61,6 +70,7 @@ export const V1AccountListAppsRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountListAppsRequestBody
 > = z.object({
+  filters: V1AppFilters$outboundSchema.optional(),
   id: IDStruct$outboundSchema.optional(),
   order: z.nullable(V1AppOrder$outboundSchema).optional(),
   page: z.number().int().default(1),

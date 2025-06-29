@@ -4,7 +4,6 @@
 
 import { badgeBadgeListAccounts } from "../funcs/badgeBadgeListAccounts.js";
 import { badgeSearch } from "../funcs/badgeSearch.js";
-import { badgeSuggestSearch } from "../funcs/badgeSuggestSearch.js";
 import { badgeSuggestTags } from "../funcs/badgeSuggestTags.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -28,17 +27,6 @@ export class Badge extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.BadgeSearchBadgesResponse> {
     return unwrapAsync(badgeSearch(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  async suggestSearch(
-    request: components.V1BadgeSuggestSearchRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.BadgeSuggestSearchResponse> {
-    return unwrapAsync(badgeSuggestSearch(
       this,
       request,
       options,

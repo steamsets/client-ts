@@ -127,7 +127,6 @@ run();
 
 * [badgeListAccounts](docs/sdks/badge/README.md#badgelistaccounts)
 * [search](docs/sdks/badge/README.md#search)
-* [suggestSearch](docs/sdks/badge/README.md#suggestsearch)
 * [suggestTags](docs/sdks/badge/README.md#suggesttags)
 
 ### [badges](docs/sdks/badges/README.md)
@@ -565,7 +564,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesListPrices`](docs/sdks/badges/README.md#listprices) - List badge prices
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags)
 - [`badgesTag`](docs/sdks/badges/README.md#tag)
-- [`badgeSuggestSearch`](docs/sdks/badge/README.md#suggestsearch)
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags)
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)

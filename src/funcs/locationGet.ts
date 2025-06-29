@@ -144,6 +144,7 @@ async function $do(
     | SDKValidationError
   >(
     M.json(200, operations.LocationGetLocationsResponse$inboundSchema, {
+      hdrs: true,
       key: "Regions",
     }),
     M.jsonErr(401, errors.ErrorModel$inboundSchema, {

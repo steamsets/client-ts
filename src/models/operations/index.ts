@@ -48,7 +48,6 @@ export * from "./badgelistaccounts.js";
 export * from "./badgelistbadgeprices.js";
 export * from "./badgelisttags.js";
 export * from "./badgesearchbadges.js";
-export * from "./badgesuggestsearch.js";
 export * from "./badgesuggesttags.js";
 export * from "./badgetagbadge.js";
 export * from "./leaderboardgetaccountleaderboard.js";

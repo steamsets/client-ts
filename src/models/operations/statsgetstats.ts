@@ -15,6 +15,7 @@ export type StatsGetStatsResponse = {
    * OK
    */
   v1Stats?: components.V1Stats | undefined;
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -25,10 +26,12 @@ export const StatsGetStatsResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   V1Stats: components.V1Stats$inboundSchema.optional(),
+  Headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "V1Stats": "v1Stats",
+    "Headers": "headers",
   });
 });
 
@@ -36,6 +39,7 @@ export const StatsGetStatsResponse$inboundSchema: z.ZodType<
 export type StatsGetStatsResponse$Outbound = {
   HttpMeta: components.HTTPMetadata$Outbound;
   V1Stats?: components.V1Stats$Outbound | undefined;
+  Headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -46,10 +50,12 @@ export const StatsGetStatsResponse$outboundSchema: z.ZodType<
 > = z.object({
   httpMeta: components.HTTPMetadata$outboundSchema,
   v1Stats: components.V1Stats$outboundSchema.optional(),
+  headers: z.record(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
     httpMeta: "HttpMeta",
     v1Stats: "V1Stats",
+    headers: "Headers",
   });
 });
 

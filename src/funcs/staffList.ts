@@ -144,6 +144,7 @@ async function $do(
     | SDKValidationError
   >(
     M.json(200, operations.StaffListStaffResponse$inboundSchema, {
+      hdrs: true,
       key: "LeaderboardAccounts",
     }),
     M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {

@@ -8,11 +8,23 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  BadgeValueFilter,
+  BadgeValueFilter$inboundSchema,
+  BadgeValueFilter$Outbound,
+  BadgeValueFilter$outboundSchema,
+} from "./badgevaluefilter.js";
+import {
   IDStruct,
   IDStruct$inboundSchema,
   IDStruct$Outbound,
   IDStruct$outboundSchema,
 } from "./idstruct.js";
+import {
+  V1BadgeFilters,
+  V1BadgeFilters$inboundSchema,
+  V1BadgeFilters$Outbound,
+  V1BadgeFilters$outboundSchema,
+} from "./v1badgefilters.js";
 import {
   V1BadgeOrder,
   V1BadgeOrder$inboundSchema,
@@ -36,11 +48,19 @@ export type V1AccountListBadgesRequestBodyFilter = ClosedEnum<
 >;
 
 export type V1AccountListBadgesRequestBody = {
+  /**
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   */
   filter?: Array<V1AccountListBadgesRequestBodyFilter> | null | undefined;
+  filters?: V1BadgeFilters | undefined;
   id?: IDStruct | undefined;
   order?: V1BadgeOrder | null | undefined;
   page?: number | undefined;
   search?: string | null | undefined;
+  /**
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   */
+  valueFilter?: Array<BadgeValueFilter> | null | undefined;
   vanity?: VanityStruct | undefined;
 };
 
@@ -77,20 +97,24 @@ export const V1AccountListBadgesRequestBody$inboundSchema: z.ZodType<
   filter: z.nullable(
     z.array(V1AccountListBadgesRequestBodyFilter$inboundSchema),
   ).optional(),
+  filters: V1BadgeFilters$inboundSchema.optional(),
   id: IDStruct$inboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$inboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
+  valueFilter: z.nullable(z.array(BadgeValueFilter$inboundSchema)).optional(),
   vanity: VanityStruct$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AccountListBadgesRequestBody$Outbound = {
   filter?: Array<string> | null | undefined;
+  filters?: V1BadgeFilters$Outbound | undefined;
   id?: IDStruct$Outbound | undefined;
   order?: V1BadgeOrder$Outbound | null | undefined;
   page: number;
   search?: string | null | undefined;
+  valueFilter?: Array<BadgeValueFilter$Outbound> | null | undefined;
   vanity?: VanityStruct$Outbound | undefined;
 };
 
@@ -103,10 +127,12 @@ export const V1AccountListBadgesRequestBody$outboundSchema: z.ZodType<
   filter: z.nullable(
     z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema),
   ).optional(),
+  filters: V1BadgeFilters$outboundSchema.optional(),
   id: IDStruct$outboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$outboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
+  valueFilter: z.nullable(z.array(BadgeValueFilter$outboundSchema)).optional(),
   vanity: VanityStruct$outboundSchema.optional(),
 });
 
