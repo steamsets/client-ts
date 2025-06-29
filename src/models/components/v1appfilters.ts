@@ -6,6 +6,12 @@ import * as z from "zod";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  Range,
+  Range$inboundSchema,
+  Range$Outbound,
+  Range$outboundSchema,
+} from "./range.js";
 
 export type V1AppFilters = {
   /**
@@ -20,14 +26,7 @@ export type V1AppFilters = {
    * Exclude sale/promotional apps
    */
   excludeSales?: boolean | null | undefined;
-  /**
-   * Maximum playtime in minutes
-   */
-  maxPlaytime?: number | null | undefined;
-  /**
-   * Minimum playtime in minutes
-   */
-  minPlaytime?: number | null | undefined;
+  playtime?: Range | undefined;
 };
 
 /** @internal */
@@ -39,8 +38,7 @@ export const V1AppFilters$inboundSchema: z.ZodType<
   appType: z.nullable(z.string()).optional(),
   excludeEvents: z.nullable(z.boolean()).optional(),
   excludeSales: z.nullable(z.boolean()).optional(),
-  maxPlaytime: z.nullable(z.number().int()).optional(),
-  minPlaytime: z.nullable(z.number().int()).optional(),
+  playtime: Range$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -48,8 +46,7 @@ export type V1AppFilters$Outbound = {
   appType?: string | null | undefined;
   excludeEvents?: boolean | null | undefined;
   excludeSales?: boolean | null | undefined;
-  maxPlaytime?: number | null | undefined;
-  minPlaytime?: number | null | undefined;
+  playtime?: Range$Outbound | undefined;
 };
 
 /** @internal */
@@ -61,8 +58,7 @@ export const V1AppFilters$outboundSchema: z.ZodType<
   appType: z.nullable(z.string()).optional(),
   excludeEvents: z.nullable(z.boolean()).optional(),
   excludeSales: z.nullable(z.boolean()).optional(),
-  maxPlaytime: z.nullable(z.number().int()).optional(),
-  minPlaytime: z.nullable(z.number().int()).optional(),
+  playtime: Range$outboundSchema.optional(),
 });
 
 /**

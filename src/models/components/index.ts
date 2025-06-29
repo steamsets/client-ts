@@ -32,6 +32,7 @@ export * from "./leaderboardregion.js";
 export * from "./leaderboardstate.js";
 export * from "./loginrequestbody.js";
 export * from "./previewaccount.js";
+export * from "./range.js";
 export * from "./region.js";
 export * from "./resource.js";
 export * from "./role.js";
