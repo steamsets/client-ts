@@ -5,7 +5,11 @@
 ```typescript
 import { StaffListStaffResponse } from "@steamsets/client-ts/models/operations";
 
-let value: StaffListStaffResponse = {};
+let value: StaffListStaffResponse = {
+  headers: {
+    "key": [],
+  },
+};
 ```
 
 ## Fields

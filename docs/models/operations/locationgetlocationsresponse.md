@@ -5,7 +5,9 @@
 ```typescript
 import { LocationGetLocationsResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LocationGetLocationsResponse = {};
+let value: LocationGetLocationsResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

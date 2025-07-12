@@ -5,7 +5,14 @@
 ```typescript
 import { AccountUpdateSettingsRequest } from "@steamsets/client-ts/models/operations";
 
-let value: AccountUpdateSettingsRequest = {};
+let value: AccountUpdateSettingsRequest = {
+  v1AccountUpdateSettingsRequestBody: {
+    email: "steamsets@example.com",
+    hidden: true,
+    language: "en",
+    vanity: "flo",
+  },
+};
 ```
 
 ## Fields

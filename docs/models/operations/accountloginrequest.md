@@ -5,7 +5,20 @@
 ```typescript
 import { AccountLoginRequest } from "@steamsets/client-ts/models/operations";
 
-let value: AccountLoginRequest = {};
+let value: AccountLoginRequest = {
+  loginRequestBody: {
+    openidAssocHandle: "123456",
+    openidClaimedId: "76561198842603734",
+    openidIdentity: "https://steamsets.com/api/v1/openid/login",
+    openidMode: "checkid_setup",
+    openidNs: "http://specs.openid.net/auth/2.0",
+    openidOpEndpoint: "https://steamsets.com/api/v1/openid/login",
+    openidResponseNonce: "123456",
+    openidReturnTo: "https://example.com",
+    openidSig: "123456",
+    openidSigned: "123456",
+  },
+};
 ```
 
 ## Fields

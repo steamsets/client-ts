@@ -5,7 +5,9 @@
 ```typescript
 import { StatsGetStatsResponse } from "@steamsets/client-ts/models/operations";
 
-let value: StatsGetStatsResponse = {};
+let value: StatsGetStatsResponse = {
+  headers: {},
+};
 ```
 
 ## Fields
