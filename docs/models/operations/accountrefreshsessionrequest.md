@@ -5,7 +5,11 @@
 ```typescript
 import { AccountRefreshSessionRequest } from "@steamsets/client-ts/models/operations";
 
-let value: AccountRefreshSessionRequest = {};
+let value: AccountRefreshSessionRequest = {
+  v1AccountRefreshSessionRequestBody: {
+    refreshToken: "<value>",
+  },
+};
 ```
 
 ## Fields

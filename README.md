@@ -293,7 +293,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](docs/models/errors/errormodel.md): *
+  * [`ErrorModel`](./src/models/errors/errormodel.ts): *
 
 <details><summary>Less common errors (6)</summary>
 

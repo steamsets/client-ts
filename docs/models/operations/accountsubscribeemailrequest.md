@@ -5,7 +5,12 @@
 ```typescript
 import { AccountSubscribeEmailRequest } from "@steamsets/client-ts/models/operations";
 
-let value: AccountSubscribeEmailRequest = {};
+let value: AccountSubscribeEmailRequest = {
+  v1AccountSubscribeEmailRequestBody: {
+    email: "steamsets@example.com",
+    subscribed: true,
+  },
+};
 ```
 
 ## Fields
