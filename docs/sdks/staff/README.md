@@ -11,6 +11,7 @@
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="staff.listStaff" method="post" path="/v1/staff.listStaff" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

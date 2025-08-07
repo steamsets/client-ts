@@ -15,6 +15,7 @@ Get a list of all badge pricing information
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.listBadgePrices" method="post" path="/v1/badge.listBadgePrices" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -81,6 +82,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.listTags" method="post" path="/v1/badge.listTags" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -148,6 +150,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.tagBadge" method="post" path="/v1/badge.tagBadge" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

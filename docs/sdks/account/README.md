@@ -49,6 +49,7 @@ All Requests related to account(s) are grouped here.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.bookmarkBadge" method="post" path="/v1/account.bookmarkBadge" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -123,6 +124,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.compareBadges" method="post" path="/v1/account.compareBadges" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -209,6 +211,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.createConnection" method="post" path="/v1/account.createConnection" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -283,6 +286,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.createDeveloperApp" method="post" path="/v1/account.createDeveloperApp" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -361,6 +365,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.deleteConnection" method="post" path="/v1/account.deleteConnection" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -433,6 +438,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.deleteDeveloperApp" method="post" path="/v1/account.deleteDeveloperApp" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -505,6 +511,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.deleteImages" method="post" path="/v1/account.deleteImages" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -585,6 +592,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.deleteSession" method="post" path="/v1/account.deleteSession" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -657,6 +665,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getBadgeStats" method="post" path="/v1/account.getBadgeStats" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -725,6 +734,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getDataPoints" method="post" path="/v1/account.getDataPoints" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -793,6 +803,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getInfo" method="post" path="/v1/account.getInfo" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -861,6 +872,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getMeta" method="post" path="/v1/account.getMeta" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -929,6 +941,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getSession" method="post" path="/v1/account.getSession" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -995,6 +1008,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.getSettings" method="post" path="/v1/account.getSettings" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1061,6 +1075,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listApps" method="post" path="/v1/account.listApps" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1129,6 +1144,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listBadgeBookmarks" method="post" path="/v1/account.listBadgeBookmarks" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1196,6 +1212,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listBadges" method="post" path="/v1/account.listBadges" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1264,6 +1281,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listFriends" method="post" path="/v1/account.listFriends" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1332,6 +1350,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listImages" method="post" path="/v1/account.listImages" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1398,6 +1417,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listLeaderboardHistory" method="post" path="/v1/account.listLeaderboardHistory" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1466,6 +1486,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.listOwnedBadges" method="post" path="/v1/account.listOwnedBadges" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1533,6 +1554,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.login" method="post" path="/v1/account.login" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1627,6 +1649,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.logout" method="post" path="/v1/account.logout" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1694,6 +1717,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.queueUpdate" method="post" path="/v1/account.queueUpdate" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1762,6 +1786,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.reconnectConnection" method="post" path="/v1/account.reconnectConnection" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1836,6 +1861,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.refreshSession" method="post" path="/v1/account.refreshSession" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1912,6 +1938,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.sendEmailVerification" method="post" path="/v1/account.sendEmailVerification" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -1980,6 +2007,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.subscribeEmail" method="post" path="/v1/account.subscribeEmail" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2058,6 +2086,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateConnection" method="post" path="/v1/account.updateConnection" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2132,6 +2161,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateDeveloperApp" method="post" path="/v1/account.updateDeveloperApp" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2210,6 +2240,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateImages" method="post" path="/v1/account.updateImages" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2282,6 +2313,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateRole" method="post" path="/v1/account.updateRole" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2350,6 +2382,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateSettings" method="post" path="/v1/account.updateSettings" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2432,6 +2465,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.updateVanity" method="post" path="/v1/account.updateVanity" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2500,6 +2534,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.uploadImages" method="post" path="/v1/account.uploadImages" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2582,6 +2617,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.verifyConnection" method="post" path="/v1/account.verifyConnection" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -2654,6 +2690,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="account.verifyEmail" method="post" path="/v1/account.verifyEmail" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
