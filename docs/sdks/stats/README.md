@@ -13,6 +13,7 @@ Any endpoint that return some sort of statistical data.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="stats.getStats" method="post" path="/v1/stats.getStats" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

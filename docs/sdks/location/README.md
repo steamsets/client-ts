@@ -13,6 +13,7 @@ Any location that gives location data.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="location.getLocations" method="get" path="/v1/location.getLocations" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

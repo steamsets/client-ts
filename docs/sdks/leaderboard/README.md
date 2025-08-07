@@ -18,6 +18,7 @@ Any requests that is somehow used for getting leaderboard data.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getAccountLeaderboard" method="post" path="/v1/leaderboard.getAccountLeaderboard" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -120,6 +121,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getAccountsMeta" method="post" path="/v1/leaderboard.getAccountsMeta" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -218,6 +220,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getGroupLeaderboard" method="post" path="/v1/leaderboard.getGroupLeaderboard" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -296,6 +299,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getGroupsMeta" method="post" path="/v1/leaderboard.getGroupsMeta" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -368,6 +372,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getLowestRanks" method="post" path="/v1/leaderboard.getLowestRanks" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -440,6 +445,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="leaderboard.previewAccountRank" method="post" path="/v1/leaderboard.previewAccountRank" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

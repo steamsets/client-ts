@@ -15,6 +15,7 @@ This endpoint checks if the service is alive.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="liveness" method="get" path="/v1/liveness" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

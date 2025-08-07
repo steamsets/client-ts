@@ -15,6 +15,7 @@ Any request that is related to steam badges, mostly badge search/tagging related
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.listAccounts" method="post" path="/v1/badge.listAccounts" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -83,6 +84,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.searchBadges" method="post" path="/v1/badge.searchBadges" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -167,6 +169,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="badge.suggestTags" method="post" path="/v1/badge.suggestTags" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 

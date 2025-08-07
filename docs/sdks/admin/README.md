@@ -16,6 +16,7 @@ Admin related operations, stay away from these.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="admin.getAccount" method="post" path="/v1/admin.getAccount" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -84,6 +85,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="admin.removeVanity" method="post" path="/v1/admin.removeVanity" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -152,6 +154,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="admin.updateResources" method="post" path="/v1/admin.updateResources" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -234,6 +237,7 @@ run();
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="admin.updateRoles" method="post" path="/v1/admin.updateRoles" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
