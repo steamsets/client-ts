@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: defaa66535936d0a5640f4cd8497198d
+  docChecksum: 8bff36285a1a55b9d7bac9cf94b83898
   docVersion: 1.0.0
-  speakeasyVersion: 1.599.0
-  generationVersion: 2.675.0
-  releaseVersion: 0.27.5
-  configChecksum: 2e7f35a8373598cdfcd4d2b8f7d4928b
+  speakeasyVersion: 1.603.0
+  generationVersion: 2.681.1
+  releaseVersion: 0.27.6
+  configChecksum: 4d66a96dd4a15f81bec5d7b2234e4adb
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -1141,7 +1141,7 @@ examples:
         application/json: {"badgeId": "<id>"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": {}, "designs": ["<value 1>"]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSuggestTags.json", "colors": ["{}"], "designs": ["<value 1>"]}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
