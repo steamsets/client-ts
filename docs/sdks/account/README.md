@@ -116,7 +116,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -203,7 +203,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 412, 422  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -278,7 +278,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 403, 422, 429  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -357,7 +357,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 403, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -430,7 +430,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -503,7 +503,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422, 429  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -584,7 +584,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -657,7 +657,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -726,7 +726,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -795,7 +795,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -864,7 +864,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404, 422, 429       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -933,7 +933,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1001,6 +1001,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1068,6 +1069,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1136,7 +1138,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1204,7 +1206,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1273,7 +1275,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1342,7 +1344,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1410,6 +1412,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1478,7 +1481,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1546,7 +1549,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 403, 404                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1641,7 +1644,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1709,7 +1712,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 429                 | application/problem+json |
+| errors.ErrorModel        | 400, 401                 | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1776,11 +1779,11 @@ run();
 
 ### Errors
 
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 429            | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.ErrorModel            | 400, 401, 403, 404, 422, 429 | application/problem+json     |
+| errors.ErrorModel            | 500                          | application/problem+json     |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
 
 ## reconnectConnection
 
@@ -1853,7 +1856,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1930,7 +1933,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422                      | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1999,7 +2002,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422, 429  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2078,7 +2081,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2153,7 +2156,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2232,7 +2235,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2305,7 +2308,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2374,7 +2377,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422, 429                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2457,7 +2460,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422, 429                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2526,7 +2529,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422, 429                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2609,7 +2612,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 422                      | application/problem+json |
+| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2682,7 +2685,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2755,6 +2758,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 404, 422, 429            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422, 429  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

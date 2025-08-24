@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 8bff36285a1a55b9d7bac9cf94b83898
+  docChecksum: 1af0fd6ec55da3a2b6718d85ac043c05
   docVersion: 1.0.0
   speakeasyVersion: 1.606.3
   generationVersion: 2.687.1
-  releaseVersion: 0.27.6
-  configChecksum: 4d66a96dd4a15f81bec5d7b2234e4adb
+  releaseVersion: 0.27.7
+  configChecksum: 13cd509148cce8560fbe255908738b12
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -689,6 +689,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.compareBadges:
     speakeasy-default-account-compare-badges:
       requestBody:
@@ -744,6 +746,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.deleteImages:
     speakeasy-default-account-delete-images:
       requestBody:
@@ -755,6 +759,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.deleteSession:
     speakeasy-default-account-delete-session:
       requestBody:
@@ -765,6 +771,8 @@ examples:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getBadgeStats:
     speakeasy-default-account-get-badge-stats:
@@ -799,6 +807,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getMeta:
     speakeasy-default-account-get-meta:
       requestBody:
@@ -810,6 +820,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getSession:
     speakeasy-default-account-get-session:
       responses:
@@ -817,12 +829,16 @@ examples:
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734", "xp": 10000}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.getSettings:
     speakeasy-default-account-get-settings:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "partner", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 993290}}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.listApps:
     speakeasy-default-account-list-apps:
@@ -843,6 +859,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.listBadges:
     speakeasy-default-account-list-badges:
@@ -873,6 +891,8 @@ examples:
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListImagesResponseBody.json", "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}]}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.listLeaderboardHistory:
     speakeasy-default-account-list-leaderboard-history:
       requestBody:
@@ -892,6 +912,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.login:
     speakeasy-default-account-login:
@@ -942,12 +964,16 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.sendEmailVerification:
     speakeasy-default-account-send-email-verification:
       responses:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.subscribeEmail:
     speakeasy-default-account-subscribe-email:
@@ -980,6 +1006,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.updateImages:
     speakeasy-default-account-update-images:
       requestBody:
@@ -991,6 +1019,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.updateRole:
     speakeasy-default-account-update-role:
       requestBody:
@@ -999,6 +1029,8 @@ examples:
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.updateSettings:
     speakeasy-default-account-update-settings:
@@ -1009,6 +1041,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.updateVanity:
     speakeasy-default-account-update-vanity:
       requestBody:
@@ -1017,6 +1051,8 @@ examples:
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.uploadImages:
     speakeasy-default-account-upload-images:
@@ -1028,6 +1064,8 @@ examples:
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   account.verifyConnection:
     speakeasy-default-account-verify-connection:
@@ -1049,6 +1087,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.getAccount:
     speakeasy-default-admin-get-account:
       requestBody:
@@ -1059,6 +1099,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.removeVanity:
     speakeasy-default-admin-remove-vanity:
@@ -1071,6 +1113,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.updateResources:
     speakeasy-default-admin-update-resources:
       requestBody:
@@ -1080,6 +1124,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   admin.updateRoles:
     speakeasy-default-admin-update-roles:
       requestBody:
@@ -1088,6 +1134,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   app.listBadges:
     speakeasy-default-app-list-badges:
@@ -1099,6 +1147,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.listBadgePrices:
     speakeasy-default-badge-list-badge-prices:
@@ -1124,6 +1174,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.suggestSearch:
     speakeasy-default-badge-suggest-search:
       requestBody:
@@ -1146,6 +1198,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.listTags:
     speakeasy-default-badge-list-tags:
       responses:
@@ -1154,6 +1208,8 @@ examples:
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.tagBadge:
     speakeasy-default-badge-tag-badge:
@@ -1166,6 +1222,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.getAccountLeaderboard:
     speakeasy-default-leaderboard-get-account-leaderboard:
       requestBody:
@@ -1176,6 +1234,8 @@ examples:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.getAccountsMeta:
     speakeasy-default-leaderboard-get-accounts-meta:
@@ -1188,6 +1248,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.getGroupLeaderboard:
     speakeasy-default-leaderboard-get-group-leaderboard:
       requestBody:
@@ -1198,6 +1260,8 @@ examples:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.getGroupsMeta:
     speakeasy-default-leaderboard-get-groups-meta:
@@ -1210,6 +1274,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.getLowestRanks:
     speakeasy-default-leaderboard-get-lowest-ranks:
       requestBody:
@@ -1220,6 +1286,8 @@ examples:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.previewAccountRank:
     speakeasy-default-leaderboard-preview-account-rank:
@@ -1232,6 +1300,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   leaderboard.listBadges:
     speakeasy-default-leaderboard-list-badges:
       responses:
@@ -1241,12 +1311,16 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   liveness:
     speakeasy-default-liveness:
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1LivenessResponseBody.json", "message": "OK"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   location.getLocations:
     speakeasy-default-location-get-locations:
@@ -1257,6 +1331,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   staff.listStaff:
     speakeasy-default-staff-list-staff:
       responses:
@@ -1266,6 +1342,8 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   stats.getStats:
     speakeasy-default-stats-get-stats:
       responses:
@@ -1274,6 +1352,8 @@ examples:
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   badge.listAccounts:
     speakeasy-default-badge-list-accounts:
@@ -1290,4 +1370,61 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## SDK Changes Detected:
-  * `steamsets.badge.suggestTags()`:  `response.colors` **Changed** **Breaking** :warning:
+  * `steamsets.badge.badge.listAccounts()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.admin.removeVanity()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.stats.get()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.createDeveloperApp()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.staff.list()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.leaderboards.list()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.deleteImages()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.leaderboard.previewAccountRank()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.getBadgeStats()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.getDataPoints()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.getInfo()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.leaderboard.getLowestRanks()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.leaderboard.getGroupsMeta()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.leaderboard.getAccountsMeta()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listApps()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listBadgeBookmarks()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listBadges()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listFriends()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.badges.listTags()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listLeaderboardHistory()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.listOwnedBadges()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.badge.search()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.logout()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.bookmarkBadge()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.apps.listBadges()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.admin.updateRoles()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.admin.updateResources()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.updateDeveloperApp()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.compareBadges()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.admin.getAccount()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.updateVanity()`:  `error` **Changed** **Breaking** :warning:
+  * `steamsets.account.deleteDeveloperApp()`:  `error` **Changed**
+  * `steamsets.location.get()`:  `error.status[400]` **Added**
+  * `steamsets.account.listImages()`:  `error` **Changed**
+  * `steamsets.badge.suggestTags()`:  `error` **Changed**
+  * `steamsets.account.verifyConnection()`:  `error` **Changed**
+  * `steamsets.account.verifyEmail()`:  `error` **Changed**
+  * `steamsets.account.updateConnection()`:  `error.status[401]` **Added**
+  * `steamsets.account.subscribeEmail()`:  `error.status[401]` **Added**
+  * `steamsets.account.sendEmailVerification()`:  `error` **Changed**
+  * `steamsets.account.refreshSession()`:  `error` **Changed**
+  * `steamsets.account.reconnectConnection()`:  `error` **Changed**
+  * `steamsets.account.updateImages()`:  `error` **Changed**
+  * `steamsets.account.updateSettings()`:  `error` **Changed**
+  * `steamsets.account.queueUpdate()`:  `error` **Changed**
+  * `steamsets.account.updateRole()`:  `error` **Changed**
+  * `steamsets.badges.tag()`:  `error` **Changed**
+  * `steamsets.leaderboard.getAccount()`:  `error` **Changed**
+  * `steamsets.account.getSettings()`:  `error` **Changed**
+  * `steamsets.leaderboard.getGroup()`:  `error` **Changed**
+  * `steamsets.account.getSession()`:  `error` **Changed**
+  * `steamsets.account.getMeta()`:  `error` **Changed**
+  * `steamsets.account.deleteSession()`:  `error` **Changed**
+  * `steamsets.account.login()`:  `error.status[401]` **Added**
+  * `steamsets.liveness.check()`:  `error` **Changed**
+  * `steamsets.account.uploadImages()`:  `error` **Changed**
+  * `steamsets.account.deleteConnection()`:  `error` **Changed**
+  * `steamsets.account.createConnection()`:  `error` **Changed**

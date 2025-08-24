@@ -138,7 +138,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["403", "404", "422", "4XX", "500", "5XX"],
+    errorCodes: ["400", "401", "404", "422", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -166,7 +166,7 @@ async function $do(
     M.json(200, operations.AccountBookmarkBadgeResponse$inboundSchema, {
       key: "V1AccountBookmarkBadgeResponseBody",
     }),
-    M.jsonErr([403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

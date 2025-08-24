@@ -118,7 +118,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["4XX", "500", "5XX"],
+    errorCodes: ["400", "401", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -145,6 +145,9 @@ async function $do(
   >(
     M.json(200, operations.AccountGetSettingsResponse$inboundSchema, {
       key: "V1AccountGetSettingsBody",
+    }),
+    M.jsonErr([400, 401, 404], errors.ErrorModel$inboundSchema, {
+      ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

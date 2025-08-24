@@ -118,7 +118,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["404", "429", "4XX", "500", "5XX"],
+    errorCodes: ["400", "401", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -147,7 +147,7 @@ async function $do(
       hdrs: true,
       key: "V1Stats",
     }),
-    M.jsonErr([404, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
