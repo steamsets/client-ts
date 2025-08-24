@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @steamsets/client-ts SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx accountBookmarkBadge.ts
+ * npm run build && npx tsx accountBookmarkBadge.example.ts
  */
 
 import { SteamSets } from "@steamsets/client-ts";

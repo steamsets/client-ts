@@ -13,7 +13,7 @@ export type BadgeSuggestTags = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  colors: { [k: string]: number };
+  colors: Array<string> | null;
   designs: Array<string> | null;
 };
 
@@ -24,7 +24,7 @@ export const BadgeSuggestTags$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  colors: z.record(z.number().int()),
+  colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
@@ -35,7 +35,7 @@ export const BadgeSuggestTags$inboundSchema: z.ZodType<
 /** @internal */
 export type BadgeSuggestTags$Outbound = {
   $schema?: string | undefined;
-  colors: { [k: string]: number };
+  colors: Array<string> | null;
   designs: Array<string> | null;
 };
 
@@ -46,7 +46,7 @@ export const BadgeSuggestTags$outboundSchema: z.ZodType<
   BadgeSuggestTags
 > = z.object({
   dollarSchema: z.string().optional(),
-  colors: z.record(z.number().int()),
+  colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(z.string())),
 }).transform((v) => {
   return remap$(v, {
