@@ -144,7 +144,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["400", "401", "422", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -170,7 +170,7 @@ async function $do(
     | SDKValidationError
   >(
     M.nil(204, operations.AccountUpdateSettingsResponse$inboundSchema),
-    M.jsonErr([422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
