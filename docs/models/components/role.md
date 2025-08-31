@@ -6,8 +6,11 @@
 import { Role } from "@steamsets/client-ts/models/components";
 
 let value: Role = {
-  rating: 310006,
-  role: "owner",
+  extras: {
+    "key": "<value>",
+  },
+  rating: 570967,
+  role: "ruby",
 };
 ```
 
@@ -15,5 +18,6 @@ let value: Role = {
 
 | Field                                                      | Type                                                       | Required                                                   | Description                                                |
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `extras`                                                   | Record<string, *any*>                                      | :heavy_check_mark:                                         | Extra data associated with the role                        |
 | `rating`                                                   | *number*                                                   | :heavy_check_mark:                                         | The higher the more presedence it has                      |
 | `role`                                                     | [components.RoleRole](../../models/components/rolerole.md) | :heavy_check_mark:                                         | N/A                                                        |

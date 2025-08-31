@@ -27,10 +27,15 @@ export const RoleRole = {
   Translator: "translator",
   Top100: "top_100",
   BadgeScout: "badge_scout",
+  NitroBooster: "nitro_booster",
 } as const;
 export type RoleRole = ClosedEnum<typeof RoleRole>;
 
 export type Role = {
+  /**
+   * Extra data associated with the role
+   */
+  extras: { [k: string]: any } | null;
   /**
    * The higher the more presedence it has
    */
@@ -60,12 +65,14 @@ export namespace RoleRole$ {
 /** @internal */
 export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
   .object({
+    extras: z.nullable(z.record(z.any())),
     rating: z.number().int(),
     role: RoleRole$inboundSchema,
   });
 
 /** @internal */
 export type Role$Outbound = {
+  extras: { [k: string]: any } | null;
   rating: number;
   role: string;
 };
@@ -73,6 +80,7 @@ export type Role$Outbound = {
 /** @internal */
 export const Role$outboundSchema: z.ZodType<Role$Outbound, z.ZodTypeDef, Role> =
   z.object({
+    extras: z.nullable(z.record(z.any())),
     rating: z.number().int(),
     role: RoleRole$outboundSchema,
   });

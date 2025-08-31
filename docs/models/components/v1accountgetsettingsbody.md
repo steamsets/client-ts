@@ -9,7 +9,7 @@ let value: V1AccountGetSettingsBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json",
   chosenRole: {
-    role: "emerald",
+    role: "sapphire",
     tier: "tier_1",
   },
   connections: [

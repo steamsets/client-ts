@@ -50,8 +50,12 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
         },
         roles: [
           {
-            rating: 661918,
-            role: "contributor",
+            extras: {
+              "key": "<value>",
+              "key1": "<value>",
+            },
+            rating: 297304,
+            role: "donator",
           },
         ],
         state: {
@@ -111,8 +115,12 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
       },
       roles: [
         {
-          rating: 661918,
-          role: "contributor",
+          extras: {
+            "key": "<value>",
+            "key1": "<value>",
+          },
+          rating: 297304,
+          role: "donator",
         },
       ],
       state: {

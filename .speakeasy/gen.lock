@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 1af0fd6ec55da3a2b6718d85ac043c05
+  docChecksum: fa30e3c076901093c1394ad0a9658120
   docVersion: 1.0.0
-  speakeasyVersion: 1.606.3
-  generationVersion: 2.687.1
-  releaseVersion: 0.27.7
-  configChecksum: 13cd509148cce8560fbe255908738b12
+  speakeasyVersion: 1.606.9
+  generationVersion: 2.687.13
+  releaseVersion: 0.27.8
+  configChecksum: 05ac19731a72f268470169bb232a641c
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -802,7 +802,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 526475, "city": {"name": "Bad Krozingen"}, "communityBan": false, "connections": [], "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}], "currentRanks": null, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 965501, "images": null, "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "undefined", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2024-06-10T16:33:13.061Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"rating": 262255, "role": "donator"}], "shortlinkDomain": "steamsets.link", "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 372483, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 705289, "xp": 123456}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetInfoResponseBody.json", "accountId": 123456, "animatedAvatar": "steamsets", "appCost": 123456, "appPrivacy": "public", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "steamsets", "awardsGiven": 123456, "awardsReceived": 123456, "background": "steamsets", "badges": 123456, "bans": 526475, "city": {"name": "Bad Krozingen"}, "communityBan": false, "connections": [], "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "currentBestRanks": [{"leaderboard": "points_given", "ranks": "1,1,1,1,1"}], "currentRanks": null, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friendPrivacy": "public", "friends": 123456, "gameBans": 965501, "images": null, "lastBanDate": "2024-03-07 07:31:46", "lastQueueStatus": "undefined", "level": 123456, "miniBackground": "steamsets", "name": "steamsets", "nextAllowedTime": "2024-06-10T16:33:13.061Z", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 262255, "role": "donator"}], "shortlinkDomain": "steamsets.link", "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 372483, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "theme": "steamsets", "updatedAt": "2023-01-01T00:00:00Z", "vacBans": 705289, "xp": 123456}
         "403":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -826,7 +826,7 @@ examples:
     speakeasy-default-account-get-session:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734", "xp": 10000}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSessionBody.json", "accountId": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "email": "flo@example.com", "isNew": true, "level": 1, "name": "flo", "resources": [{"resource": "auto_refresh", "value": "1"}], "roles": [{"extras": {"key": "<value>", "key1": "<value>"}, "rating": 656241, "role": "amber"}], "sessionData": {"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}, "steamId": "76561198842603734", "xp": 10000}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "400":
@@ -1256,7 +1256,7 @@ examples:
         application/json: {"end": 10, "goToLeaderboardRank": 1, "leaderboard": "most_members", "start": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupLeaderboardResponseBody.json", "groups": [], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 313726, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 648109, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"rating": 356662, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 178403, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 820419, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupLeaderboardResponseBody.json", "groups": [], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 313726, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 648109, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 356662, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 178403, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 820419, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1295,7 +1295,7 @@ examples:
         application/json: {"leaderboard": "xp"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardPreviewAccountRankResponseBody.json", "ownAccount": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 403172, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 394980, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 131556, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 826271, "xp": 123456}, "rankedAbove": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 491925, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 68229, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 884621, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 956804, "xp": 123456}, "rankedBelow": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 349915, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 878749, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 606494, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 72462, "xp": 123456}, "rankedOutOf": 0}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardPreviewAccountRankResponseBody.json", "ownAccount": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 403172, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 394980, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 131556, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 826271, "xp": 123456}, "rankedAbove": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 491925, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 68229, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 884621, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 956804, "xp": 123456}, "rankedBelow": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 349915, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 878749, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 606494, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 72462, "xp": 123456}, "rankedOutOf": 0}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1337,7 +1337,7 @@ examples:
     speakeasy-default-staff-list-staff:
       responses:
         "200":
-          application/json: [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 435782, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 956968, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"rating": 811001, "role": "badge_scout"}], "state": null, "steamId": "76561198842603734", "steamSetsScore": 524382, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 171924, "xp": 123456}]
+          application/json: [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 435782, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 956968, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 811001, "role": "badge_scout"}], "state": null, "steamId": "76561198842603734", "steamSetsScore": 524382, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 171924, "xp": 123456}]
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -1370,61 +1370,12 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## SDK Changes Detected:
-  * `steamsets.badge.badge.listAccounts()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.admin.removeVanity()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.stats.get()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.createDeveloperApp()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.staff.list()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.leaderboards.list()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.deleteImages()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.leaderboard.previewAccountRank()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.getBadgeStats()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.getDataPoints()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.getInfo()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.leaderboard.getLowestRanks()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.leaderboard.getGroupsMeta()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.leaderboard.getAccountsMeta()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listApps()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listBadgeBookmarks()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listBadges()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listFriends()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.badges.listTags()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listLeaderboardHistory()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.listOwnedBadges()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.badge.search()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.logout()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.bookmarkBadge()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.apps.listBadges()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.admin.updateRoles()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.admin.updateResources()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.updateDeveloperApp()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.compareBadges()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.admin.getAccount()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.updateVanity()`:  `error` **Changed** **Breaking** :warning:
-  * `steamsets.account.deleteDeveloperApp()`:  `error` **Changed**
-  * `steamsets.location.get()`:  `error.status[400]` **Added**
-  * `steamsets.account.listImages()`:  `error` **Changed**
-  * `steamsets.badge.suggestTags()`:  `error` **Changed**
-  * `steamsets.account.verifyConnection()`:  `error` **Changed**
-  * `steamsets.account.verifyEmail()`:  `error` **Changed**
-  * `steamsets.account.updateConnection()`:  `error.status[401]` **Added**
-  * `steamsets.account.subscribeEmail()`:  `error.status[401]` **Added**
-  * `steamsets.account.sendEmailVerification()`:  `error` **Changed**
-  * `steamsets.account.refreshSession()`:  `error` **Changed**
-  * `steamsets.account.reconnectConnection()`:  `error` **Changed**
-  * `steamsets.account.updateImages()`:  `error` **Changed**
-  * `steamsets.account.updateSettings()`:  `error` **Changed**
-  * `steamsets.account.queueUpdate()`:  `error` **Changed**
-  * `steamsets.account.updateRole()`:  `error` **Changed**
-  * `steamsets.badges.tag()`:  `error` **Changed**
-  * `steamsets.leaderboard.getAccount()`:  `error` **Changed**
-  * `steamsets.account.getSettings()`:  `error` **Changed**
-  * `steamsets.leaderboard.getGroup()`:  `error` **Changed**
-  * `steamsets.account.getSession()`:  `error` **Changed**
-  * `steamsets.account.getMeta()`:  `error` **Changed**
-  * `steamsets.account.deleteSession()`:  `error` **Changed**
-  * `steamsets.account.login()`:  `error.status[401]` **Added**
-  * `steamsets.liveness.check()`:  `error` **Changed**
-  * `steamsets.account.uploadImages()`:  `error` **Changed**
-  * `steamsets.account.deleteConnection()`:  `error` **Changed**
-  * `steamsets.account.createConnection()`:  `error` **Changed**
+  * `steamsets.account.getInfo()`:  `response.roles.[].extras` **Added**
+  * `steamsets.account.getSession()`:  `response.roles.[].extras` **Added**
+  * `steamsets.account.listFriends()`:  `response.friends.[].roles.[].extras` **Added**
+  * `steamsets.admin.getAccount()`:  `response.roles.[].extras` **Added**
+  * `steamsets.badge.badge.listAccounts()`:  `response.accounts.[].roles.[].extras` **Added**
+  * `steamsets.leaderboard.getAccount()`:  `response.accounts.[].roles.[].extras` **Added**
+  * `steamsets.leaderboard.getGroup()`:  `response.groups.[].owner.roles.[].extras` **Added**
+  * `steamsets.leaderboard.previewAccountRank()`:  `response.ownaccount.roles.[].extras` **Added**
+  * `steamsets.staff.list()`:  `response.[].roles.[].extras` **Added**
