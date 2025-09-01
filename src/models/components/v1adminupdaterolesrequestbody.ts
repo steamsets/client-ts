@@ -8,17 +8,17 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export const Roles = {
   User: "user",
@@ -44,9 +44,9 @@ export const Roles = {
 export type Roles = ClosedEnum<typeof Roles>;
 
 export type V1AdminUpdateRolesRequestBody = {
-  id?: IDStruct | undefined;
+  id?: IDSearch | undefined;
   roles: Array<Roles> | null;
-  vanity?: VanityStruct | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -75,16 +75,16 @@ export const V1AdminUpdateRolesRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: IDStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
   roles: z.nullable(z.array(Roles$inboundSchema)),
-  vanity: VanityStruct$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AdminUpdateRolesRequestBody$Outbound = {
-  id?: IDStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
   roles: Array<string> | null;
-  vanity?: VanityStruct$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -93,9 +93,9 @@ export const V1AdminUpdateRolesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AdminUpdateRolesRequestBody
 > = z.object({
-  id: IDStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
   roles: z.nullable(z.array(Roles$outboundSchema)),
-  vanity: VanityStruct$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**

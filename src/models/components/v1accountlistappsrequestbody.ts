@@ -7,11 +7,11 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
   V1AppFilters,
   V1AppFilters$inboundSchema,
@@ -25,19 +25,19 @@ import {
   V1AppOrder$outboundSchema,
 } from "./v1apporder.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export type V1AccountListAppsRequestBody = {
   filters?: V1AppFilters | undefined;
-  id?: IDStruct | undefined;
+  id?: IDSearch | undefined;
   order?: V1AppOrder | null | undefined;
   page?: number | undefined;
   search?: string | null | undefined;
-  vanity?: VanityStruct | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -47,21 +47,21 @@ export const V1AccountListAppsRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   filters: V1AppFilters$inboundSchema.optional(),
-  id: IDStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
   order: z.nullable(V1AppOrder$inboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
-  vanity: VanityStruct$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AccountListAppsRequestBody$Outbound = {
   filters?: V1AppFilters$Outbound | undefined;
-  id?: IDStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
   order?: V1AppOrder$Outbound | null | undefined;
   page: number;
   search?: string | null | undefined;
-  vanity?: VanityStruct$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -71,11 +71,11 @@ export const V1AccountListAppsRequestBody$outboundSchema: z.ZodType<
   V1AccountListAppsRequestBody
 > = z.object({
   filters: V1AppFilters$outboundSchema.optional(),
-  id: IDStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
   order: z.nullable(V1AppOrder$outboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
-  vanity: VanityStruct$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**

@@ -1,11 +1,11 @@
-# IDStruct
+# IDSearch
 
 ## Example Usage
 
 ```typescript
-import { IDStruct } from "@steamsets/client-ts/models/components";
+import { IDSearch } from "@steamsets/client-ts/models/components";
 
-let value: IDStruct = {};
+let value: IDSearch = {};
 ```
 
 ## Fields

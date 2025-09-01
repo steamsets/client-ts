@@ -7,21 +7,21 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AccountSearchIDStruct,
-  AccountSearchIDStruct$inboundSchema,
-  AccountSearchIDStruct$Outbound,
-  AccountSearchIDStruct$outboundSchema,
-} from "./accountsearchidstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
-  AccountSearchVanityStruct,
-  AccountSearchVanityStruct$inboundSchema,
-  AccountSearchVanityStruct$Outbound,
-  AccountSearchVanityStruct$outboundSchema,
-} from "./accountsearchvanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export type AccountSearch = {
-  id?: AccountSearchIDStruct | undefined;
-  vanity?: AccountSearchVanityStruct | undefined;
+  id?: IDSearch | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -30,14 +30,14 @@ export const AccountSearch$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: AccountSearchIDStruct$inboundSchema.optional(),
-  vanity: AccountSearchVanityStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type AccountSearch$Outbound = {
-  id?: AccountSearchIDStruct$Outbound | undefined;
-  vanity?: AccountSearchVanityStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -46,8 +46,8 @@ export const AccountSearch$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountSearch
 > = z.object({
-  id: AccountSearchIDStruct$outboundSchema.optional(),
-  vanity: AccountSearchVanityStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**

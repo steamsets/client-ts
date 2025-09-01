@@ -7,11 +7,11 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
   Resource,
   Resource$inboundSchema,
@@ -19,19 +19,19 @@ import {
   Resource$outboundSchema,
 } from "./resource.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export type V1AdminUpdateResourcesRequestBody = {
-  id?: IDStruct | undefined;
+  id?: IDSearch | undefined;
   /**
    * The resources to add for this account
    */
   resources: Array<Resource> | null;
-  vanity?: VanityStruct | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -40,16 +40,16 @@ export const V1AdminUpdateResourcesRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: IDStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
   resources: z.nullable(z.array(Resource$inboundSchema)),
-  vanity: VanityStruct$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AdminUpdateResourcesRequestBody$Outbound = {
-  id?: IDStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
   resources: Array<Resource$Outbound> | null;
-  vanity?: VanityStruct$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -58,9 +58,9 @@ export const V1AdminUpdateResourcesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AdminUpdateResourcesRequestBody
 > = z.object({
-  id: IDStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
   resources: z.nullable(z.array(Resource$outboundSchema)),
-  vanity: VanityStruct$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**

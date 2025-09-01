@@ -20,7 +20,7 @@ export const Type = {
  */
 export type Type = ClosedEnum<typeof Type>;
 
-export type AccountSearchVanityStruct = {
+export type VanitySearch = {
   /**
    * Which type of vanity to search for
    */
@@ -52,8 +52,8 @@ export namespace Type$ {
 }
 
 /** @internal */
-export const AccountSearchVanityStruct$inboundSchema: z.ZodType<
-  AccountSearchVanityStruct,
+export const VanitySearch$inboundSchema: z.ZodType<
+  VanitySearch,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -62,16 +62,16 @@ export const AccountSearchVanityStruct$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountSearchVanityStruct$Outbound = {
+export type VanitySearch$Outbound = {
   type: string;
   value: string;
 };
 
 /** @internal */
-export const AccountSearchVanityStruct$outboundSchema: z.ZodType<
-  AccountSearchVanityStruct$Outbound,
+export const VanitySearch$outboundSchema: z.ZodType<
+  VanitySearch$Outbound,
   z.ZodTypeDef,
-  AccountSearchVanityStruct
+  VanitySearch
 > = z.object({
   type: Type$outboundSchema,
   value: z.string(),
@@ -81,29 +81,25 @@ export const AccountSearchVanityStruct$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountSearchVanityStruct$ {
-  /** @deprecated use `AccountSearchVanityStruct$inboundSchema` instead. */
-  export const inboundSchema = AccountSearchVanityStruct$inboundSchema;
-  /** @deprecated use `AccountSearchVanityStruct$outboundSchema` instead. */
-  export const outboundSchema = AccountSearchVanityStruct$outboundSchema;
-  /** @deprecated use `AccountSearchVanityStruct$Outbound` instead. */
-  export type Outbound = AccountSearchVanityStruct$Outbound;
+export namespace VanitySearch$ {
+  /** @deprecated use `VanitySearch$inboundSchema` instead. */
+  export const inboundSchema = VanitySearch$inboundSchema;
+  /** @deprecated use `VanitySearch$outboundSchema` instead. */
+  export const outboundSchema = VanitySearch$outboundSchema;
+  /** @deprecated use `VanitySearch$Outbound` instead. */
+  export type Outbound = VanitySearch$Outbound;
 }
 
-export function accountSearchVanityStructToJSON(
-  accountSearchVanityStruct: AccountSearchVanityStruct,
-): string {
-  return JSON.stringify(
-    AccountSearchVanityStruct$outboundSchema.parse(accountSearchVanityStruct),
-  );
+export function vanitySearchToJSON(vanitySearch: VanitySearch): string {
+  return JSON.stringify(VanitySearch$outboundSchema.parse(vanitySearch));
 }
 
-export function accountSearchVanityStructFromJSON(
+export function vanitySearchFromJSON(
   jsonString: string,
-): SafeParseResult<AccountSearchVanityStruct, SDKValidationError> {
+): SafeParseResult<VanitySearch, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountSearchVanityStruct$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountSearchVanityStruct' from JSON`,
+    (x) => VanitySearch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'VanitySearch' from JSON`,
   );
 }

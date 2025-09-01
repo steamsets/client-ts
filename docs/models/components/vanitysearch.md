@@ -1,12 +1,12 @@
-# AccountSearchVanityStruct
+# VanitySearch
 
 ## Example Usage
 
 ```typescript
-import { AccountSearchVanityStruct } from "@steamsets/client-ts/models/components";
+import { VanitySearch } from "@steamsets/client-ts/models/components";
 
-let value: AccountSearchVanityStruct = {
-  type: "internal",
+let value: VanitySearch = {
+  type: "steam",
   value: "<value>",
 };
 ```

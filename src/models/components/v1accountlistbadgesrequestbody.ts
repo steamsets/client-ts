@@ -14,11 +14,11 @@ import {
   BadgeValueFilter$outboundSchema,
 } from "./badgevaluefilter.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
   V1BadgeFilters,
   V1BadgeFilters$inboundSchema,
@@ -32,11 +32,11 @@ import {
   V1BadgeOrder$outboundSchema,
 } from "./v1badgeorder.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export const V1AccountListBadgesRequestBodyFilter = {
   Foil: "foil",
@@ -53,7 +53,7 @@ export type V1AccountListBadgesRequestBody = {
    */
   filter?: Array<V1AccountListBadgesRequestBodyFilter> | null | undefined;
   filters?: V1BadgeFilters | undefined;
-  id?: IDStruct | undefined;
+  id?: IDSearch | undefined;
   order?: V1BadgeOrder | null | undefined;
   page?: number | undefined;
   search?: string | null | undefined;
@@ -61,7 +61,7 @@ export type V1AccountListBadgesRequestBody = {
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   valueFilter?: Array<BadgeValueFilter> | null | undefined;
-  vanity?: VanityStruct | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -98,24 +98,24 @@ export const V1AccountListBadgesRequestBody$inboundSchema: z.ZodType<
     z.array(V1AccountListBadgesRequestBodyFilter$inboundSchema),
   ).optional(),
   filters: V1BadgeFilters$inboundSchema.optional(),
-  id: IDStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$inboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
   valueFilter: z.nullable(z.array(BadgeValueFilter$inboundSchema)).optional(),
-  vanity: VanityStruct$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AccountListBadgesRequestBody$Outbound = {
   filter?: Array<string> | null | undefined;
   filters?: V1BadgeFilters$Outbound | undefined;
-  id?: IDStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
   order?: V1BadgeOrder$Outbound | null | undefined;
   page: number;
   search?: string | null | undefined;
   valueFilter?: Array<BadgeValueFilter$Outbound> | null | undefined;
-  vanity?: VanityStruct$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -128,12 +128,12 @@ export const V1AccountListBadgesRequestBody$outboundSchema: z.ZodType<
     z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema),
   ).optional(),
   filters: V1BadgeFilters$outboundSchema.optional(),
-  id: IDStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$outboundSchema).optional(),
   page: z.number().int().default(1),
   search: z.nullable(z.string()).optional(),
   valueFilter: z.nullable(z.array(BadgeValueFilter$outboundSchema)).optional(),
-  vanity: VanityStruct$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**
