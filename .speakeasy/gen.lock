@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: fa30e3c076901093c1394ad0a9658120
+  docChecksum: 0909f61f27efc0b9562bcc9a9e52eac3
   docVersion: 1.0.0
   speakeasyVersion: 1.606.9
   generationVersion: 2.687.13
-  releaseVersion: 0.27.8
-  configChecksum: 05ac19731a72f268470169bb232a641c
+  releaseVersion: 0.27.9
+  configChecksum: 1090e5377a75bd84cc3aaeb58026b6de
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -61,8 +61,6 @@ generatedFiles:
   - docs/models/components/accountleaderboardhistory.md
   - docs/models/components/accountleaderboardhistoryleaderboard.md
   - docs/models/components/accountsearch.md
-  - docs/models/components/accountsearchidstruct.md
-  - docs/models/components/accountsearchvanitystruct.md
   - docs/models/components/appprivacy.md
   - docs/models/components/badge.md
   - docs/models/components/badgesuggesttags.md
@@ -89,7 +87,7 @@ generatedFiles:
   - docs/models/components/friendprivacy.md
   - docs/models/components/historyvalue.md
   - docs/models/components/httpmetadata.md
-  - docs/models/components/idstruct.md
+  - docs/models/components/idsearch.md
   - docs/models/components/ignore.md
   - docs/models/components/image.md
   - docs/models/components/imagetype.md
@@ -259,8 +257,7 @@ generatedFiles:
   - docs/models/components/v1searchrequest.md
   - docs/models/components/v1stats.md
   - docs/models/components/v1vanityanalytics.md
-  - docs/models/components/vanitystruct.md
-  - docs/models/components/vanitystructtype.md
+  - docs/models/components/vanitysearch.md
   - docs/models/components/vectors.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountbookmarkbadgeresponse.md
@@ -428,8 +425,6 @@ generatedFiles:
   - src/models/components/accountbadgeinfo.ts
   - src/models/components/accountleaderboardhistory.ts
   - src/models/components/accountsearch.ts
-  - src/models/components/accountsearchidstruct.ts
-  - src/models/components/accountsearchvanitystruct.ts
   - src/models/components/badge.ts
   - src/models/components/badgesuggesttags.ts
   - src/models/components/badgevaluefilter.ts
@@ -446,7 +441,7 @@ generatedFiles:
   - src/models/components/errormodel.ts
   - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
-  - src/models/components/idstruct.ts
+  - src/models/components/idsearch.ts
   - src/models/components/image.ts
   - src/models/components/index.ts
   - src/models/components/leaderboardaccount.ts
@@ -585,7 +580,7 @@ generatedFiles:
   - src/models/components/v1searchrequest.ts
   - src/models/components/v1stats.ts
   - src/models/components/v1vanityanalytics.ts
-  - src/models/components/vanitystruct.ts
+  - src/models/components/vanitysearch.ts
   - src/models/components/vectors.ts
   - src/models/errors/errormodel.ts
   - src/models/errors/httpclienterrors.ts
@@ -1368,14 +1363,3 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## SDK Changes Detected:
-  * `steamsets.account.getInfo()`:  `response.roles.[].extras` **Added**
-  * `steamsets.account.getSession()`:  `response.roles.[].extras` **Added**
-  * `steamsets.account.listFriends()`:  `response.friends.[].roles.[].extras` **Added**
-  * `steamsets.admin.getAccount()`:  `response.roles.[].extras` **Added**
-  * `steamsets.badge.badge.listAccounts()`:  `response.accounts.[].roles.[].extras` **Added**
-  * `steamsets.leaderboard.getAccount()`:  `response.accounts.[].roles.[].extras` **Added**
-  * `steamsets.leaderboard.getGroup()`:  `response.groups.[].owner.roles.[].extras` **Added**
-  * `steamsets.leaderboard.previewAccountRank()`:  `response.ownaccount.roles.[].extras` **Added**
-  * `steamsets.staff.list()`:  `response.[].roles.[].extras` **Added**

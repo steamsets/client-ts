@@ -7,25 +7,25 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 export type V1AccountQueueUpdateRequestBody = {
   /**
    * Force the queue to process this account, staff only
    */
   force?: boolean | undefined;
-  id?: IDStruct | undefined;
-  vanity?: VanityStruct | undefined;
+  id?: IDSearch | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -35,15 +35,15 @@ export const V1AccountQueueUpdateRequestBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   force: z.boolean().default(false),
-  id: IDStruct$inboundSchema.optional(),
-  vanity: VanityStruct$inboundSchema.optional(),
+  id: IDSearch$inboundSchema.optional(),
+  vanity: VanitySearch$inboundSchema.optional(),
 });
 
 /** @internal */
 export type V1AccountQueueUpdateRequestBody$Outbound = {
   force: boolean;
-  id?: IDStruct$Outbound | undefined;
-  vanity?: VanityStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -53,8 +53,8 @@ export const V1AccountQueueUpdateRequestBody$outboundSchema: z.ZodType<
   V1AccountQueueUpdateRequestBody
 > = z.object({
   force: z.boolean().default(false),
-  id: IDStruct$outboundSchema.optional(),
-  vanity: VanityStruct$outboundSchema.optional(),
+  id: IDSearch$outboundSchema.optional(),
+  vanity: VanitySearch$outboundSchema.optional(),
 });
 
 /**

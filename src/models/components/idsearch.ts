@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type IDStruct = {
+export type IDSearch = {
   /**
    * Account ID to search for
    */
@@ -19,8 +19,8 @@ export type IDStruct = {
 };
 
 /** @internal */
-export const IDStruct$inboundSchema: z.ZodType<
-  IDStruct,
+export const IDSearch$inboundSchema: z.ZodType<
+  IDSearch,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -29,16 +29,16 @@ export const IDStruct$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type IDStruct$Outbound = {
+export type IDSearch$Outbound = {
   accountId?: number | undefined;
   steamId64?: string | undefined;
 };
 
 /** @internal */
-export const IDStruct$outboundSchema: z.ZodType<
-  IDStruct$Outbound,
+export const IDSearch$outboundSchema: z.ZodType<
+  IDSearch$Outbound,
   z.ZodTypeDef,
-  IDStruct
+  IDSearch
 > = z.object({
   accountId: z.number().int().optional(),
   steamId64: z.string().optional(),
@@ -48,25 +48,25 @@ export const IDStruct$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace IDStruct$ {
-  /** @deprecated use `IDStruct$inboundSchema` instead. */
-  export const inboundSchema = IDStruct$inboundSchema;
-  /** @deprecated use `IDStruct$outboundSchema` instead. */
-  export const outboundSchema = IDStruct$outboundSchema;
-  /** @deprecated use `IDStruct$Outbound` instead. */
-  export type Outbound = IDStruct$Outbound;
+export namespace IDSearch$ {
+  /** @deprecated use `IDSearch$inboundSchema` instead. */
+  export const inboundSchema = IDSearch$inboundSchema;
+  /** @deprecated use `IDSearch$outboundSchema` instead. */
+  export const outboundSchema = IDSearch$outboundSchema;
+  /** @deprecated use `IDSearch$Outbound` instead. */
+  export type Outbound = IDSearch$Outbound;
 }
 
-export function idStructToJSON(idStruct: IDStruct): string {
-  return JSON.stringify(IDStruct$outboundSchema.parse(idStruct));
+export function idSearchToJSON(idSearch: IDSearch): string {
+  return JSON.stringify(IDSearch$outboundSchema.parse(idSearch));
 }
 
-export function idStructFromJSON(
+export function idSearchFromJSON(
   jsonString: string,
-): SafeParseResult<IDStruct, SDKValidationError> {
+): SafeParseResult<IDSearch, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => IDStruct$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IDStruct' from JSON`,
+    (x) => IDSearch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IDSearch' from JSON`,
   );
 }

@@ -8,17 +8,17 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  IDStruct,
-  IDStruct$inboundSchema,
-  IDStruct$Outbound,
-  IDStruct$outboundSchema,
-} from "./idstruct.js";
+  IDSearch,
+  IDSearch$inboundSchema,
+  IDSearch$Outbound,
+  IDSearch$outboundSchema,
+} from "./idsearch.js";
 import {
-  VanityStruct,
-  VanityStruct$inboundSchema,
-  VanityStruct$Outbound,
-  VanityStruct$outboundSchema,
-} from "./vanitystruct.js";
+  VanitySearch,
+  VanitySearch$inboundSchema,
+  VanitySearch$Outbound,
+  VanitySearch$outboundSchema,
+} from "./vanitysearch.js";
 
 /**
  * The leaderboard to get
@@ -48,7 +48,7 @@ export type V1LeaderboardPreviewAccountRankRequestBodyLeaderboard = ClosedEnum<
 >;
 
 export type V1LeaderboardPreviewAccountRankRequestBody = {
-  id?: IDStruct | undefined;
+  id?: IDSearch | undefined;
   /**
    * The leaderboard to get
    */
@@ -57,7 +57,7 @@ export type V1LeaderboardPreviewAccountRankRequestBody = {
    * What their leaderboard score would be, will use their current rank if not set
    */
   value?: number | null | undefined;
-  vanity?: VanityStruct | undefined;
+  vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
@@ -89,19 +89,19 @@ export namespace V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$ {
 export const V1LeaderboardPreviewAccountRankRequestBody$inboundSchema:
   z.ZodType<V1LeaderboardPreviewAccountRankRequestBody, z.ZodTypeDef, unknown> =
     z.object({
-      id: IDStruct$inboundSchema.optional(),
+      id: IDSearch$inboundSchema.optional(),
       leaderboard:
         V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$inboundSchema,
       value: z.nullable(z.number().int()).optional(),
-      vanity: VanityStruct$inboundSchema.optional(),
+      vanity: VanitySearch$inboundSchema.optional(),
     });
 
 /** @internal */
 export type V1LeaderboardPreviewAccountRankRequestBody$Outbound = {
-  id?: IDStruct$Outbound | undefined;
+  id?: IDSearch$Outbound | undefined;
   leaderboard: string;
   value?: number | null | undefined;
-  vanity?: VanityStruct$Outbound | undefined;
+  vanity?: VanitySearch$Outbound | undefined;
 };
 
 /** @internal */
@@ -111,11 +111,11 @@ export const V1LeaderboardPreviewAccountRankRequestBody$outboundSchema:
     z.ZodTypeDef,
     V1LeaderboardPreviewAccountRankRequestBody
   > = z.object({
-    id: IDStruct$outboundSchema.optional(),
+    id: IDSearch$outboundSchema.optional(),
     leaderboard:
       V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema,
     value: z.nullable(z.number().int()).optional(),
-    vanity: VanityStruct$outboundSchema.optional(),
+    vanity: VanitySearch$outboundSchema.optional(),
   });
 
 /**
