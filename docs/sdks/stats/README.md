@@ -7,9 +7,11 @@ Any endpoint that return some sort of statistical data.
 
 ### Available Operations
 
-* [get](#get)
+* [get](#get) - Get platform statistics
 
 ## get
+
+Get platform statistics
 
 ### Example Usage
 

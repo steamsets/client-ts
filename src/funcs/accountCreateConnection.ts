@@ -26,6 +26,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Create OAuth or domain connection
+ */
 export function accountCreateConnection(
   client: SteamSetsCore,
   request: components.V1AccountCreateConnectionRequestBody,

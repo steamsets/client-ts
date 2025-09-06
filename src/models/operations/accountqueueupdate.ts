@@ -9,9 +9,84 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AccountQueueUpdateRequest = {
+  xForwardedFor?: string | undefined;
+  v1AccountQueueUpdateRequestBody: components.V1AccountQueueUpdateRequestBody;
+};
+
 export type AccountQueueUpdateResponse = {
   httpMeta: components.HTTPMetadata;
 };
+
+/** @internal */
+export const AccountQueueUpdateRequest$inboundSchema: z.ZodType<
+  AccountQueueUpdateRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  "X-Forwarded-For": z.string().optional(),
+  V1AccountQueueUpdateRequestBody:
+    components.V1AccountQueueUpdateRequestBody$inboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    "X-Forwarded-For": "xForwardedFor",
+    "V1AccountQueueUpdateRequestBody": "v1AccountQueueUpdateRequestBody",
+  });
+});
+
+/** @internal */
+export type AccountQueueUpdateRequest$Outbound = {
+  "X-Forwarded-For"?: string | undefined;
+  V1AccountQueueUpdateRequestBody:
+    components.V1AccountQueueUpdateRequestBody$Outbound;
+};
+
+/** @internal */
+export const AccountQueueUpdateRequest$outboundSchema: z.ZodType<
+  AccountQueueUpdateRequest$Outbound,
+  z.ZodTypeDef,
+  AccountQueueUpdateRequest
+> = z.object({
+  xForwardedFor: z.string().optional(),
+  v1AccountQueueUpdateRequestBody:
+    components.V1AccountQueueUpdateRequestBody$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    xForwardedFor: "X-Forwarded-For",
+    v1AccountQueueUpdateRequestBody: "V1AccountQueueUpdateRequestBody",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountQueueUpdateRequest$ {
+  /** @deprecated use `AccountQueueUpdateRequest$inboundSchema` instead. */
+  export const inboundSchema = AccountQueueUpdateRequest$inboundSchema;
+  /** @deprecated use `AccountQueueUpdateRequest$outboundSchema` instead. */
+  export const outboundSchema = AccountQueueUpdateRequest$outboundSchema;
+  /** @deprecated use `AccountQueueUpdateRequest$Outbound` instead. */
+  export type Outbound = AccountQueueUpdateRequest$Outbound;
+}
+
+export function accountQueueUpdateRequestToJSON(
+  accountQueueUpdateRequest: AccountQueueUpdateRequest,
+): string {
+  return JSON.stringify(
+    AccountQueueUpdateRequest$outboundSchema.parse(accountQueueUpdateRequest),
+  );
+}
+
+export function accountQueueUpdateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountQueueUpdateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountQueueUpdateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountQueueUpdateRequest' from JSON`,
+  );
+}
 
 /** @internal */
 export const AccountQueueUpdateResponse$inboundSchema: z.ZodType<

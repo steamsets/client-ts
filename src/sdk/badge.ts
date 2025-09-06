@@ -11,6 +11,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Badge extends ClientSDK {
+  /**
+   * List accounts for badge
+   */
   async badgeListAccounts(
     request: components.V1BadgeListAccountsRequestBody,
     options?: RequestOptions,
@@ -22,8 +25,11 @@ export class Badge extends ClientSDK {
     ));
   }
 
+  /**
+   * Search badges
+   */
   async search(
-    request: components.V1SearchRequest,
+    request: operations.BadgeSearchBadgesRequest,
     options?: RequestOptions,
   ): Promise<operations.BadgeSearchBadgesResponse> {
     return unwrapAsync(badgeSearch(
@@ -33,6 +39,9 @@ export class Badge extends ClientSDK {
     ));
   }
 
+  /**
+   * Suggest badge tag
+   */
   async suggestTags(
     request: components.V1BadgeSuggestTagsRequestBody,
     options?: RequestOptions,

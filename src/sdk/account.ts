@@ -45,6 +45,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Account extends ClientSDK {
+  /**
+   * Bookmark or unbookmark a badge
+   */
   async bookmarkBadge(
     request: components.V1AccountBookmarkBadgeRequestBody,
     options?: RequestOptions,
@@ -56,6 +59,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Compare badge collections between accounts
+   */
   async compareBadges(
     request: components.V1AccountCompareBadgesRequestBody,
     options?: RequestOptions,
@@ -67,6 +73,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Create OAuth or domain connection
+   */
   async createConnection(
     request: components.V1AccountCreateConnectionRequestBody,
     options?: RequestOptions,
@@ -78,6 +87,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Create developer application
+   */
   async createDeveloperApp(
     request: components.V1AccountCreateDeveloperAppRequestBody,
     options?: RequestOptions,
@@ -89,6 +101,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Delete OAuth or domain connection
+   */
   async deleteConnection(
     request: components.V1AccountDeleteConnectionRequestBody,
     options?: RequestOptions,
@@ -100,6 +115,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Delete developer application
+   */
   async deleteDeveloperApp(
     request: components.V1AccountDeleteDeveloperAppRequestBody,
     options?: RequestOptions,
@@ -111,6 +129,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Delete uploaded images
+   */
   async deleteImages(
     request: components.V1AccountDeleteImagesRequestBody,
     options?: RequestOptions,
@@ -122,6 +143,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Delete user session
+   */
   async deleteSession(
     request: components.V1AccountDeleteSessionRequestBody,
     options?: RequestOptions,
@@ -133,6 +157,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get account badge statistics
+   */
   async getBadgeStats(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -144,6 +171,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get account data points for charts
+   */
   async getDataPoints(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -155,6 +185,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get account profile information
+   */
   async getInfo(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -166,6 +199,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get account metadata
+   */
   async getMeta(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -177,6 +213,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get user session information
+   */
   async getSession(
     options?: RequestOptions,
   ): Promise<operations.AccountGetSessionResponse> {
@@ -186,6 +225,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get account settings
+   */
   async getSettings(
     options?: RequestOptions,
   ): Promise<operations.AccountGetSettingsResponse> {
@@ -195,6 +237,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List account owned apps
+   */
   async listApps(
     request: components.V1AccountListAppsRequestBody,
     options?: RequestOptions,
@@ -206,6 +251,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List bookmarked badges
+   */
   async listBadgeBookmarks(
     options?: RequestOptions,
   ): Promise<operations.AccountListBadgeBookmarksResponse> {
@@ -215,6 +263,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List account badges
+   */
   async listBadges(
     request: components.V1AccountListBadgesRequestBody,
     options?: RequestOptions,
@@ -226,6 +277,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List account friends
+   */
   async listFriends(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -237,6 +291,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List uploaded images
+   */
   async listImages(
     options?: RequestOptions,
   ): Promise<operations.AccountListImagesResponse> {
@@ -246,6 +303,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Get leaderboard history
+   */
   async listLeaderboardHistory(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -257,6 +317,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * List owned badges
+   */
   async listOwnedBadges(
     options?: RequestOptions,
   ): Promise<operations.AccountListOwnedBadgesResponse> {
@@ -266,6 +329,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Login with Steam
+   */
   async login(
     request: operations.AccountLoginRequest,
     options?: RequestOptions,
@@ -277,6 +343,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Logout from session
+   */
   async logout(
     options?: RequestOptions,
   ): Promise<operations.AccountLogoutResponse> {
@@ -286,8 +355,11 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Queue account update
+   */
   async queueUpdate(
-    request: components.V1AccountQueueUpdateRequestBody,
+    request: operations.AccountQueueUpdateRequest,
     options?: RequestOptions,
   ): Promise<operations.AccountQueueUpdateResponse> {
     return unwrapAsync(accountQueueUpdate(
@@ -297,6 +369,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Reconnect OAuth connection
+   */
   async reconnectConnection(
     request: components.V1AccountReconnectRequestBody,
     options?: RequestOptions,
@@ -308,6 +383,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Refresh session token
+   */
   async refreshSession(
     request: operations.AccountRefreshSessionRequest,
     options?: RequestOptions,
@@ -319,6 +397,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Send email verification
+   */
   async sendEmailVerification(
     request: operations.AccountSendEmailVerificationRequest,
     options?: RequestOptions,
@@ -330,6 +411,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Subscribe to email notifications
+   */
   async subscribeEmail(
     request: operations.AccountSubscribeEmailRequest,
     options?: RequestOptions,
@@ -341,6 +425,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update OAuth connection
+   */
   async updateConnection(
     request: components.V1AccountUpdateConnectionRequestBody,
     options?: RequestOptions,
@@ -352,6 +439,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update developer application
+   */
   async updateDeveloperApp(
     request: components.V1AccountDeveloperAppUpdateRequestBody,
     options?: RequestOptions,
@@ -363,6 +453,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account images
+   */
   async updateImages(
     request: components.V1AccountUpdateImageRequestBody,
     options?: RequestOptions,
@@ -374,6 +467,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account role
+   */
   async updateRole(
     request: components.V1AccountUpdateRoleRequestBody,
     options?: RequestOptions,
@@ -385,6 +481,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account settings
+   */
   async updateSettings(
     request: operations.AccountUpdateSettingsRequest,
     options?: RequestOptions,
@@ -396,6 +495,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account vanity URL
+   */
   async updateVanity(
     request: components.V1AccountUpdateVanityRequestBody,
     options?: RequestOptions,
@@ -407,6 +509,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Upload images
+   */
   async uploadImages(
     request: components.V1AccountUploadImagesRequestBody,
     options?: RequestOptions,
@@ -418,6 +523,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Verify OAuth connection
+   */
   async verifyConnection(
     request: components.V1AccountVerifyConnectionRequestBody,
     options?: RequestOptions,
@@ -429,6 +537,9 @@ export class Account extends ClientSDK {
     ));
   }
 
+  /**
+   * Verify email address
+   */
   async verifyEmail(
     request: components.V1AccountVerifyEmailRequestBody,
     options?: RequestOptions,

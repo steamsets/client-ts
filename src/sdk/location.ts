@@ -8,6 +8,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Location extends ClientSDK {
+  /**
+   * List available locations
+   */
   async get(
     options?: RequestOptions,
   ): Promise<operations.LocationGetLocationsResponse> {
