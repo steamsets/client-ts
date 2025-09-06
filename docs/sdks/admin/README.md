@@ -7,12 +7,14 @@ Admin related operations, stay away from these.
 
 ### Available Operations
 
-* [getAccount](#getaccount)
-* [removeVanity](#removevanity)
-* [updateResources](#updateresources)
-* [updateRoles](#updateroles)
+* [getAccount](#getaccount) - Get account for admin
+* [removeVanity](#removevanity) - Remove vanity URL
+* [updateResources](#updateresources) - Update account resources
+* [updateRoles](#updateroles) - Update account roles
 
 ## getAccount
+
+Get account for admin
 
 ### Example Usage
 
@@ -83,6 +85,8 @@ run();
 
 ## removeVanity
 
+Remove vanity URL
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="admin.removeVanity" method="post" path="/v1/admin.removeVanity" -->
@@ -151,6 +155,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## updateResources
+
+Update account resources
 
 ### Example Usage
 
@@ -234,6 +240,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## updateRoles
+
+Update account roles
 
 ### Example Usage
 

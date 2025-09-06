@@ -14,6 +14,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Leaderboard extends ClientSDK {
+  /**
+   * Get account leaderboard
+   */
   async getAccount(
     request: components.V1LeaderboardGetAccountLeaderboardRequestBody,
     options?: RequestOptions,
@@ -25,6 +28,9 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
+  /**
+   * Get accounts leaderboard metadata
+   */
   async getAccountsMeta(
     request: components.V1LeaderboardGetAccountsMetaRequestBody,
     options?: RequestOptions,
@@ -36,6 +42,9 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
+  /**
+   * Get group leaderboard
+   */
   async getGroup(
     request: components.V1LeaderboardGetGroupLeaderboardRequestBody,
     options?: RequestOptions,
@@ -47,6 +56,9 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
+  /**
+   * Get groups leaderboard metadata
+   */
   async getGroupsMeta(
     request: components.V1LeaderboardGetGroupsMetaRequestBody,
     options?: RequestOptions,
@@ -58,6 +70,9 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
+  /**
+   * Get lowest ranked accounts
+   */
   async getLowestRanks(
     request: components.V1LeaderboardGetLowestRanksRequestBody,
     options?: RequestOptions,
@@ -69,6 +84,9 @@ export class Leaderboard extends ClientSDK {
     ));
   }
 
+  /**
+   * Preview account rank
+   */
   async previewAccountRank(
     request: components.V1LeaderboardPreviewAccountRankRequestBody,
     options?: RequestOptions,

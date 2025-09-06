@@ -5,9 +5,11 @@
 
 ### Available Operations
 
-* [list](#list)
+* [list](#list) - List leaderboard badges
 
 ## list
+
+List leaderboard badges
 
 ### Example Usage
 

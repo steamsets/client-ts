@@ -26,6 +26,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Delete user session
+ */
 export function accountDeleteSession(
   client: SteamSetsCore,
   request: components.V1AccountDeleteSessionRequestBody,

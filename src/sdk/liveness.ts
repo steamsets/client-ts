@@ -9,10 +9,29 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Liveness extends ClientSDK {
   /**
-   * Liveness check
+   * Service Health Check
    *
    * @remarks
-   * This endpoint checks if the service is alive.
+   * This endpoint provides a simple health check to verify that the Steamsets API is operational and ready to serve requests.
+   *
+   * <Info>
+   * This endpoint is commonly used by load balancers, monitoring systems, and container orchestrators to check service availability.
+   * </Info>
+   *
+   * <Tip>
+   * Use this endpoint for automated health monitoring - it has minimal overhead and responds quickly.
+   * </Tip>
+   *
+   * ## Use Cases
+   *
+   * - **Load Balancer Health Checks**: Configure your load balancer to ping this endpoint
+   * - **Monitoring Systems**: Set up alerts when this endpoint becomes unavailable
+   * - **Container Health Checks**: Use in Docker/Kubernetes health check configurations
+   * - **API Status Verification**: Quick way to verify the service is responding
+   *
+   * ## Response Format
+   *
+   * The endpoint returns a simple JSON object with a status message confirming the service is alive and operational.
    */
   async check(
     options?: RequestOptions,

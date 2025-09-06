@@ -25,6 +25,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Refresh session token
+ */
 export function accountRefreshSession(
   client: SteamSetsCore,
   request: operations.AccountRefreshSessionRequest,

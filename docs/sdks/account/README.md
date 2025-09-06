@@ -7,45 +7,47 @@ All Requests related to account(s) are grouped here.
 
 ### Available Operations
 
-* [bookmarkBadge](#bookmarkbadge)
-* [compareBadges](#comparebadges)
-* [createConnection](#createconnection)
-* [createDeveloperApp](#createdeveloperapp)
-* [deleteConnection](#deleteconnection)
-* [deleteDeveloperApp](#deletedeveloperapp)
-* [deleteImages](#deleteimages)
-* [deleteSession](#deletesession)
-* [getBadgeStats](#getbadgestats)
-* [getDataPoints](#getdatapoints)
-* [getInfo](#getinfo)
-* [getMeta](#getmeta)
-* [getSession](#getsession)
-* [getSettings](#getsettings)
-* [listApps](#listapps)
-* [listBadgeBookmarks](#listbadgebookmarks)
-* [listBadges](#listbadges)
-* [listFriends](#listfriends)
-* [listImages](#listimages)
-* [listLeaderboardHistory](#listleaderboardhistory)
-* [listOwnedBadges](#listownedbadges)
-* [login](#login)
-* [logout](#logout)
-* [queueUpdate](#queueupdate)
-* [reconnectConnection](#reconnectconnection)
-* [refreshSession](#refreshsession)
-* [sendEmailVerification](#sendemailverification)
-* [subscribeEmail](#subscribeemail)
-* [updateConnection](#updateconnection)
-* [updateDeveloperApp](#updatedeveloperapp)
-* [updateImages](#updateimages)
-* [updateRole](#updaterole)
-* [updateSettings](#updatesettings)
-* [updateVanity](#updatevanity)
-* [uploadImages](#uploadimages)
-* [verifyConnection](#verifyconnection)
-* [verifyEmail](#verifyemail)
+* [bookmarkBadge](#bookmarkbadge) - Bookmark or unbookmark a badge
+* [compareBadges](#comparebadges) - Compare badge collections between accounts
+* [createConnection](#createconnection) - Create OAuth or domain connection
+* [createDeveloperApp](#createdeveloperapp) - Create developer application
+* [deleteConnection](#deleteconnection) - Delete OAuth or domain connection
+* [deleteDeveloperApp](#deletedeveloperapp) - Delete developer application
+* [deleteImages](#deleteimages) - Delete uploaded images
+* [deleteSession](#deletesession) - Delete user session
+* [getBadgeStats](#getbadgestats) - Get account badge statistics
+* [getDataPoints](#getdatapoints) - Get account data points for charts
+* [getInfo](#getinfo) - Get account profile information
+* [getMeta](#getmeta) - Get account metadata
+* [getSession](#getsession) - Get user session information
+* [getSettings](#getsettings) - Get account settings
+* [listApps](#listapps) - List account owned apps
+* [listBadgeBookmarks](#listbadgebookmarks) - List bookmarked badges
+* [listBadges](#listbadges) - List account badges
+* [listFriends](#listfriends) - List account friends
+* [listImages](#listimages) - List uploaded images
+* [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
+* [listOwnedBadges](#listownedbadges) - List owned badges
+* [login](#login) - Login with Steam
+* [logout](#logout) - Logout from session
+* [queueUpdate](#queueupdate) - Queue account update
+* [reconnectConnection](#reconnectconnection) - Reconnect OAuth connection
+* [refreshSession](#refreshsession) - Refresh session token
+* [sendEmailVerification](#sendemailverification) - Send email verification
+* [subscribeEmail](#subscribeemail) - Subscribe to email notifications
+* [updateConnection](#updateconnection) - Update OAuth connection
+* [updateDeveloperApp](#updatedeveloperapp) - Update developer application
+* [updateImages](#updateimages) - Update account images
+* [updateRole](#updaterole) - Update account role
+* [updateSettings](#updatesettings) - Update account settings
+* [updateVanity](#updatevanity) - Update account vanity URL
+* [uploadImages](#uploadimages) - Upload images
+* [verifyConnection](#verifyconnection) - Verify OAuth connection
+* [verifyEmail](#verifyemail) - Verify email address
 
 ## bookmarkBadge
+
+Bookmark or unbookmark a badge
 
 ### Example Usage
 
@@ -121,6 +123,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## compareBadges
+
+Compare badge collections between accounts
 
 ### Example Usage
 
@@ -209,6 +213,8 @@ run();
 
 ## createConnection
 
+Create OAuth or domain connection
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.createConnection" method="post" path="/v1/account.createConnection" -->
@@ -283,6 +289,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## createDeveloperApp
+
+Create developer application
 
 ### Example Usage
 
@@ -363,6 +371,8 @@ run();
 
 ## deleteConnection
 
+Delete OAuth or domain connection
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.deleteConnection" method="post" path="/v1/account.deleteConnection" -->
@@ -436,6 +446,8 @@ run();
 
 ## deleteDeveloperApp
 
+Delete developer application
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.deleteDeveloperApp" method="post" path="/v1/account.deleteDeveloperApp" -->
@@ -508,6 +520,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## deleteImages
+
+Delete uploaded images
 
 ### Example Usage
 
@@ -590,6 +604,8 @@ run();
 
 ## deleteSession
 
+Delete user session
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.deleteSession" method="post" path="/v1/account.deleteSession" -->
@@ -663,6 +679,8 @@ run();
 
 ## getBadgeStats
 
+Get account badge statistics
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.getBadgeStats" method="post" path="/v1/account.getBadgeStats" -->
@@ -731,6 +749,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## getDataPoints
+
+Get account data points for charts
 
 ### Example Usage
 
@@ -801,6 +821,8 @@ run();
 
 ## getInfo
 
+Get account profile information
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.getInfo" method="post" path="/v1/account.getInfo" -->
@@ -869,6 +891,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## getMeta
+
+Get account metadata
 
 ### Example Usage
 
@@ -939,6 +963,8 @@ run();
 
 ## getSession
 
+Get user session information
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.getSession" method="post" path="/v1/account.getSession" -->
@@ -1007,6 +1033,8 @@ run();
 
 ## getSettings
 
+Get account settings
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.getSettings" method="post" path="/v1/account.getSettings" -->
@@ -1074,6 +1102,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## listApps
+
+List account owned apps
 
 ### Example Usage
 
@@ -1144,6 +1174,8 @@ run();
 
 ## listBadgeBookmarks
 
+List bookmarked badges
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.listBadgeBookmarks" method="post" path="/v1/account.listBadgeBookmarks" -->
@@ -1211,6 +1243,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## listBadges
+
+List account badges
 
 ### Example Usage
 
@@ -1281,6 +1315,8 @@ run();
 
 ## listFriends
 
+List account friends
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.listFriends" method="post" path="/v1/account.listFriends" -->
@@ -1350,6 +1386,8 @@ run();
 
 ## listImages
 
+List uploaded images
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.listImages" method="post" path="/v1/account.listImages" -->
@@ -1417,6 +1455,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## listLeaderboardHistory
+
+Get leaderboard history
 
 ### Example Usage
 
@@ -1487,6 +1527,8 @@ run();
 
 ## listOwnedBadges
 
+List owned badges
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.listOwnedBadges" method="post" path="/v1/account.listOwnedBadges" -->
@@ -1554,6 +1596,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## login
+
+Login with Steam
 
 ### Example Usage
 
@@ -1650,6 +1694,8 @@ run();
 
 ## logout
 
+Logout from session
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.logout" method="post" path="/v1/account.logout" -->
@@ -1718,6 +1764,8 @@ run();
 
 ## queueUpdate
 
+Queue account update
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.queueUpdate" method="post" path="/v1/account.queueUpdate" -->
@@ -1729,7 +1777,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.queueUpdate({});
+  const result = await steamSets.account.queueUpdate({
+    v1AccountQueueUpdateRequestBody: {},
+  });
 
   console.log(result);
 }
@@ -1752,7 +1802,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountQueueUpdate(steamSets, {});
+  const res = await accountQueueUpdate(steamSets, {
+    v1AccountQueueUpdateRequestBody: {},
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -1768,7 +1820,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountQueueUpdateRequestBody](../../models/components/v1accountqueueupdaterequestbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AccountQueueUpdateRequest](../../models/operations/accountqueueupdaterequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1786,6 +1838,8 @@ run();
 | errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
 
 ## reconnectConnection
+
+Reconnect OAuth connection
 
 ### Example Usage
 
@@ -1861,6 +1915,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## refreshSession
+
+Refresh session token
 
 ### Example Usage
 
@@ -1939,6 +1995,8 @@ run();
 
 ## sendEmailVerification
 
+Send email verification
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.sendEmailVerification" method="post" path="/v1/account.sendEmailVerification" -->
@@ -2007,6 +2065,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## subscribeEmail
+
+Subscribe to email notifications
 
 ### Example Usage
 
@@ -2087,6 +2147,8 @@ run();
 
 ## updateConnection
 
+Update OAuth connection
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.updateConnection" method="post" path="/v1/account.updateConnection" -->
@@ -2161,6 +2223,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## updateDeveloperApp
+
+Update developer application
 
 ### Example Usage
 
@@ -2241,6 +2305,8 @@ run();
 
 ## updateImages
 
+Update account images
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.updateImages" method="post" path="/v1/account.updateImages" -->
@@ -2314,6 +2380,8 @@ run();
 
 ## updateRole
 
+Update account role
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.updateRole" method="post" path="/v1/account.updateRole" -->
@@ -2382,6 +2450,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## updateSettings
+
+Update account settings
 
 ### Example Usage
 
@@ -2466,6 +2536,8 @@ run();
 
 ## updateVanity
 
+Update account vanity URL
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.updateVanity" method="post" path="/v1/account.updateVanity" -->
@@ -2534,6 +2606,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## uploadImages
+
+Upload images
 
 ### Example Usage
 
@@ -2618,6 +2692,8 @@ run();
 
 ## verifyConnection
 
+Verify OAuth connection
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="account.verifyConnection" method="post" path="/v1/account.verifyConnection" -->
@@ -2690,6 +2766,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## verifyEmail
+
+Verify email address
 
 ### Example Usage
 

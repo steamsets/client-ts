@@ -8,6 +8,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Staff extends ClientSDK {
+  /**
+   * List staff members
+   */
   async list(
     options?: RequestOptions,
   ): Promise<operations.StaffListStaffResponse> {

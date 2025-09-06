@@ -5,9 +5,11 @@
 
 ### Available Operations
 
-* [listBadges](#listbadges)
+* [listBadges](#listbadges) - List app badges
 
 ## listBadges
+
+List app badges
 
 ### Example Usage
 
