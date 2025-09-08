@@ -9,6 +9,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Apps extends ClientSDK {
+  /**
+   * List app badges
+   */
   async listBadges(
     request: components.V1AppListBadgesRequestBody,
     options?: RequestOptions,

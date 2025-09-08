@@ -7,14 +7,16 @@ Any requests that is somehow used for getting leaderboard data.
 
 ### Available Operations
 
-* [getAccount](#getaccount)
-* [getAccountsMeta](#getaccountsmeta)
-* [getGroup](#getgroup)
-* [getGroupsMeta](#getgroupsmeta)
-* [getLowestRanks](#getlowestranks)
-* [previewAccountRank](#previewaccountrank)
+* [getAccount](#getaccount) - Get account leaderboard
+* [getAccountsMeta](#getaccountsmeta) - Get accounts leaderboard metadata
+* [getGroup](#getgroup) - Get group leaderboard
+* [getGroupsMeta](#getgroupsmeta) - Get groups leaderboard metadata
+* [getLowestRanks](#getlowestranks) - Get lowest ranked accounts
+* [previewAccountRank](#previewaccountrank) - Preview account rank
 
 ## getAccount
+
+Get account leaderboard
 
 ### Example Usage
 
@@ -119,6 +121,8 @@ run();
 
 ## getAccountsMeta
 
+Get accounts leaderboard metadata
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="leaderboard.getAccountsMeta" method="post" path="/v1/leaderboard.getAccountsMeta" -->
@@ -218,6 +222,8 @@ run();
 
 ## getGroup
 
+Get group leaderboard
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="leaderboard.getGroupLeaderboard" method="post" path="/v1/leaderboard.getGroupLeaderboard" -->
@@ -297,6 +303,8 @@ run();
 
 ## getGroupsMeta
 
+Get groups leaderboard metadata
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="leaderboard.getGroupsMeta" method="post" path="/v1/leaderboard.getGroupsMeta" -->
@@ -370,6 +378,8 @@ run();
 
 ## getLowestRanks
 
+Get lowest ranked accounts
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="leaderboard.getLowestRanks" method="post" path="/v1/leaderboard.getLowestRanks" -->
@@ -442,6 +452,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## previewAccountRank
+
+Preview account rank
 
 ### Example Usage
 

@@ -74,95 +74,95 @@ run();
 
 ### [account](docs/sdks/account/README.md)
 
-* [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge)
-* [compareBadges](docs/sdks/account/README.md#comparebadges)
-* [createConnection](docs/sdks/account/README.md#createconnection)
-* [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp)
-* [deleteConnection](docs/sdks/account/README.md#deleteconnection)
-* [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp)
-* [deleteImages](docs/sdks/account/README.md#deleteimages)
-* [deleteSession](docs/sdks/account/README.md#deletesession)
-* [getBadgeStats](docs/sdks/account/README.md#getbadgestats)
-* [getDataPoints](docs/sdks/account/README.md#getdatapoints)
-* [getInfo](docs/sdks/account/README.md#getinfo)
-* [getMeta](docs/sdks/account/README.md#getmeta)
-* [getSession](docs/sdks/account/README.md#getsession)
-* [getSettings](docs/sdks/account/README.md#getsettings)
-* [listApps](docs/sdks/account/README.md#listapps)
-* [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks)
-* [listBadges](docs/sdks/account/README.md#listbadges)
-* [listFriends](docs/sdks/account/README.md#listfriends)
-* [listImages](docs/sdks/account/README.md#listimages)
-* [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory)
-* [listOwnedBadges](docs/sdks/account/README.md#listownedbadges)
-* [login](docs/sdks/account/README.md#login)
-* [logout](docs/sdks/account/README.md#logout)
-* [queueUpdate](docs/sdks/account/README.md#queueupdate)
-* [reconnectConnection](docs/sdks/account/README.md#reconnectconnection)
-* [refreshSession](docs/sdks/account/README.md#refreshsession)
-* [sendEmailVerification](docs/sdks/account/README.md#sendemailverification)
-* [subscribeEmail](docs/sdks/account/README.md#subscribeemail)
-* [updateConnection](docs/sdks/account/README.md#updateconnection)
-* [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp)
-* [updateImages](docs/sdks/account/README.md#updateimages)
-* [updateRole](docs/sdks/account/README.md#updaterole)
-* [updateSettings](docs/sdks/account/README.md#updatesettings)
-* [updateVanity](docs/sdks/account/README.md#updatevanity)
-* [uploadImages](docs/sdks/account/README.md#uploadimages)
-* [verifyConnection](docs/sdks/account/README.md#verifyconnection)
-* [verifyEmail](docs/sdks/account/README.md#verifyemail)
+* [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
+* [compareBadges](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
+* [createConnection](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
+* [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
+* [deleteConnection](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
+* [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
+* [deleteImages](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
+* [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
+* [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
+* [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
+* [getInfo](docs/sdks/account/README.md#getinfo) - Get account profile information
+* [getMeta](docs/sdks/account/README.md#getmeta) - Get account metadata
+* [getSession](docs/sdks/account/README.md#getsession) - Get user session information
+* [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
+* [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
+* [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
+* [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
+* [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
+* [listImages](docs/sdks/account/README.md#listimages) - List uploaded images
+* [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+* [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
+* [login](docs/sdks/account/README.md#login) - Login with Steam
+* [logout](docs/sdks/account/README.md#logout) - Logout from session
+* [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
+* [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
+* [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
+* [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
+* [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
+* [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
+* [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+* [updateImages](docs/sdks/account/README.md#updateimages) - Update account images
+* [updateRole](docs/sdks/account/README.md#updaterole) - Update account role
+* [updateSettings](docs/sdks/account/README.md#updatesettings) - Update account settings
+* [updateVanity](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
+* [uploadImages](docs/sdks/account/README.md#uploadimages) - Upload images
+* [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
+* [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
 ### [admin](docs/sdks/admin/README.md)
 
-* [getAccount](docs/sdks/admin/README.md#getaccount)
-* [removeVanity](docs/sdks/admin/README.md#removevanity)
-* [updateResources](docs/sdks/admin/README.md#updateresources)
-* [updateRoles](docs/sdks/admin/README.md#updateroles)
+* [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
+* [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+* [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
+* [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
 
 ### [apps](docs/sdks/apps/README.md)
 
-* [listBadges](docs/sdks/apps/README.md#listbadges)
+* [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeListAccounts](docs/sdks/badge/README.md#badgelistaccounts)
-* [search](docs/sdks/badge/README.md#search)
-* [suggestTags](docs/sdks/badge/README.md#suggesttags)
+* [badgeListAccounts](docs/sdks/badge/README.md#badgelistaccounts) - List accounts for badge
+* [search](docs/sdks/badge/README.md#search) - Search badges
+* [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
 ### [badges](docs/sdks/badges/README.md)
 
 * [listPrices](docs/sdks/badges/README.md#listprices) - List badge prices
-* [listTags](docs/sdks/badges/README.md#listtags)
-* [tag](docs/sdks/badges/README.md#tag)
+* [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
+* [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
 ### [leaderboard](docs/sdks/leaderboard/README.md)
 
-* [getAccount](docs/sdks/leaderboard/README.md#getaccount)
-* [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta)
-* [getGroup](docs/sdks/leaderboard/README.md#getgroup)
-* [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta)
-* [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks)
-* [previewAccountRank](docs/sdks/leaderboard/README.md#previewaccountrank)
+* [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
+* [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
+* [getGroup](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
+* [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
+* [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
+* [previewAccountRank](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 
 ### [leaderboards](docs/sdks/leaderboards/README.md)
 
-* [list](docs/sdks/leaderboards/README.md#list)
+* [list](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 
 ### [liveness](docs/sdks/liveness/README.md)
 
-* [check](docs/sdks/liveness/README.md#check) - Liveness check
+* [check](docs/sdks/liveness/README.md#check) - Service Health Check
 
 ### [location](docs/sdks/location/README.md)
 
-* [get](docs/sdks/location/README.md#get)
+* [get](docs/sdks/location/README.md#get) - List available locations
 
 ### [staff](docs/sdks/staff/README.md)
 
-* [list](docs/sdks/staff/README.md#list)
+* [list](docs/sdks/staff/README.md#list) - List staff members
 
 ### [stats](docs/sdks/stats/README.md)
 
-* [get](docs/sdks/stats/README.md#get)
+* [get](docs/sdks/stats/README.md#get) - Get platform statistics
 
 
 </details>
@@ -517,65 +517,65 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge)
-- [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges)
-- [`accountCreateConnection`](docs/sdks/account/README.md#createconnection)
-- [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp)
-- [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection)
-- [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp)
-- [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages)
-- [`accountDeleteSession`](docs/sdks/account/README.md#deletesession)
-- [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats)
-- [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints)
-- [`accountGetInfo`](docs/sdks/account/README.md#getinfo)
-- [`accountGetMeta`](docs/sdks/account/README.md#getmeta)
-- [`accountGetSession`](docs/sdks/account/README.md#getsession)
-- [`accountGetSettings`](docs/sdks/account/README.md#getsettings)
-- [`accountListApps`](docs/sdks/account/README.md#listapps)
-- [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks)
-- [`accountListBadges`](docs/sdks/account/README.md#listbadges)
-- [`accountListFriends`](docs/sdks/account/README.md#listfriends)
-- [`accountListImages`](docs/sdks/account/README.md#listimages)
-- [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory)
-- [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges)
-- [`accountLogin`](docs/sdks/account/README.md#login)
-- [`accountLogout`](docs/sdks/account/README.md#logout)
-- [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate)
-- [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection)
-- [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession)
-- [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification)
-- [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail)
-- [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection)
-- [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp)
-- [`accountUpdateImages`](docs/sdks/account/README.md#updateimages)
-- [`accountUpdateRole`](docs/sdks/account/README.md#updaterole)
-- [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings)
-- [`accountUpdateVanity`](docs/sdks/account/README.md#updatevanity)
-- [`accountUploadImages`](docs/sdks/account/README.md#uploadimages)
-- [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection)
-- [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail)
-- [`adminGetAccount`](docs/sdks/admin/README.md#getaccount)
-- [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity)
-- [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources)
-- [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles)
-- [`appsListBadges`](docs/sdks/apps/README.md#listbadges)
-- [`badgeBadgeListAccounts`](docs/sdks/badge/README.md#badgelistaccounts)
-- [`badgeSearch`](docs/sdks/badge/README.md#search)
+- [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
+- [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
+- [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
+- [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
+- [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
+- [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
+- [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
+- [`accountDeleteSession`](docs/sdks/account/README.md#deletesession) - Delete user session
+- [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
+- [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
+- [`accountGetInfo`](docs/sdks/account/README.md#getinfo) - Get account profile information
+- [`accountGetMeta`](docs/sdks/account/README.md#getmeta) - Get account metadata
+- [`accountGetSession`](docs/sdks/account/README.md#getsession) - Get user session information
+- [`accountGetSettings`](docs/sdks/account/README.md#getsettings) - Get account settings
+- [`accountListApps`](docs/sdks/account/README.md#listapps) - List account owned apps
+- [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
+- [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
+- [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
+- [`accountListImages`](docs/sdks/account/README.md#listimages) - List uploaded images
+- [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+- [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
+- [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
+- [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
+- [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
+- [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
+- [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
+- [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
+- [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
+- [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
+- [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+- [`accountUpdateImages`](docs/sdks/account/README.md#updateimages) - Update account images
+- [`accountUpdateRole`](docs/sdks/account/README.md#updaterole) - Update account role
+- [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings) - Update account settings
+- [`accountUpdateVanity`](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
+- [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
+- [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
+- [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
+- [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
+- [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+- [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
+- [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
+- [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
+- [`badgeBadgeListAccounts`](docs/sdks/badge/README.md#badgelistaccounts) - List accounts for badge
+- [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListPrices`](docs/sdks/badges/README.md#listprices) - List badge prices
-- [`badgesListTags`](docs/sdks/badges/README.md#listtags)
-- [`badgesTag`](docs/sdks/badges/README.md#tag)
-- [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags)
-- [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount)
-- [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta)
-- [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup)
-- [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta)
-- [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks)
-- [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank)
-- [`leaderboardsList`](docs/sdks/leaderboards/README.md#list)
-- [`livenessCheck`](docs/sdks/liveness/README.md#check) - Liveness check
-- [`locationGet`](docs/sdks/location/README.md#get)
-- [`staffList`](docs/sdks/staff/README.md#list)
-- [`statsGet`](docs/sdks/stats/README.md#get)
+- [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
+- [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
+- [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
+- [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
+- [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
+- [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
+- [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
+- [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
+- [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
+- [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
+- [`livenessCheck`](docs/sdks/liveness/README.md#check) - Service Health Check
+- [`locationGet`](docs/sdks/location/README.md#get) - List available locations
+- [`staffList`](docs/sdks/staff/README.md#list) - List staff members
+- [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

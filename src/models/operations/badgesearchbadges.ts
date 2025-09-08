@@ -9,6 +9,11 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type BadgeSearchBadgesRequest = {
+  xForwardedFor?: string | undefined;
+  v1SearchRequest: components.V1SearchRequest;
+};
+
 export type BadgeSearchBadgesResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -18,6 +23,73 @@ export type BadgeSearchBadgesResponse = {
     | components.V1BadgeSearchBadgesResponseBody
     | undefined;
 };
+
+/** @internal */
+export const BadgeSearchBadgesRequest$inboundSchema: z.ZodType<
+  BadgeSearchBadgesRequest,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  "X-Forwarded-For": z.string().optional(),
+  V1SearchRequest: components.V1SearchRequest$inboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    "X-Forwarded-For": "xForwardedFor",
+    "V1SearchRequest": "v1SearchRequest",
+  });
+});
+
+/** @internal */
+export type BadgeSearchBadgesRequest$Outbound = {
+  "X-Forwarded-For"?: string | undefined;
+  V1SearchRequest: components.V1SearchRequest$Outbound;
+};
+
+/** @internal */
+export const BadgeSearchBadgesRequest$outboundSchema: z.ZodType<
+  BadgeSearchBadgesRequest$Outbound,
+  z.ZodTypeDef,
+  BadgeSearchBadgesRequest
+> = z.object({
+  xForwardedFor: z.string().optional(),
+  v1SearchRequest: components.V1SearchRequest$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    xForwardedFor: "X-Forwarded-For",
+    v1SearchRequest: "V1SearchRequest",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace BadgeSearchBadgesRequest$ {
+  /** @deprecated use `BadgeSearchBadgesRequest$inboundSchema` instead. */
+  export const inboundSchema = BadgeSearchBadgesRequest$inboundSchema;
+  /** @deprecated use `BadgeSearchBadgesRequest$outboundSchema` instead. */
+  export const outboundSchema = BadgeSearchBadgesRequest$outboundSchema;
+  /** @deprecated use `BadgeSearchBadgesRequest$Outbound` instead. */
+  export type Outbound = BadgeSearchBadgesRequest$Outbound;
+}
+
+export function badgeSearchBadgesRequestToJSON(
+  badgeSearchBadgesRequest: BadgeSearchBadgesRequest,
+): string {
+  return JSON.stringify(
+    BadgeSearchBadgesRequest$outboundSchema.parse(badgeSearchBadgesRequest),
+  );
+}
+
+export function badgeSearchBadgesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<BadgeSearchBadgesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => BadgeSearchBadgesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'BadgeSearchBadgesRequest' from JSON`,
+  );
+}
 
 /** @internal */
 export const BadgeSearchBadgesResponse$inboundSchema: z.ZodType<

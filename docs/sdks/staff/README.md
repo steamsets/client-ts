@@ -5,9 +5,11 @@
 
 ### Available Operations
 
-* [list](#list)
+* [list](#list) - List staff members
 
 ## list
+
+List staff members
 
 ### Example Usage
 

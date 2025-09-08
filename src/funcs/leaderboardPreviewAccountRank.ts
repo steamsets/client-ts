@@ -26,6 +26,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Preview account rank
+ */
 export function leaderboardPreviewAccountRank(
   client: SteamSetsCore,
   request: components.V1LeaderboardPreviewAccountRankRequestBody,

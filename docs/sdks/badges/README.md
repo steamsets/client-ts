@@ -6,8 +6,8 @@
 ### Available Operations
 
 * [listPrices](#listprices) - List badge prices
-* [listTags](#listtags)
-* [tag](#tag)
+* [listTags](#listtags) - List badge tags
+* [tag](#tag) - Tag a badge
 
 ## listPrices
 
@@ -80,6 +80,8 @@ run();
 
 ## listTags
 
+List badge tags
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="badge.listTags" method="post" path="/v1/badge.listTags" -->
@@ -147,6 +149,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## tag
+
+Tag a badge
 
 ### Example Usage
 

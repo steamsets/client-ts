@@ -8,6 +8,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Stats extends ClientSDK {
+  /**
+   * Get platform statistics
+   */
   async get(
     options?: RequestOptions,
   ): Promise<operations.StatsGetStatsResponse> {

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0909f61f27efc0b9562bcc9a9e52eac3
+  docChecksum: ab6b451678c56043d2ffdab027ad0c23
   docVersion: 1.0.0
-  speakeasyVersion: 1.606.9
-  generationVersion: 2.687.13
-  releaseVersion: 0.27.9
-  configChecksum: 1090e5377a75bd84cc3aaeb58026b6de
+  speakeasyVersion: 1.611.1
+  generationVersion: 2.694.1
+  releaseVersion: 0.27.10
+  configChecksum: 174dcfb6c3375eb187b0c3f33ee78e8b
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -30,7 +30,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.20
+    core: 3.21.22
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -284,6 +284,7 @@ generatedFiles:
   - docs/models/operations/accountloginrequest.md
   - docs/models/operations/accountloginresponse.md
   - docs/models/operations/accountlogoutresponse.md
+  - docs/models/operations/accountqueueupdaterequest.md
   - docs/models/operations/accountqueueupdateresponse.md
   - docs/models/operations/accountreconnectconnectionresponse.md
   - docs/models/operations/accountrefreshsessionrequest.md
@@ -310,6 +311,7 @@ generatedFiles:
   - docs/models/operations/badgelistaccountsresponse.md
   - docs/models/operations/badgelistbadgepricesresponse.md
   - docs/models/operations/badgelisttagsresponse.md
+  - docs/models/operations/badgesearchbadgesrequest.md
   - docs/models/operations/badgesearchbadgesresponse.md
   - docs/models/operations/badgesuggesttagsresponse.md
   - docs/models/operations/badgetagbadgeresponse.md
@@ -1363,3 +1365,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `steamsets.account.queueUpdate()`:  `request` **Changed** **Breaking** :warning:
+  * `steamsets.badge.search()`:  `request` **Changed** **Breaking** :warning:

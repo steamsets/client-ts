@@ -33,6 +33,9 @@ export class Badges extends ClientSDK {
     ));
   }
 
+  /**
+   * List badge tags
+   */
   async listTags(
     options?: RequestOptions,
   ): Promise<operations.BadgeListTagsResponse> {
@@ -42,6 +45,9 @@ export class Badges extends ClientSDK {
     ));
   }
 
+  /**
+   * Tag a badge
+   */
   async tag(
     request: components.V1BadgeTagBadgeRequestBody,
     options?: RequestOptions,

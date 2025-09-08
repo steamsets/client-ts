@@ -3,14 +3,13 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
+import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -26,9 +25,12 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Queue account update
+ */
 export function accountQueueUpdate(
   client: SteamSetsCore,
-  request: components.V1AccountQueueUpdateRequestBody,
+  request: operations.AccountQueueUpdateRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -53,7 +55,7 @@ export function accountQueueUpdate(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountQueueUpdateRequestBody,
+  request: operations.AccountQueueUpdateRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -74,21 +76,27 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.V1AccountQueueUpdateRequestBody$outboundSchema.parse(value),
+    (value) => operations.AccountQueueUpdateRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = encodeJSON("body", payload.V1AccountQueueUpdateRequestBody, {
+    explode: true,
+  });
 
   const path = pathToFunc("/v1/account.queueUpdate")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/problem+json",
+    "X-Forwarded-For": encodeSimple(
+      "X-Forwarded-For",
+      payload["X-Forwarded-For"],
+      { explode: false, charEncoding: "none" },
+    ),
   }));
 
   const secConfig = await extractSecurity(client._options.token);

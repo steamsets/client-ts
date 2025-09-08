@@ -8,6 +8,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Leaderboards extends ClientSDK {
+  /**
+   * List leaderboard badges
+   */
   async list(
     options?: RequestOptions,
   ): Promise<operations.LeaderboardListBadgesResponse> {

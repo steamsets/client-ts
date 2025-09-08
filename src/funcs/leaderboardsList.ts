@@ -23,6 +23,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * List leaderboard badges
+ */
 export function leaderboardsList(
   client: SteamSetsCore,
   options?: RequestOptions,
