@@ -12,6 +12,9 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Admin extends ClientSDK {
+  /**
+   * Get account for admin
+   */
   async getAccount(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -23,6 +26,9 @@ export class Admin extends ClientSDK {
     ));
   }
 
+  /**
+   * Remove vanity URL
+   */
   async removeVanity(
     request: components.AccountSearch,
     options?: RequestOptions,
@@ -34,6 +40,9 @@ export class Admin extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account resources
+   */
   async updateResources(
     request: components.V1AdminUpdateResourcesRequestBody,
     options?: RequestOptions,
@@ -45,6 +54,9 @@ export class Admin extends ClientSDK {
     ));
   }
 
+  /**
+   * Update account roles
+   */
   async updateRoles(
     request: components.V1AdminUpdateRolesRequestBody,
     options?: RequestOptions,

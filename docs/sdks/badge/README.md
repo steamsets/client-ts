@@ -7,11 +7,13 @@ Any request that is related to steam badges, mostly badge search/tagging related
 
 ### Available Operations
 
-* [badgeListAccounts](#badgelistaccounts)
-* [search](#search)
-* [suggestTags](#suggesttags)
+* [badgeListAccounts](#badgelistaccounts) - List accounts for badge
+* [search](#search) - Search badges
+* [suggestTags](#suggesttags) - Suggest badge tag
 
 ## badgeListAccounts
+
+List accounts for badge
 
 ### Example Usage
 
@@ -82,6 +84,8 @@ run();
 
 ## search
 
+Search badges
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="badge.searchBadges" method="post" path="/v1/badge.searchBadges" -->
@@ -94,13 +98,15 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.badge.search({
-    filter: "<value>",
-    image: "base64_encoded_image",
-    query: "<value>",
-    sort: [
-      "price:asc",
-      "author:desc",
-    ],
+    v1SearchRequest: {
+      filter: "<value>",
+      image: "base64_encoded_image",
+      query: "<value>",
+      sort: [
+        "price:asc",
+        "author:desc",
+      ],
+    },
   });
 
   console.log(result);
@@ -125,13 +131,15 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await badgeSearch(steamSets, {
-    filter: "<value>",
-    image: "base64_encoded_image",
-    query: "<value>",
-    sort: [
-      "price:asc",
-      "author:desc",
-    ],
+    v1SearchRequest: {
+      filter: "<value>",
+      image: "base64_encoded_image",
+      query: "<value>",
+      sort: [
+        "price:asc",
+        "author:desc",
+      ],
+    },
   });
   if (res.ok) {
     const { value: result } = res;
@@ -148,7 +156,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1SearchRequest](../../models/components/v1searchrequest.md)                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.BadgeSearchBadgesRequest](../../models/operations/badgesearchbadgesrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -166,6 +174,8 @@ run();
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## suggestTags
+
+Suggest badge tag
 
 ### Example Usage
 

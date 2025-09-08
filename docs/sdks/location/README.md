@@ -7,9 +7,11 @@ Any location that gives location data.
 
 ### Available Operations
 
-* [get](#get)
+* [get](#get) - List available locations
 
 ## get
+
+List available locations
 
 ### Example Usage
 

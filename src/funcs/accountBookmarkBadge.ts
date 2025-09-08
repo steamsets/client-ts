@@ -26,6 +26,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Bookmark or unbookmark a badge
+ */
 export function accountBookmarkBadge(
   client: SteamSetsCore,
   request: components.V1AccountBookmarkBadgeRequestBody,

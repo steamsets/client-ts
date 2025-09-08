@@ -25,6 +25,9 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * Send email verification
+ */
 export function accountSendEmailVerification(
   client: SteamSetsCore,
   request: operations.AccountSendEmailVerificationRequest,
