@@ -5,11 +5,11 @@
 ```typescript
 import { Filter } from "@steamsets/client-ts/models/components";
 
-let value: Filter = "normal";
+let value: Filter = "sale";
 ```
 
 ## Values
 
 ```typescript
-"all" | "normal" | "foil"
+"foil" | "sale" | "event"
 ```

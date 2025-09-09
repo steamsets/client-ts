@@ -3,7 +3,6 @@
  */
 
 export * from "./accountbookmarkbadge.js";
-export * from "./accountcomparebadges.js";
 export * from "./accountcreateconnection.js";
 export * from "./accountcreatedeveloperapp.js";
 export * from "./accountdeleteconnection.js";
@@ -39,12 +38,7 @@ export * from "./accountupdatevanity.js";
 export * from "./accountuploadimages.js";
 export * from "./accountverifyconnection.js";
 export * from "./accountverifyemail.js";
-export * from "./admingetaccount.js";
-export * from "./adminremovevanity.js";
-export * from "./adminupdateresources.js";
-export * from "./adminupdateroles.js";
 export * from "./applistbadges.js";
-export * from "./badgelistaccounts.js";
 export * from "./badgelistbadgeprices.js";
 export * from "./badgelisttags.js";
 export * from "./badgesearchbadges.js";
@@ -57,7 +51,6 @@ export * from "./leaderboardgetgroupsmeta.js";
 export * from "./leaderboardgetlowestranks.js";
 export * from "./leaderboardlistbadges.js";
 export * from "./leaderboardpreviewaccountrank.js";
-export * from "./liveness.js";
 export * from "./locationgetlocations.js";
 export * from "./staffliststaff.js";
 export * from "./statsgetstats.js";

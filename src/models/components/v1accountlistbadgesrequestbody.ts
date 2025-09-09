@@ -38,20 +38,18 @@ import {
   VanitySearch$outboundSchema,
 } from "./vanitysearch.js";
 
-export const V1AccountListBadgesRequestBodyFilter = {
+export const Filter = {
   Foil: "foil",
   Sale: "sale",
   Event: "event",
 } as const;
-export type V1AccountListBadgesRequestBodyFilter = ClosedEnum<
-  typeof V1AccountListBadgesRequestBodyFilter
->;
+export type Filter = ClosedEnum<typeof Filter>;
 
 export type V1AccountListBadgesRequestBody = {
   /**
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
-  filter?: Array<V1AccountListBadgesRequestBodyFilter> | null | undefined;
+  filter?: Array<Filter> | null | undefined;
   filters?: V1BadgeFilters | undefined;
   id?: IDSearch | undefined;
   order?: V1BadgeOrder | null | undefined;
@@ -65,27 +63,22 @@ export type V1AccountListBadgesRequestBody = {
 };
 
 /** @internal */
-export const V1AccountListBadgesRequestBodyFilter$inboundSchema:
-  z.ZodNativeEnum<typeof V1AccountListBadgesRequestBodyFilter> = z.nativeEnum(
-    V1AccountListBadgesRequestBodyFilter,
-  );
+export const Filter$inboundSchema: z.ZodNativeEnum<typeof Filter> = z
+  .nativeEnum(Filter);
 
 /** @internal */
-export const V1AccountListBadgesRequestBodyFilter$outboundSchema:
-  z.ZodNativeEnum<typeof V1AccountListBadgesRequestBodyFilter> =
-    V1AccountListBadgesRequestBodyFilter$inboundSchema;
+export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> =
+  Filter$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1AccountListBadgesRequestBodyFilter$ {
-  /** @deprecated use `V1AccountListBadgesRequestBodyFilter$inboundSchema` instead. */
-  export const inboundSchema =
-    V1AccountListBadgesRequestBodyFilter$inboundSchema;
-  /** @deprecated use `V1AccountListBadgesRequestBodyFilter$outboundSchema` instead. */
-  export const outboundSchema =
-    V1AccountListBadgesRequestBodyFilter$outboundSchema;
+export namespace Filter$ {
+  /** @deprecated use `Filter$inboundSchema` instead. */
+  export const inboundSchema = Filter$inboundSchema;
+  /** @deprecated use `Filter$outboundSchema` instead. */
+  export const outboundSchema = Filter$outboundSchema;
 }
 
 /** @internal */
@@ -94,9 +87,7 @@ export const V1AccountListBadgesRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  filter: z.nullable(
-    z.array(V1AccountListBadgesRequestBodyFilter$inboundSchema),
-  ).optional(),
+  filter: z.nullable(z.array(Filter$inboundSchema)).optional(),
   filters: V1BadgeFilters$inboundSchema.optional(),
   id: IDSearch$inboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$inboundSchema).optional(),
@@ -124,9 +115,7 @@ export const V1AccountListBadgesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountListBadgesRequestBody
 > = z.object({
-  filter: z.nullable(
-    z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema),
-  ).optional(),
+  filter: z.nullable(z.array(Filter$outboundSchema)).optional(),
   filters: V1BadgeFilters$outboundSchema.optional(),
   id: IDSearch$outboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$outboundSchema).optional(),

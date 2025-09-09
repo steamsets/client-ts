@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: ab6b451678c56043d2ffdab027ad0c23
+  docChecksum: 4599270eacace497542330359f337964
   docVersion: 1.0.0
-  speakeasyVersion: 1.611.1
-  generationVersion: 2.694.1
-  releaseVersion: 0.27.10
-  configChecksum: 174dcfb6c3375eb187b0c3f33ee78e8b
+  speakeasyVersion: 1.613.0
+  generationVersion: 2.696.0
+  releaseVersion: 0.28.0
+  configChecksum: 873490313edb0ece9d69f1a95f86b1af
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -41,6 +41,7 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.5
     groups: 2.81.2
+    ignores: 2.81.1
     inputOutputModels: 2.82.0
     nameOverrides: 2.81.2
     nullables: 0.1.1
@@ -85,10 +86,8 @@ generatedFiles:
   - docs/models/components/errormodel.md
   - docs/models/components/filter.md
   - docs/models/components/friendprivacy.md
-  - docs/models/components/historyvalue.md
   - docs/models/components/httpmetadata.md
   - docs/models/components/idsearch.md
-  - docs/models/components/ignore.md
   - docs/models/components/image.md
   - docs/models/components/imagetype.md
   - docs/models/components/lastqueuestatus.md
@@ -100,7 +99,6 @@ generatedFiles:
   - docs/models/components/leaderboardregion.md
   - docs/models/components/leaderboardstate.md
   - docs/models/components/loginrequestbody.md
-  - docs/models/components/mode.md
   - docs/models/components/previewaccount.md
   - docs/models/components/previewaccountprivacy.md
   - docs/models/components/privacy.md
@@ -111,7 +109,6 @@ generatedFiles:
   - docs/models/components/resourceresource.md
   - docs/models/components/role.md
   - docs/models/components/rolerole.md
-  - docs/models/components/roles.md
   - docs/models/components/security.md
   - docs/models/components/session.md
   - docs/models/components/setremovecolortag.md
@@ -128,11 +125,6 @@ generatedFiles:
   - docs/models/components/v1accountbadgexpstats.md
   - docs/models/components/v1accountbookmarkbadgerequestbody.md
   - docs/models/components/v1accountbookmarkbadgeresponsebody.md
-  - docs/models/components/v1accountcompare.md
-  - docs/models/components/v1accountcomparebadgeorder.md
-  - docs/models/components/v1accountcomparebadgesrequestbody.md
-  - docs/models/components/v1accountcomparebadgesresponsebody.md
-  - docs/models/components/v1accountcomparedappbadge.md
   - docs/models/components/v1accountcreateconnectionrequestbody.md
   - docs/models/components/v1accountcreateconnectionresponsebody.md
   - docs/models/components/v1accountcreatedeveloperapprequestbody.md
@@ -162,14 +154,11 @@ generatedFiles:
   - docs/models/components/v1accountlistappsrequestbody.md
   - docs/models/components/v1accountlistappsresponsebody.md
   - docs/models/components/v1accountlistbadgesrequestbody.md
-  - docs/models/components/v1accountlistbadgesrequestbodyfilter.md
   - docs/models/components/v1accountlistbadgesresponsebody.md
   - docs/models/components/v1accountlistfriendsresponsebody.md
   - docs/models/components/v1accountlistimagesresponsebody.md
   - docs/models/components/v1accountlistleaderboardhistoryresponsebody.md
-  - docs/models/components/v1accountlocationupdate.md
   - docs/models/components/v1accountloginresponsebody.md
-  - docs/models/components/v1accountnameupdate.md
   - docs/models/components/v1accountplaytimedatapoint.md
   - docs/models/components/v1accountqueueupdaterequestbody.md
   - docs/models/components/v1accountreconnectrequestbody.md
@@ -190,33 +179,20 @@ generatedFiles:
   - docs/models/components/v1accountuploadedimagetype.md
   - docs/models/components/v1accountuploadimagesrequestbody.md
   - docs/models/components/v1accountuploadimagesresponsebody.md
-  - docs/models/components/v1accountvanityupdate.md
   - docs/models/components/v1accountverifyconnectionrequestbody.md
   - docs/models/components/v1accountverifyconnectionresponsebody.md
   - docs/models/components/v1accountverifyemailrequestbody.md
-  - docs/models/components/v1admingetaccountresponsebody.md
-  - docs/models/components/v1admingetaccountresponsebodyprivacy.md
-  - docs/models/components/v1adminremovevanityresponsebody.md
-  - docs/models/components/v1adminupdateresourcesrequestbody.md
-  - docs/models/components/v1adminupdaterolesrequestbody.md
   - docs/models/components/v1appbadge.md
   - docs/models/components/v1appfilters.md
   - docs/models/components/v1applistbadgesrequestbody.md
   - docs/models/components/v1applistbadgesresponsebody.md
   - docs/models/components/v1apporder.md
-  - docs/models/components/v1apporderby.md
-  - docs/models/components/v1apporderdirection.md
-  - docs/models/components/v1badgeaccount.md
-  - docs/models/components/v1badgeaccountprivacy.md
   - docs/models/components/v1badgeapp.md
   - docs/models/components/v1badgefilters.md
   - docs/models/components/v1badgelevel.md
-  - docs/models/components/v1badgelistaccountsrequestbody.md
-  - docs/models/components/v1badgelistaccountsresponsebody.md
   - docs/models/components/v1badgelistbadgepricesrequestbody.md
   - docs/models/components/v1badgelistbadgepricesresponsebody.md
   - docs/models/components/v1badgelisttagsresponsebody.md
-  - docs/models/components/v1badgelookup.md
   - docs/models/components/v1badgeorder.md
   - docs/models/components/v1badgeorderby.md
   - docs/models/components/v1badgeorderdirection.md
@@ -253,7 +229,6 @@ generatedFiles:
   - docs/models/components/v1leaderboardpreviewaccountrankrequestbody.md
   - docs/models/components/v1leaderboardpreviewaccountrankrequestbodyleaderboard.md
   - docs/models/components/v1leaderboardpreviewaccountrankresponsebody.md
-  - docs/models/components/v1livenessresponsebody.md
   - docs/models/components/v1searchrequest.md
   - docs/models/components/v1stats.md
   - docs/models/components/v1vanityanalytics.md
@@ -261,7 +236,6 @@ generatedFiles:
   - docs/models/components/vectors.md
   - docs/models/errors/errormodel.md
   - docs/models/operations/accountbookmarkbadgeresponse.md
-  - docs/models/operations/accountcomparebadgesresponse.md
   - docs/models/operations/accountcreateconnectionresponse.md
   - docs/models/operations/accountcreatedeveloperappresponse.md
   - docs/models/operations/accountdeleteconnectionresponse.md
@@ -303,12 +277,7 @@ generatedFiles:
   - docs/models/operations/accountuploadimagesresponse.md
   - docs/models/operations/accountverifyconnectionresponse.md
   - docs/models/operations/accountverifyemailresponse.md
-  - docs/models/operations/admingetaccountresponse.md
-  - docs/models/operations/adminremovevanityresponse.md
-  - docs/models/operations/adminupdateresourcesresponse.md
-  - docs/models/operations/adminupdaterolesresponse.md
   - docs/models/operations/applistbadgesresponse.md
-  - docs/models/operations/badgelistaccountsresponse.md
   - docs/models/operations/badgelistbadgepricesresponse.md
   - docs/models/operations/badgelisttagsresponse.md
   - docs/models/operations/badgesearchbadgesrequest.md
@@ -322,18 +291,15 @@ generatedFiles:
   - docs/models/operations/leaderboardgetlowestranksresponse.md
   - docs/models/operations/leaderboardlistbadgesresponse.md
   - docs/models/operations/leaderboardpreviewaccountrankresponse.md
-  - docs/models/operations/livenessresponse.md
   - docs/models/operations/locationgetlocationsresponse.md
   - docs/models/operations/staffliststaffresponse.md
   - docs/models/operations/statsgetstatsresponse.md
   - docs/sdks/account/README.md
-  - docs/sdks/admin/README.md
   - docs/sdks/apps/README.md
   - docs/sdks/badge/README.md
   - docs/sdks/badges/README.md
   - docs/sdks/leaderboard/README.md
   - docs/sdks/leaderboards/README.md
-  - docs/sdks/liveness/README.md
   - docs/sdks/location/README.md
   - docs/sdks/staff/README.md
   - docs/sdks/stats/README.md
@@ -347,7 +313,6 @@ generatedFiles:
   - package.json
   - src/core.ts
   - src/funcs/accountBookmarkBadge.ts
-  - src/funcs/accountCompareBadges.ts
   - src/funcs/accountCreateConnection.ts
   - src/funcs/accountCreateDeveloperApp.ts
   - src/funcs/accountDeleteConnection.ts
@@ -383,12 +348,7 @@ generatedFiles:
   - src/funcs/accountUploadImages.ts
   - src/funcs/accountVerifyConnection.ts
   - src/funcs/accountVerifyEmail.ts
-  - src/funcs/adminGetAccount.ts
-  - src/funcs/adminRemoveVanity.ts
-  - src/funcs/adminUpdateResources.ts
-  - src/funcs/adminUpdateRoles.ts
   - src/funcs/appsListBadges.ts
-  - src/funcs/badgeBadgeListAccounts.ts
   - src/funcs/badgeSearch.ts
   - src/funcs/badgeSuggestTags.ts
   - src/funcs/badgesListPrices.ts
@@ -401,7 +361,6 @@ generatedFiles:
   - src/funcs/leaderboardGetLowestRanks.ts
   - src/funcs/leaderboardPreviewAccountRank.ts
   - src/funcs/leaderboardsList.ts
-  - src/funcs/livenessCheck.ts
   - src/funcs/locationGet.ts
   - src/funcs/staffList.ts
   - src/funcs/statsGet.ts
@@ -441,7 +400,6 @@ generatedFiles:
   - src/models/components/developerapp.ts
   - src/models/components/errordetail.ts
   - src/models/components/errormodel.ts
-  - src/models/components/historyvalue.ts
   - src/models/components/httpmetadata.ts
   - src/models/components/idsearch.ts
   - src/models/components/image.ts
@@ -472,11 +430,6 @@ generatedFiles:
   - src/models/components/v1accountbadgexpstats.ts
   - src/models/components/v1accountbookmarkbadgerequestbody.ts
   - src/models/components/v1accountbookmarkbadgeresponsebody.ts
-  - src/models/components/v1accountcompare.ts
-  - src/models/components/v1accountcomparebadgeorder.ts
-  - src/models/components/v1accountcomparebadgesrequestbody.ts
-  - src/models/components/v1accountcomparebadgesresponsebody.ts
-  - src/models/components/v1accountcomparedappbadge.ts
   - src/models/components/v1accountcreateconnectionrequestbody.ts
   - src/models/components/v1accountcreateconnectionresponsebody.ts
   - src/models/components/v1accountcreatedeveloperapprequestbody.ts
@@ -507,9 +460,7 @@ generatedFiles:
   - src/models/components/v1accountlistfriendsresponsebody.ts
   - src/models/components/v1accountlistimagesresponsebody.ts
   - src/models/components/v1accountlistleaderboardhistoryresponsebody.ts
-  - src/models/components/v1accountlocationupdate.ts
   - src/models/components/v1accountloginresponsebody.ts
-  - src/models/components/v1accountnameupdate.ts
   - src/models/components/v1accountplaytimedatapoint.ts
   - src/models/components/v1accountqueueupdaterequestbody.ts
   - src/models/components/v1accountreconnectrequestbody.ts
@@ -528,29 +479,20 @@ generatedFiles:
   - src/models/components/v1accountuploadedimage.ts
   - src/models/components/v1accountuploadimagesrequestbody.ts
   - src/models/components/v1accountuploadimagesresponsebody.ts
-  - src/models/components/v1accountvanityupdate.ts
   - src/models/components/v1accountverifyconnectionrequestbody.ts
   - src/models/components/v1accountverifyconnectionresponsebody.ts
   - src/models/components/v1accountverifyemailrequestbody.ts
-  - src/models/components/v1admingetaccountresponsebody.ts
-  - src/models/components/v1adminremovevanityresponsebody.ts
-  - src/models/components/v1adminupdateresourcesrequestbody.ts
-  - src/models/components/v1adminupdaterolesrequestbody.ts
   - src/models/components/v1appbadge.ts
   - src/models/components/v1appfilters.ts
   - src/models/components/v1applistbadgesrequestbody.ts
   - src/models/components/v1applistbadgesresponsebody.ts
   - src/models/components/v1apporder.ts
-  - src/models/components/v1badgeaccount.ts
   - src/models/components/v1badgeapp.ts
   - src/models/components/v1badgefilters.ts
   - src/models/components/v1badgelevel.ts
-  - src/models/components/v1badgelistaccountsrequestbody.ts
-  - src/models/components/v1badgelistaccountsresponsebody.ts
   - src/models/components/v1badgelistbadgepricesrequestbody.ts
   - src/models/components/v1badgelistbadgepricesresponsebody.ts
   - src/models/components/v1badgelisttagsresponsebody.ts
-  - src/models/components/v1badgelookup.ts
   - src/models/components/v1badgeorder.ts
   - src/models/components/v1badgesearchbadgesresponsebody.ts
   - src/models/components/v1badgeset.ts
@@ -578,7 +520,6 @@ generatedFiles:
   - src/models/components/v1leaderboardlocationinfo.ts
   - src/models/components/v1leaderboardpreviewaccountrankrequestbody.ts
   - src/models/components/v1leaderboardpreviewaccountrankresponsebody.ts
-  - src/models/components/v1livenessresponsebody.ts
   - src/models/components/v1searchrequest.ts
   - src/models/components/v1stats.ts
   - src/models/components/v1vanityanalytics.ts
@@ -592,7 +533,6 @@ generatedFiles:
   - src/models/errors/sdkvalidationerror.ts
   - src/models/errors/steamsetserror.ts
   - src/models/operations/accountbookmarkbadge.ts
-  - src/models/operations/accountcomparebadges.ts
   - src/models/operations/accountcreateconnection.ts
   - src/models/operations/accountcreatedeveloperapp.ts
   - src/models/operations/accountdeleteconnection.ts
@@ -628,12 +568,7 @@ generatedFiles:
   - src/models/operations/accountuploadimages.ts
   - src/models/operations/accountverifyconnection.ts
   - src/models/operations/accountverifyemail.ts
-  - src/models/operations/admingetaccount.ts
-  - src/models/operations/adminremovevanity.ts
-  - src/models/operations/adminupdateresources.ts
-  - src/models/operations/adminupdateroles.ts
   - src/models/operations/applistbadges.ts
-  - src/models/operations/badgelistaccounts.ts
   - src/models/operations/badgelistbadgeprices.ts
   - src/models/operations/badgelisttags.ts
   - src/models/operations/badgesearchbadges.ts
@@ -647,19 +582,16 @@ generatedFiles:
   - src/models/operations/leaderboardgetlowestranks.ts
   - src/models/operations/leaderboardlistbadges.ts
   - src/models/operations/leaderboardpreviewaccountrank.ts
-  - src/models/operations/liveness.ts
   - src/models/operations/locationgetlocations.ts
   - src/models/operations/staffliststaff.ts
   - src/models/operations/statsgetstats.ts
   - src/sdk/account.ts
-  - src/sdk/admin.ts
   - src/sdk/apps.ts
   - src/sdk/badge.ts
   - src/sdk/badges.ts
   - src/sdk/index.ts
   - src/sdk/leaderboard.ts
   - src/sdk/leaderboards.ts
-  - src/sdk/liveness.ts
   - src/sdk/location.ts
   - src/sdk/sdk.ts
   - src/sdk/staff.ts
@@ -1367,5 +1299,10 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes Detected:
-  * `steamsets.account.queueUpdate()`:  `request` **Changed** **Breaking** :warning:
-  * `steamsets.badge.search()`:  `request` **Changed** **Breaking** :warning:
+  * `steamsets.account.compareBadges()`: **Deleted** **Breaking** :warning:
+  * `steamsets.admin.getAccount()`: **Deleted** **Breaking** :warning:
+  * `steamsets.admin.removeVanity()`: **Deleted** **Breaking** :warning:
+  * `steamsets.admin.updateResources()`: **Deleted** **Breaking** :warning:
+  * `steamsets.admin.updateRoles()`: **Deleted** **Breaking** :warning:
+  * `steamsets.badge.badge.listAccounts()`: **Deleted** **Breaking** :warning:
+  * `steamsets.liveness.check()`: **Deleted** **Breaking** :warning:
