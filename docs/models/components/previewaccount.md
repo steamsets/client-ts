@@ -42,9 +42,10 @@ let value: PreviewAccount = {
       extras: {
         "key": "<value>",
         "key1": "<value>",
+        "key2": "<value>",
       },
-      rating: 297304,
-      role: "donator",
+      rating: 887355,
+      role: "developer",
     },
   ],
   score: 100,

@@ -4,13 +4,11 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
-import { Admin } from "./admin.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
-import { Liveness } from "./liveness.js";
 import { Location } from "./location.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
@@ -21,24 +19,19 @@ export class SteamSets extends ClientSDK {
     return (this._account ??= new Account(this._options));
   }
 
-  private _admin?: Admin;
-  get admin(): Admin {
-    return (this._admin ??= new Admin(this._options));
-  }
-
   private _apps?: Apps;
   get apps(): Apps {
     return (this._apps ??= new Apps(this._options));
   }
 
-  private _badge?: Badge;
-  get badge(): Badge {
-    return (this._badge ??= new Badge(this._options));
-  }
-
   private _badges?: Badges;
   get badges(): Badges {
     return (this._badges ??= new Badges(this._options));
+  }
+
+  private _badge?: Badge;
+  get badge(): Badge {
+    return (this._badge ??= new Badge(this._options));
   }
 
   private _leaderboard?: Leaderboard;
@@ -49,11 +42,6 @@ export class SteamSets extends ClientSDK {
   private _leaderboards?: Leaderboards;
   get leaderboards(): Leaderboards {
     return (this._leaderboards ??= new Leaderboards(this._options));
-  }
-
-  private _liveness?: Liveness;
-  get liveness(): Liveness {
-    return (this._liveness ??= new Liveness(this._options));
   }
 
   private _location?: Location;

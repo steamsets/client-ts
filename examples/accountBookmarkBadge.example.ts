@@ -18,7 +18,7 @@ const steamSets = new SteamSets({
 });
 
 async function main() {
-  const result = await steamSets.bookmarkBadge({
+  const result = await steamSets.account.bookmarkBadge({
     badgeId: "bdg_123",
     bookmark: true,
   });

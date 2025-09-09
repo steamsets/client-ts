@@ -8,61 +8,57 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const V1AppOrderBy = {
+export const By = {
   AppId: "appId",
   Playtime: "playtime",
 } as const;
-export type V1AppOrderBy = ClosedEnum<typeof V1AppOrderBy>;
+export type By = ClosedEnum<typeof By>;
 
-export const V1AppOrderDirection = {
+export const Direction = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type V1AppOrderDirection = ClosedEnum<typeof V1AppOrderDirection>;
+export type Direction = ClosedEnum<typeof Direction>;
 
 export type V1AppOrder = {
-  by: V1AppOrderBy;
-  direction?: V1AppOrderDirection | undefined;
+  by: By;
+  direction?: Direction | undefined;
 };
 
 /** @internal */
-export const V1AppOrderBy$inboundSchema: z.ZodNativeEnum<typeof V1AppOrderBy> =
-  z.nativeEnum(V1AppOrderBy);
+export const By$inboundSchema: z.ZodNativeEnum<typeof By> = z.nativeEnum(By);
 
 /** @internal */
-export const V1AppOrderBy$outboundSchema: z.ZodNativeEnum<typeof V1AppOrderBy> =
-  V1AppOrderBy$inboundSchema;
+export const By$outboundSchema: z.ZodNativeEnum<typeof By> = By$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1AppOrderBy$ {
-  /** @deprecated use `V1AppOrderBy$inboundSchema` instead. */
-  export const inboundSchema = V1AppOrderBy$inboundSchema;
-  /** @deprecated use `V1AppOrderBy$outboundSchema` instead. */
-  export const outboundSchema = V1AppOrderBy$outboundSchema;
+export namespace By$ {
+  /** @deprecated use `By$inboundSchema` instead. */
+  export const inboundSchema = By$inboundSchema;
+  /** @deprecated use `By$outboundSchema` instead. */
+  export const outboundSchema = By$outboundSchema;
 }
 
 /** @internal */
-export const V1AppOrderDirection$inboundSchema: z.ZodNativeEnum<
-  typeof V1AppOrderDirection
-> = z.nativeEnum(V1AppOrderDirection);
+export const Direction$inboundSchema: z.ZodNativeEnum<typeof Direction> = z
+  .nativeEnum(Direction);
 
 /** @internal */
-export const V1AppOrderDirection$outboundSchema: z.ZodNativeEnum<
-  typeof V1AppOrderDirection
-> = V1AppOrderDirection$inboundSchema;
+export const Direction$outboundSchema: z.ZodNativeEnum<typeof Direction> =
+  Direction$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace V1AppOrderDirection$ {
-  /** @deprecated use `V1AppOrderDirection$inboundSchema` instead. */
-  export const inboundSchema = V1AppOrderDirection$inboundSchema;
-  /** @deprecated use `V1AppOrderDirection$outboundSchema` instead. */
-  export const outboundSchema = V1AppOrderDirection$outboundSchema;
+export namespace Direction$ {
+  /** @deprecated use `Direction$inboundSchema` instead. */
+  export const inboundSchema = Direction$inboundSchema;
+  /** @deprecated use `Direction$outboundSchema` instead. */
+  export const outboundSchema = Direction$outboundSchema;
 }
 
 /** @internal */
@@ -71,8 +67,8 @@ export const V1AppOrder$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  by: V1AppOrderBy$inboundSchema,
-  direction: V1AppOrderDirection$inboundSchema.default("desc"),
+  by: By$inboundSchema,
+  direction: Direction$inboundSchema.default("desc"),
 });
 
 /** @internal */
@@ -87,8 +83,8 @@ export const V1AppOrder$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AppOrder
 > = z.object({
-  by: V1AppOrderBy$outboundSchema,
-  direction: V1AppOrderDirection$outboundSchema.default("desc"),
+  by: By$outboundSchema,
+  direction: Direction$outboundSchema.default("desc"),
 });
 
 /**

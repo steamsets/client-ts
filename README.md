@@ -75,7 +75,6 @@ run();
 ### [account](docs/sdks/account/README.md)
 
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
-* [compareBadges](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 * [createConnection](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
@@ -112,20 +111,12 @@ run();
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
-### [admin](docs/sdks/admin/README.md)
-
-* [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
-* [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
-* [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
-* [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
-
 ### [apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
 
 ### [badge](docs/sdks/badge/README.md)
 
-* [badgeListAccounts](docs/sdks/badge/README.md#badgelistaccounts) - List accounts for badge
 * [search](docs/sdks/badge/README.md#search) - Search badges
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
@@ -147,10 +138,6 @@ run();
 ### [leaderboards](docs/sdks/leaderboards/README.md)
 
 * [list](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
-
-### [liveness](docs/sdks/liveness/README.md)
-
-* [check](docs/sdks/liveness/README.md#check) - Service Health Check
 
 ### [location](docs/sdks/location/README.md)
 
@@ -518,7 +505,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 <summary>Available standalone functions</summary>
 
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
-- [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 - [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
@@ -554,12 +540,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
-- [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
-- [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
-- [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
-- [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
-- [`badgeBadgeListAccounts`](docs/sdks/badge/README.md#badgelistaccounts) - List accounts for badge
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListPrices`](docs/sdks/badges/README.md#listprices) - List badge prices
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
@@ -572,7 +553,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
-- [`livenessCheck`](docs/sdks/liveness/README.md#check) - Service Health Check
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
