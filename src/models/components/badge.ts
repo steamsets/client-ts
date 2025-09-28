@@ -20,22 +20,19 @@ export type Badge = {
   appImage: string;
   appName: string;
   bookmarks: number;
-  cardCount: number;
   colors: Array<string> | null;
   designs: Array<string> | null;
   firstCompletion: number;
   highestLevel: number;
-  highestPrice: number;
   id: string;
   image: string;
   isEvent: boolean;
   isFoil: boolean;
   isSale: boolean;
+  lastChangedAt: number;
   lastCompletion: number;
   level: number;
-  lowestPrice: number;
   name: string;
-  price: number;
   scarcity: number;
   steamId: number;
   xp: number;
@@ -49,22 +46,19 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     appImage: z.string(),
     appName: z.string(),
     bookmarks: z.number().int(),
-    cardCount: z.number().int(),
     colors: z.nullable(z.array(z.string())),
     designs: z.nullable(z.array(z.string())),
     firstCompletion: z.number().int(),
     highestLevel: z.number().int(),
-    highestPrice: z.number().int(),
     id: z.string(),
     image: z.string(),
     isEvent: z.boolean(),
     isFoil: z.boolean(),
     isSale: z.boolean(),
+    lastChangedAt: z.number().int(),
     lastCompletion: z.number().int(),
     level: z.number().int(),
-    lowestPrice: z.number().int(),
     name: z.string(),
-    price: z.number().int(),
     scarcity: z.number().int(),
     steamId: z.number().int(),
     xp: z.number(),
@@ -81,22 +75,19 @@ export type Badge$Outbound = {
   appImage: string;
   appName: string;
   bookmarks: number;
-  cardCount: number;
   colors: Array<string> | null;
   designs: Array<string> | null;
   firstCompletion: number;
   highestLevel: number;
-  highestPrice: number;
   id: string;
   image: string;
   isEvent: boolean;
   isFoil: boolean;
   isSale: boolean;
+  lastChangedAt: number;
   lastCompletion: number;
   level: number;
-  lowestPrice: number;
   name: string;
-  price: number;
   scarcity: number;
   steamId: number;
   xp: number;
@@ -113,22 +104,19 @@ export const Badge$outboundSchema: z.ZodType<
   appImage: z.string(),
   appName: z.string(),
   bookmarks: z.number().int(),
-  cardCount: z.number().int(),
   colors: z.nullable(z.array(z.string())),
   designs: z.nullable(z.array(z.string())),
   firstCompletion: z.number().int(),
   highestLevel: z.number().int(),
-  highestPrice: z.number().int(),
   id: z.string(),
   image: z.string(),
   isEvent: z.boolean(),
   isFoil: z.boolean(),
   isSale: z.boolean(),
+  lastChangedAt: z.number().int(),
   lastCompletion: z.number().int(),
   level: z.number().int(),
-  lowestPrice: z.number().int(),
   name: z.string(),
-  price: z.number().int(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
   xp: z.number(),

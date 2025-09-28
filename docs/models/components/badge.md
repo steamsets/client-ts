@@ -13,31 +13,29 @@ let value: Badge = {
   appImage: "<value>",
   appName: "<value>",
   bookmarks: 775541,
-  cardCount: 241602,
   colors: [
+    "<value 1>",
+    "<value 2>",
+  ],
+  designs: [
     "<value 1>",
     "<value 2>",
     "<value 3>",
   ],
-  designs: [
-    "<value 1>",
-  ],
-  firstCompletion: 781190,
-  highestLevel: 719260,
-  highestPrice: 534083,
+  firstCompletion: 274482,
+  highestLevel: 781190,
   id: "<id>",
-  image: "https://picsum.photos/seed/ZhEwPesri/198/2037",
-  isEvent: true,
-  isFoil: true,
-  isSale: true,
-  lastCompletion: 695081,
-  level: 554725,
-  lowestPrice: 705781,
+  image: "https://loremflickr.com/2877/2136?lock=4587574259201405",
+  isEvent: false,
+  isFoil: false,
+  isSale: false,
+  lastChangedAt: 274437,
+  lastCompletion: 650973,
+  level: 530830,
   name: "<value>",
-  price: 253246,
-  scarcity: 632242,
-  steamId: 11725,
-  xp: 2589.14,
+  scarcity: 822916,
+  steamId: 237125,
+  xp: 4643.94,
 };
 ```
 
@@ -50,22 +48,19 @@ let value: Badge = {
 | `appImage`                                               | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `appName`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `bookmarks`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `cardCount`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `colors`                                                 | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
 | `designs`                                                | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
 | `firstCompletion`                                        | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `highestLevel`                                           | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `highestPrice`                                           | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `id`                                                     | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `image`                                                  | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `isEvent`                                                | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `isFoil`                                                 | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `isSale`                                                 | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
+| `lastChangedAt`                                          | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `lastCompletion`                                         | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `level`                                                  | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `lowestPrice`                                            | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `name`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
-| `price`                                                  | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `scarcity`                                               | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `steamId`                                                | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `xp`                                                     | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |

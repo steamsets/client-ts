@@ -27,10 +27,12 @@ let value: V1AccountGetSettingsBody = {
   ],
   developerApps: [
     {
-      apiKey: "api_123",
+      apiKey: "null",
+      createdAt: new Date("2023-01-01T00:00:00Z"),
       description: "My App Description",
       environment: "production",
-      id: "da_123456",
+      id: "key_123456",
+      keyId: "key_123456",
       name: "My App",
     },
   ],

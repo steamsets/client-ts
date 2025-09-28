@@ -20,6 +20,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
   tests:
     generateTests: true
     generateNewTests: false
@@ -45,7 +46,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.28.0
+  version: 0.28.1
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -75,10 +76,12 @@ typescript:
   jsonpath: legacy
   maxMethodParams: 0
   methodArguments: require-security-and-request
+  modelPropertyCasing: camel
   moduleFormat: commonjs
   outputModelSuffix: output
   packageName: '@steamsets/client-ts'
   responseFormat: envelope-http
+  sseFlatResponse: false
   templateVersion: v2
   usageSDKInitImports: []
   useIndexModules: true

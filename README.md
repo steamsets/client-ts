@@ -407,7 +407,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new SteamSets({ httpClient });
+const sdk = new SteamSets({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -476,10 +476,7 @@ bun add @steamsets/client-ts
 ### Yarn
 
 ```bash
-yarn add @steamsets/client-ts zod
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
+yarn add @steamsets/client-ts
 ```
 <!-- End SDK Installation [installation] -->
 
