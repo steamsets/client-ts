@@ -25,11 +25,15 @@ export type DeveloperAppEnvironment = ClosedEnum<
 
 export type DeveloperApp = {
   /**
-   * The api key of the developer app
+   * The api key (deprecated, always null for security)
    *
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   apiKey: string | null;
+  /**
+   * When the app was created
+   */
+  createdAt: Date;
   /**
    * The description of the developer app
    */
@@ -39,9 +43,13 @@ export type DeveloperApp = {
    */
   environment: DeveloperAppEnvironment;
   /**
-   * The id of the developer app
+   * The id of the developer app (same as keyId for backwards compatibility)
    */
   id: string;
+  /**
+   * The Unkey key ID
+   */
+  keyId: string;
   /**
    * The name of the developer app
    */
@@ -76,18 +84,22 @@ export const DeveloperApp$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   apiKey: z.nullable(z.string()),
+  createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   description: z.string(),
   environment: DeveloperAppEnvironment$inboundSchema,
   id: z.string(),
+  keyId: z.string(),
   name: z.string(),
 });
 
 /** @internal */
 export type DeveloperApp$Outbound = {
   apiKey: string | null;
+  createdAt: string;
   description: string;
   environment: string;
   id: string;
+  keyId: string;
   name: string;
 };
 
@@ -98,9 +110,11 @@ export const DeveloperApp$outboundSchema: z.ZodType<
   DeveloperApp
 > = z.object({
   apiKey: z.nullable(z.string()),
+  createdAt: z.date().transform(v => v.toISOString()),
   description: z.string(),
   environment: DeveloperAppEnvironment$outboundSchema,
   id: z.string(),
+  keyId: z.string(),
   name: z.string(),
 });
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4599270eacace497542330359f337964
+  docChecksum: 57bfcb7e7ef3783937370e00a0bbcdc7
   docVersion: 1.0.0
-  speakeasyVersion: 1.613.0
-  generationVersion: 2.696.0
-  releaseVersion: 0.28.0
-  configChecksum: 873490313edb0ece9d69f1a95f86b1af
+  speakeasyVersion: 1.631.3
+  generationVersion: 2.716.14
+  releaseVersion: 0.28.1
+  configChecksum: fb4ec851cd10ae216de6975ac7e7f51c
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -30,13 +30,13 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.22
+    core: 3.21.25
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
-    devContainers: 2.90.0
+    devContainers: 2.90.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    globalSecurity: 2.82.13
+    globalSecurity: 2.82.14
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.5
@@ -764,7 +764,7 @@ examples:
     speakeasy-default-account-get-settings:
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "partner", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "description": "My App Description", "environment": "production", "id": "da_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 993290}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json", "chosenRole": {"role": "partner", "tier": "tier_1"}, "connections": [{"avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg", "connectionId": "123456", "externalId": "123456", "failed": true, "hide": true, "name": "steamsets", "provider": "discord", "verified": true}], "developerApps": [{"apiKey": "api_123", "createdAt": "2023-01-01T00:00:00Z", "description": "My App Description", "environment": "production", "id": "da_123456", "keyId": "key_123456", "name": "My App"}], "email": "steamsets@example.com", "emailVerifiedAt": "2023-01-01T00:00:00Z", "hidden": true, "images": [], "language": "en", "privacy": "public", "sessions": [{"createdAt": "2023-01-01T00:00:00Z", "expiresAt": "2023-01-01T00:00:00Z", "ip": "127.0.0.1", "lastSeen": "2023-01-01T00:00:00Z", "sessionId": "123456", "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}], "subscribed": true, "vanity": "flo", "vanityAnalytics": {"clicks": 993290}}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "400":
@@ -1297,12 +1297,4 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `steamsets.account.compareBadges()`: **Deleted** **Breaking** :warning:
-  * `steamsets.admin.getAccount()`: **Deleted** **Breaking** :warning:
-  * `steamsets.admin.removeVanity()`: **Deleted** **Breaking** :warning:
-  * `steamsets.admin.updateResources()`: **Deleted** **Breaking** :warning:
-  * `steamsets.admin.updateRoles()`: **Deleted** **Breaking** :warning:
-  * `steamsets.badge.badge.listAccounts()`: **Deleted** **Breaking** :warning:
-  * `steamsets.liveness.check()`: **Deleted** **Breaking** :warning:
+releaseNotes: "## Typescript SDK Changes Detected:\n* `steamsets.badge.search()`:  `response.badges.[]` **Changed** **Breaking** :warning:\n* `steamsets.leaderboard.previewAccountRank()`: \n  *  `request.value` **Changed** **Breaking** :warning:\n* `steamsets.account.getSettings()`:  `response.developerapps.[]` **Changed**\n"
