@@ -45,7 +45,7 @@ let value: PreviewAccount = {
         "key2": "<value>",
       },
       rating: 887355,
-      role: "developer",
+      role: "partner",
     },
   ],
   score: 100,

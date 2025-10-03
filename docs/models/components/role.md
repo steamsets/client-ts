@@ -10,7 +10,7 @@ let value: Role = {
     "key": "<value>",
   },
   rating: 570967,
-  role: "ruby",
+  role: "diamond",
 };
 ```
 

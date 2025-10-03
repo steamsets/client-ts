@@ -53,7 +53,7 @@ let value: V1AccountLeaderboardAccount = {
         "key2": "<value>",
       },
       rating: 887355,
-      role: "developer",
+      role: "partner",
     },
   ],
   state: {

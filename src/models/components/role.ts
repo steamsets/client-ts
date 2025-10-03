@@ -28,6 +28,8 @@ export const RoleRole = {
   Top100: "top_100",
   BadgeScout: "badge_scout",
   NitroBooster: "nitro_booster",
+  Astral: "astral",
+  Nebula: "nebula",
 } as const;
 export type RoleRole = ClosedEnum<typeof RoleRole>;
 

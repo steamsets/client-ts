@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 57bfcb7e7ef3783937370e00a0bbcdc7
+  docChecksum: 15d88edf67103bda7870e1398e49a649
   docVersion: 1.0.0
-  speakeasyVersion: 1.631.3
-  generationVersion: 2.716.14
-  releaseVersion: 0.28.1
-  configChecksum: fb4ec851cd10ae216de6975ac7e7f51c
+  speakeasyVersion: 1.634.1
+  generationVersion: 2.721.0
+  releaseVersion: 0.28.2
+  configChecksum: f087ac11ff35ae265230139de49c5dd5
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -30,7 +30,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.25
+    core: 3.21.26
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.1
@@ -1297,4 +1297,3 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `steamsets.badge.search()`:  `response.badges.[]` **Changed** **Breaking** :warning:\n* `steamsets.leaderboard.previewAccountRank()`: \n  *  `request.value` **Changed** **Breaking** :warning:\n* `steamsets.account.getSettings()`:  `response.developerapps.[]` **Changed**\n"
