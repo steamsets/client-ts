@@ -45,7 +45,7 @@ let value: V1AccountFriend = {
         "key2": "<value>",
       },
       rating: 887355,
-      role: "developer",
+      role: "partner",
     },
   ],
   state: {

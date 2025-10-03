@@ -18,6 +18,8 @@ export const V1AccountUpdateRoleRequestBodyRole = {
   Sapphire: "sapphire",
   Ruby: "ruby",
   Diamond: "diamond",
+  Astral: "astral",
+  Nebula: "nebula",
 } as const;
 /**
  * The role the account should have between one of the 6 donation roles
