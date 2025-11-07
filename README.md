@@ -151,7 +151,6 @@ run();
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 
-
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -320,7 +319,7 @@ You can override the default server globally by passing a server index to the `s
 import { SteamSets } from "@steamsets/client-ts";
 
 const steamSets = new SteamSets({
-  serverIdx: 1,
+  serverIdx: 0,
   token: "<YOUR_BEARER_TOKEN_HERE>",
 });
 
