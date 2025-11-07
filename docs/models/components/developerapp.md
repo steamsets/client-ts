@@ -6,6 +6,24 @@
 import { DeveloperApp } from "@steamsets/client-ts/models/components";
 
 let value: DeveloperApp = {
+  analytics: {
+    last24Hours: {
+      failedRequests: 358,
+      outcomeBreakdown: [],
+      successRate: 96.5,
+      successfulRequests: 9876,
+      totalRequests: 10234,
+    },
+    timeSeries: {
+      hourly: [
+        {
+          count: 423,
+          outcome: "VALID",
+          time: new Date("2024-01-15T00:00:00.000Z"),
+        },
+      ],
+    },
+  },
   apiKey: "null",
   createdAt: new Date("2023-01-01T00:00:00Z"),
   description: "My App Description",
@@ -20,6 +38,7 @@ let value: DeveloperApp = {
 
 | Field                                                                                                                                                                       | Type                                                                                                                                                                        | Required                                                                                                                                                                    | Description                                                                                                                                                                 | Example                                                                                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `analytics`                                                                                                                                                                 | [components.DeveloperAppAnalytics](../../models/components/developerappanalytics.md)                                                                                        | :heavy_minus_sign:                                                                                                                                                          | N/A                                                                                                                                                                         |                                                                                                                                                                             |
 | ~~`apiKey`~~                                                                                                                                                                | *string*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                          | : warning: ** DEPRECATED **: This will be removed in a future release, please migrate away from it as soon as possible.<br/><br/>The api key (deprecated, always null for security) | null                                                                                                                                                                        |
 | `createdAt`                                                                                                                                                                 | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                                               | :heavy_check_mark:                                                                                                                                                          | When the app was created                                                                                                                                                    | 2023-01-01T00:00:00Z                                                                                                                                                        |
 | `description`                                                                                                                                                               | *string*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                          | The description of the developer app                                                                                                                                        | My App Description                                                                                                                                                          |

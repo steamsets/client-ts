@@ -8,25 +8,49 @@ import { V1AccountGetSettingsBody } from "@steamsets/client-ts/models/components
 let value: V1AccountGetSettingsBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json",
+  analytics: {
+    last24Hours: {
+      failedRequests: 358,
+      outcomeBreakdown: [],
+      successRate: 96.5,
+      successfulRequests: 9876,
+      totalRequests: 10234,
+    },
+    timeSeries: {
+      hourly: [
+        {
+          count: 423,
+          outcome: "VALID",
+          time: new Date("2024-01-15T00:00:00.000Z"),
+        },
+      ],
+    },
+  },
   chosenRole: {
-    role: "sapphire",
+    role: "beta",
     tier: "tier_1",
   },
-  connections: [
-    {
-      avatar:
-        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
-      connectionId: "123456",
-      externalId: "123456",
-      failed: true,
-      hide: true,
-      name: "steamsets",
-      provider: "discord",
-      verified: true,
-    },
-  ],
+  connections: [],
   developerApps: [
     {
+      analytics: {
+        last24Hours: {
+          failedRequests: 358,
+          outcomeBreakdown: [],
+          successRate: 96.5,
+          successfulRequests: 9876,
+          totalRequests: 10234,
+        },
+        timeSeries: {
+          hourly: [
+            {
+              count: 423,
+              outcome: "VALID",
+              time: new Date("2024-01-15T00:00:00.000Z"),
+            },
+          ],
+        },
+      },
       apiKey: "null",
       createdAt: new Date("2023-01-01T00:00:00Z"),
       description: "My App Description",
@@ -53,10 +77,10 @@ let value: V1AccountGetSettingsBody = {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
     },
   ],
-  subscribed: false,
+  subscribed: true,
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 668281,
+    clicks: 201880,
   },
 };
 ```
@@ -66,6 +90,7 @@ let value: V1AccountGetSettingsBody = {
 | Field                                                                                                                                               | Type                                                                                                                                                | Required                                                                                                                                            | Description                                                                                                                                         | Example                                                                                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dollarSchema`                                                                                                                                      | *string*                                                                                                                                            | :heavy_minus_sign:                                                                                                                                  | A URL to the JSON Schema for this object.                                                                                                           | https://api.steamsets.com/schemas/V1AccountGetSettingsBody.json                                                                                     |
+| `analytics`                                                                                                                                         | [components.DeveloperAppAnalytics](../../models/components/developerappanalytics.md)                                                                | :heavy_minus_sign:                                                                                                                                  | N/A                                                                                                                                                 |                                                                                                                                                     |
 | `chosenRole`                                                                                                                                        | [components.ChosenRole](../../models/components/chosenrole.md)                                                                                      | :heavy_check_mark:                                                                                                                                  | N/A                                                                                                                                                 |                                                                                                                                                     |
 | `connections`                                                                                                                                       | [components.Connection](../../models/components/connection.md)[]                                                                                    | :heavy_check_mark:                                                                                                                                  | The connections the account has                                                                                                                     |                                                                                                                                                     |
 | `developerApps`                                                                                                                                     | [components.DeveloperApp](../../models/components/developerapp.md)[]                                                                                | :heavy_check_mark:                                                                                                                                  | The developer apps the account has                                                                                                                  |                                                                                                                                                     |

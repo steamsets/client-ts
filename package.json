@@ -1,6 +1,6 @@
 {
   "name": "@steamsets/client-ts",
-  "version": "0.28.2",
+  "version": "0.29.0",
   "author": "Speakeasy",
   "main": "./index.js",
   "sideEffects": false,
@@ -24,6 +24,6 @@
     "typescript-eslint": "^8.26.0"
   },
   "dependencies": {
-    "zod": "^3.20.0"
+    "zod": "^3.25.0 || ^4.0.0"
   }
 }
