@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 9e0a9ee9485b302ee1d415177c62b7d0
+  docChecksum: 6b4c120a8f30b76d2742d57ebcb6d90c
   docVersion: 1.0.0
-  speakeasyVersion: 1.651.0
-  generationVersion: 2.745.2
-  releaseVersion: 0.29.0
-  configChecksum: 39536019325bd0c31563b71228ca86f2
+  speakeasyVersion: 1.658.0
+  generationVersion: 2.755.0
+  releaseVersion: 0.29.1
+  configChecksum: b1d86a6186174c29140e8db11f6e71d4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
@@ -30,7 +30,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.3
+    core: 3.26.7
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.1
@@ -1309,4 +1309,4 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes Detected:
-  * `steamsets.account.getSettings()`:  `response` **Changed**
+  * `steamsets.account.listFriends()`:  `error.status[403]` **Added**
