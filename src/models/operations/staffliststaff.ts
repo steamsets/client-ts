@@ -31,7 +31,6 @@ export const StaffListStaffResponse$inboundSchema: z.ZodType<
   LeaderboardAccounts: z.nullable(
     z.array(z.nullable(components.LeaderboardAccount$inboundSchema)),
   ).optional(),
-
   Headers: z.record(z.array(z.string())).default({}),
 }).transform((v) => {
   return remap$(v, {

@@ -26,7 +26,6 @@ export const StatsGetStatsResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   V1Stats: components.V1Stats$inboundSchema.optional(),
-
   Headers: z.record(z.array(z.string())).default({}),
 }).transform((v) => {
   return remap$(v, {
