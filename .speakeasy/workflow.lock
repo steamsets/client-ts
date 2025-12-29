@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:081f57d265af43272b2383b28026c8df53ec3daf46913e111206a9c6caf270dd
         tags:
             - latest
-            - speakeasy-sdk-regen-1767016309
+            - speakeasy-sdk-regen-1767017702
             - 1.0.0
     SteamSets-OAS:
         sourceNamespace: steam-sets-oas
@@ -22,7 +22,7 @@ targets:
         sourceRevisionDigest: sha256:3306ec40ff07c285eedbae798a33d9078d0f5abf9f3d9fd628017f4a2f05a533
         sourceBlobDigest: sha256:081f57d265af43272b2383b28026c8df53ec3daf46913e111206a9c6caf270dd
         codeSamplesNamespace: api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:0bf9f1190190a771b6c8947e84fdf0aa9e33ea2981ccf8214db822525a4d2ccd
+        codeSamplesRevisionDigest: sha256:16a858172d13b43cdd573ac73d100f6eb58575b19ccf1d58ed9189b3e819f88b
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
