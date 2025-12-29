@@ -21,7 +21,7 @@ export type V1LeaderboardGetGroupLeaderboardResponseBody = {
   /**
    * The number of accounts that are ranked in the leaderboard
    */
-  rankedOutOf?: number | undefined;
+  rankedOutOf: number;
   steamSetsGroup: V1GroupLeaderboardGroup;
 };
 

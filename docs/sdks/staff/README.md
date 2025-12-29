@@ -1,5 +1,4 @@
 # Staff
-(*staff*)
 
 ## Overview
 

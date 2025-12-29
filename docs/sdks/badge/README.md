@@ -1,5 +1,4 @@
 # Badge
-(*badge*)
 
 ## Overview
 

@@ -37,7 +37,7 @@ export type ErrorModel = {
   /**
    * A URI reference to human-readable documentation for the error.
    */
-  type?: string | undefined;
+  type: string;
 };
 
 /** @internal */

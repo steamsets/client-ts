@@ -72,7 +72,7 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [account](docs/sdks/account/README.md)
+### [Account](docs/sdks/account/README.md)
 
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 * [createConnection](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -111,22 +111,22 @@ run();
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
-### [apps](docs/sdks/apps/README.md)
+### [Apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
 
-### [badge](docs/sdks/badge/README.md)
+### [Badge](docs/sdks/badge/README.md)
 
 * [search](docs/sdks/badge/README.md#search) - Search badges
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
-### [badges](docs/sdks/badges/README.md)
+### [Badges](docs/sdks/badges/README.md)
 
 * [listPrices](docs/sdks/badges/README.md#listprices) - List badge prices
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
-### [leaderboard](docs/sdks/leaderboard/README.md)
+### [Leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
@@ -135,19 +135,19 @@ run();
 * [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 * [previewAccountRank](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 
-### [leaderboards](docs/sdks/leaderboards/README.md)
+### [Leaderboards](docs/sdks/leaderboards/README.md)
 
 * [list](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 
-### [location](docs/sdks/location/README.md)
+### [Location](docs/sdks/location/README.md)
 
 * [get](docs/sdks/location/README.md#get) - List available locations
 
-### [staff](docs/sdks/staff/README.md)
+### [Staff](docs/sdks/staff/README.md)
 
 * [list](docs/sdks/staff/README.md#list) - List staff members
 
-### [stats](docs/sdks/stats/README.md)
+### [Stats](docs/sdks/stats/README.md)
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 
