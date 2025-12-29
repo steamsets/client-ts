@@ -41,7 +41,7 @@ export type V1LeaderboardGetAccountLeaderboardResponseBody = {
   /**
    * The number of accounts that are ranked in the leaderboard
    */
-  rankedOutOf?: number | undefined;
+  rankedOutOf: number;
 };
 
 /** @internal */

@@ -1,5 +1,4 @@
 # Leaderboard
-(*leaderboard*)
 
 ## Overview
 

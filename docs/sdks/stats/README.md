@@ -1,5 +1,4 @@
 # Stats
-(*stats*)
 
 ## Overview
 
