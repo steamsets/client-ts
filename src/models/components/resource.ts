@@ -17,6 +17,7 @@ export const ResourceResource = {
   MaxLeaderboardEntries: "max_leaderboard_entries",
   MiniBackground: "mini_background",
   AccountRefreshRate: "account_refresh_rate",
+  InventoryRefreshRate: "inventory_refresh_rate",
   SocialLinks: "social_links",
   Vanity: "vanity",
   DeveloperApps: "developer_apps",

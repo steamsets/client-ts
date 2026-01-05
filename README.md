@@ -92,12 +92,14 @@ run();
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listImages](docs/sdks/account/README.md#listimages) - List uploaded images
+* [accountListInventorySets](docs/sdks/account/README.md#accountlistinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
+* [accountRefreshInventory](docs/sdks/account/README.md#accountrefreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -122,7 +124,6 @@ run();
 
 ### [Badges](docs/sdks/badges/README.md)
 
-* [listPrices](docs/sdks/badges/README.md#listprices) - List badge prices
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
@@ -279,7 +280,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](./src/models/errors/errormodel.ts): Bad Request. *
+  * [`ErrorModel`](./src/models/errors/errormodel.ts): Bad Request.
 
 <details><summary>Less common errors (6)</summary>
 
@@ -297,8 +298,6 @@ run();
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
-
-\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -500,6 +499,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountListInventorySets`](docs/sdks/account/README.md#accountlistinventorysets) - List inventory sets
+- [`accountAccountRefreshInventory`](docs/sdks/account/README.md#accountrefreshinventory) - Refresh inventory
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
@@ -538,7 +539,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
-- [`badgesListPrices`](docs/sdks/badges/README.md#listprices) - List badge prices
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
