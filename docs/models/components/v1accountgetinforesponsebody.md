@@ -62,7 +62,7 @@ let value: V1AccountGetInfoResponseBody = {
   level: 123456,
   miniBackground: "steamsets",
   name: "steamsets",
-  nextAllowedTime: new Date("2025-12-27T15:59:27.822Z"),
+  nextAllowedTime: new Date("2026-12-27T15:59:27.822Z"),
   normalBadgeCost: 123456,
   normalBadges: 123456,
   playtime: 123456,

@@ -30,7 +30,7 @@ let value: V1AccountListFriendsResponseBody = {
       foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
-      friendsSince: new Date("2024-10-23T09:55:13.055Z"),
+      friendsSince: new Date("2025-10-23T09:55:13.055Z"),
       gameBans: 774271,
       level: 123456,
       name: "steamsets",
