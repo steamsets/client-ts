@@ -50,10 +50,9 @@ let value: V1AccountLeaderboardAccount = {
       extras: {
         "key": "<value>",
         "key1": "<value>",
-        "key2": "<value>",
       },
-      rating: 887355,
-      role: "partner",
+      rating: 297304,
+      role: "donator",
     },
   ],
   state: {

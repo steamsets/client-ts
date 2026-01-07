@@ -1,0 +1,19 @@
+# V1AdminUpdateResourcesRequestBody
+
+## Example Usage
+
+```typescript
+import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AdminUpdateResourcesRequestBody = {
+  resources: [],
+};
+```
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `id`                                                               | [components.IDSearch](../../models/components/idsearch.md)         | :heavy_minus_sign:                                                 | N/A                                                                |
+| `resources`                                                        | [components.Resource](../../models/components/resource.md)[]       | :heavy_check_mark:                                                 | The resources to add for this account                              |
+| `vanity`                                                           | [components.VanitySearch](../../models/components/vanitysearch.md) | :heavy_minus_sign:                                                 | N/A                                                                |
