@@ -24,17 +24,17 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Refresh inventory
+ * List inventory sets
  *
  * @remarks
- * Trigger a refresh of the authenticated user's Steam inventory. Rate limited based on account tier.
+ * Get all trading card sets with ownership information for the authenticated user
  */
-export function accountAccountRefreshInventory(
+export function accountListInventorySets(
   client: SteamSetsCore,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountRefreshInventoryResponse,
+    operations.AccountListInventorySetsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -58,7 +58,7 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AccountRefreshInventoryResponse,
+      operations.AccountListInventorySetsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -72,7 +72,7 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/v1/account.refreshInventory")();
+  const path = pathToFunc("/v1/account.listInventorySets")();
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -85,7 +85,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.refreshInventory",
+    operationID: "account.listInventorySets",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -124,7 +124,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["400", "401", "404", "429", "4XX", "500", "5XX"],
+    errorCodes: ["400", "401", "404", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -138,7 +138,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountRefreshInventoryResponse,
+    operations.AccountListInventorySetsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -149,10 +149,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountRefreshInventoryResponse$inboundSchema, {
-      key: "V1AccountRefreshInventoryResponseBody",
+    M.json(200, operations.AccountListInventorySetsResponse$inboundSchema, {
+      key: "V1AccountListInventorySetsResponseBody",
     }),
-    M.jsonErr([400, 401, 404, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

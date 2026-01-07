@@ -92,14 +92,14 @@ run();
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listImages](docs/sdks/account/README.md#listimages) - List uploaded images
-* [accountListInventorySets](docs/sdks/account/README.md#accountlistinventorysets) - List inventory sets
+* [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
-* [accountRefreshInventory](docs/sdks/account/README.md#accountrefreshinventory) - Refresh inventory
+* [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -506,8 +506,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountListInventorySets`](docs/sdks/account/README.md#accountlistinventorysets) - List inventory sets
-- [`accountAccountRefreshInventory`](docs/sdks/account/README.md#accountrefreshinventory) - Refresh inventory
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
@@ -526,12 +524,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListImages`](docs/sdks/account/README.md#listimages) - List uploaded images
+- [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
+- [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications

@@ -2,7 +2,7 @@ overlay: 1.0.0
 x-speakeasy-jsonpath: rfc9535
 info:
   title: Speakeasy Modifications
-  version: 0.0.8
+  version: 0.0.10
   x-speakeasy-metadata:
     after: ""
     before: ""
@@ -590,4 +590,22 @@ actions:
       before: sdk.account.account.getBadgeStats()
       created_at: 1749463898983
       reviewed_at: 1749464146426
+      type: method-name
+  - target: $["paths"]["/v1/account.listInventorySets"]["post"]
+    update:
+      x-speakeasy-name-override: listInventorySets
+    x-speakeasy-metadata:
+      after: sdk.account.listInventorySets()
+      before: sdk.account.account.listInventorySets()
+      created_at: 1767808970547
+      reviewed_at: 1767809163929
+      type: method-name
+  - target: $["paths"]["/v1/account.refreshInventory"]["post"]
+    update:
+      x-speakeasy-name-override: refreshInventory
+    x-speakeasy-metadata:
+      after: sdk.account.refreshInventory()
+      before: sdk.account.account.refreshInventory()
+      created_at: 1767808970547
+      reviewed_at: 1767809163929
       type: method-name

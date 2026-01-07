@@ -24,14 +24,14 @@ All Requests related to account(s) are grouped here.
 * [listBadges](#listbadges) - List account badges
 * [listFriends](#listfriends) - List account friends
 * [listImages](#listimages) - List uploaded images
-* [accountListInventorySets](#accountlistinventorysets) - List inventory sets
+* [listInventorySets](#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](#listownedbadges) - List owned badges
 * [login](#login) - Login with Steam
 * [logout](#logout) - Logout from session
 * [queueUpdate](#queueupdate) - Queue account update
 * [reconnectConnection](#reconnectconnection) - Reconnect OAuth connection
-* [accountRefreshInventory](#accountrefreshinventory) - Refresh inventory
+* [refreshInventory](#refreshinventory) - Refresh inventory
 * [refreshSession](#refreshsession) - Refresh session token
 * [sendEmailVerification](#sendemailverification) - Send email verification
 * [subscribeEmail](#subscribeemail) - Subscribe to email notifications
@@ -1365,7 +1365,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountListInventorySets
+## listInventorySets
 
 Get all trading card sets with ownership information for the authenticated user
 
@@ -1380,7 +1380,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountListInventorySets();
+  const result = await steamSets.account.listInventorySets();
 
   console.log(result);
 }
@@ -1394,7 +1394,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountListInventorySets } from "@steamsets/client-ts/funcs/accountAccountListInventorySets.js";
+import { accountListInventorySets } from "@steamsets/client-ts/funcs/accountListInventorySets.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1403,12 +1403,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountListInventorySets(steamSets);
+  const res = await accountListInventorySets(steamSets);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountListInventorySets failed:", res.error);
+    console.log("accountListInventorySets failed:", res.error);
   }
 }
 
@@ -1895,7 +1895,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountRefreshInventory
+## refreshInventory
 
 Trigger a refresh of the authenticated user's Steam inventory. Rate limited based on account tier.
 
@@ -1910,7 +1910,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountRefreshInventory();
+  const result = await steamSets.account.refreshInventory();
 
   console.log(result);
 }
@@ -1924,7 +1924,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountRefreshInventory } from "@steamsets/client-ts/funcs/accountAccountRefreshInventory.js";
+import { accountRefreshInventory } from "@steamsets/client-ts/funcs/accountRefreshInventory.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1933,12 +1933,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountRefreshInventory(steamSets);
+  const res = await accountRefreshInventory(steamSets);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountRefreshInventory failed:", res.error);
+    console.log("accountRefreshInventory failed:", res.error);
   }
 }
 
