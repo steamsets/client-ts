@@ -4,6 +4,7 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
+import { Admin } from "./admin.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
@@ -17,6 +18,11 @@ export class SteamSets extends ClientSDK {
   private _account?: Account;
   get account(): Account {
     return (this._account ??= new Account(this._options));
+  }
+
+  private _admin?: Admin;
+  get admin(): Admin {
+    return (this._admin ??= new Admin(this._options));
   }
 
   private _apps?: Apps;

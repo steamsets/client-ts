@@ -38,6 +38,10 @@ export type Resource = {
 export const ResourceResource$inboundSchema: z.ZodNativeEnum<
   typeof ResourceResource
 > = z.nativeEnum(ResourceResource);
+/** @internal */
+export const ResourceResource$outboundSchema: z.ZodNativeEnum<
+  typeof ResourceResource
+> = ResourceResource$inboundSchema;
 
 /** @internal */
 export const Resource$inboundSchema: z.ZodType<
@@ -48,7 +52,25 @@ export const Resource$inboundSchema: z.ZodType<
   resource: ResourceResource$inboundSchema,
   value: z.string(),
 });
+/** @internal */
+export type Resource$Outbound = {
+  resource: string;
+  value: string;
+};
 
+/** @internal */
+export const Resource$outboundSchema: z.ZodType<
+  Resource$Outbound,
+  z.ZodTypeDef,
+  Resource
+> = z.object({
+  resource: ResourceResource$outboundSchema,
+  value: z.string(),
+});
+
+export function resourceToJSON(resource: Resource): string {
+  return JSON.stringify(Resource$outboundSchema.parse(resource));
+}
 export function resourceFromJSON(
   jsonString: string,
 ): SafeParseResult<Resource, SDKValidationError> {

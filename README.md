@@ -113,6 +113,13 @@ run();
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
+### [Admin](docs/sdks/admin/README.md)
+
+* [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
+* [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+* [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
+* [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
+
 ### [Apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
@@ -537,6 +544,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
+- [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
+- [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+- [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
+- [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
