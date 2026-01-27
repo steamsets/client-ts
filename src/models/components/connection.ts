@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,7 +25,7 @@ export const ConnectionProvider = {
 /**
  * The provider to connect with
  */
-export type ConnectionProvider = ClosedEnum<typeof ConnectionProvider>;
+export type ConnectionProvider = OpenEnum<typeof ConnectionProvider>;
 
 export type Connection = {
   /**
@@ -62,9 +63,11 @@ export type Connection = {
 };
 
 /** @internal */
-export const ConnectionProvider$inboundSchema: z.ZodNativeEnum<
-  typeof ConnectionProvider
-> = z.nativeEnum(ConnectionProvider);
+export const ConnectionProvider$inboundSchema: z.ZodType<
+  ConnectionProvider,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ConnectionProvider);
 
 /** @internal */
 export const Connection$inboundSchema: z.ZodType<
