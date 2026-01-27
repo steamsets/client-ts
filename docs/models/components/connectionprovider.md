@@ -12,6 +12,8 @@ let value: ConnectionProvider = "discord";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"discord" | "patreon" | "kick" | "reddit" | "twitch" | "youtube" | "x" | "domain"
+"discord" | "patreon" | "kick" | "reddit" | "twitch" | "youtube" | "x" | "domain" | Unrecognized<string>
 ```

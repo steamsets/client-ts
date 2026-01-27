@@ -13,29 +13,31 @@ let value: Badge = {
   appImage: "<value>",
   appName: "<value>",
   bookmarks: 775541,
+  cardCount: 241602,
   colors: [
-    "<value 1>",
-    "<value 2>",
-  ],
-  designs: [
     "<value 1>",
     "<value 2>",
     "<value 3>",
   ],
-  firstCompletion: 274482,
-  highestLevel: 781190,
+  designs: [
+    "<value 1>",
+  ],
+  firstCompletion: 781190,
+  highestLevel: 719260,
   id: "<id>",
-  image: "https://loremflickr.com/2877/2136?lock=4587574259201405",
-  isEvent: false,
-  isFoil: false,
-  isSale: false,
-  lastChangedAt: 274437,
-  lastCompletion: 650973,
-  level: 530830,
+  image: "https://picsum.photos/seed/GZhEwPesr/2136/198",
+  isEvent: true,
+  isFoil: true,
+  isNmc: true,
+  isSale: true,
+  lastChangedAt: 695081,
+  lastCompletion: 554725,
+  level: 705781,
   name: "<value>",
-  scarcity: 822916,
-  steamId: 237125,
-  xp: 4643.94,
+  noListing: true,
+  scarcity: 632242,
+  steamId: 11725,
+  xp: 2589.14,
 };
 ```
 
@@ -48,7 +50,9 @@ let value: Badge = {
 | `appImage`                                               | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `appName`                                                | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `bookmarks`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `cardCount`                                              | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `colors`                                                 | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
+| `craftCost`                                              | *number*                                                 | :heavy_minus_sign:                                       | N/A                                                      |
 | `designs`                                                | *string*[]                                               | :heavy_check_mark:                                       | N/A                                                      |
 | `firstCompletion`                                        | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `highestLevel`                                           | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
@@ -56,11 +60,13 @@ let value: Badge = {
 | `image`                                                  | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `isEvent`                                                | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `isFoil`                                                 | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
+| `isNmc`                                                  | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `isSale`                                                 | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `lastChangedAt`                                          | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `lastCompletion`                                         | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `level`                                                  | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `name`                                                   | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
+| `noListing`                                              | *boolean*                                                | :heavy_check_mark:                                       | N/A                                                      |
 | `scarcity`                                               | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `steamId`                                                | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `xp`                                                     | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
