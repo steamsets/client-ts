@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,7 +25,7 @@ export const ResourceResource = {
   AccountQueues: "account_queues",
   ShortLinkDomain: "short_link_domain",
 } as const;
-export type ResourceResource = ClosedEnum<typeof ResourceResource>;
+export type ResourceResource = OpenEnum<typeof ResourceResource>;
 
 export type Resource = {
   resource: ResourceResource;
@@ -35,13 +36,17 @@ export type Resource = {
 };
 
 /** @internal */
-export const ResourceResource$inboundSchema: z.ZodNativeEnum<
-  typeof ResourceResource
-> = z.nativeEnum(ResourceResource);
+export const ResourceResource$inboundSchema: z.ZodType<
+  ResourceResource,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ResourceResource);
 /** @internal */
-export const ResourceResource$outboundSchema: z.ZodNativeEnum<
-  typeof ResourceResource
-> = ResourceResource$inboundSchema;
+export const ResourceResource$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  ResourceResource
+> = openEnums.outboundSchema(ResourceResource);
 
 /** @internal */
 export const Resource$inboundSchema: z.ZodType<

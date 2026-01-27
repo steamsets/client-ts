@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,7 +25,7 @@ export const Outcome = {
 /**
  * The outcome of the verification
  */
-export type Outcome = ClosedEnum<typeof Outcome>;
+export type Outcome = OpenEnum<typeof Outcome>;
 
 export type DeveloperAppAnalyticsOutcome = {
   /**
@@ -38,8 +39,8 @@ export type DeveloperAppAnalyticsOutcome = {
 };
 
 /** @internal */
-export const Outcome$inboundSchema: z.ZodNativeEnum<typeof Outcome> = z
-  .nativeEnum(Outcome);
+export const Outcome$inboundSchema: z.ZodType<Outcome, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Outcome);
 
 /** @internal */
 export const DeveloperAppAnalyticsOutcome$inboundSchema: z.ZodType<
