@@ -12,6 +12,8 @@ let value: V1GroupLeaderboardGroupPrivacy = "public";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"public" | "request_only" | "invite_only" | "hidden"
+"public" | "request_only" | "invite_only" | "hidden" | Unrecognized<string>
 ```

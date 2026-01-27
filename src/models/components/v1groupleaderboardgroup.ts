@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -24,7 +25,7 @@ export const V1GroupLeaderboardGroupPrivacy = {
 /**
  * The privacy of the group
  */
-export type V1GroupLeaderboardGroupPrivacy = ClosedEnum<
+export type V1GroupLeaderboardGroupPrivacy = OpenEnum<
   typeof V1GroupLeaderboardGroupPrivacy
 >;
 
@@ -69,9 +70,11 @@ export type V1GroupLeaderboardGroup = {
 };
 
 /** @internal */
-export const V1GroupLeaderboardGroupPrivacy$inboundSchema: z.ZodNativeEnum<
-  typeof V1GroupLeaderboardGroupPrivacy
-> = z.nativeEnum(V1GroupLeaderboardGroupPrivacy);
+export const V1GroupLeaderboardGroupPrivacy$inboundSchema: z.ZodType<
+  V1GroupLeaderboardGroupPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1GroupLeaderboardGroupPrivacy);
 
 /** @internal */
 export const V1GroupLeaderboardGroup$inboundSchema: z.ZodType<
