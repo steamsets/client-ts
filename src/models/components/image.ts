@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,7 +22,7 @@ export const ImageType = {
 /**
  * The type of the image
  */
-export type ImageType = ClosedEnum<typeof ImageType>;
+export type ImageType = OpenEnum<typeof ImageType>;
 
 export type Image = {
   /**
@@ -43,8 +44,11 @@ export type Image = {
 };
 
 /** @internal */
-export const ImageType$inboundSchema: z.ZodNativeEnum<typeof ImageType> = z
-  .nativeEnum(ImageType);
+export const ImageType$inboundSchema: z.ZodType<
+  ImageType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ImageType);
 
 /** @internal */
 export const Image$inboundSchema: z.ZodType<Image, z.ZodTypeDef, unknown> = z
