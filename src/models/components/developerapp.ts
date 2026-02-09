@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,9 +24,7 @@ export const DeveloperAppEnvironment = {
 /**
  * The environment of the developer app
  */
-export type DeveloperAppEnvironment = ClosedEnum<
-  typeof DeveloperAppEnvironment
->;
+export type DeveloperAppEnvironment = OpenEnum<typeof DeveloperAppEnvironment>;
 
 export type DeveloperApp = {
   analytics?: DeveloperAppAnalytics | undefined;
@@ -62,9 +61,11 @@ export type DeveloperApp = {
 };
 
 /** @internal */
-export const DeveloperAppEnvironment$inboundSchema: z.ZodNativeEnum<
-  typeof DeveloperAppEnvironment
-> = z.nativeEnum(DeveloperAppEnvironment);
+export const DeveloperAppEnvironment$inboundSchema: z.ZodType<
+  DeveloperAppEnvironment,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(DeveloperAppEnvironment);
 
 /** @internal */
 export const DeveloperApp$inboundSchema: z.ZodType<

@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -43,7 +44,7 @@ export const AppPrivacy = {
 /**
  * The privacy of the account
  */
-export type AppPrivacy = ClosedEnum<typeof AppPrivacy>;
+export type AppPrivacy = OpenEnum<typeof AppPrivacy>;
 
 /**
  * The privacy of the account
@@ -56,7 +57,7 @@ export const FriendPrivacy = {
 /**
  * The privacy of the account
  */
-export type FriendPrivacy = ClosedEnum<typeof FriendPrivacy>;
+export type FriendPrivacy = OpenEnum<typeof FriendPrivacy>;
 
 export const LastQueueStatus = {
   Undefined: "undefined",
@@ -64,7 +65,7 @@ export const LastQueueStatus = {
   InProgress: "in_progress",
   Completed: "completed",
 } as const;
-export type LastQueueStatus = ClosedEnum<typeof LastQueueStatus>;
+export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 
 /**
  * The privacy of the account
@@ -77,7 +78,7 @@ export const Privacy = {
 /**
  * The privacy of the account
  */
-export type Privacy = ClosedEnum<typeof Privacy>;
+export type Privacy = OpenEnum<typeof Privacy>;
 
 export type V1AccountGetInfoResponseBody = {
   /**
@@ -282,22 +283,29 @@ export type V1AccountGetInfoResponseBody = {
 };
 
 /** @internal */
-export const AppPrivacy$inboundSchema: z.ZodNativeEnum<typeof AppPrivacy> = z
-  .nativeEnum(AppPrivacy);
+export const AppPrivacy$inboundSchema: z.ZodType<
+  AppPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AppPrivacy);
 
 /** @internal */
-export const FriendPrivacy$inboundSchema: z.ZodNativeEnum<
-  typeof FriendPrivacy
-> = z.nativeEnum(FriendPrivacy);
+export const FriendPrivacy$inboundSchema: z.ZodType<
+  FriendPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(FriendPrivacy);
 
 /** @internal */
-export const LastQueueStatus$inboundSchema: z.ZodNativeEnum<
-  typeof LastQueueStatus
-> = z.nativeEnum(LastQueueStatus);
+export const LastQueueStatus$inboundSchema: z.ZodType<
+  LastQueueStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(LastQueueStatus);
 
 /** @internal */
-export const Privacy$inboundSchema: z.ZodNativeEnum<typeof Privacy> = z
-  .nativeEnum(Privacy);
+export const Privacy$inboundSchema: z.ZodType<Privacy, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Privacy);
 
 /** @internal */
 export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<

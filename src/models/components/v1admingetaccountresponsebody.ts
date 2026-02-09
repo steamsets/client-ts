@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { Connection, Connection$inboundSchema } from "./connection.js";
@@ -37,7 +38,7 @@ export const V1AdminGetAccountResponseBodyPrivacy = {
 /**
  * The privacy of the account
  */
-export type V1AdminGetAccountResponseBodyPrivacy = ClosedEnum<
+export type V1AdminGetAccountResponseBodyPrivacy = OpenEnum<
   typeof V1AdminGetAccountResponseBodyPrivacy
 >;
 
@@ -117,10 +118,11 @@ export type V1AdminGetAccountResponseBody = {
 };
 
 /** @internal */
-export const V1AdminGetAccountResponseBodyPrivacy$inboundSchema:
-  z.ZodNativeEnum<typeof V1AdminGetAccountResponseBodyPrivacy> = z.nativeEnum(
-    V1AdminGetAccountResponseBodyPrivacy,
-  );
+export const V1AdminGetAccountResponseBodyPrivacy$inboundSchema: z.ZodType<
+  V1AdminGetAccountResponseBodyPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AdminGetAccountResponseBodyPrivacy);
 
 /** @internal */
 export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<

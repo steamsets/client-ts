@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,7 +37,7 @@ export const LeaderboardAccountPrivacy = {
 /**
  * The privacy of the account
  */
-export type LeaderboardAccountPrivacy = ClosedEnum<
+export type LeaderboardAccountPrivacy = OpenEnum<
   typeof LeaderboardAccountPrivacy
 >;
 
@@ -170,9 +171,11 @@ export type LeaderboardAccount = {
 };
 
 /** @internal */
-export const LeaderboardAccountPrivacy$inboundSchema: z.ZodNativeEnum<
-  typeof LeaderboardAccountPrivacy
-> = z.nativeEnum(LeaderboardAccountPrivacy);
+export const LeaderboardAccountPrivacy$inboundSchema: z.ZodType<
+  LeaderboardAccountPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(LeaderboardAccountPrivacy);
 
 /** @internal */
 export const LeaderboardAccount$inboundSchema: z.ZodType<

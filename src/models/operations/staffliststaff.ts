@@ -18,7 +18,6 @@ export type StaffListStaffResponse = {
     | Array<components.LeaderboardAccount | null>
     | null
     | undefined;
-  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -31,12 +30,10 @@ export const StaffListStaffResponse$inboundSchema: z.ZodType<
   LeaderboardAccounts: z.nullable(
     z.array(z.nullable(components.LeaderboardAccount$inboundSchema)),
   ).optional(),
-  Headers: z.record(z.array(z.string())).default({}),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "LeaderboardAccounts": "leaderboardAccounts",
-    "Headers": "headers",
   });
 });
 

@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,7 +32,7 @@ export const ChosenRoleRole = {
   Astral: "astral",
   Nebula: "nebula",
 } as const;
-export type ChosenRoleRole = ClosedEnum<typeof ChosenRoleRole>;
+export type ChosenRoleRole = OpenEnum<typeof ChosenRoleRole>;
 
 export type ChosenRole = {
   role: ChosenRoleRole;
@@ -42,9 +43,11 @@ export type ChosenRole = {
 };
 
 /** @internal */
-export const ChosenRoleRole$inboundSchema: z.ZodNativeEnum<
-  typeof ChosenRoleRole
-> = z.nativeEnum(ChosenRoleRole);
+export const ChosenRoleRole$inboundSchema: z.ZodType<
+  ChosenRoleRole,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ChosenRoleRole);
 
 /** @internal */
 export const ChosenRole$inboundSchema: z.ZodType<

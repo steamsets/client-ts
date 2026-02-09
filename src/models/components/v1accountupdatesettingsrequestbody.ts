@@ -6,6 +6,10 @@ import * as z from "zod/v3";
 
 export type V1AccountUpdateSettingsRequestBody = {
   /**
+   * The country ID to override the Steam country with, null to clear
+   */
+  countryOverride?: number | null | undefined;
+  /**
    * The email the account should use, only if the account is private
    */
   email?: string | null | undefined;
@@ -25,6 +29,7 @@ export type V1AccountUpdateSettingsRequestBody = {
 
 /** @internal */
 export type V1AccountUpdateSettingsRequestBody$Outbound = {
+  countryOverride?: number | null | undefined;
   email?: string | null | undefined;
   hidden: boolean;
   language: string;
@@ -37,6 +42,7 @@ export const V1AccountUpdateSettingsRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountUpdateSettingsRequestBody
 > = z.object({
+  countryOverride: z.nullable(z.number().int()).optional(),
   email: z.nullable(z.string()).optional(),
   hidden: z.boolean(),
   language: z.string(),
