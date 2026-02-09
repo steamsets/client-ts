@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { ChosenRole, ChosenRole$inboundSchema } from "./chosenrole.js";
@@ -33,7 +34,7 @@ export const V1AccountGetSettingsBodyPrivacy = {
 /**
  * The privacy of the account
  */
-export type V1AccountGetSettingsBodyPrivacy = ClosedEnum<
+export type V1AccountGetSettingsBodyPrivacy = OpenEnum<
   typeof V1AccountGetSettingsBodyPrivacy
 >;
 
@@ -48,6 +49,14 @@ export type V1AccountGetSettingsBody = {
    * The connections the account has
    */
   connections: Array<Connection> | null;
+  /**
+   * The code of the override country
+   */
+  countryOverrideCode?: string | null | undefined;
+  /**
+   * The name of the override country
+   */
+  countryOverrideName?: string | null | undefined;
   /**
    * The developer apps the account has
    */
@@ -94,9 +103,11 @@ export type V1AccountGetSettingsBody = {
 };
 
 /** @internal */
-export const V1AccountGetSettingsBodyPrivacy$inboundSchema: z.ZodNativeEnum<
-  typeof V1AccountGetSettingsBodyPrivacy
-> = z.nativeEnum(V1AccountGetSettingsBodyPrivacy);
+export const V1AccountGetSettingsBodyPrivacy$inboundSchema: z.ZodType<
+  V1AccountGetSettingsBodyPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountGetSettingsBodyPrivacy);
 
 /** @internal */
 export const V1AccountGetSettingsBody$inboundSchema: z.ZodType<
@@ -108,6 +119,8 @@ export const V1AccountGetSettingsBody$inboundSchema: z.ZodType<
   analytics: DeveloperAppAnalytics$inboundSchema.optional(),
   chosenRole: z.nullable(ChosenRole$inboundSchema),
   connections: z.nullable(z.array(Connection$inboundSchema)),
+  countryOverrideCode: z.nullable(z.string()).optional(),
+  countryOverrideName: z.nullable(z.string()).optional(),
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   email: z.string(),
   emailVerifiedAt: z.nullable(
