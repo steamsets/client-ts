@@ -15,7 +15,6 @@ export type LocationGetLocationsResponse = {
    * OK
    */
   regions?: Array<components.Region> | null | undefined;
-  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -26,12 +25,10 @@ export const LocationGetLocationsResponse$inboundSchema: z.ZodType<
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
   Regions: z.nullable(z.array(components.Region$inboundSchema)).optional(),
-  Headers: z.record(z.array(z.string())).default({}),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
     "Regions": "regions",
-    "Headers": "headers",
   });
 });
 

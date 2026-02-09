@@ -15,7 +15,9 @@ export type Badge = {
   appImage: string;
   appName: string;
   bookmarks: number;
+  cardCount: number;
   colors: Array<string> | null;
+  craftCost?: number | undefined;
   designs: Array<string> | null;
   firstCompletion: number;
   highestLevel: number;
@@ -23,11 +25,13 @@ export type Badge = {
   image: string;
   isEvent: boolean;
   isFoil: boolean;
+  isNmc: boolean;
   isSale: boolean;
   lastChangedAt: number;
   lastCompletion: number;
   level: number;
   name: string;
+  noListing: boolean;
   scarcity: number;
   steamId: number;
   xp: number;
@@ -41,7 +45,9 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     appImage: z.string(),
     appName: z.string(),
     bookmarks: z.number().int(),
+    cardCount: z.number().int(),
     colors: z.nullable(z.array(z.string())),
+    craftCost: z.number().int().optional(),
     designs: z.nullable(z.array(z.string())),
     firstCompletion: z.number().int(),
     highestLevel: z.number().int(),
@@ -49,11 +55,13 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     image: z.string(),
     isEvent: z.boolean(),
     isFoil: z.boolean(),
+    isNmc: z.boolean(),
     isSale: z.boolean(),
     lastChangedAt: z.number().int(),
     lastCompletion: z.number().int(),
     level: z.number().int(),
     name: z.string(),
+    noListing: z.boolean(),
     scarcity: z.number().int(),
     steamId: z.number().int(),
     xp: z.number(),

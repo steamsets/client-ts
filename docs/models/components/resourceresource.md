@@ -10,6 +10,8 @@ let value: ResourceResource = "vanity";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"animated_avatar" | "auto_refresh" | "avatar_frame" | "background" | "go_to_leaderboard_entry" | "max_leaderboard_entries" | "mini_background" | "account_refresh_rate" | "inventory_refresh_rate" | "social_links" | "vanity" | "developer_apps" | "account_queues" | "short_link_domain"
+"animated_avatar" | "auto_refresh" | "avatar_frame" | "background" | "go_to_leaderboard_entry" | "max_leaderboard_entries" | "mini_background" | "account_refresh_rate" | "inventory_refresh_rate" | "social_links" | "vanity" | "developer_apps" | "account_queues" | "short_link_domain" | Unrecognized<string>
 ```
