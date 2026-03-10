@@ -8,11 +8,11 @@ The privacy of the account
 import { PreviewAccountPrivacy } from "@steamsets/client-ts/models/components";
 
 let value: PreviewAccountPrivacy = "public";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "public" | "private" | "friends_only" | Unrecognized<string>
