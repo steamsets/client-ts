@@ -8,11 +8,11 @@ The type of the image
 import { ImageType } from "@steamsets/client-ts/models/components";
 
 let value: ImageType = "avatar";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "avatar" | "background" | "avatar_frame" | "aniamted_avatar" | "mini_background" | Unrecognized<string>

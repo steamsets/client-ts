@@ -8,11 +8,11 @@ The environment of the developer app
 import { DeveloperAppEnvironment } from "@steamsets/client-ts/models/components";
 
 let value: DeveloperAppEnvironment = "production";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "production" | "development" | "staging" | Unrecognized<string>

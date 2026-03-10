@@ -23,6 +23,7 @@ export * from "./accountlistimages.js";
 export * from "./accountlistinventorysets.js";
 export * from "./accountlistleaderboardhistory.js";
 export * from "./accountlistownedbadges.js";
+export * from "./accountlistownedgroups.js";
 export * from "./accountlogin.js";
 export * from "./accountlogout.js";
 export * from "./accountqueueupdate.js";
