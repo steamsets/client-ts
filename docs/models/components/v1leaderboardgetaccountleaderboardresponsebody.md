@@ -37,12 +37,15 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     },
   ],
   ownAccount: {
+    animatedAvatar: "<value>",
     appCost: 123456,
     appPlaytime: 1000,
     apps: 123456,
     avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+    avatarFrame: "<value>",
     awardsGiven: 123456,
     awardsReceived: 123456,
+    background: "<value>",
     badgeInfo: null,
     badges: 123456,
     bans: 131194,
@@ -57,7 +60,16 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 918832,
+    images: [
+      {
+        active: true,
+        fileName: "avatar.png",
+        imageId: "img_wasd123",
+        imageType: "avatar",
+      },
+    ],
     level: 123456,
+    miniBackground: "<value>",
     name: "steamsets",
     normalBadgeCost: 123456,
     normalBadges: 123456,
@@ -69,15 +81,24 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: [
+      {
+        extras: {
+          "key": "<value>",
+          "key1": "<value>",
+        },
+        rating: 297304,
+        role: "donator",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 823597,
+    steamSetsScore: 47390,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 294927,
+    vacBans: 234806,
     xp: 123456,
   },
 };

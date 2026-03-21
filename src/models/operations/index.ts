@@ -44,6 +44,7 @@ export * from "./accountverifyemail.js";
 export * from "./admingetaccount.js";
 export * from "./adminremovevanity.js";
 export * from "./adminupdateresources.js";
+export * from "./adminupdateroleoverride.js";
 export * from "./adminupdateroles.js";
 export * from "./applistbadges.js";
 export * from "./badgelisttags.js";

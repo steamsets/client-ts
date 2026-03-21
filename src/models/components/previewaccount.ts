@@ -8,6 +8,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { Image, Image$inboundSchema } from "./image.js";
 import {
   LeaderboardCity,
   LeaderboardCity$inboundSchema,
@@ -41,6 +42,10 @@ export type PreviewAccountPrivacy = OpenEnum<typeof PreviewAccountPrivacy>;
 
 export type PreviewAccount = {
   /**
+   * The animated avatar of the account
+   */
+  animatedAvatar: string;
+  /**
    * The cost of an app
    *
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -55,6 +60,10 @@ export type PreviewAccount = {
    */
   avatar: string;
   /**
+   * The avatar frame of the account
+   */
+  avatarFrame: string;
+  /**
    * The number of awards the account has
    */
   awardsGiven: number;
@@ -62,6 +71,10 @@ export type PreviewAccount = {
    * The number of awards the account has
    */
   awardsReceived: number;
+  /**
+   * The background of the account
+   */
+  background: string;
   /**
    * The number of badges the account has
    */
@@ -107,9 +120,17 @@ export type PreviewAccount = {
    */
   gameBans: number;
   /**
+   * The images of the account
+   */
+  images: Array<Image> | null;
+  /**
    * The level of the account
    */
   level: number;
+  /**
+   * The mini background of the account
+   */
+  miniBackground: string;
   /**
    * The name of the account
    */
@@ -193,11 +214,14 @@ export const PreviewAccount$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  animatedAvatar: z.string(),
   appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
+  avatarFrame: z.string(),
   awardsGiven: z.number().int(),
   awardsReceived: z.number().int(),
+  background: z.string(),
   badges: z.number().int(),
   bans: z.number().int(),
   city: z.nullable(LeaderboardCity$inboundSchema).optional(),
@@ -210,7 +234,9 @@ export const PreviewAccount$inboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
+  images: z.nullable(z.array(Image$inboundSchema)),
   level: z.number().int(),
+  miniBackground: z.string(),
   name: z.string(),
   normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
