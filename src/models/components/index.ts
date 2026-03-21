@@ -116,6 +116,7 @@ export * from "./v1accountverifyemailrequestbody.js";
 export * from "./v1admingetaccountresponsebody.js";
 export * from "./v1adminremovevanityresponsebody.js";
 export * from "./v1adminupdateresourcesrequestbody.js";
+export * from "./v1adminupdateroleoverriderequestbody.js";
 export * from "./v1adminupdaterolesrequestbody.js";
 export * from "./v1appbadge.js";
 export * from "./v1appfilters.js";

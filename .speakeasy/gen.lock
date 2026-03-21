@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 7ca7af50bb70feb0fe2edc7d0cb09320
+  docChecksum: 72dd44fcbc88bc6ebb243351b7526891
   docVersion: 1.0.0
-  speakeasyVersion: 1.750.0
-  generationVersion: 2.856.1
-  releaseVersion: 0.32.1
-  configChecksum: 9423865e5fa06322c7cd486c15049208
+  speakeasyVersion: 1.759.0
+  generationVersion: 2.869.3
+  releaseVersion: 0.32.2
+  configChecksum: aeb981f0de9f8870ccc68a81f2c52942
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 13ad7674-9d1c-4524-b0e3-76126312449f
-  pristine_commit_hash: 29a55f8c357a3b2b5aa9ee720742ea4e51be6e31
-  pristine_tree_hash: cb07902ef44fa36fce1b23c874d19874cca8a4ba
+  generation_id: 1d6b4081-52d9-401b-bc13-195807935942
+  pristine_commit_hash: ce0d89ce69b2185bcf2682a01dab15207d5b014a
+  pristine_tree_hash: 7b8f51e191ac2f2a09b85a465b180d66555add98
 features:
   go:
     additionalDependencies: 0.1.0
@@ -33,7 +33,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.26.41
+    core: 3.26.43
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.1
@@ -254,8 +254,8 @@ trackedFiles:
     pristine_git_object: bd96b2b5d373d307ac4a64fc819cb1c05c72730c
   docs/models/components/leaderboardaccount.md:
     id: 70cee0132012
-    last_write_checksum: sha1:2e68c1a3500e4cd526c0597e42eab3eacd337db8
-    pristine_git_object: 18fbed5846b8915cdd28ee2424e6307dfee575a8
+    last_write_checksum: sha1:063917d685c008f34f70342efbf9703457bcad24
+    pristine_git_object: 37b75681f9049641a70f00cfb92a434cbd7e1646
   docs/models/components/leaderboardaccountprivacy.md:
     id: 529c8c549163
     last_write_checksum: sha1:a069a4839218ea195cb30b2522b1b872725b15dc
@@ -286,8 +286,8 @@ trackedFiles:
     pristine_git_object: b47ffac7b4c2ba04bcbbbc74bc5604a9b3f52a78
   docs/models/components/previewaccount.md:
     id: 14db54ab5a41
-    last_write_checksum: sha1:1e4a767594caf059ed4638c62fb3dc1af48871f1
-    pristine_git_object: 8027cf9261e9c575dc83071876ade666412cc3bc
+    last_write_checksum: sha1:1d8d6e5b67ba2ba7484456ef56c9826d07ee21b9
+    pristine_git_object: 2b452bc3922113a8872506b0974cc3da2be73b74
   docs/models/components/previewaccountprivacy.md:
     id: 5c76c256b8d5
     last_write_checksum: sha1:30361a6c9237e0e37c181828f6cad93682f24f14
@@ -348,6 +348,10 @@ trackedFiles:
     id: 441de3ea6229
     last_write_checksum: sha1:547a3ba2e8277925e74b038ca0ec51a59a23e9ad
     pristine_git_object: a21f4bb390518d95223ea8a6cdd398ec26106541
+  docs/models/components/tier.md:
+    id: 3b278f83ef2f
+    last_write_checksum: sha1:99f9c630d8f4615525f5ef511f89fb4eaa4ea9b3
+    pristine_git_object: 759204bdabdae5377c63713ca3ae4950aab0fcb3
   docs/models/components/type.md:
     id: 9f07f2d18a9f
     last_write_checksum: sha1:6617e0fa9887d9e7d80fbb27ed3b878aae5e4b1a
@@ -450,8 +454,8 @@ trackedFiles:
     pristine_git_object: 7bd91723846b55f09e94354ffe870b1ad2d784e5
   docs/models/components/v1accountfriend.md:
     id: e68961c44447
-    last_write_checksum: sha1:fcd11cb3f3376be41c80527a1cb979e54f4e3a12
-    pristine_git_object: f58947755ce47b977ab82d588ae140ef733c1857
+    last_write_checksum: sha1:72a9aef94ca5854dd40cd2cb7e14cac5eacd454a
+    pristine_git_object: 8d8aed117dbf3877fdf8cb5eb71a7c9067fd1add
   docs/models/components/v1accountfriendprivacy.md:
     id: 4e385b37839d
     last_write_checksum: sha1:656c887ac6906d3b045761edf542e92fc538009d
@@ -482,8 +486,8 @@ trackedFiles:
     pristine_git_object: ded3d07563becba8c0661b11a3792739ba3db943
   docs/models/components/v1accountleaderboardaccount.md:
     id: 5f5edb4b3f00
-    last_write_checksum: sha1:3b911682121128d2e974e1b33ced913d794ace24
-    pristine_git_object: 440b6752db892aaf5bb168930ec7909e1e86b31b
+    last_write_checksum: sha1:02b8f8df36706e90a8c98a154dee2c48c069f0d7
+    pristine_git_object: 6a6e66845a0fac753565cd691f966832d76bd8e9
   docs/models/components/v1accountleaderboardaccountprivacy.md:
     id: 0ed72525b3b4
     last_write_checksum: sha1:96b13e9b7f41678b007360461c9b95e365cc8346
@@ -514,8 +518,8 @@ trackedFiles:
     pristine_git_object: 9244fa5216fceaa70da56e9e0ae6a2e91d47de41
   docs/models/components/v1accountlistfriendsresponsebody.md:
     id: 57cfd0f96626
-    last_write_checksum: sha1:4a9e3a789b1aa213e8ecb0a1007214d0e8a245d2
-    pristine_git_object: a74137929316707e4e5b8ca0fea343d6ac4ea295
+    last_write_checksum: sha1:514f50359d4873d1b77fc0ade7276c89bec46e02
+    pristine_git_object: 2615922e73e1fdd79bc5a9ccc028ce4ba876cc7f
   docs/models/components/v1accountlistimagesresponsebody.md:
     id: d7ebd27653ab
     last_write_checksum: sha1:33b269abbf25976ede90327499d67ce434caa0d3
@@ -660,6 +664,10 @@ trackedFiles:
     id: 45dca0f1acfc
     last_write_checksum: sha1:53008637103c3b57bbe4370aae5ab5201ea131b6
     pristine_git_object: 15757f858e95b5cbb963aa3affc871f44da739c7
+  docs/models/components/v1adminupdateroleoverriderequestbody.md:
+    id: 95c98c383b38
+    last_write_checksum: sha1:413b20530409003df382258c5ccb1238d8692652
+    pristine_git_object: bc0a7f766c5057ae2c7b55743ebf592151cd0458
   docs/models/components/v1adminupdaterolesrequestbody.md:
     id: c290516b4f61
     last_write_checksum: sha1:b04fd77cd54752bd0e4d2c77dff35d6cc54a0061
@@ -722,8 +730,8 @@ trackedFiles:
     pristine_git_object: aa7c9c06ee48b5552094912c9b5bd01ed1120d23
   docs/models/components/v1groupleaderboardgroup.md:
     id: cee293aad89b
-    last_write_checksum: sha1:4959422a92e9050bab248d9607e499a76780f54e
-    pristine_git_object: db64ae2c0c76e277d7d7fb76f5f4d7cd02faa150
+    last_write_checksum: sha1:1e4d72a19bc75dffd4be4b192b2d89c8521d9570
+    pristine_git_object: 704d3ca35994d6658ed24086b6e91d14b69bd232
   docs/models/components/v1groupleaderboardgroupprivacy.md:
     id: 60790bd8988c
     last_write_checksum: sha1:05db2c667de36d353855186fdc12a0734e891d39
@@ -750,8 +758,8 @@ trackedFiles:
     pristine_git_object: 5dd81d45df74e6d9fdb20fbdbf28fecbd1d8aef1
   docs/models/components/v1leaderboardgetaccountleaderboardresponsebody.md:
     id: 9aee08b1cb07
-    last_write_checksum: sha1:12331aec013ffdd4f98e7a8db361ea4bffe3adf4
-    pristine_git_object: 6c19890a985d4fc8ecc7079abf4e77d73a829c7b
+    last_write_checksum: sha1:db3bbd58852813a4aab8838867967a9bdc0152cc
+    pristine_git_object: 48c25a4c0c3b62f26c55a86aff8f5b41aaa63aa1
   docs/models/components/v1leaderboardgetaccountsmetarequestbody.md:
     id: 3d2850b365d5
     last_write_checksum: sha1:b3743d33fd6e5ff17c2445c66c8f737f18807026
@@ -774,8 +782,8 @@ trackedFiles:
     pristine_git_object: 3864b48fcc376de75782ba548a4f72bf191081cd
   docs/models/components/v1leaderboardgetgroupleaderboardresponsebody.md:
     id: 4838e014990f
-    last_write_checksum: sha1:5de85ec80b7829b806b30f2c8f423034f4d1c56e
-    pristine_git_object: 52b481c7bcaa5491879f7db6074ecce728ea6a1c
+    last_write_checksum: sha1:fcda7ae289d9cd69ab19f226c680ced4de7bd15e
+    pristine_git_object: 1d4047ba9781405f4b736ccc9a6df097c08d0ce8
   docs/models/components/v1leaderboardgetgroupsmetarequestbody.md:
     id: 6c24b068f9e7
     last_write_checksum: sha1:359b29ad6b38b7316b755b0559c4406a3fdba251
@@ -818,8 +826,8 @@ trackedFiles:
     pristine_git_object: ec4197ade701e44717eba41fcf4ef72c3a103501
   docs/models/components/v1leaderboardpreviewaccountrankresponsebody.md:
     id: 32934663e495
-    last_write_checksum: sha1:7e18ffa8b731d7a4f208d9a62426f7acfa09c21c
-    pristine_git_object: ef2d9c327a2b166b93a7a8a8f1777b1cc45f6ef0
+    last_write_checksum: sha1:495470c19378cb857a0c06aed2d4330ff4442f37
+    pristine_git_object: 7a6327114de1c5e0bf07a33a06dbc5cdc235ad8e
   docs/models/components/v1ownedgroup.md:
     id: 11baaa767190
     last_write_checksum: sha1:53fa87b07b52c8206aa3cd122855274e556a6f12
@@ -1040,6 +1048,10 @@ trackedFiles:
     id: 6fb56452642b
     last_write_checksum: sha1:a368780de9b2040a7cb0e6331ada309f00a04c1f
     pristine_git_object: 600893962a4b696f602cdf1a893341ed09f121dd
+  docs/models/operations/adminupdateroleoverrideresponse.md:
+    id: cb16292f5e3b
+    last_write_checksum: sha1:f7bef4ef035a9d9e75b622497a22a4cc8bf6dee9
+    pristine_git_object: a5b300d30b9737b2fbd758510cff7a53179dd8da
   docs/models/operations/adminupdaterolesresponse.md:
     id: a98afd24eaa0
     last_write_checksum: sha1:cab69645dd28b9e8894341c74541f299f9497994
@@ -1114,8 +1126,8 @@ trackedFiles:
     pristine_git_object: 6f3287cb30e80f352f8532a4da65abad528f1dfb
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
-    last_write_checksum: sha1:758ef66524707312c28a8609eb02cfc2bf6161ef
-    pristine_git_object: d2a6cb8168c6ea7e4ff91f1a1e1111092b8b37e1
+    last_write_checksum: sha1:539dcec262a5971560b9aecf54bc4f181dae7b77
+    pristine_git_object: 7226b7db3adca31d85fa43bc89a26d9d68c8a84e
   docs/sdks/apps/README.md:
     id: 9c9c1a6527a3
     last_write_checksum: sha1:4204b215770dde6eb5ea7fefc609287d4101e25d
@@ -1170,12 +1182,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:9f610f23e28e90af00581003ead8af59c2ee9de1
-    pristine_git_object: f638e67f65a12461fd2dbe056108387944d92c19
+    last_write_checksum: sha1:30e02c1da45eba8c3ae51d22a62b94eb4a0c4d67
+    pristine_git_object: 6559b9743a6779c997a68e6c810421ac359d1944
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:20a553a3759ead0eca4a20c2fe0b160a14ba4d5f
-    pristine_git_object: 4a6aa8e68fcaa82a78583f9f39dea58dcd612361
+    last_write_checksum: sha1:4c58521a394edaa19b96888cd10a8d195c14ea28
+    pristine_git_object: eab1f1c6d99790af9dcbfffab46048c5c0d04b0f
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -1336,6 +1348,10 @@ trackedFiles:
     id: 6078961c9730
     last_write_checksum: sha1:5d4a240aaa1afae0976edba81b75e1ab02a3ee2c
     pristine_git_object: 191385cc7587ad4f875c4a9a5e6d3874f901cda6
+  src/funcs/adminAdminUpdateRoleOverride.ts:
+    id: 4d19a1cfb86e
+    last_write_checksum: sha1:7fc4de83b202e66329a6baf3b242a32f2f7d99cb
+    pristine_git_object: 69ac9112dddb0129c37fcb5e01edd3d877873cfe
   src/funcs/adminGetAccount.ts:
     id: ddfb56dfd994
     last_write_checksum: sha1:e659b41a98a82e811235541421ec5a2cf360e0a1
@@ -1434,8 +1450,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:9ce2698e287d5eb97874485a073bcf49e4940c94
-    pristine_git_object: fbb75fabdba86796a68135977c0f1df766f13f4f
+    last_write_checksum: sha1:b962d0831f98bac3dfe62ac9ad3a4129dd10076e
+    pristine_git_object: cca2468e2e858d0e73c382d0b1dc5077b46cd01e
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -1446,8 +1462,8 @@ trackedFiles:
     pristine_git_object: 31cd3733907afbee3641b9ab680ed417247a7d33
   src/lib/files.ts:
     id: e5efa54fcb95
-    last_write_checksum: sha1:d0f325f445b8d22e7d73baf052c585ec2dd24841
-    pristine_git_object: 0344cd046d033f9e8a55de02f7935c5cec5dc30b
+    last_write_checksum: sha1:795c14026405d547bfc47012f7ad9666e530fa7f
+    pristine_git_object: 6ca6b37d35a12448da176ee2517cc036db12c81c
   src/lib/http.ts:
     id: 63a80782d37e
     last_write_checksum: sha1:797cbf16d3c7c4d62d3ba0eedb08617524938457
@@ -1478,16 +1494,16 @@ trackedFiles:
     pristine_git_object: 47edb9725c2482c667e2ddc8a56b1fec4285c492
   src/lib/sdks.ts:
     id: 8a6d91f1218d
-    last_write_checksum: sha1:817fb5878a7fb65ad0c3c1bc0ef9d3fe31d258e1
-    pristine_git_object: 8ba2a0f86d67ad3fcca907874e2f80ebbccf2d01
+    last_write_checksum: sha1:ec169ae511d52f2c75f82bca85579895638fa4ee
+    pristine_git_object: 86a6f99b311f43851436440711b72e544e15fa7a
   src/lib/security.ts:
     id: 0502afa7922e
     last_write_checksum: sha1:0249432d5fd1d8c33f5a9bea0db24ad8255641f1
     pristine_git_object: 93e102c5c87a1f366050e25253b638b0ee31e77e
   src/lib/url.ts:
     id: b0057e24ed76
-    last_write_checksum: sha1:d124050c7e755c0cce233b9e029afb584ff65201
-    pristine_git_object: f3a8de6c021de59c991707946cd294596cae954d
+    last_write_checksum: sha1:3bceadd74bf0b31adf13eb06b7531077c3e07d65
+    pristine_git_object: 79e7ce660b3732053e3adcbb5a4cdeb51496e8aa
   src/models/components/accountbadgeinfo.ts:
     id: 6ba53e6b45c9
     last_write_checksum: sha1:0239bac08f9f61545b573c2232921d2790b4d380
@@ -1594,16 +1610,16 @@ trackedFiles:
     pristine_git_object: 1f6c1e5c76e6c21c6db87e7158f73ed26d270201
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:b182629c90d4186fcbac549c4dda0c7d83871cf1
-    pristine_git_object: 89a4c8874a5440c580b42af7ccaf79243fc0a87c
+    last_write_checksum: sha1:55e6224f7b0d23c9c29fbe6aed087d5ce2b273df
+    pristine_git_object: 0818155991a00506a488f9e2361336cbf791ecf5
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
     pristine_git_object: 66727e58f03e80d4d4246d58fd147418de4a23f7
   src/models/components/leaderboardaccount.ts:
     id: 16cfbb633fa2
-    last_write_checksum: sha1:fe63a177c6d84f8faca7e7667f4262d9d677360f
-    pristine_git_object: b8ebfd3e73b54664527daba9db297cf7c1cc5221
+    last_write_checksum: sha1:eaf917171c28e81251b419839e54a5100f01c5bd
+    pristine_git_object: 6a200822f896da71a0eb57e1350db616641584aa
   src/models/components/leaderboardcity.ts:
     id: 3d1fd0cf2c68
     last_write_checksum: sha1:66e23cee2707458063e76c4a802cea6497111c61
@@ -1626,8 +1642,8 @@ trackedFiles:
     pristine_git_object: 1f683b61f1cce61eaae84b0a1d0278a91605b852
   src/models/components/previewaccount.ts:
     id: 4cd587a08f96
-    last_write_checksum: sha1:8b2e60d1a6dce30eab11b88a2262fc18633ab026
-    pristine_git_object: 9581d0570fe69f90d1b45e8f53d0e2977c3cf82a
+    last_write_checksum: sha1:9c5c1c4d0eb2bb72dca246ae5afdb4159c37d3c0
+    pristine_git_object: bb748e3e6a68b6aa965b87d2844d2fd04e0d475c
   src/models/components/range.ts:
     id: 26964e8008e2
     last_write_checksum: sha1:8e782728303faeb703e0d402f15d88951f077520
@@ -1762,8 +1778,8 @@ trackedFiles:
     pristine_git_object: d6785a52be3ea6d8728843cedacd4e755844f71d
   src/models/components/v1accountfriend.ts:
     id: 01ba6bbca5f2
-    last_write_checksum: sha1:932eb9b9bbab2ce19b65d48e45db968506bffb11
-    pristine_git_object: 5abef49ba259456c6304a13ee4c13314321fcbb1
+    last_write_checksum: sha1:db3e97e79f896d2e35935bed3584a895452c7af4
+    pristine_git_object: ef7537c8eefc8d161b7975cd04fc482956032e50
   src/models/components/v1accountgetdatapointsresponsebody.ts:
     id: 4532ac343bd1
     last_write_checksum: sha1:e271f4cc284a30ade8c5a2e683b606582d9db99d
@@ -1786,8 +1802,8 @@ trackedFiles:
     pristine_git_object: 875353864372d575d0dd21fb786b92fdf2bea94e
   src/models/components/v1accountleaderboardaccount.ts:
     id: 91eac7c80566
-    last_write_checksum: sha1:0afb060be075f0ded012e8b026f9f860c1bf48f0
-    pristine_git_object: 06d492faffba6d083c9e4c0020275cc2b1b22e79
+    last_write_checksum: sha1:7397b59af88881b818f9deab49cdc2bba7437653
+    pristine_git_object: 7067285e1fee756422e5a12e7e3a2d76c120a977
   src/models/components/v1accountleaderboardappsearch.ts:
     id: 9d01e35a229e
     last_write_checksum: sha1:bb9761fb9a0ab52b433d00d4570cc9a30c02c27c
@@ -1948,6 +1964,10 @@ trackedFiles:
     id: ba34beb0a799
     last_write_checksum: sha1:2b2c504f5708e1caa691ec23854c9831a7a950cd
     pristine_git_object: 9d84a736fe84f4ff6c332983e36bac8fe83c28ae
+  src/models/components/v1adminupdateroleoverriderequestbody.ts:
+    id: 175a25a4c681
+    last_write_checksum: sha1:8ff015133e87fa53d29cea43d12563cb11ee8697
+    pristine_git_object: e6babf916abd8544517737b4ba00670b20850416
   src/models/components/v1adminupdaterolesrequestbody.ts:
     id: 045bad7fa55c
     last_write_checksum: sha1:79fab6730b130c2e34799d7655ddd12989a0640f
@@ -2292,6 +2312,10 @@ trackedFiles:
     id: 163842cc8ff5
     last_write_checksum: sha1:0b06ea4f84b44972c67f7711aa707ec3c03d3e54
     pristine_git_object: 9848c13b0fa64734012029a44f4c143799701379
+  src/models/operations/adminupdateroleoverride.ts:
+    id: 22670409ef06
+    last_write_checksum: sha1:9f330230da2cd27715a2b4c79e007941eeecef18
+    pristine_git_object: a20e25fa7e2a99c29891339c02edc4f93ac55c34
   src/models/operations/adminupdateroles.ts:
     id: 48f9c7868f6c
     last_write_checksum: sha1:b63afd85c9a128be02bef60341baf5daf4096907
@@ -2318,8 +2342,8 @@ trackedFiles:
     pristine_git_object: 1ab30025ac6194592a135479eb2aedd5a05329a5
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:3876f58676d23ff1cdbec25ea5fd0ef36eac91f1
-    pristine_git_object: cda0cd7d39209699d7395951070aa87a5585f054
+    last_write_checksum: sha1:00a41ce8859764a51e434b0570faeaf172f30700
+    pristine_git_object: cbeafa9a12eb612effa9329b38ace2353cf02f16
   src/models/operations/leaderboardgetaccountleaderboard.ts:
     id: fc7fb3b0b1f0
     last_write_checksum: sha1:08f02a27544455feb69fe2d639f27abc49f28d56
@@ -2366,8 +2390,8 @@ trackedFiles:
     pristine_git_object: a5231a8180e0fcb71c72dd024683c8d2edd94d5c
   src/sdk/admin.ts:
     id: 953a3fbbcdcf
-    last_write_checksum: sha1:59373eb48a296e0e251be48b23a640a7f43b8dcc
-    pristine_git_object: eecf86d64cd6423b13468abde7514a3fd51877d1
+    last_write_checksum: sha1:b57759f2aff19e1db71bbae7bc15c5c453ca1590
+    pristine_git_object: 2ddfc46ecac4c2be92f2aea73b117ba449de148d
   src/sdk/apps.ts:
     id: a40cb2e73373
     last_write_checksum: sha1:db9f1a1df791481268ebe24a59d997f7a1267127
@@ -2654,7 +2678,7 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json", "friends": [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 146505, "city": {"name": "Bad Krozingen"}, "country": null, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "friendsSince": "2025-02-22T15:42:10.888Z", "gameBans": 824943, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 313982, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 638134, "xp": 123456}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json", "friends": [{"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 146505, "city": {"name": "Bad Krozingen"}, "country": null, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "friendsSince": "2025-02-22T15:42:10.888Z", "gameBans": 824943, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 313982, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 638134, "xp": 123456}]}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -3005,7 +3029,7 @@ examples:
         application/json: {"app": {"appId": 730}, "badge": null, "end": 10, "goToLeaderboardRank": 1, "leaderboard": "xp", "location": [{"city": "Bad Krozingen", "country": "Germany", "region": "Europe", "state": "Baden-Wurttemberg"}], "start": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetAccountLeaderboardResponseBody.json", "accounts": [], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": null, "ownAccount": {"appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 194664, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 180362, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 738155, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 864393, "xp": 123456}, "rankedOutOf": 0}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetAccountLeaderboardResponseBody.json", "accounts": [], "app": {"id": 730, "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "name": "Counter-Strike: Global Offensive", "type": "game"}, "badgeInfo": {"appId": 730, "appImage": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "appName": "Counter-Strike: Global Offensive", "image": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/730/a1a2f9f3f4c0c2b1f8d3a4e5f6d7e8f9.jpg", "isFoil": true, "level": 15, "name": "Counter-Strike: Global Offensive"}, "location": null, "ownAccount": {"animatedAvatar": "<value>", "appCost": 123456, "appPlaytime": 1000, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badgeInfo": {"completionTime": "2023-01-01T00:00:00Z", "level": 123456, "xp": 123456}, "badges": 123456, "bans": 194664, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 180362, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 738155, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 864393, "xp": 123456}, "rankedOutOf": 0}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -3031,7 +3055,7 @@ examples:
         application/json: {"end": 10, "goToLeaderboardRank": 1, "leaderboard": "most_members", "start": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupLeaderboardResponseBody.json", "groups": [], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 313726, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 648109, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 356662, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 178403, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 820419, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardGetGroupLeaderboardResponseBody.json", "groups": [], "rankedOutOf": 0, "steamSetsGroup": {"avatar": "f1a1d2c3d0c9de1f2f3f4f5f6f7f8f9.jpg", "foundedAt": "2023-01-01T00:00:00Z", "id": 730, "members": 100, "name": "Group Name", "owner": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 313726, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 648109, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 356662, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 178403, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 820419, "xp": 123456}, "privacy": "public", "rank": 1, "tag": "Group Tag", "vanity": "Group Vanity"}}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -3070,7 +3094,7 @@ examples:
         application/json: {"leaderboard": "xp"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardPreviewAccountRankResponseBody.json", "ownAccount": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 403172, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 394980, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 131556, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 826271, "xp": 123456}, "rankedAbove": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 491925, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 68229, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 884621, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 956804, "xp": 123456}, "rankedBelow": {"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 349915, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 878749, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 606494, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 72462, "xp": 123456}, "rankedOutOf": 0}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1LeaderboardPreviewAccountRankResponseBody.json", "ownAccount": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 403172, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 394980, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 131556, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 826271, "xp": 123456}, "rankedAbove": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 491925, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 68229, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 884621, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 956804, "xp": 123456}, "rankedBelow": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 349915, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "differenceToUs": 10, "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 878749, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "rank": 1, "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 721805, "role": "amber"}], "score": 100, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 606494, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 72462, "xp": 123456}, "rankedOutOf": 0}
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -3112,7 +3136,7 @@ examples:
     speakeasy-default-staff-list-staff:
       responses:
         "200":
-          application/json: [{"appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "awardsGiven": 123456, "awardsReceived": 123456, "badges": 123456, "bans": 435782, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 956968, "level": 123456, "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 811001, "role": "badge_scout"}], "state": null, "steamId": "76561198842603734", "steamSetsScore": 524382, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 171924, "xp": 123456}]
+          application/json: [{"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 435782, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 956968, "images": [], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {"key": "<value>"}, "rating": 811001, "role": "badge_scout"}], "state": null, "steamId": "76561198842603734", "steamSetsScore": 524382, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 171924, "xp": 123456}]
         "404":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -3170,11 +3194,25 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.updateRoleOverride:
+    speakeasy-default-admin-update-role-override:
+      requestBody:
+        application/json: {}
+      responses:
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `steamsets.account.account.listOwnedGroups()`: **Added**
+  * `steamsets.admin.admin.updateRoleOverride()`: **Added**
+  * `steamsets.account.listFriends()`:  `response.friends[]` **Changed**
+  * `steamsets.leaderboard.getAccount()`:  `response.accounts[]` **Changed**
+  * `steamsets.leaderboard.getGroup()`:  `response.groups[].owner` **Changed**
+  * `steamsets.leaderboard.previewAccountRank()`:  `response.ownAccount` **Changed**
+  * `steamsets.staff.list()`:  `response.[]` **Changed**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
