@@ -81,6 +81,7 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
 * [deleteImages](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
+* [accountGetBadgeHeatmap](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 * [getInfo](docs/sdks/account/README.md#getinfo) - Get account profile information
@@ -512,6 +513,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountGetBadgeHeatmap`](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 - [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
