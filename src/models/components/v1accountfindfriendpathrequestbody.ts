@@ -11,12 +11,17 @@ import {
 
 export type V1AccountFindFriendPathRequestBody = {
   from: AccountSearch;
+  /**
+   * Max number of paths to return (default 10, capped at 50). A direct friendship always returns a single path regardless of this value.
+   */
+  maxPaths?: number | undefined;
   to: AccountSearch;
 };
 
 /** @internal */
 export type V1AccountFindFriendPathRequestBody$Outbound = {
   from: AccountSearch$Outbound;
+  maxPaths?: number | undefined;
   to: AccountSearch$Outbound;
 };
 
@@ -27,6 +32,7 @@ export const V1AccountFindFriendPathRequestBody$outboundSchema: z.ZodType<
   V1AccountFindFriendPathRequestBody
 > = z.object({
   from: AccountSearch$outboundSchema,
+  maxPaths: z.number().int().optional(),
   to: AccountSearch$outboundSchema,
 });
 

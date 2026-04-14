@@ -13,7 +13,7 @@ All Requests related to account(s) are grouped here.
 * [deleteDeveloperApp](#deletedeveloperapp) - Delete developer application
 * [deleteImages](#deleteimages) - Delete uploaded images
 * [deleteSession](#deletesession) - Delete user session
-* [accountFindFriendPath](#accountfindfriendpath) - Find shortest friend path between two accounts
+* [accountFindFriendPath](#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
 * [accountGetBadgeHeatmap](#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](#getbadgestats) - Get account badge statistics
 * [getDataPoints](#getdatapoints) - Get account data points for charts
@@ -593,7 +593,7 @@ run();
 
 ## accountFindFriendPath
 
-Find shortest friend path between two accounts
+Find up to N shortest friend paths between two accounts
 
 ### Example Usage
 
