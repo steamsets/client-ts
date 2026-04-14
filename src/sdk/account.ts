@@ -148,7 +148,7 @@ export class Account extends ClientSDK {
   }
 
   /**
-   * Find shortest friend path between two accounts
+   * Find up to N shortest friend paths between two accounts
    */
   async accountFindFriendPath(
     request: components.V1AccountFindFriendPathRequestBody,

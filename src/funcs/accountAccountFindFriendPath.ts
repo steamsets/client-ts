@@ -27,7 +27,7 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Find shortest friend path between two accounts
+ * Find up to N shortest friend paths between two accounts
  */
 export function accountAccountFindFriendPath(
   client: SteamSetsCore,

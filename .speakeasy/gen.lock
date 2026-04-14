@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e47dc3d03fe11beb073d8bbcce6dea1b
+  docChecksum: 03c33abd13c61f7e8db17e9340a5b6dd
   docVersion: 1.0.0
   speakeasyVersion: 1.761.5
   generationVersion: 2.879.13
-  releaseVersion: 0.32.4
-  configChecksum: 06050c52b5a13da72246eb392635877c
+  releaseVersion: 0.32.5
+  configChecksum: 21a5f233cc59e6b21d6b383dc14cdd15
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 0d03336d-5467-46de-8d26-11c712774164
-  pristine_commit_hash: 5e4d0402648950dd8aed6855fa37dcf48db94a73
-  pristine_tree_hash: bccb86649515ca4215de3467e55139769b1546b6
+  generation_id: adf18026-d2b5-4192-a4f1-9af7cd3134c1
+  pristine_commit_hash: 9ee87bc99ad7bf1c3a3517ac482a3017fb982237
+  pristine_tree_hash: 742eeef4d4acbbbdea497cacaf7983e3bd1bc4a1
 features:
   go:
     additionalDependencies: 0.1.0
@@ -216,6 +216,10 @@ trackedFiles:
     id: 7effe8aedda6
     last_write_checksum: sha1:2e345ca2202dd66dbd9f3daa2f6bfbfd3102b6fe
     pristine_git_object: d2d34d1838f8cdf311a7eadfbd6b5e6aa3122db1
+  docs/models/components/friendpath.md:
+    id: 851d614dbc9b
+    last_write_checksum: sha1:ea27890325f95359335b5ea4f883d21bdc85884c
+    pristine_git_object: 5ef8fafe63485edb938834602334752455859582
   docs/models/components/friendprivacy.md:
     id: e908ba947b8d
     last_write_checksum: sha1:4978c733275e271ffa10de33e53875ae79c36486
@@ -450,12 +454,12 @@ trackedFiles:
     pristine_git_object: 7bd91723846b55f09e94354ffe870b1ad2d784e5
   docs/models/components/v1accountfindfriendpathrequestbody.md:
     id: 2a69a0120593
-    last_write_checksum: sha1:9d1443210d7e9067dd78c37aea171d6a7b641738
-    pristine_git_object: 0a7a97f7a6bcc66a3ad0a11f15efb2ca612f7e55
+    last_write_checksum: sha1:33eba6c96d6b6fb22f75098b41fbfb8b11ea2489
+    pristine_git_object: 9fe7d9525e6368d4c9f84019db63fb545cb18241
   docs/models/components/v1accountfindfriendpathresponsebody.md:
     id: f8c6aecfe319
-    last_write_checksum: sha1:5f3cdb269c4639cdb53b6fc2501bddc391981dbd
-    pristine_git_object: 723c67e526e0a0df7059b88082fd6c929a71e9c7
+    last_write_checksum: sha1:79455e17647471faac5b63d9e30c4d3db751cedb
+    pristine_git_object: 2e4dc25492d6fec36aa2c77a0e8f608a3193facc
   docs/models/components/v1accountfriend.md:
     id: e68961c44447
     last_write_checksum: sha1:72a9aef94ca5854dd40cd2cb7e14cac5eacd454a
@@ -1138,8 +1142,8 @@ trackedFiles:
     pristine_git_object: bbadcfaf8181829d974f9673bb499e740c6cedee
   docs/sdks/account/README.md:
     id: 2d1d67055b31
-    last_write_checksum: sha1:606139595a1ec2056f8c8fbe1409567c9f50d8a7
-    pristine_git_object: 963e822c9e846600c22ffc67f077811377efe5c4
+    last_write_checksum: sha1:a1bd653e99a47075f95ba7e8705867655b49ccd4
+    pristine_git_object: bf01a5d3cc978bef27a80725f886dc1dcdddaea2
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
     last_write_checksum: sha1:539dcec262a5971560b9aecf54bc4f181dae7b77
@@ -1198,20 +1202,20 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:7098f37c9b050612b3253e7e249d3e4932308de3
-    pristine_git_object: af194d0d301c2eb0ea4af824cf0d0693e03c1b8c
+    last_write_checksum: sha1:685e87a59493459619c792d256a3c855ac59a948
+    pristine_git_object: 6546a113791d4c7b477e1dfee724b504c32fa193
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:aa419999b961ce645efe76ed6216a324365b3c60
-    pristine_git_object: f62beb4d0bbf74bc7cedca59bd88bed13f61cfe5
+    last_write_checksum: sha1:ac289f452764a8046d7711b5cbfa2a61953779fc
+    pristine_git_object: 43454a6a5d64a8b0972442d987c08e3397020b28
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
     pristine_git_object: ec9e24ed97d91800d967b2f259e0abb9f496bdc0
   src/funcs/accountAccountFindFriendPath.ts:
     id: a10511e75cdd
-    last_write_checksum: sha1:2188768facdcc7cf19ee2488910b663761932464
-    pristine_git_object: 8a70939ec6842ebbaa0180a4920f010cf567491f
+    last_write_checksum: sha1:36b25d370b08ceec4d73968aed484e1d8088454d
+    pristine_git_object: 44c9e5c707298f7bf21c801a3ec2e9060c1d254a
   src/funcs/accountAccountGetBadgeHeatmap.ts:
     id: 5c9ba1923bd9
     last_write_checksum: sha1:ed5906f2ba04064836ad9cc4fd89c3fb7b147037
@@ -1474,8 +1478,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:912d659e0d18ac68204e8141690743276ef48319
-    pristine_git_object: 3596b2b1f395bcd53db91ed335951e3874d1d397
+    last_write_checksum: sha1:d4649ef9b9d72f4eb468249457fea9e13d5d38d1
+    pristine_git_object: 480eb15b8e10d7b986eb43e8304a36637e6cba1c
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -1616,6 +1620,10 @@ trackedFiles:
     id: d2bb39b6f332
     last_write_checksum: sha1:1474df4b27ac25c67079b77484393b256ed555bc
     pristine_git_object: a500e114e19306cdfc27ce79e18e434cf86eac98
+  src/models/components/friendpath.ts:
+    id: 3bb935d3668f
+    last_write_checksum: sha1:3507dc585dbd5b4baf6662dfb21ce6de6f0587b6
+    pristine_git_object: fb481acdac96111fdd84e5fd28d28d2df58560a2
   src/models/components/historyvalue.ts:
     id: c70c8c46de88
     last_write_checksum: sha1:b9b30ef011e7657f12c43c76ec4d41e097b19a8e
@@ -1634,8 +1642,8 @@ trackedFiles:
     pristine_git_object: 1f6c1e5c76e6c21c6db87e7158f73ed26d270201
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:4b9773c28b7d27c155fe46fcd201f39db0e19d83
-    pristine_git_object: f6679eeb6731977d811cbbb61ce45106366d9a70
+    last_write_checksum: sha1:3762e4e504e570077bcce26dcf4adbf25cd602e4
+    pristine_git_object: 2df0b2b1ee890d14afceea6eeba7a15201d0533e
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
@@ -1802,12 +1810,12 @@ trackedFiles:
     pristine_git_object: d6785a52be3ea6d8728843cedacd4e755844f71d
   src/models/components/v1accountfindfriendpathrequestbody.ts:
     id: 65f9ddd22298
-    last_write_checksum: sha1:b997d266f715d2cc8a181b5132705ab1d69dc3ae
-    pristine_git_object: 90fef93f22922ecd51930d5aba520e7bded73eb4
+    last_write_checksum: sha1:160ad4fc0a6f488e1711dfd8dfd1829cc4fa8ac1
+    pristine_git_object: 720202d4ef0c31b7a632f80975d14e886ac06343
   src/models/components/v1accountfindfriendpathresponsebody.ts:
     id: b024110bd95d
-    last_write_checksum: sha1:1356acb3cbbf992383fed81ed76175a2918e1ced
-    pristine_git_object: bac84ccaba817018a7f5da001861b22722e2623b
+    last_write_checksum: sha1:1a51f70546f38204d49a86f2ebaf8367faf0b6bc
+    pristine_git_object: 6301ad426a7c3195d5fa6eedfa82e7b4af7c45a7
   src/models/components/v1accountfriend.ts:
     id: 01ba6bbca5f2
     last_write_checksum: sha1:db3e97e79f896d2e35935bed3584a895452c7af4
@@ -2426,8 +2434,8 @@ trackedFiles:
     pristine_git_object: 09cb3bf8df10feb9c3e83354b4299c09f3ce7010
   src/sdk/account.ts:
     id: 2589b1a639bd
-    last_write_checksum: sha1:dd8d2c6e8b4b5fa4c64f59a9008b5388a000a4ce
-    pristine_git_object: 93285635a47e1d99b732aa3690089597aaf676b7
+    last_write_checksum: sha1:efef268a249a8b33907cb69b545472c1a75b96af
+    pristine_git_object: 209d504cd3a9c911ce630a39d2d21f1e1d4c347d
   src/sdk/admin.ts:
     id: 953a3fbbcdcf
     last_write_checksum: sha1:b57759f2aff19e1db71bbae7bc15c5c453ca1590
@@ -3260,16 +3268,14 @@ examples:
         application/json: {"from": {}, "to": {}}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountFindFriendPathResponseBody.json", "distance": 230563, "found": false, "path": []}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AccountFindFriendPathResponseBody.json", "found": false, "paths": [{"distance": 940613, "path": []}]}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.account.account.findFriendPath()`: **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.account.findFriendPath()`: \n  *  `request.maxPaths` **Added**\n  *  `response` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

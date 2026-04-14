@@ -7,10 +7,7 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  LeaderboardAccount,
-  LeaderboardAccount$inboundSchema,
-} from "./leaderboardaccount.js";
+import { FriendPath, FriendPath$inboundSchema } from "./friendpath.js";
 
 export type V1AccountFindFriendPathResponseBody = {
   /**
@@ -18,17 +15,13 @@ export type V1AccountFindFriendPathResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * Number of hops between accounts
-   */
-  distance: number;
-  /**
-   * Whether a path was found
+   * Whether any path was found
    */
   found: boolean;
   /**
-   * Ordered accounts from source to target
+   * Paths sorted ascending by distance
    */
-  path: Array<LeaderboardAccount | null> | null;
+  paths: Array<FriendPath> | null;
 };
 
 /** @internal */
@@ -38,9 +31,8 @@ export const V1AccountFindFriendPathResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  distance: z.number().int(),
   found: z.boolean(),
-  path: z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
+  paths: z.nullable(z.array(FriendPath$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",

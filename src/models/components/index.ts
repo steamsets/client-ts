@@ -24,6 +24,7 @@ export * from "./developerappanalyticsoutcome.js";
 export * from "./developerappanalyticstimeseries.js";
 export * from "./developerappanalyticstimeseriespoint.js";
 export * from "./errordetail.js";
+export * from "./friendpath.js";
 export * from "./historyvalue.js";
 export * from "./httpmetadata.js";
 export * from "./idsearch.js";
