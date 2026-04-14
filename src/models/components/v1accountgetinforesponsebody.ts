@@ -70,7 +70,7 @@ export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 /**
  * The privacy of the account
  */
-export const Privacy = {
+export const V1AccountGetInfoResponseBodyPrivacy = {
   Private: "private",
   Public: "public",
   FriendsOnly: "friends_only",
@@ -78,7 +78,9 @@ export const Privacy = {
 /**
  * The privacy of the account
  */
-export type Privacy = OpenEnum<typeof Privacy>;
+export type V1AccountGetInfoResponseBodyPrivacy = OpenEnum<
+  typeof V1AccountGetInfoResponseBodyPrivacy
+>;
 
 export type V1AccountGetInfoResponseBody = {
   /**
@@ -237,7 +239,7 @@ export type V1AccountGetInfoResponseBody = {
   /**
    * The privacy of the account
    */
-  privacy: Privacy;
+  privacy: V1AccountGetInfoResponseBodyPrivacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -304,8 +306,11 @@ export const LastQueueStatus$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(LastQueueStatus);
 
 /** @internal */
-export const Privacy$inboundSchema: z.ZodType<Privacy, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Privacy);
+export const V1AccountGetInfoResponseBodyPrivacy$inboundSchema: z.ZodType<
+  V1AccountGetInfoResponseBodyPrivacy,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountGetInfoResponseBodyPrivacy);
 
 /** @internal */
 export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
@@ -358,7 +363,7 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: Privacy$inboundSchema,
+  privacy: V1AccountGetInfoResponseBodyPrivacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   shortlinkDomain: z.nullable(z.string()),

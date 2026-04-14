@@ -81,6 +81,7 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
 * [deleteImages](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
+* [accountFindFriendPath](docs/sdks/account/README.md#accountfindfriendpath) - Find shortest friend path between two accounts
 * [accountGetBadgeHeatmap](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
@@ -513,6 +514,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAccountFindFriendPath`](docs/sdks/account/README.md#accountfindfriendpath) - Find shortest friend path between two accounts
 - [`accountAccountGetBadgeHeatmap`](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 - [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
