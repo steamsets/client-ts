@@ -30,7 +30,7 @@ import { Role, Role$inboundSchema } from "./role.js";
 /**
  * The privacy of the account
  */
-export const LeaderboardAccountPrivacy = {
+export const Privacy = {
   Public: "public",
   Private: "private",
   FriendsOnly: "friends_only",
@@ -38,9 +38,7 @@ export const LeaderboardAccountPrivacy = {
 /**
  * The privacy of the account
  */
-export type LeaderboardAccountPrivacy = OpenEnum<
-  typeof LeaderboardAccountPrivacy
->;
+export type Privacy = OpenEnum<typeof Privacy>;
 
 export type LeaderboardAccount = {
   /**
@@ -158,7 +156,7 @@ export type LeaderboardAccount = {
   /**
    * The privacy of the account
    */
-  privacy: LeaderboardAccountPrivacy;
+  privacy: Privacy;
   region?: LeaderboardRegion | null | undefined;
   /**
    * The roles of the account
@@ -192,11 +190,8 @@ export type LeaderboardAccount = {
 };
 
 /** @internal */
-export const LeaderboardAccountPrivacy$inboundSchema: z.ZodType<
-  LeaderboardAccountPrivacy,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(LeaderboardAccountPrivacy);
+export const Privacy$inboundSchema: z.ZodType<Privacy, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Privacy);
 
 /** @internal */
 export const LeaderboardAccount$inboundSchema: z.ZodType<
@@ -232,7 +227,7 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
   pointsReceived: z.number().int(),
-  privacy: LeaderboardAccountPrivacy$inboundSchema,
+  privacy: Privacy$inboundSchema,
   region: z.nullable(LeaderboardRegion$inboundSchema).optional(),
   roles: z.nullable(z.array(Role$inboundSchema)),
   state: z.nullable(LeaderboardState$inboundSchema).optional(),

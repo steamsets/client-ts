@@ -69,6 +69,8 @@ export * from "./v1accountdeletesessionrequestbody.js";
 export * from "./v1accountdeletesessionresponsebody.js";
 export * from "./v1accountdeveloperappupdaterequestbody.js";
 export * from "./v1accountdeveloperappupdateresponsebody.js";
+export * from "./v1accountfindfriendpathrequestbody.js";
+export * from "./v1accountfindfriendpathresponsebody.js";
 export * from "./v1accountfriend.js";
 export * from "./v1accountgetdatapointsresponsebody.js";
 export * from "./v1accountgetinforesponsebody.js";
