@@ -10,6 +10,10 @@ import {
 } from "./accountsearch.js";
 
 export type V1AccountFindFriendPathRequestBody = {
+  /**
+   * Accounts to exclude from all paths. From/To are never excluded even if listed.
+   */
+  exclude?: Array<AccountSearch> | null | undefined;
   from: AccountSearch;
   /**
    * Max number of paths to return (default 10, capped at 50). A direct friendship always returns a single path regardless of this value.
@@ -20,6 +24,7 @@ export type V1AccountFindFriendPathRequestBody = {
 
 /** @internal */
 export type V1AccountFindFriendPathRequestBody$Outbound = {
+  exclude?: Array<AccountSearch$Outbound> | null | undefined;
   from: AccountSearch$Outbound;
   maxPaths?: number | undefined;
   to: AccountSearch$Outbound;
@@ -31,6 +36,7 @@ export const V1AccountFindFriendPathRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountFindFriendPathRequestBody
 > = z.object({
+  exclude: z.nullable(z.array(AccountSearch$outboundSchema)).optional(),
   from: AccountSearch$outboundSchema,
   maxPaths: z.number().int().optional(),
   to: AccountSearch$outboundSchema,
