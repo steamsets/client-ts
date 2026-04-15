@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 03c33abd13c61f7e8db17e9340a5b6dd
+  docChecksum: fb5d83fa6c445b1613cba1d0a8424f77
   docVersion: 1.0.0
   speakeasyVersion: 1.761.5
   generationVersion: 2.879.13
-  releaseVersion: 0.32.5
-  configChecksum: 21a5f233cc59e6b21d6b383dc14cdd15
+  releaseVersion: 0.32.6
+  configChecksum: c1b1e3eb9e22473b46e78e42237a7033
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: adf18026-d2b5-4192-a4f1-9af7cd3134c1
-  pristine_commit_hash: 9ee87bc99ad7bf1c3a3517ac482a3017fb982237
-  pristine_tree_hash: 742eeef4d4acbbbdea497cacaf7983e3bd1bc4a1
+  generation_id: f3e5fb23-1941-4b1e-abf4-6f101b03653c
+  pristine_commit_hash: 2e56510919c3c297805928e3500ff671e929fa49
+  pristine_tree_hash: dcc6f19a9b885c46b98a9de9ade4f7857a02ff26
 features:
   go:
     additionalDependencies: 0.1.0
@@ -454,8 +454,8 @@ trackedFiles:
     pristine_git_object: 7bd91723846b55f09e94354ffe870b1ad2d784e5
   docs/models/components/v1accountfindfriendpathrequestbody.md:
     id: 2a69a0120593
-    last_write_checksum: sha1:33eba6c96d6b6fb22f75098b41fbfb8b11ea2489
-    pristine_git_object: 9fe7d9525e6368d4c9f84019db63fb545cb18241
+    last_write_checksum: sha1:f89a354f4746ff7a0d5a07de849b9626087e9d64
+    pristine_git_object: c58154ee7d131e7af350efc5fc41c0478528d5e0
   docs/models/components/v1accountfindfriendpathresponsebody.md:
     id: f8c6aecfe319
     last_write_checksum: sha1:79455e17647471faac5b63d9e30c4d3db751cedb
@@ -1202,12 +1202,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:685e87a59493459619c792d256a3c855ac59a948
-    pristine_git_object: 6546a113791d4c7b477e1dfee724b504c32fa193
+    last_write_checksum: sha1:ad788359387486df7eb2be542c06034b1ef1bc3b
+    pristine_git_object: ce85059de40ec9ec7076f48fb604edfafdee57d8
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:ac289f452764a8046d7711b5cbfa2a61953779fc
-    pristine_git_object: 43454a6a5d64a8b0972442d987c08e3397020b28
+    last_write_checksum: sha1:09a8e48b7650643dabd98a66e722e698a443f4c0
+    pristine_git_object: c0ad2cebc045bbd1da41362304532bface9e7948
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -1478,8 +1478,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:d4649ef9b9d72f4eb468249457fea9e13d5d38d1
-    pristine_git_object: 480eb15b8e10d7b986eb43e8304a36637e6cba1c
+    last_write_checksum: sha1:ab339a058da05f3b6615e21f1cd2bdf0ca0e3a6c
+    pristine_git_object: 5a1ad6fadc4dd53b7d102c653e93993e08ef8868
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -1810,8 +1810,8 @@ trackedFiles:
     pristine_git_object: d6785a52be3ea6d8728843cedacd4e755844f71d
   src/models/components/v1accountfindfriendpathrequestbody.ts:
     id: 65f9ddd22298
-    last_write_checksum: sha1:160ad4fc0a6f488e1711dfd8dfd1829cc4fa8ac1
-    pristine_git_object: 720202d4ef0c31b7a632f80975d14e886ac06343
+    last_write_checksum: sha1:d3e41f7e3bf46d435ba852bf89366e1db0ada20d
+    pristine_git_object: 78c8fbf391d6e5739f68049af5cc485d3fe4ca6b
   src/models/components/v1accountfindfriendpathresponsebody.ts:
     id: b024110bd95d
     last_write_checksum: sha1:1a51f70546f38204d49a86f2ebaf8367faf0b6bc
@@ -3275,7 +3275,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.account.findFriendPath()`: \n  *  `request.maxPaths` **Added**\n  *  `response` **Changed** (Breaking ⚠️)\n"
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.account.findFriendPath()`: \n  *  `request.exclude` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
