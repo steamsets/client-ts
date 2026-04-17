@@ -3,9 +3,11 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -25,14 +27,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * List available locations
+ * Live-verify a Steam vanity URL against Steam
  */
-export function locationGet(
+export function vanityVanityVerify(
   client: SteamSetsCore,
+  request: operations.VanityVerifyRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LocationGetLocationsResponse,
+    operations.VanityVerifyResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -46,17 +49,19 @@ export function locationGet(
 > {
   return new APIPromise($do(
     client,
+    request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
+  request: operations.VanityVerifyRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LocationGetLocationsResponse,
+      operations.VanityVerifyResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -70,10 +75,27 @@ async function $do(
     APICall,
   ]
 > {
-  const path = pathToFunc("/v1/location.getLocations")();
+  const parsed = safeParse(
+    request,
+    (value) => operations.VanityVerifyRequest$outboundSchema.parse(value),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return [parsed, { status: "invalid" }];
+  }
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload.RequestBody, { explode: true });
+
+  const path = pathToFunc("/v1/vanity.verify")();
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
+    "X-Forwarded-For": encodeSimple(
+      "X-Forwarded-For",
+      payload["X-Forwarded-For"],
+      { explode: false, charEncoding: "none" },
+    ),
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -83,7 +105,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "location.getLocations",
+    operationID: "vanity.verify",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -107,10 +129,11 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "POST",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -137,7 +160,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LocationGetLocationsResponse,
+    operations.VanityVerifyResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -148,11 +171,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LocationGetLocationsResponse$inboundSchema, {
-      hdrs: true,
-      key: "Regions",
+    M.json(200, operations.VanityVerifyResponse$inboundSchema, {
+      key: "ResponseBody",
     }),
-    M.jsonErr([400, 401], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
