@@ -63,3 +63,4 @@ export * from "./leaderboardpreviewaccountrank.js";
 export * from "./locationgetlocations.js";
 export * from "./staffliststaff.js";
 export * from "./statsgetstats.js";
+export * from "./vanityverify.js";

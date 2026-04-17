@@ -163,6 +163,10 @@ run();
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 
+### [Vanity](docs/sdks/vanity/README.md)
+
+* [vanityVerify](docs/sdks/vanity/README.md#vanityverify) - Live-verify a Steam vanity URL against Steam
+
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -575,6 +579,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
+- [`vanityVanityVerify`](docs/sdks/vanity/README.md#vanityverify) - Live-verify a Steam vanity URL against Steam
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
