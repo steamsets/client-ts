@@ -15,5 +15,5 @@ let value: ImageType = "avatar";
 ## Values
 
 ```typescript
-"avatar" | "background" | "avatar_frame" | "aniamted_avatar" | "mini_background" | Unrecognized<string>
+"avatar" | "background" | "avatar_frame" | "animated_avatar" | "mini_background" | Unrecognized<string>
 ```
