@@ -4,22 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { ClosedEnum } from "../../types/enums.js";
-
-export const V1AdminCmsCreateRequestBodyType = {
-  NavItem: "nav_item",
-  Faq: "faq",
-  Partner: "partner",
-  FooterCategory: "footer_category",
-  FooterLink: "footer_link",
-  DonateFeature: "donate_feature",
-  RoleMeta: "role_meta",
-  StaffText: "staff_text",
-  Page: "page",
-} as const;
-export type V1AdminCmsCreateRequestBodyType = ClosedEnum<
-  typeof V1AdminCmsCreateRequestBodyType
->;
 
 export type V1AdminCmsCreateRequestBody = {
   /**
@@ -33,13 +17,8 @@ export type V1AdminCmsCreateRequestBody = {
    */
   payload?: any | undefined;
   sortOrder: number;
-  type: V1AdminCmsCreateRequestBodyType;
+  type: string;
 };
-
-/** @internal */
-export const V1AdminCmsCreateRequestBodyType$outboundSchema: z.ZodNativeEnum<
-  typeof V1AdminCmsCreateRequestBodyType
-> = z.nativeEnum(V1AdminCmsCreateRequestBodyType);
 
 /** @internal */
 export type V1AdminCmsCreateRequestBody$Outbound = {
@@ -62,7 +41,7 @@ export const V1AdminCmsCreateRequestBody$outboundSchema: z.ZodType<
   parentUid: z.string().optional(),
   payload: z.any().optional(),
   sortOrder: z.number().int(),
-  type: V1AdminCmsCreateRequestBodyType$outboundSchema,
+  type: z.string(),
 }).transform((v) => {
   return remap$(v, {
     docKey: "doc_key",

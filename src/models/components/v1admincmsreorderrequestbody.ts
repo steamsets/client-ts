@@ -3,37 +3,16 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
 import {
   ReorderItemReq,
   ReorderItemReq$Outbound,
   ReorderItemReq$outboundSchema,
 } from "./reorderitemreq.js";
 
-export const V1AdminCmsReorderRequestBodyType = {
-  NavItem: "nav_item",
-  Faq: "faq",
-  Partner: "partner",
-  FooterCategory: "footer_category",
-  FooterLink: "footer_link",
-  DonateFeature: "donate_feature",
-  RoleMeta: "role_meta",
-  StaffText: "staff_text",
-  Page: "page",
-} as const;
-export type V1AdminCmsReorderRequestBodyType = ClosedEnum<
-  typeof V1AdminCmsReorderRequestBodyType
->;
-
 export type V1AdminCmsReorderRequestBody = {
   items: Array<ReorderItemReq> | null;
-  type: V1AdminCmsReorderRequestBodyType;
+  type: string;
 };
-
-/** @internal */
-export const V1AdminCmsReorderRequestBodyType$outboundSchema: z.ZodNativeEnum<
-  typeof V1AdminCmsReorderRequestBodyType
-> = z.nativeEnum(V1AdminCmsReorderRequestBodyType);
 
 /** @internal */
 export type V1AdminCmsReorderRequestBody$Outbound = {
@@ -48,7 +27,7 @@ export const V1AdminCmsReorderRequestBody$outboundSchema: z.ZodType<
   V1AdminCmsReorderRequestBody
 > = z.object({
   items: z.nullable(z.array(ReorderItemReq$outboundSchema)),
-  type: V1AdminCmsReorderRequestBodyType$outboundSchema,
+  type: z.string(),
 });
 
 export function v1AdminCmsReorderRequestBodyToJSON(
