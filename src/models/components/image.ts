@@ -16,7 +16,7 @@ export const ImageType = {
   Avatar: "avatar",
   Background: "background",
   AvatarFrame: "avatar_frame",
-  AniamtedAvatar: "aniamted_avatar",
+  AnimatedAvatar: "animated_avatar",
   MiniBackground: "mini_background",
 } as const;
 /**

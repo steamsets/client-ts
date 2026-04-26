@@ -85,10 +85,9 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
       {
         extras: {
           "key": "<value>",
-          "key1": "<value>",
         },
-        rating: 297304,
-        role: "donator",
+        rating: 590189,
+        role: "badge_scout",
       },
     ],
     state: {

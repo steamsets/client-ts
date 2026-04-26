@@ -55,10 +55,9 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
       {
         extras: {
           "key": "<value>",
-          "key1": "<value>",
         },
-        rating: 297304,
-        role: "donator",
+        rating: 590189,
+        role: "badge_scout",
       },
     ],
     score: 100,

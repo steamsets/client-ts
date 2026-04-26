@@ -116,8 +116,23 @@ run();
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
+### [Activity](docs/sdks/activity/README.md)
+
+* [activityListAccountFeed](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
+* [activityListGlobalFeed](docs/sdks/activity/README.md#activitylistglobalfeed) - List the global activity feed
+* [activityStreamGlobalFeed](docs/sdks/activity/README.md#activitystreamglobalfeed) - Live server-sent-events stream of the global activity feed
+
 ### [Admin](docs/sdks/admin/README.md)
 
+* [cmsArchive](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
+* [cmsCreate](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
+* [cmsList](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
+* [cmsPreviewToken](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
+* [cmsPublish](docs/sdks/admin/README.md#cmspublish) - Publish a CMS document version (also used for rollback by passing an older version_id)
+* [cmsReorder](docs/sdks/admin/README.md#cmsreorder) - Batch-update parent_id / sort_order for CMS documents (used after drag-drop)
+* [cmsUpdateDraft](docs/sdks/admin/README.md#cmsupdatedraft) - Append a new draft version to an existing CMS document
+* [cmsUploadImage](docs/sdks/admin/README.md#cmsuploadimage) - Upload a CMS image (partner logos, page hero, etc.) to S3/MinIO
+* [cmsVersions](docs/sdks/admin/README.md#cmsversions) - List the version history of a CMS document (newest first)
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
@@ -137,6 +152,10 @@ run();
 
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
+
+### [Cms](docs/sdks/cms/README.md)
+
+* [list](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 
 ### [Leaderboard](docs/sdks/leaderboard/README.md)
 
@@ -169,6 +188,41 @@ run();
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Server-sent event streaming [eventstream] -->
+## Server-sent event streaming
+
+[Server-sent events][mdn-sse] are used to stream content from certain
+operations. These operations will expose the stream as an async iterable that
+can be consumed using a [`for await...of`][mdn-for-await-of] loop. The loop will
+terminate when the server no longer has any events to send and closes the
+underlying connection.
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.activity.activityStreamGlobalFeed();
+
+  if (result.serverSentEvents == null) {
+    throw new Error("failed to create stream: received null value");
+  }
+  for await (const event of result.serverSentEvents) {
+    console.log(event);
+  }
+}
+
+run();
+
+```
+
+[mdn-sse]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+[mdn-for-await-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of
+<!-- End Server-sent event streaming [eventstream] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -295,7 +349,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](./src/models/errors/errormodel.ts): Bad Request.
+  * [`ErrorModel`](./src/models/errors/errormodel.ts): Bad Request. *
 
 <details><summary>Less common errors (6)</summary>
 
@@ -313,6 +367,8 @@ run();
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -559,7 +615,19 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
+- [`activityActivityListAccountFeed`](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
+- [`activityActivityListGlobalFeed`](docs/sdks/activity/README.md#activitylistglobalfeed) - List the global activity feed
+- [`activityActivityStreamGlobalFeed`](docs/sdks/activity/README.md#activitystreamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
+- [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
+- [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
+- [`adminCmsList`](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
+- [`adminCmsPreviewToken`](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
+- [`adminCmsPublish`](docs/sdks/admin/README.md#cmspublish) - Publish a CMS document version (also used for rollback by passing an older version_id)
+- [`adminCmsReorder`](docs/sdks/admin/README.md#cmsreorder) - Batch-update parent_id / sort_order for CMS documents (used after drag-drop)
+- [`adminCmsUpdateDraft`](docs/sdks/admin/README.md#cmsupdatedraft) - Append a new draft version to an existing CMS document
+- [`adminCmsUploadImage`](docs/sdks/admin/README.md#cmsuploadimage) - Upload a CMS image (partner logos, page hero, etc.) to S3/MinIO
+- [`adminCmsVersions`](docs/sdks/admin/README.md#cmsversions) - List the version history of a CMS document (newest first)
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
@@ -569,6 +637,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
+- [`cmsList`](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
@@ -614,6 +683,7 @@ const sdk = new SteamSets({ debugLogger: console });
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [Server-sent event streaming](#server-sent-event-streaming)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
