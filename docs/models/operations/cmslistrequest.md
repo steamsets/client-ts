@@ -6,12 +6,12 @@
 import { CmsListRequest } from "@steamsets/client-ts/models/operations";
 
 let value: CmsListRequest = {
-  type: "page",
+  type: "<value>",
 };
 ```
 
 ## Fields
 
-| Field                                              | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `type`                                             | [operations.Type](../../models/operations/type.md) | :heavy_check_mark:                                 | Document type                                      |
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `type`             | *string*           | :heavy_check_mark: | Document type      |

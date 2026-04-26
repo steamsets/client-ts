@@ -5,35 +5,15 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-
-/**
- * Document type
- */
-export const QueryParamType = {
-  NavItem: "nav_item",
-  Faq: "faq",
-  Partner: "partner",
-  FooterCategory: "footer_category",
-  FooterLink: "footer_link",
-  DonateFeature: "donate_feature",
-  RoleMeta: "role_meta",
-  StaffText: "staff_text",
-  Page: "page",
-} as const;
-/**
- * Document type
- */
-export type QueryParamType = ClosedEnum<typeof QueryParamType>;
 
 export type ListRequest = {
   /**
    * Document type
    */
-  type: QueryParamType;
+  type: string;
   /**
    * Locale code (e.g. en, de). Defaults to en.
    */
@@ -53,11 +33,6 @@ export type ListResponse = {
 };
 
 /** @internal */
-export const QueryParamType$outboundSchema: z.ZodNativeEnum<
-  typeof QueryParamType
-> = z.nativeEnum(QueryParamType);
-
-/** @internal */
 export type ListRequest$Outbound = {
   type: string;
   locale?: string | undefined;
@@ -70,7 +45,7 @@ export const ListRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListRequest
 > = z.object({
-  type: QueryParamType$outboundSchema,
+  type: z.string(),
   locale: z.string().optional(),
   preview: z.string().optional(),
 });

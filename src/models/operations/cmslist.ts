@@ -5,35 +5,15 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-
-/**
- * Document type
- */
-export const Type = {
-  NavItem: "nav_item",
-  Faq: "faq",
-  Partner: "partner",
-  FooterCategory: "footer_category",
-  FooterLink: "footer_link",
-  DonateFeature: "donate_feature",
-  RoleMeta: "role_meta",
-  StaffText: "staff_text",
-  Page: "page",
-} as const;
-/**
- * Document type
- */
-export type Type = ClosedEnum<typeof Type>;
 
 export type CmsListRequest = {
   /**
    * Document type
    */
-  type: Type;
+  type: string;
 };
 
 export type CmsListResponse = {
@@ -47,11 +27,6 @@ export type CmsListResponse = {
 };
 
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
-  Type,
-);
-
-/** @internal */
 export type CmsListRequest$Outbound = {
   type: string;
 };
@@ -62,7 +37,7 @@ export const CmsListRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CmsListRequest
 > = z.object({
-  type: Type$outboundSchema,
+  type: z.string(),
 });
 
 export function cmsListRequestToJSON(cmsListRequest: CmsListRequest): string {
