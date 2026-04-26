@@ -4,10 +4,12 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
+import { Activity } from "./activity.js";
 import { Admin } from "./admin.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
+import { Cms } from "./cms.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
@@ -19,6 +21,11 @@ export class SteamSets extends ClientSDK {
   private _account?: Account;
   get account(): Account {
     return (this._account ??= new Account(this._options));
+  }
+
+  private _activity?: Activity;
+  get activity(): Activity {
+    return (this._activity ??= new Activity(this._options));
   }
 
   private _admin?: Admin;
@@ -39,6 +46,11 @@ export class SteamSets extends ClientSDK {
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
+  }
+
+  private _cms?: Cms;
+  get cms(): Cms {
+    return (this._cms ??= new Cms(this._options));
   }
 
   private _leaderboard?: Leaderboard;

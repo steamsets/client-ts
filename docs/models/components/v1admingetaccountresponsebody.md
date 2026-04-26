@@ -37,10 +37,9 @@ let value: V1AdminGetAccountResponseBody = {
     {
       extras: {
         "key": "<value>",
-        "key1": "<value>",
       },
-      rating: 297304,
-      role: "donator",
+      rating: 590189,
+      role: "badge_scout",
     },
   ],
   sessions: [
@@ -56,15 +55,7 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
-  vanityUpdates: [
-    {
-      updatedAt: new Date("2023-01-01T00:00:00Z"),
-      vanity: {
-        new: "steamsets",
-        old: "steamsets",
-      },
-    },
-  ],
+  vanityUpdates: [],
 };
 ```
 

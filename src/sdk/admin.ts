@@ -3,6 +3,15 @@
  */
 
 import { adminAdminUpdateRoleOverride } from "../funcs/adminAdminUpdateRoleOverride.js";
+import { adminCmsArchive } from "../funcs/adminCmsArchive.js";
+import { adminCmsCreate } from "../funcs/adminCmsCreate.js";
+import { adminCmsList } from "../funcs/adminCmsList.js";
+import { adminCmsPreviewToken } from "../funcs/adminCmsPreviewToken.js";
+import { adminCmsPublish } from "../funcs/adminCmsPublish.js";
+import { adminCmsReorder } from "../funcs/adminCmsReorder.js";
+import { adminCmsUpdateDraft } from "../funcs/adminCmsUpdateDraft.js";
+import { adminCmsUploadImage } from "../funcs/adminCmsUploadImage.js";
+import { adminCmsVersions } from "../funcs/adminCmsVersions.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
@@ -13,6 +22,132 @@ import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Admin extends ClientSDK {
+  /**
+   * Archive a CMS document so it stops appearing in public reads (versions retained)
+   */
+  async cmsArchive(
+    request: components.V1AdminCmsArchiveRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsArchiveResponse> {
+    return unwrapAsync(adminCmsArchive(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a new CMS document with an initial draft version
+   */
+  async cmsCreate(
+    request: components.V1AdminCmsCreateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsCreateResponse> {
+    return unwrapAsync(adminCmsCreate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List CMS documents (drafts + published) for editor
+   */
+  async cmsList(
+    request: operations.CmsListRequest,
+    options?: RequestOptions,
+  ): Promise<operations.CmsListResponse> {
+    return unwrapAsync(adminCmsList(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Issue a short-lived preview token for a specific document version
+   */
+  async cmsPreviewToken(
+    request: components.V1AdminCmsPreviewTokenRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsPreviewTokenResponse> {
+    return unwrapAsync(adminCmsPreviewToken(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Publish a CMS document version (also used for rollback by passing an older version_id)
+   */
+  async cmsPublish(
+    request: components.V1AdminCmsPublishRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsPublishResponse> {
+    return unwrapAsync(adminCmsPublish(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Batch-update parent_id / sort_order for CMS documents (used after drag-drop)
+   */
+  async cmsReorder(
+    request: components.V1AdminCmsReorderRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsReorderResponse> {
+    return unwrapAsync(adminCmsReorder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Append a new draft version to an existing CMS document
+   */
+  async cmsUpdateDraft(
+    request: components.V1AdminCmsUpdateDraftRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsUpdateDraftResponse> {
+    return unwrapAsync(adminCmsUpdateDraft(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Upload a CMS image (partner logos, page hero, etc.) to S3/MinIO
+   */
+  async cmsUploadImage(
+    request: components.V1AdminCmsUploadImageRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsUploadImageResponse> {
+    return unwrapAsync(adminCmsUploadImage(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List the version history of a CMS document (newest first)
+   */
+  async cmsVersions(
+    request: operations.CmsVersionsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.CmsVersionsResponse> {
+    return unwrapAsync(adminCmsVersions(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Get account for admin
    */
