@@ -9,6 +9,7 @@ Admin related operations, stay away from these.
 * [cmsArchive](#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 * [cmsCreate](#cmscreate) - Create a new CMS document with an initial draft version
 * [cmsList](#cmslist) - List CMS documents (drafts + published) for editor
+* [cmsListAssets](#cmslistassets) - List recently uploaded CMS images
 * [cmsPreviewToken](#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
 * [cmsPublish](#cmspublish) - Publish a CMS document version (also used for rollback by passing an older version_id)
 * [cmsReorder](#cmsreorder) - Batch-update parent_id / sort_order for CMS documents (used after drag-drop)
@@ -243,6 +244,77 @@ run();
 ### Response
 
 **Promise\<[operations.CmsListResponse](../../models/operations/cmslistresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 403, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## cmsListAssets
+
+List recently uploaded CMS images
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="cms.listAssets" method="get" path="/v1/admin.cms.listAssets" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.cmsListAssets({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminCmsListAssets } from "@steamsets/client-ts/funcs/adminCmsListAssets.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminCmsListAssets(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminCmsListAssets failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CmsListAssetsRequest](../../models/operations/cmslistassetsrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.CmsListAssetsResponse](../../models/operations/cmslistassetsresponse.md)\>**
 
 ### Errors
 

@@ -127,6 +127,7 @@ run();
 * [cmsArchive](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 * [cmsCreate](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
 * [cmsList](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
+* [cmsListAssets](docs/sdks/admin/README.md#cmslistassets) - List recently uploaded CMS images
 * [cmsPreviewToken](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
 * [cmsPublish](docs/sdks/admin/README.md#cmspublish) - Publish a CMS document version (also used for rollback by passing an older version_id)
 * [cmsReorder](docs/sdks/admin/README.md#cmsreorder) - Batch-update parent_id / sort_order for CMS documents (used after drag-drop)
@@ -622,6 +623,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 - [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
 - [`adminCmsList`](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
+- [`adminCmsListAssets`](docs/sdks/admin/README.md#cmslistassets) - List recently uploaded CMS images
 - [`adminCmsPreviewToken`](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
 - [`adminCmsPublish`](docs/sdks/admin/README.md#cmspublish) - Publish a CMS document version (also used for rollback by passing an older version_id)
 - [`adminCmsReorder`](docs/sdks/admin/README.md#cmsreorder) - Batch-update parent_id / sort_order for CMS documents (used after drag-drop)

@@ -6,6 +6,7 @@ import { adminAdminUpdateRoleOverride } from "../funcs/adminAdminUpdateRoleOverr
 import { adminCmsArchive } from "../funcs/adminCmsArchive.js";
 import { adminCmsCreate } from "../funcs/adminCmsCreate.js";
 import { adminCmsList } from "../funcs/adminCmsList.js";
+import { adminCmsListAssets } from "../funcs/adminCmsListAssets.js";
 import { adminCmsPreviewToken } from "../funcs/adminCmsPreviewToken.js";
 import { adminCmsPublish } from "../funcs/adminCmsPublish.js";
 import { adminCmsReorder } from "../funcs/adminCmsReorder.js";
@@ -58,6 +59,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.CmsListResponse> {
     return unwrapAsync(adminCmsList(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List recently uploaded CMS images
+   */
+  async cmsListAssets(
+    request: operations.CmsListAssetsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.CmsListAssetsResponse> {
+    return unwrapAsync(adminCmsListAssets(
       this,
       request,
       options,

@@ -59,6 +59,7 @@ export * from "./badgetagbadge.js";
 export * from "./cmsarchive.js";
 export * from "./cmscreate.js";
 export * from "./cmslist.js";
+export * from "./cmslistassets.js";
 export * from "./cmspreviewtoken.js";
 export * from "./cmspublish.js";
 export * from "./cmsreorder.js";
