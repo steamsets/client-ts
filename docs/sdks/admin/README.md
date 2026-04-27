@@ -8,6 +8,7 @@ Admin related operations, stay away from these.
 
 * [cmsArchive](#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 * [cmsCreate](#cmscreate) - Create a new CMS document with an initial draft version
+* [cmsDelete](#cmsdelete) - Permanently delete a CMS document and all its versions
 * [cmsList](#cmslist) - List CMS documents (drafts + published) for editor
 * [cmsListAssets](#cmslistassets) - List recently uploaded CMS images
 * [cmsPreviewToken](#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
@@ -175,6 +176,81 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 403, 409, 422  | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## cmsDelete
+
+Hard delete: removes the cms_document row + every cms_document_version row pointing at it. Irreversible. Public reads stay correct because the type cache is invalidated. The CMS admin UI should restrict this to archived documents to give staff one extra step before destruction.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="cms.delete" method="post" path="/v1/admin.cms.delete" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.cmsDelete({
+    documentUid: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminCmsDelete } from "@steamsets/client-ts/funcs/adminCmsDelete.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminCmsDelete(steamSets, {
+    documentUid: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminCmsDelete failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1AdminCmsDeleteRequestBody](../../models/components/v1admincmsdeleterequestbody.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.CmsDeleteResponse](../../models/operations/cmsdeleteresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

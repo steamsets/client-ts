@@ -126,6 +126,7 @@ run();
 
 * [cmsArchive](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 * [cmsCreate](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
+* [cmsDelete](docs/sdks/admin/README.md#cmsdelete) - Permanently delete a CMS document and all its versions
 * [cmsList](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
 * [cmsListAssets](docs/sdks/admin/README.md#cmslistassets) - List recently uploaded CMS images
 * [cmsPreviewToken](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
@@ -162,6 +163,7 @@ run();
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
+* [leaderboardGetChanges](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 * [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
@@ -622,6 +624,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
 - [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 - [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
+- [`adminCmsDelete`](docs/sdks/admin/README.md#cmsdelete) - Permanently delete a CMS document and all its versions
 - [`adminCmsList`](docs/sdks/admin/README.md#cmslist) - List CMS documents (drafts + published) for editor
 - [`adminCmsListAssets`](docs/sdks/admin/README.md#cmslistassets) - List recently uploaded CMS images
 - [`adminCmsPreviewToken`](docs/sdks/admin/README.md#cmspreviewtoken) - Issue a short-lived preview token for a specific document version
@@ -645,6 +648,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
+- [`leaderboardLeaderboardGetChanges`](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations

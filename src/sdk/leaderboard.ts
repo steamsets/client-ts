@@ -7,6 +7,7 @@ import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
 import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
 import { leaderboardGetLowestRanks } from "../funcs/leaderboardGetLowestRanks.js";
+import { leaderboardLeaderboardGetChanges } from "../funcs/leaderboardLeaderboardGetChanges.js";
 import { leaderboardPreviewAccountRank } from "../funcs/leaderboardPreviewAccountRank.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -36,6 +37,20 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardGetAccountsMetaResponse> {
     return unwrapAsync(leaderboardGetAccountsMeta(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Top movers in a windowed delta on a leaderboard
+   */
+  async leaderboardGetChanges(
+    request: components.LeaderboardGetChangesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardGetChangesResponse> {
+    return unwrapAsync(leaderboardLeaderboardGetChanges(
       this,
       request,
       options,
