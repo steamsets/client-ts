@@ -5,6 +5,7 @@
 import { adminAdminUpdateRoleOverride } from "../funcs/adminAdminUpdateRoleOverride.js";
 import { adminCmsArchive } from "../funcs/adminCmsArchive.js";
 import { adminCmsCreate } from "../funcs/adminCmsCreate.js";
+import { adminCmsDelete } from "../funcs/adminCmsDelete.js";
 import { adminCmsList } from "../funcs/adminCmsList.js";
 import { adminCmsListAssets } from "../funcs/adminCmsListAssets.js";
 import { adminCmsPreviewToken } from "../funcs/adminCmsPreviewToken.js";
@@ -45,6 +46,23 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.CmsCreateResponse> {
     return unwrapAsync(adminCmsCreate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Permanently delete a CMS document and all its versions
+   *
+   * @remarks
+   * Hard delete: removes the cms_document row + every cms_document_version row pointing at it. Irreversible. Public reads stay correct because the type cache is invalidated. The CMS admin UI should restrict this to archived documents to give staff one extra step before destruction.
+   */
+  async cmsDelete(
+    request: components.V1AdminCmsDeleteRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CmsDeleteResponse> {
+    return unwrapAsync(adminCmsDelete(
       this,
       request,
       options,
