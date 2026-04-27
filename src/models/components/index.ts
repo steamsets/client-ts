@@ -134,6 +134,7 @@ export * from "./v1activitylistaccountfeedresponsebody.js";
 export * from "./v1activitylistglobalfeedrequestbody.js";
 export * from "./v1activitylistglobalfeedresponsebody.js";
 export * from "./v1activitystreamfeedevent.js";
+export * from "./v1activitystreamheartbeat.js";
 export * from "./v1admincmsarchiverequestbody.js";
 export * from "./v1admincmscreaterequestbody.js";
 export * from "./v1admincmscreateresponsebody.js";

@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ActivityListGlobalFeedResponse = {
+export type ListGlobalFeedResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -20,8 +20,8 @@ export type ActivityListGlobalFeedResponse = {
 };
 
 /** @internal */
-export const ActivityListGlobalFeedResponse$inboundSchema: z.ZodType<
-  ActivityListGlobalFeedResponse,
+export const ListGlobalFeedResponse$inboundSchema: z.ZodType<
+  ListGlobalFeedResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -36,12 +36,12 @@ export const ActivityListGlobalFeedResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function activityListGlobalFeedResponseFromJSON(
+export function listGlobalFeedResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ActivityListGlobalFeedResponse, SDKValidationError> {
+): SafeParseResult<ListGlobalFeedResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ActivityListGlobalFeedResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ActivityListGlobalFeedResponse' from JSON`,
+    (x) => ListGlobalFeedResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListGlobalFeedResponse' from JSON`,
   );
 }

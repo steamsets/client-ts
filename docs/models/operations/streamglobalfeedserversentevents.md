@@ -1,4 +1,4 @@
-# ActivityStreamGlobalFeedServerSentEvents
+# StreamGlobalFeedServerSentEvents
 
 Each oneOf object in the array represents one possible Server Sent Events (SSE) message, serialized as UTF-8 text according to the SSE specification.
 
@@ -15,6 +15,17 @@ const value: operations.EventActivityEmitted = {
     occurredAt: new Date("2025-10-05T02:03:08.232Z"),
   },
   event: "activity-emitted",
+};
+```
+
+### `operations.EventActivityHeartbeat`
+
+```typescript
+const value: operations.EventActivityHeartbeat = {
+  data: {
+    heartbeat: 154856,
+  },
+  event: "activity-heartbeat",
 };
 ```
 

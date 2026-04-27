@@ -5,8 +5,8 @@
 ### Available Operations
 
 * [activityListAccountFeed](#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
-* [activityListGlobalFeed](#activitylistglobalfeed) - List the global activity feed
-* [activityStreamGlobalFeed](#activitystreamglobalfeed) - Live server-sent-events stream of the global activity feed
+* [listGlobalFeed](#listglobalfeed) - List the global activity feed
+* [streamGlobalFeed](#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
 ## activityListAccountFeed
 
@@ -83,13 +83,13 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## activityListGlobalFeed
+## listGlobalFeed
 
 List the global activity feed
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="activity.listGlobalFeed" method="post" path="/v1/activity.listGlobalFeed" -->
+<!-- UsageSnippet language="typescript" operationID="listGlobalFeed" method="post" path="/v1/activity.listGlobalFeed" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -98,7 +98,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.activityListGlobalFeed({});
+  const result = await steamSets.activity.listGlobalFeed({});
 
   console.log(result);
 }
@@ -112,7 +112,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { activityActivityListGlobalFeed } from "@steamsets/client-ts/funcs/activityActivityListGlobalFeed.js";
+import { activityListGlobalFeed } from "@steamsets/client-ts/funcs/activityListGlobalFeed.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -121,12 +121,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await activityActivityListGlobalFeed(steamSets, {});
+  const res = await activityListGlobalFeed(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityActivityListGlobalFeed failed:", res.error);
+    console.log("activityListGlobalFeed failed:", res.error);
   }
 }
 
@@ -144,7 +144,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.ActivityListGlobalFeedResponse](../../models/operations/activitylistglobalfeedresponse.md)\>**
+**Promise\<[operations.ListGlobalFeedResponse](../../models/operations/listglobalfeedresponse.md)\>**
 
 ### Errors
 
@@ -154,13 +154,13 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## activityStreamGlobalFeed
+## streamGlobalFeed
 
 Live server-sent-events stream of the global activity feed
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="activity.streamGlobalFeed" method="get" path="/v1/activity.streamGlobalFeed" -->
+<!-- UsageSnippet language="typescript" operationID="streamGlobalFeed" method="get" path="/v1/activity.streamGlobalFeed" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -169,7 +169,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.activityStreamGlobalFeed();
+  const result = await steamSets.activity.streamGlobalFeed();
 
   if (result.serverSentEvents == null) {
     throw new Error("failed to create stream: received null value");
@@ -188,7 +188,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { activityActivityStreamGlobalFeed } from "@steamsets/client-ts/funcs/activityActivityStreamGlobalFeed.js";
+import { activityStreamGlobalFeed } from "@steamsets/client-ts/funcs/activityStreamGlobalFeed.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -197,7 +197,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await activityActivityStreamGlobalFeed(steamSets);
+  const res = await activityStreamGlobalFeed(steamSets);
   if (res.ok) {
     const { value: result } = res;
     if (result.serverSentEvents == null) {
@@ -207,7 +207,7 @@ async function run() {
     console.log(event);
   }
   } else {
-    console.log("activityActivityStreamGlobalFeed failed:", res.error);
+    console.log("activityStreamGlobalFeed failed:", res.error);
   }
 }
 
@@ -224,7 +224,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.ActivityStreamGlobalFeedResponse](../../models/operations/activitystreamglobalfeedresponse.md)\>**
+**Promise\<[operations.StreamGlobalFeedResponse](../../models/operations/streamglobalfeedresponse.md)\>**
 
 ### Errors
 

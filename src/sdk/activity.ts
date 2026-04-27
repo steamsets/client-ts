@@ -3,17 +3,17 @@
  */
 
 import { activityActivityListAccountFeed } from "../funcs/activityActivityListAccountFeed.js";
-import { activityActivityListGlobalFeed } from "../funcs/activityActivityListGlobalFeed.js";
+import { activityListGlobalFeed } from "../funcs/activityListGlobalFeed.js";
 import {
-  activityActivityStreamGlobalFeed,
-  ActivityStreamGlobalFeedAcceptEnum,
-} from "../funcs/activityActivityStreamGlobalFeed.js";
+  activityStreamGlobalFeed,
+  StreamGlobalFeedAcceptEnum,
+} from "../funcs/activityStreamGlobalFeed.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
-export { ActivityStreamGlobalFeedAcceptEnum } from "../funcs/activityActivityStreamGlobalFeed.js";
+export { StreamGlobalFeedAcceptEnum } from "../funcs/activityStreamGlobalFeed.js";
 
 export class Activity extends ClientSDK {
   /**
@@ -33,11 +33,11 @@ export class Activity extends ClientSDK {
   /**
    * List the global activity feed
    */
-  async activityListGlobalFeed(
+  async listGlobalFeed(
     request: components.V1ActivityListGlobalFeedRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.ActivityListGlobalFeedResponse> {
-    return unwrapAsync(activityActivityListGlobalFeed(
+  ): Promise<operations.ListGlobalFeedResponse> {
+    return unwrapAsync(activityListGlobalFeed(
       this,
       request,
       options,
@@ -47,12 +47,12 @@ export class Activity extends ClientSDK {
   /**
    * Live server-sent-events stream of the global activity feed
    */
-  async activityStreamGlobalFeed(
+  async streamGlobalFeed(
     options?: RequestOptions & {
-      acceptHeaderOverride?: ActivityStreamGlobalFeedAcceptEnum;
+      acceptHeaderOverride?: StreamGlobalFeedAcceptEnum;
     },
-  ): Promise<operations.ActivityStreamGlobalFeedResponse> {
-    return unwrapAsync(activityActivityStreamGlobalFeed(
+  ): Promise<operations.StreamGlobalFeedResponse> {
+    return unwrapAsync(activityStreamGlobalFeed(
       this,
       options,
     ));
