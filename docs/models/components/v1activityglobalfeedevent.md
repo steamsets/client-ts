@@ -16,7 +16,7 @@ let value: V1ActivityGlobalFeedEvent = {
     awardsReceived: 123456,
     background: "<value>",
     badges: 123456,
-    bans: 244812,
+    bans: 337406,
     city: {
       name: "Bad Krozingen",
     },
@@ -30,7 +30,7 @@ let value: V1ActivityGlobalFeedEvent = {
     foilBadgeCost: 123456,
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 164389,
+    gameBans: 747187,
     images: [
       {
         active: true,
@@ -56,16 +56,18 @@ let value: V1ActivityGlobalFeedEvent = {
         extras: {
           "key": "<value>",
         },
-        rating: 590189,
-        role: "badge_scout",
+        rating: 530223,
+        role: "top_100",
       },
     ],
-    state: null,
+    state: {
+      name: "Baden-Wurttemberg",
+    },
     steamId: "76561198842603734",
-    steamSetsScore: 914444,
+    steamSetsScore: 990709,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 981884,
+    vacBans: 122687,
     xp: 123456,
   },
   accountId: 809925,

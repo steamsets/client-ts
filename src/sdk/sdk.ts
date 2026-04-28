@@ -6,6 +6,7 @@ import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Activity } from "./activity.js";
 import { Admin } from "./admin.js";
+import { Analytics } from "./analytics.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
@@ -13,6 +14,7 @@ import { Cms } from "./cms.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
+import { Search } from "./search.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
 import { Vanity } from "./vanity.js";
@@ -31,6 +33,11 @@ export class SteamSets extends ClientSDK {
   private _admin?: Admin;
   get admin(): Admin {
     return (this._admin ??= new Admin(this._options));
+  }
+
+  private _analytics?: Analytics;
+  get analytics(): Analytics {
+    return (this._analytics ??= new Analytics(this._options));
   }
 
   private _apps?: Apps;
@@ -66,6 +73,11 @@ export class SteamSets extends ClientSDK {
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _search?: Search;
+  get search(): Search {
+    return (this._search ??= new Search(this._options));
   }
 
   private _staff?: Staff;

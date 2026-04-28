@@ -11,6 +11,8 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type BadgeSearchBadgesRequest = {
   xForwardedFor?: string | undefined;
+  userAgent?: string | undefined;
+  xVisitorId?: string | undefined;
   v1SearchRequest: components.V1SearchRequest;
 };
 
@@ -27,6 +29,8 @@ export type BadgeSearchBadgesResponse = {
 /** @internal */
 export type BadgeSearchBadgesRequest$Outbound = {
   "X-Forwarded-For"?: string | undefined;
+  "User-Agent"?: string | undefined;
+  "X-Visitor-Id"?: string | undefined;
   V1SearchRequest: components.V1SearchRequest$Outbound;
 };
 
@@ -37,10 +41,14 @@ export const BadgeSearchBadgesRequest$outboundSchema: z.ZodType<
   BadgeSearchBadgesRequest
 > = z.object({
   xForwardedFor: z.string().optional(),
+  userAgent: z.string().optional(),
+  xVisitorId: z.string().optional(),
   v1SearchRequest: components.V1SearchRequest$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     xForwardedFor: "X-Forwarded-For",
+    userAgent: "User-Agent",
+    xVisitorId: "X-Visitor-Id",
     v1SearchRequest: "V1SearchRequest",
   });
 });

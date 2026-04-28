@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
+import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -11,7 +11,6 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -32,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export function accountGetInfo(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: operations.AccountGetInfoRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -57,7 +56,7 @@ export function accountGetInfo(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: operations.AccountGetInfoRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -78,20 +77,33 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) => operations.AccountGetInfoRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = encodeJSON("body", payload.AccountSearch, { explode: true });
 
   const path = pathToFunc("/v1/account.getInfo")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
+    "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
+      explode: false,
+      charEncoding: "none",
+    }),
+    "X-Forwarded-For": encodeSimple(
+      "X-Forwarded-For",
+      payload["X-Forwarded-For"],
+      { explode: false, charEncoding: "none" },
+    ),
+    "X-Visitor-Id": encodeSimple("X-Visitor-Id", payload["X-Visitor-Id"], {
+      explode: false,
+      charEncoding: "none",
+    }),
   }));
 
   const secConfig = await extractSecurity(client._options.token);

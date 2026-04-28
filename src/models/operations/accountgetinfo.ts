@@ -9,6 +9,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AccountGetInfoRequest = {
+  xForwardedFor?: string | undefined;
+  userAgent?: string | undefined;
+  xVisitorId?: string | undefined;
+  accountSearch: components.AccountSearch;
+};
+
 export type AccountGetInfoResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -18,6 +25,41 @@ export type AccountGetInfoResponse = {
     | components.V1AccountGetInfoResponseBody
     | undefined;
 };
+
+/** @internal */
+export type AccountGetInfoRequest$Outbound = {
+  "X-Forwarded-For"?: string | undefined;
+  "User-Agent"?: string | undefined;
+  "X-Visitor-Id"?: string | undefined;
+  AccountSearch: components.AccountSearch$Outbound;
+};
+
+/** @internal */
+export const AccountGetInfoRequest$outboundSchema: z.ZodType<
+  AccountGetInfoRequest$Outbound,
+  z.ZodTypeDef,
+  AccountGetInfoRequest
+> = z.object({
+  xForwardedFor: z.string().optional(),
+  userAgent: z.string().optional(),
+  xVisitorId: z.string().optional(),
+  accountSearch: components.AccountSearch$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    xForwardedFor: "X-Forwarded-For",
+    userAgent: "User-Agent",
+    xVisitorId: "X-Visitor-Id",
+    accountSearch: "AccountSearch",
+  });
+});
+
+export function accountGetInfoRequestToJSON(
+  accountGetInfoRequest: AccountGetInfoRequest,
+): string {
+  return JSON.stringify(
+    AccountGetInfoRequest$outboundSchema.parse(accountGetInfoRequest),
+  );
+}
 
 /** @internal */
 export const AccountGetInfoResponse$inboundSchema: z.ZodType<

@@ -58,8 +58,8 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
             extras: {
               "key": "<value>",
             },
-            rating: 590189,
-            role: "badge_scout",
+            rating: 530223,
+            role: "top_100",
           },
         ],
         state: {
@@ -127,8 +127,8 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
           extras: {
             "key": "<value>",
           },
-          rating: 590189,
-          role: "badge_scout",
+          rating: 530223,
+          role: "top_100",
         },
       ],
       state: {
