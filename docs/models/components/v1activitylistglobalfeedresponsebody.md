@@ -72,9 +72,9 @@ let value: V1ActivityListGlobalFeedResponseBody = {
         vacBans: 981884,
         xp: 123456,
       },
-      accountId: 853550,
+      accountId: 138266,
       eventType: "<value>",
-      occurredAt: new Date("2025-06-16T00:04:54.197Z"),
+      occurredAt: new Date("2024-10-06T18:49:51.413Z"),
     },
   ],
 };

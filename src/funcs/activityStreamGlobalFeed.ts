@@ -3,15 +3,12 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
-import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -19,7 +16,6 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
-import * as errors from "../models/errors/index.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import { SteamSetsError } from "../models/errors/steamsetserror.js";
@@ -27,17 +23,22 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+export enum StreamGlobalFeedAcceptEnum {
+  applicationProblemPlusJson = "application/problem+json",
+  textEventStream = "text/event-stream",
+}
+
 /**
- * List the global activity feed
+ * Live server-sent-events stream of the global activity feed
  */
-export function activityActivityListGlobalFeed(
+export function activityStreamGlobalFeed(
   client: SteamSetsCore,
-  request: components.V1ActivityListGlobalFeedRequestBody,
-  options?: RequestOptions,
+  options?: RequestOptions & {
+    acceptHeaderOverride?: StreamGlobalFeedAcceptEnum;
+  },
 ): APIPromise<
   Result<
-    operations.ActivityListGlobalFeedResponse,
-    | errors.ErrorModel
+    operations.StreamGlobalFeedResponse,
     | SteamSetsError
     | ResponseValidationError
     | ConnectionError
@@ -50,20 +51,19 @@ export function activityActivityListGlobalFeed(
 > {
   return new APIPromise($do(
     client,
-    request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1ActivityListGlobalFeedRequestBody,
-  options?: RequestOptions,
+  options?: RequestOptions & {
+    acceptHeaderOverride?: StreamGlobalFeedAcceptEnum;
+  },
 ): Promise<
   [
     Result<
-      operations.ActivityListGlobalFeedResponse,
-      | errors.ErrorModel
+      operations.StreamGlobalFeedResponse,
       | SteamSetsError
       | ResponseValidationError
       | ConnectionError
@@ -76,25 +76,11 @@ async function $do(
     APICall,
   ]
 > {
-  const parsed = safeParse(
-    request,
-    (value) =>
-      components.V1ActivityListGlobalFeedRequestBody$outboundSchema.parse(
-        value,
-      ),
-    "Input validation failed",
-  );
-  if (!parsed.ok) {
-    return [parsed, { status: "invalid" }];
-  }
-  const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
-
-  const path = pathToFunc("/v1/activity.listGlobalFeed")();
+  const path = pathToFunc("/v1/activity.streamGlobalFeed")();
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: options?.acceptHeaderOverride
+      || "application/problem+json;q=1, text/event-stream;q=0",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -104,7 +90,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "activity.listGlobalFeed",
+    operationID: "streamGlobalFeed",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -128,11 +114,10 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -159,8 +144,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.ActivityListGlobalFeedResponse,
-    | errors.ErrorModel
+    operations.StreamGlobalFeedResponse,
     | SteamSetsError
     | ResponseValidationError
     | ConnectionError
@@ -170,17 +154,15 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.ActivityListGlobalFeedResponse$inboundSchema, {
-      key: "V1ActivityListGlobalFeedResponseBody",
-    }),
-    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
-      ctype: "application/problem+json",
-    }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
-      ctype: "application/problem+json",
+    M.sse(200, operations.StreamGlobalFeedResponse$inboundSchema, {
+      key: "Server Sent Events",
     }),
     M.fail("4XX"),
     M.fail("5XX"),
+    M.json("default", operations.StreamGlobalFeedResponse$inboundSchema, {
+      ctype: "application/problem+json",
+      key: "ErrorModel",
+    }),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];

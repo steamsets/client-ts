@@ -10,6 +10,22 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type EventActivityHeartbeat = {
+  data: components.V1ActivityStreamHeartbeat;
+  /**
+   * The event name.
+   */
+  event: "activity-heartbeat";
+  /**
+   * The event ID.
+   */
+  id?: string | undefined;
+  /**
+   * The retry time in milliseconds.
+   */
+  retry?: number | undefined;
+};
+
 export type EventActivityEmitted = {
   data: components.V1ActivityStreamFeedEvent;
   /**
@@ -29,19 +45,52 @@ export type EventActivityEmitted = {
 /**
  * Each oneOf object in the array represents one possible Server Sent Events (SSE) message, serialized as UTF-8 text according to the SSE specification.
  */
-export type ActivityStreamGlobalFeedServerSentEvents = EventActivityEmitted;
+export type StreamGlobalFeedServerSentEvents =
+  | EventActivityEmitted
+  | EventActivityHeartbeat;
 
-export type ActivityStreamGlobalFeedResponse = {
+export type StreamGlobalFeedResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
    */
-  serverSentEvents?: EventStream<EventActivityEmitted> | undefined;
+  serverSentEvents?:
+    | EventStream<EventActivityEmitted | EventActivityHeartbeat>
+    | undefined;
   /**
    * Error
    */
   errorModel?: components.ErrorModel | undefined;
 };
+
+/** @internal */
+export const EventActivityHeartbeat$inboundSchema: z.ZodType<
+  EventActivityHeartbeat,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  data: z.string().transform((v, ctx) => {
+    try {
+      return JSON.parse(v);
+    } catch (err) {
+      ctx.addIssue({ code: "custom", message: `malformed json: ${err}` });
+      return z.NEVER;
+    }
+  }).pipe(components.V1ActivityStreamHeartbeat$inboundSchema),
+  event: z.literal("activity-heartbeat"),
+  id: z.string().optional(),
+  retry: z.number().int().optional(),
+});
+
+export function eventActivityHeartbeatFromJSON(
+  jsonString: string,
+): SafeParseResult<EventActivityHeartbeat, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EventActivityHeartbeat$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EventActivityHeartbeat' from JSON`,
+  );
+}
 
 /** @internal */
 export const EventActivityEmitted$inboundSchema: z.ZodType<
@@ -73,31 +122,28 @@ export function eventActivityEmittedFromJSON(
 }
 
 /** @internal */
-export const ActivityStreamGlobalFeedServerSentEvents$inboundSchema: z.ZodType<
-  ActivityStreamGlobalFeedServerSentEvents,
+export const StreamGlobalFeedServerSentEvents$inboundSchema: z.ZodType<
+  StreamGlobalFeedServerSentEvents,
   z.ZodTypeDef,
   unknown
-> = z.lazy(() => EventActivityEmitted$inboundSchema);
+> = z.union([
+  z.lazy(() => EventActivityEmitted$inboundSchema),
+  z.lazy(() => EventActivityHeartbeat$inboundSchema),
+]);
 
-export function activityStreamGlobalFeedServerSentEventsFromJSON(
+export function streamGlobalFeedServerSentEventsFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ActivityStreamGlobalFeedServerSentEvents,
-  SDKValidationError
-> {
+): SafeParseResult<StreamGlobalFeedServerSentEvents, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ActivityStreamGlobalFeedServerSentEvents$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ActivityStreamGlobalFeedServerSentEvents' from JSON`,
+    (x) => StreamGlobalFeedServerSentEvents$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'StreamGlobalFeedServerSentEvents' from JSON`,
   );
 }
 
 /** @internal */
-export const ActivityStreamGlobalFeedResponse$inboundSchema: z.ZodType<
-  ActivityStreamGlobalFeedResponse,
+export const StreamGlobalFeedResponse$inboundSchema: z.ZodType<
+  StreamGlobalFeedResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -107,9 +153,10 @@ export const ActivityStreamGlobalFeedResponse$inboundSchema: z.ZodType<
       return new EventStream(stream, rawEvent => {
         return {
           done: false,
-          value: z.lazy(() => EventActivityEmitted$inboundSchema).parse(
-            rawEvent,
-          ),
+          value: z.union([
+            z.lazy(() => EventActivityEmitted$inboundSchema),
+            z.lazy(() => EventActivityHeartbeat$inboundSchema),
+          ]).parse(rawEvent),
         };
       });
     }).optional(),
@@ -122,12 +169,12 @@ export const ActivityStreamGlobalFeedResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function activityStreamGlobalFeedResponseFromJSON(
+export function streamGlobalFeedResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ActivityStreamGlobalFeedResponse, SDKValidationError> {
+): SafeParseResult<StreamGlobalFeedResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ActivityStreamGlobalFeedResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ActivityStreamGlobalFeedResponse' from JSON`,
+    (x) => StreamGlobalFeedResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'StreamGlobalFeedResponse' from JSON`,
   );
 }

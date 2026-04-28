@@ -119,8 +119,8 @@ run();
 ### [Activity](docs/sdks/activity/README.md)
 
 * [activityListAccountFeed](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
-* [activityListGlobalFeed](docs/sdks/activity/README.md#activitylistglobalfeed) - List the global activity feed
-* [activityStreamGlobalFeed](docs/sdks/activity/README.md#activitystreamglobalfeed) - Live server-sent-events stream of the global activity feed
+* [listGlobalFeed](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
+* [streamGlobalFeed](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
 ### [Admin](docs/sdks/admin/README.md)
 
@@ -209,7 +209,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.activityStreamGlobalFeed();
+  const result = await steamSets.activity.streamGlobalFeed();
 
   if (result.serverSentEvents == null) {
     throw new Error("failed to create stream: received null value");
@@ -619,8 +619,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
 - [`activityActivityListAccountFeed`](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
-- [`activityActivityListGlobalFeed`](docs/sdks/activity/README.md#activitylistglobalfeed) - List the global activity feed
-- [`activityActivityStreamGlobalFeed`](docs/sdks/activity/README.md#activitystreamglobalfeed) - Live server-sent-events stream of the global activity feed
+- [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
+- [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
 - [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 - [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version

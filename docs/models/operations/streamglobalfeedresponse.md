@@ -1,9 +1,9 @@
-# ActivityStreamGlobalFeedResponse
+# StreamGlobalFeedResponse
 
 ## Example Usage
 
 ```typescript
-import { ActivityStreamGlobalFeedResponse } from "@steamsets/client-ts/models/operations";
+import { StreamGlobalFeedResponse } from "@steamsets/client-ts/models/operations";
 
 // No examples available for this model
 ```
@@ -13,5 +13,5 @@ import { ActivityStreamGlobalFeedResponse } from "@steamsets/client-ts/models/op
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | `httpMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |
-| `serverSentEvents`                                                 | *EventStream<operations.ActivityStreamGlobalFeedServerSentEvents>* | :heavy_minus_sign:                                                 | OK                                                                 |
+| `serverSentEvents`                                                 | *EventStream<operations.StreamGlobalFeedServerSentEvents>*         | :heavy_minus_sign:                                                 | OK                                                                 |
 | `errorModel`                                                       | [components.ErrorModel](../../models/components/errormodel.md)     | :heavy_minus_sign:                                                 | Error                                                              |

@@ -1,11 +1,11 @@
-# ActivityListGlobalFeedResponse
+# ListGlobalFeedResponse
 
 ## Example Usage
 
 ```typescript
-import { ActivityListGlobalFeedResponse } from "@steamsets/client-ts/models/operations";
+import { ListGlobalFeedResponse } from "@steamsets/client-ts/models/operations";
 
-let value: ActivityListGlobalFeedResponse = {};
+let value: ListGlobalFeedResponse = {};
 ```
 
 ## Fields
