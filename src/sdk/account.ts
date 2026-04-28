@@ -7,6 +7,7 @@ import { accountAccountGetBadgeHeatmap } from "../funcs/accountAccountGetBadgeHe
 import { accountAccountGetTrending } from "../funcs/accountAccountGetTrending.js";
 import { accountAccountListOwnedGroups } from "../funcs/accountAccountListOwnedGroups.js";
 import { accountBookmarkBadge } from "../funcs/accountBookmarkBadge.js";
+import { accountCompareBadges } from "../funcs/accountCompareBadges.js";
 import { accountCreateConnection } from "../funcs/accountCreateConnection.js";
 import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
 import { accountDeleteConnection } from "../funcs/accountDeleteConnection.js";
@@ -59,6 +60,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountBookmarkBadgeResponse> {
     return unwrapAsync(accountBookmarkBadge(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Compare badge collections between accounts
+   */
+  async compareBadges(
+    request: components.V1AccountCompareBadgesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.CompareBadgesResponse> {
+    return unwrapAsync(accountCompareBadges(
       this,
       request,
       options,

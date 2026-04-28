@@ -5,29 +5,31 @@
 import * as z from "zod/v3";
 import { ClosedEnum } from "../../types/enums.js";
 
-export const By = {
+export const V1AppOrderBy = {
   AppId: "appId",
   Playtime: "playtime",
 } as const;
-export type By = ClosedEnum<typeof By>;
+export type V1AppOrderBy = ClosedEnum<typeof V1AppOrderBy>;
 
-export const Direction = {
+export const V1AppOrderDirection = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type Direction = ClosedEnum<typeof Direction>;
+export type V1AppOrderDirection = ClosedEnum<typeof V1AppOrderDirection>;
 
 export type V1AppOrder = {
-  by: By;
-  direction?: Direction | undefined;
+  by: V1AppOrderBy;
+  direction?: V1AppOrderDirection | undefined;
 };
 
 /** @internal */
-export const By$outboundSchema: z.ZodNativeEnum<typeof By> = z.nativeEnum(By);
+export const V1AppOrderBy$outboundSchema: z.ZodNativeEnum<typeof V1AppOrderBy> =
+  z.nativeEnum(V1AppOrderBy);
 
 /** @internal */
-export const Direction$outboundSchema: z.ZodNativeEnum<typeof Direction> = z
-  .nativeEnum(Direction);
+export const V1AppOrderDirection$outboundSchema: z.ZodNativeEnum<
+  typeof V1AppOrderDirection
+> = z.nativeEnum(V1AppOrderDirection);
 
 /** @internal */
 export type V1AppOrder$Outbound = {
@@ -41,8 +43,8 @@ export const V1AppOrder$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AppOrder
 > = z.object({
-  by: By$outboundSchema,
-  direction: Direction$outboundSchema.default("desc"),
+  by: V1AppOrderBy$outboundSchema,
+  direction: V1AppOrderDirection$outboundSchema.default("desc"),
 });
 
 export function v1AppOrderToJSON(v1AppOrder: V1AppOrder): string {

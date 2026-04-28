@@ -5,11 +5,11 @@
 ```typescript
 import { By } from "@steamsets/client-ts/models/components";
 
-let value: By = "appId";
+let value: By = "scarcity";
 ```
 
 ## Values
 
 ```typescript
-"appId" | "playtime"
+"scarcity" | "level" | "name" | "xp" | "completedAt"
 ```
