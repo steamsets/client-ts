@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get the top account in each level bucket
+ * Top movers in a windowed delta on a leaderboard
  */
-export function leaderboardLeaderboardGetBucketLeaders(
+export function leaderboardGetChanges(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetBucketLeadersRequestBody,
+  request: components.LeaderboardGetChangesRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetBucketLeadersResponse,
+    operations.GetChangesResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function leaderboardLeaderboardGetBucketLeaders(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetBucketLeadersRequestBody,
+  request: components.LeaderboardGetChangesRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetBucketLeadersResponse,
+      operations.GetChangesResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,9 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1LeaderboardGetBucketLeadersRequestBody$outboundSchema.parse(
-        value,
-      ),
+      components.LeaderboardGetChangesRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -90,7 +88,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getBucketLeaders")();
+  const path = pathToFunc("/v1/leaderboard.getChanges")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getBucketLeaders",
+    operationID: "getChanges",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetBucketLeadersResponse,
+    operations.GetChangesResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,13 +168,13 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LeaderboardGetBucketLeadersResponse$inboundSchema, {
-      key: "BucketLeaders",
+    M.json(200, operations.GetChangesResponse$inboundSchema, {
+      key: "LeaderboardGetChangesResponseBody",
     }),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr([500, 501], errors.ErrorModel$inboundSchema, {
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

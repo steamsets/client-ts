@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type LeaderboardGetBucketLeadersResponse = {
+export type GetBucketLeadersResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -18,8 +18,8 @@ export type LeaderboardGetBucketLeadersResponse = {
 };
 
 /** @internal */
-export const LeaderboardGetBucketLeadersResponse$inboundSchema: z.ZodType<
-  LeaderboardGetBucketLeadersResponse,
+export const GetBucketLeadersResponse$inboundSchema: z.ZodType<
+  GetBucketLeadersResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -33,13 +33,12 @@ export const LeaderboardGetBucketLeadersResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function leaderboardGetBucketLeadersResponseFromJSON(
+export function getBucketLeadersResponseFromJSON(
   jsonString: string,
-): SafeParseResult<LeaderboardGetBucketLeadersResponse, SDKValidationError> {
+): SafeParseResult<GetBucketLeadersResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      LeaderboardGetBucketLeadersResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'LeaderboardGetBucketLeadersResponse' from JSON`,
+    (x) => GetBucketLeadersResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetBucketLeadersResponse' from JSON`,
   );
 }

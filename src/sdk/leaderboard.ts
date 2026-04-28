@@ -4,11 +4,11 @@
 
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
 import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.js";
+import { leaderboardGetBucketLeaders } from "../funcs/leaderboardGetBucketLeaders.js";
+import { leaderboardGetChanges } from "../funcs/leaderboardGetChanges.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
 import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
 import { leaderboardGetLowestRanks } from "../funcs/leaderboardGetLowestRanks.js";
-import { leaderboardLeaderboardGetBucketLeaders } from "../funcs/leaderboardLeaderboardGetBucketLeaders.js";
-import { leaderboardLeaderboardGetChanges } from "../funcs/leaderboardLeaderboardGetChanges.js";
 import { leaderboardPreviewAccountRank } from "../funcs/leaderboardPreviewAccountRank.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -45,13 +45,13 @@ export class Leaderboard extends ClientSDK {
   }
 
   /**
-   * Get the top account in each level bucket
+   * Get the top account in each value bucket
    */
-  async leaderboardGetBucketLeaders(
+  async getBucketLeaders(
     request: components.V1LeaderboardGetBucketLeadersRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardGetBucketLeadersResponse> {
-    return unwrapAsync(leaderboardLeaderboardGetBucketLeaders(
+  ): Promise<operations.GetBucketLeadersResponse> {
+    return unwrapAsync(leaderboardGetBucketLeaders(
       this,
       request,
       options,
@@ -61,11 +61,11 @@ export class Leaderboard extends ClientSDK {
   /**
    * Top movers in a windowed delta on a leaderboard
    */
-  async leaderboardGetChanges(
+  async getChanges(
     request: components.LeaderboardGetChangesRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.LeaderboardGetChangesResponse> {
-    return unwrapAsync(leaderboardLeaderboardGetChanges(
+  ): Promise<operations.GetChangesResponse> {
+    return unwrapAsync(leaderboardGetChanges(
       this,
       request,
       options,

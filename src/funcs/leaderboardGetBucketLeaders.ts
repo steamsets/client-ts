@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * List the activity feed for a single account (profile timeline)
+ * Get the top account in each value bucket
  */
-export function activityActivityListAccountFeed(
+export function leaderboardGetBucketLeaders(
   client: SteamSetsCore,
-  request: components.V1ActivityListAccountFeedRequestBody,
+  request: components.V1LeaderboardGetBucketLeadersRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.ActivityListAccountFeedResponse,
+    operations.GetBucketLeadersResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function activityActivityListAccountFeed(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1ActivityListAccountFeedRequestBody,
+  request: components.V1LeaderboardGetBucketLeadersRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.ActivityListAccountFeedResponse,
+      operations.GetBucketLeadersResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1ActivityListAccountFeedRequestBody$outboundSchema.parse(
+      components.V1LeaderboardGetBucketLeadersRequestBody$outboundSchema.parse(
         value,
       ),
     "Input validation failed",
@@ -90,7 +90,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/activity.listAccountFeed")();
+  const path = pathToFunc("/v1/leaderboard.getBucketLeaders")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +104,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "activity.listAccountFeed",
+    operationID: "getBucketLeaders",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.ActivityListAccountFeedResponse,
+    operations.GetBucketLeadersResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,13 +170,13 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.ActivityListAccountFeedResponse$inboundSchema, {
-      key: "V1ActivityListAccountFeedResponseBody",
+    M.json(200, operations.GetBucketLeadersResponse$inboundSchema, {
+      key: "BucketLeaders",
     }),
-    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([500, 501], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

@@ -6,13 +6,14 @@ import * as z from "zod/v3";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
- * Currently only XP is supported.
+ * xp buckets by level; apps buckets by the game-collector badge thresholds.
  */
 export const V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = {
   Xp: "xp",
+  Apps: "apps",
 } as const;
 /**
- * Currently only XP is supported.
+ * xp buckets by level; apps buckets by the game-collector badge thresholds.
  */
 export type V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = ClosedEnum<
   typeof V1LeaderboardGetBucketLeadersRequestBodyLeaderboard
@@ -20,11 +21,11 @@ export type V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = ClosedEnum<
 
 export type V1LeaderboardGetBucketLeadersRequestBody = {
   /**
-   * Levels per bucket. 0 defaults to 10.
+   * xp only: levels per bucket (default 10). Ignored for apps.
    */
   bucketSize?: number | undefined;
   /**
-   * Currently only XP is supported.
+   * xp buckets by level; apps buckets by the game-collector badge thresholds.
    */
   leaderboard: V1LeaderboardGetBucketLeadersRequestBodyLeaderboard;
 };

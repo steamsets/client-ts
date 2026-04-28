@@ -5,7 +5,6 @@
 import { accountAccountFindFriendPath } from "../funcs/accountAccountFindFriendPath.js";
 import { accountAccountGetBadgeHeatmap } from "../funcs/accountAccountGetBadgeHeatmap.js";
 import { accountAccountGetTrending } from "../funcs/accountAccountGetTrending.js";
-import { accountAccountGetViewStats } from "../funcs/accountAccountGetViewStats.js";
 import { accountAccountListOwnedGroups } from "../funcs/accountAccountListOwnedGroups.js";
 import { accountBookmarkBadge } from "../funcs/accountBookmarkBadge.js";
 import { accountCreateConnection } from "../funcs/accountCreateConnection.js";
@@ -20,6 +19,7 @@ import { accountGetInfo } from "../funcs/accountGetInfo.js";
 import { accountGetMeta } from "../funcs/accountGetMeta.js";
 import { accountGetSession } from "../funcs/accountGetSession.js";
 import { accountGetSettings } from "../funcs/accountGetSettings.js";
+import { accountGetViewStats } from "../funcs/accountGetViewStats.js";
 import { accountListApps } from "../funcs/accountListApps.js";
 import { accountListBadgeBookmarks } from "../funcs/accountListBadgeBookmarks.js";
 import { accountListBadges } from "../funcs/accountListBadges.js";
@@ -274,11 +274,11 @@ export class Account extends ClientSDK {
   /**
    * Get profile view counts (24h/7d/30d × unique/total) for an account
    */
-  async accountGetViewStats(
+  async getViewStats(
     request: components.AccountSearch,
     options?: RequestOptions,
-  ): Promise<operations.AccountGetViewStatsResponse> {
-    return unwrapAsync(accountAccountGetViewStats(
+  ): Promise<operations.GetViewStatsResponse> {
+    return unwrapAsync(accountGetViewStats(
       this,
       request,
       options,

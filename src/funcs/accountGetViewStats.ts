@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Top movers in a windowed delta on a leaderboard
+ * Get profile view counts (24h/7d/30d × unique/total) for an account
  */
-export function leaderboardLeaderboardGetChanges(
+export function accountGetViewStats(
   client: SteamSetsCore,
-  request: components.LeaderboardGetChangesRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetChangesResponse,
+    operations.GetViewStatsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function leaderboardLeaderboardGetChanges(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.LeaderboardGetChangesRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetChangesResponse,
+      operations.GetViewStatsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,8 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.LeaderboardGetChangesRequestBody$outboundSchema.parse(value),
+    (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -88,7 +87,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getChanges")();
+  const path = pathToFunc("/v1/account.getViewStats")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -102,7 +101,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getChanges",
+    operationID: "getViewStats",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -157,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetChangesResponse,
+    operations.GetViewStatsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -168,10 +167,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LeaderboardGetChangesResponse$inboundSchema, {
-      key: "LeaderboardGetChangesResponseBody",
+    M.json(200, operations.GetViewStatsResponse$inboundSchema, {
+      key: "AccountViewStats",
     }),
-    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

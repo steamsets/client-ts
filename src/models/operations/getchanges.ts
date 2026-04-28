@@ -9,35 +9,38 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountGetViewStatsResponse = {
+export type GetChangesResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
    */
-  accountViewStats?: components.AccountViewStats | undefined;
+  leaderboardGetChangesResponseBody?:
+    | components.LeaderboardGetChangesResponseBody
+    | undefined;
 };
 
 /** @internal */
-export const AccountGetViewStatsResponse$inboundSchema: z.ZodType<
-  AccountGetViewStatsResponse,
+export const GetChangesResponse$inboundSchema: z.ZodType<
+  GetChangesResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  AccountViewStats: components.AccountViewStats$inboundSchema.optional(),
+  LeaderboardGetChangesResponseBody: components
+    .LeaderboardGetChangesResponseBody$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "AccountViewStats": "accountViewStats",
+    "LeaderboardGetChangesResponseBody": "leaderboardGetChangesResponseBody",
   });
 });
 
-export function accountGetViewStatsResponseFromJSON(
+export function getChangesResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AccountGetViewStatsResponse, SDKValidationError> {
+): SafeParseResult<GetChangesResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountGetViewStatsResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountGetViewStatsResponse' from JSON`,
+    (x) => GetChangesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetChangesResponse' from JSON`,
   );
 }

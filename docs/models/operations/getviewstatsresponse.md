@@ -1,11 +1,11 @@
-# AccountGetViewStatsResponse
+# GetViewStatsResponse
 
 ## Example Usage
 
 ```typescript
-import { AccountGetViewStatsResponse } from "@steamsets/client-ts/models/operations";
+import { GetViewStatsResponse } from "@steamsets/client-ts/models/operations";
 
-let value: AccountGetViewStatsResponse = {};
+let value: GetViewStatsResponse = {};
 ```
 
 ## Fields

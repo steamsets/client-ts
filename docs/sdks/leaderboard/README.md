@@ -8,8 +8,8 @@ Any requests that is somehow used for getting leaderboard data.
 
 * [getAccount](#getaccount) - Get account leaderboard
 * [getAccountsMeta](#getaccountsmeta) - Get accounts leaderboard metadata
-* [leaderboardGetBucketLeaders](#leaderboardgetbucketleaders) - Get the top account in each level bucket
-* [leaderboardGetChanges](#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
+* [getBucketLeaders](#getbucketleaders) - Get the top account in each value bucket
+* [getChanges](#getchanges) - Top movers in a windowed delta on a leaderboard
 * [getGroup](#getgroup) - Get group leaderboard
 * [getGroupsMeta](#getgroupsmeta) - Get groups leaderboard metadata
 * [getLowestRanks](#getlowestranks) - Get lowest ranked accounts
@@ -221,13 +221,13 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardGetBucketLeaders
+## getBucketLeaders
 
-Get the top account in each level bucket
+Get the top account in each value bucket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="leaderboard.getBucketLeaders" method="post" path="/v1/leaderboard.getBucketLeaders" -->
+<!-- UsageSnippet language="typescript" operationID="getBucketLeaders" method="post" path="/v1/leaderboard.getBucketLeaders" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -236,7 +236,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardGetBucketLeaders({
+  const result = await steamSets.leaderboard.getBucketLeaders({
     bucketSize: 10,
     leaderboard: "xp",
   });
@@ -253,7 +253,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardGetBucketLeaders } from "@steamsets/client-ts/funcs/leaderboardLeaderboardGetBucketLeaders.js";
+import { leaderboardGetBucketLeaders } from "@steamsets/client-ts/funcs/leaderboardGetBucketLeaders.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -262,7 +262,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardGetBucketLeaders(steamSets, {
+  const res = await leaderboardGetBucketLeaders(steamSets, {
     bucketSize: 10,
     leaderboard: "xp",
   });
@@ -270,7 +270,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leaderboardLeaderboardGetBucketLeaders failed:", res.error);
+    console.log("leaderboardGetBucketLeaders failed:", res.error);
   }
 }
 
@@ -288,7 +288,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardGetBucketLeadersResponse](../../models/operations/leaderboardgetbucketleadersresponse.md)\>**
+**Promise\<[operations.GetBucketLeadersResponse](../../models/operations/getbucketleadersresponse.md)\>**
 
 ### Errors
 
@@ -298,13 +298,13 @@ run();
 | errors.ErrorModel        | 500, 501                 | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## leaderboardGetChanges
+## getChanges
 
 Top movers in a windowed delta on a leaderboard
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="leaderboard.getChanges" method="post" path="/v1/leaderboard.getChanges" -->
+<!-- UsageSnippet language="typescript" operationID="getChanges" method="post" path="/v1/leaderboard.getChanges" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -313,11 +313,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.leaderboard.leaderboardGetChanges({
+  const result = await steamSets.leaderboard.getChanges({
     direction: "declines",
-    leaderboard: "bans",
+    leaderboard: "steam_sets",
     metric: "score",
-    window: "30d",
+    window: "7d",
   });
 
   console.log(result);
@@ -332,7 +332,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { leaderboardLeaderboardGetChanges } from "@steamsets/client-ts/funcs/leaderboardLeaderboardGetChanges.js";
+import { leaderboardGetChanges } from "@steamsets/client-ts/funcs/leaderboardGetChanges.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -341,17 +341,17 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await leaderboardLeaderboardGetChanges(steamSets, {
+  const res = await leaderboardGetChanges(steamSets, {
     direction: "declines",
-    leaderboard: "bans",
+    leaderboard: "steam_sets",
     metric: "score",
-    window: "30d",
+    window: "7d",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leaderboardLeaderboardGetChanges failed:", res.error);
+    console.log("leaderboardGetChanges failed:", res.error);
   }
 }
 
@@ -369,7 +369,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.LeaderboardGetChangesResponse](../../models/operations/leaderboardgetchangesresponse.md)\>**
+**Promise\<[operations.GetChangesResponse](../../models/operations/getchangesresponse.md)\>**
 
 ### Errors
 

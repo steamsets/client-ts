@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ActivityListAccountFeedResponse = {
+export type ListAccountFeedResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
@@ -20,8 +20,8 @@ export type ActivityListAccountFeedResponse = {
 };
 
 /** @internal */
-export const ActivityListAccountFeedResponse$inboundSchema: z.ZodType<
-  ActivityListAccountFeedResponse,
+export const ListAccountFeedResponse$inboundSchema: z.ZodType<
+  ListAccountFeedResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -36,12 +36,12 @@ export const ActivityListAccountFeedResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function activityListAccountFeedResponseFromJSON(
+export function listAccountFeedResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ActivityListAccountFeedResponse, SDKValidationError> {
+): SafeParseResult<ListAccountFeedResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ActivityListAccountFeedResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ActivityListAccountFeedResponse' from JSON`,
+    (x) => ListAccountFeedResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListAccountFeedResponse' from JSON`,
   );
 }
