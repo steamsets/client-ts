@@ -65,6 +65,7 @@ export * from "./cmsreorder.js";
 export * from "./cmsupdatedraft.js";
 export * from "./cmsuploadimage.js";
 export * from "./cmsversions.js";
+export * from "./comparebadges.js";
 export * from "./getbucketleaders.js";
 export * from "./getchanges.js";
 export * from "./getviewstats.js";

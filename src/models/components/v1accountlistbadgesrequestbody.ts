@@ -30,18 +30,20 @@ import {
   VanitySearch$outboundSchema,
 } from "./vanitysearch.js";
 
-export const Filter = {
+export const V1AccountListBadgesRequestBodyFilter = {
   Foil: "foil",
   Sale: "sale",
   Event: "event",
 } as const;
-export type Filter = ClosedEnum<typeof Filter>;
+export type V1AccountListBadgesRequestBodyFilter = ClosedEnum<
+  typeof V1AccountListBadgesRequestBodyFilter
+>;
 
 export type V1AccountListBadgesRequestBody = {
   /**
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
-  filter?: Array<Filter> | null | undefined;
+  filter?: Array<V1AccountListBadgesRequestBodyFilter> | null | undefined;
   filters?: V1BadgeFilters | undefined;
   id?: IDSearch | undefined;
   order?: V1BadgeOrder | null | undefined;
@@ -55,8 +57,10 @@ export type V1AccountListBadgesRequestBody = {
 };
 
 /** @internal */
-export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> = z
-  .nativeEnum(Filter);
+export const V1AccountListBadgesRequestBodyFilter$outboundSchema:
+  z.ZodNativeEnum<typeof V1AccountListBadgesRequestBodyFilter> = z.nativeEnum(
+    V1AccountListBadgesRequestBodyFilter,
+  );
 
 /** @internal */
 export type V1AccountListBadgesRequestBody$Outbound = {
@@ -76,7 +80,9 @@ export const V1AccountListBadgesRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1AccountListBadgesRequestBody
 > = z.object({
-  filter: z.nullable(z.array(Filter$outboundSchema)).optional(),
+  filter: z.nullable(
+    z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema),
+  ).optional(),
   filters: V1BadgeFilters$outboundSchema.optional(),
   id: IDSearch$outboundSchema.optional(),
   order: z.nullable(V1BadgeOrder$outboundSchema).optional(),

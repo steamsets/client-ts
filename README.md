@@ -75,6 +75,7 @@ run();
 ### [Account](docs/sdks/account/README.md)
 
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
+* [compareBadges](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 * [createConnection](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
@@ -593,6 +594,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountAccountGetTrending`](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
 - [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
+- [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 - [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
