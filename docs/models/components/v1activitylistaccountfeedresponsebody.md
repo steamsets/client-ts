@@ -20,7 +20,7 @@ let value: V1ActivityListAccountFeedResponseBody = {
         awardsReceived: 123456,
         background: "<value>",
         badges: 123456,
-        bans: 244812,
+        bans: 337406,
         city: {
           name: "Bad Krozingen",
         },
@@ -34,7 +34,7 @@ let value: V1ActivityListAccountFeedResponseBody = {
         foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
-        gameBans: 164389,
+        gameBans: 747187,
         images: [
           {
             active: true,
@@ -60,21 +60,23 @@ let value: V1ActivityListAccountFeedResponseBody = {
             extras: {
               "key": "<value>",
             },
-            rating: 590189,
-            role: "badge_scout",
+            rating: 530223,
+            role: "top_100",
           },
         ],
-        state: null,
+        state: {
+          name: "Baden-Wurttemberg",
+        },
         steamId: "76561198842603734",
-        steamSetsScore: 914444,
+        steamSetsScore: 990709,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 981884,
+        vacBans: 122687,
         xp: 123456,
       },
-      accountId: 815662,
+      accountId: 244812,
       eventType: "<value>",
-      occurredAt: new Date("2025-02-06T08:36:28.931Z"),
+      occurredAt: new Date("2026-02-24T16:19:39.255Z"),
     },
   ],
 };

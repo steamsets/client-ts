@@ -54,8 +54,8 @@ let value: V1GroupLeaderboardGroup = {
         extras: {
           "key": "<value>",
         },
-        rating: 590189,
-        role: "badge_scout",
+        rating: 530223,
+        role: "top_100",
       },
     ],
     state: {

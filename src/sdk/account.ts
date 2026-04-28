@@ -4,6 +4,8 @@
 
 import { accountAccountFindFriendPath } from "../funcs/accountAccountFindFriendPath.js";
 import { accountAccountGetBadgeHeatmap } from "../funcs/accountAccountGetBadgeHeatmap.js";
+import { accountAccountGetTrending } from "../funcs/accountAccountGetTrending.js";
+import { accountAccountGetViewStats } from "../funcs/accountAccountGetViewStats.js";
 import { accountAccountListOwnedGroups } from "../funcs/accountAccountListOwnedGroups.js";
 import { accountBookmarkBadge } from "../funcs/accountBookmarkBadge.js";
 import { accountCreateConnection } from "../funcs/accountCreateConnection.js";
@@ -207,7 +209,7 @@ export class Account extends ClientSDK {
    * Get account profile information
    */
   async getInfo(
-    request: components.AccountSearch,
+    request: operations.AccountGetInfoRequest,
     options?: RequestOptions,
   ): Promise<operations.AccountGetInfoResponse> {
     return unwrapAsync(accountGetInfo(
@@ -251,6 +253,34 @@ export class Account extends ClientSDK {
   ): Promise<operations.AccountGetSettingsResponse> {
     return unwrapAsync(accountGetSettings(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Top accounts by unique viewers in a window
+   */
+  async accountGetTrending(
+    request: components.AccountGetTrendingRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountGetTrendingResponse> {
+    return unwrapAsync(accountAccountGetTrending(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get profile view counts (24h/7d/30d × unique/total) for an account
+   */
+  async accountGetViewStats(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AccountGetViewStatsResponse> {
+    return unwrapAsync(accountAccountGetViewStats(
+      this,
+      request,
       options,
     ));
   }

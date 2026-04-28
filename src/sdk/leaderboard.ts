@@ -7,6 +7,7 @@ import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
 import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
 import { leaderboardGetLowestRanks } from "../funcs/leaderboardGetLowestRanks.js";
+import { leaderboardLeaderboardGetBucketLeaders } from "../funcs/leaderboardLeaderboardGetBucketLeaders.js";
 import { leaderboardLeaderboardGetChanges } from "../funcs/leaderboardLeaderboardGetChanges.js";
 import { leaderboardPreviewAccountRank } from "../funcs/leaderboardPreviewAccountRank.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -37,6 +38,20 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardGetAccountsMetaResponse> {
     return unwrapAsync(leaderboardGetAccountsMeta(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get the top account in each level bucket
+   */
+  async leaderboardGetBucketLeaders(
+    request: components.V1LeaderboardGetBucketLeadersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.LeaderboardGetBucketLeadersResponse> {
+    return unwrapAsync(leaderboardLeaderboardGetBucketLeaders(
       this,
       request,
       options,

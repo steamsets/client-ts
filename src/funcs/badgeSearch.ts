@@ -91,11 +91,19 @@ async function $do(
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
+    "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
+      explode: false,
+      charEncoding: "none",
+    }),
     "X-Forwarded-For": encodeSimple(
       "X-Forwarded-For",
       payload["X-Forwarded-For"],
       { explode: false, charEncoding: "none" },
     ),
+    "X-Visitor-Id": encodeSimple("X-Visitor-Id", payload["X-Visitor-Id"], {
+      explode: false,
+      charEncoding: "none",
+    }),
   }));
 
   const secConfig = await extractSecurity(client._options.token);

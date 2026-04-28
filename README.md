@@ -89,6 +89,8 @@ run();
 * [getMeta](docs/sdks/account/README.md#getmeta) - Get account metadata
 * [getSession](docs/sdks/account/README.md#getsession) - Get user session information
 * [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
+* [accountGetTrending](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
+* [accountGetViewStats](docs/sdks/account/README.md#accountgetviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 * [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
@@ -141,6 +143,10 @@ run();
 * [adminUpdateRoleOverride](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
 
+### [Analytics](docs/sdks/analytics/README.md)
+
+* [trackEvent](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+
 ### [Apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
@@ -163,6 +169,7 @@ run();
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
+* [leaderboardGetBucketLeaders](docs/sdks/leaderboard/README.md#leaderboardgetbucketleaders) - Get the top account in each level bucket
 * [leaderboardGetChanges](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
@@ -176,6 +183,10 @@ run();
 ### [Location](docs/sdks/location/README.md)
 
 * [get](docs/sdks/location/README.md#get) - List available locations
+
+### [Search](docs/sdks/search/README.md)
+
+* [searchGetTrending](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 
 ### [Staff](docs/sdks/staff/README.md)
 
@@ -579,6 +590,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 - [`accountAccountFindFriendPath`](docs/sdks/account/README.md#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
 - [`accountAccountGetBadgeHeatmap`](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
+- [`accountAccountGetTrending`](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
+- [`accountAccountGetViewStats`](docs/sdks/account/README.md#accountgetviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 - [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -637,6 +650,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
+- [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
@@ -648,10 +662,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
+- [`leaderboardLeaderboardGetBucketLeaders`](docs/sdks/leaderboard/README.md#leaderboardgetbucketleaders) - Get the top account in each level bucket
 - [`leaderboardLeaderboardGetChanges`](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
+- [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 - [`vanityVanityVerify`](docs/sdks/vanity/README.md#vanityverify) - Live-verify a Steam vanity URL against Steam

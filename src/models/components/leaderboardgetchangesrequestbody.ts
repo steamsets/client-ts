@@ -61,7 +61,7 @@ export type Metric = ClosedEnum<typeof Metric>;
 /**
  * Lookback window for the delta.
  */
-export const Window = {
+export const LeaderboardGetChangesRequestBodyWindow = {
   TwentyFourh: "24h",
   Sevend: "7d",
   Thirtyd: "30d",
@@ -71,7 +71,9 @@ export const Window = {
 /**
  * Lookback window for the delta.
  */
-export type Window = ClosedEnum<typeof Window>;
+export type LeaderboardGetChangesRequestBodyWindow = ClosedEnum<
+  typeof LeaderboardGetChangesRequestBodyWindow
+>;
 
 export type LeaderboardGetChangesRequestBody = {
   /**
@@ -93,7 +95,7 @@ export type LeaderboardGetChangesRequestBody = {
   /**
    * Lookback window for the delta.
    */
-  window: Window;
+  window: LeaderboardGetChangesRequestBodyWindow;
 };
 
 /** @internal */
@@ -111,8 +113,10 @@ export const Metric$outboundSchema: z.ZodNativeEnum<typeof Metric> = z
   .nativeEnum(Metric);
 
 /** @internal */
-export const Window$outboundSchema: z.ZodNativeEnum<typeof Window> = z
-  .nativeEnum(Window);
+export const LeaderboardGetChangesRequestBodyWindow$outboundSchema:
+  z.ZodNativeEnum<typeof LeaderboardGetChangesRequestBodyWindow> = z.nativeEnum(
+    LeaderboardGetChangesRequestBodyWindow,
+  );
 
 /** @internal */
 export type LeaderboardGetChangesRequestBody$Outbound = {
@@ -133,7 +137,7 @@ export const LeaderboardGetChangesRequestBody$outboundSchema: z.ZodType<
   leaderboard: LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema,
   limit: z.number().int().optional(),
   metric: Metric$outboundSchema,
-  window: Window$outboundSchema,
+  window: LeaderboardGetChangesRequestBodyWindow$outboundSchema,
 });
 
 export function leaderboardGetChangesRequestBodyToJSON(
