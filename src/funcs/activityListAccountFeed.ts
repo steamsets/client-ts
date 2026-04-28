@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get profile view counts (24h/7d/30d × unique/total) for an account
+ * List the activity feed for a single account (profile timeline)
  */
-export function accountAccountGetViewStats(
+export function activityListAccountFeed(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1ActivityListAccountFeedRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountGetViewStatsResponse,
+    operations.ListAccountFeedResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function accountAccountGetViewStats(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1ActivityListAccountFeedRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountGetViewStatsResponse,
+      operations.ListAccountFeedResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,7 +78,10 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) =>
+      components.V1ActivityListAccountFeedRequestBody$outboundSchema.parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -87,7 +90,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.getViewStats")();
+  const path = pathToFunc("/v1/activity.listAccountFeed")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -101,7 +104,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.getViewStats",
+    operationID: "listAccountFeed",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -156,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountGetViewStatsResponse,
+    operations.ListAccountFeedResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -167,10 +170,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountGetViewStatsResponse$inboundSchema, {
-      key: "AccountViewStats",
+    M.json(200, operations.ListAccountFeedResponse$inboundSchema, {
+      key: "V1ActivityListAccountFeedResponseBody",
     }),
-    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

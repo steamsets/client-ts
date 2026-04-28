@@ -1,11 +1,11 @@
-# ActivityListAccountFeedResponse
+# ListAccountFeedResponse
 
 ## Example Usage
 
 ```typescript
-import { ActivityListAccountFeedResponse } from "@steamsets/client-ts/models/operations";
+import { ListAccountFeedResponse } from "@steamsets/client-ts/models/operations";
 
-let value: ActivityListAccountFeedResponse = {};
+let value: ListAccountFeedResponse = {};
 ```
 
 ## Fields

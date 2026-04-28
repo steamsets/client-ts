@@ -90,7 +90,7 @@ run();
 * [getSession](docs/sdks/account/README.md#getsession) - Get user session information
 * [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
 * [accountGetTrending](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
-* [accountGetViewStats](docs/sdks/account/README.md#accountgetviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
+* [getViewStats](docs/sdks/account/README.md#getviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 * [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
@@ -120,7 +120,7 @@ run();
 
 ### [Activity](docs/sdks/activity/README.md)
 
-* [activityListAccountFeed](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
+* [listAccountFeed](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 * [listGlobalFeed](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 * [streamGlobalFeed](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
@@ -169,8 +169,8 @@ run();
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 * [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
-* [leaderboardGetBucketLeaders](docs/sdks/leaderboard/README.md#leaderboardgetbucketleaders) - Get the top account in each level bucket
-* [leaderboardGetChanges](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
+* [getBucketLeaders](docs/sdks/leaderboard/README.md#getbucketleaders) - Get the top account in each value bucket
+* [getChanges](docs/sdks/leaderboard/README.md#getchanges) - Top movers in a windowed delta on a leaderboard
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 * [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 * [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
@@ -591,7 +591,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountAccountFindFriendPath`](docs/sdks/account/README.md#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
 - [`accountAccountGetBadgeHeatmap`](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
 - [`accountAccountGetTrending`](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
-- [`accountAccountGetViewStats`](docs/sdks/account/README.md#accountgetviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 - [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -606,6 +605,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetMeta`](docs/sdks/account/README.md#getmeta) - Get account metadata
 - [`accountGetSession`](docs/sdks/account/README.md#getsession) - Get user session information
 - [`accountGetSettings`](docs/sdks/account/README.md#getsettings) - Get account settings
+- [`accountGetViewStats`](docs/sdks/account/README.md#getviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 - [`accountListApps`](docs/sdks/account/README.md#listapps) - List account owned apps
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
@@ -631,7 +631,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
-- [`activityActivityListAccountFeed`](docs/sdks/activity/README.md#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
+- [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
@@ -659,11 +659,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`cmsList`](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
+- [`leaderboardGetBucketLeaders`](docs/sdks/leaderboard/README.md#getbucketleaders) - Get the top account in each value bucket
+- [`leaderboardGetChanges`](docs/sdks/leaderboard/README.md#getchanges) - Top movers in a windowed delta on a leaderboard
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
 - [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
-- [`leaderboardLeaderboardGetBucketLeaders`](docs/sdks/leaderboard/README.md#leaderboardgetbucketleaders) - Get the top account in each level bucket
-- [`leaderboardLeaderboardGetChanges`](docs/sdks/leaderboard/README.md#leaderboardgetchanges) - Top movers in a windowed delta on a leaderboard
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations

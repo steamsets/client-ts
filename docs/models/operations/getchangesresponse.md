@@ -1,11 +1,11 @@
-# LeaderboardGetChangesResponse
+# GetChangesResponse
 
 ## Example Usage
 
 ```typescript
-import { LeaderboardGetChangesResponse } from "@steamsets/client-ts/models/operations";
+import { GetChangesResponse } from "@steamsets/client-ts/models/operations";
 
-let value: LeaderboardGetChangesResponse = {};
+let value: GetChangesResponse = {};
 ```
 
 ## Fields

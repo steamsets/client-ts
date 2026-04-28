@@ -1,6 +1,6 @@
 # V1LeaderboardGetBucketLeadersRequestBodyLeaderboard
 
-Currently only XP is supported.
+xp buckets by level; apps buckets by the game-collector badge thresholds.
 
 ## Example Usage
 
@@ -13,5 +13,5 @@ let value: V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = "xp";
 ## Values
 
 ```typescript
-"xp"
+"xp" | "apps"
 ```

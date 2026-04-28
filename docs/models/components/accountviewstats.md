@@ -7,12 +7,12 @@ import { AccountViewStats } from "@steamsets/client-ts/models/components";
 
 let value: AccountViewStats = {
   dollarSchema: "https://api.steamsets.com/schemas/AccountViewStats.json",
-  total24h: 339275,
-  total30d: 820459,
-  total7d: 276663,
-  unique24h: 552954,
-  unique30d: 434768,
-  unique7d: 550318,
+  total24h: 91121,
+  total30d: 110243,
+  total7d: 600334,
+  unique24h: 484338,
+  unique30d: 71201,
+  unique7d: 741770,
 };
 ```
 

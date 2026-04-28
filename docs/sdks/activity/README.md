@@ -4,17 +4,17 @@
 
 ### Available Operations
 
-* [activityListAccountFeed](#activitylistaccountfeed) - List the activity feed for a single account (profile timeline)
+* [listAccountFeed](#listaccountfeed) - List the activity feed for a single account (profile timeline)
 * [listGlobalFeed](#listglobalfeed) - List the global activity feed
 * [streamGlobalFeed](#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
-## activityListAccountFeed
+## listAccountFeed
 
 List the activity feed for a single account (profile timeline)
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="activity.listAccountFeed" method="post" path="/v1/activity.listAccountFeed" -->
+<!-- UsageSnippet language="typescript" operationID="listAccountFeed" method="post" path="/v1/activity.listAccountFeed" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -23,8 +23,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.activityListAccountFeed({
-    accountId: 368304,
+  const result = await steamSets.activity.listAccountFeed({
+    accountId: 607533,
   });
 
   console.log(result);
@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { activityActivityListAccountFeed } from "@steamsets/client-ts/funcs/activityActivityListAccountFeed.js";
+import { activityListAccountFeed } from "@steamsets/client-ts/funcs/activityListAccountFeed.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -48,14 +48,14 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await activityActivityListAccountFeed(steamSets, {
-    accountId: 368304,
+  const res = await activityListAccountFeed(steamSets, {
+    accountId: 607533,
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("activityActivityListAccountFeed failed:", res.error);
+    console.log("activityListAccountFeed failed:", res.error);
   }
 }
 
@@ -73,7 +73,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.ActivityListAccountFeedResponse](../../models/operations/activitylistaccountfeedresponse.md)\>**
+**Promise\<[operations.ListAccountFeedResponse](../../models/operations/listaccountfeedresponse.md)\>**
 
 ### Errors
 

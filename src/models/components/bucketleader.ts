@@ -19,23 +19,15 @@ export type BucketLeader = {
    */
   empty: boolean;
   /**
-   * Inclusive bucket lower bound (level)
+   * Inclusive bucket lower bound in the leaderboard's native unit (level for xp, game count for apps)
    */
-  fromLevel: number;
-  /**
-   * XP required for fromLevel
-   */
-  fromXp: number;
+  from: number;
   rank?: number | undefined;
   score?: number | undefined;
   /**
-   * Inclusive bucket upper bound (level)
+   * Inclusive bucket upper bound in the leaderboard's native unit
    */
-  toLevel: number;
-  /**
-   * XP required for toLevel+1, minus 1 — i.e. the cap of this bucket
-   */
-  toXp: number;
+  to: number;
 };
 
 /** @internal */
@@ -47,12 +39,10 @@ export const BucketLeader$inboundSchema: z.ZodType<
   account: z.nullable(LeaderboardAccount$inboundSchema).optional(),
   accountId: z.number().int().optional(),
   empty: z.boolean(),
-  fromLevel: z.number().int(),
-  fromXp: z.number().int(),
+  from: z.number().int(),
   rank: z.number().int().optional(),
   score: z.number().int().optional(),
-  toLevel: z.number().int(),
-  toXp: z.number().int(),
+  to: z.number().int(),
 });
 
 export function bucketLeaderFromJSON(
