@@ -2,6 +2,8 @@
 
 ## Overview
 
+Cross-resource search and trending data.
+
 ### Available Operations
 
 * [searchGetTrending](#searchgettrending) - Top search queries in a window, by unique searcher count

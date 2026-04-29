@@ -2,6 +2,8 @@
 
 ## Overview
 
+API key and developer analytics.
+
 ### Available Operations
 
 * [trackEvent](#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.

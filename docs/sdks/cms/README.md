@@ -2,6 +2,8 @@
 
 ## Overview
 
+CMS-backed content (articles, previews, admin authoring).
+
 ### Available Operations
 
 * [list](#list) - List published CMS documents of a given type

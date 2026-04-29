@@ -11,6 +11,7 @@ import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Cms } from "./cms.js";
+import { Item } from "./item.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
@@ -58,6 +59,11 @@ export class SteamSets extends ClientSDK {
   private _cms?: Cms;
   get cms(): Cms {
     return (this._cms ??= new Cms(this._options));
+  }
+
+  private _item?: Item;
+  get item(): Item {
+    return (this._item ??= new Item(this._options));
   }
 
   private _leaderboard?: Leaderboard;
