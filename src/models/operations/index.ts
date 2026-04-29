@@ -69,6 +69,7 @@ export * from "./comparebadges.js";
 export * from "./getbucketleaders.js";
 export * from "./getchanges.js";
 export * from "./getviewstats.js";
+export * from "./itemfindowners.js";
 export * from "./leaderboardgetaccountleaderboard.js";
 export * from "./leaderboardgetaccountsmeta.js";
 export * from "./leaderboardgetgroupleaderboard.js";

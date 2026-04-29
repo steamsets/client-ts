@@ -2,6 +2,8 @@
 
 ## Overview
 
+Activity feed events.
+
 ### Available Operations
 
 * [listAccountFeed](#listaccountfeed) - List the activity feed for a single account (profile timeline)

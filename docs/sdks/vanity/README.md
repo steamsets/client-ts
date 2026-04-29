@@ -2,6 +2,8 @@
 
 ## Overview
 
+SteamSets vanity URLs.
+
 ### Available Operations
 
 * [vanityVerify](#vanityverify) - Live-verify a Steam vanity URL against Steam

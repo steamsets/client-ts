@@ -166,6 +166,10 @@ run();
 
 * [list](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 
+### [Item](docs/sdks/item/README.md)
+
+* [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs, with friend paths from the requester
+
 ### [Leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
@@ -659,6 +663,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 - [`cmsList`](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
+- [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs, with friend paths from the requester
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
 - [`leaderboardGetBucketLeaders`](docs/sdks/leaderboard/README.md#getbucketleaders) - Get the top account in each value bucket
