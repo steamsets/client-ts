@@ -24,7 +24,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.vanity.vanityVerify({
-    requestBody: {
+    v1VanityVerifyRequestBody: {
       vanity: "abc",
     },
   });
@@ -51,7 +51,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await vanityVanityVerify(steamSets, {
-    requestBody: {
+    v1VanityVerifyRequestBody: {
       vanity: "abc",
     },
   });

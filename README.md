@@ -138,7 +138,15 @@ run();
 * [cmsUpdateDraft](docs/sdks/admin/README.md#cmsupdatedraft) - Append a new draft version to an existing CMS document
 * [cmsUploadImage](docs/sdks/admin/README.md#cmsuploadimage) - Upload a CMS image (partner logos, page hero, etc.) to S3/MinIO
 * [cmsVersions](docs/sdks/admin/README.md#cmsversions) - List the version history of a CMS document (newest first)
+* [adminDonationsCreateCurrency](docs/sdks/admin/README.md#admindonationscreatecurrency) - Add a currency to the donation whitelist
+* [adminDonationsDeleteCurrency](docs/sdks/admin/README.md#admindonationsdeletecurrency) - Soft-delete a donation currency (sets active=0)
+* [adminDonationsListCurrencies](docs/sdks/admin/README.md#admindonationslistcurrencies) - List every donation currency (active + soft-deleted) for admin management
+* [adminDonationsUpdateCurrency](docs/sdks/admin/README.md#admindonationsupdatecurrency) - Update a donation currency (treasury, decimals, etc.); chain+contract are immutable
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
+* [adminMaintenanceCreate](docs/sdks/admin/README.md#adminmaintenancecreate) - Create a maintenance event
+* [adminMaintenanceDelete](docs/sdks/admin/README.md#adminmaintenancedelete) - Hard-delete a maintenance event
+* [adminMaintenanceList](docs/sdks/admin/README.md#adminmaintenancelist) - Admin: list every maintenance event including disabled and scheduled
+* [adminMaintenanceUpdate](docs/sdks/admin/README.md#adminmaintenanceupdate) - Update a maintenance event (any subset of fields)
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
 * [adminUpdateRoleOverride](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
@@ -166,6 +174,12 @@ run();
 
 * [list](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 
+### [Donations](docs/sdks/donations/README.md)
+
+* [donationsClaim](docs/sdks/donations/README.md#donationsclaim) - Claim a crypto donation by tx hash + signed message
+* [donationsGetAddresses](docs/sdks/donations/README.md#donationsgetaddresses) - Get the treasury addresses to send crypto donations to
+* [donationsListSupportedCurrencies](docs/sdks/donations/README.md#donationslistsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
+
 ### [Item](docs/sdks/item/README.md)
 
 * [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs, with friend paths from the requester
@@ -188,6 +202,10 @@ run();
 ### [Location](docs/sdks/location/README.md)
 
 * [get](docs/sdks/location/README.md#get) - List available locations
+
+### [Maintenance](docs/sdks/maintenance/README.md)
+
+* [list](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 
 ### [Search](docs/sdks/search/README.md)
 
@@ -242,6 +260,38 @@ run();
 [mdn-sse]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
 [mdn-for-await-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of
 <!-- End Server-sent event streaming [eventstream] -->
+
+<!-- Start Pagination [pagination] -->
+## Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you
+make your SDK calls as usual, but the returned response object will also be an
+async iterable that can be consumed using the [`for await...of`][for-await-of]
+syntax.
+
+[for-await-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of
+
+Here's an example of one such pagination call:
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.cmsListAssets({});
+
+  for await (const page of result) {
+    console.log(page);
+  }
+}
+
+run();
+
+```
+<!-- End Pagination [pagination] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -368,7 +418,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](./src/models/errors/errormodel.ts): Bad Request. *
+  * [`ErrorModel`](./src/models/errors/errormodel.ts): *
 
 <details><summary>Less common errors (6)</summary>
 
@@ -640,6 +690,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
+- [`adminAdminDonationsCreateCurrency`](docs/sdks/admin/README.md#admindonationscreatecurrency) - Add a currency to the donation whitelist
+- [`adminAdminDonationsDeleteCurrency`](docs/sdks/admin/README.md#admindonationsdeletecurrency) - Soft-delete a donation currency (sets active=0)
+- [`adminAdminDonationsListCurrencies`](docs/sdks/admin/README.md#admindonationslistcurrencies) - List every donation currency (active + soft-deleted) for admin management
+- [`adminAdminDonationsUpdateCurrency`](docs/sdks/admin/README.md#admindonationsupdatecurrency) - Update a donation currency (treasury, decimals, etc.); chain+contract are immutable
+- [`adminAdminMaintenanceCreate`](docs/sdks/admin/README.md#adminmaintenancecreate) - Create a maintenance event
+- [`adminAdminMaintenanceDelete`](docs/sdks/admin/README.md#adminmaintenancedelete) - Hard-delete a maintenance event
+- [`adminAdminMaintenanceList`](docs/sdks/admin/README.md#adminmaintenancelist) - Admin: list every maintenance event including disabled and scheduled
+- [`adminAdminMaintenanceUpdate`](docs/sdks/admin/README.md#adminmaintenanceupdate) - Update a maintenance event (any subset of fields)
 - [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
 - [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 - [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
@@ -663,6 +721,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 - [`cmsList`](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
+- [`donationsDonationsClaim`](docs/sdks/donations/README.md#donationsclaim) - Claim a crypto donation by tx hash + signed message
+- [`donationsDonationsGetAddresses`](docs/sdks/donations/README.md#donationsgetaddresses) - Get the treasury addresses to send crypto donations to
+- [`donationsDonationsListSupportedCurrencies`](docs/sdks/donations/README.md#donationslistsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs, with friend paths from the requester
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
@@ -674,6 +735,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
+- [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 - [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
@@ -713,6 +775,7 @@ const sdk = new SteamSets({ debugLogger: console });
   * [SDK Example Usage](#sdk-example-usage)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Server-sent event streaming](#server-sent-event-streaming)
+  * [Pagination](#pagination)
   * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)

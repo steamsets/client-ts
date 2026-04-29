@@ -84,7 +84,9 @@ async function $do(
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.RequestBody, { explode: true });
+  const body = encodeJSON("body", payload.V1VanityVerifyRequestBody, {
+    explode: true,
+  });
 
   const path = pathToFunc("/v1/vanity.verify")();
 
@@ -172,7 +174,7 @@ async function $do(
     | SDKValidationError
   >(
     M.json(200, operations.VanityVerifyResponse$inboundSchema, {
-      key: "ResponseBody",
+      key: "V1VanityVerifyResponseBody",
     }),
     M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

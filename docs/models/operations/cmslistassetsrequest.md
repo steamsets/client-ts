@@ -13,3 +13,4 @@ let value: CmsListAssetsRequest = {};
 | Field                                     | Type                                      | Required                                  | Description                               |
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | `limit`                                   | *number*                                  | :heavy_minus_sign:                        | Max rows to return (default 100, max 500) |
+| `offset`                                  | *number*                                  | :heavy_minus_sign:                        | Skip this many rows (for paginated calls) |

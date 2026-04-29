@@ -11,10 +11,12 @@ import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Cms } from "./cms.js";
+import { Donations } from "./donations.js";
 import { Item } from "./item.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
+import { Maintenance } from "./maintenance.js";
 import { Search } from "./search.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
@@ -61,6 +63,11 @@ export class SteamSets extends ClientSDK {
     return (this._cms ??= new Cms(this._options));
   }
 
+  private _donations?: Donations;
+  get donations(): Donations {
+    return (this._donations ??= new Donations(this._options));
+  }
+
   private _item?: Item;
   get item(): Item {
     return (this._item ??= new Item(this._options));
@@ -79,6 +86,11 @@ export class SteamSets extends ClientSDK {
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _maintenance?: Maintenance;
+  get maintenance(): Maintenance {
+    return (this._maintenance ??= new Maintenance(this._options));
   }
 
   private _search?: Search;
