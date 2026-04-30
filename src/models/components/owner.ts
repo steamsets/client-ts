@@ -18,6 +18,10 @@ export type Owner = {
    */
   amount: number;
   /**
+   * A representative asset id for deep-linking into the owner's inventory (#{appId}_{contextId}_{assetId})
+   */
+  assetId: number;
+  /**
    * Number of hops from requester to owner
    */
   distance?: number | undefined;
@@ -36,6 +40,7 @@ export const Owner$inboundSchema: z.ZodType<Owner, z.ZodTypeDef, unknown> = z
   .object({
     account: z.nullable(LeaderboardAccount$inboundSchema),
     amount: z.number().int(),
+    assetId: z.number().int(),
     distance: z.number().int().optional(),
     path: z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema)))
       .optional(),

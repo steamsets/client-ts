@@ -22,8 +22,21 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
+import { SteamSetsDonations } from "./steamsetsdonations.js";
+import { SteamSetsMaintenance } from "./steamsetsmaintenance.js";
 
 export class Admin extends ClientSDK {
+  private _donations?: SteamSetsDonations;
+  get donations(): SteamSetsDonations {
+    return (this._donations ??= new SteamSetsDonations(this._options));
+  }
+
+  private _maintenance?: SteamSetsMaintenance;
+  get maintenance(): SteamSetsMaintenance {
+    return (this._maintenance ??= new SteamSetsMaintenance(this._options));
+  }
+
   /**
    * Archive a CMS document so it stops appearing in public reads (versions retained)
    */
@@ -89,8 +102,10 @@ export class Admin extends ClientSDK {
   async cmsListAssets(
     request: operations.CmsListAssetsRequest,
     options?: RequestOptions,
-  ): Promise<operations.CmsListAssetsResponse> {
-    return unwrapAsync(adminCmsListAssets(
+  ): Promise<
+    PageIterator<operations.CmsListAssetsResponse, { offset: number }>
+  > {
+    return unwrapResultIterator(adminCmsListAssets(
       this,
       request,
       options,

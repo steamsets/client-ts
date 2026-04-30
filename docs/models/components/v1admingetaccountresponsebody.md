@@ -29,7 +29,7 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "short_link_domain",
+      resource: "max_find_owners",
       value: "1",
     },
   ],

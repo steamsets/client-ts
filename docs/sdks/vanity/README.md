@@ -6,9 +6,9 @@ SteamSets vanity URLs.
 
 ### Available Operations
 
-* [vanityVerify](#vanityverify) - Live-verify a Steam vanity URL against Steam
+* [verify](#verify) - Live-verify a Steam vanity URL against Steam
 
-## vanityVerify
+## verify
 
 Live-verify a Steam vanity URL against Steam
 
@@ -23,8 +23,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.vanity.vanityVerify({
-    requestBody: {
+  const result = await steamSets.vanity.verify({
+    v1VanityVerifyRequestBody: {
       vanity: "abc",
     },
   });
@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { vanityVanityVerify } from "@steamsets/client-ts/funcs/vanityVanityVerify.js";
+import { vanityVerify } from "@steamsets/client-ts/funcs/vanityVerify.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -50,8 +50,8 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await vanityVanityVerify(steamSets, {
-    requestBody: {
+  const res = await vanityVerify(steamSets, {
+    v1VanityVerifyRequestBody: {
       vanity: "abc",
     },
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("vanityVanityVerify failed:", res.error);
+    console.log("vanityVerify failed:", res.error);
   }
 }
 

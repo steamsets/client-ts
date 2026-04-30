@@ -11,6 +11,10 @@ import { Owner, Owner$inboundSchema } from "./owner.js";
 export type ItemOwners = {
   classId: number;
   owners: Array<Owner> | null;
+  /**
+   * Total accounts that own at least one copy of this item
+   */
+  totalOwners: number;
 };
 
 /** @internal */
@@ -21,6 +25,7 @@ export const ItemOwners$inboundSchema: z.ZodType<
 > = z.object({
   classId: z.number().int(),
   owners: z.nullable(z.array(Owner$inboundSchema)),
+  totalOwners: z.number().int(),
 });
 
 export function itemOwnersFromJSON(

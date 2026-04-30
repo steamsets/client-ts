@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "social_links",
+  resource: "vanity",
   value: "1",
 };
 ```

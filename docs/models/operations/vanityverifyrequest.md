@@ -6,7 +6,7 @@
 import { VanityVerifyRequest } from "@steamsets/client-ts/models/operations";
 
 let value: VanityVerifyRequest = {
-  requestBody: {
+  v1VanityVerifyRequestBody: {
     vanity: "abc",
   },
 };
@@ -14,7 +14,7 @@ let value: VanityVerifyRequest = {
 
 ## Fields
 
-| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `xForwardedFor`                                                  | *string*                                                         | :heavy_minus_sign:                                               | N/A                                                              |
-| `requestBody`                                                    | [components.RequestBody](../../models/components/requestbody.md) | :heavy_check_mark:                                               | N/A                                                              |
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `xForwardedFor`                                                                              | *string*                                                                                     | :heavy_minus_sign:                                                                           | N/A                                                                                          |
+| `v1VanityVerifyRequestBody`                                                                  | [components.V1VanityVerifyRequestBody](../../models/components/v1vanityverifyrequestbody.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |

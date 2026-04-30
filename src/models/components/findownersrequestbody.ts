@@ -10,11 +10,15 @@ export type FindOwnersRequestBody = {
    */
   itemIds: Array<number> | null;
   /**
-   * Friend-path depth limit (default 4, max 6)
+   * Friend-path depth limit (default 4, max 6); ignored when not logged in
    */
   maxDepth?: number | undefined;
   /**
-   * Max owners returned per item (default 10, max 25)
+   * Number of owners to skip per item, for pagination
+   */
+  offset?: number | undefined;
+  /**
+   * Page size, max owners returned per item (default 10, max 25)
    */
   ownersPerItem?: number | undefined;
 };
@@ -23,6 +27,7 @@ export type FindOwnersRequestBody = {
 export type FindOwnersRequestBody$Outbound = {
   itemIds: Array<number> | null;
   maxDepth?: number | undefined;
+  offset?: number | undefined;
   ownersPerItem?: number | undefined;
 };
 
@@ -34,6 +39,7 @@ export const FindOwnersRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   itemIds: z.nullable(z.array(z.number().int())),
   maxDepth: z.number().int().optional(),
+  offset: z.number().int().optional(),
   ownersPerItem: z.number().int().optional(),
 });
 
