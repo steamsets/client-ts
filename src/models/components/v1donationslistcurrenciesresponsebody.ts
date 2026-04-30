@@ -7,50 +7,37 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { CurrencyOut, CurrencyOut$inboundSchema } from "./currencyout.js";
 
-export type ResponseBody = {
+export type V1DonationsListCurrenciesResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  /**
-   * set when status is "taken"
-   */
-  accountId?: number | undefined;
-  /**
-   * "free" or "taken"
-   */
-  status: string;
-  vanity: string;
-  /**
-   * unix ms of the live check
-   */
-  verifiedAt: number;
+  currencies: Array<CurrencyOut> | null;
 };
 
 /** @internal */
-export const ResponseBody$inboundSchema: z.ZodType<
-  ResponseBody,
+export const V1DonationsListCurrenciesResponseBody$inboundSchema: z.ZodType<
+  V1DonationsListCurrenciesResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  accountId: z.number().int().optional(),
-  status: z.string(),
-  vanity: z.string(),
-  verifiedAt: z.number().int(),
+  currencies: z.nullable(z.array(CurrencyOut$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
   });
 });
 
-export function responseBodyFromJSON(
+export function v1DonationsListCurrenciesResponseBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ResponseBody, SDKValidationError> {
+): SafeParseResult<V1DonationsListCurrenciesResponseBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBody' from JSON`,
+    (x) =>
+      V1DonationsListCurrenciesResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'V1DonationsListCurrenciesResponseBody' from JSON`,
   );
 }

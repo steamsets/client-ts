@@ -71,6 +71,7 @@ let value: Owner = {
     xp: 123456,
   },
   amount: 425941,
+  assetId: 982501,
   path: [
     {
       animatedAvatar: "<value>",
@@ -122,16 +123,17 @@ let value: Owner = {
       xp: 123456,
     },
   ],
-  pathFound: true,
+  pathFound: false,
 };
 ```
 
 ## Fields
 
-| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `account`                                                                        | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)   | :heavy_check_mark:                                                               | N/A                                                                              |
-| `amount`                                                                         | *number*                                                                         | :heavy_check_mark:                                                               | Number of copies owned                                                           |
-| `distance`                                                                       | *number*                                                                         | :heavy_minus_sign:                                                               | Number of hops from requester to owner                                           |
-| `path`                                                                           | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)[] | :heavy_minus_sign:                                                               | Accounts from requester (first) to owner (last), inclusive                       |
-| `pathFound`                                                                      | *boolean*                                                                        | :heavy_check_mark:                                                               | Whether a friend path was found within maxDepth                                  |
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `account`                                                                                              | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                         | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `amount`                                                                                               | *number*                                                                                               | :heavy_check_mark:                                                                                     | Number of copies owned                                                                                 |
+| `assetId`                                                                                              | *number*                                                                                               | :heavy_check_mark:                                                                                     | A representative asset id for deep-linking into the owner's inventory (#{appId}_{contextId}_{assetId}) |
+| `distance`                                                                                             | *number*                                                                                               | :heavy_minus_sign:                                                                                     | Number of hops from requester to owner                                                                 |
+| `path`                                                                                                 | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)[]                       | :heavy_minus_sign:                                                                                     | Accounts from requester (first) to owner (last), inclusive                                             |
+| `pathFound`                                                                                            | *boolean*                                                                                              | :heavy_check_mark:                                                                                     | Whether a friend path was found within maxDepth                                                        |

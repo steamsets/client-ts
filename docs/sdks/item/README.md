@@ -6,11 +6,11 @@ Steam item catalog and ownership lookups (trading cards, booster packs).
 
 ### Available Operations
 
-* [findOwners](#findowners) - Find owners of one or more trading cards or booster packs, with friend paths from the requester
+* [findOwners](#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 
 ## findOwners
 
-Find owners of one or more trading cards or booster packs, with friend paths from the requester
+Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 
 ### Example Usage
 
@@ -87,6 +87,6 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
+| errors.ErrorModel        | 400, 422                 | application/problem+json |
 | errors.ErrorModel        | 500, 503                 | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |

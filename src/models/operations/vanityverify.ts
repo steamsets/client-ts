@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type VanityVerifyRequest = {
   xForwardedFor?: string | undefined;
-  requestBody: components.RequestBody;
+  v1VanityVerifyRequestBody: components.V1VanityVerifyRequestBody;
 };
 
 export type VanityVerifyResponse = {
@@ -19,13 +19,15 @@ export type VanityVerifyResponse = {
   /**
    * OK
    */
-  responseBody?: components.ResponseBody | undefined;
+  v1VanityVerifyResponseBody?:
+    | components.V1VanityVerifyResponseBody
+    | undefined;
 };
 
 /** @internal */
 export type VanityVerifyRequest$Outbound = {
   "X-Forwarded-For"?: string | undefined;
-  RequestBody: components.RequestBody$Outbound;
+  V1VanityVerifyRequestBody: components.V1VanityVerifyRequestBody$Outbound;
 };
 
 /** @internal */
@@ -35,11 +37,12 @@ export const VanityVerifyRequest$outboundSchema: z.ZodType<
   VanityVerifyRequest
 > = z.object({
   xForwardedFor: z.string().optional(),
-  requestBody: components.RequestBody$outboundSchema,
+  v1VanityVerifyRequestBody:
+    components.V1VanityVerifyRequestBody$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     xForwardedFor: "X-Forwarded-For",
-    requestBody: "RequestBody",
+    v1VanityVerifyRequestBody: "V1VanityVerifyRequestBody",
   });
 });
 
@@ -58,11 +61,12 @@ export const VanityVerifyResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  ResponseBody: components.ResponseBody$inboundSchema.optional(),
+  V1VanityVerifyResponseBody: components
+    .V1VanityVerifyResponseBody$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "ResponseBody": "responseBody",
+    "V1VanityVerifyResponseBody": "v1VanityVerifyResponseBody",
   });
 });
 

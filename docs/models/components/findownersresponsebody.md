@@ -11,6 +11,7 @@ let value: FindOwnersResponseBody = {
     {
       classId: 976286,
       owners: [],
+      totalOwners: 239421,
     },
   ],
 };

@@ -1,11 +1,11 @@
-# RequestBody
+# V1VanityVerifyRequestBody
 
 ## Example Usage
 
 ```typescript
-import { RequestBody } from "@steamsets/client-ts/models/components";
+import { V1VanityVerifyRequestBody } from "@steamsets/client-ts/models/components";
 
-let value: RequestBody = {
+let value: V1VanityVerifyRequestBody = {
   vanity: "abc",
 };
 ```

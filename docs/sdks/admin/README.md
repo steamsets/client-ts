@@ -346,7 +346,9 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.cmsListAssets({});
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -370,7 +372,9 @@ async function run() {
   const res = await adminCmsListAssets(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("adminCmsListAssets failed:", res.error);
   }

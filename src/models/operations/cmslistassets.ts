@@ -14,6 +14,10 @@ export type CmsListAssetsRequest = {
    * Max rows to return (default 100, max 500)
    */
   limit?: number | undefined;
+  /**
+   * Skip this many rows (for paginated calls)
+   */
+  offset?: number | undefined;
 };
 
 export type CmsListAssetsResponse = {
@@ -29,6 +33,7 @@ export type CmsListAssetsResponse = {
 /** @internal */
 export type CmsListAssetsRequest$Outbound = {
   limit?: number | undefined;
+  offset?: number | undefined;
 };
 
 /** @internal */
@@ -38,6 +43,7 @@ export const CmsListAssetsRequest$outboundSchema: z.ZodType<
   CmsListAssetsRequest
 > = z.object({
   limit: z.number().int().optional(),
+  offset: z.number().int().optional(),
 });
 
 export function cmsListAssetsRequestToJSON(

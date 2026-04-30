@@ -10,7 +10,7 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Item extends ClientSDK {
   /**
-   * Find owners of one or more trading cards or booster packs, with friend paths from the requester
+   * Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
    */
   async findOwners(
     request: components.FindOwnersRequestBody,

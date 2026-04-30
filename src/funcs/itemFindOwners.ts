@@ -28,7 +28,7 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Find owners of one or more trading cards or booster packs, with friend paths from the requester
+ * Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
  */
 export function itemFindOwners(
   client: SteamSetsCore,
@@ -170,7 +170,7 @@ async function $do(
     M.json(200, operations.ItemFindOwnersResponse$inboundSchema, {
       key: "FindOwnersResponseBody",
     }),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr([500, 503], errors.ErrorModel$inboundSchema, {
