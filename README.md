@@ -168,6 +168,7 @@ run();
 
 ### [Badge](docs/sdks/badge/README.md)
 
+* [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 * [search](docs/sdks/badge/README.md#search) - Search badges
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
@@ -224,10 +225,6 @@ run();
 ### [Stats](docs/sdks/stats/README.md)
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
-
-### [Vanity](docs/sdks/vanity/README.md)
-
-* [verify](docs/sdks/vanity/README.md#verify) - Live-verify a Steam vanity URL against Steam
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -725,6 +722,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
+- [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 - [`cmsList`](docs/sdks/cms/README.md#list) - List published CMS documents of a given type
 - [`donationsClaim`](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
@@ -745,7 +743,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
-- [`vanityVerify`](docs/sdks/vanity/README.md#verify) - Live-verify a Steam vanity URL against Steam
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

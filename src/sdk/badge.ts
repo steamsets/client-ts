@@ -3,13 +3,33 @@
  */
 
 import { badgeSearch } from "../funcs/badgeSearch.js";
+import {
+  badgeStreamPricing,
+  StreamPricingAcceptEnum,
+} from "../funcs/badgeStreamPricing.js";
 import { badgeSuggestTags } from "../funcs/badgeSuggestTags.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
+export { StreamPricingAcceptEnum } from "../funcs/badgeStreamPricing.js";
+
 export class Badge extends ClientSDK {
+  /**
+   * Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
+   */
+  async streamPricing(
+    options?: RequestOptions & {
+      acceptHeaderOverride?: StreamPricingAcceptEnum;
+    },
+  ): Promise<operations.BadgePricingSubscribeResponse> {
+    return unwrapAsync(badgeStreamPricing(
+      this,
+      options,
+    ));
+  }
+
   /**
    * Search badges
    */
