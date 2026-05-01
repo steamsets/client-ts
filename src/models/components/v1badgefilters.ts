@@ -7,6 +7,14 @@ import { Range, Range$Outbound, Range$outboundSchema } from "./range.js";
 
 export type V1BadgeFilters = {
   /**
+   * Filter to badges from these app IDs
+   */
+  appIds?: Array<number> | null | undefined;
+  /**
+   * If true, only badges where the user has reached the highest known level; if false, only badges where the user has not
+   */
+  hasHighestLevel?: boolean | null | undefined;
+  /**
    * Filter by event badges
    */
   isEvent?: boolean | null | undefined;
@@ -24,6 +32,8 @@ export type V1BadgeFilters = {
 
 /** @internal */
 export type V1BadgeFilters$Outbound = {
+  appIds?: Array<number> | null | undefined;
+  hasHighestLevel?: boolean | null | undefined;
   isEvent?: boolean | null | undefined;
   isFoil?: boolean | null | undefined;
   isSale?: boolean | null | undefined;
@@ -37,6 +47,8 @@ export const V1BadgeFilters$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1BadgeFilters
 > = z.object({
+  appIds: z.nullable(z.array(z.number().int())).optional(),
+  hasHighestLevel: z.nullable(z.boolean()).optional(),
   isEvent: z.nullable(z.boolean()).optional(),
   isFoil: z.nullable(z.boolean()).optional(),
   isSale: z.nullable(z.boolean()).optional(),

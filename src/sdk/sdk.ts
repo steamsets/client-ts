@@ -20,7 +20,6 @@ import { Maintenance } from "./maintenance.js";
 import { Search } from "./search.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
-import { Vanity } from "./vanity.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -106,10 +105,5 @@ export class SteamSets extends ClientSDK {
   private _stats?: Stats;
   get stats(): Stats {
     return (this._stats ??= new Stats(this._options));
-  }
-
-  private _vanity?: Vanity;
-  get vanity(): Vanity {
-    return (this._vanity ??= new Vanity(this._options));
   }
 }
