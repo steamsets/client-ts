@@ -26,13 +26,25 @@ export type V1AppBadge = {
    * The XP the badge gives per level
    */
   baseXp: number;
+  /**
+   * Total trading cards Steam defines for this app (per side; foil and normal share the same count)
+   */
+  cardCount: number;
   firstCompletion: Date | null;
   highestLevel: number;
   isEvent: boolean;
   isFoil: boolean;
+  /**
+   * Whether the cards needed for this badge are non-marketable on Steam (cannot be bought/sold)
+   */
+  isNmc: boolean;
   isSale: boolean;
   lastCompletion: Date | null;
   name: string;
+  /**
+   * Whether none of the cards for this badge currently have a market listing
+   */
+  noListing: boolean;
   /**
    * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
@@ -55,17 +67,20 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   badgeImage: z.string(),
   baseLevel: z.number().int(),
   baseXp: z.number().int(),
+  cardCount: z.number().int(),
   firstCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   highestLevel: z.number().int(),
   isEvent: z.boolean(),
   isFoil: z.boolean(),
+  isNmc: z.boolean(),
   isSale: z.boolean(),
   lastCompletion: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   name: z.string(),
+  noListing: z.boolean(),
   price: z.number().int(),
   scarcity: z.number().int(),
   steamId: z.number().int(),

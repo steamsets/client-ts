@@ -18,16 +18,19 @@ let value: V1AppBadge = {
   badgeImage: "<value>",
   baseLevel: 275913,
   baseXp: 768171,
-  firstCompletion: new Date("2024-02-27T13:20:22.579Z"),
+  cardCount: 838248,
+  firstCompletion: null,
   highestLevel: 568643,
   isEvent: true,
   isFoil: false,
-  isSale: false,
-  lastCompletion: new Date("2024-09-26T20:19:11.922Z"),
+  isNmc: false,
+  isSale: true,
+  lastCompletion: new Date("2026-08-17T18:46:25.248Z"),
   name: "<value>",
-  price: 875714,
-  scarcity: 977476,
-  steamId: 873525,
+  noListing: false,
+  price: 873525,
+  scarcity: 943114,
+  steamId: 437080,
 };
 ```
 
@@ -43,13 +46,16 @@ let value: V1AppBadge = {
 | `badgeImage`                                                                                                            | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `baseLevel`                                                                                                             | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | The level this badge starts at                                                                                          |
 | `baseXp`                                                                                                                | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | The XP the badge gives per level                                                                                        |
+| `cardCount`                                                                                                             | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | Total trading cards Steam defines for this app (per side; foil and normal share the same count)                         |
 | `firstCompletion`                                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                           | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `highestLevel`                                                                                                          | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `isEvent`                                                                                                               | *boolean*                                                                                                               | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `isFoil`                                                                                                                | *boolean*                                                                                                               | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
+| `isNmc`                                                                                                                 | *boolean*                                                                                                               | :heavy_check_mark:                                                                                                      | Whether the cards needed for this badge are non-marketable on Steam (cannot be bought/sold)                             |
 | `isSale`                                                                                                                | *boolean*                                                                                                               | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `lastCompletion`                                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                           | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `name`                                                                                                                  | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
+| `noListing`                                                                                                             | *boolean*                                                                                                               | :heavy_check_mark:                                                                                                      | Whether none of the cards for this badge currently have a market listing                                                |
 | ~~`price`~~                                                                                                             | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | : warning: ** DEPRECATED **: This will be removed in a future release, please migrate away from it as soon as possible. |
 | `scarcity`                                                                                                              | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `steamId`                                                                                                               | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
