@@ -5,12 +5,12 @@ Each oneOf object in the array represents one possible Server Sent Events (SSE) 
 
 ## Supported Types
 
-### `operations.EventHeartbeat`
+### `operations.ServerSentEventsEventHeartbeat`
 
 ```typescript
-const value: operations.EventHeartbeat = {
+const value: operations.ServerSentEventsEventHeartbeat = {
   data: {
-    heartbeat: 821200,
+    heartbeat: 357448,
   },
   event: "heartbeat",
 };

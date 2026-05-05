@@ -34,6 +34,7 @@ export * from "./accountreconnectconnection.js";
 export * from "./accountrefreshinventory.js";
 export * from "./accountrefreshsession.js";
 export * from "./accountsendemailverification.js";
+export * from "./accountsubscribe.js";
 export * from "./accountsubscribeemail.js";
 export * from "./accountupdateconnection.js";
 export * from "./accountupdatedeveloperapp.js";

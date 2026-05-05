@@ -36,6 +36,7 @@ import { accountReconnectConnection } from "../funcs/accountReconnectConnection.
 import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
+import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
@@ -512,6 +513,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountSendEmailVerificationResponse> {
     return unwrapAsync(accountSendEmailVerification(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Server-sent-events stream of per-account updates (queue status, view ticks).
+   */
+  async subscribe(
+    request: operations.AccountSubscribeRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountSubscribeResponse> {
+    return unwrapAsync(accountSubscribe(
       this,
       request,
       options,
