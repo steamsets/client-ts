@@ -26,7 +26,7 @@ export type EventMarketPriceTick = {
   retry?: number | undefined;
 };
 
-export type EventHeartbeat = {
+export type ServerSentEventsEventHeartbeat = {
   data: components.PricingHeartbeat;
   /**
    * The event name.
@@ -46,7 +46,7 @@ export type EventHeartbeat = {
  * Each oneOf object in the array represents one possible Server Sent Events (SSE) message, serialized as UTF-8 text according to the SSE specification.
  */
 export type BadgePricingSubscribeServerSentEvents =
-  | EventHeartbeat
+  | ServerSentEventsEventHeartbeat
   | EventMarketPriceTick;
 
 export type BadgePricingSubscribeResponse = {
@@ -55,7 +55,7 @@ export type BadgePricingSubscribeResponse = {
    * OK
    */
   serverSentEvents?:
-    | EventStream<EventHeartbeat | EventMarketPriceTick>
+    | EventStream<ServerSentEventsEventHeartbeat | EventMarketPriceTick>
     | undefined;
   /**
    * Error
@@ -93,8 +93,8 @@ export function eventMarketPriceTickFromJSON(
 }
 
 /** @internal */
-export const EventHeartbeat$inboundSchema: z.ZodType<
-  EventHeartbeat,
+export const ServerSentEventsEventHeartbeat$inboundSchema: z.ZodType<
+  ServerSentEventsEventHeartbeat,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -111,13 +111,13 @@ export const EventHeartbeat$inboundSchema: z.ZodType<
   retry: z.number().int().optional(),
 });
 
-export function eventHeartbeatFromJSON(
+export function serverSentEventsEventHeartbeatFromJSON(
   jsonString: string,
-): SafeParseResult<EventHeartbeat, SDKValidationError> {
+): SafeParseResult<ServerSentEventsEventHeartbeat, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => EventHeartbeat$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'EventHeartbeat' from JSON`,
+    (x) => ServerSentEventsEventHeartbeat$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ServerSentEventsEventHeartbeat' from JSON`,
   );
 }
 
@@ -127,7 +127,7 @@ export const BadgePricingSubscribeServerSentEvents$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => EventHeartbeat$inboundSchema),
+  z.lazy(() => ServerSentEventsEventHeartbeat$inboundSchema),
   z.lazy(() => EventMarketPriceTick$inboundSchema),
 ]);
 
@@ -155,7 +155,7 @@ export const BadgePricingSubscribeResponse$inboundSchema: z.ZodType<
         return {
           done: false,
           value: z.union([
-            z.lazy(() => EventHeartbeat$inboundSchema),
+            z.lazy(() => ServerSentEventsEventHeartbeat$inboundSchema),
             z.lazy(() => EventMarketPriceTick$inboundSchema),
           ]).parse(rawEvent),
         };

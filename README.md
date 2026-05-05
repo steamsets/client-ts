@@ -108,6 +108,7 @@ run();
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
+* [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
@@ -247,7 +248,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.streamGlobalFeed();
+  const result = await steamSets.account.subscribe({
+    accountId: 442779,
+  });
 
   if (result.serverSentEvents == null) {
     throw new Error("failed to create stream: received null value");
@@ -681,6 +684,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
+- [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
