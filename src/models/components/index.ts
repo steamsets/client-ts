@@ -42,6 +42,8 @@ export * from "./developerappanalyticstimeseriespoint.js";
 export * from "./errordetail.js";
 export * from "./errormodel.js";
 export * from "./eventmarketpricetickdata.js";
+export * from "./eventstatsheartbeatdata.js";
+export * from "./eventstatsupdateddata.js";
 export * from "./findownersrequestbody.js";
 export * from "./findownersresponsebody.js";
 export * from "./friendpath.js";
