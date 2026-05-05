@@ -3,9 +3,15 @@
  */
 
 import { statsGet } from "../funcs/statsGet.js";
+import {
+  statsSubscribe,
+  SubscribeAcceptEnum,
+} from "../funcs/statsSubscribe.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+
+export { SubscribeAcceptEnum } from "../funcs/statsSubscribe.js";
 
 export class Stats extends ClientSDK {
   /**
@@ -15,6 +21,18 @@ export class Stats extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.StatsGetStatsResponse> {
     return unwrapAsync(statsGet(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
+   */
+  async subscribe(
+    options?: RequestOptions & { acceptHeaderOverride?: SubscribeAcceptEnum },
+  ): Promise<operations.StatsSubscribeResponse> {
+    return unwrapAsync(statsSubscribe(
       this,
       options,
     ));

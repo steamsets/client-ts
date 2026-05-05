@@ -225,6 +225,7 @@ run();
 ### [Stats](docs/sdks/stats/README.md)
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
+* [subscribe](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -743,6 +744,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
+- [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

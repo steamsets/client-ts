@@ -97,5 +97,6 @@ export * from "./maintenancelist.js";
 export * from "./searchgettrending.js";
 export * from "./staffliststaff.js";
 export * from "./statsgetstats.js";
+export * from "./statssubscribe.js";
 export * from "./streamglobalfeed.js";
 export * from "./trackevent.js";
