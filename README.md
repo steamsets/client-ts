@@ -219,6 +219,10 @@ run();
 
 * [searchGetTrending](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 
+### [Site](docs/sdks/site/README.md)
+
+* [subscribe](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
+
 ### [Staff](docs/sdks/staff/README.md)
 
 * [list](docs/sdks/staff/README.md#list) - List staff members
@@ -746,6 +750,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 - [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
+- [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 - [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.

@@ -18,6 +18,7 @@ import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
 import { Maintenance } from "./maintenance.js";
 import { Search } from "./search.js";
+import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
 
@@ -95,6 +96,11 @@ export class SteamSets extends ClientSDK {
   private _search?: Search;
   get search(): Search {
     return (this._search ??= new Search(this._options));
+  }
+
+  private _site?: Site;
+  get site(): Site {
+    return (this._site ??= new Site(this._options));
   }
 
   private _staff?: Staff;

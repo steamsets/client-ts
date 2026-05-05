@@ -1,12 +1,12 @@
-# Heartbeat
+# AccountSubscribeHeartbeat
 
 ## Example Usage
 
 ```typescript
-import { Heartbeat } from "@steamsets/client-ts/models/components";
+import { AccountSubscribeHeartbeat } from "@steamsets/client-ts/models/components";
 
-let value: Heartbeat = {
-  heartbeat: 186940,
+let value: AccountSubscribeHeartbeat = {
+  heartbeat: 832813,
 };
 ```
 

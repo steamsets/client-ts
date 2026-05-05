@@ -7,25 +7,25 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type Heartbeat = {
+export type AccountSubscribeHeartbeat = {
   heartbeat: number;
 };
 
 /** @internal */
-export const Heartbeat$inboundSchema: z.ZodType<
-  Heartbeat,
+export const AccountSubscribeHeartbeat$inboundSchema: z.ZodType<
+  AccountSubscribeHeartbeat,
   z.ZodTypeDef,
   unknown
 > = z.object({
   heartbeat: z.number().int(),
 });
 
-export function heartbeatFromJSON(
+export function accountSubscribeHeartbeatFromJSON(
   jsonString: string,
-): SafeParseResult<Heartbeat, SDKValidationError> {
+): SafeParseResult<AccountSubscribeHeartbeat, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Heartbeat$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Heartbeat' from JSON`,
+    (x) => AccountSubscribeHeartbeat$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountSubscribeHeartbeat' from JSON`,
   );
 }

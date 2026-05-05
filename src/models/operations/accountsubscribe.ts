@@ -18,7 +18,7 @@ export type AccountSubscribeRequest = {
 };
 
 export type EventHeartbeat = {
-  data: components.Heartbeat;
+  data: components.AccountSubscribeHeartbeat;
   /**
    * The event name.
    */
@@ -118,7 +118,7 @@ export const EventHeartbeat$inboundSchema: z.ZodType<
       ctx.addIssue({ code: "custom", message: `malformed json: ${err}` });
       return z.NEVER;
     }
-  }).pipe(components.Heartbeat$inboundSchema),
+  }).pipe(components.AccountSubscribeHeartbeat$inboundSchema),
   event: z.literal("heartbeat"),
   id: z.string().optional(),
   retry: z.number().int().optional(),

@@ -96,6 +96,7 @@ export * from "./listglobalfeed.js";
 export * from "./locationgetlocations.js";
 export * from "./maintenancelist.js";
 export * from "./searchgettrending.js";
+export * from "./sitesubscribe.js";
 export * from "./staffliststaff.js";
 export * from "./statsgetstats.js";
 export * from "./statssubscribe.js";
