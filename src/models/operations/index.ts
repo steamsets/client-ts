@@ -60,6 +60,7 @@ export * from "./adminupdateroleoverride.js";
 export * from "./adminupdateroles.js";
 export * from "./analyticsgetbivariate.js";
 export * from "./analyticsgetdistribution.js";
+export * from "./analyticsgetmetricbyscope.js";
 export * from "./analyticsgetmypercentiles.js";
 export * from "./analyticsgettrend.js";
 export * from "./analyticslistmetrics.js";

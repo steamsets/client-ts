@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 2d4fa06e51ed5fb93380a64ce4253c5c
+  docChecksum: 88f7bee35c1c198b3ec5d54edbdf3f60
   docVersion: 1.0.0
   speakeasyVersion: 1.762.0
   generationVersion: 2.882.0
-  releaseVersion: 0.34.6
-  configChecksum: 042fbd77087ace2f89aba7f86448394d
+  releaseVersion: 0.34.7
+  configChecksum: 59acedd5826371e8414c098cdad33f0c
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: f8ae448e-8e28-444d-a2f7-8e0c145649b4
-  pristine_commit_hash: 31f2c48e04a33519df86eaed149100281da1ff8b
-  pristine_tree_hash: d3d4685b4f22bfe7f338c71ae39640b42ba204b9
+  generation_id: 2f0327d6-6670-4ce5-9b7b-9043de0cceef
+  pristine_commit_hash: 9d7e0d0cd2f72c938b286258178780df23ba69d3
+  pristine_tree_hash: e3080537d542342126a77e0ef5629c0fb8649e7a
 features:
   go:
     additionalDependencies: 0.1.0
@@ -154,20 +154,28 @@ trackedFiles:
     pristine_git_object: 94deb80116690fd59a44c2773bebedfdf0968085
   docs/models/components/analyticsgetbivariaterequestbody.md:
     id: 798e3242e052
-    last_write_checksum: sha1:2d3f318b41127630058838b969d258c60b963abc
-    pristine_git_object: 9f7c76614eae01bcb722eb7a527c5765ea9e60a3
+    last_write_checksum: sha1:ed7b59a9d682bae9665cdd5139432f40d4d7d96c
+    pristine_git_object: b3be8667760c2bf861d42e50c5581c21850e2ab7
   docs/models/components/analyticsgetdistributionrequestbody.md:
     id: ed784d228d08
-    last_write_checksum: sha1:f040d5e10cab9e44ecc7f3da0189e5a3aaaa1012
-    pristine_git_object: 966e0ac54f96e6cc04136776c9f3593dff4ded54
+    last_write_checksum: sha1:40f2f687e00fd3c98215545f2422abcf1c8ee622
+    pristine_git_object: 74dfc0d8153b1cbce8064c6a6e8ee83a4367644f
+  docs/models/components/analyticsgetmetricbyscoperequestbody.md:
+    id: 4c7033e2bbeb
+    last_write_checksum: sha1:7e918611383d7f24dc0706877d20e267cc9050e7
+    pristine_git_object: 7d09cf3dbe546ae3d7af64ffc88f584774e6c033
+  docs/models/components/analyticsgetmetricbyscoperequestbodyagg.md:
+    id: 5216a8ed5a76
+    last_write_checksum: sha1:daff54ed01067ec0761470d2f82f5b13f869d4ef
+    pristine_git_object: d08d619920d966fa7e6c2e670a7c05ffd0411027
   docs/models/components/analyticsgetmypercentilesrequestbody.md:
     id: 762857ed1563
-    last_write_checksum: sha1:32815bbb9e75bbdb591762204cf535269d95f525
-    pristine_git_object: 6c6314b2af048c9c3441a8b1fa29b077aedd0342
+    last_write_checksum: sha1:424a55e9646aa1fc589cf48cce0bfa99835f1a3c
+    pristine_git_object: d450c2d8f01015240594aed75ecee6ccbce77e2d
   docs/models/components/analyticsgettrendrequestbody.md:
     id: d1d4b0989e09
-    last_write_checksum: sha1:8a0ff93be96b7531b5e9c3982906928efd1b981b
-    pristine_git_object: bf5ff98ca823d6ab9ef30600cea2f6b6b4a16855
+    last_write_checksum: sha1:ba6b8a3b52c95bf34b556cb400e5b2553bc2a2f1
+    pristine_git_object: 23f49723080096e38b6b57fa52022b2aa64d9c1b
   docs/models/components/analyticsgettrendrequestbodywindow.md:
     id: 17b6eb0973a4
     last_write_checksum: sha1:10b1fa3f38ce2a23db9ff0822c8864ec6cac0572
@@ -176,6 +184,10 @@ trackedFiles:
     id: 3af4fb0ff924
     last_write_checksum: sha1:d14e5808b4b3fbce99d379cfb9e267c77578b3d7
     pristine_git_object: f892de5cf13a1d5d9085db5695148756f668318f
+  docs/models/components/analyticsmetricbyscope.md:
+    id: 21e94a899b01
+    last_write_checksum: sha1:ced5d790f9961b2c4f8daf7b42090dd14da2f5ed
+    pristine_git_object: 43a8023c9a6d455f8745521bc6fd45e1450e6b43
   docs/models/components/analyticsmetricentry.md:
     id: 336a743cf467
     last_write_checksum: sha1:a76d69a3c08b8a25b64b291fd1d4a529720b80cc
@@ -188,6 +200,10 @@ trackedFiles:
     id: c95d470a8753
     last_write_checksum: sha1:9ce65fd1520d10ab72711e72e5742ea0edc0b98b
     pristine_git_object: f877e0a5eff62bf4912932b6838ab0333dfdb6e4
+  docs/models/components/analyticsscopebucket.md:
+    id: fd70b9709ce7
+    last_write_checksum: sha1:5574953ad3ff4b6b7ff23318c42017026efcc19a
+    pristine_git_object: 3fdd7c4240c5df78af5f99641f922591b4d0ef79
   docs/models/components/analyticsscopeentry.md:
     id: 12985497457f
     last_write_checksum: sha1:6a1d3cae3871a45b1ba7a34117503afbbb357e05
@@ -356,6 +372,10 @@ trackedFiles:
     id: 1c6d54ae4b9c
     last_write_checksum: sha1:7fd4aebeaadd057763795e8d84b82cd511f4ff52
     pristine_git_object: a36fe22bb49c11bf0f93975d084710ec4187420e
+  docs/models/components/dimension.md:
+    id: 2f90aa7d7f33
+    last_write_checksum: sha1:0a402c0942e76ccfbdfbb96f1b402838c2977303
+    pristine_git_object: 1357ad182824aac51a7aae12b4b4214340cb5ab7
   docs/models/components/direction.md:
     id: 184efcdcbc2f
     last_write_checksum: sha1:4ab798f58041ce237187c3bc439d95b7d905119a
@@ -1616,6 +1636,10 @@ trackedFiles:
     id: cb3b849a6d8e
     last_write_checksum: sha1:a5c4e78209f5461f6dc5a839d5a33349e84a3d9a
     pristine_git_object: e8048d3cef223741c694985cb149f9cdb1c35984
+  docs/models/operations/analyticsgetmetricbyscoperesponse.md:
+    id: 33e7e09e2604
+    last_write_checksum: sha1:54a8d427f22a622d2b6fd40b09264198f8f79497
+    pristine_git_object: 1d65e6becf7683e05af1429d47eb089c9120f6a6
   docs/models/operations/analyticsgetmypercentilesresponse.md:
     id: c8707ebc9e10
     last_write_checksum: sha1:74fadcef5d083af7a6bdf278c4a2ad45d11c5f89
@@ -1906,8 +1930,8 @@ trackedFiles:
     pristine_git_object: a1db1ca57bbb1efdc15a4f6eb26cd60831163060
   docs/sdks/analytics/README.md:
     id: 4c84abb05030
-    last_write_checksum: sha1:12a0a015e15320b78aebd2db3cf73574e511c732
-    pristine_git_object: af1b16c1fea3ee74ad3e196ac941eec9a2537271
+    last_write_checksum: sha1:da2d1c403492095919b98221f6930f4059c01002
+    pristine_git_object: 1daae8d6b77f83c02c74799ff1153a91aa5c12cf
   docs/sdks/apps/README.md:
     id: 9c9c1a6527a3
     last_write_checksum: sha1:4204b215770dde6eb5ea7fefc609287d4101e25d
@@ -1994,12 +2018,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:785adcc9ef7993397556cb7f62f2c66e085a7e69
-    pristine_git_object: b069673838dc777c7a21460644427fef2e4beb53
+    last_write_checksum: sha1:bb62d1391e6ced7830dff236885d288b5403fe13
+    pristine_git_object: 44a98ad4d4f3401a5bca1b24aa53f6d63096cba2
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:f3ac9df13cc77769433c9c9082f1013e086c9ed7
-    pristine_git_object: fe9c7ccef469bdbe3dfc7bc9f2b2543a45dc16b0
+    last_write_checksum: sha1:81ca305bc1c46269a4021b8c6b1a04bde5f5fd4f
+    pristine_git_object: 158d82a209639899ef37962d0a1d4702fe085a70
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2300,6 +2324,10 @@ trackedFiles:
     id: 9c0fbe2b9c6f
     last_write_checksum: sha1:9abcbf4cf98a694dad1a2d2283d4bde6cfed72de
     pristine_git_object: db41bab6cf0918348cf1289e70091929e9cddae6
+  src/funcs/analyticsGetMetricByScope.ts:
+    id: 8f8a0a0c7e72
+    last_write_checksum: sha1:b60adf5652bb290ab44fb8eca8469cde2450a1e5
+    pristine_git_object: a482124a96ac3e7aec53b897898ba8115739c321
   src/funcs/analyticsGetMyPercentiles.ts:
     id: 6b7476b58265
     last_write_checksum: sha1:8e5729ff56106a77873c17a3bf0ddc61acbad3fe
@@ -2446,8 +2474,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:13970cd12bbe9bcf1a9c3afa0d8fc6fbf258d327
-    pristine_git_object: 3737997b06191d38bc67f02b4e4a02f00d871b0f
+    last_write_checksum: sha1:90dbbe4a363091654dffb83e402e97946a9a1072
+    pristine_git_object: e615d2a135a05cc226f7e40a59ed946e8fec9f07
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -2558,24 +2586,32 @@ trackedFiles:
     pristine_git_object: 7920e578df1f3e8f6acfbf4e6b7c5885d264bdc2
   src/models/components/analyticsgetbivariaterequestbody.ts:
     id: 69b920540149
-    last_write_checksum: sha1:56f761515a9c9739f1117131165a5193591029e8
-    pristine_git_object: fbccc607ea6c2325e8247e39ace46ac17a243be2
+    last_write_checksum: sha1:a26986f6f6dc893fd15f4759c3a37c6eb347d840
+    pristine_git_object: 28892119b23cadf8dfb4e48ab1ad359a34f44606
   src/models/components/analyticsgetdistributionrequestbody.ts:
     id: 6ae735645d4d
-    last_write_checksum: sha1:a0f304e2d39f1684d70185b5b8c261da864cd346
-    pristine_git_object: c1d2d9f4bb4a62995e323d093dfeeb7f1e000406
+    last_write_checksum: sha1:cfa4b44595ea880bd74f7cc623192cb5a477bc91
+    pristine_git_object: f953a0b1bf56d3dde5be8482772354f52f283535
+  src/models/components/analyticsgetmetricbyscoperequestbody.ts:
+    id: e4bf3820719c
+    last_write_checksum: sha1:e45676d8fa666bcbd8bd173c8d9df9723f60f6f7
+    pristine_git_object: ec5d6c7b743272104c7bd0b17012a07897eed578
   src/models/components/analyticsgetmypercentilesrequestbody.ts:
     id: 6713947a26f8
-    last_write_checksum: sha1:fc6bb73f187a170f8fb72049d24acebaffd4b134
-    pristine_git_object: 3164b1f1f028af3ee7af972992460f15e9f16d34
+    last_write_checksum: sha1:bf2846b277e1a4f4edd00ab50be95e1d29b080b1
+    pristine_git_object: 705288803abfb6d74ac6be38e25c1ef21a253c44
   src/models/components/analyticsgettrendrequestbody.ts:
     id: fcc945024f08
-    last_write_checksum: sha1:db6e7ed0fa2035a2bb3f07ea0341f1b1a9eee817
-    pristine_git_object: de27ce5226a04668b6d2c018c2eb6f6793db9c71
+    last_write_checksum: sha1:7314131763eb7a5115e2065047c4d5f491e03de6
+    pristine_git_object: 1a6ce43ca493f717a9d434c4da3de989ab6fb594
   src/models/components/analyticslistmetricsresponsebody.ts:
     id: 7135f4eac6d0
     last_write_checksum: sha1:73b4e7ef879fe70ac4643bc546a3e809d50a8b31
     pristine_git_object: 3f7c58c80b648afb7ccee3f8e3334b9f9dbd67e4
+  src/models/components/analyticsmetricbyscope.ts:
+    id: 8f8e02a886ca
+    last_write_checksum: sha1:ac103cf84159077acc4d6419ac4d1b580165706f
+    pristine_git_object: 7c3c2c193e5d9d160e5f4f4096ede3cc53f99f9c
   src/models/components/analyticsmetricentry.ts:
     id: c378484e0fd2
     last_write_checksum: sha1:13083b18ffa69a952f70e7df58a7d2c180bac4a7
@@ -2588,6 +2624,10 @@ trackedFiles:
     id: e38a8306499a
     last_write_checksum: sha1:b79dceead203deb94d76141b72777e0a72feb244
     pristine_git_object: 621c7b5e9da2a11ecf605e7a6be355190b5cbaef
+  src/models/components/analyticsscopebucket.ts:
+    id: 5ab14a35d11b
+    last_write_checksum: sha1:c719081d4dac6ca43416e3eaf5ab65825be32b5c
+    pristine_git_object: 0f751a269c3b08e0bcb221069463a0b6e81f3634
   src/models/components/analyticsscopeentry.ts:
     id: 76bd0a3d3bb2
     last_write_checksum: sha1:d499c19b9df1b647f4b7417cf6a277f50f178a13
@@ -2782,8 +2822,8 @@ trackedFiles:
     pristine_git_object: bcc260e64316f70c9d3c24b90d3cb348c29dd944
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:78009cde5789f245deef0ea0e9b55277f9c1c03c
-    pristine_git_object: 158a849d48f7f8d712b598478db6a6dc5d797a40
+    last_write_checksum: sha1:b0f5550dcd5287ba784692451db883ee9d404084
+    pristine_git_object: 0b71065f590e2be5a25f2487a71149322e7bc170
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
@@ -3784,6 +3824,10 @@ trackedFiles:
     id: 8c9a3ca2fc9d
     last_write_checksum: sha1:fa8ba6b9741654d53843d1d5f106e4185d148699
     pristine_git_object: 06a6ec822b9d36c5942a8f2a646e955119370243
+  src/models/operations/analyticsgetmetricbyscope.ts:
+    id: 9f21e5e9d3fc
+    last_write_checksum: sha1:554facfa9754903152659969baa0460c5213cea4
+    pristine_git_object: dfe1004533de67a8186704d828840a85e92096b9
   src/models/operations/analyticsgetmypercentiles.ts:
     id: c82e75e53cf9
     last_write_checksum: sha1:0b75b8e2b34415f9cec1cc49c4f34273df2a2e36
@@ -3894,8 +3938,8 @@ trackedFiles:
     pristine_git_object: f3d59d864cce59dc8b1ecaa57dbe276df31e8d0f
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:489ff562eb28584c6fd914859a32263b8637de86
-    pristine_git_object: 36480fa8bfe802507d83b4a42f30977dd5f0ee94
+    last_write_checksum: sha1:8854b67b0a204d45ae657cfc5e0bd79dc5a11140
+    pristine_git_object: a794e5f17f36e276a3eee51788626009e8946d57
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:b9e0bdc1000aeb39213fc7c8cac90d4532ee5968
@@ -3990,8 +4034,8 @@ trackedFiles:
     pristine_git_object: 17bfdd672256acdf3992d2cc419f1e8594ff4635
   src/sdk/analytics.ts:
     id: 411d91261be3
-    last_write_checksum: sha1:7fa0ecd159f0ebd33147a626bcce6e370369f3e2
-    pristine_git_object: 1f6ab9e90b652fe93f9b398a249aa812ec73e522
+    last_write_checksum: sha1:c1db9c410df92d30eaf1fa48dbc21fde7ca26785
+    pristine_git_object: 308b381948327b09809be7aa34007a4100c07059
   src/sdk/apps.ts:
     id: a40cb2e73373
     last_write_checksum: sha1:db9f1a1df791481268ebe24a59d997f7a1267127
@@ -5310,7 +5354,7 @@ examples:
   analytics.getBivariate:
     speakeasy-default-analytics-get-bivariate:
       requestBody:
-        application/json: {"agg": "median", "domain": "worse-avalanche.biz", "scope": "<value>", "x": "<value>", "y": "<value>"}
+        application/json: {"agg": "median", "domain": "worse-avalanche.biz", "scope": "<value>", "scope_value": "DE", "x": "<value>", "y": "<value>"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsBivariate.json", "buckets": []}
@@ -5321,7 +5365,7 @@ examples:
   analytics.getDistribution:
     speakeasy-default-analytics-get-distribution:
       requestBody:
-        application/json: {"domain": "breakable-exasperation.net", "metric": "<value>", "scope": "<value>"}
+        application/json: {"domain": "breakable-exasperation.net", "metric": "<value>", "scope": "<value>", "scope_value": "DE"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsDistribution.json", "bins": null, "summary": {"count": 764183, "max": 9608.83, "mean": 7366.89, "min": 9857.53, "p50": 2761.84, "p90": 226.12, "p99": 6063.14}}
@@ -5332,7 +5376,7 @@ examples:
   analytics.getMyPercentiles:
     speakeasy-default-analytics-get-my-percentiles:
       requestBody:
-        application/json: {"domain": "dirty-dandelion.com", "scope": "<value>"}
+        application/json: {"domain": "dirty-dandelion.com", "scope": "<value>", "scope_value": "DE"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsMyPercentiles.json", "count": 816119, "percentiles": []}
@@ -5343,7 +5387,7 @@ examples:
   analytics.getTrend:
     speakeasy-default-analytics-get-trend:
       requestBody:
-        application/json: {"domain": "determined-interior.com", "metric": "<value>", "scope": "<value>", "window": "30d"}
+        application/json: {"domain": "determined-interior.com", "metric": "<value>", "scope": "<value>", "scope_value": "DE", "window": "30d"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsTrend.json", "points": []}
@@ -5358,15 +5402,20 @@ examples:
           application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsListMetricsResponseBody.json", "domains": []}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  analytics.getMetricByScope:
+    speakeasy-default-analytics-get-metric-by-scope:
+      requestBody:
+        application/json: {"agg": "median", "dimension": "country", "domain": "standard-thyme.name", "metric": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/AnalyticsMetricByScope.json", "buckets": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.analytics.getBivariate()`: **Added**
-  * `steamsets.analytics.getDistribution()`: **Added**
-  * `steamsets.analytics.getMyPercentiles()`: **Added**
-  * `steamsets.analytics.getTrend()`: **Added**
-  * `steamsets.analytics.listMetrics()`: **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.analytics.getBivariate()`: \n  *  `request.scopeValue` **Changed** (Breaking ⚠️)\n* `steamsets.analytics.getDistribution()`: \n  *  `request.scopeValue` **Changed** (Breaking ⚠️)\n* `steamsets.analytics.getMyPercentiles()`: \n  *  `request.scopeValue` **Changed** (Breaking ⚠️)\n* `steamsets.analytics.getTrend()`: \n  *  `request.scopeValue` **Changed** (Breaking ⚠️)\n* `steamsets.analytics.getMetricByScope()`: **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
