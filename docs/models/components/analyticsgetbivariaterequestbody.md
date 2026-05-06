@@ -9,6 +9,7 @@ let value: AnalyticsGetBivariateRequestBody = {
   agg: "median",
   domain: "slimy-diver.org",
   scope: "<value>",
+  scopeValue: "DE",
   x: "<value>",
   y: "<value>",
 };
@@ -16,11 +17,11 @@ let value: AnalyticsGetBivariateRequestBody = {
 
 ## Fields
 
-| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `agg`                                                       | [components.Agg](../../models/components/agg.md)            | :heavy_check_mark:                                          | How to aggregate Y inside each X bucket.                    |
-| `domain`                                                    | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         |
-| `scope`                                                     | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         |
-| `scopeValue`                                                | *number*                                                    | :heavy_minus_sign:                                          | N/A                                                         |
-| `x`                                                         | *string*                                                    | :heavy_check_mark:                                          | Metric ID for the X axis (bucketed).                        |
-| `y`                                                         | *string*                                                    | :heavy_check_mark:                                          | Metric ID for the Y axis (aggregated within each X bucket). |
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `agg`                                                             | [components.Agg](../../models/components/agg.md)                  | :heavy_check_mark:                                                | How to aggregate Y inside each X bucket.                          |                                                                   |
+| `domain`                                                          | *string*                                                          | :heavy_check_mark:                                                | N/A                                                               |                                                                   |
+| `scope`                                                           | *string*                                                          | :heavy_check_mark:                                                | N/A                                                               |                                                                   |
+| `scopeValue`                                                      | *string*                                                          | :heavy_minus_sign:                                                | Country name/code or region name. Required for non-global scopes. | DE                                                                |
+| `x`                                                               | *string*                                                          | :heavy_check_mark:                                                | Metric ID for the X axis (bucketed).                              |                                                                   |
+| `y`                                                               | *string*                                                          | :heavy_check_mark:                                                | Metric ID for the Y axis (aggregated within each X bucket).       |                                                                   |

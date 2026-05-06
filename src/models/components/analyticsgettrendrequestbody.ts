@@ -34,7 +34,10 @@ export type AnalyticsGetTrendRequestBody = {
    * Scope ID within the domain.
    */
   scope: string;
-  scopeValue?: number | undefined;
+  /**
+   * Country name/code or region name. Required for non-global scopes.
+   */
+  scopeValue?: string | undefined;
   /**
    * Lookback window.
    */
@@ -51,7 +54,7 @@ export type AnalyticsGetTrendRequestBody$Outbound = {
   domain: string;
   metric: string;
   scope: string;
-  scope_value?: number | undefined;
+  scope_value?: string | undefined;
   window: string;
 };
 
@@ -64,7 +67,7 @@ export const AnalyticsGetTrendRequestBody$outboundSchema: z.ZodType<
   domain: z.string(),
   metric: z.string(),
   scope: z.string(),
-  scopeValue: z.number().int().optional(),
+  scopeValue: z.string().optional(),
   window: AnalyticsGetTrendRequestBodyWindow$outboundSchema,
 }).transform((v) => {
   return remap$(v, {

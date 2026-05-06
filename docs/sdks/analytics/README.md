@@ -8,6 +8,7 @@ API key and developer analytics.
 
 * [getBivariate](#getbivariate) - Bucket by X, aggregate Y, within a scope
 * [getDistribution](#getdistribution) - Histogram + summary stats for a metric in a scope
+* [getMetricByScope](#getmetricbyscope) - One metric aggregated per country (or region) — worldmap source
 * [getMyPercentiles](#getmypercentiles) - Per-metric percentile rank for the logged-in user in the chosen scope
 * [getTrend](#gettrend) - Daily quantiles over a window for a metric in a scope
 * [listMetrics](#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
@@ -32,6 +33,7 @@ async function run() {
     agg: "median",
     domain: "worse-avalanche.biz",
     scope: "<value>",
+    scopeValue: "DE",
     x: "<value>",
     y: "<value>",
   });
@@ -61,6 +63,7 @@ async function run() {
     agg: "median",
     domain: "worse-avalanche.biz",
     scope: "<value>",
+    scopeValue: "DE",
     x: "<value>",
     y: "<value>",
   });
@@ -115,6 +118,7 @@ async function run() {
     domain: "breakable-exasperation.net",
     metric: "<value>",
     scope: "<value>",
+    scopeValue: "DE",
   });
 
   console.log(result);
@@ -142,6 +146,7 @@ async function run() {
     domain: "breakable-exasperation.net",
     metric: "<value>",
     scope: "<value>",
+    scopeValue: "DE",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -175,6 +180,87 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## getMetricByScope
+
+One metric aggregated per country (or region) — worldmap source
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="analytics.getMetricByScope" method="post" path="/v1/analytics.getMetricByScope" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.analytics.getMetricByScope({
+    agg: "median",
+    dimension: "country",
+    domain: "standard-thyme.name",
+    metric: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { analyticsGetMetricByScope } from "@steamsets/client-ts/funcs/analyticsGetMetricByScope.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await analyticsGetMetricByScope(steamSets, {
+    agg: "median",
+    dimension: "country",
+    domain: "standard-thyme.name",
+    metric: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("analyticsGetMetricByScope failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AnalyticsGetMetricByScopeRequestBody](../../models/components/analyticsgetmetricbyscoperequestbody.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AnalyticsGetMetricByScopeResponse](../../models/operations/analyticsgetmetricbyscoperesponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 422                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## getMyPercentiles
 
 Per-metric percentile rank for the logged-in user in the chosen scope
@@ -193,6 +279,7 @@ async function run() {
   const result = await steamSets.analytics.getMyPercentiles({
     domain: "dirty-dandelion.com",
     scope: "<value>",
+    scopeValue: "DE",
   });
 
   console.log(result);
@@ -219,6 +306,7 @@ async function run() {
   const res = await analyticsGetMyPercentiles(steamSets, {
     domain: "dirty-dandelion.com",
     scope: "<value>",
+    scopeValue: "DE",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -271,6 +359,7 @@ async function run() {
     domain: "determined-interior.com",
     metric: "<value>",
     scope: "<value>",
+    scopeValue: "DE",
     window: "30d",
   });
 
@@ -299,6 +388,7 @@ async function run() {
     domain: "determined-interior.com",
     metric: "<value>",
     scope: "<value>",
+    scopeValue: "DE",
     window: "30d",
   });
   if (res.ok) {

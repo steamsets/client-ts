@@ -26,7 +26,10 @@ export type AnalyticsGetBivariateRequestBody = {
   agg: Agg;
   domain: string;
   scope: string;
-  scopeValue?: number | undefined;
+  /**
+   * Country name/code or region name. Required for non-global scopes.
+   */
+  scopeValue?: string | undefined;
   /**
    * Metric ID for the X axis (bucketed).
    */
@@ -47,7 +50,7 @@ export type AnalyticsGetBivariateRequestBody$Outbound = {
   agg: string;
   domain: string;
   scope: string;
-  scope_value?: number | undefined;
+  scope_value?: string | undefined;
   x: string;
   y: string;
 };
@@ -61,7 +64,7 @@ export const AnalyticsGetBivariateRequestBody$outboundSchema: z.ZodType<
   agg: Agg$outboundSchema,
   domain: z.string(),
   scope: z.string(),
-  scopeValue: z.number().int().optional(),
+  scopeValue: z.string().optional(),
   x: z.string(),
   y: z.string(),
 }).transform((v) => {

@@ -8,14 +8,17 @@ import { remap as remap$ } from "../../lib/primitives.js";
 export type AnalyticsGetMyPercentilesRequestBody = {
   domain: string;
   scope: string;
-  scopeValue?: number | undefined;
+  /**
+   * Country name/code or region name. Required for non-global scopes.
+   */
+  scopeValue?: string | undefined;
 };
 
 /** @internal */
 export type AnalyticsGetMyPercentilesRequestBody$Outbound = {
   domain: string;
   scope: string;
-  scope_value?: number | undefined;
+  scope_value?: string | undefined;
 };
 
 /** @internal */
@@ -26,7 +29,7 @@ export const AnalyticsGetMyPercentilesRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   domain: z.string(),
   scope: z.string(),
-  scopeValue: z.number().int().optional(),
+  scopeValue: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     scopeValue: "scope_value",

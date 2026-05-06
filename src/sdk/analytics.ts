@@ -4,6 +4,7 @@
 
 import { analyticsGetBivariate } from "../funcs/analyticsGetBivariate.js";
 import { analyticsGetDistribution } from "../funcs/analyticsGetDistribution.js";
+import { analyticsGetMetricByScope } from "../funcs/analyticsGetMetricByScope.js";
 import { analyticsGetMyPercentiles } from "../funcs/analyticsGetMyPercentiles.js";
 import { analyticsGetTrend } from "../funcs/analyticsGetTrend.js";
 import { analyticsListMetrics } from "../funcs/analyticsListMetrics.js";
@@ -36,6 +37,20 @@ export class Analytics extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AnalyticsGetDistributionResponse> {
     return unwrapAsync(analyticsGetDistribution(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * One metric aggregated per country (or region) — worldmap source
+   */
+  async getMetricByScope(
+    request: components.AnalyticsGetMetricByScopeRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AnalyticsGetMetricByScopeResponse> {
+    return unwrapAsync(analyticsGetMetricByScope(
       this,
       request,
       options,

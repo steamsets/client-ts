@@ -163,6 +163,7 @@ run();
 
 * [getBivariate](docs/sdks/analytics/README.md#getbivariate) - Bucket by X, aggregate Y, within a scope
 * [getDistribution](docs/sdks/analytics/README.md#getdistribution) - Histogram + summary stats for a metric in a scope
+* [getMetricByScope](docs/sdks/analytics/README.md#getmetricbyscope) - One metric aggregated per country (or region) — worldmap source
 * [getMyPercentiles](docs/sdks/analytics/README.md#getmypercentiles) - Per-metric percentile rank for the logged-in user in the chosen scope
 * [getTrend](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
 * [listMetrics](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
@@ -733,6 +734,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
 - [`analyticsGetBivariate`](docs/sdks/analytics/README.md#getbivariate) - Bucket by X, aggregate Y, within a scope
 - [`analyticsGetDistribution`](docs/sdks/analytics/README.md#getdistribution) - Histogram + summary stats for a metric in a scope
+- [`analyticsGetMetricByScope`](docs/sdks/analytics/README.md#getmetricbyscope) - One metric aggregated per country (or region) — worldmap source
 - [`analyticsGetMyPercentiles`](docs/sdks/analytics/README.md#getmypercentiles) - Per-metric percentile rank for the logged-in user in the chosen scope
 - [`analyticsGetTrend`](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
 - [`analyticsListMetrics`](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve

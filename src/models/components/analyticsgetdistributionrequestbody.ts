@@ -19,9 +19,9 @@ export type AnalyticsGetDistributionRequestBody = {
    */
   scope: string;
   /**
-   * Scope value (e.g. country_id). Required for non-global scopes.
+   * Scope value — country name or ISO code ("Germany" / "DE"), region name ("Europe"). Required for non-global scopes.
    */
-  scopeValue?: number | undefined;
+  scopeValue?: string | undefined;
 };
 
 /** @internal */
@@ -29,7 +29,7 @@ export type AnalyticsGetDistributionRequestBody$Outbound = {
   domain: string;
   metric: string;
   scope: string;
-  scope_value?: number | undefined;
+  scope_value?: string | undefined;
 };
 
 /** @internal */
@@ -41,7 +41,7 @@ export const AnalyticsGetDistributionRequestBody$outboundSchema: z.ZodType<
   domain: z.string(),
   metric: z.string(),
   scope: z.string(),
-  scopeValue: z.number().int().optional(),
+  scopeValue: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     scopeValue: "scope_value",
