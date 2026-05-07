@@ -4,6 +4,7 @@
 
 import { analyticsGetBivariate } from "../funcs/analyticsGetBivariate.js";
 import { analyticsGetDistribution } from "../funcs/analyticsGetDistribution.js";
+import { analyticsGetInequality } from "../funcs/analyticsGetInequality.js";
 import { analyticsGetMetricByScope } from "../funcs/analyticsGetMetricByScope.js";
 import { analyticsGetMyPercentiles } from "../funcs/analyticsGetMyPercentiles.js";
 import { analyticsGetTrend } from "../funcs/analyticsGetTrend.js";
@@ -37,6 +38,20 @@ export class Analytics extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AnalyticsGetDistributionResponse> {
     return unwrapAsync(analyticsGetDistribution(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Lorenz curve + Gini + top-X%-own-Y% headlines for one metric in a scope
+   */
+  async getInequality(
+    request: components.AnalyticsGetInequalityRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AnalyticsGetInequalityResponse> {
+    return unwrapAsync(analyticsGetInequality(
       this,
       request,
       options,
