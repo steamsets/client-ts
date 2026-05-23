@@ -10,41 +10,50 @@ let value: V1BadgeSearchBadgesResponseBody = {
     "https://api.steamsets.com/schemas/V1BadgeSearchBadgesResponseBody.json",
   badges: [
     {
-      vectors: {
-        image: null,
-      },
-      appId: 64538,
+      appId: 32200,
       appImage: "<value>",
       appName: "<value>",
-      bookmarks: 353675,
-      cardCount: 569138,
-      colors: [],
-      designs: [
+      bookmarks: 64538,
+      cardCount: 353675,
+      colors: [
         "<value 1>",
         "<value 2>",
-        "<value 3>",
       ],
-      firstCompletion: 489094,
-      highestLevel: 840796,
+      designs: [
+        "<value 1>",
+      ],
+      firstCompletion: 945501,
+      highestLevel: 489094,
       id: "<id>",
-      image: "https://picsum.photos/seed/bUgF54aF/2446/1520",
-      isEvent: true,
+      image: "https://loremflickr.com/3363/2446?lock=6789580362501293",
+      isEvent: false,
       isFoil: true,
       isNmc: false,
       isSale: true,
-      lastChangedAt: 892598,
-      lastCompletion: 583902,
-      level: 417094,
+      lastChangedAt: 672493,
+      lastCompletion: 83446,
+      level: 67481,
       name: "<value>",
-      noListing: false,
-      scarcity: 614704,
-      steamId: 218407,
-      xp: 2252.14,
+      noListing: true,
+      scarcity: 664455,
+      steamId: 136677,
+      xp: 4479.9,
     },
   ],
-  facets: "<value>",
-  pages: 437437,
-  results: 685898,
+  facets: {
+    "key": {
+      "key": 892598,
+    },
+    "key1": {
+      "key": 417094,
+      "key1": 948325,
+    },
+    "key2": {
+      "key": 218407,
+      "key1": 225214,
+    },
+  },
+  results: 437437,
 };
 ```
 
@@ -54,6 +63,5 @@ let value: V1BadgeSearchBadgesResponseBody = {
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `dollarSchema`                                                         | *string*                                                               | :heavy_minus_sign:                                                     | A URL to the JSON Schema for this object.                              | https://api.steamsets.com/schemas/V1BadgeSearchBadgesResponseBody.json |
 | `badges`                                                               | [components.Badge](../../models/components/badge.md)[]                 | :heavy_check_mark:                                                     | N/A                                                                    |                                                                        |
-| `facets`                                                               | *any*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |                                                                        |
-| `pages`                                                                | *number*                                                               | :heavy_check_mark:                                                     | total number of pages                                                  |                                                                        |
-| `results`                                                              | *number*                                                               | :heavy_check_mark:                                                     | total number of results                                                |                                                                        |
+| `facets`                                                               | Record<string, Record<string, *number*>>                               | :heavy_check_mark:                                                     | Precomputed global facet counts (refreshed hourly).                    |                                                                        |
+| `results`                                                              | *number*                                                               | :heavy_check_mark:                                                     | Number of badges returned in this page.                                |                                                                        |

@@ -3,6 +3,7 @@
  */
 
 import { locationGet } from "../funcs/locationGet.js";
+import { locationSearch } from "../funcs/locationSearch.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -16,6 +17,20 @@ export class Location extends ClientSDK {
   ): Promise<operations.LocationGetLocationsResponse> {
     return unwrapAsync(locationGet(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Search locations (typeahead)
+   */
+  async search(
+    request: operations.LocationSearchRequest,
+    options?: RequestOptions,
+  ): Promise<operations.LocationSearchResponse> {
+    return unwrapAsync(locationSearch(
+      this,
+      request,
       options,
     ));
   }

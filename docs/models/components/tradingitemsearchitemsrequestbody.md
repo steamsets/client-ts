@@ -1,0 +1,22 @@
+# TradingItemSearchItemsRequestBody
+
+## Example Usage
+
+```typescript
+import { TradingItemSearchItemsRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: TradingItemSearchItemsRequestBody = {
+  query: "<value>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `filter`                                                                                                                   | [components.TradingItemFilter](../../models/components/tradingitemfilter.md)                                               | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `limit`                                                                                                                    | *number*                                                                                                                   | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `offset`                                                                                                                   | *number*                                                                                                                   | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `query`                                                                                                                    | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | BM25 text query against name + appName.                                                                                    |
+| `sortBy`                                                                                                                   | *string*                                                                                                                   | :heavy_minus_sign:                                                                                                         | Attribute to rank by when query is empty. Defaults to lastSoldAt.                                                          |
+| `sortDir`                                                                                                                  | [components.TradingItemSearchItemsRequestBodySortDir](../../models/components/tradingitemsearchitemsrequestbodysortdir.md) | :heavy_minus_sign:                                                                                                         | asc \| desc; defaults to desc.                                                                                             |

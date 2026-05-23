@@ -35,6 +35,7 @@ import { accountQueueUpdate } from "../funcs/accountQueueUpdate.js";
 import { accountReconnectConnection } from "../funcs/accountReconnectConnection.js";
 import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
+import { accountSearch } from "../funcs/accountSearch.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
 import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
@@ -499,6 +500,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountRefreshSessionResponse> {
     return unwrapAsync(accountRefreshSession(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Search accounts
+   */
+  async search(
+    request: operations.AccountSearchAccountsRequest,
+    options?: RequestOptions,
+  ): Promise<operations.AccountSearchAccountsResponse> {
+    return unwrapAsync(accountSearch(
       this,
       request,
       options,
