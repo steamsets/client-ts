@@ -107,6 +107,7 @@ run();
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
+* [search](docs/sdks/account/README.md#search) - Search accounts
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -170,6 +171,10 @@ run();
 * [listMetrics](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 * [trackEvent](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 
+### [App](docs/sdks/app/README.md)
+
+* [search](docs/sdks/app/README.md#search) - Search apps
+
 ### [Apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
@@ -179,6 +184,10 @@ run();
 * [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 * [search](docs/sdks/badge/README.md#search) - Search badges
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
+
+### [BadgePricing](docs/sdks/badgepricing/README.md)
+
+* [search](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
 
 ### [Badges](docs/sdks/badges/README.md)
 
@@ -194,6 +203,10 @@ run();
 * [claim](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
 * [getAddresses](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
 * [listSupportedCurrencies](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
+
+### [Group](docs/sdks/group/README.md)
+
+* [search](docs/sdks/group/README.md#search) - Search groups
 
 ### [Item](docs/sdks/item/README.md)
 
@@ -217,6 +230,7 @@ run();
 ### [Location](docs/sdks/location/README.md)
 
 * [get](docs/sdks/location/README.md#get) - List available locations
+* [search](docs/sdks/location/README.md#search) - Search locations (typeahead)
 
 ### [Maintenance](docs/sdks/maintenance/README.md)
 
@@ -238,6 +252,10 @@ run();
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 * [subscribe](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
+
+### [TradingItem](docs/sdks/tradingitem/README.md)
+
+* [search](docs/sdks/tradingitem/README.md#search) - Search trading items
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -694,6 +712,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
+- [`accountSearch`](docs/sdks/account/README.md#search) - Search accounts
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -741,7 +760,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsGetTrend`](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
 - [`analyticsListMetrics`](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+- [`appSearch`](docs/sdks/app/README.md#search) - Search apps
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
+- [`badgePricingSearch`](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
 - [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
@@ -751,6 +772,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`donationsClaim`](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
 - [`donationsGetAddresses`](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
 - [`donationsListSupportedCurrencies`](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
+- [`groupSearch`](docs/sdks/group/README.md#search) - Search groups
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
@@ -762,12 +784,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
+- [`locationSearch`](docs/sdks/location/README.md#search) - Search locations (typeahead)
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 - [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
 - [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 - [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
+- [`tradingItemSearch`](docs/sdks/tradingitem/README.md#search) - Search trading items
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

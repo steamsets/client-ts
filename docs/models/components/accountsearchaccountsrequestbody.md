@@ -1,0 +1,22 @@
+# AccountSearchAccountsRequestBody
+
+## Example Usage
+
+```typescript
+import { AccountSearchAccountsRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: AccountSearchAccountsRequestBody = {
+  query: "<value>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                       | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `filter`                                                                                                                    | [components.AccountFilter](../../models/components/accountfilter.md)                                                        | :heavy_minus_sign:                                                                                                          | N/A                                                                                                                         |
+| `limit`                                                                                                                     | *number*                                                                                                                    | :heavy_minus_sign:                                                                                                          | Page size; clamped to the rate-limit identifier's per-request cap (100/500).                                                |
+| `offset`                                                                                                                    | *number*                                                                                                                    | :heavy_minus_sign:                                                                                                          | N/A                                                                                                                         |
+| `query`                                                                                                                     | *string*                                                                                                                    | :heavy_check_mark:                                                                                                          | BM25 text query against name/vanity/steamVanity. Empty falls back to attribute-ranked browse.                               |
+| `sortBy`                                                                                                                    | *string*                                                                                                                    | :heavy_minus_sign:                                                                                                          | Attribute to rank by when query is empty (e.g. 'steamSetsScore', 'xp', 'totalBadges', 'level'). Defaults to steamSetsScore. |
+| `sortDir`                                                                                                                   | [components.SortDir](../../models/components/sortdir.md)                                                                    | :heavy_minus_sign:                                                                                                          | asc \| desc; defaults to desc.                                                                                              |

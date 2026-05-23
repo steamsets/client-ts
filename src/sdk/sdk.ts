@@ -7,11 +7,14 @@ import { Account } from "./account.js";
 import { Activity } from "./activity.js";
 import { Admin } from "./admin.js";
 import { Analytics } from "./analytics.js";
+import { App } from "./app.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
+import { BadgePricing } from "./badgepricing.js";
 import { Badges } from "./badges.js";
 import { Cms } from "./cms.js";
 import { Donations } from "./donations.js";
+import { Group } from "./group.js";
 import { Item } from "./item.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
@@ -21,6 +24,7 @@ import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
+import { TradingItem } from "./tradingitem.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -48,6 +52,11 @@ export class SteamSets extends ClientSDK {
     return (this._apps ??= new Apps(this._options));
   }
 
+  private _app?: App;
+  get app(): App {
+    return (this._app ??= new App(this._options));
+  }
+
   private _badges?: Badges;
   get badges(): Badges {
     return (this._badges ??= new Badges(this._options));
@@ -58,6 +67,11 @@ export class SteamSets extends ClientSDK {
     return (this._badge ??= new Badge(this._options));
   }
 
+  private _badgePricing?: BadgePricing;
+  get badgePricing(): BadgePricing {
+    return (this._badgePricing ??= new BadgePricing(this._options));
+  }
+
   private _cms?: Cms;
   get cms(): Cms {
     return (this._cms ??= new Cms(this._options));
@@ -66,6 +80,11 @@ export class SteamSets extends ClientSDK {
   private _donations?: Donations;
   get donations(): Donations {
     return (this._donations ??= new Donations(this._options));
+  }
+
+  private _group?: Group;
+  get group(): Group {
+    return (this._group ??= new Group(this._options));
   }
 
   private _item?: Item;
@@ -111,5 +130,10 @@ export class SteamSets extends ClientSDK {
   private _stats?: Stats;
   get stats(): Stats {
     return (this._stats ??= new Stats(this._options));
+  }
+
+  private _tradingItem?: TradingItem;
+  get tradingItem(): TradingItem {
+    return (this._tradingItem ??= new TradingItem(this._options));
   }
 }
