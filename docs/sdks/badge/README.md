@@ -104,14 +104,8 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.badge.search({
-    v1SearchRequest: {
-      filter: "<value>",
-      image: "base64_encoded_image",
+    v1BadgeSearchBadgesRequestBody: {
       query: "<value>",
-      sort: [
-        "price:asc",
-        "author:desc",
-      ],
     },
   });
 
@@ -137,14 +131,8 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await badgeSearch(steamSets, {
-    v1SearchRequest: {
-      filter: "<value>",
-      image: "base64_encoded_image",
+    v1BadgeSearchBadgesRequestBody: {
       query: "<value>",
-      sort: [
-        "price:asc",
-        "author:desc",
-      ],
     },
   });
   if (res.ok) {

@@ -6,23 +6,17 @@
 import { BadgeSearchBadgesRequest } from "@steamsets/client-ts/models/operations";
 
 let value: BadgeSearchBadgesRequest = {
-  v1SearchRequest: {
-    filter: "<value>",
-    image: "base64_encoded_image",
+  v1BadgeSearchBadgesRequestBody: {
     query: "<value>",
-    sort: [
-      "price:asc",
-      "author:desc",
-    ],
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `xForwardedFor`                                                          | *string*                                                                 | :heavy_minus_sign:                                                       | N/A                                                                      |
-| `userAgent`                                                              | *string*                                                                 | :heavy_minus_sign:                                                       | N/A                                                                      |
-| `xVisitorId`                                                             | *string*                                                                 | :heavy_minus_sign:                                                       | N/A                                                                      |
-| `v1SearchRequest`                                                        | [components.V1SearchRequest](../../models/components/v1searchrequest.md) | :heavy_check_mark:                                                       | N/A                                                                      |
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `xForwardedFor`                                                                                        | *string*                                                                                               | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `userAgent`                                                                                            | *string*                                                                                               | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `xVisitorId`                                                                                           | *string*                                                                                               | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `v1BadgeSearchBadgesRequestBody`                                                                       | [components.V1BadgeSearchBadgesRequestBody](../../models/components/v1badgesearchbadgesrequestbody.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

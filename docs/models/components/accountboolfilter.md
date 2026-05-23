@@ -1,17 +1,15 @@
-# Vectors
+# AccountBoolFilter
 
 ## Example Usage
 
 ```typescript
-import { Vectors } from "@steamsets/client-ts/models/components";
+import { AccountBoolFilter } from "@steamsets/client-ts/models/components";
 
-let value: Vectors = {
-  image: [],
-};
+let value: AccountBoolFilter = {};
 ```
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `image`            | *number*[]         | :heavy_check_mark: | N/A                |
+| `eq`               | *boolean*          | :heavy_minus_sign: | N/A                |

@@ -84,7 +84,9 @@ async function $do(
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.V1SearchRequest, { explode: true });
+  const body = encodeJSON("body", payload.V1BadgeSearchBadgesRequestBody, {
+    explode: true,
+  });
 
   const path = pathToFunc("/v1/badge.searchBadges")();
 

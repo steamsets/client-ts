@@ -15,13 +15,12 @@ export type V1BadgeSearchBadgesResponseBody = {
    */
   dollarSchema?: string | undefined;
   badges: Array<Badge> | null;
-  facets?: any | undefined;
   /**
-   * total number of pages
+   * Precomputed global facet counts (refreshed hourly).
    */
-  pages: number;
+  facets: { [k: string]: { [k: string]: number } };
   /**
-   * total number of results
+   * Number of badges returned in this page.
    */
   results: number;
 };
@@ -34,8 +33,7 @@ export const V1BadgeSearchBadgesResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   badges: z.nullable(z.array(Badge$inboundSchema)),
-  facets: z.any().optional(),
-  pages: z.number().int(),
+  facets: z.record(z.record(z.number().int())),
   results: z.number().int(),
 }).transform((v) => {
   return remap$(v, {

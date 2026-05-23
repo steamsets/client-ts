@@ -13,7 +13,7 @@ export type BadgeSearchBadgesRequest = {
   xForwardedFor?: string | undefined;
   userAgent?: string | undefined;
   xVisitorId?: string | undefined;
-  v1SearchRequest: components.V1SearchRequest;
+  v1BadgeSearchBadgesRequestBody: components.V1BadgeSearchBadgesRequestBody;
 };
 
 export type BadgeSearchBadgesResponse = {
@@ -31,7 +31,8 @@ export type BadgeSearchBadgesRequest$Outbound = {
   "X-Forwarded-For"?: string | undefined;
   "User-Agent"?: string | undefined;
   "X-Visitor-Id"?: string | undefined;
-  V1SearchRequest: components.V1SearchRequest$Outbound;
+  V1BadgeSearchBadgesRequestBody:
+    components.V1BadgeSearchBadgesRequestBody$Outbound;
 };
 
 /** @internal */
@@ -43,13 +44,14 @@ export const BadgeSearchBadgesRequest$outboundSchema: z.ZodType<
   xForwardedFor: z.string().optional(),
   userAgent: z.string().optional(),
   xVisitorId: z.string().optional(),
-  v1SearchRequest: components.V1SearchRequest$outboundSchema,
+  v1BadgeSearchBadgesRequestBody:
+    components.V1BadgeSearchBadgesRequestBody$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     xForwardedFor: "X-Forwarded-For",
     userAgent: "User-Agent",
     xVisitorId: "X-Visitor-Id",
-    v1SearchRequest: "V1SearchRequest",
+    v1BadgeSearchBadgesRequestBody: "V1BadgeSearchBadgesRequestBody",
   });
 });
 

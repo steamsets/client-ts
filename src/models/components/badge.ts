@@ -3,14 +3,11 @@
  */
 
 import * as z from "zod/v3";
-import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import { Vectors, Vectors$inboundSchema } from "./vectors.js";
 
 export type Badge = {
-  vectors: Vectors;
   appId: number;
   appImage: string;
   appName: string;
@@ -34,13 +31,13 @@ export type Badge = {
   noListing: boolean;
   scarcity: number;
   steamId: number;
+  vector?: Array<number> | null | undefined;
   xp: number;
 };
 
 /** @internal */
 export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
   .object({
-    _vectors: Vectors$inboundSchema,
     appId: z.number().int(),
     appImage: z.string(),
     appName: z.string(),
@@ -64,11 +61,8 @@ export const Badge$inboundSchema: z.ZodType<Badge, z.ZodTypeDef, unknown> = z
     noListing: z.boolean(),
     scarcity: z.number().int(),
     steamId: z.number().int(),
+    vector: z.nullable(z.array(z.number())).optional(),
     xp: z.number(),
-  }).transform((v) => {
-    return remap$(v, {
-      "_vectors": "vectors",
-    });
   });
 
 export function badgeFromJSON(
