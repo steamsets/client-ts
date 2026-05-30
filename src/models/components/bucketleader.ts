@@ -13,7 +13,6 @@ import {
 
 export type BucketLeader = {
   account?: LeaderboardAccount | null | undefined;
-  accountId?: number | undefined;
   /**
    * No account in this bucket within the scope
    */
@@ -22,10 +21,14 @@ export type BucketLeader = {
    * Inclusive bucket lower bound in the leaderboard's native unit (level for xp, game count for apps)
    */
   from: number;
+  /**
+   * True when the bucket has no upper bound (e.g. the top apps tier); render as 'from+'.
+   */
+  open: boolean;
   rank?: number | undefined;
   score?: number | undefined;
   /**
-   * Inclusive bucket upper bound in the leaderboard's native unit
+   * Inclusive bucket upper bound in the leaderboard's native unit. Ignore when open=true.
    */
   to: number;
 };
@@ -37,9 +40,9 @@ export const BucketLeader$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account: z.nullable(LeaderboardAccount$inboundSchema).optional(),
-  accountId: z.number().int().optional(),
   empty: z.boolean(),
   from: z.number().int(),
+  open: z.boolean(),
   rank: z.number().int().optional(),
   score: z.number().int().optional(),
   to: z.number().int(),
