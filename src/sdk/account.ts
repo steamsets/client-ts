@@ -31,6 +31,7 @@ import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHi
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
+import { accountQueueInventoryRefresh } from "../funcs/accountQueueInventoryRefresh.js";
 import { accountQueueUpdate } from "../funcs/accountQueueUpdate.js";
 import { accountReconnectConnection } from "../funcs/accountReconnectConnection.js";
 import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
@@ -445,6 +446,20 @@ export class Account extends ClientSDK {
   ): Promise<operations.AccountLogoutResponse> {
     return unwrapAsync(accountLogout(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Queue inventory refresh
+   */
+  async queueInventoryRefresh(
+    request: components.V1AccountQueueInventoryRefreshRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountQueueInventoryRefreshResponse> {
+    return unwrapAsync(accountQueueInventoryRefresh(
+      this,
+      request,
       options,
     ));
   }

@@ -1,11 +1,11 @@
-# GetBucketLeadersResponse
+# LeaderboardGetBucketLeadersResponse
 
 ## Example Usage
 
 ```typescript
-import { GetBucketLeadersResponse } from "@steamsets/client-ts/models/operations";
+import { LeaderboardGetBucketLeadersResponse } from "@steamsets/client-ts/models/operations";
 
-let value: GetBucketLeadersResponse = {};
+let value: LeaderboardGetBucketLeadersResponse = {};
 ```
 
 ## Fields

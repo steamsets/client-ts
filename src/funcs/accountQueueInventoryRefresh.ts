@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get the top account in each value bucket
+ * Queue inventory refresh
  */
-export function leaderboardGetBucketLeaders(
+export function accountQueueInventoryRefresh(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetBucketLeadersRequestBody,
+  request: components.V1AccountQueueInventoryRefreshRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetBucketLeadersResponse,
+    operations.AccountQueueInventoryRefreshResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function leaderboardGetBucketLeaders(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetBucketLeadersRequestBody,
+  request: components.V1AccountQueueInventoryRefreshRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetBucketLeadersResponse,
+      operations.AccountQueueInventoryRefreshResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1LeaderboardGetBucketLeadersRequestBody$outboundSchema.parse(
+      components.V1AccountQueueInventoryRefreshRequestBody$outboundSchema.parse(
         value,
       ),
     "Input validation failed",
@@ -90,11 +90,11 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getBucketLeaders")();
+  const path = pathToFunc("/v1/account.queueInventoryRefresh")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -104,7 +104,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getBucketLeaders",
+    operationID: "account.queueInventoryRefresh",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetBucketLeadersResponse,
+    operations.AccountQueueInventoryRefreshResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,13 +170,11 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LeaderboardGetBucketLeadersResponse$inboundSchema, {
-      key: "BucketLeaders",
-    }),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.nil(204, operations.AccountQueueInventoryRefreshResponse$inboundSchema),
+    M.jsonErr([400, 401, 403, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr([500, 501], errors.ErrorModel$inboundSchema, {
+    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

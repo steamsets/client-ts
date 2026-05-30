@@ -103,6 +103,7 @@ run();
 * [accountListOwnedGroups](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
+* [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
@@ -173,6 +174,7 @@ run();
 
 ### [App](docs/sdks/app/README.md)
 
+* [queueUpdate](docs/sdks/app/README.md#queueupdate) - Queue app update
 * [search](docs/sdks/app/README.md#search) - Search apps
 
 ### [Apps](docs/sdks/apps/README.md)
@@ -206,6 +208,7 @@ run();
 
 ### [Group](docs/sdks/group/README.md)
 
+* [queueUpdate](docs/sdks/group/README.md#queueupdate) - Queue group update
 * [search](docs/sdks/group/README.md#search) - Search groups
 
 ### [Item](docs/sdks/item/README.md)
@@ -708,6 +711,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
+- [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
@@ -760,6 +764,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsGetTrend`](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
 - [`analyticsListMetrics`](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+- [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
 - [`appSearch`](docs/sdks/app/README.md#search) - Search apps
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`badgePricingSearch`](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
@@ -772,6 +777,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`donationsClaim`](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
 - [`donationsGetAddresses`](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
 - [`donationsListSupportedCurrencies`](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
+- [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`groupSearch`](docs/sdks/group/README.md#search) - Search groups
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard

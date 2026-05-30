@@ -227,7 +227,7 @@ Get the top account in each value bucket
 
 ### Example Usage
 
-<!-- UsageSnippet language="typescript" operationID="getBucketLeaders" method="post" path="/v1/leaderboard.getBucketLeaders" -->
+<!-- UsageSnippet language="typescript" operationID="leaderboard.getBucketLeaders" method="post" path="/v1/leaderboard.getBucketLeaders" -->
 ```typescript
 import { SteamSets } from "@steamsets/client-ts";
 
@@ -288,7 +288,7 @@ run();
 
 ### Response
 
-**Promise\<[operations.GetBucketLeadersResponse](../../models/operations/getbucketleadersresponse.md)\>**
+**Promise\<[operations.LeaderboardGetBucketLeadersResponse](../../models/operations/leaderboardgetbucketleadersresponse.md)\>**
 
 ### Errors
 

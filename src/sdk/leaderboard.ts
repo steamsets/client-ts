@@ -50,7 +50,7 @@ export class Leaderboard extends ClientSDK {
   async getBucketLeaders(
     request: components.V1LeaderboardGetBucketLeadersRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.GetBucketLeadersResponse> {
+  ): Promise<operations.LeaderboardGetBucketLeadersResponse> {
     return unwrapAsync(leaderboardGetBucketLeaders(
       this,
       request,
