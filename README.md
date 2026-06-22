@@ -82,15 +82,15 @@ run();
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
 * [deleteImages](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
-* [accountFindFriendPath](docs/sdks/account/README.md#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
-* [accountGetBadgeHeatmap](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
+* [findFriendPath](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
+* [getBadgeHeatmap](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 * [getInfo](docs/sdks/account/README.md#getinfo) - Get account profile information
 * [getMeta](docs/sdks/account/README.md#getmeta) - Get account metadata
 * [getSession](docs/sdks/account/README.md#getsession) - Get user session information
 * [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
-* [accountGetTrending](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
+* [getTrending](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
 * [getViewStats](docs/sdks/account/README.md#getviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 * [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
@@ -100,7 +100,7 @@ run();
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
-* [accountListOwnedGroups](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
+* [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
@@ -108,7 +108,6 @@ run();
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
-* [search](docs/sdks/account/README.md#search) - Search accounts
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -144,7 +143,7 @@ run();
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
-* [adminUpdateRoleOverride](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
+* [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
 
 #### [Admin.Donations](docs/sdks/steamsetsdonations/README.md)
@@ -175,7 +174,6 @@ run();
 ### [App](docs/sdks/app/README.md)
 
 * [queueUpdate](docs/sdks/app/README.md#queueupdate) - Queue app update
-* [search](docs/sdks/app/README.md#search) - Search apps
 
 ### [Apps](docs/sdks/apps/README.md)
 
@@ -184,7 +182,6 @@ run();
 ### [Badge](docs/sdks/badge/README.md)
 
 * [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
-* [search](docs/sdks/badge/README.md#search) - Search badges
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
 ### [BadgePricing](docs/sdks/badgepricing/README.md)
@@ -209,7 +206,6 @@ run();
 ### [Group](docs/sdks/group/README.md)
 
 * [queueUpdate](docs/sdks/group/README.md#queueupdate) - Queue group update
-* [search](docs/sdks/group/README.md#search) - Search groups
 
 ### [Item](docs/sdks/item/README.md)
 
@@ -233,7 +229,6 @@ run();
 ### [Location](docs/sdks/location/README.md)
 
 * [get](docs/sdks/location/README.md#get) - List available locations
-* [search](docs/sdks/location/README.md#search) - Search locations (typeahead)
 
 ### [Maintenance](docs/sdks/maintenance/README.md)
 
@@ -241,7 +236,7 @@ run();
 
 ### [Search](docs/sdks/search/README.md)
 
-* [searchGetTrending](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
+* [getTrending](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
 
 ### [Site](docs/sdks/site/README.md)
 
@@ -255,10 +250,6 @@ run();
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 * [subscribe](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
-
-### [TradingItem](docs/sdks/tradingitem/README.md)
-
-* [search](docs/sdks/tradingitem/README.md#search) - Search trading items
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -682,10 +673,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`accountAccountFindFriendPath`](docs/sdks/account/README.md#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
-- [`accountAccountGetBadgeHeatmap`](docs/sdks/account/README.md#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
-- [`accountAccountGetTrending`](docs/sdks/account/README.md#accountgettrending) - Top accounts by unique viewers in a window
-- [`accountAccountListOwnedGroups`](docs/sdks/account/README.md#accountlistownedgroups) - List groups owned by account
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -694,12 +681,15 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
 - [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 - [`accountDeleteSession`](docs/sdks/account/README.md#deletesession) - Delete user session
+- [`accountFindFriendPath`](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
+- [`accountGetBadgeHeatmap`](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
 - [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 - [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo) - Get account profile information
 - [`accountGetMeta`](docs/sdks/account/README.md#getmeta) - Get account metadata
 - [`accountGetSession`](docs/sdks/account/README.md#getsession) - Get user session information
 - [`accountGetSettings`](docs/sdks/account/README.md#getsettings) - Get account settings
+- [`accountGetTrending`](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
 - [`accountGetViewStats`](docs/sdks/account/README.md#getviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 - [`accountListApps`](docs/sdks/account/README.md#listapps) - List account owned apps
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
@@ -709,6 +699,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
+- [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
 - [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
@@ -716,7 +707,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
-- [`accountSearch`](docs/sdks/account/README.md#search) - Search accounts
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -732,7 +722,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
-- [`adminAdminUpdateRoleOverride`](docs/sdks/admin/README.md#adminupdateroleoverride) - Set or remove a tier role override for an account
 - [`adminCmsArchive`](docs/sdks/admin/README.md#cmsarchive) - Archive a CMS document so it stops appearing in public reads (versions retained)
 - [`adminCmsCreate`](docs/sdks/admin/README.md#cmscreate) - Create a new CMS document with an initial draft version
 - [`adminCmsDelete`](docs/sdks/admin/README.md#cmsdelete) - Permanently delete a CMS document and all its versions
@@ -755,6 +744,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
+- [`adminUpdateRoleOverride`](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
 - [`analyticsGetBivariate`](docs/sdks/analytics/README.md#getbivariate) - Bucket by X, aggregate Y, within a scope
 - [`analyticsGetDistribution`](docs/sdks/analytics/README.md#getdistribution) - Histogram + summary stats for a metric in a scope
@@ -765,10 +755,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsListMetrics`](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
-- [`appSearch`](docs/sdks/app/README.md#search) - Search apps
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`badgePricingSearch`](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
-- [`badgeSearch`](docs/sdks/badge/README.md#search) - Search badges
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
@@ -778,7 +766,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`donationsGetAddresses`](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
 - [`donationsListSupportedCurrencies`](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
-- [`groupSearch`](docs/sdks/group/README.md#search) - Search groups
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
 - [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
@@ -790,14 +777,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`locationGet`](docs/sdks/location/README.md#get) - List available locations
-- [`locationSearch`](docs/sdks/location/README.md#search) - Search locations (typeahead)
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
-- [`searchSearchGetTrending`](docs/sdks/search/README.md#searchgettrending) - Top search queries in a window, by unique searcher count
+- [`searchGetTrending`](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
 - [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 - [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
-- [`tradingItemSearch`](docs/sdks/tradingitem/README.md#search) - Search trading items
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

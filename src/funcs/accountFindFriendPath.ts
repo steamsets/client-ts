@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeJSON } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -11,6 +11,7 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -27,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Search trading items
+ * Find up to N shortest friend paths between two accounts
  */
-export function tradingItemSearch(
+export function accountFindFriendPath(
   client: SteamSetsCore,
-  request: operations.TradingItemSearchItemsRequest,
+  request: components.V1AccountFindFriendPathRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.TradingItemSearchItemsResponse,
+    operations.AccountFindFriendPathResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -56,12 +57,12 @@ export function tradingItemSearch(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.TradingItemSearchItemsRequest,
+  request: components.V1AccountFindFriendPathRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.TradingItemSearchItemsResponse,
+      operations.AccountFindFriendPathResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,35 +79,20 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.TradingItemSearchItemsRequest$outboundSchema.parse(value),
+      components.V1AccountFindFriendPathRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.TradingItemSearchItemsRequestBody, {
-    explode: true,
-  });
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/tradingItem.searchItems")();
+  const path = pathToFunc("/v1/account.findFriendPath")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
-    "User-Agent": encodeSimple("User-Agent", payload["User-Agent"], {
-      explode: false,
-      charEncoding: "none",
-    }),
-    "X-Forwarded-For": encodeSimple(
-      "X-Forwarded-For",
-      payload["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
-    "X-Visitor-Id": encodeSimple("X-Visitor-Id", payload["X-Visitor-Id"], {
-      explode: false,
-      charEncoding: "none",
-    }),
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -116,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "tradingItem.searchItems",
+    operationID: "account.findFriendPath",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -171,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.TradingItemSearchItemsResponse,
+    operations.AccountFindFriendPathResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -182,13 +168,13 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.TradingItemSearchItemsResponse$inboundSchema, {
-      key: "TradingItemSearchItemsResponseBody",
+    M.json(200, operations.AccountFindFriendPathResponse$inboundSchema, {
+      key: "V1AccountFindFriendPathResponseBody",
     }),
-    M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([500, 503], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

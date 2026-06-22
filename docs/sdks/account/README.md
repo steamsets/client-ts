@@ -14,15 +14,15 @@ All Requests related to account(s) are grouped here.
 * [deleteDeveloperApp](#deletedeveloperapp) - Delete developer application
 * [deleteImages](#deleteimages) - Delete uploaded images
 * [deleteSession](#deletesession) - Delete user session
-* [accountFindFriendPath](#accountfindfriendpath) - Find up to N shortest friend paths between two accounts
-* [accountGetBadgeHeatmap](#accountgetbadgeheatmap) - Get monthly badge crafting counts for an account
+* [findFriendPath](#findfriendpath) - Find up to N shortest friend paths between two accounts
+* [getBadgeHeatmap](#getbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](#getbadgestats) - Get account badge statistics
 * [getDataPoints](#getdatapoints) - Get account data points for charts
 * [getInfo](#getinfo) - Get account profile information
 * [getMeta](#getmeta) - Get account metadata
 * [getSession](#getsession) - Get user session information
 * [getSettings](#getsettings) - Get account settings
-* [accountGetTrending](#accountgettrending) - Top accounts by unique viewers in a window
+* [getTrending](#gettrending) - Top accounts by unique viewers in a window
 * [getViewStats](#getviewstats) - Get profile view counts (24h/7d/30d × unique/total) for an account
 * [listApps](#listapps) - List account owned apps
 * [listBadgeBookmarks](#listbadgebookmarks) - List bookmarked badges
@@ -32,7 +32,7 @@ All Requests related to account(s) are grouped here.
 * [listInventorySets](#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](#listownedbadges) - List owned badges
-* [accountListOwnedGroups](#accountlistownedgroups) - List groups owned by account
+* [listOwnedGroups](#listownedgroups) - List groups owned by account
 * [login](#login) - Login with Steam
 * [logout](#logout) - Logout from session
 * [queueInventoryRefresh](#queueinventoryrefresh) - Queue inventory refresh
@@ -40,7 +40,6 @@ All Requests related to account(s) are grouped here.
 * [reconnectConnection](#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](#refreshinventory) - Refresh inventory
 * [refreshSession](#refreshsession) - Refresh session token
-* [search](#search) - Search accounts
 * [sendEmailVerification](#sendemailverification) - Send email verification
 * [subscribe](#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 * [subscribeEmail](#subscribeemail) - Subscribe to email notifications
@@ -676,7 +675,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountFindFriendPath
+## findFriendPath
 
 Find up to N shortest friend paths between two accounts
 
@@ -691,7 +690,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountFindFriendPath({
+  const result = await steamSets.account.findFriendPath({
     from: {},
     to: {},
   });
@@ -708,7 +707,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountFindFriendPath } from "@steamsets/client-ts/funcs/accountAccountFindFriendPath.js";
+import { accountFindFriendPath } from "@steamsets/client-ts/funcs/accountFindFriendPath.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -717,7 +716,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountFindFriendPath(steamSets, {
+  const res = await accountFindFriendPath(steamSets, {
     from: {},
     to: {},
   });
@@ -725,7 +724,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountFindFriendPath failed:", res.error);
+    console.log("accountFindFriendPath failed:", res.error);
   }
 }
 
@@ -753,7 +752,7 @@ run();
 | errors.ErrorModel        | 500, 503                 | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountGetBadgeHeatmap
+## getBadgeHeatmap
 
 Get monthly badge crafting counts for an account
 
@@ -768,7 +767,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountGetBadgeHeatmap({});
+  const result = await steamSets.account.getBadgeHeatmap({});
 
   console.log(result);
 }
@@ -782,7 +781,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountGetBadgeHeatmap } from "@steamsets/client-ts/funcs/accountAccountGetBadgeHeatmap.js";
+import { accountGetBadgeHeatmap } from "@steamsets/client-ts/funcs/accountGetBadgeHeatmap.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -791,12 +790,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountGetBadgeHeatmap(steamSets, {});
+  const res = await accountGetBadgeHeatmap(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountGetBadgeHeatmap failed:", res.error);
+    console.log("accountGetBadgeHeatmap failed:", res.error);
   }
 }
 
@@ -1252,7 +1251,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountGetTrending
+## getTrending
 
 Top accounts by unique viewers in a window
 
@@ -1267,7 +1266,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountGetTrending({
+  const result = await steamSets.account.getTrending({
     window: "24h",
   });
 
@@ -1283,7 +1282,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountGetTrending } from "@steamsets/client-ts/funcs/accountAccountGetTrending.js";
+import { accountGetTrending } from "@steamsets/client-ts/funcs/accountGetTrending.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1292,14 +1291,14 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountGetTrending(steamSets, {
+  const res = await accountGetTrending(steamSets, {
     window: "24h",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountGetTrending failed:", res.error);
+    console.log("accountGetTrending failed:", res.error);
   }
 }
 
@@ -1962,7 +1961,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## accountListOwnedGroups
+## listOwnedGroups
 
 List groups owned by account
 
@@ -1977,7 +1976,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.accountListOwnedGroups({});
+  const result = await steamSets.account.listOwnedGroups({});
 
   console.log(result);
 }
@@ -1991,7 +1990,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountAccountListOwnedGroups } from "@steamsets/client-ts/funcs/accountAccountListOwnedGroups.js";
+import { accountListOwnedGroups } from "@steamsets/client-ts/funcs/accountListOwnedGroups.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2000,12 +1999,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountAccountListOwnedGroups(steamSets, {});
+  const res = await accountListOwnedGroups(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountAccountListOwnedGroups failed:", res.error);
+    console.log("accountListOwnedGroups failed:", res.error);
   }
 }
 
@@ -2581,85 +2580,6 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 422            | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## search
-
-Search accounts
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="account.searchAccounts" method="post" path="/v1/account.searchAccounts" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.search({
-    accountSearchAccountsRequestBody: {
-      query: "<value>",
-    },
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountSearch } from "@steamsets/client-ts/funcs/accountSearch.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountSearch(steamSets, {
-    accountSearchAccountsRequestBody: {
-      query: "<value>",
-    },
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("accountSearch failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AccountSearchAccountsRequest](../../models/operations/accountsearchaccountsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountSearchAccountsResponse](../../models/operations/accountsearchaccountsresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

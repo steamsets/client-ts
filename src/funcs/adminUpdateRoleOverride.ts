@@ -30,7 +30,7 @@ import { Result } from "../types/fp.js";
 /**
  * Set or remove a tier role override for an account
  */
-export function adminAdminUpdateRoleOverride(
+export function adminUpdateRoleOverride(
   client: SteamSetsCore,
   request: components.V1AdminUpdateRoleOverrideRequestBody,
   options?: RequestOptions,

@@ -24,7 +24,6 @@ import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
-import { TradingItem } from "./tradingitem.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -130,10 +129,5 @@ export class SteamSets extends ClientSDK {
   private _stats?: Stats;
   get stats(): Stats {
     return (this._stats ??= new Stats(this._options));
-  }
-
-  private _tradingItem?: TradingItem;
-  get tradingItem(): TradingItem {
-    return (this._tradingItem ??= new TradingItem(this._options));
   }
 }

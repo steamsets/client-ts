@@ -32,16 +32,14 @@ export type SortBy = ClosedEnum<typeof SortBy>;
 /**
  * asc | desc; defaults to asc for appName, desc for everything else.
  */
-export const BadgePricingSearchRequestBodySortDir = {
+export const SortDir = {
   Asc: "asc",
   Desc: "desc",
 } as const;
 /**
  * asc | desc; defaults to asc for appName, desc for everything else.
  */
-export type BadgePricingSearchRequestBodySortDir = ClosedEnum<
-  typeof BadgePricingSearchRequestBodySortDir
->;
+export type SortDir = ClosedEnum<typeof SortDir>;
 
 export type BadgePricingSearchRequestBody = {
   filter?: BadgePricingSearchFilter | undefined;
@@ -61,7 +59,7 @@ export type BadgePricingSearchRequestBody = {
   /**
    * asc | desc; defaults to asc for appName, desc for everything else.
    */
-  sortDir?: BadgePricingSearchRequestBodySortDir | undefined;
+  sortDir?: SortDir | undefined;
 };
 
 /** @internal */
@@ -69,10 +67,8 @@ export const SortBy$outboundSchema: z.ZodNativeEnum<typeof SortBy> = z
   .nativeEnum(SortBy);
 
 /** @internal */
-export const BadgePricingSearchRequestBodySortDir$outboundSchema:
-  z.ZodNativeEnum<typeof BadgePricingSearchRequestBodySortDir> = z.nativeEnum(
-    BadgePricingSearchRequestBodySortDir,
-  );
+export const SortDir$outboundSchema: z.ZodNativeEnum<typeof SortDir> = z
+  .nativeEnum(SortDir);
 
 /** @internal */
 export type BadgePricingSearchRequestBody$Outbound = {
@@ -95,7 +91,7 @@ export const BadgePricingSearchRequestBody$outboundSchema: z.ZodType<
   offset: z.number().int().optional(),
   query: z.string(),
   sortBy: SortBy$outboundSchema.optional(),
-  sortDir: BadgePricingSearchRequestBodySortDir$outboundSchema.optional(),
+  sortDir: SortDir$outboundSchema.optional(),
 });
 
 export function badgePricingSearchRequestBodyToJSON(

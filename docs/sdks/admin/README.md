@@ -20,7 +20,7 @@ Admin related operations, stay away from these.
 * [getAccount](#getaccount) - Get account for admin
 * [removeVanity](#removevanity) - Remove vanity URL
 * [updateResources](#updateresources) - Update account resources
-* [adminUpdateRoleOverride](#adminupdateroleoverride) - Set or remove a tier role override for an account
+* [updateRoleOverride](#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](#updateroles) - Update account roles
 
 ## cmsArchive
@@ -1097,7 +1097,7 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## adminUpdateRoleOverride
+## updateRoleOverride
 
 Set or remove a tier role override for an account
 
@@ -1112,7 +1112,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.admin.adminUpdateRoleOverride({});
+  const result = await steamSets.admin.updateRoleOverride({});
 
   console.log(result);
 }
@@ -1126,7 +1126,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { adminAdminUpdateRoleOverride } from "@steamsets/client-ts/funcs/adminAdminUpdateRoleOverride.js";
+import { adminUpdateRoleOverride } from "@steamsets/client-ts/funcs/adminUpdateRoleOverride.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1135,12 +1135,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await adminAdminUpdateRoleOverride(steamSets, {});
+  const res = await adminUpdateRoleOverride(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("adminAdminUpdateRoleOverride failed:", res.error);
+    console.log("adminUpdateRoleOverride failed:", res.error);
   }
 }
 

@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Top search queries in a window, by unique searcher count
+ * List groups owned by account
  */
-export function searchSearchGetTrending(
+export function accountListOwnedGroups(
   client: SteamSetsCore,
-  request: components.SearchGetTrendingRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.SearchGetTrendingResponse,
+    operations.AccountListOwnedGroupsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function searchSearchGetTrending(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.SearchGetTrendingRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.SearchGetTrendingResponse,
+      operations.AccountListOwnedGroupsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,8 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.SearchGetTrendingRequestBody$outboundSchema.parse(value),
+    (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -88,7 +87,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/search.getTrending")();
+  const path = pathToFunc("/v1/account.listOwnedGroups")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -102,7 +101,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "search.getTrending",
+    operationID: "account.listOwnedGroups",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -157,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.SearchGetTrendingResponse,
+    operations.AccountListOwnedGroupsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -168,10 +167,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.SearchGetTrendingResponse$inboundSchema, {
-      key: "SearchGetTrendingResponseBody",
+    M.json(200, operations.AccountListOwnedGroupsResponse$inboundSchema, {
+      key: "V1AccountListOwnedGroupsResponseBody",
     }),
-    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

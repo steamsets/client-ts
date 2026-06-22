@@ -3,7 +3,7 @@
  */
 
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeJSON } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -11,6 +11,7 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -27,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Search locations (typeahead)
+ * Top accounts by unique viewers in a window
  */
-export function locationSearch(
+export function accountGetTrending(
   client: SteamSetsCore,
-  request: operations.LocationSearchRequest,
+  request: components.AccountGetTrendingRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LocationSearchResponse,
+    operations.AccountGetTrendingResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -56,12 +57,12 @@ export function locationSearch(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.LocationSearchRequest,
+  request: components.AccountGetTrendingRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LocationSearchResponse,
+      operations.AccountGetTrendingResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -77,27 +78,21 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.LocationSearchRequest$outboundSchema.parse(value),
+    (value) =>
+      components.AccountGetTrendingRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.LocationSearchLocationsRequestBody, {
-    explode: true,
-  });
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/location.search")();
+  const path = pathToFunc("/v1/account.getTrending")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
-    "X-Forwarded-For": encodeSimple(
-      "X-Forwarded-For",
-      payload["X-Forwarded-For"],
-      { explode: false, charEncoding: "none" },
-    ),
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -107,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "location.search",
+    operationID: "account.getTrending",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -162,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LocationSearchResponse,
+    operations.AccountGetTrendingResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -173,10 +168,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LocationSearchResponse$inboundSchema, {
-      key: "LocationSearchLocationsResponseBody",
+    M.json(200, operations.AccountGetTrendingResponse$inboundSchema, {
+      key: "AccountGetTrendingResponseBody",
     }),
-    M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

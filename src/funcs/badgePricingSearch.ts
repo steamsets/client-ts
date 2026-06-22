@@ -184,7 +184,7 @@ async function $do(
     M.json(200, operations.BadgePricingSearchResponse$inboundSchema, {
       key: "BadgePricingSearchResponseBody",
     }),
-    M.jsonErr([400, 401, 422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

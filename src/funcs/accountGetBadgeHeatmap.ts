@@ -30,7 +30,7 @@ import { Result } from "../types/fp.js";
 /**
  * Get monthly badge crafting counts for an account
  */
-export function accountAccountGetBadgeHeatmap(
+export function accountGetBadgeHeatmap(
   client: SteamSetsCore,
   request: components.AccountSearch,
   options?: RequestOptions,

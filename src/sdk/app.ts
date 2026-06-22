@@ -3,7 +3,6 @@
  */
 
 import { appQueueUpdate } from "../funcs/appQueueUpdate.js";
-import { appSearch } from "../funcs/appSearch.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -18,20 +17,6 @@ export class App extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AppQueueUpdateResponse> {
     return unwrapAsync(appQueueUpdate(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Search apps
-   */
-  async search(
-    request: operations.AppSearchRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AppSearchResponse> {
-    return unwrapAsync(appSearch(
       this,
       request,
       options,
