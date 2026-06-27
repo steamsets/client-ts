@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Update developer application
+ * Get monthly badge crafting counts for an account
  */
-export function accountUpdateDeveloperApp(
+export function accountGetBadgeHeatmap(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AccountGetBadgeHeatmapResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function accountUpdateDeveloperApp(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountUpdateDeveloperAppResponse,
+      operations.AccountGetBadgeHeatmapResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,10 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
-        value,
-      ),
+    (value) => components.AccountSearch$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -90,7 +87,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.updateDeveloperApp")();
+  const path = pathToFunc("/v1/account.getBadgeHeatmap")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +101,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.updateDeveloperApp",
+    operationID: "account.getBadgeHeatmap",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AccountGetBadgeHeatmapResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,8 +167,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountUpdateDeveloperAppResponse$inboundSchema, {
-      key: "V1AccountDeveloperAppUpdateResponseBody",
+    M.json(200, operations.AccountGetBadgeHeatmapResponse$inboundSchema, {
+      key: "object",
     }),
     M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

@@ -10,9 +10,9 @@ export type V1ActivityListAccountFeedRequestBody = {
    */
   accountId: number;
   /**
-   * Occurred-at of the last event from the previous page. Omit for the most recent page.
+   * Opaque pagination cursor from the previous page's nextCursor. Omit for the most recent page.
    */
-  cursor?: Date | undefined;
+  cursor?: string | undefined;
   /**
    * Filter to these event_type values. Empty = all.
    */
@@ -38,7 +38,7 @@ export const V1ActivityListAccountFeedRequestBody$outboundSchema: z.ZodType<
   V1ActivityListAccountFeedRequestBody
 > = z.object({
   accountId: z.number().int(),
-  cursor: z.date().transform(v => v.toISOString()).optional(),
+  cursor: z.string().optional(),
   eventTypes: z.nullable(z.array(z.string())).optional(),
   limit: z.number().int().optional(),
 });

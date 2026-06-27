@@ -29,7 +29,9 @@ async function run() {
     accountId: 607533,
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -55,7 +57,9 @@ async function run() {
   });
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("activityListAccountFeed failed:", res.error);
   }
@@ -102,7 +106,9 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.activity.listGlobalFeed({});
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -126,7 +132,9 @@ async function run() {
   const res = await activityListGlobalFeed(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
     console.log("activityListGlobalFeed failed:", res.error);
   }

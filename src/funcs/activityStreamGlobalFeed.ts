@@ -109,7 +109,7 @@ async function $do(
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["429", "501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -120,7 +120,7 @@ async function $do(
     headers: headers,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
-    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || 86400000,
   }, options);
   if (!requestRes.ok) {
     return [requestRes, { status: "invalid" }];

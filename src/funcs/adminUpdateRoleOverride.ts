@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Update developer application
+ * Set or remove a tier role override for an account
  */
-export function accountUpdateDeveloperApp(
+export function adminUpdateRoleOverride(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.V1AdminUpdateRoleOverrideRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AdminUpdateRoleOverrideResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function accountUpdateDeveloperApp(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.V1AdminUpdateRoleOverrideRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountUpdateDeveloperAppResponse,
+      operations.AdminUpdateRoleOverrideResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
+      components.V1AdminUpdateRoleOverrideRequestBody$outboundSchema.parse(
         value,
       ),
     "Input validation failed",
@@ -90,11 +90,11 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.updateDeveloperApp")();
+  const path = pathToFunc("/v1/admin.updateRoleOverride")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -104,7 +104,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.updateDeveloperApp",
+    operationID: "admin.updateRoleOverride",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +159,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AdminUpdateRoleOverrideResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,10 +170,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountUpdateDeveloperAppResponse$inboundSchema, {
-      key: "V1AccountDeveloperAppUpdateResponseBody",
-    }),
-    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.nil(204, operations.AdminUpdateRoleOverrideResponse$inboundSchema),
+    M.jsonErr([400, 401, 403, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

@@ -3,7 +3,6 @@
  */
 
 import { groupQueueUpdate } from "../funcs/groupQueueUpdate.js";
-import { groupSearch } from "../funcs/groupSearch.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -18,20 +17,6 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.GroupQueueUpdateResponse> {
     return unwrapAsync(groupQueueUpdate(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Search groups
-   */
-  async search(
-    request: operations.GroupSearchRequest,
-    options?: RequestOptions,
-  ): Promise<operations.GroupSearchResponse> {
-    return unwrapAsync(groupSearch(
       this,
       request,
       options,

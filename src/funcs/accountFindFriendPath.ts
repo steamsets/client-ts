@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Update developer application
+ * Find up to N shortest friend paths between two accounts
  */
-export function accountUpdateDeveloperApp(
+export function accountFindFriendPath(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.V1AccountFindFriendPathRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AccountFindFriendPathResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function accountUpdateDeveloperApp(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1AccountDeveloperAppUpdateRequestBody,
+  request: components.V1AccountFindFriendPathRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountUpdateDeveloperAppResponse,
+      operations.AccountFindFriendPathResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,9 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1AccountDeveloperAppUpdateRequestBody$outboundSchema.parse(
-        value,
-      ),
+      components.V1AccountFindFriendPathRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -90,7 +88,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.updateDeveloperApp")();
+  const path = pathToFunc("/v1/account.findFriendPath")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.updateDeveloperApp",
+    operationID: "account.findFriendPath",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountUpdateDeveloperAppResponse,
+    operations.AccountFindFriendPathResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,13 +168,13 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountUpdateDeveloperAppResponse$inboundSchema, {
-      key: "V1AccountDeveloperAppUpdateResponseBody",
+    M.json(200, operations.AccountFindFriendPathResponse$inboundSchema, {
+      key: "V1AccountFindFriendPathResponseBody",
     }),
     M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([500, 503], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

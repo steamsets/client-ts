@@ -5,7 +5,7 @@
 import { badgePricingSearch } from "../funcs/badgePricingSearch.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
-import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class BadgePricing extends ClientSDK {
   /**
@@ -14,8 +14,10 @@ export class BadgePricing extends ClientSDK {
   async search(
     request: operations.BadgePricingSearchRequest,
     options?: RequestOptions,
-  ): Promise<operations.BadgePricingSearchResponse> {
-    return unwrapAsync(badgePricingSearch(
+  ): Promise<
+    PageIterator<operations.BadgePricingSearchResponse, { offset: number }>
+  > {
+    return unwrapResultIterator(badgePricingSearch(
       this,
       request,
       options,
