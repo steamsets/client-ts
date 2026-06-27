@@ -1,6 +1,6 @@
 # SortDir
 
-asc | desc; defaults to desc.
+asc | desc; defaults to asc for appName, desc for everything else.
 
 ## Example Usage
 

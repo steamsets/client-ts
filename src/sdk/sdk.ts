@@ -12,7 +12,6 @@ import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { BadgePricing } from "./badgepricing.js";
 import { Badges } from "./badges.js";
-import { Cms } from "./cms.js";
 import { Donations } from "./donations.js";
 import { Group } from "./group.js";
 import { Item } from "./item.js";
@@ -24,7 +23,6 @@ import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
-import { TradingItem } from "./tradingitem.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -70,11 +68,6 @@ export class SteamSets extends ClientSDK {
   private _badgePricing?: BadgePricing;
   get badgePricing(): BadgePricing {
     return (this._badgePricing ??= new BadgePricing(this._options));
-  }
-
-  private _cms?: Cms;
-  get cms(): Cms {
-    return (this._cms ??= new Cms(this._options));
   }
 
   private _donations?: Donations;
@@ -130,10 +123,5 @@ export class SteamSets extends ClientSDK {
   private _stats?: Stats;
   get stats(): Stats {
     return (this._stats ??= new Stats(this._options));
-  }
-
-  private _tradingItem?: TradingItem;
-  get tradingItem(): TradingItem {
-    return (this._tradingItem ??= new TradingItem(this._options));
   }
 }

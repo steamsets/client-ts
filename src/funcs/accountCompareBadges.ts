@@ -26,6 +26,12 @@ import { SteamSetsError } from "../models/errors/steamsetserror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
+import {
+  createPageIterator,
+  haltIterator,
+  PageIterator,
+  Paginator,
+} from "../types/operations.js";
 
 /**
  * Compare badge collections between accounts
@@ -35,17 +41,20 @@ export function accountCompareBadges(
   request: components.V1AccountCompareBadgesRequestBody,
   options?: RequestOptions,
 ): APIPromise<
-  Result<
-    operations.CompareBadgesResponse,
-    | errors.ErrorModel
-    | SteamSetsError
-    | ResponseValidationError
-    | ConnectionError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | InvalidRequestError
-    | UnexpectedClientError
-    | SDKValidationError
+  PageIterator<
+    Result<
+      operations.CompareBadgesResponse,
+      | errors.ErrorModel
+      | SteamSetsError
+      | ResponseValidationError
+      | ConnectionError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
+    >,
+    { page: number }
   >
 > {
   return new APIPromise($do(
@@ -61,17 +70,20 @@ async function $do(
   options?: RequestOptions,
 ): Promise<
   [
-    Result<
-      operations.CompareBadgesResponse,
-      | errors.ErrorModel
-      | SteamSetsError
-      | ResponseValidationError
-      | ConnectionError
-      | RequestAbortedError
-      | RequestTimeoutError
-      | InvalidRequestError
-      | UnexpectedClientError
-      | SDKValidationError
+    PageIterator<
+      Result<
+        operations.CompareBadgesResponse,
+        | errors.ErrorModel
+        | SteamSetsError
+        | ResponseValidationError
+        | ConnectionError
+        | RequestAbortedError
+        | RequestTimeoutError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
+      >,
+      { page: number }
     >,
     APICall,
   ]
@@ -83,7 +95,7 @@ async function $do(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return [parsed, { status: "invalid" }];
+    return [haltIterator(parsed), { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
@@ -121,7 +133,7 @@ async function $do(
         retryConnectionErrors: true,
       }
       || { strategy: "none" },
-    retryCodes: options?.retryCodes || ["501", "502", "503", "504"],
+    retryCodes: options?.retryCodes || ["429", "501", "502", "503", "504"],
   };
 
   const requestRes = client._createRequest(context, {
@@ -133,10 +145,10 @@ async function $do(
     body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
-    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || 30000,
   }, options);
   if (!requestRes.ok) {
-    return [requestRes, { status: "invalid" }];
+    return [haltIterator(requestRes), { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -148,7 +160,7 @@ async function $do(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return [doResult, { status: "request-error", request: req }];
+    return [haltIterator(doResult), { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -156,7 +168,7 @@ async function $do(
     HttpMeta: { Response: response, Request: req },
   };
 
-  const [result] = await M.match<
+  const [result, raw] = await M.match<
     operations.CompareBadgesResponse,
     | errors.ErrorModel
     | SteamSetsError
@@ -181,8 +193,64 @@ async function $do(
     M.fail("5XX"),
   )(response, req, { extraFields: responseFields });
   if (!result.ok) {
-    return [result, { status: "complete", request: req, response }];
+    return [haltIterator(result), {
+      status: "complete",
+      request: req,
+      response,
+    }];
   }
 
-  return [result, { status: "complete", request: req, response }];
+  const nextFunc = (
+    responseData: unknown,
+  ): {
+    next: Paginator<
+      Result<
+        operations.CompareBadgesResponse,
+        | errors.ErrorModel
+        | SteamSetsError
+        | ResponseValidationError
+        | ConnectionError
+        | RequestAbortedError
+        | RequestTimeoutError
+        | InvalidRequestError
+        | UnexpectedClientError
+        | SDKValidationError
+      >
+    >;
+    "~next"?: { page: number };
+  } => {
+    const page = request?.page ?? 1;
+    const nextPage = page + 1;
+    const numPages = (responseData as { pages: unknown }).pages;
+    if (typeof numPages !== "number" || numPages <= page) {
+      return { next: () => null };
+    }
+
+    if (!responseData) {
+      return { next: () => null };
+    }
+    const results = (responseData as { tuples: unknown | null }).tuples;
+    if (!Array.isArray(results) || !results.length) {
+      return { next: () => null };
+    }
+
+    const nextVal = () =>
+      accountCompareBadges(
+        client,
+        {
+          ...request,
+          page: nextPage,
+        },
+        options,
+      );
+
+    return { next: nextVal, "~next": { page: nextPage } };
+  };
+
+  const page = { ...result, ...nextFunc(raw) };
+  return [{ ...page, ...createPageIterator(page, (v) => !v.ok) }, {
+    status: "complete",
+    request: req,
+    response,
+  }];
 }

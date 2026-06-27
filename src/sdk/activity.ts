@@ -12,6 +12,7 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export { StreamGlobalFeedAcceptEnum } from "../funcs/activityStreamGlobalFeed.js";
 
@@ -22,8 +23,10 @@ export class Activity extends ClientSDK {
   async listAccountFeed(
     request: components.V1ActivityListAccountFeedRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.ListAccountFeedResponse> {
-    return unwrapAsync(activityListAccountFeed(
+  ): Promise<
+    PageIterator<operations.ListAccountFeedResponse, { cursor: string }>
+  > {
+    return unwrapResultIterator(activityListAccountFeed(
       this,
       request,
       options,
@@ -36,8 +39,10 @@ export class Activity extends ClientSDK {
   async listGlobalFeed(
     request: components.V1ActivityListGlobalFeedRequestBody,
     options?: RequestOptions,
-  ): Promise<operations.ListGlobalFeedResponse> {
-    return unwrapAsync(activityListGlobalFeed(
+  ): Promise<
+    PageIterator<operations.ListGlobalFeedResponse, { cursor: string }>
+  > {
+    return unwrapResultIterator(activityListGlobalFeed(
       this,
       request,
       options,

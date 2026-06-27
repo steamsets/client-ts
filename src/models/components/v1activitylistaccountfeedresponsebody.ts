@@ -18,6 +18,10 @@ export type V1ActivityListAccountFeedResponseBody = {
    */
   dollarSchema?: string | undefined;
   events: Array<V1ActivityAccountFeedEvent> | null;
+  /**
+   * Pass as cursor to fetch the next page. Absent when there are no more events.
+   */
+  nextCursor?: string | undefined;
 };
 
 /** @internal */
@@ -28,6 +32,7 @@ export const V1ActivityListAccountFeedResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   events: z.nullable(z.array(V1ActivityAccountFeedEvent$inboundSchema)),
+  nextCursor: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",

@@ -6,9 +6,9 @@ import * as z from "zod/v3";
 
 export type V1ActivityListGlobalFeedRequestBody = {
   /**
-   * Occurred-at of the last event from the previous page. Omit for the most recent page.
+   * Opaque pagination cursor from the previous page's nextCursor. Omit for the most recent page.
    */
-  cursor?: Date | undefined;
+  cursor?: string | undefined;
   /**
    * Filter to these event_type values (badge_crafted, level_milestone, rank_milestone, scarcity_milestone). Empty = all.
    */
@@ -32,7 +32,7 @@ export const V1ActivityListGlobalFeedRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   V1ActivityListGlobalFeedRequestBody
 > = z.object({
-  cursor: z.date().transform(v => v.toISOString()).optional(),
+  cursor: z.string().optional(),
   eventTypes: z.nullable(z.array(z.string())).optional(),
   limit: z.number().int().optional(),
 });

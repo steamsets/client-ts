@@ -6,9 +6,9 @@ Cross-resource search and trending data.
 
 ### Available Operations
 
-* [searchGetTrending](#searchgettrending) - Top search queries in a window, by unique searcher count
+* [getTrending](#gettrending) - Top search queries in a window, by unique searcher count
 
-## searchGetTrending
+## getTrending
 
 Top search queries in a window, by unique searcher count
 
@@ -23,7 +23,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.search.searchGetTrending({
+  const result = await steamSets.search.getTrending({
     source: "account",
     window: "24h",
   });
@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { searchSearchGetTrending } from "@steamsets/client-ts/funcs/searchSearchGetTrending.js";
+import { searchGetTrending } from "@steamsets/client-ts/funcs/searchGetTrending.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -49,7 +49,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await searchSearchGetTrending(steamSets, {
+  const res = await searchGetTrending(steamSets, {
     source: "account",
     window: "24h",
   });
@@ -57,7 +57,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("searchSearchGetTrending failed:", res.error);
+    console.log("searchGetTrending failed:", res.error);
   }
 }
 
