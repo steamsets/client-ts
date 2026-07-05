@@ -101,7 +101,7 @@ export type LeaderboardGetChangesRequestBody = {
    */
   leaderboard: LeaderboardGetChangesRequestBodyLeaderboard;
   /**
-   * Number of accounts returned. Default 100.
+   * Number of accounts returned. Default 100, max 1000.
    */
   limit?: number | undefined;
   /**

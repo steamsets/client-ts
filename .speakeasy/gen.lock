@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: e35416d9a6b6ad686a7d5c67ae9e3bed
+  docChecksum: 39e8d24b54160f83bbf4498423722637
   docVersion: 1.0.0
   speakeasyVersion: 1.788.1
   generationVersion: 2.915.1
-  releaseVersion: 0.36.1
-  configChecksum: c3114a9f15f9146ba18278bc8171d62c
+  releaseVersion: 0.36.2
+  configChecksum: 3c53e036de2a368e661ffe638d5e4ad7
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 8c87e800-cfea-4323-b5a0-50809f5d8c9d
-  pristine_commit_hash: 8734f11d495094278126345d1e903c961047c98f
-  pristine_tree_hash: 344dea559b00e9fe2886e4c4dcb2c0965a9d930b
+  generation_id: a63266a4-5db7-4951-bfd3-54ea1cec32c7
+  pristine_commit_hash: 7934a63c520aa45d7d85f9b0e25bc80643381675
+  pristine_tree_hash: 5cf46ee1d68e7b7b1689a9473a9e4f2381f946db
 features:
   go:
     additionalDependencies: 0.1.0
@@ -471,8 +471,8 @@ trackedFiles:
     pristine_git_object: eed97d8424daabc6218f721fb8769a25926c3177
   docs/models/components/leaderboardgetchangesrequestbody.md:
     id: 151d9c1a2ae1
-    last_write_checksum: sha1:2591a58b80c7e1f04bfa26f3d9b54c135295414b
-    pristine_git_object: b3d3e20d2bfa51351365afbce386ce98e0bbb65b
+    last_write_checksum: sha1:1e3eccb13628a3742230cae8b1318ebfd3569b9b
+    pristine_git_object: a793f3feaf9f9758a6bc2f816bdcc7650829f4fd
   docs/models/components/leaderboardgetchangesrequestbodydirection.md:
     id: 2a53927d49db
     last_write_checksum: sha1:39846ab24ebff9e862c98ab1cb25245c93446438
@@ -1807,12 +1807,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:17e515219c76e11cbdae9bc80465e2d4e3c79bca
-    pristine_git_object: 41fc99ba498a9e133b931119c1af6714f6054105
+    last_write_checksum: sha1:1c8592f2d90a9ca244596cdae8a6103471f785a7
+    pristine_git_object: 3d513392b43d3d3e72aaef90f81c9fd94eeb81df
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:c86bc1fbdf8001fbc8d06b0aa5e94814a2312ff4
-    pristine_git_object: 2fca6005a26cca7e0bf9239dfbfc058da26fdbea
+    last_write_checksum: sha1:b872a3c1f770c7775633261f369477ab39a46882
+    pristine_git_object: 3ae45ca3069be42a2a3daeca19d389bdd1b322bb
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2199,8 +2199,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8b445b693b7bf40a09b2d940fe5ebdf6f0869c5f
-    pristine_git_object: 0b891dccc1d6f204d9934b9e390fc75d5ab6739d
+    last_write_checksum: sha1:df392623f9a080ce7ccfe759086860c06114c7ff
+    pristine_git_object: fb95c569d103c1ce6095d7eb8af7178b25ce833b
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2551,8 +2551,8 @@ trackedFiles:
     pristine_git_object: 66e2782f8f2fd5ffaea75c6fbfc44c192fd17eef
   src/models/components/leaderboardgetchangesrequestbody.ts:
     id: 0b4ce03af927
-    last_write_checksum: sha1:5136d5fb098023d005e1996b5ba7aeb43f23c487
-    pristine_git_object: 2144b9ea5fc015b6c62cafca349d553df84485e9
+    last_write_checksum: sha1:862b2a5ccd583874c3db160ed4a5c5487b3b7b88
+    pristine_git_object: f0a1bc7901b365abe8adc2167fe4bdc489b05a74
   src/models/components/leaderboardgetchangesresponsebody.ts:
     id: 7bc7a02f9ae3
     last_write_checksum: sha1:d2c617c5044d94c8243ea4e4666b82ce1531e77d
@@ -5048,7 +5048,6 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.donations.createCurrency()`: **Removed** (Breaking ⚠️)\n* `steamsets.admin.donations.deleteCurrency()`: **Removed** (Breaking ⚠️)\n* `steamsets.admin.donations.listCurrencies()`: **Removed** (Breaking ⚠️)\n* `steamsets.admin.donations.updateCurrency()`: **Removed** (Breaking ⚠️)\n* `steamsets.badgePricing.search()`: **Removed** (Breaking ⚠️)\n* `steamsets.donations.claim()`: **Removed** (Breaking ⚠️)\n* `steamsets.donations.getAddresses()`: **Removed** (Breaking ⚠️)\n* `steamsets.donations.listSupportedCurrencies()`: **Removed** (Breaking ⚠️)\n* `steamsets.leaderboard.getChanges()`: \n  *  `request.topFilter` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
