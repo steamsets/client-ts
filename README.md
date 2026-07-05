@@ -135,13 +135,6 @@ run();
 * [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
 
-#### [Admin.Donations](docs/sdks/steamsetsdonations/README.md)
-
-* [createCurrency](docs/sdks/steamsetsdonations/README.md#createcurrency) - Add a currency to the donation whitelist
-* [deleteCurrency](docs/sdks/steamsetsdonations/README.md#deletecurrency) - Soft-delete a donation currency (sets active=0)
-* [listCurrencies](docs/sdks/steamsetsdonations/README.md#listcurrencies) - List every donation currency (active + soft-deleted) for admin management
-* [updateCurrency](docs/sdks/steamsetsdonations/README.md#updatecurrency) - Update a donation currency (treasury, decimals, etc.); chain+contract are immutable
-
 #### [Admin.Maintenance](docs/sdks/steamsetsmaintenance/README.md)
 
 * [create](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
@@ -173,20 +166,10 @@ run();
 * [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 * [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
-### [BadgePricing](docs/sdks/badgepricing/README.md)
-
-* [search](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
-
 ### [Badges](docs/sdks/badges/README.md)
 
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
-
-### [Donations](docs/sdks/donations/README.md)
-
-* [claim](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
-* [getAddresses](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
-* [listSupportedCurrencies](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
 
 ### [Group](docs/sdks/group/README.md)
 
@@ -711,10 +694,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
-- [`adminDonationsCreateCurrency`](docs/sdks/steamsetsdonations/README.md#createcurrency) - Add a currency to the donation whitelist
-- [`adminDonationsDeleteCurrency`](docs/sdks/steamsetsdonations/README.md#deletecurrency) - Soft-delete a donation currency (sets active=0)
-- [`adminDonationsListCurrencies`](docs/sdks/steamsetsdonations/README.md#listcurrencies) - List every donation currency (active + soft-deleted) for admin management
-- [`adminDonationsUpdateCurrency`](docs/sdks/steamsetsdonations/README.md#updatecurrency) - Update a donation currency (treasury, decimals, etc.); chain+contract are immutable
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
 - [`adminMaintenanceCreate`](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
 - [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event
@@ -734,14 +713,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
-- [`badgePricingSearch`](docs/sdks/badgepricing/README.md#search) - Search the badge-pricing catalog
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
-- [`donationsClaim`](docs/sdks/donations/README.md#claim) - Claim a crypto donation by tx hash + signed message
-- [`donationsGetAddresses`](docs/sdks/donations/README.md#getaddresses) - Get the treasury addresses to send crypto donations to
-- [`donationsListSupportedCurrencies`](docs/sdks/donations/README.md#listsupportedcurrencies) - List cryptocurrencies accepted for donations (DB-backed; admin-managed)
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard

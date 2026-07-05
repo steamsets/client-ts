@@ -10,9 +10,7 @@ import { Analytics } from "./analytics.js";
 import { App } from "./app.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
-import { BadgePricing } from "./badgepricing.js";
 import { Badges } from "./badges.js";
-import { Donations } from "./donations.js";
 import { Group } from "./group.js";
 import { Item } from "./item.js";
 import { Leaderboard } from "./leaderboard.js";
@@ -63,16 +61,6 @@ export class SteamSets extends ClientSDK {
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
-  }
-
-  private _badgePricing?: BadgePricing;
-  get badgePricing(): BadgePricing {
-    return (this._badgePricing ??= new BadgePricing(this._options));
-  }
-
-  private _donations?: Donations;
-  get donations(): Donations {
-    return (this._donations ??= new Donations(this._options));
   }
 
   private _group?: Group;
