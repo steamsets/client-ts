@@ -59,6 +59,22 @@ export const Metric = {
 export type Metric = ClosedEnum<typeof Metric>;
 
 /**
+ * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
+ */
+export const TopFilter = {
+  Ten: "10",
+  Fifty: "50",
+  OneHundred: "100",
+  FiveHundred: "500",
+  OneThousand: "1000",
+  All: "all",
+} as const;
+/**
+ * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
+ */
+export type TopFilter = ClosedEnum<typeof TopFilter>;
+
+/**
  * Lookback window for the delta.
  */
 export const LeaderboardGetChangesRequestBodyWindow = {
@@ -93,6 +109,10 @@ export type LeaderboardGetChangesRequestBody = {
    */
   metric: Metric;
   /**
+   * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
+   */
+  topFilter?: TopFilter | undefined;
+  /**
    * Lookback window for the delta.
    */
   window: LeaderboardGetChangesRequestBodyWindow;
@@ -113,6 +133,10 @@ export const Metric$outboundSchema: z.ZodNativeEnum<typeof Metric> = z
   .nativeEnum(Metric);
 
 /** @internal */
+export const TopFilter$outboundSchema: z.ZodNativeEnum<typeof TopFilter> = z
+  .nativeEnum(TopFilter);
+
+/** @internal */
 export const LeaderboardGetChangesRequestBodyWindow$outboundSchema:
   z.ZodNativeEnum<typeof LeaderboardGetChangesRequestBodyWindow> = z.nativeEnum(
     LeaderboardGetChangesRequestBodyWindow,
@@ -124,6 +148,7 @@ export type LeaderboardGetChangesRequestBody$Outbound = {
   leaderboard: string;
   limit?: number | undefined;
   metric: string;
+  topFilter?: string | undefined;
   window: string;
 };
 
@@ -137,6 +162,7 @@ export const LeaderboardGetChangesRequestBody$outboundSchema: z.ZodType<
   leaderboard: LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema,
   limit: z.number().int().optional(),
   metric: Metric$outboundSchema,
+  topFilter: TopFilter$outboundSchema.optional(),
   window: LeaderboardGetChangesRequestBodyWindow$outboundSchema,
 });
 

@@ -42,7 +42,7 @@ export type V1AppBadge = {
   lastCompletion: Date | null;
   name: string;
   /**
-   * Whether none of the cards for this badge currently have a market listing
+   * Whether at least one card for this badge is not currently listed on the market
    */
   noListing: boolean;
   /**
