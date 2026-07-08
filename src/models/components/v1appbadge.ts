@@ -51,6 +51,7 @@ export type V1AppBadge = {
   price: number;
   scarcity: number;
   steamId: number;
+  trackedHolders: number;
 };
 
 /** @internal */
@@ -84,6 +85,7 @@ export const V1AppBadge$inboundSchema: z.ZodType<
   price: z.number().int(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
+  trackedHolders: z.number().int(),
 });
 
 export function v1AppBadgeFromJSON(

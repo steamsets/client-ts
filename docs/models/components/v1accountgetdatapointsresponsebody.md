@@ -35,9 +35,10 @@ let value: V1AccountGetDataPointsResponseBody = {
       price: 34072,
       scarcity: 323401,
       steamId: 318286,
+      trackedHolders: 969336,
     },
   ],
-  playtime: [],
+  playtime: null,
   scarcity: [],
   xp: {},
 };

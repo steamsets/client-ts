@@ -25,6 +25,7 @@ let value: ComparedTuple = {
   maxLevel: 193739,
   scarcity: 947544,
   steamId: 288711,
+  trackedHolders: 564412,
 };
 ```
 
@@ -45,3 +46,4 @@ let value: ComparedTuple = {
 | `maxLevel`                                                           | *number*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
 | `scarcity`                                                           | *number*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
 | `steamId`                                                            | *number*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
+| `trackedHolders`                                                     | *number*                                                             | :heavy_check_mark:                                                   | N/A                                                                  |
