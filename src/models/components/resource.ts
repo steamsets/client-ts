@@ -25,6 +25,7 @@ export const ResourceResource = {
   AccountQueues: "account_queues",
   ShortLinkDomain: "short_link_domain",
   MaxFindOwners: "max_find_owners",
+  MaxBadgeCrafters: "max_badge_crafters",
 } as const;
 export type ResourceResource = OpenEnum<typeof ResourceResource>;
 

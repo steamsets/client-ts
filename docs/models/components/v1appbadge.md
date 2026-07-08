@@ -31,6 +31,7 @@ let value: V1AppBadge = {
   price: 873525,
   scarcity: 943114,
   steamId: 437080,
+  trackedHolders: 236788,
 };
 ```
 
@@ -59,3 +60,4 @@ let value: V1AppBadge = {
 | ~~`price`~~                                                                                                             | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | : warning: ** DEPRECATED **: This will be removed in a future release, please migrate away from it as soon as possible. |
 | `scarcity`                                                                                                              | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
 | `steamId`                                                                                                               | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |
+| `trackedHolders`                                                                                                        | *number*                                                                                                                | :heavy_check_mark:                                                                                                      | N/A                                                                                                                     |

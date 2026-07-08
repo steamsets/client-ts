@@ -64,6 +64,7 @@ export * from "./analyticsgettrend.js";
 export * from "./analyticslistmetrics.js";
 export * from "./applistbadges.js";
 export * from "./appqueueupdate.js";
+export * from "./badgelistcrafters.js";
 export * from "./badgelisttags.js";
 export * from "./badgepricingsubscribe.js";
 export * from "./badgesuggesttags.js";

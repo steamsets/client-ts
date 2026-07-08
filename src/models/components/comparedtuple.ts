@@ -22,6 +22,7 @@ export type ComparedTuple = {
   maxLevel: number;
   scarcity: number;
   steamId: number;
+  trackedHolders: number;
 };
 
 /** @internal */
@@ -43,6 +44,7 @@ export const ComparedTuple$inboundSchema: z.ZodType<
   maxLevel: z.number().int(),
   scarcity: z.number().int(),
   steamId: z.number().int(),
+  trackedHolders: z.number().int(),
 });
 
 export function comparedTupleFromJSON(

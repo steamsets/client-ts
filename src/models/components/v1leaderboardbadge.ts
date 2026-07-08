@@ -75,6 +75,10 @@ export type V1LeaderboardBadge = {
    */
   steamId: number;
   /**
+   * The number of holders steamsets tracks for the badge
+   */
+  trackedHolders: number | null;
+  /**
    * The xp of the badge
    */
   xp: number;
@@ -106,6 +110,7 @@ export const V1LeaderboardBadge$inboundSchema: z.ZodType<
   price: z.number().int(),
   scarcity: z.nullable(z.number().int()),
   steamId: z.number().int(),
+  trackedHolders: z.nullable(z.number().int()),
   xp: z.number().int(),
 });
 

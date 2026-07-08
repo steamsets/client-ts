@@ -38,6 +38,7 @@ let value: V1AccountCompareBadgesResponseBody = {
       maxLevel: 258530,
       scarcity: 303219,
       steamId: 556181,
+      trackedHolders: 618324,
     },
   ],
 };

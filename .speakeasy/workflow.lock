@@ -1,9 +1,9 @@
-speakeasyVersion: 1.788.1
+speakeasyVersion: 1.789.0
 sources:
     API:
         sourceNamespace: api
-        sourceRevisionDigest: sha256:b68e958787c2a004d1488a8ea2923ee8a01968f65fac34f26e3393ef1e9b525c
-        sourceBlobDigest: sha256:a6ae101c9d7979f9087e1016a88416838f4ba4fc0c89bc43b3772998bd7717a2
+        sourceRevisionDigest: sha256:bec32fa9a0f271d8087568091651c60b7cbc0544f7c3f0bf69db996d83be84bc
+        sourceBlobDigest: sha256:fb02f7252468cd4996f18b23ed8dc976801a1ba00209414fe585a978f1290768
         tags:
             - latest
             - 1.0.0
@@ -18,10 +18,10 @@ targets:
     steam-sets:
         source: API
         sourceNamespace: api
-        sourceRevisionDigest: sha256:b68e958787c2a004d1488a8ea2923ee8a01968f65fac34f26e3393ef1e9b525c
-        sourceBlobDigest: sha256:a6ae101c9d7979f9087e1016a88416838f4ba4fc0c89bc43b3772998bd7717a2
+        sourceRevisionDigest: sha256:bec32fa9a0f271d8087568091651c60b7cbc0544f7c3f0bf69db996d83be84bc
+        sourceBlobDigest: sha256:fb02f7252468cd4996f18b23ed8dc976801a1ba00209414fe585a978f1290768
         codeSamplesNamespace: api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:383ef6234e9b5881e26e9310ee08f13998aec3ab45cea98514e825658837045c
+        codeSamplesRevisionDigest: sha256:dedc5e404ee08323ddca4a3029937e2465e65f8fd7e7432b9338927ec6326fac
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
