@@ -59,6 +59,7 @@ export * from "./developerappanalyticslast24hours.js";
 export * from "./developerappanalyticsoutcome.js";
 export * from "./developerappanalyticstimeseries.js";
 export * from "./developerappanalyticstimeseriespoint.js";
+export * from "./differencefilter.js";
 export * from "./errordetail.js";
 export * from "./errormodel.js";
 export * from "./eventaccountupdateddata.js";
