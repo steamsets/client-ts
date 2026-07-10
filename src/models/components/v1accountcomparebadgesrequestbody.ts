@@ -9,6 +9,11 @@ import {
   AccountSearch$Outbound,
   AccountSearch$outboundSchema,
 } from "./accountsearch.js";
+import {
+  DifferenceFilter,
+  DifferenceFilter$Outbound,
+  DifferenceFilter$outboundSchema,
+} from "./differencefilter.js";
 import { Order, Order$Outbound, Order$outboundSchema } from "./order.js";
 import {
   RangeFilter,
@@ -49,6 +54,7 @@ export type V1AccountCompareBadgesRequestBody = {
   accounts: Array<AccountSearch> | null;
   appIds?: Array<number> | null | undefined;
   appTypes?: Array<string> | null | undefined;
+  difference?: DifferenceFilter | undefined;
   excludeAppIds?: Array<number> | null | undefined;
   filter?: Filter | undefined;
   ignore?: Array<Ignore> | null | undefined;
@@ -86,6 +92,7 @@ export type V1AccountCompareBadgesRequestBody$Outbound = {
   accounts: Array<AccountSearch$Outbound> | null;
   appIds?: Array<number> | null | undefined;
   appTypes?: Array<string> | null | undefined;
+  difference?: DifferenceFilter$Outbound | undefined;
   excludeAppIds?: Array<number> | null | undefined;
   filter: string;
   ignore?: Array<string> | null | undefined;
@@ -106,6 +113,7 @@ export const V1AccountCompareBadgesRequestBody$outboundSchema: z.ZodType<
   accounts: z.nullable(z.array(AccountSearch$outboundSchema)),
   appIds: z.nullable(z.array(z.number().int())).optional(),
   appTypes: z.nullable(z.array(z.string())).optional(),
+  difference: DifferenceFilter$outboundSchema.optional(),
   excludeAppIds: z.nullable(z.array(z.number().int())).optional(),
   filter: Filter$outboundSchema.default("all"),
   ignore: z.nullable(z.array(Ignore$outboundSchema)).optional(),
