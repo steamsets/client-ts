@@ -20,6 +20,10 @@ export type BadgeSubmitTagReviewResponseBody = {
   colors: Array<BadgeSubmitTagReviewTag> | null;
   designs: Array<BadgeSubmitTagReviewTag> | null;
   metadata: Array<BadgeSubmitTagReviewTag> | null;
+  /**
+   * Opaque optimistic-concurrency token for this review state. Pass it as expectedReviewVersion to revise.
+   */
+  reviewVersion: string;
   skipped: boolean;
 };
 
@@ -33,6 +37,7 @@ export const BadgeSubmitTagReviewResponseBody$inboundSchema: z.ZodType<
   colors: z.nullable(z.array(BadgeSubmitTagReviewTag$inboundSchema)),
   designs: z.nullable(z.array(BadgeSubmitTagReviewTag$inboundSchema)),
   metadata: z.nullable(z.array(BadgeSubmitTagReviewTag$inboundSchema)),
+  reviewVersion: z.string(),
   skipped: z.boolean(),
 }).transform((v) => {
   return remap$(v, {
