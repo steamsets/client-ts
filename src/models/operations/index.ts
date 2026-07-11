@@ -68,6 +68,7 @@ export * from "./badgeclaimtagreviews.js";
 export * from "./badgelistcrafters.js";
 export * from "./badgelisttags.js";
 export * from "./badgepricingsubscribe.js";
+export * from "./badgerevisetagreview.js";
 export * from "./badgesubmittagreview.js";
 export * from "./badgesuggesttags.js";
 export * from "./badgetagbadge.js";

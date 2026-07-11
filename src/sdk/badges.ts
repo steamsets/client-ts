@@ -5,6 +5,7 @@
 import { badgesClaimTagReviews } from "../funcs/badgesClaimTagReviews.js";
 import { badgesListCrafters } from "../funcs/badgesListCrafters.js";
 import { badgesListTags } from "../funcs/badgesListTags.js";
+import { badgesReviseTagReview } from "../funcs/badgesReviseTagReview.js";
 import { badgesSubmitTagReview } from "../funcs/badgesSubmitTagReview.js";
 import { badgesTag } from "../funcs/badgesTag.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -52,6 +53,20 @@ export class Badges extends ClientSDK {
   ): Promise<operations.BadgeListTagsResponse> {
     return unwrapAsync(badgesListTags(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Revise a completed badge tag review
+   */
+  async reviseTagReview(
+    request: components.BadgeReviseTagReviewRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeReviseTagReviewResponse> {
+    return unwrapAsync(badgesReviseTagReview(
+      this,
+      request,
       options,
     ));
   }
