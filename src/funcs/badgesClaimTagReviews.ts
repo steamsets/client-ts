@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Suggest badge tag
+ * Claim badge tag reviews
  */
-export function badgeSuggestTags(
+export function badgesClaimTagReviews(
   client: SteamSetsCore,
-  request: components.V1BadgeSuggestTagsRequestBody,
+  request: components.BadgeClaimTagReviewsRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.BadgeSuggestTagsResponse,
+    operations.BadgeClaimTagReviewsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function badgeSuggestTags(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1BadgeSuggestTagsRequestBody,
+  request: components.BadgeClaimTagReviewsRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.BadgeSuggestTagsResponse,
+      operations.BadgeClaimTagReviewsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      components.V1BadgeSuggestTagsRequestBody$outboundSchema.parse(value),
+      components.BadgeClaimTagReviewsRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -88,7 +88,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/badge.suggestTags")();
+  const path = pathToFunc("/v1/badge.claimTagReviews")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -102,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "badge.suggestTags",
+    operationID: "badge.claimTagReviews",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -157,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.BadgeSuggestTagsResponse,
+    operations.BadgeClaimTagReviewsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -168,10 +168,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.BadgeSuggestTagsResponse$inboundSchema, {
-      key: "BadgeSuggestTags",
+    M.json(200, operations.BadgeClaimTagReviewsResponse$inboundSchema, {
+      key: "BadgeClaimTagReviewsResponseBody",
     }),
-    M.jsonErr([400, 401, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 403, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

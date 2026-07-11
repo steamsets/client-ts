@@ -15,6 +15,12 @@ let value: V1BadgeTagBadgeResponseBody = {
     },
   ],
   designTags: [],
+  metadataTags: [
+    {
+      id: "<id>",
+      name: "<value>",
+    },
+  ],
 };
 ```
 
@@ -23,5 +29,6 @@ let value: V1BadgeTagBadgeResponseBody = {
 | Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `dollarSchema`                                                             | *string*                                                                   | :heavy_minus_sign:                                                         | A URL to the JSON Schema for this object.                                  | https://api.steamsets.com/schemas/V1BadgeTagBadgeResponseBody.json         |
-| `colorTags`                                                                | [components.CurrentColorTag](../../models/components/currentcolortag.md)[] | :heavy_check_mark:                                                         | The available color tags                                                   |                                                                            |
-| `designTags`                                                               | [components.DesignTag](../../models/components/designtag.md)[]             | :heavy_check_mark:                                                         | The available design tags                                                  |                                                                            |
+| `colorTags`                                                                | [components.CurrentColorTag](../../models/components/currentcolortag.md)[] | :heavy_check_mark:                                                         | The badge's color tags                                                     |                                                                            |
+| `designTags`                                                               | [components.DesignTag](../../models/components/designtag.md)[]             | :heavy_check_mark:                                                         | The badge's visual design tags                                             |                                                                            |
+| `metadataTags`                                                             | [components.DesignTag](../../models/components/designtag.md)[]             | :heavy_check_mark:                                                         | The badge's non-visual metadata tags                                       |                                                                            |
