@@ -20,9 +20,13 @@ export type V1BadgeListTagsResponseBody = {
    */
   colorTags: Array<ColorTag> | null;
   /**
-   * The available design tags
+   * The available visual design tags
    */
   designTags: Array<DesignTag> | null;
+  /**
+   * The available non-visual metadata tags
+   */
+  metadataTags: Array<DesignTag> | null;
 };
 
 /** @internal */
@@ -34,6 +38,7 @@ export const V1BadgeListTagsResponseBody$inboundSchema: z.ZodType<
   $schema: z.string().optional(),
   colorTags: z.nullable(z.array(ColorTag$inboundSchema)),
   designTags: z.nullable(z.array(DesignTag$inboundSchema)),
+  metadataTags: z.nullable(z.array(DesignTag$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",

@@ -168,8 +168,10 @@ run();
 
 ### [Badges](docs/sdks/badges/README.md)
 
+* [claimTagReviews](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
 * [listCrafters](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
+* [submitTagReview](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
 ### [Group](docs/sdks/group/README.md)
@@ -714,8 +716,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
+- [`badgesClaimTagReviews`](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
 - [`badgesListCrafters`](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
+- [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag

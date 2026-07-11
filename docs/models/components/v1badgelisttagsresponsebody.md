@@ -24,6 +24,12 @@ let value: V1BadgeListTagsResponseBody = {
       name: "<value>",
     },
   ],
+  metadataTags: [
+    {
+      id: "<id>",
+      name: "<value>",
+    },
+  ],
 };
 ```
 
@@ -33,4 +39,5 @@ let value: V1BadgeListTagsResponseBody = {
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | `dollarSchema`                                                     | *string*                                                           | :heavy_minus_sign:                                                 | A URL to the JSON Schema for this object.                          | https://api.steamsets.com/schemas/V1BadgeListTagsResponseBody.json |
 | `colorTags`                                                        | [components.ColorTag](../../models/components/colortag.md)[]       | :heavy_check_mark:                                                 | The available color tags                                           |                                                                    |
-| `designTags`                                                       | [components.DesignTag](../../models/components/designtag.md)[]     | :heavy_check_mark:                                                 | The available design tags                                          |                                                                    |
+| `designTags`                                                       | [components.DesignTag](../../models/components/designtag.md)[]     | :heavy_check_mark:                                                 | The available visual design tags                                   |                                                                    |
+| `metadataTags`                                                     | [components.DesignTag](../../models/components/designtag.md)[]     | :heavy_check_mark:                                                 | The available non-visual metadata tags                             |                                                                    |

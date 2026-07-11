@@ -20,13 +20,17 @@ export type V1BadgeTagBadgeRequestBody = {
    */
   badgeId: string;
   /**
-   * All the colors of the badge
+   * Colors to add or remove
    */
   colors: Array<SetRemoveColorTag> | null;
   /**
-   * All the designs of the badge
+   * Visual designs to add or remove
    */
   designs: Array<SetRemoveDesignTag> | null;
+  /**
+   * Non-visual metadata to add or remove
+   */
+  metadata: Array<SetRemoveDesignTag> | null;
 };
 
 /** @internal */
@@ -34,6 +38,7 @@ export type V1BadgeTagBadgeRequestBody$Outbound = {
   badgeId: string;
   colors: Array<SetRemoveColorTag$Outbound> | null;
   designs: Array<SetRemoveDesignTag$Outbound> | null;
+  metadata: Array<SetRemoveDesignTag$Outbound> | null;
 };
 
 /** @internal */
@@ -45,6 +50,7 @@ export const V1BadgeTagBadgeRequestBody$outboundSchema: z.ZodType<
   badgeId: z.string(),
   colors: z.nullable(z.array(SetRemoveColorTag$outboundSchema)),
   designs: z.nullable(z.array(SetRemoveDesignTag$outboundSchema)),
+  metadata: z.nullable(z.array(SetRemoveDesignTag$outboundSchema)),
 });
 
 export function v1BadgeTagBadgeRequestBodyToJSON(
