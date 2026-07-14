@@ -101,13 +101,17 @@ export type LeaderboardGetChangesRequestBody = {
    */
   leaderboard: LeaderboardGetChangesRequestBodyLeaderboard;
   /**
-   * Number of accounts returned. Default 100, max 1000.
+   * Number of accounts returned per page. Default 100, max 1000.
    */
   limit?: number | undefined;
   /**
    * What to sort by. score = XP/playtime/badges depending on leaderboard. rank = leaderboard position.
    */
   metric: Metric;
+  /**
+   * Number of accounts to skip, for paging past the first page. Default 0. With topFilter='all' the full leaderboard is pageable, not just the top 1000.
+   */
+  offset?: number | undefined;
   /**
    * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
    */
@@ -148,6 +152,7 @@ export type LeaderboardGetChangesRequestBody$Outbound = {
   leaderboard: string;
   limit?: number | undefined;
   metric: string;
+  offset?: number | undefined;
   topFilter?: string | undefined;
   window: string;
 };
@@ -162,6 +167,7 @@ export const LeaderboardGetChangesRequestBody$outboundSchema: z.ZodType<
   leaderboard: LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema,
   limit: z.number().int().optional(),
   metric: Metric$outboundSchema,
+  offset: z.number().int().optional(),
   topFilter: TopFilter$outboundSchema.optional(),
   window: LeaderboardGetChangesRequestBodyWindow$outboundSchema,
 });

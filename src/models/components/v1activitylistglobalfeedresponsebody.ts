@@ -8,16 +8,16 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  V1ActivityGlobalFeedEvent,
-  V1ActivityGlobalFeedEvent$inboundSchema,
-} from "./v1activityglobalfeedevent.js";
+  V1ActivityEvent,
+  V1ActivityEvent$inboundSchema,
+} from "./v1activityevent.js";
 
 export type V1ActivityListGlobalFeedResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  events: Array<V1ActivityGlobalFeedEvent> | null;
+  events: Array<V1ActivityEvent> | null;
   /**
    * Pass as cursor to fetch the next page. Absent when there are no more events.
    */
@@ -31,7 +31,7 @@ export const V1ActivityListGlobalFeedResponseBody$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  events: z.nullable(z.array(V1ActivityGlobalFeedEvent$inboundSchema)),
+  events: z.nullable(z.array(V1ActivityEvent$inboundSchema)),
   nextCursor: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
