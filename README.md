@@ -160,6 +160,7 @@ run();
 ### [Apps](docs/sdks/apps/README.md)
 
 * [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
+* [listOwners](docs/sdks/apps/README.md#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
 
 ### [Badge](docs/sdks/badge/README.md)
 
@@ -717,6 +718,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
+- [`appsListOwners`](docs/sdks/apps/README.md#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
 - [`badgesClaimTagReviews`](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
 - [`badgesListCrafters`](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
