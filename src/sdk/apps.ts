@@ -3,10 +3,12 @@
  */
 
 import { appsListBadges } from "../funcs/appsListBadges.js";
+import { appsListOwners } from "../funcs/appsListOwners.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 
 export class Apps extends ClientSDK {
   /**
@@ -17,6 +19,22 @@ export class Apps extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AppListBadgesResponse> {
     return unwrapAsync(appsListBadges(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
+   */
+  async listOwners(
+    request: components.AppListOwnersRequestBody,
+    options?: RequestOptions,
+  ): Promise<
+    PageIterator<operations.AppListOwnersResponse, { cursor: string }>
+  > {
+    return unwrapResultIterator(appsListOwners(
       this,
       request,
       options,

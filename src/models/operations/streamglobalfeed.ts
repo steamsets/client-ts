@@ -27,7 +27,7 @@ export type EventActivityHeartbeat = {
 };
 
 export type EventActivityEmitted = {
-  data: components.V1ActivityStreamFeedEvent;
+  data: components.V1ActivityEvent;
   /**
    * The event name.
    */
@@ -107,7 +107,7 @@ export const EventActivityEmitted$inboundSchema: z.ZodType<
       ctx.addIssue({ code: "custom", message: `malformed json: ${err}` });
       return z.NEVER;
     }
-  }).pipe(components.V1ActivityStreamFeedEvent$inboundSchema),
+  }).pipe(components.V1ActivityEvent$inboundSchema),
   event: z.literal("activity-emitted"),
   id: z.string().optional(),
   retry: z.number().int().optional(),

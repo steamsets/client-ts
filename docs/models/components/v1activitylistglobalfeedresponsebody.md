@@ -75,8 +75,48 @@ let value: V1ActivityListGlobalFeedResponseBody = {
         xp: 123456,
       },
       accountId: 138266,
+      appBadge: {
+        accountInfo: {
+          completionTime: new Date("2023-01-01T00:00:00Z"),
+          level: 123456,
+          xp: 123456,
+        },
+        appId: 267127,
+        appImage: "<value>",
+        appName: "<value>",
+        badgeId: "<id>",
+        badgeImage: "<value>",
+        baseLevel: 569677,
+        baseXp: 451732,
+        cardCount: 525700,
+        firstCompletion: new Date("2025-12-05T06:35:52.464Z"),
+        highestLevel: 892305,
+        isEvent: true,
+        isFoil: true,
+        isNmc: false,
+        isSale: false,
+        lastCompletion: new Date("2026-01-21T07:57:03.775Z"),
+        name: "<value>",
+        noListing: true,
+        price: 499252,
+        scarcity: 372005,
+        steamId: 138718,
+        trackedHolders: 449229,
+      },
       eventType: "<value>",
-      occurredAt: new Date("2024-10-06T18:49:51.413Z"),
+      occurredAt: new Date("2024-06-24T11:50:01.187Z"),
+      rank: {
+        bucket: "<value>",
+        current: 524914,
+        leaderboard: "<value>",
+        location: {
+          countryCode: "DE",
+          countryName: "Germany",
+          region: "Europe",
+          type: "<value>",
+        },
+        previous: 751062,
+      },
     },
   ],
 };
@@ -84,8 +124,8 @@ let value: V1ActivityListGlobalFeedResponseBody = {
 
 ## Fields
 
-| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    | Example                                                                                        |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `dollarSchema`                                                                                 | *string*                                                                                       | :heavy_minus_sign:                                                                             | A URL to the JSON Schema for this object.                                                      | https://api.steamsets.com/schemas/V1ActivityListGlobalFeedResponseBody.json                    |
-| `events`                                                                                       | [components.V1ActivityGlobalFeedEvent](../../models/components/v1activityglobalfeedevent.md)[] | :heavy_check_mark:                                                                             | N/A                                                                                            |                                                                                                |
-| `nextCursor`                                                                                   | *string*                                                                                       | :heavy_minus_sign:                                                                             | Pass as cursor to fetch the next page. Absent when there are no more events.                   |                                                                                                |
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `dollarSchema`                                                               | *string*                                                                     | :heavy_minus_sign:                                                           | A URL to the JSON Schema for this object.                                    | https://api.steamsets.com/schemas/V1ActivityListGlobalFeedResponseBody.json  |
+| `events`                                                                     | [components.V1ActivityEvent](../../models/components/v1activityevent.md)[]   | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |
+| `nextCursor`                                                                 | *string*                                                                     | :heavy_minus_sign:                                                           | Pass as cursor to fetch the next page. Absent when there are no more events. |                                                                              |
