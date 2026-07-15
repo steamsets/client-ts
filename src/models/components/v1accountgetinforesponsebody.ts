@@ -14,6 +14,10 @@ import {
   BestLeaderboardRank$inboundSchema,
 } from "./bestleaderboardrank.js";
 import { Connection, Connection$inboundSchema } from "./connection.js";
+import {
+  CurrentLeaderboardRank,
+  CurrentLeaderboardRank$inboundSchema,
+} from "./currentleaderboardrank.js";
 import { Image, Image$inboundSchema } from "./image.js";
 import {
   LeaderboardCity,
@@ -158,7 +162,7 @@ export type V1AccountGetInfoResponseBody = {
   /**
    * The current ranks
    */
-  currentRanks: Array<BestLeaderboardRank> | null;
+  currentRanks: Array<CurrentLeaderboardRank> | null;
   /**
    * The total of donations the account has
    */
@@ -339,7 +343,7 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   currentBestRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
-  currentRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
+  currentRanks: z.nullable(z.array(CurrentLeaderboardRank$inboundSchema)),
   donated: z.number().int(),
   economyBan: z.string(),
   foilBadgeCost: z.number().int(),
