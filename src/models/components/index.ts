@@ -70,6 +70,7 @@ export * from "./connection.js";
 export * from "./country.js";
 export * from "./createrequestbody.js";
 export * from "./currentcolortag.js";
+export * from "./currentleaderboardrank.js";
 export * from "./deleterequestbody.js";
 export * from "./deleteresponsebody.js";
 export * from "./designtag.js";
