@@ -87,7 +87,6 @@ run();
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 * [getInfo](docs/sdks/account/README.md#getinfo) - Get account profile information
-* [getMeta](docs/sdks/account/README.md#getmeta) - Get account metadata
 * [getSession](docs/sdks/account/README.md#getsession) - Get user session information
 * [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
 * [getTrending](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
@@ -184,14 +183,18 @@ run();
 
 * [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 
+### [Kv](docs/sdks/kv/README.md)
+
+* [delete](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
+* [list](docs/sdks/kv/README.md#list) - List a user's stored key/value entries
+* [set](docs/sdks/kv/README.md#set) - Set a user's key/value entry
+
 ### [Leaderboard](docs/sdks/leaderboard/README.md)
 
 * [getAccount](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
-* [getAccountsMeta](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
 * [getBucketLeaders](docs/sdks/leaderboard/README.md#getbucketleaders) - Get the top account in each value bucket
 * [getChanges](docs/sdks/leaderboard/README.md#getchanges) - Top movers in a windowed delta on a leaderboard
 * [getGroup](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
-* [getGroupsMeta](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 * [getLowestRanks](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 * [previewAccountRank](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 
@@ -663,7 +666,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 - [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo) - Get account profile information
-- [`accountGetMeta`](docs/sdks/account/README.md#getmeta) - Get account metadata
 - [`accountGetSession`](docs/sdks/account/README.md#getsession) - Get user session information
 - [`accountGetSettings`](docs/sdks/account/README.md#getsettings) - Get account settings
 - [`accountGetTrending`](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
@@ -729,12 +731,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+- [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
+- [`kvList`](docs/sdks/kv/README.md#list) - List a user's stored key/value entries
+- [`kvSet`](docs/sdks/kv/README.md#set) - Set a user's key/value entry
 - [`leaderboardGetAccount`](docs/sdks/leaderboard/README.md#getaccount) - Get account leaderboard
-- [`leaderboardGetAccountsMeta`](docs/sdks/leaderboard/README.md#getaccountsmeta) - Get accounts leaderboard metadata
 - [`leaderboardGetBucketLeaders`](docs/sdks/leaderboard/README.md#getbucketleaders) - Get the top account in each value bucket
 - [`leaderboardGetChanges`](docs/sdks/leaderboard/README.md#getchanges) - Top movers in a windowed delta on a leaderboard
 - [`leaderboardGetGroup`](docs/sdks/leaderboard/README.md#getgroup) - Get group leaderboard
-- [`leaderboardGetGroupsMeta`](docs/sdks/leaderboard/README.md#getgroupsmeta) - Get groups leaderboard metadata
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges

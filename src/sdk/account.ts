@@ -15,7 +15,6 @@ import { accountGetBadgeHeatmap } from "../funcs/accountGetBadgeHeatmap.js";
 import { accountGetBadgeStats } from "../funcs/accountGetBadgeStats.js";
 import { accountGetDataPoints } from "../funcs/accountGetDataPoints.js";
 import { accountGetInfo } from "../funcs/accountGetInfo.js";
-import { accountGetMeta } from "../funcs/accountGetMeta.js";
 import { accountGetSession } from "../funcs/accountGetSession.js";
 import { accountGetSettings } from "../funcs/accountGetSettings.js";
 import { accountGetTrending } from "../funcs/accountGetTrending.js";
@@ -231,20 +230,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountGetInfoResponse> {
     return unwrapAsync(accountGetInfo(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Get account metadata
-   */
-  async getMeta(
-    request: components.AccountSearch,
-    options?: RequestOptions,
-  ): Promise<operations.AccountGetMetaResponse> {
-    return unwrapAsync(accountGetMeta(
       this,
       request,
       options,
