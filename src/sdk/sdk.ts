@@ -13,6 +13,7 @@ import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
 import { Group } from "./group.js";
 import { Item } from "./item.js";
+import { Kv } from "./kv.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Location } from "./location.js";
@@ -71,6 +72,11 @@ export class SteamSets extends ClientSDK {
   private _item?: Item;
   get item(): Item {
     return (this._item ??= new Item(this._options));
+  }
+
+  private _kv?: Kv;
+  get kv(): Kv {
+    return (this._kv ??= new Kv(this._options));
   }
 
   private _leaderboard?: Leaderboard;

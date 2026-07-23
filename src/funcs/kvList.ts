@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get groups leaderboard metadata
+ * List a user's stored key/value entries
  */
-export function leaderboardGetGroupsMeta(
+export function kvList(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetGroupsMetaRequestBody,
+  request: components.KvListRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetGroupsMetaResponse,
+    operations.KvListResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function leaderboardGetGroupsMeta(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetGroupsMetaRequestBody,
+  request: components.KvListRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetGroupsMetaResponse,
+      operations.KvListResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,10 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.V1LeaderboardGetGroupsMetaRequestBody$outboundSchema.parse(
-        value,
-      ),
+    (value) => components.KvListRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -90,7 +87,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getGroupsMeta")();
+  const path = pathToFunc("/v1/kv.list")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -104,7 +101,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getGroupsMeta",
+    operationID: "kv.list",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetGroupsMetaResponse,
+    operations.KvListResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,10 +167,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LeaderboardGetGroupsMetaResponse$inboundSchema, {
-      key: "V1LeaderboardGetGroupsMetaResponseBody",
+    M.json(200, operations.KvListResponse$inboundSchema, {
+      key: "KvListResponseBody",
     }),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([401, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

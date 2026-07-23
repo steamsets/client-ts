@@ -7,43 +7,39 @@ import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { KvListEntry, KvListEntry$inboundSchema } from "./kvlistentry.js";
 
-export type V1LeaderboardGetAccountsMetaResponseBody = {
+export type KvListResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  description: string;
-  title: string;
+  /**
+   * The stored key/value entries
+   */
+  entries: Array<KvListEntry> | null;
 };
 
 /** @internal */
-export const V1LeaderboardGetAccountsMetaResponseBody$inboundSchema: z.ZodType<
-  V1LeaderboardGetAccountsMetaResponseBody,
+export const KvListResponseBody$inboundSchema: z.ZodType<
+  KvListResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
   $schema: z.string().optional(),
-  description: z.string(),
-  title: z.string(),
+  entries: z.nullable(z.array(KvListEntry$inboundSchema)),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
   });
 });
 
-export function v1LeaderboardGetAccountsMetaResponseBodyFromJSON(
+export function kvListResponseBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  V1LeaderboardGetAccountsMetaResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<KvListResponseBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      V1LeaderboardGetAccountsMetaResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'V1LeaderboardGetAccountsMetaResponseBody' from JSON`,
+    (x) => KvListResponseBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'KvListResponseBody' from JSON`,
   );
 }

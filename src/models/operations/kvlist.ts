@@ -9,38 +9,35 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountGetMetaResponse = {
+export type KvListResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
    */
-  v1AccountGetMetaResponseBody?:
-    | components.V1AccountGetMetaResponseBody
-    | undefined;
+  kvListResponseBody?: components.KvListResponseBody | undefined;
 };
 
 /** @internal */
-export const AccountGetMetaResponse$inboundSchema: z.ZodType<
-  AccountGetMetaResponse,
+export const KvListResponse$inboundSchema: z.ZodType<
+  KvListResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  V1AccountGetMetaResponseBody: components
-    .V1AccountGetMetaResponseBody$inboundSchema.optional(),
+  KvListResponseBody: components.KvListResponseBody$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "V1AccountGetMetaResponseBody": "v1AccountGetMetaResponseBody",
+    "KvListResponseBody": "kvListResponseBody",
   });
 });
 
-export function accountGetMetaResponseFromJSON(
+export function kvListResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AccountGetMetaResponse, SDKValidationError> {
+): SafeParseResult<KvListResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountGetMetaResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountGetMetaResponse' from JSON`,
+    (x) => KvListResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'KvListResponse' from JSON`,
   );
 }

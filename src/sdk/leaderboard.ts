@@ -3,11 +3,9 @@
  */
 
 import { leaderboardGetAccount } from "../funcs/leaderboardGetAccount.js";
-import { leaderboardGetAccountsMeta } from "../funcs/leaderboardGetAccountsMeta.js";
 import { leaderboardGetBucketLeaders } from "../funcs/leaderboardGetBucketLeaders.js";
 import { leaderboardGetChanges } from "../funcs/leaderboardGetChanges.js";
 import { leaderboardGetGroup } from "../funcs/leaderboardGetGroup.js";
-import { leaderboardGetGroupsMeta } from "../funcs/leaderboardGetGroupsMeta.js";
 import { leaderboardGetLowestRanks } from "../funcs/leaderboardGetLowestRanks.js";
 import { leaderboardPreviewAccountRank } from "../funcs/leaderboardPreviewAccountRank.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -24,20 +22,6 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardGetAccountLeaderboardResponse> {
     return unwrapAsync(leaderboardGetAccount(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Get accounts leaderboard metadata
-   */
-  async getAccountsMeta(
-    request: components.V1LeaderboardGetAccountsMetaRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.LeaderboardGetAccountsMetaResponse> {
-    return unwrapAsync(leaderboardGetAccountsMeta(
       this,
       request,
       options,
@@ -80,20 +64,6 @@ export class Leaderboard extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.LeaderboardGetGroupLeaderboardResponse> {
     return unwrapAsync(leaderboardGetGroup(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Get groups leaderboard metadata
-   */
-  async getGroupsMeta(
-    request: components.V1LeaderboardGetGroupsMetaRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.LeaderboardGetGroupsMetaResponse> {
-    return unwrapAsync(leaderboardGetGroupsMeta(
       this,
       request,
       options,

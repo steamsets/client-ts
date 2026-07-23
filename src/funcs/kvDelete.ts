@@ -28,15 +28,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get accounts leaderboard metadata
+ * Delete a user's key/value entry
  */
-export function leaderboardGetAccountsMeta(
+export function kvDelete(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetAccountsMetaRequestBody,
+  request: components.KvDeleteRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.LeaderboardGetAccountsMetaResponse,
+    operations.KvDeleteResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +57,12 @@ export function leaderboardGetAccountsMeta(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.V1LeaderboardGetAccountsMetaRequestBody,
+  request: components.KvDeleteRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.LeaderboardGetAccountsMetaResponse,
+      operations.KvDeleteResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,10 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      components.V1LeaderboardGetAccountsMetaRequestBody$outboundSchema.parse(
-        value,
-      ),
+    (value) => components.KvDeleteRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -90,11 +87,11 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/leaderboard.getAccountsMeta")();
+  const path = pathToFunc("/v1/kv.delete")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
-    Accept: "application/json",
+    Accept: "application/problem+json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -104,7 +101,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "leaderboard.getAccountsMeta",
+    operationID: "kv.delete",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +156,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.LeaderboardGetAccountsMetaResponse,
+    operations.KvDeleteResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -170,9 +167,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.LeaderboardGetAccountsMetaResponse$inboundSchema, {
-      key: "V1LeaderboardGetAccountsMetaResponseBody",
-    }),
+    M.nil(204, operations.KvDeleteResponse$inboundSchema),
     M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
