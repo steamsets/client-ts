@@ -75,7 +75,7 @@ export const TopFilter = {
 export type TopFilter = ClosedEnum<typeof TopFilter>;
 
 /**
- * Lookback window for the delta.
+ * Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
  */
 export const LeaderboardGetChangesRequestBodyWindow = {
   TwentyFourh: "24h",
@@ -83,9 +83,10 @@ export const LeaderboardGetChangesRequestBodyWindow = {
   Thirtyd: "30d",
   Ninetyd: "90d",
   Oney: "1y",
+  All: "all",
 } as const;
 /**
- * Lookback window for the delta.
+ * Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
  */
 export type LeaderboardGetChangesRequestBodyWindow = ClosedEnum<
   typeof LeaderboardGetChangesRequestBodyWindow
@@ -117,7 +118,7 @@ export type LeaderboardGetChangesRequestBody = {
    */
   topFilter?: TopFilter | undefined;
   /**
-   * Lookback window for the delta.
+   * Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
    */
   window: LeaderboardGetChangesRequestBodyWindow;
 };

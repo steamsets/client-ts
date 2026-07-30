@@ -1,6 +1,6 @@
 # LeaderboardGetChangesRequestBodyWindow
 
-Lookback window for the delta.
+Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
 
 ## Example Usage
 
@@ -13,5 +13,5 @@ let value: LeaderboardGetChangesRequestBodyWindow = "7d";
 ## Values
 
 ```typescript
-"24h" | "7d" | "30d" | "90d" | "1y"
+"24h" | "7d" | "30d" | "90d" | "1y" | "all"
 ```

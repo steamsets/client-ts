@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0bcf7588d473b30d1e39bd86d5cef308
+  docChecksum: 0a1e809603a5673f3bf1106d164cc980
   docVersion: 1.0.0
-  speakeasyVersion: 1.790.3
-  generationVersion: 2.918.4
-  releaseVersion: 0.36.9
-  configChecksum: bd0cd06d5f94b40ac832ab92665789af
+  speakeasyVersion: 1.791.0
+  generationVersion: 2.924.0
+  releaseVersion: 0.36.10
+  configChecksum: f19b6bccbccae24aa06436886bd26a96
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 8bb41aaf-07a6-463f-a179-567724366663
-  pristine_commit_hash: 9147b38e228a1f1297c72a54cc1eb105d9016989
-  pristine_tree_hash: 8258d0cc1a59330037942633c6709125f9bf5a93
+  generation_id: 9d0f9aab-1b10-49ca-86f8-55cd7276cfd8
+  pristine_commit_hash: 2b5194f40b25b372891cda53bbde819e45e7e37b
+  pristine_tree_hash: 489b73496cfcabcc1ccab24192f2a6535da4c8bb
 features:
   go:
     additionalDependencies: 0.1.0
@@ -603,8 +603,8 @@ trackedFiles:
     pristine_git_object: eed97d8424daabc6218f721fb8769a25926c3177
   docs/models/components/leaderboardgetchangesrequestbody.md:
     id: 151d9c1a2ae1
-    last_write_checksum: sha1:462b538746962bb5e75b121190ff530c57c97afe
-    pristine_git_object: 4f3b1b94e4c5c03c80477e450d46625454000fb4
+    last_write_checksum: sha1:5fa86ecea0e972ddbdf2886f387000b7e67c3d6f
+    pristine_git_object: e34c1cbe7363de9e8f2ab4aff075d6ac319cff34
   docs/models/components/leaderboardgetchangesrequestbodydirection.md:
     id: 2a53927d49db
     last_write_checksum: sha1:39846ab24ebff9e862c98ab1cb25245c93446438
@@ -615,8 +615,8 @@ trackedFiles:
     pristine_git_object: 156cdaff0199def42e9f44e10d55646a928a2585
   docs/models/components/leaderboardgetchangesrequestbodywindow.md:
     id: ce5a727177f2
-    last_write_checksum: sha1:0a53460179f5143984dc2cb880e8f31b04585e41
-    pristine_git_object: 99e5a3eefa3715f77a48fb62f7cbd5ee7c17d449
+    last_write_checksum: sha1:1e7c9103eb2ecb5ed49d44a59718643dd03b0d72
+    pristine_git_object: 081dbf374be5aa1b5470024405aafc0748b89280
   docs/models/components/leaderboardgetchangesresponsebody.md:
     id: ac11dba9bede
     last_write_checksum: sha1:ae27be6514afa0e142dbd0f85bda4dadf71c50b8
@@ -1157,6 +1157,26 @@ trackedFiles:
     id: 8663ac37268f
     last_write_checksum: sha1:9b98abf702fafde79c5114257231da202a322c21
     pristine_git_object: 711c0c2a4c5ac6d9ff97aabc24113ebaed2f2be9
+  docs/models/components/v1adminaddsteamapikeyrequestbody.md:
+    id: f14ee433da6b
+    last_write_checksum: sha1:6e7728e8377210132718ff5e41eb6b580fda5ef0
+    pristine_git_object: 40d4e0048cad98039366226af87f9730c32072f1
+  docs/models/components/v1adminaddsteamapikeyrequestbodytype.md:
+    id: 8699fb5b547b
+    last_write_checksum: sha1:8dac6e086bd9067a0f7206814d9d10f408331a36
+    pristine_git_object: 580796638d08b6098c353c5fa8bd5046d981cd0b
+  docs/models/components/v1adminaddsteamapikeyresponsebody.md:
+    id: b71388a07fe0
+    last_write_checksum: sha1:284d563db800b7816f9abac2e11d6a66282f03c7
+    pristine_git_object: 3302305e1528333a3fa0ea44ae94c5c32d99f3d5
+  docs/models/components/v1adminbanplayerrequestbody.md:
+    id: 7e37b1ef2503
+    last_write_checksum: sha1:dad2cf9a732360638ba4028b5aec4305768ef54e
+    pristine_git_object: 52152b721f46ad480de908c4ec55663273322919
+  docs/models/components/v1adminbanplayerresponsebody.md:
+    id: 78ae712d49e9
+    last_write_checksum: sha1:7c185ba009e6bc1eb4a13c622b0757b5c22edbca
+    pristine_git_object: 0cd7ec2852ca045295ec12d91ac6ee68966ab5d9
   docs/models/components/v1admingetaccountresponsebody.md:
     id: e928f1ee2585
     last_write_checksum: sha1:2a6c72bc950e9a8ab07c078b80de3cce4bba9f52
@@ -1165,10 +1185,26 @@ trackedFiles:
     id: e67cd027c49d
     last_write_checksum: sha1:ad1a9e94dab10a9190051db51251e6e520c02d7e
     pristine_git_object: fc2ae0f69229ee353de789772de75e07481c75c0
+  docs/models/components/v1admingetplayerbanstatusrequestbody.md:
+    id: fa3cd06b5395
+    last_write_checksum: sha1:ad346640ae854ceb2b83be0853ee1285d57a3e46
+    pristine_git_object: 6af0e0973fdfc13f7888d19e0c959e13d6b90940
+  docs/models/components/v1admingetplayerbanstatusresponsebody.md:
+    id: dc6581c82f34
+    last_write_checksum: sha1:d4cc725890d196c1618ce94677e1918bb33a736e
+    pristine_git_object: 18cc6b1a51613566a4f4622bd5f7e5ffbf975519
   docs/models/components/v1adminremovevanityresponsebody.md:
     id: 6520f56c658c
     last_write_checksum: sha1:5156d9ee793d262db9524edeb204a42b14466896
     pristine_git_object: 2d7d202986be63bc8808ddff55134c4664aa02e0
+  docs/models/components/v1adminunbanplayerrequestbody.md:
+    id: 41179dc123f2
+    last_write_checksum: sha1:75575c08cd05d771009d9e281ad05b6ee673b2b1
+    pristine_git_object: fdbe5c3d97b23b06dc7e05a7162e522460361b74
+  docs/models/components/v1adminunbanplayerresponsebody.md:
+    id: c59c2e27f53a
+    last_write_checksum: sha1:3d890ca63423943ce3b228ef1a8be8ba601cc737
+    pristine_git_object: 15e3192516fea20fe13af88d67f0ba2b970aa5ea
   docs/models/components/v1adminupdateresourcesrequestbody.md:
     id: 45dca0f1acfc
     last_write_checksum: sha1:53008637103c3b57bbe4370aae5ab5201ea131b6
@@ -1565,10 +1601,22 @@ trackedFiles:
     id: a17ceeaf7784
     last_write_checksum: sha1:3af5ef4e1bf702b834a528c34aedebad376c2a36
     pristine_git_object: 5633cea956676d4147a5c1a45efebe59300e31b5
+  docs/models/operations/adminaddsteamapikeyresponse.md:
+    id: 96187d4e7e70
+    last_write_checksum: sha1:9a24f363ec709436ffc10bec2cb75e391189d166
+    pristine_git_object: c5d02b648d2f0c5af2fdeedd2865b8a07262494f
+  docs/models/operations/adminbanplayerresponse.md:
+    id: 77808a9e78e3
+    last_write_checksum: sha1:912792c3e59b7508e8b7b7e2579e5c623ea7c955
+    pristine_git_object: cf79dda3092009bb13121970a30cf2bd5786e8dd
   docs/models/operations/admingetaccountresponse.md:
     id: 1aa095ec316d
     last_write_checksum: sha1:0d5cb35157736a062086baf5dd96d0cf98483056
     pristine_git_object: 950583b0b9eb9b8ac42f261897d91fff476666aa
+  docs/models/operations/admingetplayerbanstatusresponse.md:
+    id: 802a1505f83f
+    last_write_checksum: sha1:b3465251b49f0f8c519ccd6f868a0df1947f3011
+    pristine_git_object: e1ec1b20ac1152ecb9e710608f4d41f6889a9ab0
   docs/models/operations/adminmaintenancecreateresponse.md:
     id: b788c5058b21
     last_write_checksum: sha1:dce18698a0acf4e0da295b66f17ebe22b9318979
@@ -1589,6 +1637,10 @@ trackedFiles:
     id: 26bb04f33ded
     last_write_checksum: sha1:65cb340edb72f54e0edbdd774682b5ec63f59ce7
     pristine_git_object: 5b5c4cf70d602c6826ad2afc984416cedefe2c92
+  docs/models/operations/adminunbanplayerresponse.md:
+    id: 61397204a409
+    last_write_checksum: sha1:30ec8a6173ca0210ae9d57c9b094b684a0d274e2
+    pristine_git_object: d7995161ae0ea4f5f2ea0fb82f4ed8b21e533fb5
   docs/models/operations/adminupdateresourcesresponse.md:
     id: 6fb56452642b
     last_write_checksum: sha1:a368780de9b2040a7cb0e6331ada309f00a04c1f
@@ -1851,8 +1903,8 @@ trackedFiles:
     pristine_git_object: 24457fb2f750e46df8d6144d80f1c38589fc4f06
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
-    last_write_checksum: sha1:910d0374fbe5d179972d81ecb92021852fa3eac5
-    pristine_git_object: aaff1ae51872c63bb80c28e2b5f3c118a0cd4277
+    last_write_checksum: sha1:1fdf07e361520c310ecf0861074ddb4a08f49a49
+    pristine_git_object: 5508004fa001433b6e0fd30ea722a226585899f2
   docs/sdks/analytics/README.md:
     id: 4c84abb05030
     last_write_checksum: sha1:69f4af4cc383d233015b29713af3ee8c4a50ed63
@@ -1943,12 +1995,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:d5d41c3c4827e42b96e10cca026db20406097bda
-    pristine_git_object: 0ffae4a9a8b06c894b654dc4010baf6f564f207f
+    last_write_checksum: sha1:76314a772423cf392363f97015755f7ba94a590b
+    pristine_git_object: f9fff7cd9d50ac2de39d99c617ef0518b3c70a5f
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:01eda20ce0d7021de55a25f522b0415d5431770c
-    pristine_git_object: 1eb97d19639389f80c8f9b01516538b39746576f
+    last_write_checksum: sha1:947adcc98ec20ea3a4980cbdf4d4daa8da33f5e2
+    pristine_git_object: 63718959ccf236491a2acbbb581450a21aa3fb7c
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2145,10 +2197,22 @@ trackedFiles:
     id: 76edf7340d77
     last_write_checksum: sha1:3ad5c3b74d9240f913f5f77d4eeeb1e2cb42bbd1
     pristine_git_object: 99284f8b63988a94a90ca60b05cf2a65d48778fb
+  src/funcs/adminAddSteamApiKey.ts:
+    id: b691940a4e21
+    last_write_checksum: sha1:480b2d3720d4d72aca2ea455c5ea71d377fb46c3
+    pristine_git_object: f80bf8a09de64d03e771bd7020921e5edb1a4991
+  src/funcs/adminBanPlayer.ts:
+    id: a7820f3bf0d9
+    last_write_checksum: sha1:4e63d84b8ffe4a1fae1ca77e7e769ac767f73bef
+    pristine_git_object: aeea4bb848e48df61bdec7c1be0095d02347128d
   src/funcs/adminGetAccount.ts:
     id: ddfb56dfd994
     last_write_checksum: sha1:b621001de54d60a990b5bed672b72a966cd2a849
     pristine_git_object: 634209496adc82685e036ed343d736f32161b70f
+  src/funcs/adminGetPlayerBanStatus.ts:
+    id: d02be6104cde
+    last_write_checksum: sha1:6a1a59cb79feede3520236e0d4af0659aab923c1
+    pristine_git_object: 364e976f374c33934f82b239e906bdfd695d2e33
   src/funcs/adminMaintenanceCreate.ts:
     id: 3bb85cbf2934
     last_write_checksum: sha1:d9518f2e37a9a93e67fc0a727a4c9367c042d833
@@ -2169,6 +2233,10 @@ trackedFiles:
     id: e3cbac220748
     last_write_checksum: sha1:68e50e7cbb25278edaa3f022d59d38c0513a024e
     pristine_git_object: 1e6bc6f0efda8c3ebd0a491997a8ec88ceb2aac1
+  src/funcs/adminUnbanPlayer.ts:
+    id: 4c0bdb94e507
+    last_write_checksum: sha1:d7ceefe502e7ac682a07645d533d440fb4a71dfb
+    pristine_git_object: 8e099dcf184ab8c7c3cadd46b7ad9ce33d573b6d
   src/funcs/adminUpdateResources.ts:
     id: e7962e3d2610
     last_write_checksum: sha1:51546e4a504718d9a98eda15c278b3e7af11bfed
@@ -2355,8 +2423,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8d1a5aa98fe98f3c09c6bfb7e68514382df5a95b
-    pristine_git_object: f61aba5650a82f951425704a0eb2a43f85b6515f
+    last_write_checksum: sha1:8525849b95c508d537ba236d92e7e17f0e02b6c2
+    pristine_git_object: 48ee588a8a314097ceca80998efc21c340b833a8
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2779,8 +2847,8 @@ trackedFiles:
     pristine_git_object: bcc260e64316f70c9d3c24b90d3cb348c29dd944
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:0ff2070a6e2b2221e2561b282ed482ad63e2625f
-    pristine_git_object: 1f82b81cb2ababe51bd8d3e383fff9ed20f76542
+    last_write_checksum: sha1:0cfb94af14da844b4e5fa363f5d2e3cdb98ed7c3
+    pristine_git_object: 5d2b0cf5e5e4d57f15b1c79ab3eb1902e0d04b55
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
@@ -2827,8 +2895,8 @@ trackedFiles:
     pristine_git_object: 66e2782f8f2fd5ffaea75c6fbfc44c192fd17eef
   src/models/components/leaderboardgetchangesrequestbody.ts:
     id: 0b4ce03af927
-    last_write_checksum: sha1:afdba384f4224e860d42a0f4185af021ef9bad26
-    pristine_git_object: 85776ce99a3a7d52e7e0dbbad5e6485edadad71d
+    last_write_checksum: sha1:0ed9359b1ca05e15eb46e5d3cd509e18baf36bd4
+    pristine_git_object: 364b08e48cd6501fbf0442955d7a9cb56892049d
   src/models/components/leaderboardgetchangesresponsebody.ts:
     id: 7bc7a02f9ae3
     last_write_checksum: sha1:d2c617c5044d94c8243ea4e4666b82ce1531e77d
@@ -3277,14 +3345,46 @@ trackedFiles:
     id: 4786cafaa06a
     last_write_checksum: sha1:84f88a86f1d13e263bc181f0b1506e21c51b450f
     pristine_git_object: 5629c40b7099fb5618e77395aa1e62aac71c871b
+  src/models/components/v1adminaddsteamapikeyrequestbody.ts:
+    id: 2e282124d52e
+    last_write_checksum: sha1:10b487c907b0037f0d6922d84d0051a747ed65e8
+    pristine_git_object: 9c1f438c4e8e7c2741b6b3f246dc3b5158b47ec4
+  src/models/components/v1adminaddsteamapikeyresponsebody.ts:
+    id: bc29f1fc6556
+    last_write_checksum: sha1:f2483332e9d7bd20cedf69c70e34870e0081dda6
+    pristine_git_object: 94e10d11889aef744fabf7a467457a883a4a340e
+  src/models/components/v1adminbanplayerrequestbody.ts:
+    id: e825cb1c6a5e
+    last_write_checksum: sha1:ff699d38010207f40309011383022a9c92a74570
+    pristine_git_object: 508284507066f0551e0fe137ec997b3c84aacf00
+  src/models/components/v1adminbanplayerresponsebody.ts:
+    id: f643c6af8c44
+    last_write_checksum: sha1:d35db2298d346c70a03a965b9ec49e67e2e4f431
+    pristine_git_object: 8eed1ab29bf25a3c9b616595f4cac9924c739405
   src/models/components/v1admingetaccountresponsebody.ts:
     id: ac73d39cbc05
     last_write_checksum: sha1:a430240e5a32de7a0337dbafd540bbeef1ef01ea
     pristine_git_object: 577cca1652894f762a9dc1fc26f9ad2dd70048e3
+  src/models/components/v1admingetplayerbanstatusrequestbody.ts:
+    id: f454c943bcc4
+    last_write_checksum: sha1:ec9e42b5679d4e9b05cce98d66b11180cefe6d1d
+    pristine_git_object: db280e80361bcd5dbe4c9aee32c7dc82b4519c90
+  src/models/components/v1admingetplayerbanstatusresponsebody.ts:
+    id: 95e705f9b581
+    last_write_checksum: sha1:c748cec110476c1b12437bfe4fdc289f8ede405d
+    pristine_git_object: f52ced0b95fe5ff04f28079fa165f30eae94359e
   src/models/components/v1adminremovevanityresponsebody.ts:
     id: 95819625dcab
     last_write_checksum: sha1:983d2c299170ed36436a3e70c548364090047f48
     pristine_git_object: 58b5c777357bdae4462ab8f9fcc6fb5a35041171
+  src/models/components/v1adminunbanplayerrequestbody.ts:
+    id: 28be2497b952
+    last_write_checksum: sha1:d580920de890ad26d8b76a08f90a11e122f985f2
+    pristine_git_object: d7cbaf44fb9d0513dd1bd0942389a7974f0f4620
+  src/models/components/v1adminunbanplayerresponsebody.ts:
+    id: 6dbb7e7e41ca
+    last_write_checksum: sha1:562969fdf017b607b0367c56e10486449ce8973c
+    pristine_git_object: 4daa6341b747d743d26aff12da24550b5ac17349
   src/models/components/v1adminupdateresourcesrequestbody.ts:
     id: ba34beb0a799
     last_write_checksum: sha1:2b2c504f5708e1caa691ec23854c9831a7a950cd
@@ -3625,10 +3725,22 @@ trackedFiles:
     id: d8f8f23c758d
     last_write_checksum: sha1:a21f84c1257d0b1ba5f2c0e10d97849ee93acccb
     pristine_git_object: d6885f5eeef11dd10de7c55922309bb4e49b9fd9
+  src/models/operations/adminaddsteamapikey.ts:
+    id: ac0fdfa250d2
+    last_write_checksum: sha1:110ba5fe4e3687267aa87ae41d2c9417b93ee80f
+    pristine_git_object: 53590424b6b3e1b796575ab83b9c3344bdae9d58
+  src/models/operations/adminbanplayer.ts:
+    id: 87f768837764
+    last_write_checksum: sha1:014fb71b6584a8537913985bbe093bfe158ed4a3
+    pristine_git_object: 2792c9c6ac9dddca52aecfaf860083c272f49dd7
   src/models/operations/admingetaccount.ts:
     id: 4e8b5c09c30f
     last_write_checksum: sha1:dc50e70ac484439707d117e165098747fe64d8f2
     pristine_git_object: fafd331cf641704b73b1c24fb8f4d76db3daa831
+  src/models/operations/admingetplayerbanstatus.ts:
+    id: 7bdfdb4d3217
+    last_write_checksum: sha1:66009fe6e132b6fb98aa3a7b97f053f1072830a3
+    pristine_git_object: 87f582b681f855b01e192efebdc758c210640814
   src/models/operations/adminmaintenancecreate.ts:
     id: 51222a7b2177
     last_write_checksum: sha1:a8c693faa782236edef3e11ce57ffc720d4fcd5c
@@ -3649,6 +3761,10 @@ trackedFiles:
     id: 02816660ee94
     last_write_checksum: sha1:3628b378bea4be006c4eaf4d98287db2452eb047
     pristine_git_object: 76f7357b9b5883cad9398870f58bc4321f0e0f8e
+  src/models/operations/adminunbanplayer.ts:
+    id: df5263254ea1
+    last_write_checksum: sha1:d73b09027332b0e880072fa97cab0b6755c3c8d3
+    pristine_git_object: 082793029b22064a330d6536dfd3f2179850254e
   src/models/operations/adminupdateresources.ts:
     id: 163842cc8ff5
     last_write_checksum: sha1:0b06ea4f84b44972c67f7711aa707ec3c03d3e54
@@ -3751,8 +3867,8 @@ trackedFiles:
     pristine_git_object: e28f392798cb876e15b621a3588a7121fc74d6a1
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:80c12b67fabdb56dff25538206313c7e82c3c4ab
-    pristine_git_object: 77de564257c108b742c84c0b9d31b2002f043f22
+    last_write_checksum: sha1:0ee6ebb4e2a632f28ec8aee0d93c8c64127b552a
+    pristine_git_object: 107dfffb6dd80cbd7e9ba86dbcea403c62a2072d
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:b9e0bdc1000aeb39213fc7c8cac90d4532ee5968
@@ -3847,8 +3963,8 @@ trackedFiles:
     pristine_git_object: e9fc8be8a8f5e6b63e0ef1facee639af955f8215
   src/sdk/admin.ts:
     id: 953a3fbbcdcf
-    last_write_checksum: sha1:c0fe54fa50a0f7f01307e00e394e8ceb55ce955a
-    pristine_git_object: 9eb260782a04b40b697d2d9ccd2a8ac1ff790f90
+    last_write_checksum: sha1:c0d7f7f838c2a74bdbff511f92da90ca8f359fbb
+    pristine_git_object: 58bb2a5e0c64df6be577db5bb796a31118c83af4
   src/sdk/analytics.ts:
     id: 411d91261be3
     last_write_checksum: sha1:adc78767a35d3a3c4a95d2944d95566e88f8d29a
@@ -5418,16 +5534,53 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.addSteamApiKey:
+    speakeasy-default-admin-add-steam-api-key:
+      requestBody:
+        application/json: {"key": "<key>", "keyId": "<id>", "type": "publisher"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminAddSteamApiKeyResponseBody.json", "keyId": "<id>"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.banPlayer:
+    speakeasy-default-admin-ban-player:
+      requestBody:
+        application/json: {"cheatDescription": "<value>", "durationSeconds": 8879, "steamId64": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminBanPlayerResponseBody.json", "ok": false, "reportId": "<id>"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.getPlayerBanStatus:
+    speakeasy-default-admin-get-player-ban-status:
+      requestBody:
+        application/json: {"steamId64": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminGetPlayerBanStatusResponseBody.json", "banStartTime": 366174, "banned": true}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.unbanPlayer:
+    speakeasy-default-admin-unban-player:
+      requestBody:
+        application/json: {"steamId64": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminUnbanPlayerResponseBody.json", "ok": false}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.kv.delete()`: **Added**
-  * `steamsets.kv.list()`: **Added**
-  * `steamsets.kv.set()`: **Added**
-  * `steamsets.account.getMeta()`: **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getAccountsMeta()`: **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getGroupsMeta()`: **Removed** (Breaking ⚠️)
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.addSteamApiKey()`: **Added**\n* `steamsets.admin.banPlayer()`: **Added**\n* `steamsets.admin.getPlayerBanStatus()`: **Added**\n* `steamsets.admin.unbanPlayer()`: **Added**\n* `steamsets.leaderboard.getChanges()`: \n  *  `request.window.enum(all)` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
