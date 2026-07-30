@@ -128,8 +128,12 @@ run();
 
 ### [Admin](docs/sdks/admin/README.md)
 
+* [addSteamApiKey](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
+* [banPlayer](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
+* [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+* [unbanPlayer](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
 * [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
@@ -701,12 +705,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
+- [`adminAddSteamApiKey`](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
+- [`adminBanPlayer`](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
+- [`adminGetPlayerBanStatus`](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
 - [`adminMaintenanceCreate`](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
 - [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event
 - [`adminMaintenanceList`](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+- [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
 - [`adminUpdateRoleOverride`](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
