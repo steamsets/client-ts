@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 0a1e809603a5673f3bf1106d164cc980
+  docChecksum: 72dfb0c1eb3f1ee483eef21e48711f6c
   docVersion: 1.0.0
   speakeasyVersion: 1.791.0
   generationVersion: 2.924.0
-  releaseVersion: 0.36.10
-  configChecksum: f19b6bccbccae24aa06436886bd26a96
+  releaseVersion: 0.36.11
+  configChecksum: 4742ef49393c4b4d606c1802f41c744c
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 9d0f9aab-1b10-49ca-86f8-55cd7276cfd8
-  pristine_commit_hash: 2b5194f40b25b372891cda53bbde819e45e7e37b
-  pristine_tree_hash: 489b73496cfcabcc1ccab24192f2a6535da4c8bb
+  generation_id: 7758e92c-3fa8-4952-8310-edc40266bf57
+  pristine_commit_hash: 21afa60c3e6208d19362861bad2917e428215556
+  pristine_tree_hash: 9b22a5cd1fef1abdde5d0511b2eb4fb1e1120348
 features:
   go:
     additionalDependencies: 0.1.0
@@ -619,8 +619,8 @@ trackedFiles:
     pristine_git_object: 081dbf374be5aa1b5470024405aafc0748b89280
   docs/models/components/leaderboardgetchangesresponsebody.md:
     id: ac11dba9bede
-    last_write_checksum: sha1:ae27be6514afa0e142dbd0f85bda4dadf71c50b8
-    pristine_git_object: 04f0f55260a3e79a575871491ecfd65dcb4e4e06
+    last_write_checksum: sha1:6dd61f20bc71788ab973db82d5e72cf8e5a56e63
+    pristine_git_object: a2c6c095e489387ef939e74ba06a309c9ddcbef2
   docs/models/components/leaderboardregion.md:
     id: b10ee159e50c
     last_write_checksum: sha1:38f4e24a2ea455ff0243ca2b4a1cad2fc055dd72
@@ -1995,12 +1995,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:76314a772423cf392363f97015755f7ba94a590b
-    pristine_git_object: f9fff7cd9d50ac2de39d99c617ef0518b3c70a5f
+    last_write_checksum: sha1:7997d2b4445d49657259ffb811e44e5ca60dd072
+    pristine_git_object: 0ed93b9969e38541d663f7c866db912a40ba11ac
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:947adcc98ec20ea3a4980cbdf4d4daa8da33f5e2
-    pristine_git_object: 63718959ccf236491a2acbbb581450a21aa3fb7c
+    last_write_checksum: sha1:a55c7103c61a2bceabc448476b45bd8eaa4d6f64
+    pristine_git_object: 34b6988a9ea03585b7642d019f279315e4592583
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2423,8 +2423,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8525849b95c508d537ba236d92e7e17f0e02b6c2
-    pristine_git_object: 48ee588a8a314097ceca80998efc21c340b833a8
+    last_write_checksum: sha1:3210eae880f97890dca1bb6746a885fc520d5730
+    pristine_git_object: 53fa309abfe6e9e8b3e7b88dd226e3c4c28fe4eb
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2899,8 +2899,8 @@ trackedFiles:
     pristine_git_object: 364b08e48cd6501fbf0442955d7a9cb56892049d
   src/models/components/leaderboardgetchangesresponsebody.ts:
     id: 7bc7a02f9ae3
-    last_write_checksum: sha1:d2c617c5044d94c8243ea4e4666b82ce1531e77d
-    pristine_git_object: 96bec77ce4794d83ddb802c46decbc5786513683
+    last_write_checksum: sha1:3945c504e37c5b01148048d86e07cbd4cb884b42
+    pristine_git_object: c61be85b9b1bea86208904feef739524aab5fc8a
   src/models/components/leaderboardregion.ts:
     id: 0b8d7ec80dc1
     last_write_checksum: sha1:f8f4372502e0e895166b923fc126346c4a9f9a2e
@@ -5120,7 +5120,7 @@ examples:
         application/json: {"direction": "declines", "leaderboard": "steam_sets", "metric": "score", "window": "7d"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/LeaderboardGetChangesResponseBody.json", "changes": [{"account": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 75308, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 200751, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 104881, "role": "translator"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 846026, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 108610, "xp": 123456}, "accountId": 94949, "latestDate": "2025-03-02T12:30:43.182Z", "newRank": 453638, "newScore": 222351, "oldRank": 409892, "oldScore": 984782, "rankDelta": 249774, "scoreDelta": 210850}]}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/LeaderboardGetChangesResponseBody.json", "changes": [{"account": {"animatedAvatar": "<value>", "appCost": 123456, "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 75308, "city": null, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadgeCost": 123456, "foilBadges": 123456, "friends": 123456, "gameBans": 200751, "images": [{"active": true, "fileName": "avatar.png", "imageId": "img_wasd123", "imageType": "avatar"}], "level": 123456, "miniBackground": "<value>", "name": "steamsets", "normalBadgeCost": 123456, "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 104881, "role": "translator"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 846026, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "vacBans": 108610, "xp": 123456}, "accountId": 94949, "latestDate": "2025-03-02T12:30:43.182Z", "newRank": 453638, "newScore": 222351, "oldRank": 409892, "oldScore": 984782, "rankDelta": 249774, "scoreDelta": 210850}], "total": 710076}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -5580,7 +5580,9 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.addSteamApiKey()`: **Added**\n* `steamsets.admin.banPlayer()`: **Added**\n* `steamsets.admin.getPlayerBanStatus()`: **Added**\n* `steamsets.admin.unbanPlayer()`: **Added**\n* `steamsets.leaderboard.getChanges()`: \n  *  `request.window.enum(all)` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `steamsets.leaderboard.getChanges()`:  `response.total` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
