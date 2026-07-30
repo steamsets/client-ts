@@ -18,6 +18,10 @@ export type LeaderboardGetChangesResponseBody = {
    */
   dollarSchema?: string | undefined;
   changes: Array<LeaderboardChange> | null;
+  /**
+   * Total accounts in this slice, ignoring limit/offset — page until limit+offset reaches it. Reflects the topFilter, since each rank bucket is counted separately.
+   */
+  total: number;
 };
 
 /** @internal */
@@ -28,6 +32,7 @@ export const LeaderboardGetChangesResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   changes: z.nullable(z.array(LeaderboardChange$inboundSchema)),
+  total: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
