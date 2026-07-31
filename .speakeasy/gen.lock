@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 5b863ca120b660a066234ebc654ecbc2
+  docChecksum: 9969e55a567194eefb886639c1a6ae2c
   docVersion: 1.0.0
   speakeasyVersion: 1.791.0
   generationVersion: 2.924.0
-  releaseVersion: 0.36.12
-  configChecksum: 4ecce5299f3e7511f4f5cf32aea00127
+  releaseVersion: 0.36.13
+  configChecksum: 104c5591a5c53c03ea21c9937757b256
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 844746db-a055-4420-b639-68b2636f82fe
-  pristine_commit_hash: 1c79730902a46642493348ea2c0c0b86f7bf6627
-  pristine_tree_hash: 3ef2baf6c30f2e4838d3e92c11070554b54855c1
+  generation_id: c1629ce0-7b5a-4521-97ea-2d596f8d73d2
+  pristine_commit_hash: 9a9c1b5fdf2321d9358c6c69252a2847ea62977a
+  pristine_tree_hash: cf1c1e4c0f9dced4c2347a5ad76eb8180f8007de
 features:
   go:
     additionalDependencies: 0.1.0
@@ -711,8 +711,8 @@ trackedFiles:
     pristine_git_object: 7569739d0de3ec1c991d5a7c272ba7a9ee4f5958
   docs/models/components/resourceresource.md:
     id: 9ee49ae01bd1
-    last_write_checksum: sha1:7e3e309fe109f7eebc2d0223c99985dca0df2f8c
-    pristine_git_object: 43b091387975025f1de24fb83d13bf8db2db73ad
+    last_write_checksum: sha1:b96f65bd2371d4380d679af418841ddec4e0a9f9
+    pristine_git_object: 11d6d101a8b79d59d813426c3f35e26c95c3c2e1
   docs/models/components/role.md:
     id: ab26d0e394ad
     last_write_checksum: sha1:ffb1a7e19762552524060c621c6df4a5912652b9
@@ -1131,8 +1131,8 @@ trackedFiles:
     pristine_git_object: 0cd7ec2852ca045295ec12d91ac6ee68966ab5d9
   docs/models/components/v1admingetaccountresponsebody.md:
     id: e928f1ee2585
-    last_write_checksum: sha1:e7b929dc1ee4b3119605f3a7881c03e27af943c9
-    pristine_git_object: a00db7c30449b0072992831aefdfee2ea9422791
+    last_write_checksum: sha1:e7b047db375464293017f00ead20b25020f6f673
+    pristine_git_object: 7ac4203281e13cd495d6818f94fbfc6935023d1a
   docs/models/components/v1admingetaccountresponsebodyprivacy.md:
     id: e67cd027c49d
     last_write_checksum: sha1:ad1a9e94dab10a9190051db51251e6e520c02d7e
@@ -1863,16 +1863,16 @@ trackedFiles:
     pristine_git_object: 948b91403756b9a3766a96d9872995d71ce0edd4
   docs/sdks/group/README.md:
     id: dd48bfd789de
-    last_write_checksum: sha1:6960e2994aa8fc4556347fc36bfc0b6713166a40
-    pristine_git_object: 72b6b109a464ca4ebbd5b934ab724af4fc28d863
+    last_write_checksum: sha1:e483147a94ea64dbd98b63fd0e56e6e67f887733
+    pristine_git_object: 2adcbd60a38928a01d659e34df5ce9023bf02759
   docs/sdks/item/README.md:
     id: 9d916768f505
     last_write_checksum: sha1:7a1e03bc7ff3d7dccc87c0922a3184eed977ca39
     pristine_git_object: 4cfa3c98dbd364d66396f27999eabad0b282f156
   docs/sdks/kv/README.md:
     id: d3aa624823b1
-    last_write_checksum: sha1:dd0d149dcbf4b10339ed8cfe6497df89b9f399b5
-    pristine_git_object: be7ac4da49692b63c841871e808f6fc750a379d7
+    last_write_checksum: sha1:f3c298d453978d3e07c8861bc0117a82ef54a655
+    pristine_git_object: 77c79f9762a30626f4d7917bd065b3d4549c5566
   docs/sdks/leaderboard/README.md:
     id: 68c49c913694
     last_write_checksum: sha1:145e005fc525974d9c70eb1f1085477dd3ff4fad
@@ -1895,8 +1895,8 @@ trackedFiles:
     pristine_git_object: db3864f0dce2a0c3b2b1972a450da9a3e5e15b5b
   docs/sdks/site/README.md:
     id: 6ac23f386d5b
-    last_write_checksum: sha1:35aed482d1a93b239aaa1ac8ff3cc759950e4cbd
-    pristine_git_object: ac0e0000c7905217aa62648c23cd862bcc26860b
+    last_write_checksum: sha1:423102e164a0412c4ab6af4ba98dd254d21b5400
+    pristine_git_object: eb538f41a9a6250fd62a106254fea128341f0ce3
   docs/sdks/staff/README.md:
     id: 8c575f0a793a
     last_write_checksum: sha1:8739736746f23484635fb421a867a15939b0dee7
@@ -1931,12 +1931,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:f24ba5701bd19891e9c4a38619abfd411c36b495
-    pristine_git_object: c71148978e2a99848d0f0bae697cda25655d7414
+    last_write_checksum: sha1:fd72a4f4281512b6765aaaaadf5b643753ff7879
+    pristine_git_object: 80fae1f46421c0965b43be95c87e1d14c719cd4d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:9390d2d4aff4d16d9a4e507934aa20bb7b6b4856
-    pristine_git_object: 1e199eee8c45809ae5642807d004aa94d0130f95
+    last_write_checksum: sha1:69fbe37449b354d1c4438eb8317418c4290bbd38
+    pristine_git_object: 9a2e312ddcb76ce3ff4d094d5bd0bd2692ebdc3d
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2343,8 +2343,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:16bcdf54e90d0953564c667978d9dc7612ff34de
-    pristine_git_object: a22a15ef1a1b3da3dd23ae6483088f667dba4f40
+    last_write_checksum: sha1:0544b45f255b0069d2e7f7e7573672168973b4cf
+    pristine_git_object: e1059f995feef856003739a326854f07e64a4419
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2879,8 +2879,8 @@ trackedFiles:
     pristine_git_object: 38bdd9aec3521e4b0ae6e258bbb5e3203a34fc2b
   src/models/components/resource.ts:
     id: 7ae010457826
-    last_write_checksum: sha1:3ae673702dff9bc053fef7d51567d630fb209b1e
-    pristine_git_object: fc5a4565d2495c7c3e57fa84307354f3730aa935
+    last_write_checksum: sha1:2d72a412d2808039efd6398464c5ad94355db8cb
+    pristine_git_object: 0b11423efcabd3bd8bca0b397d4ed82e02f5f294
   src/models/components/role.ts:
     id: c1a91949efeb
     last_write_checksum: sha1:aa0960d02ab30c3dde288cf54ff53e89a9ad7a6b
@@ -5444,29 +5444,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.activity.listGlobalFeed()`:  `response.events[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.activity.streamGlobalFeed()`:  `response.[].union(activity-emitted).data.account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.staff.list()`:  `response.[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.previewAccountRank()`:  `response.ownAccount.images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.findFriendPath()`:  `response.paths[].path[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.getInfo()`:  `response.images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.getSettings()`:  `response.images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.getTrending()`:  `response.accounts[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.listFriends()`:  `response.friends[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.activity.listAccountFeed()`:  `response.events[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getGroup()`:  `response.groups[].owner.images` **Removed** (Breaking ⚠️)
-  * `steamsets.apps.listOwners()`:  `response.owners[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getChanges()`:  `response.changes[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.badges.listCrafters()`:  `response.crafters[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.item.findOwners()`:  `response.items[].owners[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getAccount()`:  `response.accounts[].images` **Removed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getBucketLeaders()`:  `response.[].account.images` **Removed** (Breaking ⚠️)
-  * `steamsets.account.deleteImages()`: **Removed** (Breaking ⚠️)
-  * `steamsets.account.listImages()`: **Removed** (Breaking ⚠️)
-  * `steamsets.account.uploadImages()`: **Removed** (Breaking ⚠️)
-  * `steamsets.account.updateImages()`: **Removed** (Breaking ⚠️)
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.getSession()`:  `response.resources[].resource.enum(searchResultLimit)` **Added**\n* `steamsets.admin.getAccount()`:  `response.resources[].resource.enum(searchResultLimit)` **Added**\n* `steamsets.admin.updateResources()`: \n  *  `request.resources[].resource.enum(searchResultLimit)` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

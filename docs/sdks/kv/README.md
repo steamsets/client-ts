@@ -2,6 +2,8 @@
 
 ## Overview
 
+Per-account key/value storage.
+
 ### Available Operations
 
 * [delete](#delete) - Delete a user's key/value entry
