@@ -35,11 +35,9 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   roles: [
     {
-      extras: {
-        "key": "<value>",
-      },
-      rating: 530223,
-      role: "top_100",
+      extras: {},
+      rating: 138555,
+      role: "sapphire",
     },
   ],
   sessions: [

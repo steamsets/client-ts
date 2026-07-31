@@ -80,7 +80,6 @@ run();
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
-* [deleteImages](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
 * [findFriendPath](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
 * [getBadgeHeatmap](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
@@ -95,7 +94,6 @@ run();
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
-* [listImages](docs/sdks/account/README.md#listimages) - List uploaded images
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
@@ -112,11 +110,9 @@ run();
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
-* [updateImages](docs/sdks/account/README.md#updateimages) - Update account images
 * [updateRole](docs/sdks/account/README.md#updaterole) - Update account role
 * [updateSettings](docs/sdks/account/README.md#updatesettings) - Update account settings
 * [updateVanity](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
-* [uploadImages](docs/sdks/account/README.md#uploadimages) - Upload images
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 
@@ -663,7 +659,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 - [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
-- [`accountDeleteImages`](docs/sdks/account/README.md#deleteimages) - Delete uploaded images
 - [`accountDeleteSession`](docs/sdks/account/README.md#deletesession) - Delete user session
 - [`accountFindFriendPath`](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
 - [`accountGetBadgeHeatmap`](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
@@ -678,7 +673,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
-- [`accountListImages`](docs/sdks/account/README.md#listimages) - List uploaded images
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
@@ -695,11 +689,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
-- [`accountUpdateImages`](docs/sdks/account/README.md#updateimages) - Update account images
 - [`accountUpdateRole`](docs/sdks/account/README.md#updaterole) - Update account role
 - [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings) - Update account settings
 - [`accountUpdateVanity`](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
-- [`accountUploadImages`](docs/sdks/account/README.md#uploadimages) - Upload images
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)

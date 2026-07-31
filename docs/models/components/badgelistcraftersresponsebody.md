@@ -35,7 +35,6 @@ let value: BadgeListCraftersResponseBody = {
       foilBadges: 123456,
       friends: 123456,
       gameBans: 583628,
-      images: [],
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -48,28 +47,20 @@ let value: BadgeListCraftersResponseBody = {
       region: {
         name: "Europe",
       },
-      roles: [
-        {
-          extras: {
-            "key": "<value>",
-          },
-          rating: 530223,
-          role: "top_100",
-        },
-      ],
+      roles: [],
       state: {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 594815,
+      steamSetsScore: 853316,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 728471,
+      vacBans: 867332,
       xp: 123456,
     },
   ],
-  maxPageSize: 334421,
-  trackedHolders: 589166,
+  maxPageSize: 594815,
+  trackedHolders: 728471,
 };
 ```
 

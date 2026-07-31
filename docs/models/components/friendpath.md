@@ -33,7 +33,6 @@ let value: FriendPath = {
       foilBadges: 123456,
       friends: 123456,
       gameBans: 708752,
-      images: [],
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -46,15 +45,21 @@ let value: FriendPath = {
       region: {
         name: "Europe",
       },
-      roles: [],
+      roles: [
+        {
+          extras: {},
+          rating: 138555,
+          role: "sapphire",
+        },
+      ],
       state: {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 198469,
+      steamSetsScore: 291402,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 295508,
+      vacBans: 314179,
       xp: 123456,
     },
   ],

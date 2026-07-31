@@ -16,7 +16,6 @@ import {
   DeveloperAppAnalytics,
   DeveloperAppAnalytics$inboundSchema,
 } from "./developerappanalytics.js";
-import { Image, Image$inboundSchema } from "./image.js";
 import { Session, Session$inboundSchema } from "./session.js";
 import {
   V1VanityAnalytics,
@@ -74,12 +73,6 @@ export type V1AccountGetSettingsBody = {
    */
   hidden: boolean;
   /**
-   * The images the account has
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  images: Array<Image> | null;
-  /**
    * The language the account is using
    */
   language: string;
@@ -127,7 +120,6 @@ export const V1AccountGetSettingsBody$inboundSchema: z.ZodType<
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),
   hidden: z.boolean(),
-  images: z.nullable(z.array(Image$inboundSchema)),
   language: z.string(),
   privacy: V1AccountGetSettingsBodyPrivacy$inboundSchema,
   sessions: z.nullable(z.array(Session$inboundSchema)),

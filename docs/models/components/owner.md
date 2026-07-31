@@ -31,14 +31,6 @@ let value: Owner = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 747187,
-    images: [
-      {
-        active: true,
-        fileName: "avatar.png",
-        imageId: "img_wasd123",
-        imageType: "avatar",
-      },
-    ],
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -51,23 +43,15 @@ let value: Owner = {
     region: {
       name: "Europe",
     },
-    roles: [
-      {
-        extras: {
-          "key": "<value>",
-        },
-        rating: 530223,
-        role: "top_100",
-      },
-    ],
+    roles: [],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 990709,
+    steamSetsScore: 634507,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 122687,
+    vacBans: 121724,
     xp: 123456,
   },
   amount: 425941,
@@ -98,7 +82,6 @@ let value: Owner = {
       foilBadges: 123456,
       friends: 123456,
       gameBans: 708752,
-      images: [],
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -111,15 +94,21 @@ let value: Owner = {
       region: {
         name: "Europe",
       },
-      roles: [],
+      roles: [
+        {
+          extras: {},
+          rating: 138555,
+          role: "sapphire",
+        },
+      ],
       state: {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 198469,
+      steamSetsScore: 291402,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
-      vacBans: 295508,
+      vacBans: 314179,
       xp: 123456,
     },
   ],

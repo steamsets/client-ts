@@ -56,13 +56,12 @@ let value: V1AccountGetInfoResponseBody = {
   friendPrivacy: "public",
   friends: 123456,
   gameBans: 244914,
-  images: [],
   lastBanDate: new Date("2024-03-07 07:31:46"),
-  lastQueueStatus: "completed",
+  lastQueueStatus: "undefined",
   level: 123456,
   miniBackground: "steamsets",
   name: "steamsets",
-  nextAllowedTime: new Date("2026-12-27T15:59:27.822Z"),
+  nextAllowedTime: new Date("2024-02-21T10:11:34.395Z"),
   normalBadgeCost: 123456,
   normalBadges: 123456,
   playtime: 123456,
@@ -72,18 +71,24 @@ let value: V1AccountGetInfoResponseBody = {
   region: {
     name: "Europe",
   },
-  roles: [],
+  roles: [
+    {
+      extras: {},
+      rating: 138555,
+      role: "sapphire",
+    },
+  ],
   shortlinkDomain: "steamsets.link",
   state: {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 454393,
+  steamSetsScore: 477800,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   theme: "steamsets",
   updatedAt: new Date("2023-01-01T00:00:00Z"),
-  vacBans: 393885,
+  vacBans: 953127,
   xp: 123456,
 };
 ```
@@ -119,7 +124,6 @@ let value: V1AccountGetInfoResponseBody = {
 | `friendPrivacy`                                                                                                                                     | [components.FriendPrivacy](../../models/components/friendprivacy.md)                                                                                | :heavy_check_mark:                                                                                                                                  | The privacy of the account                                                                                                                          | public                                                                                                                                              |
 | `friends`                                                                                                                                           | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The number of friends the account has                                                                                                               | 123456                                                                                                                                              |
 | `gameBans`                                                                                                                                          | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The number of game bans                                                                                                                             |                                                                                                                                                     |
-| `images`                                                                                                                                            | [components.Image](../../models/components/image.md)[]                                                                                              | :heavy_check_mark:                                                                                                                                  | The images of the account                                                                                                                           |                                                                                                                                                     |
 | `lastBanDate`                                                                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                       | :heavy_check_mark:                                                                                                                                  | The Last date the account got a ban on                                                                                                              | 2024-03-07 07:31:46                                                                                                                                 |
 | `lastQueueStatus`                                                                                                                                   | [components.LastQueueStatus](../../models/components/lastqueuestatus.md)                                                                            | :heavy_check_mark:                                                                                                                                  | N/A                                                                                                                                                 |                                                                                                                                                     |
 | `level`                                                                                                                                             | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The level of the account                                                                                                                            | 123456                                                                                                                                              |
