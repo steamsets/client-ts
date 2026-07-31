@@ -2,6 +2,8 @@
 
 ## Overview
 
+Site-wide state and live update streams.
+
 ### Available Operations
 
 * [subscribe](#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).

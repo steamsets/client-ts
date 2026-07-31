@@ -2,6 +2,8 @@
 
 ## Overview
 
+Steam group metadata and refresh queueing.
+
 ### Available Operations
 
 * [queueUpdate](#queueupdate) - Queue group update
