@@ -35,14 +35,6 @@ let value: AccountGetTrendingResponseBody = {
         foilBadges: 123456,
         friends: 123456,
         gameBans: 747187,
-        images: [
-          {
-            active: true,
-            fileName: "avatar.png",
-            imageId: "img_wasd123",
-            imageType: "avatar",
-          },
-        ],
         level: 123456,
         miniBackground: "<value>",
         name: "steamsets",
@@ -55,28 +47,20 @@ let value: AccountGetTrendingResponseBody = {
         region: {
           name: "Europe",
         },
-        roles: [
-          {
-            extras: {
-              "key": "<value>",
-            },
-            rating: 530223,
-            role: "top_100",
-          },
-        ],
+        roles: [],
         state: {
           name: "Baden-Wurttemberg",
         },
         steamId: "76561198842603734",
-        steamSetsScore: 990709,
+        steamSetsScore: 634507,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
-        vacBans: 122687,
+        vacBans: 121724,
         xp: 123456,
       },
-      accountId: 922791,
-      totalViews: 789855,
-      uniqueViews: 564479,
+      accountId: 325508,
+      totalViews: 530223,
+      uniqueViews: 763004,
     },
   ],
 };

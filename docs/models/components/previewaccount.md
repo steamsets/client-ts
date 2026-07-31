@@ -28,14 +28,6 @@ let value: PreviewAccount = {
   foilBadges: 123456,
   friends: 123456,
   gameBans: 235906,
-  images: [
-    {
-      active: true,
-      fileName: "avatar.png",
-      imageId: "img_wasd123",
-      imageType: "avatar",
-    },
-  ],
   level: 123456,
   miniBackground: "<value>",
   name: "steamsets",
@@ -49,16 +41,22 @@ let value: PreviewAccount = {
   region: {
     name: "Europe",
   },
-  roles: [],
+  roles: [
+    {
+      extras: {},
+      rating: 138555,
+      role: "sapphire",
+    },
+  ],
   score: 100,
   state: {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 845119,
+  steamSetsScore: 205839,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
-  vacBans: 358739,
+  vacBans: 852142,
   xp: 123456,
 };
 ```
@@ -87,7 +85,6 @@ let value: PreviewAccount = {
 | `foilBadges`                                                                                                                                        | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The number of foil badges the account has                                                                                                           | 123456                                                                                                                                              |
 | `friends`                                                                                                                                           | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The number of friends the account has                                                                                                               | 123456                                                                                                                                              |
 | `gameBans`                                                                                                                                          | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The number of game bans                                                                                                                             |                                                                                                                                                     |
-| `images`                                                                                                                                            | [components.Image](../../models/components/image.md)[]                                                                                              | :heavy_check_mark:                                                                                                                                  | The images of the account                                                                                                                           |                                                                                                                                                     |
 | `level`                                                                                                                                             | *number*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The level of the account                                                                                                                            | 123456                                                                                                                                              |
 | `miniBackground`                                                                                                                                    | *string*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The mini background of the account                                                                                                                  |                                                                                                                                                     |
 | `name`                                                                                                                                              | *string*                                                                                                                                            | :heavy_check_mark:                                                                                                                                  | The name of the account                                                                                                                             | steamsets                                                                                                                                           |

@@ -60,14 +60,6 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 918832,
-    images: [
-      {
-        active: true,
-        fileName: "avatar.png",
-        imageId: "img_wasd123",
-        imageType: "avatar",
-      },
-    ],
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -81,23 +73,15 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     region: {
       name: "Europe",
     },
-    roles: [
-      {
-        extras: {
-          "key": "<value>",
-        },
-        rating: 530223,
-        role: "top_100",
-      },
-    ],
+    roles: [],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 47390,
+    steamSetsScore: 823597,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
-    vacBans: 234806,
+    vacBans: 294927,
     xp: 123456,
   },
 };

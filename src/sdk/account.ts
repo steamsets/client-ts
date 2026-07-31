@@ -8,7 +8,6 @@ import { accountCreateConnection } from "../funcs/accountCreateConnection.js";
 import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
 import { accountDeleteConnection } from "../funcs/accountDeleteConnection.js";
 import { accountDeleteDeveloperApp } from "../funcs/accountDeleteDeveloperApp.js";
-import { accountDeleteImages } from "../funcs/accountDeleteImages.js";
 import { accountDeleteSession } from "../funcs/accountDeleteSession.js";
 import { accountFindFriendPath } from "../funcs/accountFindFriendPath.js";
 import { accountGetBadgeHeatmap } from "../funcs/accountGetBadgeHeatmap.js";
@@ -23,7 +22,6 @@ import { accountListApps } from "../funcs/accountListApps.js";
 import { accountListBadgeBookmarks } from "../funcs/accountListBadgeBookmarks.js";
 import { accountListBadges } from "../funcs/accountListBadges.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
-import { accountListImages } from "../funcs/accountListImages.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
 import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHistory.js";
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
@@ -40,11 +38,9 @@ import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
-import { accountUpdateImages } from "../funcs/accountUpdateImages.js";
 import { accountUpdateRole } from "../funcs/accountUpdateRole.js";
 import { accountUpdateSettings } from "../funcs/accountUpdateSettings.js";
 import { accountUpdateVanity } from "../funcs/accountUpdateVanity.js";
-import { accountUploadImages } from "../funcs/accountUploadImages.js";
 import { accountVerifyConnection } from "../funcs/accountVerifyConnection.js";
 import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -132,20 +128,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountDeleteDeveloperAppResponse> {
     return unwrapAsync(accountDeleteDeveloperApp(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Delete uploaded images
-   */
-  async deleteImages(
-    request: components.V1AccountDeleteImagesRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountDeleteImagesResponse> {
-    return unwrapAsync(accountDeleteImages(
       this,
       request,
       options,
@@ -342,18 +324,6 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountListFriends(
       this,
       request,
-      options,
-    ));
-  }
-
-  /**
-   * List uploaded images
-   */
-  async listImages(
-    options?: RequestOptions,
-  ): Promise<operations.AccountListImagesResponse> {
-    return unwrapAsync(accountListImages(
-      this,
       options,
     ));
   }
@@ -581,20 +551,6 @@ export class Account extends ClientSDK {
   }
 
   /**
-   * Update account images
-   */
-  async updateImages(
-    request: components.V1AccountUpdateImageRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountUpdateImagesResponse> {
-    return unwrapAsync(accountUpdateImages(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
    * Update account role
    */
   async updateRole(
@@ -630,20 +586,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountUpdateVanityResponse> {
     return unwrapAsync(accountUpdateVanity(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Upload images
-   */
-  async uploadImages(
-    request: components.V1AccountUploadImagesRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountUploadImagesResponse> {
-    return unwrapAsync(accountUploadImages(
       this,
       request,
       options,

@@ -18,7 +18,6 @@ import {
   CurrentLeaderboardRank,
   CurrentLeaderboardRank$inboundSchema,
 } from "./currentleaderboardrank.js";
-import { Image, Image$inboundSchema } from "./image.js";
 import {
   LeaderboardCity,
   LeaderboardCity$inboundSchema,
@@ -194,10 +193,6 @@ export type V1AccountGetInfoResponseBody = {
    */
   gameBans: number;
   /**
-   * The images of the account
-   */
-  images: Array<Image> | null;
-  /**
    * The Last date the account got a ban on
    */
   lastBanDate: Date | null;
@@ -351,7 +346,6 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   friendPrivacy: FriendPrivacy$inboundSchema,
   friends: z.number().int(),
   gameBans: z.number().int(),
-  images: z.nullable(z.array(Image$inboundSchema)),
   lastBanDate: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),

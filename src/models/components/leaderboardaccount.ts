@@ -8,7 +8,6 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import { Image, Image$inboundSchema } from "./image.js";
 import {
   LeaderboardCity,
   LeaderboardCity$inboundSchema,
@@ -116,10 +115,6 @@ export type LeaderboardAccount = {
    */
   gameBans: number;
   /**
-   * The images of the account
-   */
-  images: Array<Image> | null;
-  /**
    * The level of the account
    */
   level: number;
@@ -218,7 +213,6 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
-  images: z.nullable(z.array(Image$inboundSchema)),
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),

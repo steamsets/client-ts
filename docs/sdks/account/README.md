@@ -12,7 +12,6 @@ All Requests related to account(s) are grouped here.
 * [createDeveloperApp](#createdeveloperapp) - Create developer application
 * [deleteConnection](#deleteconnection) - Delete OAuth or domain connection
 * [deleteDeveloperApp](#deletedeveloperapp) - Delete developer application
-* [deleteImages](#deleteimages) - Delete uploaded images
 * [deleteSession](#deletesession) - Delete user session
 * [findFriendPath](#findfriendpath) - Find up to N shortest friend paths between two accounts
 * [getBadgeHeatmap](#getbadgeheatmap) - Get monthly badge crafting counts for an account
@@ -27,7 +26,6 @@ All Requests related to account(s) are grouped here.
 * [listBadgeBookmarks](#listbadgebookmarks) - List bookmarked badges
 * [listBadges](#listbadges) - List account badges
 * [listFriends](#listfriends) - List account friends
-* [listImages](#listimages) - List uploaded images
 * [listInventorySets](#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
 * [listOwnedBadges](#listownedbadges) - List owned badges
@@ -44,11 +42,9 @@ All Requests related to account(s) are grouped here.
 * [subscribeEmail](#subscribeemail) - Subscribe to email notifications
 * [updateConnection](#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](#updatedeveloperapp) - Update developer application
-* [updateImages](#updateimages) - Update account images
 * [updateRole](#updaterole) - Update account role
 * [updateSettings](#updatesettings) - Update account settings
 * [updateVanity](#updatevanity) - Update account vanity URL
-* [uploadImages](#uploadimages) - Upload images
 * [verifyConnection](#verifyconnection) - Verify OAuth connection
 * [verifyEmail](#verifyemail) - Verify email address
 
@@ -517,89 +513,6 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 404, 422, 429  | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## deleteImages
-
-Delete uploaded images
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="account.deleteImages" method="post" path="/v1/account.deleteImages" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.deleteImages({
-    imageIds: [
-      "<value 1>",
-      "<value 2>",
-      "<value 3>",
-    ],
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountDeleteImages } from "@steamsets/client-ts/funcs/accountDeleteImages.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountDeleteImages(steamSets, {
-    imageIds: [
-      "<value 1>",
-      "<value 2>",
-      "<value 3>",
-    ],
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("accountDeleteImages failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountDeleteImagesRequestBody](../../models/components/v1accountdeleteimagesrequestbody.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountDeleteImagesResponse](../../models/operations/accountdeleteimagesresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1617,76 +1530,6 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## listImages
-
-List uploaded images
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="account.listImages" method="post" path="/v1/account.listImages" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.listImages();
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountListImages } from "@steamsets/client-ts/funcs/accountListImages.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountListImages(steamSets);
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("accountListImages failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountListImagesResponse](../../models/operations/accountlistimagesresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2918,81 +2761,6 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
-## updateImages
-
-Update account images
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="account.updateImages" method="post" path="/v1/account.updateImages" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.updateImages({
-    images: [],
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountUpdateImages } from "@steamsets/client-ts/funcs/accountUpdateImages.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountUpdateImages(steamSets, {
-    images: [],
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("accountUpdateImages failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountUpdateImageRequestBody](../../models/components/v1accountupdateimagerequestbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountUpdateImagesResponse](../../models/operations/accountupdateimagesresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
 ## updateRole
 
 Update account role
@@ -3211,91 +2979,6 @@ run();
 ### Response
 
 **Promise\<[operations.AccountUpdateVanityResponse](../../models/operations/accountupdatevanityresponse.md)\>**
-
-### Errors
-
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 422            | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## uploadImages
-
-Upload images
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="account.uploadImages" method="post" path="/v1/account.uploadImages" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.account.uploadImages({
-    images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-    ],
-  });
-
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountUploadImages } from "@steamsets/client-ts/funcs/accountUploadImages.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await accountUploadImages(steamSets, {
-    images: [
-      {
-        data: "base64_encoded_image",
-        type: "avatar",
-      },
-    ],
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    console.log(result);
-  } else {
-    console.log("accountUploadImages failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.V1AccountUploadImagesRequestBody](../../models/components/v1accountuploadimagesrequestbody.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.AccountUploadImagesResponse](../../models/operations/accountuploadimagesresponse.md)\>**
 
 ### Errors
 
