@@ -32,6 +32,10 @@ export type V1AccountCreateConnectionRequestBody = {
    * The provider to connect with
    */
   provider: Provider;
+  /**
+   * The redirect_uri used to obtain the code. Must be an allowed frontend origin
+   */
+  redirectUri?: string | undefined;
 };
 
 /** @internal */
@@ -42,6 +46,7 @@ export const Provider$outboundSchema: z.ZodNativeEnum<typeof Provider> = z
 export type V1AccountCreateConnectionRequestBody$Outbound = {
   code: string;
   provider: string;
+  redirectUri?: string | undefined;
 };
 
 /** @internal */
@@ -52,6 +57,7 @@ export const V1AccountCreateConnectionRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   code: z.string(),
   provider: Provider$outboundSchema,
+  redirectUri: z.string().optional(),
 });
 
 export function v1AccountCreateConnectionRequestBodyToJSON(

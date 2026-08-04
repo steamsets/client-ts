@@ -8,6 +8,7 @@ import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
+import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
 import { adminUpdateRoleOverride } from "../funcs/adminUpdateRoleOverride.js";
 import { adminUpdateRoles } from "../funcs/adminUpdateRoles.js";
@@ -101,6 +102,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminUnbanPlayerResponse> {
     return unwrapAsync(adminUnbanPlayer(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update staff-managed account fields (custom donations, staff note)
+   */
+  async updateAccount(
+    request: components.V1AdminUpdateAccountRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateAccountResponse> {
+    return unwrapAsync(adminUpdateAccount(
       this,
       request,
       options,

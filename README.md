@@ -130,6 +130,7 @@ run();
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [unbanPlayer](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
+* [updateAccount](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
 * [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
@@ -707,6 +708,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 - [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
+- [`adminUpdateAccount`](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
 - [`adminUpdateRoleOverride`](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles

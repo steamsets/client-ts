@@ -51,6 +51,7 @@ export * from "./adminmaintenancelist.js";
 export * from "./adminmaintenanceupdate.js";
 export * from "./adminremovevanity.js";
 export * from "./adminunbanplayer.js";
+export * from "./adminupdateaccount.js";
 export * from "./adminupdateresources.js";
 export * from "./adminupdateroleoverride.js";
 export * from "./adminupdateroles.js";

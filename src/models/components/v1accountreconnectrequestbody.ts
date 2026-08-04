@@ -13,12 +13,17 @@ export type V1AccountReconnectRequestBody = {
    * The connection id to reconnect
    */
   connectionId: string;
+  /**
+   * The redirect_uri used to obtain the code. Must be an allowed frontend origin
+   */
+  redirectUri?: string | undefined;
 };
 
 /** @internal */
 export type V1AccountReconnectRequestBody$Outbound = {
   code: string;
   connectionId: string;
+  redirectUri?: string | undefined;
 };
 
 /** @internal */
@@ -29,6 +34,7 @@ export const V1AccountReconnectRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   code: z.string(),
   connectionId: z.string(),
+  redirectUri: z.string().optional(),
 });
 
 export function v1AccountReconnectRequestBodyToJSON(
