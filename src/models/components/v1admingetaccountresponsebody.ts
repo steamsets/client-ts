@@ -64,9 +64,17 @@ export type V1AdminGetAccountResponseBody = {
    */
   country: string | null;
   /**
+   * The staff-granted donation total in cents
+   */
+  customDonations: number;
+  /**
    * The developer apps the account has
    */
   developerApps: Array<DeveloperApp> | null;
+  /**
+   * The Patreon-reported donation total in cents
+   */
+  donations: number;
   /**
    * The email of the account
    */
@@ -83,6 +91,18 @@ export type V1AdminGetAccountResponseBody = {
    * The name updates the account has
    */
   nameUpdates: Array<V1AccountNameUpdate> | null;
+  /**
+   * The staff note on this account, if any
+   */
+  note: string | null;
+  /**
+   * Name of the staff member who last wrote the note
+   */
+  noteAuthor: string | null;
+  /**
+   * When the staff note was last written
+   */
+  noteUpdatedAt: Date | null;
   /**
    * The privacy of the account
    */
@@ -135,11 +155,18 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   city: z.nullable(z.string()),
   connections: z.nullable(z.array(Connection$inboundSchema)),
   country: z.nullable(z.string()),
+  customDonations: z.number().int(),
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
+  donations: z.number().int(),
   email: z.nullable(z.string()),
   locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
   name: z.string(),
   nameUpdates: z.nullable(z.array(V1AccountNameUpdate$inboundSchema)),
+  note: z.nullable(z.string()),
+  noteAuthor: z.nullable(z.string()),
+  noteUpdatedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
   privacy: V1AdminGetAccountResponseBodyPrivacy$inboundSchema,
   region: z.nullable(z.string()),
   resources: z.nullable(z.array(Resource$inboundSchema)),

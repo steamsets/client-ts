@@ -226,6 +226,7 @@ async function run() {
   const result = await steamSets.account.createConnection({
     code: "123456",
     provider: "discord",
+    redirectUri: "https://steamsets.com",
   });
 
   console.log(result);
@@ -252,6 +253,7 @@ async function run() {
   const res = await accountCreateConnection(steamSets, {
     code: "123456",
     provider: "discord",
+    redirectUri: "https://steamsets.com",
   });
   if (res.ok) {
     const { value: result } = res;
@@ -2158,6 +2160,7 @@ async function run() {
   const result = await steamSets.account.reconnectConnection({
     code: "123456",
     connectionId: "123456",
+    redirectUri: "https://steamsets.com",
   });
 
   console.log(result);
@@ -2184,6 +2187,7 @@ async function run() {
   const res = await accountReconnectConnection(steamSets, {
     code: "123456",
     connectionId: "123456",
+    redirectUri: "https://steamsets.com",
   });
   if (res.ok) {
     const { value: result } = res;

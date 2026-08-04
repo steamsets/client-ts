@@ -12,7 +12,9 @@ let value: V1AdminGetAccountResponseBody = {
   city: "Bad Krozingen",
   connections: [],
   country: "Germany",
+  customDonations: 2500,
   developerApps: [],
+  donations: 1000,
   email: "steamsets@example.com",
   locationUpdates: [],
   name: "steamsets",
@@ -25,21 +27,18 @@ let value: V1AdminGetAccountResponseBody = {
       updatedAt: new Date("2023-01-01T00:00:00Z"),
     },
   ],
+  note: "<value>",
+  noteAuthor: "<value>",
+  noteUpdatedAt: new Date("2025-09-07T08:15:42.939Z"),
   privacy: "public",
   region: "Europe",
   resources: [
     {
-      resource: "search_result_limit",
+      resource: "developer_apps",
       value: "1",
     },
   ],
-  roles: [
-    {
-      extras: {},
-      rating: 138555,
-      role: "sapphire",
-    },
-  ],
+  roles: [],
   sessions: [
     {
       createdAt: new Date("2023-01-01T00:00:00Z"),
@@ -53,7 +52,15 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
-  vanityUpdates: [],
+  vanityUpdates: [
+    {
+      updatedAt: new Date("2023-01-01T00:00:00Z"),
+      vanity: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+    },
+  ],
 };
 ```
 
@@ -66,11 +73,16 @@ let value: V1AdminGetAccountResponseBody = {
 | `city`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The city of the account                                                                                            | Bad Krozingen                                                                                                      |
 | `connections`                                                                                                      | [components.Connection](../../models/components/connection.md)[]                                                   | :heavy_check_mark:                                                                                                 | The connections the account has                                                                                    |                                                                                                                    |
 | `country`                                                                                                          | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The country code of the account                                                                                    | Germany                                                                                                            |
+| `customDonations`                                                                                                  | *number*                                                                                                           | :heavy_check_mark:                                                                                                 | The staff-granted donation total in cents                                                                          | 2500                                                                                                               |
 | `developerApps`                                                                                                    | [components.DeveloperApp](../../models/components/developerapp.md)[]                                               | :heavy_check_mark:                                                                                                 | The developer apps the account has                                                                                 |                                                                                                                    |
+| `donations`                                                                                                        | *number*                                                                                                           | :heavy_check_mark:                                                                                                 | The Patreon-reported donation total in cents                                                                       | 1000                                                                                                               |
 | `email`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The email of the account                                                                                           | steamsets@example.com                                                                                              |
 | `locationUpdates`                                                                                                  | [components.V1AccountLocationUpdate](../../models/components/v1accountlocationupdate.md)[]                         | :heavy_check_mark:                                                                                                 | The location updates the account has                                                                               |                                                                                                                    |
 | `name`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The name of the account                                                                                            | steamsets                                                                                                          |
 | `nameUpdates`                                                                                                      | [components.V1AccountNameUpdate](../../models/components/v1accountnameupdate.md)[]                                 | :heavy_check_mark:                                                                                                 | The name updates the account has                                                                                   |                                                                                                                    |
+| `note`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The staff note on this account, if any                                                                             |                                                                                                                    |
+| `noteAuthor`                                                                                                       | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | Name of the staff member who last wrote the note                                                                   |                                                                                                                    |
+| `noteUpdatedAt`                                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                      | :heavy_check_mark:                                                                                                 | When the staff note was last written                                                                               |                                                                                                                    |
 | `privacy`                                                                                                          | [components.V1AdminGetAccountResponseBodyPrivacy](../../models/components/v1admingetaccountresponsebodyprivacy.md) | :heavy_check_mark:                                                                                                 | The privacy of the account                                                                                         | public                                                                                                             |
 | `region`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The region of the account                                                                                          | Europe                                                                                                             |
 | `resources`                                                                                                        | [components.Resource](../../models/components/resource.md)[]                                                       | :heavy_check_mark:                                                                                                 | The resources the account has (permissions)                                                                        |                                                                                                                    |
