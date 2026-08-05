@@ -3,9 +3,11 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeFormQuery } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -29,6 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export function accountListOwnedBadges(
   client: SteamSetsCore,
+  request: operations.AccountListOwnedBadgesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -46,12 +49,14 @@ export function accountListOwnedBadges(
 > {
   return new APIPromise($do(
     client,
+    request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
+  request: operations.AccountListOwnedBadgesRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -70,7 +75,23 @@ async function $do(
     APICall,
   ]
 > {
+  const parsed = safeParse(
+    request,
+    (value) =>
+      operations.AccountListOwnedBadgesRequest$outboundSchema.parse(value),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return [parsed, { status: "invalid" }];
+  }
+  const payload = parsed.value;
+  const body = null;
+
   const path = pathToFunc("/v1/account.listOwnedBadges")();
+
+  const query = encodeFormQuery({
+    "appId": payload.appId,
+  }, { explode: false });
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -111,6 +132,8 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || 30000,
@@ -151,7 +174,7 @@ async function $do(
     M.json(200, operations.AccountListOwnedBadgesResponse$inboundSchema, {
       key: "V1AccountBadgeOwnedBadgesResponseBody",
     }),
-    M.jsonErr([400, 401, 404], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

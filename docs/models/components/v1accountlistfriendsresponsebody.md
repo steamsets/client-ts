@@ -58,6 +58,8 @@ let value: V1AccountListFriendsResponseBody = {
       xp: 123456,
     },
   ],
+  nextCursor: "<value>",
+  total: 963908,
 };
 ```
 
@@ -67,3 +69,5 @@ let value: V1AccountListFriendsResponseBody = {
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `dollarSchema`                                                             | *string*                                                                   | :heavy_minus_sign:                                                         | A URL to the JSON Schema for this object.                                  | https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json    |
 | `friends`                                                                  | [components.V1AccountFriend](../../models/components/v1accountfriend.md)[] | :heavy_check_mark:                                                         | N/A                                                                        |                                                                            |
+| `nextCursor`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | Cursor for the next page, null when this is the last page                  |                                                                            |
+| `total`                                                                    | *number*                                                                   | :heavy_check_mark:                                                         | Total number of friends across all pages                                   |                                                                            |

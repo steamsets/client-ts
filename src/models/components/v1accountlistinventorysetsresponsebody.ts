@@ -19,6 +19,10 @@ export type V1AccountListInventorySetsResponseBody = {
    */
   inventoryUpdatedAt?: number | undefined;
   /**
+   * Cursor for the next page, null when this is the last page
+   */
+  nextCursor: number | null;
+  /**
    * When next refresh is allowed (unix seconds)
    */
   nextRefreshAt?: number | undefined;
@@ -26,6 +30,10 @@ export type V1AccountListInventorySetsResponseBody = {
    * Inventory sets with ownership info
    */
   sets: Array<InventorySet> | null;
+  /**
+   * Total number of sets (apps) across all pages
+   */
+  total: number;
 };
 
 /** @internal */
@@ -36,8 +44,10 @@ export const V1AccountListInventorySetsResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   inventoryUpdatedAt: z.number().int().optional(),
+  nextCursor: z.nullable(z.number().int()),
   nextRefreshAt: z.number().int().optional(),
   sets: z.nullable(z.array(InventorySet$inboundSchema)),
+  total: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",

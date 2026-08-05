@@ -1518,7 +1518,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [components.V1AccountListFriendsRequestBody](../../models/components/v1accountlistfriendsrequestbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1550,7 +1550,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.listInventorySets();
+  const result = await steamSets.account.listInventorySets({});
 
   console.log(result);
 }
@@ -1573,7 +1573,7 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountListInventorySets(steamSets);
+  const res = await accountListInventorySets(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -1589,6 +1589,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountListInventorySetsRequest](../../models/operations/accountlistinventorysetsrequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1601,7 +1602,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -1691,7 +1692,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.listOwnedBadges();
+  const result = await steamSets.account.listOwnedBadges({
+    appId: 730,
+  });
 
   console.log(result);
 }
@@ -1714,7 +1717,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountListOwnedBadges(steamSets);
+  const res = await accountListOwnedBadges(steamSets, {
+    appId: 730,
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -1730,6 +1735,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AccountListOwnedBadgesRequest](../../models/operations/accountlistownedbadgesrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1742,7 +1748,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 404            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

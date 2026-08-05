@@ -9,6 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AccountListInventorySetsRequest = {
+  /**
+   * App id from a previous page's nextCursor. Omit for the first page
+   */
+  cursor?: number | undefined;
+  /**
+   * Sets (apps) per page
+   */
+  limit?: number | undefined;
+};
+
 export type AccountListInventorySetsResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -18,6 +29,32 @@ export type AccountListInventorySetsResponse = {
     | components.V1AccountListInventorySetsResponseBody
     | undefined;
 };
+
+/** @internal */
+export type AccountListInventorySetsRequest$Outbound = {
+  cursor?: number | undefined;
+  limit: number;
+};
+
+/** @internal */
+export const AccountListInventorySetsRequest$outboundSchema: z.ZodType<
+  AccountListInventorySetsRequest$Outbound,
+  z.ZodTypeDef,
+  AccountListInventorySetsRequest
+> = z.object({
+  cursor: z.number().int().optional(),
+  limit: z.number().int().default(100),
+});
+
+export function accountListInventorySetsRequestToJSON(
+  accountListInventorySetsRequest: AccountListInventorySetsRequest,
+): string {
+  return JSON.stringify(
+    AccountListInventorySetsRequest$outboundSchema.parse(
+      accountListInventorySetsRequest,
+    ),
+  );
+}
 
 /** @internal */
 export const AccountListInventorySetsResponse$inboundSchema: z.ZodType<

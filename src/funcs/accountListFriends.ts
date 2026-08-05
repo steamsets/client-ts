@@ -32,7 +32,7 @@ import { Result } from "../types/fp.js";
  */
 export function accountListFriends(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1AccountListFriendsRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -57,7 +57,7 @@ export function accountListFriends(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.AccountSearch,
+  request: components.V1AccountListFriendsRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
@@ -78,7 +78,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => components.AccountSearch$outboundSchema.parse(value),
+    (value) =>
+      components.V1AccountListFriendsRequestBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {

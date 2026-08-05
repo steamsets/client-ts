@@ -9,13 +9,13 @@ let value: InventorySet = {
   appId: 447825,
   foil: [
     {
-      amount: 38953,
+      amount: 479802,
       name: "<value>",
     },
   ],
-  foilSets: 18431,
-  normal: [],
-  normalSets: 370572,
+  foilSets: 38953,
+  normal: null,
+  normalSets: 425021,
 };
 ```
 

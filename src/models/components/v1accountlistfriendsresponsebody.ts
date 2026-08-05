@@ -18,6 +18,14 @@ export type V1AccountListFriendsResponseBody = {
    */
   dollarSchema?: string | undefined;
   friends: Array<V1AccountFriend | null> | null;
+  /**
+   * Cursor for the next page, null when this is the last page
+   */
+  nextCursor: string | null;
+  /**
+   * Total number of friends across all pages
+   */
+  total: number;
 };
 
 /** @internal */
@@ -28,6 +36,8 @@ export const V1AccountListFriendsResponseBody$inboundSchema: z.ZodType<
 > = z.object({
   $schema: z.string().optional(),
   friends: z.nullable(z.array(z.nullable(V1AccountFriend$inboundSchema))),
+  nextCursor: z.nullable(z.string()),
+  total: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",
