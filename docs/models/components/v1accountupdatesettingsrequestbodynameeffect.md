@@ -1,13 +1,13 @@
-# V1AccountUpdateCosmeticsBodyNameEffect
+# V1AccountUpdateSettingsRequestBodyNameEffect
 
-The stored name effect after the update
+The name effect. none clears it, omit to leave unchanged
 
 ## Example Usage
 
 ```typescript
-import { V1AccountUpdateCosmeticsBodyNameEffect } from "@steamsets/client-ts/models/components";
+import { V1AccountUpdateSettingsRequestBodyNameEffect } from "@steamsets/client-ts/models/components";
 
-let value: V1AccountUpdateCosmeticsBodyNameEffect = "rainbow";
+let value: V1AccountUpdateSettingsRequestBodyNameEffect = "rainbow";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```

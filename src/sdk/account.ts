@@ -37,7 +37,6 @@ import { accountSendEmailVerification } from "../funcs/accountSendEmailVerificat
 import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
-import { accountUpdateCosmetics } from "../funcs/accountUpdateCosmetics.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
 import { accountUpdateRole } from "../funcs/accountUpdateRole.js";
 import { accountUpdateSettings } from "../funcs/accountUpdateSettings.js";
@@ -531,20 +530,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountUpdateConnectionResponse> {
     return unwrapAsync(accountUpdateConnection(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Update donator profile cosmetics
-   */
-  async updateCosmetics(
-    request: components.V1AccountUpdateCosmeticsRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.AccountUpdateCosmeticsResponse> {
-    return unwrapAsync(accountUpdateCosmetics(
       this,
       request,
       options,
