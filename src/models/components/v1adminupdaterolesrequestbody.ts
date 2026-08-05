@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -38,7 +39,7 @@ export const Roles = {
   Astral: "astral",
   Nebula: "nebula",
 } as const;
-export type Roles = ClosedEnum<typeof Roles>;
+export type Roles = OpenEnum<typeof Roles>;
 
 export type V1AdminUpdateRolesRequestBody = {
   id?: IDSearch | undefined;
@@ -47,9 +48,8 @@ export type V1AdminUpdateRolesRequestBody = {
 };
 
 /** @internal */
-export const Roles$outboundSchema: z.ZodNativeEnum<typeof Roles> = z.nativeEnum(
-  Roles,
-);
+export const Roles$outboundSchema: z.ZodType<string, z.ZodTypeDef, Roles> =
+  openEnums.outboundSchema(Roles);
 
 /** @internal */
 export type V1AdminUpdateRolesRequestBody$Outbound = {

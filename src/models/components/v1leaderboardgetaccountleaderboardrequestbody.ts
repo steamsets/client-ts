@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   V1AccountLeaderboardAppSearch,
   V1AccountLeaderboardAppSearch$Outbound,
@@ -48,8 +49,9 @@ export const V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard = {
 /**
  * The leaderboard to get
  */
-export type V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard =
-  ClosedEnum<typeof V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard>;
+export type V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard = OpenEnum<
+  typeof V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard
+>;
 
 export type V1LeaderboardGetAccountLeaderboardRequestBody = {
   app?: V1AccountLeaderboardAppSearch | null | undefined;
@@ -78,9 +80,13 @@ export type V1LeaderboardGetAccountLeaderboardRequestBody = {
 
 /** @internal */
 export const V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<
-    typeof V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard
-  > = z.nativeEnum(V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard);
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard
+  > = openEnums.outboundSchema(
+    V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard,
+  );
 
 /** @internal */
 export type V1LeaderboardGetAccountLeaderboardRequestBody$Outbound = {

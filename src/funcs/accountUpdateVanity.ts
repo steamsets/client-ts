@@ -169,7 +169,7 @@ async function $do(
     | SDKValidationError
   >(
     M.nil(204, operations.AccountUpdateVanityResponse$inboundSchema),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 403, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

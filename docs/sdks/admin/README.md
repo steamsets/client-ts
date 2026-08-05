@@ -562,7 +562,7 @@ async function run() {
   const result = await steamSets.admin.updateResources({
     resources: [
       {
-        resource: "developer_apps",
+        resource: "inventory_refresh_rate",
         value: "1",
       },
     ],
@@ -592,7 +592,7 @@ async function run() {
   const res = await adminUpdateResources(steamSets, {
     resources: [
       {
-        resource: "developer_apps",
+        resource: "inventory_refresh_rate",
         value: "1",
       },
     ],

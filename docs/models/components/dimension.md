@@ -8,10 +8,12 @@ Group rows by this dimension. One bucket per distinct value.
 import { Dimension } from "@steamsets/client-ts/models/components";
 
 let value: Dimension = "region";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"country" | "region"
+"country" | "region" | Unrecognized<string>
 ```

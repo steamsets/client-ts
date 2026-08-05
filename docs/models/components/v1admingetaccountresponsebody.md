@@ -16,6 +16,7 @@ let value: V1AdminGetAccountResponseBody = {
   developerApps: [],
   donations: 1000,
   email: "steamsets@example.com",
+  hidden: false,
   locationUpdates: [],
   name: "steamsets",
   nameUpdates: [
@@ -34,7 +35,7 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "developer_apps",
+      resource: "search_result_limit",
       value: "1",
     },
   ],
@@ -61,6 +62,7 @@ let value: V1AdminGetAccountResponseBody = {
       },
     },
   ],
+  visibilityUpdates: [],
 };
 ```
 
@@ -77,6 +79,7 @@ let value: V1AdminGetAccountResponseBody = {
 | `developerApps`                                                                                                    | [components.DeveloperApp](../../models/components/developerapp.md)[]                                               | :heavy_check_mark:                                                                                                 | The developer apps the account has                                                                                 |                                                                                                                    |
 | `donations`                                                                                                        | *number*                                                                                                           | :heavy_check_mark:                                                                                                 | The Patreon-reported donation total in cents                                                                       | 1000                                                                                                               |
 | `email`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The email of the account                                                                                           | steamsets@example.com                                                                                              |
+| `hidden`                                                                                                           | *boolean*                                                                                                          | :heavy_check_mark:                                                                                                 | Whether the account has hidden itself from steamsets leaderboards                                                  | false                                                                                                              |
 | `locationUpdates`                                                                                                  | [components.V1AccountLocationUpdate](../../models/components/v1accountlocationupdate.md)[]                         | :heavy_check_mark:                                                                                                 | The location updates the account has                                                                               |                                                                                                                    |
 | `name`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The name of the account                                                                                            | steamsets                                                                                                          |
 | `nameUpdates`                                                                                                      | [components.V1AccountNameUpdate](../../models/components/v1accountnameupdate.md)[]                                 | :heavy_check_mark:                                                                                                 | The name updates the account has                                                                                   |                                                                                                                    |
@@ -91,3 +94,4 @@ let value: V1AdminGetAccountResponseBody = {
 | `state`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The state of the account                                                                                           | Baden-Wurttemberg                                                                                                  |
 | `vanity`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The vanity of the account                                                                                          | steamsets                                                                                                          |
 | `vanityUpdates`                                                                                                    | [components.V1AccountVanityUpdate](../../models/components/v1accountvanityupdate.md)[]                             | :heavy_check_mark:                                                                                                 | The vanity updates the account has                                                                                 |                                                                                                                    |
+| `visibilityUpdates`                                                                                                | [components.V1AccountVisibilityUpdate](../../models/components/v1accountvisibilityupdate.md)[]                     | :heavy_check_mark:                                                                                                 | The profile-visibility and steamsets-hidden changes the account has, newest first                                  |                                                                                                                    |

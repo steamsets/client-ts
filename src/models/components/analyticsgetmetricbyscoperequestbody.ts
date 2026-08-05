@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Aggregation applied within each dimension bucket.
@@ -16,7 +17,7 @@ export const AnalyticsGetMetricByScopeRequestBodyAgg = {
 /**
  * Aggregation applied within each dimension bucket.
  */
-export type AnalyticsGetMetricByScopeRequestBodyAgg = ClosedEnum<
+export type AnalyticsGetMetricByScopeRequestBodyAgg = OpenEnum<
   typeof AnalyticsGetMetricByScopeRequestBodyAgg
 >;
 
@@ -30,7 +31,7 @@ export const Dimension = {
 /**
  * Group rows by this dimension. One bucket per distinct value.
  */
-export type Dimension = ClosedEnum<typeof Dimension>;
+export type Dimension = OpenEnum<typeof Dimension>;
 
 export type AnalyticsGetMetricByScopeRequestBody = {
   /**
@@ -52,13 +53,18 @@ export type AnalyticsGetMetricByScopeRequestBody = {
 };
 
 /** @internal */
-export const AnalyticsGetMetricByScopeRequestBodyAgg$outboundSchema:
-  z.ZodNativeEnum<typeof AnalyticsGetMetricByScopeRequestBodyAgg> = z
-    .nativeEnum(AnalyticsGetMetricByScopeRequestBodyAgg);
+export const AnalyticsGetMetricByScopeRequestBodyAgg$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AnalyticsGetMetricByScopeRequestBodyAgg
+> = openEnums.outboundSchema(AnalyticsGetMetricByScopeRequestBodyAgg);
 
 /** @internal */
-export const Dimension$outboundSchema: z.ZodNativeEnum<typeof Dimension> = z
-  .nativeEnum(Dimension);
+export const Dimension$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  Dimension
+> = openEnums.outboundSchema(Dimension);
 
 /** @internal */
 export type AnalyticsGetMetricByScopeRequestBody$Outbound = {

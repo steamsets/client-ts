@@ -6,10 +6,12 @@
 import { BadgeValueFilterType } from "@steamsets/client-ts/models/components";
 
 let value: BadgeValueFilterType = "scarcity";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"level" | "scarcity"
+"level" | "scarcity" | Unrecognized<string>
 ```

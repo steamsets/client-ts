@@ -27,6 +27,27 @@ import {
 import { Role, Role$inboundSchema } from "./role.js";
 
 /**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export const NameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export type NameEffect = OpenEnum<typeof NameEffect>;
+
+/**
  * The privacy of the account
  */
 export const Privacy = {
@@ -44,12 +65,6 @@ export type LeaderboardAccount = {
    * The animated avatar of the account
    */
   animatedAvatar: string;
-  /**
-   * The cost of an app
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  appCost: number;
   /**
    * The number of apps the account has
    */
@@ -97,12 +112,6 @@ export type LeaderboardAccount = {
    */
   economyBan: string;
   /**
-   * The cost of a foil badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  foilBadgeCost: number;
-  /**
    * The number of foil badges the account has
    */
   foilBadges: number;
@@ -127,11 +136,9 @@ export type LeaderboardAccount = {
    */
   name: string;
   /**
-   * The cost of a normal badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   * Donator name effect, none when unset or the account no longer holds an entitling role
    */
-  normalBadgeCost: number;
+  nameEffect: NameEffect;
   /**
    * The number of normal badges the account has
    */
@@ -175,6 +182,10 @@ export type LeaderboardAccount = {
    */
   steamVanity: string;
   /**
+   * Donator profile theme color as #RRGGBB (no alpha), null when unset or the account no longer holds an entitling role
+   */
+  themeColor: string | null;
+  /**
    * The number of vac bans
    */
   vacBans: number;
@@ -183,6 +194,13 @@ export type LeaderboardAccount = {
    */
   xp: number;
 };
+
+/** @internal */
+export const NameEffect$inboundSchema: z.ZodType<
+  NameEffect,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(NameEffect);
 
 /** @internal */
 export const Privacy$inboundSchema: z.ZodType<Privacy, z.ZodTypeDef, unknown> =
@@ -195,7 +213,6 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   animatedAvatar: z.string(),
-  appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
   avatarFrame: z.string(),
@@ -209,14 +226,13 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   donated: z.number().int(),
   economyBan: z.string(),
-  foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
-  normalBadgeCost: z.number().int(),
+  nameEffect: NameEffect$inboundSchema,
   normalBadges: z.number().int(),
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
@@ -229,6 +245,7 @@ export const LeaderboardAccount$inboundSchema: z.ZodType<
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
+  themeColor: z.nullable(z.string()),
   vacBans: z.number().int(),
   xp: z.number().int(),
 });

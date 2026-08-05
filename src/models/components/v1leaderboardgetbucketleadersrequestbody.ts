@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * xp buckets by level; apps buckets by the game-collector badge thresholds.
@@ -15,7 +16,7 @@ export const V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = {
 /**
  * xp buckets by level; apps buckets by the game-collector badge thresholds.
  */
-export type V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = ClosedEnum<
+export type V1LeaderboardGetBucketLeadersRequestBodyLeaderboard = OpenEnum<
   typeof V1LeaderboardGetBucketLeadersRequestBodyLeaderboard
 >;
 
@@ -32,8 +33,13 @@ export type V1LeaderboardGetBucketLeadersRequestBody = {
 
 /** @internal */
 export const V1LeaderboardGetBucketLeadersRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<typeof V1LeaderboardGetBucketLeadersRequestBodyLeaderboard> =
-    z.nativeEnum(V1LeaderboardGetBucketLeadersRequestBodyLeaderboard);
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1LeaderboardGetBucketLeadersRequestBodyLeaderboard
+  > = openEnums.outboundSchema(
+    V1LeaderboardGetBucketLeadersRequestBodyLeaderboard,
+  );
 
 /** @internal */
 export type V1LeaderboardGetBucketLeadersRequestBody$Outbound = {

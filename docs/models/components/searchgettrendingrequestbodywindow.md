@@ -8,10 +8,12 @@ Lookback window for trending compute.
 import { SearchGetTrendingRequestBodyWindow } from "@steamsets/client-ts/models/components";
 
 let value: SearchGetTrendingRequestBodyWindow = "7d";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"24h" | "7d" | "30d"
+"24h" | "7d" | "30d" | Unrecognized<string>
 ```

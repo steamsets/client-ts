@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const By = {
   Scarcity: "scarcity",
@@ -12,13 +13,13 @@ export const By = {
   Xp: "xp",
   CompletedAt: "completedAt",
 } as const;
-export type By = ClosedEnum<typeof By>;
+export type By = OpenEnum<typeof By>;
 
 export const Direction = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type Direction = ClosedEnum<typeof Direction>;
+export type Direction = OpenEnum<typeof Direction>;
 
 export type Order = {
   by?: By | undefined;
@@ -26,11 +27,15 @@ export type Order = {
 };
 
 /** @internal */
-export const By$outboundSchema: z.ZodNativeEnum<typeof By> = z.nativeEnum(By);
+export const By$outboundSchema: z.ZodType<string, z.ZodTypeDef, By> = openEnums
+  .outboundSchema(By);
 
 /** @internal */
-export const Direction$outboundSchema: z.ZodNativeEnum<typeof Direction> = z
-  .nativeEnum(Direction);
+export const Direction$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  Direction
+> = openEnums.outboundSchema(Direction);
 
 /** @internal */
 export type Order$Outbound = {

@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * The role the account should have between one of the 6 donation roles
@@ -21,7 +22,7 @@ export const V1AccountUpdateRoleRequestBodyRole = {
 /**
  * The role the account should have between one of the 6 donation roles
  */
-export type V1AccountUpdateRoleRequestBodyRole = ClosedEnum<
+export type V1AccountUpdateRoleRequestBodyRole = OpenEnum<
   typeof V1AccountUpdateRoleRequestBodyRole
 >;
 
@@ -33,9 +34,11 @@ export type V1AccountUpdateRoleRequestBody = {
 };
 
 /** @internal */
-export const V1AccountUpdateRoleRequestBodyRole$outboundSchema: z.ZodNativeEnum<
-  typeof V1AccountUpdateRoleRequestBodyRole
-> = z.nativeEnum(V1AccountUpdateRoleRequestBodyRole);
+export const V1AccountUpdateRoleRequestBodyRole$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1AccountUpdateRoleRequestBodyRole
+> = openEnums.outboundSchema(V1AccountUpdateRoleRequestBodyRole);
 
 /** @internal */
 export type V1AccountUpdateRoleRequestBody$Outbound = {

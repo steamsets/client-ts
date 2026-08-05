@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Steam Web API key type
@@ -15,7 +16,7 @@ export const V1AdminAddSteamApiKeyRequestBodyType = {
 /**
  * Steam Web API key type
  */
-export type V1AdminAddSteamApiKeyRequestBodyType = ClosedEnum<
+export type V1AdminAddSteamApiKeyRequestBodyType = OpenEnum<
   typeof V1AdminAddSteamApiKeyRequestBodyType
 >;
 
@@ -35,10 +36,11 @@ export type V1AdminAddSteamApiKeyRequestBody = {
 };
 
 /** @internal */
-export const V1AdminAddSteamApiKeyRequestBodyType$outboundSchema:
-  z.ZodNativeEnum<typeof V1AdminAddSteamApiKeyRequestBodyType> = z.nativeEnum(
-    V1AdminAddSteamApiKeyRequestBodyType,
-  );
+export const V1AdminAddSteamApiKeyRequestBodyType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1AdminAddSteamApiKeyRequestBodyType
+> = openEnums.outboundSchema(V1AdminAddSteamApiKeyRequestBodyType);
 
 /** @internal */
 export type V1AdminAddSteamApiKeyRequestBody$Outbound = {

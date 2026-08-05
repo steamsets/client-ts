@@ -10,6 +10,10 @@ import { Owner, Owner$inboundSchema } from "./owner.js";
 
 export type ItemOwners = {
   classId: number;
+  /**
+   * Pass as cursor to fetch the next page of this item's owners. Absent when there are no more owners or your role's depth limit is reached.
+   */
+  nextCursor?: string | undefined;
   owners: Array<Owner> | null;
   /**
    * Total accounts that own at least one copy of this item
@@ -24,6 +28,7 @@ export const ItemOwners$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   classId: z.number().int(),
+  nextCursor: z.string().optional(),
   owners: z.nullable(z.array(Owner$inboundSchema)),
   totalOwners: z.number().int(),
 });

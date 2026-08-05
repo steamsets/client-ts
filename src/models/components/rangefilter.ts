@@ -3,12 +3,13 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const RangeFilterType = {
   Scarcity: "scarcity",
 } as const;
-export type RangeFilterType = ClosedEnum<typeof RangeFilterType>;
+export type RangeFilterType = OpenEnum<typeof RangeFilterType>;
 
 export type RangeFilter = {
   max?: number | undefined;
@@ -17,9 +18,11 @@ export type RangeFilter = {
 };
 
 /** @internal */
-export const RangeFilterType$outboundSchema: z.ZodNativeEnum<
-  typeof RangeFilterType
-> = z.nativeEnum(RangeFilterType);
+export const RangeFilterType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  RangeFilterType
+> = openEnums.outboundSchema(RangeFilterType);
 
 /** @internal */
 export type RangeFilter$Outbound = {

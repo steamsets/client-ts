@@ -27,6 +27,29 @@ import {
 import { Role, Role$inboundSchema } from "./role.js";
 
 /**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export const V1AccountFriendNameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export type V1AccountFriendNameEffect = OpenEnum<
+  typeof V1AccountFriendNameEffect
+>;
+
+/**
  * The privacy of the account
  */
 export const V1AccountFriendPrivacy = {
@@ -44,12 +67,6 @@ export type V1AccountFriend = {
    * The animated avatar of the account
    */
   animatedAvatar: string;
-  /**
-   * The cost of an app
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  appCost: number;
   /**
    * The number of apps the account has
    */
@@ -97,12 +114,6 @@ export type V1AccountFriend = {
    */
   economyBan: string;
   /**
-   * The cost of a foil badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  foilBadgeCost: number;
-  /**
    * The number of foil badges the account has
    */
   foilBadges: number;
@@ -128,11 +139,9 @@ export type V1AccountFriend = {
    */
   name: string;
   /**
-   * The cost of a normal badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   * Donator name effect, none when unset or the account no longer holds an entitling role
    */
-  normalBadgeCost: number;
+  nameEffect: V1AccountFriendNameEffect;
   /**
    * The number of normal badges the account has
    */
@@ -176,6 +185,10 @@ export type V1AccountFriend = {
    */
   steamVanity: string;
   /**
+   * Donator profile theme color as #RRGGBB (no alpha), null when unset or the account no longer holds an entitling role
+   */
+  themeColor: string | null;
+  /**
    * The number of vac bans
    */
   vacBans: number;
@@ -184,6 +197,13 @@ export type V1AccountFriend = {
    */
   xp: number;
 };
+
+/** @internal */
+export const V1AccountFriendNameEffect$inboundSchema: z.ZodType<
+  V1AccountFriendNameEffect,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountFriendNameEffect);
 
 /** @internal */
 export const V1AccountFriendPrivacy$inboundSchema: z.ZodType<
@@ -199,7 +219,6 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   animatedAvatar: z.string(),
-  appCost: z.number().int(),
   apps: z.number().int(),
   avatar: z.string(),
   avatarFrame: z.string(),
@@ -213,7 +232,6 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   donated: z.number().int(),
   economyBan: z.string(),
-  foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
   friends: z.number().int(),
   friendsSince: z.nullable(
@@ -223,7 +241,7 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
-  normalBadgeCost: z.number().int(),
+  nameEffect: V1AccountFriendNameEffect$inboundSchema,
   normalBadges: z.number().int(),
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
@@ -236,6 +254,7 @@ export const V1AccountFriend$inboundSchema: z.ZodType<
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
+  themeColor: z.nullable(z.string()),
   vacBans: z.number().int(),
   xp: z.number().int(),
 });

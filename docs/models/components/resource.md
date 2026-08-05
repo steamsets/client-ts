@@ -6,7 +6,7 @@
 import { Resource } from "@steamsets/client-ts/models/components";
 
 let value: Resource = {
-  resource: "developer_apps",
+  resource: "search_result_limit",
   value: "1",
 };
 ```

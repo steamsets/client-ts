@@ -10,23 +10,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ResourceResource = {
-  AnimatedAvatar: "animated_avatar",
-  AutoRefresh: "auto_refresh",
-  AvatarFrame: "avatar_frame",
-  Background: "background",
   GoToLeaderboardEntry: "go_to_leaderboard_entry",
   MaxLeaderboardEntries: "max_leaderboard_entries",
-  MiniBackground: "mini_background",
   AccountRefreshRate: "account_refresh_rate",
   InventoryRefreshRate: "inventory_refresh_rate",
   SocialLinks: "social_links",
   Vanity: "vanity",
-  DeveloperApps: "developer_apps",
   AccountQueues: "account_queues",
   ShortLinkDomain: "short_link_domain",
   MaxFindOwners: "max_find_owners",
   MaxBadgeCrafters: "max_badge_crafters",
   SearchResultLimit: "search_result_limit",
+  MaxCompareAccounts: "max_compare_accounts",
+  MaxSavedSearches: "max_saved_searches",
+  ProfileThemeColor: "profile_theme_color",
+  NameEffect: "name_effect",
 } as const;
 export type ResourceResource = OpenEnum<typeof ResourceResource>;
 

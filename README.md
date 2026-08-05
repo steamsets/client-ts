@@ -109,6 +109,7 @@ run();
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
+* [updateCosmetics](docs/sdks/account/README.md#updatecosmetics) - Update donator profile cosmetics
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
 * [updateRole](docs/sdks/account/README.md#updaterole) - Update account role
 * [updateSettings](docs/sdks/account/README.md#updatesettings) - Update account settings
@@ -689,6 +690,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
+- [`accountUpdateCosmetics`](docs/sdks/account/README.md#updatecosmetics) - Update donator profile cosmetics
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
 - [`accountUpdateRole`](docs/sdks/account/README.md#updaterole) - Update account role
 - [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings) - Update account settings

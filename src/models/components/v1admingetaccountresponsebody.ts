@@ -26,6 +26,10 @@ import {
   V1AccountVanityUpdate,
   V1AccountVanityUpdate$inboundSchema,
 } from "./v1accountvanityupdate.js";
+import {
+  V1AccountVisibilityUpdate,
+  V1AccountVisibilityUpdate$inboundSchema,
+} from "./v1accountvisibilityupdate.js";
 
 /**
  * The privacy of the account
@@ -79,6 +83,10 @@ export type V1AdminGetAccountResponseBody = {
    * The email of the account
    */
   email: string | null;
+  /**
+   * Whether the account has hidden itself from steamsets leaderboards
+   */
+  hidden: boolean;
   /**
    * The location updates the account has
    */
@@ -135,6 +143,10 @@ export type V1AdminGetAccountResponseBody = {
    * The vanity updates the account has
    */
   vanityUpdates: Array<V1AccountVanityUpdate> | null;
+  /**
+   * The profile-visibility and steamsets-hidden changes the account has, newest first
+   */
+  visibilityUpdates: Array<V1AccountVisibilityUpdate> | null;
 };
 
 /** @internal */
@@ -159,6 +171,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
   donations: z.number().int(),
   email: z.nullable(z.string()),
+  hidden: z.boolean(),
   locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
   name: z.string(),
   nameUpdates: z.nullable(z.array(V1AccountNameUpdate$inboundSchema)),
@@ -175,6 +188,9 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   state: z.nullable(z.string()),
   vanity: z.nullable(z.string()),
   vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$inboundSchema)),
+  visibilityUpdates: z.nullable(
+    z.array(V1AccountVisibilityUpdate$inboundSchema),
+  ),
 }).transform((v) => {
   return remap$(v, {
     "$schema": "dollarSchema",

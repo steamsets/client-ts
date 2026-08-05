@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   BadgeValueFilter,
   BadgeValueFilter$Outbound,
@@ -35,7 +36,7 @@ export const V1AccountListBadgesRequestBodyFilter = {
   Sale: "sale",
   Event: "event",
 } as const;
-export type V1AccountListBadgesRequestBodyFilter = ClosedEnum<
+export type V1AccountListBadgesRequestBodyFilter = OpenEnum<
   typeof V1AccountListBadgesRequestBodyFilter
 >;
 
@@ -57,10 +58,11 @@ export type V1AccountListBadgesRequestBody = {
 };
 
 /** @internal */
-export const V1AccountListBadgesRequestBodyFilter$outboundSchema:
-  z.ZodNativeEnum<typeof V1AccountListBadgesRequestBodyFilter> = z.nativeEnum(
-    V1AccountListBadgesRequestBodyFilter,
-  );
+export const V1AccountListBadgesRequestBodyFilter$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1AccountListBadgesRequestBodyFilter
+> = openEnums.outboundSchema(V1AccountListBadgesRequestBodyFilter);
 
 /** @internal */
 export type V1AccountListBadgesRequestBody$Outbound = {

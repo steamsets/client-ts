@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * The provider to connect with
@@ -21,7 +22,7 @@ export const Provider = {
 /**
  * The provider to connect with
  */
-export type Provider = ClosedEnum<typeof Provider>;
+export type Provider = OpenEnum<typeof Provider>;
 
 export type V1AccountCreateConnectionRequestBody = {
   /**
@@ -39,8 +40,11 @@ export type V1AccountCreateConnectionRequestBody = {
 };
 
 /** @internal */
-export const Provider$outboundSchema: z.ZodNativeEnum<typeof Provider> = z
-  .nativeEnum(Provider);
+export const Provider$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  Provider
+> = openEnums.outboundSchema(Provider);
 
 /** @internal */
 export type V1AccountCreateConnectionRequestBody$Outbound = {

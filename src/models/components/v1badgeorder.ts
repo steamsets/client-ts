@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const V1BadgeOrderBy = {
   Xp: "xp",
@@ -12,13 +13,13 @@ export const V1BadgeOrderBy = {
   Name: "name",
   CompletionTime: "completion_time",
 } as const;
-export type V1BadgeOrderBy = ClosedEnum<typeof V1BadgeOrderBy>;
+export type V1BadgeOrderBy = OpenEnum<typeof V1BadgeOrderBy>;
 
 export const V1BadgeOrderDirection = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type V1BadgeOrderDirection = ClosedEnum<typeof V1BadgeOrderDirection>;
+export type V1BadgeOrderDirection = OpenEnum<typeof V1BadgeOrderDirection>;
 
 export type V1BadgeOrder = {
   by?: V1BadgeOrderBy | undefined;
@@ -26,14 +27,18 @@ export type V1BadgeOrder = {
 };
 
 /** @internal */
-export const V1BadgeOrderBy$outboundSchema: z.ZodNativeEnum<
-  typeof V1BadgeOrderBy
-> = z.nativeEnum(V1BadgeOrderBy);
+export const V1BadgeOrderBy$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1BadgeOrderBy
+> = openEnums.outboundSchema(V1BadgeOrderBy);
 
 /** @internal */
-export const V1BadgeOrderDirection$outboundSchema: z.ZodNativeEnum<
-  typeof V1BadgeOrderDirection
-> = z.nativeEnum(V1BadgeOrderDirection);
+export const V1BadgeOrderDirection$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1BadgeOrderDirection
+> = openEnums.outboundSchema(V1BadgeOrderDirection);
 
 /** @internal */
 export type V1BadgeOrder$Outbound = {

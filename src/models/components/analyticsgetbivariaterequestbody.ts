@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * How to aggregate Y inside each X bucket.
@@ -17,7 +18,7 @@ export const Agg = {
 /**
  * How to aggregate Y inside each X bucket.
  */
-export type Agg = ClosedEnum<typeof Agg>;
+export type Agg = OpenEnum<typeof Agg>;
 
 export type AnalyticsGetBivariateRequestBody = {
   /**
@@ -41,9 +42,8 @@ export type AnalyticsGetBivariateRequestBody = {
 };
 
 /** @internal */
-export const Agg$outboundSchema: z.ZodNativeEnum<typeof Agg> = z.nativeEnum(
-  Agg,
-);
+export const Agg$outboundSchema: z.ZodType<string, z.ZodTypeDef, Agg> =
+  openEnums.outboundSchema(Agg);
 
 /** @internal */
 export type AnalyticsGetBivariateRequestBody$Outbound = {

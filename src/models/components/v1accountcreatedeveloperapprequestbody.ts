@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * The environment to create the app for
@@ -16,7 +17,7 @@ export const Environment = {
 /**
  * The environment to create the app for
  */
-export type Environment = ClosedEnum<typeof Environment>;
+export type Environment = OpenEnum<typeof Environment>;
 
 export type V1AccountCreateDeveloperAppRequestBody = {
   /**
@@ -38,8 +39,11 @@ export type V1AccountCreateDeveloperAppRequestBody = {
 };
 
 /** @internal */
-export const Environment$outboundSchema: z.ZodNativeEnum<typeof Environment> = z
-  .nativeEnum(Environment);
+export const Environment$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  Environment
+> = openEnums.outboundSchema(Environment);
 
 /** @internal */
 export type V1AccountCreateDeveloperAppRequestBody$Outbound = {

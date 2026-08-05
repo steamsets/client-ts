@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Which search surface to query.
@@ -16,7 +17,7 @@ export const Source = {
 /**
  * Which search surface to query.
  */
-export type Source = ClosedEnum<typeof Source>;
+export type Source = OpenEnum<typeof Source>;
 
 /**
  * Lookback window for trending compute.
@@ -29,7 +30,7 @@ export const SearchGetTrendingRequestBodyWindow = {
 /**
  * Lookback window for trending compute.
  */
-export type SearchGetTrendingRequestBodyWindow = ClosedEnum<
+export type SearchGetTrendingRequestBodyWindow = OpenEnum<
   typeof SearchGetTrendingRequestBodyWindow
 >;
 
@@ -49,13 +50,15 @@ export type SearchGetTrendingRequestBody = {
 };
 
 /** @internal */
-export const Source$outboundSchema: z.ZodNativeEnum<typeof Source> = z
-  .nativeEnum(Source);
+export const Source$outboundSchema: z.ZodType<string, z.ZodTypeDef, Source> =
+  openEnums.outboundSchema(Source);
 
 /** @internal */
-export const SearchGetTrendingRequestBodyWindow$outboundSchema: z.ZodNativeEnum<
-  typeof SearchGetTrendingRequestBodyWindow
-> = z.nativeEnum(SearchGetTrendingRequestBodyWindow);
+export const SearchGetTrendingRequestBodyWindow$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  SearchGetTrendingRequestBodyWindow
+> = openEnums.outboundSchema(SearchGetTrendingRequestBodyWindow);
 
 /** @internal */
 export type SearchGetTrendingRequestBody$Outbound = {

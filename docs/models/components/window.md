@@ -8,10 +8,12 @@ Lookback window for trending compute. 24h is high-volatility (small samples); 7d
 import { Window } from "@steamsets/client-ts/models/components";
 
 let value: Window = "30d";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"24h" | "7d" | "30d"
+"24h" | "7d" | "30d" | Unrecognized<string>
 ```

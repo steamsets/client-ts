@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * The leaderboard to get. Currently only supports XP and apps
@@ -15,7 +16,7 @@ export const V1LeaderboardGetLowestRanksRequestBodyLeaderboard = {
 /**
  * The leaderboard to get. Currently only supports XP and apps
  */
-export type V1LeaderboardGetLowestRanksRequestBodyLeaderboard = ClosedEnum<
+export type V1LeaderboardGetLowestRanksRequestBodyLeaderboard = OpenEnum<
   typeof V1LeaderboardGetLowestRanksRequestBodyLeaderboard
 >;
 
@@ -28,8 +29,13 @@ export type V1LeaderboardGetLowestRanksRequestBody = {
 
 /** @internal */
 export const V1LeaderboardGetLowestRanksRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<typeof V1LeaderboardGetLowestRanksRequestBodyLeaderboard> = z
-    .nativeEnum(V1LeaderboardGetLowestRanksRequestBodyLeaderboard);
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1LeaderboardGetLowestRanksRequestBodyLeaderboard
+  > = openEnums.outboundSchema(
+    V1LeaderboardGetLowestRanksRequestBodyLeaderboard,
+  );
 
 /** @internal */
 export type V1LeaderboardGetLowestRanksRequestBody$Outbound = {

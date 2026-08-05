@@ -4,7 +4,8 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Lookback window.
@@ -17,7 +18,7 @@ export const AnalyticsGetTrendRequestBodyWindow = {
 /**
  * Lookback window.
  */
-export type AnalyticsGetTrendRequestBodyWindow = ClosedEnum<
+export type AnalyticsGetTrendRequestBodyWindow = OpenEnum<
   typeof AnalyticsGetTrendRequestBodyWindow
 >;
 
@@ -45,9 +46,11 @@ export type AnalyticsGetTrendRequestBody = {
 };
 
 /** @internal */
-export const AnalyticsGetTrendRequestBodyWindow$outboundSchema: z.ZodNativeEnum<
-  typeof AnalyticsGetTrendRequestBodyWindow
-> = z.nativeEnum(AnalyticsGetTrendRequestBodyWindow);
+export const AnalyticsGetTrendRequestBodyWindow$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AnalyticsGetTrendRequestBodyWindow
+> = openEnums.outboundSchema(AnalyticsGetTrendRequestBodyWindow);
 
 /** @internal */
 export type AnalyticsGetTrendRequestBody$Outbound = {

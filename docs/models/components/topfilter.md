@@ -8,10 +8,12 @@ Restrict to accounts within the top-N of the leaderboard at either endpoint of t
 import { TopFilter } from "@steamsets/client-ts/models/components";
 
 let value: TopFilter = "1000";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"10" | "50" | "100" | "500" | "1000" | "all"
+"10" | "50" | "100" | "500" | "1000" | "all" | Unrecognized<string>
 ```
