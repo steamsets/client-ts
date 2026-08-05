@@ -10,6 +10,8 @@ let value: AccountUpdateSettingsRequest = {
     email: "steamsets@example.com",
     hidden: true,
     language: "en",
+    nameEffect: "rainbow",
+    themeColor: "#FF5733",
     vanity: "flo",
   },
 };

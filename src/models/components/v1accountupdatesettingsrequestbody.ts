@@ -3,37 +3,80 @@
  */
 
 import * as z from "zod/v3";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
+
+/**
+ * The name effect. none clears it, omit to leave unchanged
+ */
+export const V1AccountUpdateSettingsRequestBodyNameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * The name effect. none clears it, omit to leave unchanged
+ */
+export type V1AccountUpdateSettingsRequestBodyNameEffect = OpenEnum<
+  typeof V1AccountUpdateSettingsRequestBodyNameEffect
+>;
 
 export type V1AccountUpdateSettingsRequestBody = {
   /**
-   * The country name to override the Steam country with, null to clear
+   * The country name or code to override the Steam country with. Empty string clears it, omit to leave unchanged
    */
   countryOverride?: string | null | undefined;
   /**
-   * The email the account should use, only if the account is private
+   * The email the account should use. Empty string clears it, omit to leave unchanged
    */
   email?: string | null | undefined;
   /**
-   * Whether the account should be hidden in the leaderboards, only possible if the account is private
+   * Whether the account should be hidden in the leaderboards. Omit to leave unchanged
    */
-  hidden: boolean;
+  hidden?: boolean | null | undefined;
   /**
-   * The language the account should use, only if the account is private
+   * The language the account should use. Omit to leave unchanged
    */
-  language: string;
+  language?: string | null | undefined;
   /**
-   * The vanity the account should use
+   * The name effect. none clears it, omit to leave unchanged
    */
-  vanity: string | null;
+  nameEffect?: V1AccountUpdateSettingsRequestBodyNameEffect | null | undefined;
+  /**
+   * The profile theme color as #RRGGBB (no alpha). Empty string clears it, omit to leave unchanged
+   */
+  themeColor?: string | null | undefined;
+  /**
+   * The vanity the account should use. Empty string clears it, omit to leave unchanged
+   */
+  vanity?: string | null | undefined;
 };
+
+/** @internal */
+export const V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema:
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1AccountUpdateSettingsRequestBodyNameEffect
+  > = openEnums.outboundSchema(V1AccountUpdateSettingsRequestBodyNameEffect);
 
 /** @internal */
 export type V1AccountUpdateSettingsRequestBody$Outbound = {
   countryOverride?: string | null | undefined;
   email?: string | null | undefined;
-  hidden: boolean;
-  language: string;
-  vanity: string | null;
+  hidden?: boolean | null | undefined;
+  language?: string | null | undefined;
+  nameEffect?: string | null | undefined;
+  themeColor?: string | null | undefined;
+  vanity?: string | null | undefined;
 };
 
 /** @internal */
@@ -44,9 +87,13 @@ export const V1AccountUpdateSettingsRequestBody$outboundSchema: z.ZodType<
 > = z.object({
   countryOverride: z.nullable(z.string()).optional(),
   email: z.nullable(z.string()).optional(),
-  hidden: z.boolean(),
-  language: z.string(),
-  vanity: z.nullable(z.string()),
+  hidden: z.nullable(z.boolean()).optional(),
+  language: z.nullable(z.string()).optional(),
+  nameEffect: z.nullable(
+    V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema,
+  ).optional(),
+  themeColor: z.nullable(z.string()).optional(),
+  vanity: z.nullable(z.string()).optional(),
 });
 
 export function v1AccountUpdateSettingsRequestBodyToJSON(

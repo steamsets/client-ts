@@ -192,8 +192,6 @@ export * from "./v1accountrefreshsessionrequestbody.js";
 export * from "./v1accountsubscribeemailrequestbody.js";
 export * from "./v1accountupdateconnectionrequestbody.js";
 export * from "./v1accountupdateconnectionresponsebody.js";
-export * from "./v1accountupdatecosmeticsbody.js";
-export * from "./v1accountupdatecosmeticsrequestbody.js";
 export * from "./v1accountupdaterolerequestbody.js";
 export * from "./v1accountupdatesettingsrequestbody.js";
 export * from "./v1accountupdatevanityrequestbody.js";
