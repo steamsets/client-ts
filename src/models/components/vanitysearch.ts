@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Which type of vanity to search for
@@ -15,7 +16,7 @@ export const Type = {
 /**
  * Which type of vanity to search for
  */
-export type Type = ClosedEnum<typeof Type>;
+export type Type = OpenEnum<typeof Type>;
 
 export type VanitySearch = {
   /**
@@ -29,9 +30,8 @@ export type VanitySearch = {
 };
 
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
-  Type,
-);
+export const Type$outboundSchema: z.ZodType<string, z.ZodTypeDef, Type> =
+  openEnums.outboundSchema(Type);
 
 /** @internal */
 export type VanitySearch$Outbound = {

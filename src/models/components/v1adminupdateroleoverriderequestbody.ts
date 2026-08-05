@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -28,7 +29,7 @@ export const Tier = {
 /**
  * The tier to set (tier_1, tier_2, tier_3, tier_mythic). Empty to remove override.
  */
-export type Tier = ClosedEnum<typeof Tier>;
+export type Tier = OpenEnum<typeof Tier>;
 
 export type V1AdminUpdateRoleOverrideRequestBody = {
   id?: IDSearch | undefined;
@@ -44,9 +45,8 @@ export type V1AdminUpdateRoleOverrideRequestBody = {
 };
 
 /** @internal */
-export const Tier$outboundSchema: z.ZodNativeEnum<typeof Tier> = z.nativeEnum(
-  Tier,
-);
+export const Tier$outboundSchema: z.ZodType<string, z.ZodTypeDef, Tier> =
+  openEnums.outboundSchema(Tier);
 
 /** @internal */
 export type V1AdminUpdateRoleOverrideRequestBody$Outbound = {

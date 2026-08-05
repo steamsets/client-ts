@@ -9,10 +9,12 @@ import { V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard } from "@steamse
 
 let value: V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard =
   "most_members";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"most_members"
+"most_members" | Unrecognized<string>
 ```

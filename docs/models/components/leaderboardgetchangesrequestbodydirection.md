@@ -8,10 +8,12 @@ improvements = positive delta, declines = negative delta.
 import { LeaderboardGetChangesRequestBodyDirection } from "@steamsets/client-ts/models/components";
 
 let value: LeaderboardGetChangesRequestBodyDirection = "improvements";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"improvements" | "declines"
+"improvements" | "declines" | Unrecognized<string>
 ```

@@ -35,6 +35,7 @@ export * from "./accountsendemailverification.js";
 export * from "./accountsubscribe.js";
 export * from "./accountsubscribeemail.js";
 export * from "./accountupdateconnection.js";
+export * from "./accountupdatecosmetics.js";
 export * from "./accountupdatedeveloperapp.js";
 export * from "./accountupdaterole.js";
 export * from "./accountupdatesettings.js";

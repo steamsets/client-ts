@@ -71,6 +71,29 @@ export const LastQueueStatus = {
 export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 
 /**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export const V1AccountGetInfoResponseBodyNameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export type V1AccountGetInfoResponseBodyNameEffect = OpenEnum<
+  typeof V1AccountGetInfoResponseBodyNameEffect
+>;
+
+/**
  * The privacy of the account
  */
 export const V1AccountGetInfoResponseBodyPrivacy = {
@@ -98,12 +121,6 @@ export type V1AccountGetInfoResponseBody = {
    * The animated avatar of the account
    */
   animatedAvatar: string;
-  /**
-   * The cost of an app
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  appCost: number;
   /**
    * The privacy of the account
    */
@@ -171,12 +188,6 @@ export type V1AccountGetInfoResponseBody = {
    */
   economyBan: string;
   /**
-   * The cost of a foil badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  foilBadgeCost: number;
-  /**
    * The number of foil badges the account has
    */
   foilBadges: number;
@@ -210,15 +221,13 @@ export type V1AccountGetInfoResponseBody = {
    */
   name: string;
   /**
+   * Donator name effect, none when unset or the account no longer holds an entitling role
+   */
+  nameEffect: V1AccountGetInfoResponseBodyNameEffect;
+  /**
    * The time the account is allowed to be refreshed
    */
   nextAllowedTime: Date;
-  /**
-   * The cost of a normal badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  normalBadgeCost: number;
   /**
    * The number of normal badges the account has
    */
@@ -270,6 +279,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   theme: string;
   /**
+   * Donator profile theme color as #RRGGBB (no alpha), null when unset or the account no longer holds an entitling role
+   */
+  themeColor: string | null;
+  /**
    * The time the account was updated
    */
   updatedAt: Date | null;
@@ -305,6 +318,13 @@ export const LastQueueStatus$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(LastQueueStatus);
 
 /** @internal */
+export const V1AccountGetInfoResponseBodyNameEffect$inboundSchema: z.ZodType<
+  V1AccountGetInfoResponseBodyNameEffect,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountGetInfoResponseBodyNameEffect);
+
+/** @internal */
 export const V1AccountGetInfoResponseBodyPrivacy$inboundSchema: z.ZodType<
   V1AccountGetInfoResponseBodyPrivacy,
   z.ZodTypeDef,
@@ -320,7 +340,6 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   $schema: z.string().optional(),
   accountId: z.number().int(),
   animatedAvatar: z.string(),
-  appCost: z.number().int(),
   appPrivacy: AppPrivacy$inboundSchema,
   apps: z.number().int(),
   avatar: z.string(),
@@ -341,7 +360,6 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   currentRanks: z.nullable(z.array(CurrentLeaderboardRank$inboundSchema)),
   donated: z.number().int(),
   economyBan: z.string(),
-  foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
   friendPrivacy: FriendPrivacy$inboundSchema,
   friends: z.number().int(),
@@ -353,10 +371,10 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
+  nameEffect: V1AccountGetInfoResponseBodyNameEffect$inboundSchema,
   nextAllowedTime: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ),
-  normalBadgeCost: z.number().int(),
   normalBadges: z.number().int(),
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
@@ -371,6 +389,7 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
   theme: z.string(),
+  themeColor: z.nullable(z.string()),
   updatedAt: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),
   ),

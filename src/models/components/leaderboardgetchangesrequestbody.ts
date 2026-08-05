@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * improvements = positive delta, declines = negative delta.
@@ -15,7 +16,7 @@ export const LeaderboardGetChangesRequestBodyDirection = {
 /**
  * improvements = positive delta, declines = negative delta.
  */
-export type LeaderboardGetChangesRequestBodyDirection = ClosedEnum<
+export type LeaderboardGetChangesRequestBodyDirection = OpenEnum<
   typeof LeaderboardGetChangesRequestBodyDirection
 >;
 
@@ -42,7 +43,7 @@ export const LeaderboardGetChangesRequestBodyLeaderboard = {
 /**
  * Which leaderboard the delta is computed against.
  */
-export type LeaderboardGetChangesRequestBodyLeaderboard = ClosedEnum<
+export type LeaderboardGetChangesRequestBodyLeaderboard = OpenEnum<
   typeof LeaderboardGetChangesRequestBodyLeaderboard
 >;
 
@@ -56,7 +57,7 @@ export const Metric = {
 /**
  * What to sort by. score = XP/playtime/badges depending on leaderboard. rank = leaderboard position.
  */
-export type Metric = ClosedEnum<typeof Metric>;
+export type Metric = OpenEnum<typeof Metric>;
 
 /**
  * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
@@ -72,7 +73,7 @@ export const TopFilter = {
 /**
  * Restrict to accounts within the top-N of the leaderboard at either endpoint of the window. 'all' = no restriction (default).
  */
-export type TopFilter = ClosedEnum<typeof TopFilter>;
+export type TopFilter = OpenEnum<typeof TopFilter>;
 
 /**
  * Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
@@ -88,7 +89,7 @@ export const LeaderboardGetChangesRequestBodyWindow = {
 /**
  * Lookback window for the delta. 'all' compares each account's first retained snapshot against its latest, so it widens the delta rather than returning more accounts.
  */
-export type LeaderboardGetChangesRequestBodyWindow = ClosedEnum<
+export type LeaderboardGetChangesRequestBodyWindow = OpenEnum<
   typeof LeaderboardGetChangesRequestBodyWindow
 >;
 
@@ -125,27 +126,31 @@ export type LeaderboardGetChangesRequestBody = {
 
 /** @internal */
 export const LeaderboardGetChangesRequestBodyDirection$outboundSchema:
-  z.ZodNativeEnum<typeof LeaderboardGetChangesRequestBodyDirection> = z
-    .nativeEnum(LeaderboardGetChangesRequestBodyDirection);
+  z.ZodType<string, z.ZodTypeDef, LeaderboardGetChangesRequestBodyDirection> =
+    openEnums.outboundSchema(LeaderboardGetChangesRequestBodyDirection);
 
 /** @internal */
 export const LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<typeof LeaderboardGetChangesRequestBodyLeaderboard> = z
-    .nativeEnum(LeaderboardGetChangesRequestBodyLeaderboard);
+  z.ZodType<string, z.ZodTypeDef, LeaderboardGetChangesRequestBodyLeaderboard> =
+    openEnums.outboundSchema(LeaderboardGetChangesRequestBodyLeaderboard);
 
 /** @internal */
-export const Metric$outboundSchema: z.ZodNativeEnum<typeof Metric> = z
-  .nativeEnum(Metric);
+export const Metric$outboundSchema: z.ZodType<string, z.ZodTypeDef, Metric> =
+  openEnums.outboundSchema(Metric);
 
 /** @internal */
-export const TopFilter$outboundSchema: z.ZodNativeEnum<typeof TopFilter> = z
-  .nativeEnum(TopFilter);
+export const TopFilter$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  TopFilter
+> = openEnums.outboundSchema(TopFilter);
 
 /** @internal */
-export const LeaderboardGetChangesRequestBodyWindow$outboundSchema:
-  z.ZodNativeEnum<typeof LeaderboardGetChangesRequestBodyWindow> = z.nativeEnum(
-    LeaderboardGetChangesRequestBodyWindow,
-  );
+export const LeaderboardGetChangesRequestBodyWindow$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  LeaderboardGetChangesRequestBodyWindow
+> = openEnums.outboundSchema(LeaderboardGetChangesRequestBodyWindow);
 
 /** @internal */
 export type LeaderboardGetChangesRequestBody$Outbound = {

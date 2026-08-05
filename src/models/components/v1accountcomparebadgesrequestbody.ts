@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   AccountSearch,
   AccountSearch$Outbound,
@@ -26,7 +27,7 @@ export const Filter = {
   Normal: "normal",
   Foil: "foil",
 } as const;
-export type Filter = ClosedEnum<typeof Filter>;
+export type Filter = OpenEnum<typeof Filter>;
 
 export const Ignore = {
   Event: "event",
@@ -34,21 +35,21 @@ export const Ignore = {
   Steam: "steam",
   Infinite: "infinite",
 } as const;
-export type Ignore = ClosedEnum<typeof Ignore>;
+export type Ignore = OpenEnum<typeof Ignore>;
 
 export const Match = {
   Tuple: "tuple",
   TupleLevel: "tupleLevel",
   TupleMinLevel: "tupleMinLevel",
 } as const;
-export type Match = ClosedEnum<typeof Match>;
+export type Match = OpenEnum<typeof Match>;
 
 export const Mode = {
   Missing: "missing",
   OwnedByAll: "ownedByAll",
   Unique: "unique",
 } as const;
-export type Mode = ClosedEnum<typeof Mode>;
+export type Mode = OpenEnum<typeof Mode>;
 
 export type V1AccountCompareBadgesRequestBody = {
   accounts: Array<AccountSearch> | null;
@@ -70,22 +71,20 @@ export type V1AccountCompareBadgesRequestBody = {
 };
 
 /** @internal */
-export const Filter$outboundSchema: z.ZodNativeEnum<typeof Filter> = z
-  .nativeEnum(Filter);
+export const Filter$outboundSchema: z.ZodType<string, z.ZodTypeDef, Filter> =
+  openEnums.outboundSchema(Filter);
 
 /** @internal */
-export const Ignore$outboundSchema: z.ZodNativeEnum<typeof Ignore> = z
-  .nativeEnum(Ignore);
+export const Ignore$outboundSchema: z.ZodType<string, z.ZodTypeDef, Ignore> =
+  openEnums.outboundSchema(Ignore);
 
 /** @internal */
-export const Match$outboundSchema: z.ZodNativeEnum<typeof Match> = z.nativeEnum(
-  Match,
-);
+export const Match$outboundSchema: z.ZodType<string, z.ZodTypeDef, Match> =
+  openEnums.outboundSchema(Match);
 
 /** @internal */
-export const Mode$outboundSchema: z.ZodNativeEnum<typeof Mode> = z.nativeEnum(
-  Mode,
-);
+export const Mode$outboundSchema: z.ZodType<string, z.ZodTypeDef, Mode> =
+  openEnums.outboundSchema(Mode);
 
 /** @internal */
 export type V1AccountCompareBadgesRequestBody$Outbound = {

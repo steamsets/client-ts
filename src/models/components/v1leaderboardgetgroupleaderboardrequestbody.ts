@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * The leaderboard to get
@@ -14,7 +15,7 @@ export const V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard = {
 /**
  * The leaderboard to get
  */
-export type V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard = ClosedEnum<
+export type V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard = OpenEnum<
   typeof V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard
 >;
 
@@ -39,9 +40,13 @@ export type V1LeaderboardGetGroupLeaderboardRequestBody = {
 
 /** @internal */
 export const V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<
-    typeof V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard
-  > = z.nativeEnum(V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard);
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard
+  > = openEnums.outboundSchema(
+    V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard,
+  );
 
 /** @internal */
 export type V1LeaderboardGetGroupLeaderboardRequestBody$Outbound = {

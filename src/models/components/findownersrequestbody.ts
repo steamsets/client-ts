@@ -6,6 +6,10 @@ import * as z from "zod/v3";
 
 export type FindOwnersRequestBody = {
   /**
+   * Opaque pagination cursor from the previous page's nextCursor. Pages to any depth at constant cost, and requires exactly one entry in itemIds. Omit for the first page.
+   */
+  cursor?: string | undefined;
+  /**
    * Trading item class IDs to look up
    */
   itemIds: Array<number> | null;
@@ -14,7 +18,7 @@ export type FindOwnersRequestBody = {
    */
   maxDepth?: number | undefined;
   /**
-   * Number of owners to skip per item, for pagination
+   * Number of owners to skip per item, for pagination. Random access, but only one item at a time past owner 100 and never past 10000 — use cursor to page deeper.
    */
   offset?: number | undefined;
   /**
@@ -25,6 +29,7 @@ export type FindOwnersRequestBody = {
 
 /** @internal */
 export type FindOwnersRequestBody$Outbound = {
+  cursor?: string | undefined;
   itemIds: Array<number> | null;
   maxDepth?: number | undefined;
   offset?: number | undefined;
@@ -37,6 +42,7 @@ export const FindOwnersRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   FindOwnersRequestBody
 > = z.object({
+  cursor: z.string().optional(),
   itemIds: z.nullable(z.array(z.number().int())),
   maxDepth: z.number().int().optional(),
   offset: z.number().int().optional(),

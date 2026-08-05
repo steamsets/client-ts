@@ -23,6 +23,29 @@ import {
 } from "./v1vanityanalytics.js";
 
 /**
+ * The stored name effect
+ */
+export const V1AccountGetSettingsBodyNameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * The stored name effect
+ */
+export type V1AccountGetSettingsBodyNameEffect = OpenEnum<
+  typeof V1AccountGetSettingsBodyNameEffect
+>;
+
+/**
  * The privacy of the account
  */
 export const V1AccountGetSettingsBodyPrivacy = {
@@ -77,6 +100,10 @@ export type V1AccountGetSettingsBody = {
    */
   language: string;
   /**
+   * The stored name effect
+   */
+  nameEffect: V1AccountGetSettingsBodyNameEffect;
+  /**
    * The privacy of the account
    */
   privacy: V1AccountGetSettingsBodyPrivacy;
@@ -89,11 +116,22 @@ export type V1AccountGetSettingsBody = {
    */
   subscribed: boolean;
   /**
+   * The stored profile theme color as #RRGGBB, null when unset
+   */
+  themeColor: string | null;
+  /**
    * The vanity the account is using
    */
   vanity: string;
   vanityAnalytics: V1VanityAnalytics | null;
 };
+
+/** @internal */
+export const V1AccountGetSettingsBodyNameEffect$inboundSchema: z.ZodType<
+  V1AccountGetSettingsBodyNameEffect,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountGetSettingsBodyNameEffect);
 
 /** @internal */
 export const V1AccountGetSettingsBodyPrivacy$inboundSchema: z.ZodType<
@@ -121,9 +159,11 @@ export const V1AccountGetSettingsBody$inboundSchema: z.ZodType<
   ),
   hidden: z.boolean(),
   language: z.string(),
+  nameEffect: V1AccountGetSettingsBodyNameEffect$inboundSchema,
   privacy: V1AccountGetSettingsBodyPrivacy$inboundSchema,
   sessions: z.nullable(z.array(Session$inboundSchema)),
   subscribed: z.boolean(),
+  themeColor: z.nullable(z.string()),
   vanity: z.string(),
   vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
 }).transform((v) => {

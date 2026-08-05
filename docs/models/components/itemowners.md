@@ -11,7 +11,6 @@ let value: ItemOwners = {
     {
       account: {
         animatedAvatar: "<value>",
-        appCost: 123456,
         apps: 123456,
         avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
         avatarFrame: "<value>",
@@ -30,14 +29,13 @@ let value: ItemOwners = {
         createdAt: new Date("2023-01-01T00:00:00Z"),
         donated: 123456,
         economyBan: "steam",
-        foilBadgeCost: 123456,
         foilBadges: 123456,
         friends: 123456,
         gameBans: 747187,
         level: 123456,
         miniBackground: "<value>",
         name: "steamsets",
-        normalBadgeCost: 123456,
+        nameEffect: "rainbow",
         normalBadges: 123456,
         playtime: 123456,
         pointsGiven: 123456,
@@ -54,6 +52,7 @@ let value: ItemOwners = {
         steamSetsScore: 634507,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
+        themeColor: "#FF5733",
         vacBans: 121724,
         xp: 123456,
       },
@@ -62,7 +61,6 @@ let value: ItemOwners = {
       path: [
         {
           animatedAvatar: "<value>",
-          appCost: 123456,
           apps: 123456,
           avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
           avatarFrame: "<value>",
@@ -81,14 +79,13 @@ let value: ItemOwners = {
           createdAt: new Date("2023-01-01T00:00:00Z"),
           donated: 123456,
           economyBan: "steam",
-          foilBadgeCost: 123456,
           foilBadges: 123456,
           friends: 123456,
           gameBans: 708752,
           level: 123456,
           miniBackground: "<value>",
           name: "steamsets",
-          normalBadgeCost: 123456,
+          nameEffect: "rainbow",
           normalBadges: 123456,
           playtime: 123456,
           pointsGiven: 123456,
@@ -111,6 +108,7 @@ let value: ItemOwners = {
           steamSetsScore: 291402,
           steamSetsVanity: "steamsets",
           steamVanity: "steamsets",
+          themeColor: "#FF5733",
           vacBans: 314179,
           xp: 123456,
         },
@@ -124,8 +122,9 @@ let value: ItemOwners = {
 
 ## Fields
 
-| Field                                                  | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `classId`                                              | *number*                                               | :heavy_check_mark:                                     | N/A                                                    |
-| `owners`                                               | [components.Owner](../../models/components/owner.md)[] | :heavy_check_mark:                                     | N/A                                                    |
-| `totalOwners`                                          | *number*                                               | :heavy_check_mark:                                     | Total accounts that own at least one copy of this item |
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `classId`                                                                                                                                | *number*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `nextCursor`                                                                                                                             | *string*                                                                                                                                 | :heavy_minus_sign:                                                                                                                       | Pass as cursor to fetch the next page of this item's owners. Absent when there are no more owners or your role's depth limit is reached. |
+| `owners`                                                                                                                                 | [components.Owner](../../models/components/owner.md)[]                                                                                   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `totalOwners`                                                                                                                            | *number*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | Total accounts that own at least one copy of this item                                                                                   |

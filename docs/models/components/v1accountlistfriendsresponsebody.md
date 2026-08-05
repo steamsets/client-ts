@@ -11,7 +11,6 @@ let value: V1AccountListFriendsResponseBody = {
   friends: [
     {
       animatedAvatar: "<value>",
-      appCost: 123456,
       apps: 123456,
       avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
       avatarFrame: "<value>",
@@ -30,7 +29,6 @@ let value: V1AccountListFriendsResponseBody = {
       createdAt: new Date("2023-01-01T00:00:00Z"),
       donated: 123456,
       economyBan: "steam",
-      foilBadgeCost: 123456,
       foilBadges: 123456,
       friends: 123456,
       friendsSince: new Date("2025-10-23T09:55:13.055Z"),
@@ -38,7 +36,7 @@ let value: V1AccountListFriendsResponseBody = {
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
-      normalBadgeCost: 123456,
+      nameEffect: "rainbow",
       normalBadges: 123456,
       playtime: 123456,
       pointsGiven: 123456,
@@ -55,6 +53,7 @@ let value: V1AccountListFriendsResponseBody = {
       steamSetsScore: 28732,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
+      themeColor: "#FF5733",
       vacBans: 304640,
       xp: 123456,
     },

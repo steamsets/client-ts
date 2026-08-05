@@ -8,10 +8,12 @@ The leaderboard to get
 import { V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard } from "@steamsets/client-ts/models/components";
 
 let value: V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard = "xp";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"apps" | "app_playtime" | "app_valid_playtime" | "awards_given" | "awards_received" | "bans" | "game_bans" | "vac_bans" | "donations" | "foil_badges" | "normal_badges" | "badges" | "playtime" | "valid_playtime" | "points_given" | "points_received" | "steam_sets" | "xp" | "badge_completion_time" | "badge_highest_level"
+"apps" | "app_playtime" | "app_valid_playtime" | "awards_given" | "awards_received" | "bans" | "game_bans" | "vac_bans" | "donations" | "foil_badges" | "normal_badges" | "badges" | "playtime" | "valid_playtime" | "points_given" | "points_received" | "steam_sets" | "xp" | "badge_completion_time" | "badge_highest_level" | Unrecognized<string>
 ```

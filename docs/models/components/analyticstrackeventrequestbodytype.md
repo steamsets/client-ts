@@ -8,10 +8,12 @@ Event class. profile_view is normally emitted server-side; this lets the fronten
 import { AnalyticsTrackEventRequestBodyType } from "@steamsets/client-ts/models/components";
 
 let value: AnalyticsTrackEventRequestBodyType = "profile_view";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"profile_view" | "search"
+"profile_view" | "search" | Unrecognized<string>
 ```

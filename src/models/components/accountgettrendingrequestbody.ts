@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Lookback window for trending compute. 24h is high-volatility (small samples); 7d is the default surface.
@@ -16,7 +17,7 @@ export const Window = {
 /**
  * Lookback window for trending compute. 24h is high-volatility (small samples); 7d is the default surface.
  */
-export type Window = ClosedEnum<typeof Window>;
+export type Window = OpenEnum<typeof Window>;
 
 export type AccountGetTrendingRequestBody = {
   /**
@@ -30,8 +31,8 @@ export type AccountGetTrendingRequestBody = {
 };
 
 /** @internal */
-export const Window$outboundSchema: z.ZodNativeEnum<typeof Window> = z
-  .nativeEnum(Window);
+export const Window$outboundSchema: z.ZodType<string, z.ZodTypeDef, Window> =
+  openEnums.outboundSchema(Window);
 
 /** @internal */
 export type AccountGetTrendingRequestBody$Outbound = {

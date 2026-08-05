@@ -3,13 +3,14 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const BadgeValueFilterType = {
   Level: "level",
   Scarcity: "scarcity",
 } as const;
-export type BadgeValueFilterType = ClosedEnum<typeof BadgeValueFilterType>;
+export type BadgeValueFilterType = OpenEnum<typeof BadgeValueFilterType>;
 
 export type BadgeValueFilter = {
   type: BadgeValueFilterType;
@@ -17,9 +18,11 @@ export type BadgeValueFilter = {
 };
 
 /** @internal */
-export const BadgeValueFilterType$outboundSchema: z.ZodNativeEnum<
-  typeof BadgeValueFilterType
-> = z.nativeEnum(BadgeValueFilterType);
+export const BadgeValueFilterType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  BadgeValueFilterType
+> = openEnums.outboundSchema(BadgeValueFilterType);
 
 /** @internal */
 export type BadgeValueFilter$Outbound = {

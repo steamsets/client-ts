@@ -31,6 +31,29 @@ import {
 import { Role, Role$inboundSchema } from "./role.js";
 
 /**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export const V1AccountLeaderboardAccountNameEffect = {
+  None: "none",
+  Rainbow: "rainbow",
+  Glitch: "glitch",
+  Shadow: "shadow",
+  Neon: "neon",
+  Retro: "retro",
+  Stamped: "stamped",
+  Shatter: "shatter",
+  Typewriter: "typewriter",
+  Vaporwave: "vaporwave",
+  Sunken: "sunken",
+} as const;
+/**
+ * Donator name effect, none when unset or the account no longer holds an entitling role
+ */
+export type V1AccountLeaderboardAccountNameEffect = OpenEnum<
+  typeof V1AccountLeaderboardAccountNameEffect
+>;
+
+/**
  * The privacy of the account
  */
 export const V1AccountLeaderboardAccountPrivacy = {
@@ -50,12 +73,6 @@ export type V1AccountLeaderboardAccount = {
    * The animated avatar of the account
    */
   animatedAvatar: string;
-  /**
-   * The cost of an app
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  appCost: number;
   /**
    * For the app playtime leaderboard
    */
@@ -108,12 +125,6 @@ export type V1AccountLeaderboardAccount = {
    */
   economyBan: string;
   /**
-   * The cost of a foil badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-   */
-  foilBadgeCost: number;
-  /**
    * The number of foil badges the account has
    */
   foilBadges: number;
@@ -138,11 +149,9 @@ export type V1AccountLeaderboardAccount = {
    */
   name: string;
   /**
-   * The cost of a normal badge
-   *
-   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+   * Donator name effect, none when unset or the account no longer holds an entitling role
    */
-  normalBadgeCost: number;
+  nameEffect: V1AccountLeaderboardAccountNameEffect;
   /**
    * The number of normal badges the account has
    */
@@ -190,6 +199,10 @@ export type V1AccountLeaderboardAccount = {
    */
   steamVanity: string;
   /**
+   * Donator profile theme color as #RRGGBB (no alpha), null when unset or the account no longer holds an entitling role
+   */
+  themeColor: string | null;
+  /**
    * The number of vac bans
    */
   vacBans: number;
@@ -198,6 +211,13 @@ export type V1AccountLeaderboardAccount = {
    */
   xp: number;
 };
+
+/** @internal */
+export const V1AccountLeaderboardAccountNameEffect$inboundSchema: z.ZodType<
+  V1AccountLeaderboardAccountNameEffect,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(V1AccountLeaderboardAccountNameEffect);
 
 /** @internal */
 export const V1AccountLeaderboardAccountPrivacy$inboundSchema: z.ZodType<
@@ -213,7 +233,6 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   animatedAvatar: z.string(),
-  appCost: z.number().int(),
   appPlaytime: z.nullable(z.number().int()),
   apps: z.number().int(),
   avatar: z.string(),
@@ -229,14 +248,13 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   donated: z.number().int(),
   economyBan: z.string(),
-  foilBadgeCost: z.number().int(),
   foilBadges: z.number().int(),
   friends: z.number().int(),
   gameBans: z.number().int(),
   level: z.number().int(),
   miniBackground: z.string(),
   name: z.string(),
-  normalBadgeCost: z.number().int(),
+  nameEffect: V1AccountLeaderboardAccountNameEffect$inboundSchema,
   normalBadges: z.number().int(),
   playtime: z.number().int(),
   pointsGiven: z.number().int(),
@@ -250,6 +268,7 @@ export const V1AccountLeaderboardAccount$inboundSchema: z.ZodType<
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
+  themeColor: z.nullable(z.string()),
   vacBans: z.number().int(),
   xp: z.number().int(),
 });

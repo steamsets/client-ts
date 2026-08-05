@@ -3,19 +3,20 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const V1AppOrderBy = {
   AppId: "appId",
   Playtime: "playtime",
 } as const;
-export type V1AppOrderBy = ClosedEnum<typeof V1AppOrderBy>;
+export type V1AppOrderBy = OpenEnum<typeof V1AppOrderBy>;
 
 export const V1AppOrderDirection = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type V1AppOrderDirection = ClosedEnum<typeof V1AppOrderDirection>;
+export type V1AppOrderDirection = OpenEnum<typeof V1AppOrderDirection>;
 
 export type V1AppOrder = {
   by: V1AppOrderBy;
@@ -23,13 +24,18 @@ export type V1AppOrder = {
 };
 
 /** @internal */
-export const V1AppOrderBy$outboundSchema: z.ZodNativeEnum<typeof V1AppOrderBy> =
-  z.nativeEnum(V1AppOrderBy);
+export const V1AppOrderBy$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1AppOrderBy
+> = openEnums.outboundSchema(V1AppOrderBy);
 
 /** @internal */
-export const V1AppOrderDirection$outboundSchema: z.ZodNativeEnum<
-  typeof V1AppOrderDirection
-> = z.nativeEnum(V1AppOrderDirection);
+export const V1AppOrderDirection$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  V1AppOrderDirection
+> = openEnums.outboundSchema(V1AppOrderDirection);
 
 /** @internal */
 export type V1AppOrder$Outbound = {

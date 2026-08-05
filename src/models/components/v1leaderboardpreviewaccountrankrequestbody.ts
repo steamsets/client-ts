@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -38,7 +39,7 @@ export const V1LeaderboardPreviewAccountRankRequestBodyLeaderboard = {
 /**
  * The leaderboard to get
  */
-export type V1LeaderboardPreviewAccountRankRequestBodyLeaderboard = ClosedEnum<
+export type V1LeaderboardPreviewAccountRankRequestBodyLeaderboard = OpenEnum<
   typeof V1LeaderboardPreviewAccountRankRequestBodyLeaderboard
 >;
 
@@ -57,9 +58,13 @@ export type V1LeaderboardPreviewAccountRankRequestBody = {
 
 /** @internal */
 export const V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema:
-  z.ZodNativeEnum<
-    typeof V1LeaderboardPreviewAccountRankRequestBodyLeaderboard
-  > = z.nativeEnum(V1LeaderboardPreviewAccountRankRequestBodyLeaderboard);
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    V1LeaderboardPreviewAccountRankRequestBodyLeaderboard
+  > = openEnums.outboundSchema(
+    V1LeaderboardPreviewAccountRankRequestBodyLeaderboard,
+  );
 
 /** @internal */
 export type V1LeaderboardPreviewAccountRankRequestBody$Outbound = {

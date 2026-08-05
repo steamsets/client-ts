@@ -8,10 +8,12 @@ Steam Web API key type
 import { V1AdminAddSteamApiKeyRequestBodyType } from "@steamsets/client-ts/models/components";
 
 let value: V1AdminAddSteamApiKeyRequestBodyType = "publisher";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
 
 ```typescript
-"web" | "publisher"
+"web" | "publisher" | Unrecognized<string>
 ```

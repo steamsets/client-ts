@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { ClosedEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 /**
  * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows. search captures account/app searches that bypass the backend.
@@ -15,7 +16,7 @@ export const AnalyticsTrackEventRequestBodyType = {
 /**
  * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows. search captures account/app searches that bypass the backend.
  */
-export type AnalyticsTrackEventRequestBodyType = ClosedEnum<
+export type AnalyticsTrackEventRequestBodyType = OpenEnum<
   typeof AnalyticsTrackEventRequestBodyType
 >;
 
@@ -31,9 +32,11 @@ export type AnalyticsTrackEventRequestBody = {
 };
 
 /** @internal */
-export const AnalyticsTrackEventRequestBodyType$outboundSchema: z.ZodNativeEnum<
-  typeof AnalyticsTrackEventRequestBodyType
-> = z.nativeEnum(AnalyticsTrackEventRequestBodyType);
+export const AnalyticsTrackEventRequestBodyType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AnalyticsTrackEventRequestBodyType
+> = openEnums.outboundSchema(AnalyticsTrackEventRequestBodyType);
 
 /** @internal */
 export type AnalyticsTrackEventRequestBody$Outbound = {
