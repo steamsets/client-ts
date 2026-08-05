@@ -9,6 +9,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AccountListOwnedBadgesRequest = {
+  /**
+   * Only return badges of this app. Omit for all owned badges
+   */
+  appId?: number | undefined;
+};
+
 export type AccountListOwnedBadgesResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -18,6 +25,30 @@ export type AccountListOwnedBadgesResponse = {
     | components.V1AccountBadgeOwnedBadgesResponseBody
     | undefined;
 };
+
+/** @internal */
+export type AccountListOwnedBadgesRequest$Outbound = {
+  appId?: number | undefined;
+};
+
+/** @internal */
+export const AccountListOwnedBadgesRequest$outboundSchema: z.ZodType<
+  AccountListOwnedBadgesRequest$Outbound,
+  z.ZodTypeDef,
+  AccountListOwnedBadgesRequest
+> = z.object({
+  appId: z.number().int().optional(),
+});
+
+export function accountListOwnedBadgesRequestToJSON(
+  accountListOwnedBadgesRequest: AccountListOwnedBadgesRequest,
+): string {
+  return JSON.stringify(
+    AccountListOwnedBadgesRequest$outboundSchema.parse(
+      accountListOwnedBadgesRequest,
+    ),
+  );
+}
 
 /** @internal */
 export const AccountListOwnedBadgesResponse$inboundSchema: z.ZodType<

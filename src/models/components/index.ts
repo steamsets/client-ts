@@ -174,6 +174,7 @@ export * from "./v1accountlistappsrequestbody.js";
 export * from "./v1accountlistappsresponsebody.js";
 export * from "./v1accountlistbadgesrequestbody.js";
 export * from "./v1accountlistbadgesresponsebody.js";
+export * from "./v1accountlistfriendsrequestbody.js";
 export * from "./v1accountlistfriendsresponsebody.js";
 export * from "./v1accountlistinventorysetsresponsebody.js";
 export * from "./v1accountlistleaderboardhistoryresponsebody.js";

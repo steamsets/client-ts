@@ -318,7 +318,7 @@ export class Account extends ClientSDK {
    * List account friends
    */
   async listFriends(
-    request: components.AccountSearch,
+    request: components.V1AccountListFriendsRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountListFriendsResponse> {
     return unwrapAsync(accountListFriends(
@@ -335,10 +335,12 @@ export class Account extends ClientSDK {
    * Get all trading card sets with ownership information for the authenticated user
    */
   async listInventorySets(
+    request: operations.AccountListInventorySetsRequest,
     options?: RequestOptions,
   ): Promise<operations.AccountListInventorySetsResponse> {
     return unwrapAsync(accountListInventorySets(
       this,
+      request,
       options,
     ));
   }
@@ -361,10 +363,12 @@ export class Account extends ClientSDK {
    * List owned badges
    */
   async listOwnedBadges(
+    request: operations.AccountListOwnedBadgesRequest,
     options?: RequestOptions,
   ): Promise<operations.AccountListOwnedBadgesResponse> {
     return unwrapAsync(accountListOwnedBadges(
       this,
+      request,
       options,
     ));
   }

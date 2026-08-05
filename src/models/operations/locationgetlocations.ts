@@ -9,6 +9,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type LocationGetLocationsRequest = {
+  /**
+   * Country name or ISO code. When set, the response is that country's region with its states and cities populated. Without it, all regions and countries are returned, states and cities empty
+   */
+  country?: string | undefined;
+};
+
 export type LocationGetLocationsResponse = {
   httpMeta: components.HTTPMetadata;
   /**
@@ -16,6 +23,30 @@ export type LocationGetLocationsResponse = {
    */
   regions?: Array<components.Region> | null | undefined;
 };
+
+/** @internal */
+export type LocationGetLocationsRequest$Outbound = {
+  country?: string | undefined;
+};
+
+/** @internal */
+export const LocationGetLocationsRequest$outboundSchema: z.ZodType<
+  LocationGetLocationsRequest$Outbound,
+  z.ZodTypeDef,
+  LocationGetLocationsRequest
+> = z.object({
+  country: z.string().optional(),
+});
+
+export function locationGetLocationsRequestToJSON(
+  locationGetLocationsRequest: LocationGetLocationsRequest,
+): string {
+  return JSON.stringify(
+    LocationGetLocationsRequest$outboundSchema.parse(
+      locationGetLocationsRequest,
+    ),
+  );
+}
 
 /** @internal */
 export const LocationGetLocationsResponse$inboundSchema: z.ZodType<

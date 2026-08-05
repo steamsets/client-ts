@@ -10,12 +10,17 @@ import { unwrapAsync } from "../types/fp.js";
 export class Location extends ClientSDK {
   /**
    * List available locations
+   *
+   * @remarks
+   * Without `country`, returns every region and country (states and cities empty) — ~250 rows, cheap to cache. Pass `country` to get one country's full subtree with states and cities. The previous behavior of returning all ~45k cities in one response is gone; enumerate per country instead.
    */
   async get(
+    request: operations.LocationGetLocationsRequest,
     options?: RequestOptions,
   ): Promise<operations.LocationGetLocationsResponse> {
     return unwrapAsync(locationGet(
       this,
+      request,
       options,
     ));
   }

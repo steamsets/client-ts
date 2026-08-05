@@ -3,9 +3,11 @@
  */
 
 import { SteamSetsCore } from "../core.js";
+import { encodeFormQuery } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -26,9 +28,13 @@ import { Result } from "../types/fp.js";
 
 /**
  * List available locations
+ *
+ * @remarks
+ * Without `country`, returns every region and country (states and cities empty) — ~250 rows, cheap to cache. Pass `country` to get one country's full subtree with states and cities. The previous behavior of returning all ~45k cities in one response is gone; enumerate per country instead.
  */
 export function locationGet(
   client: SteamSetsCore,
+  request: operations.LocationGetLocationsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -46,12 +52,14 @@ export function locationGet(
 > {
   return new APIPromise($do(
     client,
+    request,
     options,
   ));
 }
 
 async function $do(
   client: SteamSetsCore,
+  request: operations.LocationGetLocationsRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -70,7 +78,23 @@ async function $do(
     APICall,
   ]
 > {
+  const parsed = safeParse(
+    request,
+    (value) =>
+      operations.LocationGetLocationsRequest$outboundSchema.parse(value),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return [parsed, { status: "invalid" }];
+  }
+  const payload = parsed.value;
+  const body = null;
+
   const path = pathToFunc("/v1/location.getLocations")();
+
+  const query = encodeFormQuery({
+    "country": payload.country,
+  }, { explode: false });
 
   const headers = new Headers(compactMap({
     Accept: "application/json",
@@ -111,6 +135,8 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
+    body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || 30000,
@@ -152,7 +178,7 @@ async function $do(
       hdrs: true,
       key: "Regions",
     }),
-    M.jsonErr([400, 401], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
