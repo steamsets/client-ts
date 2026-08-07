@@ -35,6 +35,10 @@ import {
   LeaderboardState$inboundSchema,
 } from "./leaderboardstate.js";
 import { Role, Role$inboundSchema } from "./role.js";
+import {
+  SupporterStatus,
+  SupporterStatus$inboundSchema,
+} from "./supporterstatus.js";
 
 /**
  * The privacy of the account
@@ -274,6 +278,7 @@ export type V1AccountGetInfoResponseBody = {
    * The vanity of the account
    */
   steamVanity: string;
+  supporter: SupporterStatus;
   /**
    * The theme of the account
    */
@@ -388,6 +393,7 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodType<
   steamSetsScore: z.number().int(),
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
+  supporter: SupporterStatus$inboundSchema,
   theme: z.string(),
   themeColor: z.nullable(z.string()),
   updatedAt: z.nullable(
