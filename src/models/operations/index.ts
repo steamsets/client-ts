@@ -74,6 +74,7 @@ export * from "./badgesubmittagreview.js";
 export * from "./badgesuggesttags.js";
 export * from "./badgetagbadge.js";
 export * from "./comparebadges.js";
+export * from "./donategetgoal.js";
 export * from "./getchanges.js";
 export * from "./getviewstats.js";
 export * from "./groupqueueupdate.js";

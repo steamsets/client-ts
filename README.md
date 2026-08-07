@@ -176,6 +176,10 @@ run();
 * [submitTagReview](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 * [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
+### [Donate](docs/sdks/donate/README.md)
+
+* [getGoal](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+
 ### [Group](docs/sdks/group/README.md)
 
 * [queueUpdate](docs/sdks/group/README.md#queueupdate) - Queue group update
@@ -731,6 +735,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
+- [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry

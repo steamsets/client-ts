@@ -11,6 +11,7 @@ import { App } from "./app.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
+import { Donate } from "./donate.js";
 import { Group } from "./group.js";
 import { Item } from "./item.js";
 import { Kv } from "./kv.js";
@@ -62,6 +63,11 @@ export class SteamSets extends ClientSDK {
   private _badge?: Badge;
   get badge(): Badge {
     return (this._badge ??= new Badge(this._options));
+  }
+
+  private _donate?: Donate;
+  get donate(): Donate {
+    return (this._donate ??= new Donate(this._options));
   }
 
   private _group?: Group;
