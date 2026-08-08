@@ -3,7 +3,21 @@
  */
 
 import * as z from "zod/v3";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Range, Range$Outbound, Range$outboundSchema } from "./range.js";
+
+/**
+ * Compare against the authenticated caller: 'owned' keeps badges the caller also has, 'missing' keeps badges only the listed account has. Level-agnostic — the caller owns a badge if they hold it at any level. Requires authentication
+ */
+export const ViewerOwnership = {
+  Owned: "owned",
+  Missing: "missing",
+} as const;
+/**
+ * Compare against the authenticated caller: 'owned' keeps badges the caller also has, 'missing' keeps badges only the listed account has. Level-agnostic — the caller owns a badge if they hold it at any level. Requires authentication
+ */
+export type ViewerOwnership = OpenEnum<typeof ViewerOwnership>;
 
 export type V1BadgeFilters = {
   /**
@@ -28,7 +42,19 @@ export type V1BadgeFilters = {
   isSale?: boolean | null | undefined;
   level?: Range | undefined;
   scarcity?: Range | undefined;
+  viewerLevel?: Range | undefined;
+  /**
+   * Compare against the authenticated caller: 'owned' keeps badges the caller also has, 'missing' keeps badges only the listed account has. Level-agnostic — the caller owns a badge if they hold it at any level. Requires authentication
+   */
+  viewerOwnership?: ViewerOwnership | null | undefined;
 };
+
+/** @internal */
+export const ViewerOwnership$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  ViewerOwnership
+> = openEnums.outboundSchema(ViewerOwnership);
 
 /** @internal */
 export type V1BadgeFilters$Outbound = {
@@ -39,6 +65,8 @@ export type V1BadgeFilters$Outbound = {
   isSale?: boolean | null | undefined;
   level?: Range$Outbound | undefined;
   scarcity?: Range$Outbound | undefined;
+  viewerLevel?: Range$Outbound | undefined;
+  viewerOwnership?: string | null | undefined;
 };
 
 /** @internal */
@@ -54,6 +82,8 @@ export const V1BadgeFilters$outboundSchema: z.ZodType<
   isSale: z.nullable(z.boolean()).optional(),
   level: Range$outboundSchema.optional(),
   scarcity: Range$outboundSchema.optional(),
+  viewerLevel: Range$outboundSchema.optional(),
+  viewerOwnership: z.nullable(ViewerOwnership$outboundSchema).optional(),
 });
 
 export function v1BadgeFiltersToJSON(v1BadgeFilters: V1BadgeFilters): string {

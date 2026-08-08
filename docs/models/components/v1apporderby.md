@@ -13,5 +13,5 @@ let value: V1AppOrderBy = "appId";
 ## Values
 
 ```typescript
-"appId" | "playtime" | Unrecognized<string>
+"appId" | "playtime" | "name" | "cardCount" | "setPrice" | Unrecognized<string>
 ```
