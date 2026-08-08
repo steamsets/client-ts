@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 398c5393e586eef73c39801bf690cf7d
+  docChecksum: 3d56c0180cc17f9bc5c2b68591feec17
   docVersion: 1.0.0
   speakeasyVersion: 1.792.0
   generationVersion: 2.927.0
-  releaseVersion: 0.37.4
-  configChecksum: 0b9fd2b07f60c6da4d4d2f76243be38f
+  releaseVersion: 0.37.5
+  configChecksum: f6a31498046e8087cc7152af1dd18ba7
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 7197fbad-5caf-44a0-ae1b-f93ed633a6fe
-  pristine_commit_hash: 245c60671a059d6258669f5ff3dfdc6a7b14f177
-  pristine_tree_hash: 0e58660ff980c8596f9de3f5867294338bdb15e8
+  generation_id: 0f971647-5952-42dd-8b9c-e6617f848cbb
+  pristine_commit_hash: 3153c35aa9ecaaef3ac5243b11f4431ccfe79595
+  pristine_tree_hash: 033d7d97635999a7b3e96ceac505da33920b8a6a
 features:
   go:
     additionalDependencies: 0.1.0
@@ -524,8 +524,8 @@ trackedFiles:
     pristine_git_object: c7f99c30075183751689e95971c28646ca1b80cb
   docs/models/components/findownersrequestbody.md:
     id: 274ddf530814
-    last_write_checksum: sha1:ddce3bd4a57920e96fd0c449371365290e438e0c
-    pristine_git_object: b31a48eddd30e0223e6e8030765d8f44cee28877
+    last_write_checksum: sha1:6a276f8f40a76e5b5f0ef505a4c1a0054f7de72f
+    pristine_git_object: 0e5d632ab17444010eebaca27733a0f4ccb94f46
   docs/models/components/findownersresponsebody.md:
     id: ec0887c8f14f
     last_write_checksum: sha1:3a259e2bf49f9a64d74a9c7fac8a8e2ab949f253
@@ -782,6 +782,10 @@ trackedFiles:
     id: 38a17fbc52e1
     last_write_checksum: sha1:0a78b9f231aca7c8852063dcbe0057e07741b8b1
     pristine_git_object: 82ffab8e4ddc8dffc92fb1c99bd3994446b25601
+  docs/models/components/sort.md:
+    id: 4ad121d104d6
+    last_write_checksum: sha1:7b597d755411fedd98c8edbc62748ddc7e1fc505
+    pristine_git_object: 4118aa245fd53e773cf30e3527f22ef043aafb1a
   docs/models/components/source.md:
     id: 11d9227b9692
     last_write_checksum: sha1:944c4c8df3b18de2b135a50e9d3c5468ae6b6b36
@@ -2028,12 +2032,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:d15221d9491728ca26869f9fc449ead2a08063cf
-    pristine_git_object: f35ec1f78df81d0375a521a135dbfb775789046b
+    last_write_checksum: sha1:ef8268b0f2fc0ea26228440498aa7b332a8b57e1
+    pristine_git_object: 90ed70120d2cbcef5b809942576703c9dcafd874
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:b1e39bfebed5d389ad175b0e16d67eec68a8300f
-    pristine_git_object: e1c5666f064ff567841b42e5ed20d73ec177cfcc
+    last_write_checksum: sha1:7ac06de94e5054d2fc3f90bdbbc2fcb3efe48c71
+    pristine_git_object: 1c18489c1754c5c32dfd97e253d579a235fbc77b
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2448,8 +2452,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:da0ee7789a880f5ca8c002dd46972bbd0a2891de
-    pristine_git_object: 7e0d1191fdaef55f7a99f97d30408f6c2f3f4181
+    last_write_checksum: sha1:c4b02314f7079baad9070b7f3ae35e955376865e
+    pristine_git_object: 01b8926e5d7f5dc6f2538a8e266eeb380a971f73
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2848,8 +2852,8 @@ trackedFiles:
     pristine_git_object: c1196529622eecda2c92b16f02229f8f848dbbbb
   src/models/components/findownersrequestbody.ts:
     id: 1445aa1a674b
-    last_write_checksum: sha1:5748930e05e90c34ba3b0fa787be79da8de10a9b
-    pristine_git_object: 2a8837fe606fddad136db4215b99a1a4d14ad2b7
+    last_write_checksum: sha1:de4df9205cba38b84cb558ee8274ffe5af317df3
+    pristine_git_object: 213c6c1f48af29c049214bd3b5052cadf1895bcf
   src/models/components/findownersresponsebody.ts:
     id: d0bf90aabd04
     last_write_checksum: sha1:5d27b1f83219ccc84b2f0405a412afa7b2bdc2df
@@ -5627,10 +5631,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.account.listApps()`:  `request` **Changed**
-  * `steamsets.account.listBadges()`:  `request` **Changed**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.item.findOwners()`: \n  *  `request.sort` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
