@@ -3,6 +3,20 @@
  */
 
 import * as z from "zod/v3";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
+
+/**
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ */
+export const Sort = {
+  Owned: "owned",
+  Closest: "closest",
+} as const;
+/**
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ */
+export type Sort = OpenEnum<typeof Sort>;
 
 export type FindOwnersRequestBody = {
   /**
@@ -25,7 +39,15 @@ export type FindOwnersRequestBody = {
    * Page size, max owners returned per item (default 10, max 25)
    */
   ownersPerItem?: number | undefined;
+  /**
+   * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+   */
+  sort?: Sort | undefined;
 };
+
+/** @internal */
+export const Sort$outboundSchema: z.ZodType<string, z.ZodTypeDef, Sort> =
+  openEnums.outboundSchema(Sort);
 
 /** @internal */
 export type FindOwnersRequestBody$Outbound = {
@@ -34,6 +56,7 @@ export type FindOwnersRequestBody$Outbound = {
   maxDepth?: number | undefined;
   offset?: number | undefined;
   ownersPerItem?: number | undefined;
+  sort?: string | undefined;
 };
 
 /** @internal */
@@ -47,6 +70,7 @@ export const FindOwnersRequestBody$outboundSchema: z.ZodType<
   maxDepth: z.number().int().optional(),
   offset: z.number().int().optional(),
   ownersPerItem: z.number().int().optional(),
+  sort: Sort$outboundSchema.optional(),
 });
 
 export function findOwnersRequestBodyToJSON(
