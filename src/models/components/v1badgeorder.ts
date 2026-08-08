@@ -12,6 +12,11 @@ export const V1BadgeOrderBy = {
   Scarcity: "scarcity",
   Name: "name",
   CompletionTime: "completion_time",
+  AppName: "app_name",
+  AppId: "app_id",
+  TrackedHolders: "tracked_holders",
+  FirstCompletion: "first_completion",
+  LastCompletion: "last_completion",
 } as const;
 export type V1BadgeOrderBy = OpenEnum<typeof V1BadgeOrderBy>;
 

@@ -18,6 +18,10 @@ export type V1AppFilters = {
    * Exclude sale/promotional apps
    */
   excludeSales?: boolean | null | undefined;
+  /**
+   * If true, only apps where the account has crafted at least one badge; if false, only apps where it has crafted none
+   */
+  hasBadge?: boolean | null | undefined;
   playtime?: Range | undefined;
 };
 
@@ -26,6 +30,7 @@ export type V1AppFilters$Outbound = {
   appType?: string | null | undefined;
   excludeEvents?: boolean | null | undefined;
   excludeSales?: boolean | null | undefined;
+  hasBadge?: boolean | null | undefined;
   playtime?: Range$Outbound | undefined;
 };
 
@@ -38,6 +43,7 @@ export const V1AppFilters$outboundSchema: z.ZodType<
   appType: z.nullable(z.string()).optional(),
   excludeEvents: z.nullable(z.boolean()).optional(),
   excludeSales: z.nullable(z.boolean()).optional(),
+  hasBadge: z.nullable(z.boolean()).optional(),
   playtime: Range$outboundSchema.optional(),
 });
 

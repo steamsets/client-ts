@@ -9,6 +9,9 @@ import { OpenEnum } from "../../types/enums.js";
 export const V1AppOrderBy = {
   AppId: "appId",
   Playtime: "playtime",
+  Name: "name",
+  CardCount: "cardCount",
+  SetPrice: "setPrice",
 } as const;
 export type V1AppOrderBy = OpenEnum<typeof V1AppOrderBy>;
 
