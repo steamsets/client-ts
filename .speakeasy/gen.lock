@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 3d56c0180cc17f9bc5c2b68591feec17
+  docChecksum: 90e9df6684a053714b40bffa3db0bc9c
   docVersion: 1.0.0
   speakeasyVersion: 1.792.0
   generationVersion: 2.927.0
-  releaseVersion: 0.37.5
-  configChecksum: f6a31498046e8087cc7152af1dd18ba7
+  releaseVersion: 0.37.6
+  configChecksum: cc6069041eb43fff7bf0cbc63df07942
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 0f971647-5952-42dd-8b9c-e6617f848cbb
-  pristine_commit_hash: 3153c35aa9ecaaef3ac5243b11f4431ccfe79595
-  pristine_tree_hash: 033d7d97635999a7b3e96ceac505da33920b8a6a
+  generation_id: 7031a723-4ba9-4dbc-836f-1986abb8f6a1
+  pristine_commit_hash: 21fe552c6c4f731562c254c417a662de2587d464
+  pristine_tree_hash: 36a2af29434bae92f734b0695d89bbb47fb1d54d
 features:
   go:
     additionalDependencies: 0.1.0
@@ -256,12 +256,12 @@ trackedFiles:
     pristine_git_object: 565a5c07128aefa02620184880bcd4545ca1d63e
   docs/models/components/applistownersrequestbody.md:
     id: 8e30cd3ec92a
-    last_write_checksum: sha1:ceb4491603f101b5462a00619f285df86d434cf2
-    pristine_git_object: f3015a5b6553de24ba6a64253645bd4ec76cf9db
+    last_write_checksum: sha1:99472ca556197a147ac63537e861000e73d8d5e5
+    pristine_git_object: b940d5e89b86c1906fca63a467fb1bf71293b038
   docs/models/components/applistownersresponsebody.md:
     id: 6a0432c223ec
-    last_write_checksum: sha1:f61022b8919939382f758697fdd90ff510ac5a53
-    pristine_git_object: 2ca73892b75737f38c299ace6b1845bb6f5f8492
+    last_write_checksum: sha1:91a2fdc0a7e3f7cc845fbf52a8f18d256b04db9f
+    pristine_git_object: 8106892f2fa7c4ffa86bd08da246800640782c0c
   docs/models/components/appprivacy.md:
     id: 8d7bc48c2157
     last_write_checksum: sha1:72205d45bb0bf8a446d46032a597462b57b798e9
@@ -316,12 +316,12 @@ trackedFiles:
     pristine_git_object: bdde2d3b9856b23121147eca775e9d40b2593e76
   docs/models/components/badgelistcraftersrequestbody.md:
     id: f4514eb18b7e
-    last_write_checksum: sha1:3eacca0e547fe52f3300a8d5d2f63d934a38ea30
-    pristine_git_object: 64ac09d24e038fec64e6f696ba4708918b38223f
+    last_write_checksum: sha1:18e28a14ff77f84674758106b3e39d1513d4a6d3
+    pristine_git_object: 7e279c386535b74dd46744964845def66f9e67b4
   docs/models/components/badgelistcraftersresponsebody.md:
     id: 7b998dc98599
-    last_write_checksum: sha1:e9381b992022d96554c7dd11bd0bc208030152a3
-    pristine_git_object: 2c27f0449321a19ef837d93c1120e9209b2f3d4f
+    last_write_checksum: sha1:b9ed92d6daa26d7a5d5010357cbee3b619eae219
+    pristine_git_object: 9a321be565955470aec0a538a2a082e109247ae0
   docs/models/components/badgerevisetagreviewdesign.md:
     id: bb317c10c2fe
     last_write_checksum: sha1:29acc8df7ddc6ef0b968689ce5f8a87f06682556
@@ -2032,12 +2032,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:ef8268b0f2fc0ea26228440498aa7b332a8b57e1
-    pristine_git_object: 90ed70120d2cbcef5b809942576703c9dcafd874
+    last_write_checksum: sha1:e2fcdd26ff1ae52be959de7c0144710c56d1c832
+    pristine_git_object: 792a42b5e81893727b09d9fc8bbfdac3120c43e1
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:7ac06de94e5054d2fc3f90bdbbc2fcb3efe48c71
-    pristine_git_object: 1c18489c1754c5c32dfd97e253d579a235fbc77b
+    last_write_checksum: sha1:ff2a3a7def149cc6bb5129dac76e1662634c664a
+    pristine_git_object: 9309edb0638febf01d40b2a9ad7ee03282d9eb95
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2452,8 +2452,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:c4b02314f7079baad9070b7f3ae35e955376865e
-    pristine_git_object: 01b8926e5d7f5dc6f2538a8e266eeb380a971f73
+    last_write_checksum: sha1:d06d8ffc5315555059a1e705e7d999912e391fdb
+    pristine_git_object: 68c88de65d631825cefd1634941ade170a101f1f
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
@@ -2636,12 +2636,12 @@ trackedFiles:
     pristine_git_object: 977de3d98329847e7170fd29681075425e635100
   src/models/components/applistownersrequestbody.ts:
     id: 43ac920948f0
-    last_write_checksum: sha1:716019bef8f3eb3b4b49dc6bd3d2cd1a9ecd1ad7
-    pristine_git_object: 291dd7966e9bf3145ff56289091e9461acf9d586
+    last_write_checksum: sha1:2cd05f26533aaed43777c5d0202c54a016f574a4
+    pristine_git_object: f2a83c9bc75979e35263a83ee1d4fc6d4625b910
   src/models/components/applistownersresponsebody.ts:
     id: cc9c0946e3b8
-    last_write_checksum: sha1:26076de3c83e7c21d92f3a12fd0ab04f3df1dc80
-    pristine_git_object: 40be317d398def00c932b5abc100b2f87199b7f2
+    last_write_checksum: sha1:b39074d387217f33be121734e8bf2bb8f8c8d987
+    pristine_git_object: aeae6993aff4244eff3d26ed0d6879800f56f6db
   src/models/components/badgeclaimtagreviewsapp.ts:
     id: ec74a6bc4bbb
     last_write_checksum: sha1:04e6ef87743da22b817fe8408d6f069d6bd846ea
@@ -2684,12 +2684,12 @@ trackedFiles:
     pristine_git_object: 96214bc4393f9e581e651c1d899ba66fa42337ef
   src/models/components/badgelistcraftersrequestbody.ts:
     id: 953f46c6d0dd
-    last_write_checksum: sha1:1f59debcdba8e9bfd9eaf6a23eea5b9d85c7e6ec
-    pristine_git_object: b88fa2d7c559764e2c85c9e5b29771e7e3e1eb36
+    last_write_checksum: sha1:431dca1759f46d25dd750b9ca4b0993054ca0ee6
+    pristine_git_object: f2756c801c84a92e1f4819f8100d75391dc267be
   src/models/components/badgelistcraftersresponsebody.ts:
     id: 237c188a99d9
-    last_write_checksum: sha1:56a89848fea39e942112845cee9c156d328e225f
-    pristine_git_object: c05698222c5317185baf5b8d1edaa996693d6186
+    last_write_checksum: sha1:187b1bd32c132bb23ae789c4d18127af471cc797
+    pristine_git_object: e0413c87ed785cbc35f72f8bf0f99add121394ff
   src/models/components/badgerevisetagreviewdesign.ts:
     id: e999a1abd9ff
     last_write_checksum: sha1:58d61bf5af564aaba8c52e71d168dd959d69d675
@@ -5478,7 +5478,7 @@ examples:
         application/json: {"badgeId": "<id>"}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeListCraftersResponseBody.json", "crafters": [{"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 131353, "city": {"name": "Bad Krozingen"}, "completedAt": "2025-07-18T02:54:05.760Z", "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 767992, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": null, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 662821, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 812049, "xp": 123456}], "maxPageSize": 531130, "trackedHolders": 614803}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeListCraftersResponseBody.json", "crafters": [{"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 131353, "city": {"name": "Bad Krozingen"}, "completedAt": "2025-07-18T02:54:05.760Z", "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 767992, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": null, "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 662821, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 812049, "xp": 123456}], "maxPageSize": 531130, "page": 181550, "pageSize": 921025, "totalPages": 131353, "trackedHolders": 614803}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -5522,7 +5522,7 @@ examples:
         application/json: {"appId": 780041}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/AppListOwnersResponseBody.json", "maxPageSize": 638248, "owners": [{"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 51607, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 628938, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 543003, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": null, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 885595, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 949531, "xp": 123456}], "trackedOwners": 570620}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/AppListOwnersResponseBody.json", "maxPageSize": 638248, "owners": [{"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 51607, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 628938, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 543003, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": null, "roles": [], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 885595, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 949531, "xp": 123456}], "page": 780041, "pageSize": 638248, "totalPages": 974232, "trackedOwners": 570620}
         "400":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -5631,7 +5631,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.item.findOwners()`: \n  *  `request.sort` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.apps.listOwners()`: \n  *  `request.page` **Added**\n  *  `response` **Changed**\n* `steamsets.badges.listCrafters()`: \n  *  `request.page` **Added**\n  *  `response` **Changed**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

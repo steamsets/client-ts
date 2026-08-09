@@ -59,7 +59,10 @@ let value: BadgeListCraftersResponseBody = {
     },
   ],
   maxPageSize: 594815,
-  trackedHolders: 728471,
+  page: 728471,
+  pageSize: 334421,
+  totalPages: 589166,
+  trackedHolders: 41821,
 };
 ```
 
@@ -71,4 +74,7 @@ let value: BadgeListCraftersResponseBody = {
 | `crafters`                                                                               | [components.BadgeListCraftersEntry](../../models/components/badgelistcraftersentry.md)[] | :heavy_check_mark:                                                                       | N/A                                                                                      |                                                                                          |
 | `maxPageSize`                                                                            | *number*                                                                                 | :heavy_check_mark:                                                                       | Largest page size your donator tier allows                                               |                                                                                          |
 | `nextCursor`                                                                             | *string*                                                                                 | :heavy_minus_sign:                                                                       | Pass as cursor to fetch the next page. Absent when there are no more crafters.           |                                                                                          |
+| `page`                                                                                   | *number*                                                                                 | :heavy_check_mark:                                                                       | 1-based page this response holds                                                         |                                                                                          |
+| `pageSize`                                                                               | *number*                                                                                 | :heavy_check_mark:                                                                       | Crafters per page used for this response                                                 |                                                                                          |
+| `totalPages`                                                                             | *number*                                                                                 | :heavy_check_mark:                                                                       | Pages available at this page size, capped at the deepest page a page jump can reach      |                                                                                          |
 | `trackedHolders`                                                                         | *number*                                                                                 | :heavy_check_mark:                                                                       | Holders steamsets tracks for this badge                                                  |                                                                                          |
