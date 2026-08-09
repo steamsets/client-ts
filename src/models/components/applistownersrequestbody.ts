@@ -17,6 +17,10 @@ export type AppListOwnersRequestBody = {
    * Page size (capped by donator tier)
    */
   limit?: number | undefined;
+  /**
+   * 1-based page to jump to. Use this or cursor, not both. Reaches at most 100000 owners deep; walk with cursor past that.
+   */
+  page?: number | undefined;
 };
 
 /** @internal */
@@ -24,6 +28,7 @@ export type AppListOwnersRequestBody$Outbound = {
   appId: number;
   cursor?: string | undefined;
   limit?: number | undefined;
+  page?: number | undefined;
 };
 
 /** @internal */
@@ -35,6 +40,7 @@ export const AppListOwnersRequestBody$outboundSchema: z.ZodType<
   appId: z.number().int(),
   cursor: z.string().optional(),
   limit: z.number().int().optional(),
+  page: z.number().int().optional(),
 });
 
 export function appListOwnersRequestBodyToJSON(

@@ -27,6 +27,18 @@ export type AppListOwnersResponseBody = {
   nextCursor?: string | undefined;
   owners: Array<AppListOwnersEntry | null> | null;
   /**
+   * 1-based page this response holds
+   */
+  page: number;
+  /**
+   * Owners per page used for this response
+   */
+  pageSize: number;
+  /**
+   * Pages available at this page size, capped at the deepest page a page jump can reach
+   */
+  totalPages: number;
+  /**
    * Owners steamsets tracks for this app
    */
   trackedOwners: number;
@@ -42,6 +54,9 @@ export const AppListOwnersResponseBody$inboundSchema: z.ZodType<
   maxPageSize: z.number().int(),
   nextCursor: z.string().optional(),
   owners: z.nullable(z.array(z.nullable(AppListOwnersEntry$inboundSchema))),
+  page: z.number().int(),
+  pageSize: z.number().int(),
+  totalPages: z.number().int(),
   trackedOwners: z.number().int(),
 }).transform((v) => {
   return remap$(v, {

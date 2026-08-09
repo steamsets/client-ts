@@ -27,6 +27,18 @@ export type BadgeListCraftersResponseBody = {
    */
   nextCursor?: string | undefined;
   /**
+   * 1-based page this response holds
+   */
+  page: number;
+  /**
+   * Crafters per page used for this response
+   */
+  pageSize: number;
+  /**
+   * Pages available at this page size, capped at the deepest page a page jump can reach
+   */
+  totalPages: number;
+  /**
    * Holders steamsets tracks for this badge
    */
   trackedHolders: number;
@@ -44,6 +56,9 @@ export const BadgeListCraftersResponseBody$inboundSchema: z.ZodType<
   ),
   maxPageSize: z.number().int(),
   nextCursor: z.string().optional(),
+  page: z.number().int(),
+  pageSize: z.number().int(),
+  totalPages: z.number().int(),
   trackedHolders: z.number().int(),
 }).transform((v) => {
   return remap$(v, {
