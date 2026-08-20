@@ -144,13 +144,6 @@ run();
 
 ### [Analytics](docs/sdks/analytics/README.md)
 
-* [getBivariate](docs/sdks/analytics/README.md#getbivariate) - Bucket by X, aggregate Y, within a scope
-* [getDistribution](docs/sdks/analytics/README.md#getdistribution) - Histogram + summary stats for a metric in a scope
-* [getInequality](docs/sdks/analytics/README.md#getinequality) - Lorenz curve + Gini + top-X%-own-Y% headlines for one metric in a scope
-* [getMetricByScope](docs/sdks/analytics/README.md#getmetricbyscope) - One metric aggregated per country (or region) — worldmap source
-* [getMyPercentiles](docs/sdks/analytics/README.md#getmypercentiles) - Per-metric percentile rank for the logged-in user in the chosen scope
-* [getTrend](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
-* [listMetrics](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 * [trackEvent](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 
 ### [App](docs/sdks/app/README.md)
@@ -716,13 +709,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
 - [`adminUpdateRoleOverride`](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
-- [`analyticsGetBivariate`](docs/sdks/analytics/README.md#getbivariate) - Bucket by X, aggregate Y, within a scope
-- [`analyticsGetDistribution`](docs/sdks/analytics/README.md#getdistribution) - Histogram + summary stats for a metric in a scope
-- [`analyticsGetInequality`](docs/sdks/analytics/README.md#getinequality) - Lorenz curve + Gini + top-X%-own-Y% headlines for one metric in a scope
-- [`analyticsGetMetricByScope`](docs/sdks/analytics/README.md#getmetricbyscope) - One metric aggregated per country (or region) — worldmap source
-- [`analyticsGetMyPercentiles`](docs/sdks/analytics/README.md#getmypercentiles) - Per-metric percentile rank for the logged-in user in the chosen scope
-- [`analyticsGetTrend`](docs/sdks/analytics/README.md#gettrend) - Daily quantiles over a window for a metric in a scope
-- [`analyticsListMetrics`](docs/sdks/analytics/README.md#listmetrics) - List every analytics domain, metric, and scope the data-library can serve
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
