@@ -7,6 +7,7 @@ import { adminBanPlayer } from "../funcs/adminBanPlayer.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
+import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
 import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
@@ -88,6 +89,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminRemoveVanityResponse> {
     return unwrapAsync(adminRemoveVanity(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Restrict an account: hide it site-wide and lock it out of login
+   */
+  async restrictAccount(
+    request: components.V1AdminRestrictAccountRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminRestrictAccountResponse> {
+    return unwrapAsync(adminRestrictAccount(
       this,
       request,
       options,

@@ -39,18 +39,18 @@ let value: V1AdminGetAccountResponseBody = {
       value: "1",
     },
   ],
-  roles: [],
-  sessions: [
+  restricted: false,
+  restrictedAt: new Date("2024-03-23T10:29:09.236Z"),
+  restrictedByName: "<value>",
+  restrictionReason: "<value>",
+  roles: [
     {
-      createdAt: new Date("2023-01-01T00:00:00Z"),
-      expiresAt: new Date("2023-01-01T00:00:00Z"),
-      ip: "127.0.0.1",
-      lastSeen: new Date("2023-01-01T00:00:00Z"),
-      sessionId: "123456",
-      userAgent:
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      extras: {},
+      rating: 138555,
+      role: "sapphire",
     },
   ],
+  sessions: [],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
   vanityUpdates: [
@@ -62,7 +62,16 @@ let value: V1AdminGetAccountResponseBody = {
       },
     },
   ],
-  visibilityUpdates: [],
+  visibilityUpdates: [
+    {
+      kind: "profile",
+      updatedAt: new Date("2023-01-01T00:00:00Z"),
+      visibility: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+    },
+  ],
 };
 ```
 
@@ -89,6 +98,10 @@ let value: V1AdminGetAccountResponseBody = {
 | `privacy`                                                                                                          | [components.V1AdminGetAccountResponseBodyPrivacy](../../models/components/v1admingetaccountresponsebodyprivacy.md) | :heavy_check_mark:                                                                                                 | The privacy of the account                                                                                         | public                                                                                                             |
 | `region`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The region of the account                                                                                          | Europe                                                                                                             |
 | `resources`                                                                                                        | [components.Resource](../../models/components/resource.md)[]                                                       | :heavy_check_mark:                                                                                                 | The resources the account has (permissions)                                                                        |                                                                                                                    |
+| `restricted`                                                                                                       | *boolean*                                                                                                          | :heavy_check_mark:                                                                                                 | Whether staff has hidden this account site-wide and locked it out of login                                         | false                                                                                                              |
+| `restrictedAt`                                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                      | :heavy_check_mark:                                                                                                 | When the restriction was applied                                                                                   |                                                                                                                    |
+| `restrictedByName`                                                                                                 | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | Name of the staff member who applied the restriction                                                               |                                                                                                                    |
+| `restrictionReason`                                                                                                | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The staff-facing reason for the restriction, if any                                                                |                                                                                                                    |
 | `roles`                                                                                                            | [components.Role](../../models/components/role.md)[]                                                               | :heavy_check_mark:                                                                                                 | The roles the account has                                                                                          |                                                                                                                    |
 | `sessions`                                                                                                         | [components.Session](../../models/components/session.md)[]                                                         | :heavy_check_mark:                                                                                                 | The sessions the account has                                                                                       |                                                                                                                    |
 | `state`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The state of the account                                                                                           | Baden-Wurttemberg                                                                                                  |

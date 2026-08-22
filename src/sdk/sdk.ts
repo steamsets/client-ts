@@ -17,7 +17,6 @@ import { Item } from "./item.js";
 import { Kv } from "./kv.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
-import { Location } from "./location.js";
 import { Maintenance } from "./maintenance.js";
 import { Search } from "./search.js";
 import { Site } from "./site.js";
@@ -93,11 +92,6 @@ export class SteamSets extends ClientSDK {
   private _leaderboards?: Leaderboards;
   get leaderboards(): Leaderboards {
     return (this._leaderboards ??= new Leaderboards(this._options));
-  }
-
-  private _location?: Location;
-  get location(): Location {
-    return (this._location ??= new Location(this._options));
   }
 
   private _maintenance?: Maintenance;
