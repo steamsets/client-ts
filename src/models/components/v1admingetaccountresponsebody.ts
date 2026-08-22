@@ -124,6 +124,22 @@ export type V1AdminGetAccountResponseBody = {
    */
   resources: Array<Resource> | null;
   /**
+   * Whether staff has hidden this account site-wide and locked it out of login
+   */
+  restricted: boolean;
+  /**
+   * When the restriction was applied
+   */
+  restrictedAt: Date | null;
+  /**
+   * Name of the staff member who applied the restriction
+   */
+  restrictedByName: string | null;
+  /**
+   * The staff-facing reason for the restriction, if any
+   */
+  restrictionReason: string | null;
+  /**
    * The roles the account has
    */
   roles: Array<Role> | null;
@@ -183,6 +199,12 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   privacy: V1AdminGetAccountResponseBodyPrivacy$inboundSchema,
   region: z.nullable(z.string()),
   resources: z.nullable(z.array(Resource$inboundSchema)),
+  restricted: z.boolean(),
+  restrictedAt: z.nullable(
+    z.string().datetime({ offset: true }).transform(v => new Date(v)),
+  ),
+  restrictedByName: z.nullable(z.string()),
+  restrictionReason: z.nullable(z.string()),
   roles: z.nullable(z.array(Role$inboundSchema)),
   sessions: z.nullable(z.array(Session$inboundSchema)),
   state: z.nullable(z.string()),

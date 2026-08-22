@@ -129,6 +129,7 @@ run();
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+* [restrictAccount](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 * [unbanPlayer](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 * [updateAccount](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
@@ -158,7 +159,6 @@ run();
 ### [Badge](docs/sdks/badge/README.md)
 
 * [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
-* [suggestTags](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 
 ### [Badges](docs/sdks/badges/README.md)
 
@@ -167,7 +167,6 @@ run();
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [reviseTagReview](docs/sdks/badges/README.md#revisetagreview) - Revise a completed badge tag review
 * [submitTagReview](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
-* [tag](docs/sdks/badges/README.md#tag) - Tag a badge
 
 ### [Donate](docs/sdks/donate/README.md)
 
@@ -199,10 +198,6 @@ run();
 ### [Leaderboards](docs/sdks/leaderboards/README.md)
 
 * [list](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
-
-### [Location](docs/sdks/location/README.md)
-
-* [get](docs/sdks/location/README.md#get) - List available locations
 
 ### [Maintenance](docs/sdks/maintenance/README.md)
 
@@ -704,6 +699,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminMaintenanceList`](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
+- [`adminRestrictAccount`](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 - [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 - [`adminUpdateAccount`](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
@@ -718,9 +714,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesReviseTagReview`](docs/sdks/badges/README.md#revisetagreview) - Revise a completed badge tag review
 - [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
-- [`badgesTag`](docs/sdks/badges/README.md#tag) - Tag a badge
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
-- [`badgeSuggestTags`](docs/sdks/badge/README.md#suggesttags) - Suggest badge tag
 - [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
@@ -734,7 +728,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
-- [`locationGet`](docs/sdks/location/README.md#get) - List available locations
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 - [`searchGetTrending`](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
 - [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).

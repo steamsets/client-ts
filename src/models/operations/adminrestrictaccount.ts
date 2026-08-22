@@ -9,38 +9,38 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type BadgeTagBadgeResponse = {
+export type AdminRestrictAccountResponse = {
   httpMeta: components.HTTPMetadata;
   /**
    * OK
    */
-  v1BadgeTagBadgeResponseBody?:
-    | components.V1BadgeTagBadgeResponseBody
+  v1AdminRestrictAccountResponseBody?:
+    | components.V1AdminRestrictAccountResponseBody
     | undefined;
 };
 
 /** @internal */
-export const BadgeTagBadgeResponse$inboundSchema: z.ZodType<
-  BadgeTagBadgeResponse,
+export const AdminRestrictAccountResponse$inboundSchema: z.ZodType<
+  AdminRestrictAccountResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   HttpMeta: components.HTTPMetadata$inboundSchema,
-  V1BadgeTagBadgeResponseBody: components
-    .V1BadgeTagBadgeResponseBody$inboundSchema.optional(),
+  V1AdminRestrictAccountResponseBody: components
+    .V1AdminRestrictAccountResponseBody$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "HttpMeta": "httpMeta",
-    "V1BadgeTagBadgeResponseBody": "v1BadgeTagBadgeResponseBody",
+    "V1AdminRestrictAccountResponseBody": "v1AdminRestrictAccountResponseBody",
   });
 });
 
-export function badgeTagBadgeResponseFromJSON(
+export function adminRestrictAccountResponseFromJSON(
   jsonString: string,
-): SafeParseResult<BadgeTagBadgeResponse, SDKValidationError> {
+): SafeParseResult<AdminRestrictAccountResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => BadgeTagBadgeResponse$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'BadgeTagBadgeResponse' from JSON`,
+    (x) => AdminRestrictAccountResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AdminRestrictAccountResponse' from JSON`,
   );
 }

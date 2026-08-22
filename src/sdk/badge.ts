@@ -6,9 +6,7 @@ import {
   badgeStreamPricing,
   StreamPricingAcceptEnum,
 } from "../funcs/badgeStreamPricing.js";
-import { badgeSuggestTags } from "../funcs/badgeSuggestTags.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
-import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -25,20 +23,6 @@ export class Badge extends ClientSDK {
   ): Promise<operations.BadgePricingSubscribeResponse> {
     return unwrapAsync(badgeStreamPricing(
       this,
-      options,
-    ));
-  }
-
-  /**
-   * Suggest badge tag
-   */
-  async suggestTags(
-    request: components.V1BadgeSuggestTagsRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.BadgeSuggestTagsResponse> {
-    return unwrapAsync(badgeSuggestTags(
-      this,
-      request,
       options,
     ));
   }

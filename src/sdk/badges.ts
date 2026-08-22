@@ -7,7 +7,6 @@ import { badgesListCrafters } from "../funcs/badgesListCrafters.js";
 import { badgesListTags } from "../funcs/badgesListTags.js";
 import { badgesReviseTagReview } from "../funcs/badgesReviseTagReview.js";
 import { badgesSubmitTagReview } from "../funcs/badgesSubmitTagReview.js";
-import { badgesTag } from "../funcs/badgesTag.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -79,20 +78,6 @@ export class Badges extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.BadgeSubmitTagReviewResponse> {
     return unwrapAsync(badgesSubmitTagReview(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Tag a badge
-   */
-  async tag(
-    request: components.V1BadgeTagBadgeRequestBody,
-    options?: RequestOptions,
-  ): Promise<operations.BadgeTagBadgeResponse> {
-    return unwrapAsync(badgesTag(
       this,
       request,
       options,
