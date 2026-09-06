@@ -172,6 +172,11 @@ run();
 
 * [getGoal](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
 
+### [Exchange](docs/sdks/exchange/README.md)
+
+* [cardPrices](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
+* [classifyInventory](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
+
 ### [Group](docs/sdks/group/README.md)
 
 * [queueUpdate](docs/sdks/group/README.md#queueupdate) - Queue group update
@@ -716,6 +721,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+- [`exchangeCardPrices`](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
+- [`exchangeClassifyInventory`](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
