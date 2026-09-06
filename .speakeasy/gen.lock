@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: cda0967e44586b2fb7d6e047d58d91fb
+  docChecksum: 5ac916db074074b31d863f0cb8a479ba
   docVersion: 1.0.0
-  speakeasyVersion: 1.795.1
-  generationVersion: 2.932.9
-  releaseVersion: 0.37.8
-  configChecksum: d86c4a6abd5ff67ada7f0d8e23669fea
+  speakeasyVersion: 1.796.4
+  generationVersion: 2.935.1
+  releaseVersion: 0.37.9
+  configChecksum: dea9ada9c74c823e397b5ea061a21bb0
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 4ced2d82-4c75-4093-90d5-a4e0b4f5c37a
-  pristine_commit_hash: eeb709b461b20c40607142b3e33d3d4a82a1af26
-  pristine_tree_hash: 87130602dd40b7e21ebcc5238b77c0a8856f9ad8
+  generation_id: 856a3e58-025c-491a-b359-55b1a2addf9f
+  pristine_commit_hash: 75cffdac72c3972ed4cd7223ccacb69b4c5205cd
+  pristine_tree_hash: f8893a77aadb49c06ca44e8aa53693c25939d819
 features:
   go:
     additionalDependencies: 0.1.0
@@ -34,7 +34,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.14
-    core: 3.31.5
+    core: 3.31.6
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.1
@@ -53,9 +53,9 @@ features:
     operationTimeout: 0.2.1
     pagination: 2.83.2
     responseFormat: 0.3.0
-    retries: 2.83.1
+    retries: 2.83.2
     sdkHooks: 0.4.0
-    serverEvents: 0.2.3
+    serverEvents: 0.2.4
     unions: 2.86.5
 trackedFiles:
   .devcontainer/README.md:
@@ -262,6 +262,10 @@ trackedFiles:
     id: 2749102544c6
     last_write_checksum: sha1:d0065718e4b93c68d3193e96c473291cc9c3d16d
     pristine_git_object: 29972c7f81e0303b17b263913a5eb2c724c124ab
+  docs/models/components/bucket.md:
+    id: 86ab4b5c99e8
+    last_write_checksum: sha1:816c2a94f8605736d96e642bf1770f69e3e00972
+    pristine_git_object: b85b3e0a06941965b24ebc64b876aa7637366ef7
   docs/models/components/bucketleader.md:
     id: 92f99f7d17b7
     last_write_checksum: sha1:ac16949b0598b1bf8af0989544bdc7d7a65eb3dc
@@ -394,6 +398,34 @@ trackedFiles:
     id: 501d09d25f60
     last_write_checksum: sha1:3ced6ac072aa841a82815db6d60a2c4f96c2d6ed
     pristine_git_object: 911938d925370037883a0ba3f0314bcb62cc8eb5
+  docs/models/components/exchangecardprice.md:
+    id: 13a6210a246a
+    last_write_checksum: sha1:ad778bc3d853106e01fc3510f24a13f5124ca9a1
+    pristine_git_object: 6799f468d1743741d54793389a256ff53e08dc21
+  docs/models/components/exchangecardpricekind.md:
+    id: 5bf428f1f06b
+    last_write_checksum: sha1:44edb33446bf9c9db6d92cd4658b26881d1e4d63
+    pristine_git_object: 7e1f124bd30caba20ee6319991c8e2da317c3ade
+  docs/models/components/exchangecardpricesrequestbody.md:
+    id: a5bba74041fb
+    last_write_checksum: sha1:ee496e5bb5632e1a53bad8f776934d3cec77813f
+    pristine_git_object: b5bbaaf987940ea9be7dc088cc3e72134356c3ab
+  docs/models/components/exchangecardpricesresponsebody.md:
+    id: d232d183754f
+    last_write_checksum: sha1:15ccca1de847cfe65a3f31155514536e112593a9
+    pristine_git_object: 157d0f819f30b5440bb1cf280570c0bf1856138e
+  docs/models/components/exchangeclassifiedapp.md:
+    id: 8c2363211b49
+    last_write_checksum: sha1:6ade2a92886f287a1f35a32cb82a990d02c8c265
+    pristine_git_object: 9d0af98d5cc58fb0a1ddb79c97af1d659c70e5e3
+  docs/models/components/exchangeclassifiedcard.md:
+    id: ad2eff3e3ceb
+    last_write_checksum: sha1:d6abc373d868da0979d75feae3392c6ae85dfa97
+    pristine_git_object: 5d97f5300bc8c5e4799970d5b3bfc923bc5fa8b9
+  docs/models/components/exchangeclassifyinventoryresponsebody.md:
+    id: 4799b12bb656
+    last_write_checksum: sha1:e6e30e753d50f5207ef628e77db410e8a5962370
+    pristine_git_object: a9fbb28be83c9e7ad7f747267e6a2e36b8159803
   docs/models/components/filter.md:
     id: 7effe8aedda6
     last_write_checksum: sha1:5f5bdbcfb5d42848e9c68695fc975070dd9cec24
@@ -1626,6 +1658,18 @@ trackedFiles:
     id: c9eebfe32c77
     last_write_checksum: sha1:5987fa0b26628336bec82ae3ba2e5dd9346e0edd
     pristine_git_object: f2b36d76803422b25da46be18c49d7e1ced5f92c
+  docs/models/operations/exchangecardpricesresponse.md:
+    id: f4a164c35d9a
+    last_write_checksum: sha1:32b9bfaea692296205108dd7e59b3be531e341d6
+    pristine_git_object: eefb7686823c0539ecfc85f8f1b6c3f422b890dd
+  docs/models/operations/exchangeclassifyinventoryrequest.md:
+    id: 5024bae2cffc
+    last_write_checksum: sha1:439f9b52341663960470aa9670ee8c2487640b1c
+    pristine_git_object: 446d85bee8fcb8e824ef08ee46a5e51468005b4b
+  docs/models/operations/exchangeclassifyinventoryresponse.md:
+    id: d5fba5fa34d7
+    last_write_checksum: sha1:1107b4112d722fc724cd31f3781e18313b89a90d
+    pristine_git_object: f6cc4cf675d4614ad20a8f6d57b0565cc27e3abc
   docs/models/operations/getchangesresponse.md:
     id: 43b14acf1292
     last_write_checksum: sha1:80a14a45e7b3f7eb4e00d33340704664cf11b8d1
@@ -1778,6 +1822,10 @@ trackedFiles:
     id: 21482ecf5423
     last_write_checksum: sha1:ed22fc4fb21c4d1f59c145161a81c82e1a0fde4b
     pristine_git_object: e59fe24b9cd3ae4944f4c708323836d2fb1b3243
+  docs/sdks/exchange/README.md:
+    id: 573f7bfe4d31
+    last_write_checksum: sha1:d93b4b8798cc65d8a610e53357310fb5dd8b2675
+    pristine_git_object: 877fd8157ac9ee5275f752e95c6de8280c0332ce
   docs/sdks/group/README.md:
     id: dd48bfd789de
     last_write_checksum: sha1:e483147a94ea64dbd98b63fd0e56e6e67f887733
@@ -1844,12 +1892,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:c91c675ff1dc3764ce9fa24e1a25334fb132cebe
-    pristine_git_object: 558e5a1f771f89b52d1d3d57b59600a77384b6e4
+    last_write_checksum: sha1:80fc3e3adaad5eec7c82413015998e33e7915f60
+    pristine_git_object: a27b298741e32663794ddbb0a36031eaaef5d118
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:efa03c8322227ad3aab00e8d41d0c3d023cdf45a
-    pristine_git_object: c63942ef641bb63a51f6bf88457eed4e52415b98
+    last_write_checksum: sha1:7a4b0a2af2b3195922eae316e26c1766a8a66830
+    pristine_git_object: ab682d57cacb46ba338ee914314a14ba4e2f4ead
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2134,6 +2182,14 @@ trackedFiles:
     id: c50ecca3c93d
     last_write_checksum: sha1:4511db71c78008b0c5532324dd03f0ff045d1883
     pristine_git_object: 49223c0057f316ded3c787d01ca054202267143b
+  src/funcs/exchangeCardPrices.ts:
+    id: 7dcb26ecbb93
+    last_write_checksum: sha1:727d2435ef4883fc7d0b144b55b90bb1b03ada54
+    pristine_git_object: 4af0c1a367ac393ad92ee0a2b8adb29536989e47
+  src/funcs/exchangeClassifyInventory.ts:
+    id: 31a298ea2fc7
+    last_write_checksum: sha1:27c4035c2ce732b3910b880f5d6ca0b14887f1c5
+    pristine_git_object: 94290b228741bea1c41ba244fafe01273b2d4005
   src/funcs/groupQueueUpdate.ts:
     id: ce258e94568e
     last_write_checksum: sha1:5291467f76ce872de77c89750e919d9a098f5d87
@@ -2228,12 +2284,12 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:7ed5e02375e51ddf89415df18d0d2c9854d6b96a
-    pristine_git_object: 7005e5d465c010f2d5637f70fd618521fde8e1b2
+    last_write_checksum: sha1:fe273256fafe2106078e01435da41a07da7fef2c
+    pristine_git_object: 4598ef5d46aeb90c285dcebeac1373613eada154
   src/lib/encodings.ts:
     id: 3bd8ead98afd
-    last_write_checksum: sha1:50d9b187dcfc3cca8d3bbd9fe074f865d715d2b0
-    pristine_git_object: dcab511b4b4d98f1e4b7dd94866e2b41c478b7f0
+    last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
+    pristine_git_object: d6e751fe6a9a39af519df802d05c999f6783bae8
   src/lib/event-streams.ts:
     id: 3f731f808a79
     last_write_checksum: sha1:14599c02625a354d93c64a912ee58a25827753e3
@@ -2518,6 +2574,30 @@ trackedFiles:
     id: cc8213fb66bc
     last_write_checksum: sha1:131c5b8911fc4380d9cd3750fe0948b9a3bcabe9
     pristine_git_object: c1196529622eecda2c92b16f02229f8f848dbbbb
+  src/models/components/exchangecardprice.ts:
+    id: 5f2bef53d4af
+    last_write_checksum: sha1:5fa084825a4b6fbb566cae4b637cf51c541bbdf9
+    pristine_git_object: 4289cff64eb16ef32427f061c04408a012eb82b4
+  src/models/components/exchangecardpricesrequestbody.ts:
+    id: 7204fa4f71cd
+    last_write_checksum: sha1:44b0a3b630680f614705ff871000c936658c258d
+    pristine_git_object: 549b381c9651c5a7a63fb0bb1186ca2d7c32ad6a
+  src/models/components/exchangecardpricesresponsebody.ts:
+    id: e21222db06f9
+    last_write_checksum: sha1:be82c53337cdd16580d105064b81a912e9788ddc
+    pristine_git_object: 4c23075b51429b0d4058c33d9a26b8d681328b3c
+  src/models/components/exchangeclassifiedapp.ts:
+    id: f1e167909712
+    last_write_checksum: sha1:d58e05618173ba5c43eee8be71f1fd8ea8ec2aa5
+    pristine_git_object: 9334ccd775633b360ac3d6a7109f20388062fd37
+  src/models/components/exchangeclassifiedcard.ts:
+    id: 8035ecdca668
+    last_write_checksum: sha1:7ab933e131d65261f6f81f484e5c22e6795d633c
+    pristine_git_object: 5c8f3e5bde39ac65724d8db77f2b1e8eeb337f17
+  src/models/components/exchangeclassifyinventoryresponsebody.ts:
+    id: 70afa91210c1
+    last_write_checksum: sha1:9a2fd622df965d288994c35cd6995619454bd59c
+    pristine_git_object: bbd765f6d5c969255417c456c5b96cc0b7ada36f
   src/models/components/findownersrequestbody.ts:
     id: 1445aa1a674b
     last_write_checksum: sha1:de4df9205cba38b84cb558ee8274ffe5af317df3
@@ -2544,8 +2624,8 @@ trackedFiles:
     pristine_git_object: a1841062ea2ec225755404e5cbe647ea24862dcc
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:4dabc4f898de599dfa20a1020a96f798814abb1c
-    pristine_git_object: ef506e9da5ae2036f0861b727da2bb1c731315af
+    last_write_checksum: sha1:bcbda46a96fcfa236357ca2d8ab941c39ac97ed4
+    pristine_git_object: 2154c388604889fe359bffafd4f51b6c052fdb51
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
@@ -3478,6 +3558,14 @@ trackedFiles:
     id: b636183af9fb
     last_write_checksum: sha1:abd5061b060a21c82285d450912f593180c5cd24
     pristine_git_object: 5fb44e99c1f888eeefb136976ebed601e5a08582
+  src/models/operations/exchangecardprices.ts:
+    id: de918c782d11
+    last_write_checksum: sha1:5f21679cbb00d870745fcb8031eb32de6709f2de
+    pristine_git_object: eaa73551f9b9a8ce0913be2b3eca55cea2d959ce
+  src/models/operations/exchangeclassifyinventory.ts:
+    id: daaf8624a054
+    last_write_checksum: sha1:fd2eed4170e92b225acb36013a69afc40c1722c7
+    pristine_git_object: 35bbce688145e110e2e686216c3b28dbd6533a76
   src/models/operations/getchanges.ts:
     id: 8a560e451ccc
     last_write_checksum: sha1:3f908fb87a715652255b81ab696c40dd7dac1f9a
@@ -3492,8 +3580,8 @@ trackedFiles:
     pristine_git_object: e28f392798cb876e15b621a3588a7121fc74d6a1
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:df7d12277253015ffd9eabbd4b3c3272e95a63c0
-    pristine_git_object: cc8c1c1fc87d0678bba34756070713e75798b91e
+    last_write_checksum: sha1:e547641314b6b2d856af87e31096d5c01185b4ce
+    pristine_git_object: 7e2a466504609427534414fea82655f4d0b28108
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:b9e0bdc1000aeb39213fc7c8cac90d4532ee5968
@@ -3610,6 +3698,10 @@ trackedFiles:
     id: 5b7661a11242
     last_write_checksum: sha1:7467a13d259596478dc389764062017a6aaa6bd6
     pristine_git_object: fbd4b4951d5d2089fba3a3a077390f548b13be34
+  src/sdk/exchange.ts:
+    id: f2e51a1275b2
+    last_write_checksum: sha1:2bcabb2b03cceb615c3e0a726f98ff889dd1d3a4
+    pristine_git_object: 1802797f582950c7b783e50e502afb3d0b815c0f
   src/sdk/group.ts:
     id: a1d7e88c1813
     last_write_checksum: sha1:de82a8f81cf3f65ec9ab0ecc6983252302db2e6d
@@ -3640,8 +3732,8 @@ trackedFiles:
     pristine_git_object: 8b70f0041e9ebefc626b680fc29fda3dc886941b
   src/sdk/sdk.ts:
     id: 784571af2f69
-    last_write_checksum: sha1:03130f4a05cf9ecb853ba746ea6002a8ab79aca2
-    pristine_git_object: 175208dac175c59221e262796defea149262d25b
+    last_write_checksum: sha1:78deacd58b63932981dfff988eda8f08c4330a5e
+    pristine_git_object: 4cd414b756e6bb06316e494bfcfeb468503fda17
   src/sdk/search.ts:
     id: b88871d87236
     last_write_checksum: sha1:2ee440e0c116c8fcb014824b29968dff1d10ab2d
@@ -5248,16 +5340,35 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  exchange.cardPrices:
+    speakeasy-default-exchange-card-prices:
+      requestBody:
+        application/json: {"classIds": null}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/ExchangeCardPricesResponseBody.json", "cards": []}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  exchange.classifyInventory:
+    speakeasy-default-exchange-classify-inventory:
+      parameters:
+        query:
+          accountId: 243843
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/ExchangeClassifyInventoryResponseBody.json", "accountId": 48499, "apps": [{"appId": 501209, "cards": [], "cardsFirstSeenAt": 485461, "foilCrafted": false, "hasFoilBadge": false, "image": "https://picsum.photos/seed/F78dN/3039/3523", "missingBadgeData": false, "name": "<value>", "normalRemaining": 775373, "normalUncapped": false}]}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `steamsets.admin.restrictAccount()`: **Added**
-  * `steamsets.badges.tag()`: **Removed** (Breaking ⚠️)
-  * `steamsets.badge.suggestTags()`: **Removed** (Breaking ⚠️)
-  * `steamsets.location.get()`: **Removed** (Breaking ⚠️)
-  * `steamsets.account.login()`:  `error.status[403]` **Added**
-  * `steamsets.admin.getAccount()`:  `response` **Changed**
+  * `steamsets.exchange.cardPrices()`: **Added**
+  * `steamsets.exchange.classifyInventory()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

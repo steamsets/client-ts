@@ -67,6 +67,8 @@ export * from "./badgerevisetagreview.js";
 export * from "./badgesubmittagreview.js";
 export * from "./comparebadges.js";
 export * from "./donategetgoal.js";
+export * from "./exchangecardprices.js";
+export * from "./exchangeclassifyinventory.js";
 export * from "./getchanges.js";
 export * from "./getviewstats.js";
 export * from "./groupqueueupdate.js";
