@@ -100,6 +100,7 @@ run();
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
+* [optOut](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 * [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
@@ -171,6 +172,11 @@ run();
 ### [Donate](docs/sdks/donate/README.md)
 
 * [getGoal](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+
+### [Exchange](docs/sdks/exchange/README.md)
+
+* [cardPrices](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
+* [classifyInventory](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 
 ### [Group](docs/sdks/group/README.md)
 
@@ -672,6 +678,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
+- [`accountOptOut`](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 - [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
@@ -716,6 +723,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+- [`exchangeCardPrices`](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
+- [`exchangeClassifyInventory`](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
