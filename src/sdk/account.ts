@@ -28,6 +28,7 @@ import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountListOwnedGroups } from "../funcs/accountListOwnedGroups.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
+import { accountOptOut } from "../funcs/accountOptOut.js";
 import { accountQueueInventoryRefresh } from "../funcs/accountQueueInventoryRefresh.js";
 import { accountQueueUpdate } from "../funcs/accountQueueUpdate.js";
 import { accountReconnectConnection } from "../funcs/accountReconnectConnection.js";
@@ -408,6 +409,18 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountLogoutResponse> {
     return unwrapAsync(accountLogout(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * Opt out of SteamSets (hide account and stop processing)
+   */
+  async optOut(
+    options?: RequestOptions,
+  ): Promise<operations.AccountOptOutResponse> {
+    return unwrapAsync(accountOptOut(
       this,
       options,
     ));
