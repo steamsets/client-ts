@@ -35,21 +35,23 @@ let value: V1AdminGetAccountResponseBody = {
   region: "Europe",
   resources: [
     {
-      resource: "search_result_limit",
-      value: "1",
+      inherited: {
+        role: "diamond",
+        value: "600000",
+      },
+      otherRoles: [],
+      override: null,
+      resource: "max_find_owners",
+      role: "diamond",
+      source: "role",
+      value: "600000",
     },
   ],
   restricted: false,
-  restrictedAt: new Date("2024-03-23T10:29:09.236Z"),
+  restrictedAt: new Date("2024-12-30T05:28:50.740Z"),
   restrictedByName: "<value>",
   restrictionReason: "<value>",
-  roles: [
-    {
-      extras: {},
-      rating: 138555,
-      role: "sapphire",
-    },
-  ],
+  roles: [],
   sessions: [],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
@@ -97,7 +99,7 @@ let value: V1AdminGetAccountResponseBody = {
 | `noteUpdatedAt`                                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                      | :heavy_check_mark:                                                                                                 | When the staff note was last written                                                                               |                                                                                                                    |
 | `privacy`                                                                                                          | [components.V1AdminGetAccountResponseBodyPrivacy](../../models/components/v1admingetaccountresponsebodyprivacy.md) | :heavy_check_mark:                                                                                                 | The privacy of the account                                                                                         | public                                                                                                             |
 | `region`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The region of the account                                                                                          | Europe                                                                                                             |
-| `resources`                                                                                                        | [components.Resource](../../models/components/resource.md)[]                                                       | :heavy_check_mark:                                                                                                 | The resources the account has (permissions)                                                                        |                                                                                                                    |
+| `resources`                                                                                                        | [components.AdminAccountResource](../../models/components/adminaccountresource.md)[]                               | :heavy_check_mark:                                                                                                 | Every resource, one entry each, with the value that applies and where it comes from                                |                                                                                                                    |
 | `restricted`                                                                                                       | *boolean*                                                                                                          | :heavy_check_mark:                                                                                                 | Whether staff has hidden this account site-wide and locked it out of login                                         | false                                                                                                              |
 | `restrictedAt`                                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                      | :heavy_check_mark:                                                                                                 | When the restriction was applied                                                                                   |                                                                                                                    |
 | `restrictedByName`                                                                                                 | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | Name of the staff member who applied the restriction                                                               |                                                                                                                    |

@@ -6,14 +6,20 @@
 import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/components";
 
 let value: V1AdminUpdateResourcesRequestBody = {
-  resources: [],
+  resources: [
+    {
+      resource: "max_leaderboard_entries",
+      value: "1",
+    },
+  ],
 };
 ```
 
 ## Fields
 
-| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `id`                                                               | [components.IDSearch](../../models/components/idsearch.md)         | :heavy_minus_sign:                                                 | N/A                                                                |
-| `resources`                                                        | [components.Resource](../../models/components/resource.md)[]       | :heavy_check_mark:                                                 | The resources to add for this account                              |
-| `vanity`                                                           | [components.VanitySearch](../../models/components/vanitysearch.md) | :heavy_minus_sign:                                                 | N/A                                                                |
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                     | [components.IDSearch](../../models/components/idsearch.md)                                               | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `reset`                                                                                                  | [components.Reset](../../models/components/reset.md)[]                                                   | :heavy_minus_sign:                                                                                       | Resources whose override to remove, so they fall back to the account's roles                             |
+| `resources`                                                                                              | [components.Resource](../../models/components/resource.md)[]                                             | :heavy_minus_sign:                                                                                       | Resources to set as overrides for this account. A value equal to the one that already applies is a no-op |
+| `vanity`                                                                                                 | [components.VanitySearch](../../models/components/vanitysearch.md)                                       | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
