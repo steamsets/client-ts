@@ -9,9 +9,12 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdminAccountResource,
+  AdminAccountResource$inboundSchema,
+} from "./adminaccountresource.js";
 import { Connection, Connection$inboundSchema } from "./connection.js";
 import { DeveloperApp, DeveloperApp$inboundSchema } from "./developerapp.js";
-import { Resource, Resource$inboundSchema } from "./resource.js";
 import { Role, Role$inboundSchema } from "./role.js";
 import { Session, Session$inboundSchema } from "./session.js";
 import {
@@ -120,9 +123,9 @@ export type V1AdminGetAccountResponseBody = {
    */
   region: string | null;
   /**
-   * The resources the account has (permissions)
+   * Every resource, one entry each, with the value that applies and where it comes from
    */
-  resources: Array<Resource> | null;
+  resources: Array<AdminAccountResource> | null;
   /**
    * Whether staff has hidden this account site-wide and locked it out of login
    */
@@ -198,7 +201,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodType<
   ),
   privacy: V1AdminGetAccountResponseBodyPrivacy$inboundSchema,
   region: z.nullable(z.string()),
-  resources: z.nullable(z.array(Resource$inboundSchema)),
+  resources: z.nullable(z.array(AdminAccountResource$inboundSchema)),
   restricted: z.boolean(),
   restrictedAt: z.nullable(
     z.string().datetime({ offset: true }).transform(v => new Date(v)),

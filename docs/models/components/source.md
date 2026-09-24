@@ -1,13 +1,13 @@
 # Source
 
-Which search surface to query.
+Where the value comes from
 
 ## Example Usage
 
 ```typescript
 import { Source } from "@steamsets/client-ts/models/components";
 
-let value: Source = "badge";
+let value: Source = "role";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: Source = "badge";
 ## Values
 
 ```typescript
-"badge" | "app" | "account" | Unrecognized<string>
+"override" | "role" | "default" | Unrecognized<string>
 ```

@@ -9,7 +9,7 @@ import { OpenEnum } from "../../types/enums.js";
 /**
  * Which search surface to query.
  */
-export const Source = {
+export const SearchGetTrendingRequestBodySource = {
   Badge: "badge",
   App: "app",
   Account: "account",
@@ -17,7 +17,9 @@ export const Source = {
 /**
  * Which search surface to query.
  */
-export type Source = OpenEnum<typeof Source>;
+export type SearchGetTrendingRequestBodySource = OpenEnum<
+  typeof SearchGetTrendingRequestBodySource
+>;
 
 /**
  * Lookback window for trending compute.
@@ -42,7 +44,7 @@ export type SearchGetTrendingRequestBody = {
   /**
    * Which search surface to query.
    */
-  source: Source;
+  source: SearchGetTrendingRequestBodySource;
   /**
    * Lookback window for trending compute.
    */
@@ -50,8 +52,11 @@ export type SearchGetTrendingRequestBody = {
 };
 
 /** @internal */
-export const Source$outboundSchema: z.ZodType<string, z.ZodTypeDef, Source> =
-  openEnums.outboundSchema(Source);
+export const SearchGetTrendingRequestBodySource$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  SearchGetTrendingRequestBodySource
+> = openEnums.outboundSchema(SearchGetTrendingRequestBodySource);
 
 /** @internal */
 export const SearchGetTrendingRequestBodyWindow$outboundSchema: z.ZodType<
@@ -74,7 +79,7 @@ export const SearchGetTrendingRequestBody$outboundSchema: z.ZodType<
   SearchGetTrendingRequestBody
 > = z.object({
   limit: z.number().int().optional(),
-  source: Source$outboundSchema,
+  source: SearchGetTrendingRequestBodySource$outboundSchema,
   window: SearchGetTrendingRequestBodyWindow$outboundSchema,
 });
 

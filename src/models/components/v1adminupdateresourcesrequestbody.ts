@@ -3,6 +3,8 @@
  */
 
 import * as z from "zod/v3";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -19,19 +21,47 @@ import {
   VanitySearch$outboundSchema,
 } from "./vanitysearch.js";
 
+export const Reset = {
+  GoToLeaderboardEntry: "go_to_leaderboard_entry",
+  MaxLeaderboardEntries: "max_leaderboard_entries",
+  AccountRefreshRate: "account_refresh_rate",
+  InventoryRefreshRate: "inventory_refresh_rate",
+  SocialLinks: "social_links",
+  Vanity: "vanity",
+  AccountQueues: "account_queues",
+  ShortLinkDomain: "short_link_domain",
+  MaxFindOwners: "max_find_owners",
+  MaxBadgeCrafters: "max_badge_crafters",
+  SearchResultLimit: "search_result_limit",
+  MaxCompareAccounts: "max_compare_accounts",
+  MaxSavedSearches: "max_saved_searches",
+  ProfileThemeColor: "profile_theme_color",
+  NameEffect: "name_effect",
+} as const;
+export type Reset = OpenEnum<typeof Reset>;
+
 export type V1AdminUpdateResourcesRequestBody = {
   id?: IDSearch | undefined;
   /**
-   * The resources to add for this account
+   * Resources whose override to remove, so they fall back to the account's roles
    */
-  resources: Array<Resource> | null;
+  reset?: Array<Reset> | null | undefined;
+  /**
+   * Resources to set as overrides for this account. A value equal to the one that already applies is a no-op
+   */
+  resources?: Array<Resource> | null | undefined;
   vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
+export const Reset$outboundSchema: z.ZodType<string, z.ZodTypeDef, Reset> =
+  openEnums.outboundSchema(Reset);
+
+/** @internal */
 export type V1AdminUpdateResourcesRequestBody$Outbound = {
   id?: IDSearch$Outbound | undefined;
-  resources: Array<Resource$Outbound> | null;
+  reset?: Array<string> | null | undefined;
+  resources?: Array<Resource$Outbound> | null | undefined;
   vanity?: VanitySearch$Outbound | undefined;
 };
 
@@ -42,7 +72,8 @@ export const V1AdminUpdateResourcesRequestBody$outboundSchema: z.ZodType<
   V1AdminUpdateResourcesRequestBody
 > = z.object({
   id: IDSearch$outboundSchema.optional(),
-  resources: z.nullable(z.array(Resource$outboundSchema)),
+  reset: z.nullable(z.array(Reset$outboundSchema)).optional(),
+  resources: z.nullable(z.array(Resource$outboundSchema)).optional(),
   vanity: VanitySearch$outboundSchema.optional(),
 });
 
