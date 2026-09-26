@@ -127,10 +127,15 @@ run();
 
 * [addSteamApiKey](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 * [banPlayer](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
+* [deleteSteamApiKey](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
+* [findSteamApiKey](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+* [listSteamApiKeys](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [restrictAccount](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
+* [revealSteamApiKey](docs/sdks/admin/README.md#revealsteamapikey) - Reveal a Steam Web API key
+* [testSteamApiKey](docs/sdks/admin/README.md#teststeamapikey) - Test a Steam Web API key against Steam
 * [unbanPlayer](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 * [updateAccount](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
@@ -699,14 +704,19 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAddSteamApiKey`](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 - [`adminBanPlayer`](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
+- [`adminDeleteSteamApiKey`](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
+- [`adminFindSteamApiKey`](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
 - [`adminGetPlayerBanStatus`](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+- [`adminListSteamApiKeys`](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 - [`adminMaintenanceCreate`](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
 - [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event
 - [`adminMaintenanceList`](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRemoveVanity`](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 - [`adminRestrictAccount`](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
+- [`adminRevealSteamApiKey`](docs/sdks/admin/README.md#revealsteamapikey) - Reveal a Steam Web API key
+- [`adminTestSteamApiKey`](docs/sdks/admin/README.md#teststeamapikey) - Test a Steam Web API key against Steam
 - [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 - [`adminUpdateAccount`](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
