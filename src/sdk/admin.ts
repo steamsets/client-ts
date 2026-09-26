@@ -4,10 +4,15 @@
 
 import { adminAddSteamApiKey } from "../funcs/adminAddSteamApiKey.js";
 import { adminBanPlayer } from "../funcs/adminBanPlayer.js";
+import { adminDeleteSteamApiKey } from "../funcs/adminDeleteSteamApiKey.js";
+import { adminFindSteamApiKey } from "../funcs/adminFindSteamApiKey.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
+import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
+import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
+import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
 import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
@@ -54,6 +59,34 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Delete a Steam Web API key
+   */
+  async deleteSteamApiKey(
+    request: components.V1AdminDeleteSteamApiKeyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminDeleteSteamApiKeyResponse> {
+    return unwrapAsync(adminDeleteSteamApiKey(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Find a stored Steam Web API key by its plaintext
+   */
+  async findSteamApiKey(
+    request: components.V1AdminFindSteamApiKeyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminFindSteamApiKeyResponse> {
+    return unwrapAsync(adminFindSteamApiKey(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Get account for admin
    */
   async getAccount(
@@ -82,6 +115,18 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * List Steam Web API keys
+   */
+  async listSteamApiKeys(
+    options?: RequestOptions,
+  ): Promise<operations.AdminListSteamApiKeysResponse> {
+    return unwrapAsync(adminListSteamApiKeys(
+      this,
+      options,
+    ));
+  }
+
+  /**
    * Remove vanity URL
    */
   async removeVanity(
@@ -103,6 +148,34 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminRestrictAccountResponse> {
     return unwrapAsync(adminRestrictAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Reveal a Steam Web API key
+   */
+  async revealSteamApiKey(
+    request: components.V1AdminRevealSteamApiKeyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminRevealSteamApiKeyResponse> {
+    return unwrapAsync(adminRevealSteamApiKey(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Test a Steam Web API key against Steam
+   */
+  async testSteamApiKey(
+    request: components.V1AdminTestSteamApiKeyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminTestSteamApiKeyResponse> {
+    return unwrapAsync(adminTestSteamApiKey(
       this,
       request,
       options,
