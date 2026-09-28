@@ -20,8 +20,6 @@ targets:
         sourceNamespace: api
         sourceRevisionDigest: sha256:f0899521d4cbb2393b5ed2d73979b113adf9a13f858a88b0baabf60b262df5c0
         sourceBlobDigest: sha256:ed711c556f0d523dd19e7fdfacbacd938373c2de5ba07d2b1f3f80ef3ca08097
-        codeSamplesNamespace: api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:4d4857b514a9ebc75b595746bd5b984de41ab5bc2f32f88fe684397a2816f138
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
