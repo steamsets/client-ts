@@ -56,7 +56,7 @@ go:
   packageName: openapi
   responseFormat: envelope-http
 typescript:
-  version: 0.37.13
+  version: 0.38.0
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -101,7 +101,7 @@ typescript:
   maxMethodParams: 0
   methodArguments: require-security-and-request
   modelPropertyCasing: camel
-  moduleFormat: commonjs
+  moduleFormat: dual
   multipartArrayFormat: legacy
   outputModelSuffix: output
   packageName: '@steamsets/client-ts'
@@ -117,4 +117,4 @@ typescript:
   useIndexModules: true
   useOxlint: false
   useTsgo: false
-  zodVersion: v3
+  zodVersion: v4-mini

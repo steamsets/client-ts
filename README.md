@@ -635,6 +635,9 @@ bun add @steamsets/client-ts
 ```bash
 yarn add @steamsets/client-ts
 ```
+
+> [!NOTE]
+> This package is published with CommonJS and ES Modules (ESM) support.
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
