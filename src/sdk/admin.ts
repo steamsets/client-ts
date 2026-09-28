@@ -5,6 +5,7 @@
 import { adminAddSteamApiKey } from "../funcs/adminAddSteamApiKey.js";
 import { adminBanPlayer } from "../funcs/adminBanPlayer.js";
 import { adminDeleteSteamApiKey } from "../funcs/adminDeleteSteamApiKey.js";
+import { adminExportSteamApiKeys } from "../funcs/adminExportSteamApiKeys.js";
 import { adminFindSteamApiKey } from "../funcs/adminFindSteamApiKey.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
@@ -66,6 +67,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminDeleteSteamApiKeyResponse> {
     return unwrapAsync(adminDeleteSteamApiKey(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Export Steam Web API keys in plaintext
+   */
+  async exportSteamApiKeys(
+    request: components.V1AdminExportSteamApiKeysRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminExportSteamApiKeysResponse> {
+    return unwrapAsync(adminExportSteamApiKeys(
       this,
       request,
       options,

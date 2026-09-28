@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 5ac8df929db30c3c23d8ca64de82f414
+  docChecksum: f21b201ef2076d6988fb3b0f989ea8ec
   docVersion: 1.0.0
   speakeasyVersion: 1.799.0
   generationVersion: 2.941.0
-  releaseVersion: 0.37.12
-  configChecksum: 84b7cd1253ae33fe1e907014864ceee9
+  releaseVersion: 0.37.13
+  configChecksum: 8be035f8263dcb698d3ed914cb26e115
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 9b858113-d2ba-424c-9006-6130ff74dacb
-  pristine_commit_hash: b4c68433763deb80a89a5bb1f74c8b4897ef529d
-  pristine_tree_hash: 5f82f9edfeda1e442bc714ba7350899286ae48a0
+  generation_id: cdccb935-5f52-4da8-ab3f-6c705d768ed3
+  pristine_commit_hash: 6fc84934935ca9e4011291d549018e63d3f818af
+  pristine_tree_hash: 7eabab82b472c0f13f25eb0312ff931cbe9f1a77
 features:
   go:
     additionalDependencies: 0.1.0
@@ -746,6 +746,10 @@ trackedFiles:
     id: 9f07f2d18a9f
     last_write_checksum: sha1:b68e16188cafc46cac097c81190059a41ec63436
     pristine_git_object: 83479e4b3def49c961efa5c86a5c179da7fa8e64
+  docs/models/components/types.md:
+    id: 6a1bb97ecb34
+    last_write_checksum: sha1:c8b4944afecc3db56ba5b3a2d092c27053d0b34b
+    pristine_git_object: 26b6d73d06375b7f6b22a1ca6a8627a9b3f19450
   docs/models/components/updaterequestbody.md:
     id: 02a1761b6638
     last_write_checksum: sha1:5f009fb5bebcbc453791f94af786979afb94128c
@@ -1122,6 +1126,26 @@ trackedFiles:
     id: 9ddade6b9931
     last_write_checksum: sha1:7564a1bd99e184c72c3c4d370d1adacf9d343a88
     pristine_git_object: 657a961da52f42ff9693e6c2da179d5b4f8cb25b
+  docs/models/components/v1adminexportedsteamapikey.md:
+    id: 0c2071e610ec
+    last_write_checksum: sha1:109bf9a2e42765ee4b9034746584572ed034d793
+    pristine_git_object: 4c1367c06e48d63a0939d3604d8b246624d1e250
+  docs/models/components/v1adminexportedsteamapikeytype.md:
+    id: c25c0831a156
+    last_write_checksum: sha1:b785d1440c6a6dc96d33bb545d16ef1ef96d3081
+    pristine_git_object: e0eed8e4d3ffec2c52332a41cfac21ce4414b23b
+  docs/models/components/v1adminexportsteamapikeysrequestbody.md:
+    id: 133eb615be42
+    last_write_checksum: sha1:6408e4c751a5f3322fdfb933d96285b9ca4db8e1
+    pristine_git_object: 7794814649d2c9c87ec1ee2fb760b869f5643885
+  docs/models/components/v1adminexportsteamapikeysrequestbodyorder.md:
+    id: 28528afde6cc
+    last_write_checksum: sha1:029d9b64f3ae3c2d89b7c222027b81c38b3da849
+    pristine_git_object: 1fe8d7d56ae697e755a957e7261316088d297d5c
+  docs/models/components/v1adminexportsteamapikeysresponsebody.md:
+    id: df2ae4bf8c39
+    last_write_checksum: sha1:8fca1e15686a3fbcf6058e3df00b606309e1f782
+    pristine_git_object: f4c01b512c5f5342ecf90ecb68cfb9a7cdc8d620
   docs/models/components/v1adminfindsteamapikeyrequestbody.md:
     id: 23852595363a
     last_write_checksum: sha1:fbfc069621b846a117f2b32247259ca92cae7be2
@@ -1610,6 +1634,10 @@ trackedFiles:
     id: 21d14780abb7
     last_write_checksum: sha1:2d93bf2acd83627ad12b1058322ac1df91d19108
     pristine_git_object: f10343074a5619ada86690e431614a49c73887f5
+  docs/models/operations/adminexportsteamapikeysresponse.md:
+    id: 999ad1137cc0
+    last_write_checksum: sha1:71694e341e41b57e8cf21585b0ac1a8674501af8
+    pristine_git_object: 8a8d4cc148fe977e612179b36ea64ae4324de181
   docs/models/operations/adminfindsteamapikeyresponse.md:
     id: 138f9c80a586
     last_write_checksum: sha1:be3992765de1862a402e44cb955d7d4ecc442a18
@@ -1904,8 +1932,8 @@ trackedFiles:
     pristine_git_object: 24457fb2f750e46df8d6144d80f1c38589fc4f06
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
-    last_write_checksum: sha1:d289e0ea326aad40652af5ca848e7b0c097b7eca
-    pristine_git_object: 93274c87c6ed6e0e8bca29d6b6f762b6018ff2b9
+    last_write_checksum: sha1:43af83434f86bcbc0aa1f64465ca037c759bc776
+    pristine_git_object: e0c044a929ca6f14352cfe490a1a639f2c8037d8
   docs/sdks/analytics/README.md:
     id: 4c84abb05030
     last_write_checksum: sha1:89f9de3cd721d0ea9c5a59b6f1bade35df588089
@@ -2000,12 +2028,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:3e6a48516d6527b9d2e445dce8723eeeab2f37db
-    pristine_git_object: 6212431fa65e54c61c0c4f7626ad34d209cc8b2a
+    last_write_checksum: sha1:2e762d70b1ebc3ce1f0e5598637b823809218b01
+    pristine_git_object: a1a61e2a035f5222c5643819b1b6734dca1c6219
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:9013c10f8a8f13a18d8a7a9ad18a1b3d3503b117
-    pristine_git_object: e64345af529957d6f294cb6146477aef195e86ff
+    last_write_checksum: sha1:b19cb2f6710304a70a0b9f6d84dae39f8be56d43
+    pristine_git_object: f40a6075121d9037800199cc00a882e5389777ce
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2202,6 +2230,10 @@ trackedFiles:
     id: 79f2895daa9c
     last_write_checksum: sha1:fc668968920e12593a7addeb2290d4f68a988fba
     pristine_git_object: d05cb0e79be1f0b70ec3e45b2a21a62186c5873c
+  src/funcs/adminExportSteamApiKeys.ts:
+    id: 05555155b203
+    last_write_checksum: sha1:8654d81b1e1b1660b21d450cabebc1e6761fc951
+    pristine_git_object: de6580afd543318c2cdc643737ff6ef411f41f49
   src/funcs/adminFindSteamApiKey.ts:
     id: 25ec45f62313
     last_write_checksum: sha1:1593a1222c0008b26903e2bbd4cec53feac6be74
@@ -2416,8 +2448,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:0f4a2ee54a3da35532be5a4808a8cc871e20b296
-    pristine_git_object: 20183f36962c310a3b905ee4b97f126d96d7d682
+    last_write_checksum: sha1:66a4dcfddc5f3226fd0b509fe0598f01eb0e1c6c
+    pristine_git_object: 238577806e9be9e7f1724f1d124127e415346ec9
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -2776,8 +2808,8 @@ trackedFiles:
     pristine_git_object: a1841062ea2ec225755404e5cbe647ea24862dcc
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:26058976d1bdaf858e2c88f7c1bb7d376444b99b
-    pristine_git_object: d7563d381bf4eff3b7f8fe90de60c67beddb139b
+    last_write_checksum: sha1:72704a4d5ac2f7a51155854b681df796b3984c80
+    pristine_git_object: ce2283371434bca23160202dc5f8bb8ee3c65b3e
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:162d4e9dbd16d85446665538e8aafaa5090b70ae
@@ -3258,6 +3290,18 @@ trackedFiles:
     id: 5aaca07b3c06
     last_write_checksum: sha1:4b9619aec0d667ff5a7fe28c1350da2d4de12983
     pristine_git_object: 00de5a69d28d46fc69677df77db5f2cc802d2b39
+  src/models/components/v1adminexportedsteamapikey.ts:
+    id: 6536a7ba847f
+    last_write_checksum: sha1:18c52b527a105e68afd9172ad67e12d7c7e617d2
+    pristine_git_object: ad302b6d837dd6235bd9a5e73fdd9a1f0a47610a
+  src/models/components/v1adminexportsteamapikeysrequestbody.ts:
+    id: 1e6123ce908d
+    last_write_checksum: sha1:7aed9be16ff6fb98edf60d1e1e4d81d2dddb9a25
+    pristine_git_object: 4cad91ca3d4b317d1f23fa231d2fb3171a49e21d
+  src/models/components/v1adminexportsteamapikeysresponsebody.ts:
+    id: d3fe15052e3c
+    last_write_checksum: sha1:07b6f032e19a5557d1f72b0673e804b3f6e59d39
+    pristine_git_object: d1a49532fbce279a072933342ff0b25173f20bf9
   src/models/components/v1adminfindsteamapikeyrequestbody.ts:
     id: 3d55b1340cdd
     last_write_checksum: sha1:c477c33ffdebd6105ae6d2d91eafccf06e67e366
@@ -3666,6 +3710,10 @@ trackedFiles:
     id: 355b02832574
     last_write_checksum: sha1:f57aa9711cb888d2e872625e543dae5cb4279eb5
     pristine_git_object: a3bb5a9550698c1fa646141e192727871f2d5c18
+  src/models/operations/adminexportsteamapikeys.ts:
+    id: 3fe6083ec8e8
+    last_write_checksum: sha1:c59a4023708355c76898baa9c7916ed8db794051
+    pristine_git_object: cb2f1855506298b9c476e1cc63391dedcb894898
   src/models/operations/adminfindsteamapikey.ts:
     id: c783baeb9ae4
     last_write_checksum: sha1:8807b484759ea92998e26ed828e496204d8f5fd6
@@ -3800,8 +3848,8 @@ trackedFiles:
     pristine_git_object: e28f392798cb876e15b621a3588a7121fc74d6a1
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:abb3b7e0363311da9343e2d233ad56745549577c
-    pristine_git_object: 6d1c400d04d7375d54a8b4778b565be636c72be4
+    last_write_checksum: sha1:fa051535bb01c770aa6dfd428e2ca7e2fc940b9f
+    pristine_git_object: a2851e77eb01c14d9bcd0c4cddc208a8554d8187
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:b9e0bdc1000aeb39213fc7c8cac90d4532ee5968
@@ -3892,8 +3940,8 @@ trackedFiles:
     pristine_git_object: e9fc8be8a8f5e6b63e0ef1facee639af955f8215
   src/sdk/admin.ts:
     id: 953a3fbbcdcf
-    last_write_checksum: sha1:ee425d751f2d7039dc74cd15c94adb0ddae0eaa2
-    pristine_git_object: 4b272fc27ec0a0814f61861664fba10864cb2656
+    last_write_checksum: sha1:4a51609aeffedce1da0a7a2ca41722ebf3663871
+    pristine_git_object: 1ec4618d9b821a6900bc889dbc7eef9c33ee2e15
   src/sdk/analytics.ts:
     id: 411d91261be3
     last_write_checksum: sha1:380b658d8b07c69c76bb705bb006603ecd84c7ab
@@ -5645,9 +5693,22 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  admin.exportSteamApiKeys:
+    speakeasy-default-admin-export-steam-api-keys:
+      requestBody:
+        application/json: {"order": "newest"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminExportSteamApiKeysResponseBody.json", "broken": 805207, "keys": [{"createdAt": "2024-07-26T22:14:55.052Z", "key": "<key>", "keyId": "<id>", "type": "publisher", "updatedAt": "2024-02-16T21:04:57.799Z"}], "matched": 857922}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.addSteamApiKey()`: \n  *  `request.keyId` **Removed** (Breaking ⚠️)\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `steamsets.admin.exportSteamApiKeys()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
