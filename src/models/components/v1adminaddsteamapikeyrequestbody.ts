@@ -26,10 +26,6 @@ export type V1AdminAddSteamApiKeyRequestBody = {
    */
   key: string;
   /**
-   * Caller-provided identifier for the key (primary key)
-   */
-  keyId: string;
-  /**
    * Steam Web API key type
    */
   type: V1AdminAddSteamApiKeyRequestBodyType;
@@ -45,7 +41,6 @@ export const V1AdminAddSteamApiKeyRequestBodyType$outboundSchema: z.ZodType<
 /** @internal */
 export type V1AdminAddSteamApiKeyRequestBody$Outbound = {
   key: string;
-  keyId: string;
   type: string;
 };
 
@@ -56,7 +51,6 @@ export const V1AdminAddSteamApiKeyRequestBody$outboundSchema: z.ZodType<
   V1AdminAddSteamApiKeyRequestBody
 > = z.object({
   key: z.string(),
-  keyId: z.string(),
   type: V1AdminAddSteamApiKeyRequestBodyType$outboundSchema,
 });
 

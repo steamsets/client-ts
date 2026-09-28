@@ -40,7 +40,6 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.addSteamApiKey({
     key: "<key>",
-    keyId: "<id>",
     type: "publisher",
   });
 
@@ -67,7 +66,6 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminAddSteamApiKey(steamSets, {
     key: "<key>",
-    keyId: "<id>",
     type: "publisher",
   });
   if (res.ok) {

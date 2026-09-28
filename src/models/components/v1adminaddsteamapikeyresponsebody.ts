@@ -13,6 +13,9 @@ export type V1AdminAddSteamApiKeyResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  /**
+   * The generated identifier of the stored key
+   */
   keyId: string;
 };
 
