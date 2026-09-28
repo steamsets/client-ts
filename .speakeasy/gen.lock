@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4dc127e3ad4f455ba11f812e8aa0508b
+  docChecksum: 5ac8df929db30c3c23d8ca64de82f414
   docVersion: 1.0.0
   speakeasyVersion: 1.799.0
   generationVersion: 2.941.0
-  releaseVersion: 0.37.11
-  configChecksum: f9dfaeb1309c8909ff1f3fd427adc429
+  releaseVersion: 0.37.12
+  configChecksum: 84b7cd1253ae33fe1e907014864ceee9
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: e5e67f8d-9d17-4de1-9f54-f8805efd07f2
-  pristine_commit_hash: 0bb5de44cbb2e4138d7f169012437e708bf5d815
-  pristine_tree_hash: 9de61d71946cbc1f24ff652a092856109106a697
+  generation_id: 9b858113-d2ba-424c-9006-6130ff74dacb
+  pristine_commit_hash: b4c68433763deb80a89a5bb1f74c8b4897ef529d
+  pristine_tree_hash: 5f82f9edfeda1e442bc714ba7350899286ae48a0
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1096,16 +1096,16 @@ trackedFiles:
     pristine_git_object: 711c0c2a4c5ac6d9ff97aabc24113ebaed2f2be9
   docs/models/components/v1adminaddsteamapikeyrequestbody.md:
     id: f14ee433da6b
-    last_write_checksum: sha1:6e7728e8377210132718ff5e41eb6b580fda5ef0
-    pristine_git_object: 40d4e0048cad98039366226af87f9730c32072f1
+    last_write_checksum: sha1:122611f8ddf4d9d276c8a5f41c4095d1c034b045
+    pristine_git_object: 1761e67015c60892fc425a7ddd0eeee1bf70574c
   docs/models/components/v1adminaddsteamapikeyrequestbodytype.md:
     id: 8699fb5b547b
     last_write_checksum: sha1:d04cbf4be9bebc21704b99906c091932bc3768c3
     pristine_git_object: 5698465baaa74d9ec897d2988ece8b661dcb6466
   docs/models/components/v1adminaddsteamapikeyresponsebody.md:
     id: b71388a07fe0
-    last_write_checksum: sha1:284d563db800b7816f9abac2e11d6a66282f03c7
-    pristine_git_object: 3302305e1528333a3fa0ea44ae94c5c32d99f3d5
+    last_write_checksum: sha1:575ac7e093cd1a6ff611d4dc4b5c716b9dc28263
+    pristine_git_object: 05fc68fcfed6d985533de6742fc0241589c3357f
   docs/models/components/v1adminbanplayerrequestbody.md:
     id: 7e37b1ef2503
     last_write_checksum: sha1:dad2cf9a732360638ba4028b5aec4305768ef54e
@@ -1904,8 +1904,8 @@ trackedFiles:
     pristine_git_object: 24457fb2f750e46df8d6144d80f1c38589fc4f06
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
-    last_write_checksum: sha1:881262850cae08ca36de3e86b4b9dfa65d4223ae
-    pristine_git_object: e5387a5a42609f420bfd1fdd92c31f4329e44fc8
+    last_write_checksum: sha1:d289e0ea326aad40652af5ca848e7b0c097b7eca
+    pristine_git_object: 93274c87c6ed6e0e8bca29d6b6f762b6018ff2b9
   docs/sdks/analytics/README.md:
     id: 4c84abb05030
     last_write_checksum: sha1:89f9de3cd721d0ea9c5a59b6f1bade35df588089
@@ -2000,12 +2000,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:f7cf61aed8e4c9bb3989e6fab38db8825719862a
-    pristine_git_object: 906a132e517bd42837167971ed138b2d7de4685c
+    last_write_checksum: sha1:3e6a48516d6527b9d2e445dce8723eeeab2f37db
+    pristine_git_object: 6212431fa65e54c61c0c4f7626ad34d209cc8b2a
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:f2abc9b6bfbc34f745a10c58b45b3c6a6b9b65ec
-    pristine_git_object: 389bf24304506ea282ed0442790cb950fac4e9a3
+    last_write_checksum: sha1:9013c10f8a8f13a18d8a7a9ad18a1b3d3503b117
+    pristine_git_object: e64345af529957d6f294cb6146477aef195e86ff
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2416,8 +2416,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:0f9fa6d0abe4df4361667663621febd33df4f518
-    pristine_git_object: 7f5d5a4e72f7227e5d220ec92a1fa69db3048374
+    last_write_checksum: sha1:0f4a2ee54a3da35532be5a4808a8cc871e20b296
+    pristine_git_object: 20183f36962c310a3b905ee4b97f126d96d7d682
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3236,12 +3236,12 @@ trackedFiles:
     pristine_git_object: 5629c40b7099fb5618e77395aa1e62aac71c871b
   src/models/components/v1adminaddsteamapikeyrequestbody.ts:
     id: 2e282124d52e
-    last_write_checksum: sha1:06471b7b7f78b20fe14e800f5d7447ab55e1ae9b
-    pristine_git_object: 3177ccbd74c94b6ec2edb614f35bc0d53f1125a6
+    last_write_checksum: sha1:c4fed0f4ee6efacd2af5b60c154a78fe086a28d3
+    pristine_git_object: f4d3ea034dcacad0199491dae82c10e39d02d2b9
   src/models/components/v1adminaddsteamapikeyresponsebody.ts:
     id: bc29f1fc6556
-    last_write_checksum: sha1:f2483332e9d7bd20cedf69c70e34870e0081dda6
-    pristine_git_object: 94e10d11889aef744fabf7a467457a883a4a340e
+    last_write_checksum: sha1:33f424dc87387a6df4e4eb2dbf1f65de3f3b2e1e
+    pristine_git_object: 66e71b5417c1a3f012e0a963fa8ff2081e2b6343
   src/models/components/v1adminbanplayerrequestbody.ts:
     id: e825cb1c6a5e
     last_write_checksum: sha1:ff699d38010207f40309011383022a9c92a74570
@@ -5479,7 +5479,7 @@ examples:
   admin.addSteamApiKey:
     speakeasy-default-admin-add-steam-api-key:
       requestBody:
-        application/json: {"key": "<key>", "keyId": "<id>", "type": "publisher"}
+        application/json: {"key": "<key>", "type": "publisher"}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminAddSteamApiKeyResponseBody.json", "keyId": "<id>"}
@@ -5647,13 +5647,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.admin.deleteSteamApiKey()`: **Added**
-  * `steamsets.admin.findSteamApiKey()`: **Added**
-  * `steamsets.admin.listSteamApiKeys()`: **Added**
-  * `steamsets.admin.revealSteamApiKey()`: **Added**
-  * `steamsets.admin.testSteamApiKey()`: **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.addSteamApiKey()`: \n  *  `request.keyId` **Removed** (Breaking ⚠️)\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
