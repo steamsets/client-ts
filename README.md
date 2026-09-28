@@ -128,6 +128,7 @@ run();
 * [addSteamApiKey](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 * [banPlayer](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
 * [deleteSteamApiKey](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
+* [exportSteamApiKeys](docs/sdks/admin/README.md#exportsteamapikeys) - Export Steam Web API keys in plaintext
 * [findSteamApiKey](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
@@ -705,6 +706,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminAddSteamApiKey`](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 - [`adminBanPlayer`](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
 - [`adminDeleteSteamApiKey`](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
+- [`adminExportSteamApiKeys`](docs/sdks/admin/README.md#exportsteamapikeys) - Export Steam Web API keys in plaintext
 - [`adminFindSteamApiKey`](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
 - [`adminGetPlayerBanStatus`](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
