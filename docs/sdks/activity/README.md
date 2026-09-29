@@ -27,6 +27,8 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.activity.listAccountFeed({
     accountId: 607533,
+    since: new Date("2026-01-01T00:00:00Z"),
+    until: new Date("2026-02-01T00:00:00Z"),
   });
 
   for await (const page of result) {
@@ -54,6 +56,8 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await activityListAccountFeed(steamSets, {
     accountId: 607533,
+    since: new Date("2026-01-01T00:00:00Z"),
+    until: new Date("2026-02-01T00:00:00Z"),
   });
   if (res.ok) {
     const { value: result } = res;
@@ -104,7 +108,10 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.listGlobalFeed({});
+  const result = await steamSets.activity.listGlobalFeed({
+    since: new Date("2026-01-01T00:00:00Z"),
+    until: new Date("2026-02-01T00:00:00Z"),
+  });
 
   for await (const page of result) {
     console.log(page);
@@ -129,7 +136,10 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await activityListGlobalFeed(steamSets, {});
+  const res = await activityListGlobalFeed(steamSets, {
+    since: new Date("2026-01-01T00:00:00Z"),
+    until: new Date("2026-02-01T00:00:00Z"),
+  });
   if (res.ok) {
     const { value: result } = res;
     for await (const page of result) {
