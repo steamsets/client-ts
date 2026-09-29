@@ -21,6 +21,14 @@ export type V1ActivityListAccountFeedRequestBody = {
    * Max events returned.
    */
   limit?: number | undefined;
+  /**
+   * Return only events at or after this time (RFC 3339, inclusive). Omit for no lower bound.
+   */
+  since?: Date | undefined;
+  /**
+   * Return only events before this time (RFC 3339, exclusive). Omit for no upper bound. Must be at or after since.
+   */
+  until?: Date | undefined;
 };
 
 /** @internal */
@@ -29,6 +37,8 @@ export type V1ActivityListAccountFeedRequestBody$Outbound = {
   cursor?: string | undefined;
   eventTypes?: Array<string> | null | undefined;
   limit?: number | undefined;
+  since?: string | undefined;
+  until?: string | undefined;
 };
 
 /** @internal */
@@ -40,6 +50,8 @@ export const V1ActivityListAccountFeedRequestBody$outboundSchema: z.ZodMiniType<
   cursor: z.optional(z.string()),
   eventTypes: z.optional(z.nullable(z.array(z.string()))),
   limit: z.optional(z.int()),
+  since: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+  until: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
 });
 
 export function v1ActivityListAccountFeedRequestBodyToJSON(
