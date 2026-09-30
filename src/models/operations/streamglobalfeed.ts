@@ -10,6 +10,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type StreamGlobalFeedRequest = {
+  /**
+   * Send only warm-up events at or after this time (RFC 3339, inclusive). Pass the occurredAt of the newest event that the client already has. Omit to get the newest 30 events.
+   */
+  since?: Date | undefined;
+};
+
 export type EventActivityHeartbeat = {
   data: components.V1ActivityStreamHeartbeat;
   /**
@@ -62,6 +69,27 @@ export type StreamGlobalFeedResponse = {
    */
   errorModel?: components.ErrorModel | undefined;
 };
+
+/** @internal */
+export type StreamGlobalFeedRequest$Outbound = {
+  since?: string | undefined;
+};
+
+/** @internal */
+export const StreamGlobalFeedRequest$outboundSchema: z.ZodMiniType<
+  StreamGlobalFeedRequest$Outbound,
+  StreamGlobalFeedRequest
+> = z.object({
+  since: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+});
+
+export function streamGlobalFeedRequestToJSON(
+  streamGlobalFeedRequest: StreamGlobalFeedRequest,
+): string {
+  return JSON.stringify(
+    StreamGlobalFeedRequest$outboundSchema.parse(streamGlobalFeedRequest),
+  );
+}
 
 /** @internal */
 export const EventActivityHeartbeat$inboundSchema: z.ZodMiniType<
