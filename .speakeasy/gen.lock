@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 30850b116c814da7ea264b2356ccc743
+  docChecksum: eaf76831dcec0e91d0e475e8fa3c20a6
   docVersion: 1.0.0
-  speakeasyVersion: 1.799.0
-  generationVersion: 2.941.0
-  releaseVersion: 0.38.3
-  configChecksum: 828a69a997a37ce80b30b95c7afbce5a
+  speakeasyVersion: 1.800.0
+  generationVersion: 2.943.0
+  releaseVersion: 0.38.4
+  configChecksum: 4c3a13e8e6f790547382bcca2dbe322f
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: ecd776a6-901f-495c-8fde-743fdc81757a
-  pristine_commit_hash: 859a95756747adf90f11e254ec99692d2b35bbcb
-  pristine_tree_hash: fa180167f33ef371986cd316b5f326c71d222893
+  generation_id: e3ce7522-ed19-4ef0-b693-af486ed5bf22
+  pristine_commit_hash: 0dd8d75a5bae15b0bf3865bca1a691da47fd2ade
+  pristine_tree_hash: 86165aa0be932be481ecb9d306fc3786dede9685
 features:
   go:
     additionalDependencies: 0.1.0
@@ -56,7 +56,7 @@ features:
     retries: 2.83.2
     sdkHooks: 0.4.0
     serverEvents: 0.2.4
-    unions: 2.86.5
+    unions: 2.86.7
 trackedFiles:
   .devcontainer/README.md:
     id: b170c0f184ac
@@ -988,8 +988,8 @@ trackedFiles:
     pristine_git_object: 127cd2a99017234e70c674fccf3f1ea206e86fee
   docs/models/components/v1accountplaytimedatapoint.md:
     id: 054782ae57db
-    last_write_checksum: sha1:e9d6866186b13869786cf59b75b613fb53b8b3e6
-    pristine_git_object: ee9c7b7bc3b99102bf080b6804e56822c6b6f6f4
+    last_write_checksum: sha1:8b7a097dff13a565d368fa37b6698a6bc5d62f96
+    pristine_git_object: 2ab5273d4898f2a64d4ff3bc9afe87287cd6029a
   docs/models/components/v1accountqueueinventoryrefreshrequestbody.md:
     id: 1dbc9b204e83
     last_write_checksum: sha1:6330ef15f146876fc30d0f35de7dcbbc691eaffe
@@ -2044,12 +2044,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:2bb16fb2ef15536819b4f465e94aae877fdedb5e
-    pristine_git_object: 05a6557ab7238760de504958bfe8ecc60894c081
+    last_write_checksum: sha1:bda55ece39a3fc06bc27e89dd8999174cb1ff0af
+    pristine_git_object: 6dcf4d0f5f2662de214836c90d5b578108601187
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:a3b4b031ad626d93007057f4da3122e29639be40
-    pristine_git_object: 8db9cec00ab9c7c2710ae6d43abfef257713886b
+    last_write_checksum: sha1:d4027aa10f37714b529b0b2b10d3e7a20df0457e
+    pristine_git_object: 4140d69890395767d806f255a61591e5e9fbe9e5
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2464,8 +2464,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ec78981022d864dae8c2d54e2e7b15b5d3219809
-    pristine_git_object: 575855f611d66502c4088eb57b85440814b4e87b
+    last_write_checksum: sha1:008b7708e40963f6a74a4c9a93e28720b134d078
+    pristine_git_object: f75acd574343d51176cb08996ebb3f94d33c4577
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3172,8 +3172,8 @@ trackedFiles:
     pristine_git_object: e203e5b241e5a03e4eafdd8e90a56d28c04d471d
   src/models/components/v1accountplaytimedatapoint.ts:
     id: e9718ff13beb
-    last_write_checksum: sha1:5e937a8f447de437b2380a1d4fe09fb6e8ebe5b2
-    pristine_git_object: 7d5969a01dde9e964ab99dccbdc022dd81025587
+    last_write_checksum: sha1:32adeee77734e9b5e620ffe8d4a4d358d39354cd
+    pristine_git_object: c86e98cb152f9a28c8b1e767699069bf0125e905
   src/models/components/v1accountqueueinventoryrefreshrequestbody.ts:
     id: 4db36b9ef65a
     last_write_checksum: sha1:9f0e16720cc3defd624de88cabb69b0d880a7c7d
@@ -5729,7 +5729,9 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.listFriends()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `steamsets.account.getDataPoints()`:  `response.playtime[].headerHash` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
