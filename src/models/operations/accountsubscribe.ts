@@ -65,10 +65,27 @@ export type EventAccountUpdated = {
   retry?: number | undefined;
 };
 
+export type EventAccountUpdateProgress = {
+  data: components.EventAccountUpdateProgressData;
+  /**
+   * The event name.
+   */
+  event: "account-update-progress";
+  /**
+   * The event ID.
+   */
+  id?: string | undefined;
+  /**
+   * The retry time in milliseconds.
+   */
+  retry?: number | undefined;
+};
+
 /**
  * Each oneOf object in the array represents one possible Server Sent Events (SSE) message, serialized as UTF-8 text according to the SSE specification.
  */
 export type AccountSubscribeServerSentEvents =
+  | EventAccountUpdateProgress
   | EventAccountUpdated
   | EventAccountViewTick
   | EventHeartbeat;
@@ -79,7 +96,12 @@ export type AccountSubscribeResponse = {
    * OK
    */
   serverSentEvents?:
-    | EventStream<EventAccountUpdated | EventAccountViewTick | EventHeartbeat>
+    | EventStream<
+      | EventAccountUpdateProgress
+      | EventAccountUpdated
+      | EventAccountViewTick
+      | EventHeartbeat
+    >
     | undefined;
 };
 
@@ -222,10 +244,50 @@ export function eventAccountUpdatedFromJSON(
 }
 
 /** @internal */
+export const EventAccountUpdateProgress$inboundSchema: z.ZodMiniType<
+  EventAccountUpdateProgress,
+  unknown
+> = z.object({
+  data: z.pipe(
+    z.pipe(
+      z.unknown(),
+      z.transform((v, ctx) => {
+        if (typeof v !== "string") return v;
+        try {
+          return JSON.parse(v);
+        } catch (err) {
+          ctx.issues.push({
+            input: v,
+            code: "custom",
+            message: `malformed json: ${err}`,
+          });
+          return z.NEVER;
+        }
+      }),
+    ),
+    components.EventAccountUpdateProgressData$inboundSchema,
+  ),
+  event: z.literal("account-update-progress"),
+  id: z.optional(z.string()),
+  retry: z.optional(z.int()),
+});
+
+export function eventAccountUpdateProgressFromJSON(
+  jsonString: string,
+): SafeParseResult<EventAccountUpdateProgress, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EventAccountUpdateProgress$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EventAccountUpdateProgress' from JSON`,
+  );
+}
+
+/** @internal */
 export const AccountSubscribeServerSentEvents$inboundSchema: z.ZodMiniType<
   AccountSubscribeServerSentEvents,
   unknown
 > = z.union([
+  z.lazy(() => EventAccountUpdateProgress$inboundSchema),
   z.lazy(() => EventAccountUpdated$inboundSchema),
   z.lazy(() => EventAccountViewTick$inboundSchema),
   z.lazy(() => EventHeartbeat$inboundSchema),
@@ -256,6 +318,7 @@ export const AccountSubscribeResponse$inboundSchema: z.ZodMiniType<
             return {
               done: false,
               value: z.union([
+                z.lazy(() => EventAccountUpdateProgress$inboundSchema),
                 z.lazy(() => EventAccountUpdated$inboundSchema),
                 z.lazy(() => EventAccountViewTick$inboundSchema),
                 z.lazy(() => EventHeartbeat$inboundSchema),

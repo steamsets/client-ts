@@ -39,10 +39,11 @@ All Requests related to account(s) are grouped here.
 * [refreshInventory](#refreshinventory) - Refresh inventory
 * [refreshSession](#refreshsession) - Refresh session token
 * [sendEmailVerification](#sendemailverification) - Send email verification
-* [subscribe](#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
+* [subscribe](#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](#subscribeemail) - Subscribe to email notifications
 * [updateConnection](#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](#updatedeveloperapp) - Update developer application
+* [updateProgress](#updateprogress) - Get the live progress of an account's most recent update.
 * [updateRole](#updaterole) - Update account role
 * [updateSettings](#updatesettings) - Update account settings
 * [updateVanity](#updatevanity) - Update account vanity URL
@@ -2520,7 +2521,7 @@ run();
 
 ## subscribe
 
-Server-sent-events stream of per-account updates (queue status, view ticks).
+Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 
 ### Example Usage
 
@@ -2833,6 +2834,77 @@ run();
 ### Response
 
 **Promise\<[operations.AccountUpdateDeveloperAppResponse](../../models/operations/accountupdatedeveloperappresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## updateProgress
+
+Get the live progress of an account's most recent update.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.updateProgress" method="post" path="/v1/account.updateProgress" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.updateProgress({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountUpdateProgress } from "@steamsets/client-ts/funcs/accountUpdateProgress.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountUpdateProgress(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountUpdateProgress failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountSearch](../../models/components/accountsearch.md)                                                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountUpdateProgressResponse](../../models/operations/accountupdateprogressresponse.md)\>**
 
 ### Errors
 

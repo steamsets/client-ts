@@ -107,10 +107,11 @@ run();
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
-* [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
+* [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+* [updateProgress](docs/sdks/account/README.md#updateprogress) - Get the live progress of an account's most recent update.
 * [updateRole](docs/sdks/account/README.md#updaterole) - Update account role
 * [updateSettings](docs/sdks/account/README.md#updatesettings) - Update account settings
 * [updateVanity](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
@@ -694,10 +695,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
-- [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks).
+- [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+- [`accountUpdateProgress`](docs/sdks/account/README.md#updateprogress) - Get the live progress of an account's most recent update.
 - [`accountUpdateRole`](docs/sdks/account/README.md#updaterole) - Update account role
 - [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings) - Update account settings
 - [`accountUpdateVanity`](docs/sdks/account/README.md#updatevanity) - Update account vanity URL

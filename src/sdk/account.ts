@@ -39,6 +39,7 @@ import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
+import { accountUpdateProgress } from "../funcs/accountUpdateProgress.js";
 import { accountUpdateRole } from "../funcs/accountUpdateRole.js";
 import { accountUpdateSettings } from "../funcs/accountUpdateSettings.js";
 import { accountUpdateVanity } from "../funcs/accountUpdateVanity.js";
@@ -512,7 +513,7 @@ export class Account extends ClientSDK {
   }
 
   /**
-   * Server-sent-events stream of per-account updates (queue status, view ticks).
+   * Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
    */
   async subscribe(
     request: operations.AccountSubscribeRequest,
@@ -561,6 +562,20 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountUpdateDeveloperAppResponse> {
     return unwrapAsync(accountUpdateDeveloperApp(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get the live progress of an account's most recent update.
+   */
+  async updateProgress(
+    request: components.AccountSearch,
+    options?: RequestOptions,
+  ): Promise<operations.AccountUpdateProgressResponse> {
+    return unwrapAsync(accountUpdateProgress(
       this,
       request,
       options,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { SteamSetsCore } from "../core.js";
-import { encodeFormQuery } from "../lib/encodings.js";
+import { encodeJSON } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -12,6 +12,7 @@ import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
+import * as components from "../models/components/index.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -28,15 +29,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
+ * Get the live progress of an account's most recent update.
  */
-export function accountSubscribe(
+export function accountUpdateProgress(
   client: SteamSetsCore,
-  request: operations.AccountSubscribeRequest,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountSubscribeResponse,
+    operations.AccountUpdateProgressResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -57,12 +58,12 @@ export function accountSubscribe(
 
 async function $do(
   client: SteamSetsCore,
-  request: operations.AccountSubscribeRequest,
+  request: components.AccountSearch,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountSubscribeResponse,
+      operations.AccountUpdateProgressResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -78,24 +79,20 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      z.parse(operations.AccountSubscribeRequest$outboundSchema, value),
+    (value) => z.parse(components.AccountSearch$outboundSchema, value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.subscribe")();
-
-  const query = encodeFormQuery({
-    "accountId": payload.accountId,
-  }, { explode: false });
+  const path = pathToFunc("/v1/account.updateProgress")();
 
   const headers = new Headers(compactMap({
-    Accept: "text/event-stream",
+    "Content-Type": "application/json",
+    Accept: "application/json",
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -105,7 +102,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.subscribe",
+    operationID: "account.updateProgress",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -129,15 +126,14 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "POST",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    query: query,
     body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,
-    timeoutMs: options?.timeoutMs || client._options.timeoutMs || 86400000,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || 30000,
   }, options);
   if (!requestRes.ok) {
     return [requestRes, { status: "invalid" }];
@@ -161,7 +157,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountSubscribeResponse,
+    operations.AccountUpdateProgressResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -172,10 +168,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.sse(200, operations.AccountSubscribeResponse$inboundSchema, {
-      key: "Server Sent Events",
+    M.json(200, operations.AccountUpdateProgressResponse$inboundSchema, {
+      key: "V1AccountUpdateProgressResponseBody",
     }),
-    M.jsonErr([400, 401, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {
