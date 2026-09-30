@@ -5,6 +5,25 @@ Each oneOf object in the array represents one possible Server Sent Events (SSE) 
 
 ## Supported Types
 
+### `operations.EventAccountUpdateProgress`
+
+```typescript
+const value: operations.EventAccountUpdateProgress = {
+  data: {
+    progress: {
+      accountId: 150321,
+      currentStep: "<value>",
+      percent: 350558,
+      runId: "<id>",
+      status: "<value>",
+      steps: null,
+      updatedAt: new Date("2025-06-04T21:02:17.433Z"),
+    },
+  },
+  event: "account-update-progress",
+};
+```
+
 ### `operations.EventAccountUpdated`
 
 ```typescript
