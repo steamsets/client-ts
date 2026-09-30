@@ -13,6 +13,10 @@ export type V1AccountPlaytimeDataPoint = {
    */
   appId: number;
   /**
+   * Directory of the app's store header. Build store_item_assets/steam/apps/{appId}/{headerHash}/header.jpg when set, or store_item_assets/steam/apps/{appId}/header.jpg when empty
+   */
+  headerHash: string;
+  /**
    * The image of the app
    */
   image: string;
@@ -32,6 +36,7 @@ export const V1AccountPlaytimeDataPoint$inboundSchema: z.ZodMiniType<
   unknown
 > = z.object({
   appId: z.int(),
+  headerHash: z.string(),
   image: z.string(),
   name: z.string(),
   playtime: z.int(),
