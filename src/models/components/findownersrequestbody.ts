@@ -9,14 +9,16 @@ import { OpenEnum } from "../../types/enums.js";
 /**
  * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
  */
-export const Sort = {
+export const FindOwnersRequestBodySort = {
   Owned: "owned",
   Closest: "closest",
 } as const;
 /**
  * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
  */
-export type Sort = OpenEnum<typeof Sort>;
+export type FindOwnersRequestBodySort = OpenEnum<
+  typeof FindOwnersRequestBodySort
+>;
 
 export type FindOwnersRequestBody = {
   /**
@@ -42,12 +44,14 @@ export type FindOwnersRequestBody = {
   /**
    * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
    */
-  sort?: Sort | undefined;
+  sort?: FindOwnersRequestBodySort | undefined;
 };
 
 /** @internal */
-export const Sort$outboundSchema: z.ZodMiniType<string, Sort> = openEnums
-  .outboundSchema(Sort);
+export const FindOwnersRequestBodySort$outboundSchema: z.ZodMiniType<
+  string,
+  FindOwnersRequestBodySort
+> = openEnums.outboundSchema(FindOwnersRequestBodySort);
 
 /** @internal */
 export type FindOwnersRequestBody$Outbound = {
@@ -69,7 +73,7 @@ export const FindOwnersRequestBody$outboundSchema: z.ZodMiniType<
   maxDepth: z.optional(z.int()),
   offset: z.optional(z.int()),
   ownersPerItem: z.optional(z.int()),
-  sort: z.optional(Sort$outboundSchema),
+  sort: z.optional(FindOwnersRequestBodySort$outboundSchema),
 });
 
 export function findOwnersRequestBodyToJSON(
