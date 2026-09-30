@@ -158,6 +158,7 @@ export * from "./v1accountlistbadgesrequestbody.js";
 export * from "./v1accountlistbadgesresponsebody.js";
 export * from "./v1accountlistfriendsrequestbody.js";
 export * from "./v1accountlistfriendsresponsebody.js";
+export * from "./v1accountlistfriendsstats.js";
 export * from "./v1accountlistinventorysetsresponsebody.js";
 export * from "./v1accountlistleaderboardhistoryresponsebody.js";
 export * from "./v1accountlistownedgroupsresponsebody.js";

@@ -8,6 +8,7 @@ import { V1AccountListFriendsResponseBody } from "@steamsets/client-ts/models/co
 let value: V1AccountListFriendsResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json",
+  filteredTotal: 976319,
   friends: [
     {
       animatedAvatar: "<value>",
@@ -18,7 +19,7 @@ let value: V1AccountListFriendsResponseBody = {
       awardsReceived: 123456,
       background: "<value>",
       badges: 123456,
-      bans: 671481,
+      bans: 165226,
       city: {
         name: "Bad Krozingen",
       },
@@ -31,8 +32,8 @@ let value: V1AccountListFriendsResponseBody = {
       economyBan: "steam",
       foilBadges: 123456,
       friends: 123456,
-      friendsSince: new Date("2025-10-23T09:55:13.055Z"),
-      gameBans: 774271,
+      friendsSince: new Date("2026-04-28T14:25:35.331Z"),
+      gameBans: 807137,
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -46,28 +47,28 @@ let value: V1AccountListFriendsResponseBody = {
         name: "Europe",
       },
       roles: [],
-      state: {
-        name: "Baden-Wurttemberg",
-      },
+      state: null,
       steamId: "76561198842603734",
-      steamSetsScore: 28732,
+      steamSetsScore: 304640,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
       themeColor: "#FF5733",
-      vacBans: 304640,
+      vacBans: 258339,
       xp: 123456,
     },
   ],
   nextCursor: "<value>",
-  total: 963908,
+  total: 433782,
 };
 ```
 
 ## Fields
 
-| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `dollarSchema`                                                             | *string*                                                                   | :heavy_minus_sign:                                                         | A URL to the JSON Schema for this object.                                  | https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json    |
-| `friends`                                                                  | [components.V1AccountFriend](../../models/components/v1accountfriend.md)[] | :heavy_check_mark:                                                         | N/A                                                                        |                                                                            |
-| `nextCursor`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | Cursor for the next page, null when this is the last page                  |                                                                            |
-| `total`                                                                    | *number*                                                                   | :heavy_check_mark:                                                         | Total number of friends across all pages                                   |                                                                            |
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `dollarSchema`                                                                                               | *string*                                                                                                     | :heavy_minus_sign:                                                                                           | A URL to the JSON Schema for this object.                                                                    | https://api.steamsets.com/schemas/V1AccountListFriendsResponseBody.json                                      |
+| `filteredTotal`                                                                                              | *number*                                                                                                     | :heavy_check_mark:                                                                                           | Number of friends in this view across all pages: the friends that match the search and have a loaded account |                                                                                                              |
+| `friends`                                                                                                    | [components.V1AccountFriend](../../models/components/v1accountfriend.md)[]                                   | :heavy_check_mark:                                                                                           | N/A                                                                                                          |                                                                                                              |
+| `nextCursor`                                                                                                 | *string*                                                                                                     | :heavy_check_mark:                                                                                           | Cursor for the next page, null when this is the last page                                                    |                                                                                                              |
+| `stats`                                                                                                      | [components.V1AccountListFriendsStats](../../models/components/v1accountlistfriendsstats.md)                 | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |                                                                                                              |
+| `total`                                                                                                      | *number*                                                                                                     | :heavy_check_mark:                                                                                           | Total number of friends across all pages                                                                     |                                                                                                              |

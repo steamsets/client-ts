@@ -3,6 +3,8 @@
  */
 
 import * as z from "zod/v4-mini";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -14,6 +16,36 @@ import {
   VanitySearch$outboundSchema,
 } from "./vanitysearch.js";
 
+/**
+ * Sort direction
+ */
+export const V1AccountListFriendsRequestBodyOrder = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * Sort direction
+ */
+export type V1AccountListFriendsRequestBodyOrder = OpenEnum<
+  typeof V1AccountListFriendsRequestBodyOrder
+>;
+
+/**
+ * Sort key. Equal keys keep the friendsSince order (newest first, then account id)
+ */
+export const Sort = {
+  FriendsSince: "friendsSince",
+  Level: "level",
+  Badges: "badges",
+  Apps: "apps",
+  Playtime: "playtime",
+  Name: "name",
+} as const;
+/**
+ * Sort key. Equal keys keep the friendsSince order (newest first, then account id)
+ */
+export type Sort = OpenEnum<typeof Sort>;
+
 export type V1AccountListFriendsRequestBody = {
   /**
    * Opaque cursor from a previous page's nextCursor. Omit for the first page
@@ -21,17 +53,52 @@ export type V1AccountListFriendsRequestBody = {
   cursor?: string | undefined;
   id?: IDSearch | undefined;
   /**
+   * Add averages over all friends to the response
+   */
+  includeStats?: boolean | undefined;
+  /**
    * Friends per page
    */
   limit?: number | undefined;
+  /**
+   * Number of friends to skip, to go to a page directly. Ignored when cursor is set
+   */
+  offset?: number | undefined;
+  /**
+   * Sort direction
+   */
+  order?: V1AccountListFriendsRequestBodyOrder | undefined;
+  /**
+   * Return only friends whose name contains this text. The match ignores case
+   */
+  search?: string | undefined;
+  /**
+   * Sort key. Equal keys keep the friendsSince order (newest first, then account id)
+   */
+  sort?: Sort | undefined;
   vanity?: VanitySearch | undefined;
 };
+
+/** @internal */
+export const V1AccountListFriendsRequestBodyOrder$outboundSchema: z.ZodMiniType<
+  string,
+  V1AccountListFriendsRequestBodyOrder
+> = openEnums.outboundSchema(V1AccountListFriendsRequestBodyOrder);
+
+/** @internal */
+export const Sort$outboundSchema: z.ZodMiniType<string, Sort> = openEnums
+  .outboundSchema(Sort);
 
 /** @internal */
 export type V1AccountListFriendsRequestBody$Outbound = {
   cursor?: string | undefined;
   id?: IDSearch$Outbound | undefined;
+  includeStats?: boolean | undefined;
   limit: number;
+  offset?: number | undefined;
+  order: string;
+  search?: string | undefined;
+  sort: string;
   vanity?: VanitySearch$Outbound | undefined;
 };
 
@@ -42,7 +109,15 @@ export const V1AccountListFriendsRequestBody$outboundSchema: z.ZodMiniType<
 > = z.object({
   cursor: z.optional(z.string()),
   id: z.optional(IDSearch$outboundSchema),
+  includeStats: z.optional(z.boolean()),
   limit: z._default(z.int(), 100),
+  offset: z.optional(z.int()),
+  order: z._default(
+    V1AccountListFriendsRequestBodyOrder$outboundSchema,
+    "desc",
+  ),
+  search: z.optional(z.string()),
+  sort: z._default(Sort$outboundSchema, "friendsSince"),
   vanity: z.optional(VanitySearch$outboundSchema),
 });
 

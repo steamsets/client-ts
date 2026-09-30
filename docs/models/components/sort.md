@@ -1,13 +1,13 @@
 # Sort
 
-Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+Sort key. Equal keys keep the friendsSince order (newest first, then account id)
 
 ## Example Usage
 
 ```typescript
 import { Sort } from "@steamsets/client-ts/models/components";
 
-let value: Sort = "owned";
+let value: Sort = "badges";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: Sort = "owned";
 ## Values
 
 ```typescript
-"owned" | "closest" | Unrecognized<string>
+"friendsSince" | "level" | "badges" | "apps" | "playtime" | "name" | Unrecognized<string>
 ```

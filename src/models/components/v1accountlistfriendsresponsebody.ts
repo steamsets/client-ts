@@ -11,17 +11,26 @@ import {
   V1AccountFriend,
   V1AccountFriend$inboundSchema,
 } from "./v1accountfriend.js";
+import {
+  V1AccountListFriendsStats,
+  V1AccountListFriendsStats$inboundSchema,
+} from "./v1accountlistfriendsstats.js";
 
 export type V1AccountListFriendsResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  /**
+   * Number of friends in this view across all pages: the friends that match the search and have a loaded account
+   */
+  filteredTotal: number;
   friends: Array<V1AccountFriend | null> | null;
   /**
    * Cursor for the next page, null when this is the last page
    */
   nextCursor: string | null;
+  stats?: V1AccountListFriendsStats | undefined;
   /**
    * Total number of friends across all pages
    */
@@ -35,8 +44,10 @@ export const V1AccountListFriendsResponseBody$inboundSchema: z.ZodMiniType<
 > = z.pipe(
   z.object({
     $schema: z.optional(z.string()),
+    filteredTotal: z.int(),
     friends: z.nullable(z.array(z.nullable(V1AccountFriend$inboundSchema))),
     nextCursor: z.nullable(z.string()),
+    stats: z.optional(V1AccountListFriendsStats$inboundSchema),
     total: z.int(),
   }),
   z.transform((v) => {
