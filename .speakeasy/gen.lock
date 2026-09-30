@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 4b71da54735c6148da1e1f79e4dbb8e7
+  docChecksum: fc0fe43e6013cf35cf592853859d3b3f
   docVersion: 1.0.0
   speakeasyVersion: 1.799.0
   generationVersion: 2.941.0
-  releaseVersion: 0.38.1
-  configChecksum: ab2d15154001e4073afa1821d67acda6
+  releaseVersion: 0.38.2
+  configChecksum: fbb8100c49107fb706c6fe3ddec5a25d
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 7acf7a0b-d625-44dd-88b7-24cb7a319bdd
-  pristine_commit_hash: ec52c421d0db6edad6f301a0c63c0e333651c97e
-  pristine_tree_hash: ed90a60edb91f8ab67305a8e7cf96a37c006d248
+  generation_id: 2080de63-51a4-4f9e-9f94-f8be7037371b
+  pristine_commit_hash: 363da93f16aea227923ea822e7edc90ff774eab9
+  pristine_tree_hash: fe171ab57111f16b542851915b97a2033e24ad5d
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1906,6 +1906,10 @@ trackedFiles:
     id: e979d564cff2
     last_write_checksum: sha1:f9e0911d9db61363b1f77ce55f9c050e15587367
     pristine_git_object: 82f5d2662c3732564f6846958f120e456646976c
+  docs/models/operations/streamglobalfeedrequest.md:
+    id: 411ed8157a0e
+    last_write_checksum: sha1:bb66066b47f67d92a44d9d49c8bf02a90f636fd5
+    pristine_git_object: a0f7c53bc402c4ea911533e77bc840ba03983511
   docs/models/operations/streamglobalfeedresponse.md:
     id: 6e5893652703
     last_write_checksum: sha1:849bbfce66dc477c8f0b12a5f12459e9640d1a04
@@ -1928,8 +1932,8 @@ trackedFiles:
     pristine_git_object: bad2dce2183bb3bd2ed67fda35f67960a37ccce8
   docs/sdks/activity/README.md:
     id: f6e8241fca80
-    last_write_checksum: sha1:db135d96c602a16b2416e36539e402a63302fd88
-    pristine_git_object: 3d054f6a8cf8b9fa9ba540ce695e132e54b9ae3d
+    last_write_checksum: sha1:58c665cd50edaa54affdf267e647e7766192708e
+    pristine_git_object: 8adbac950cf5b5646983cd9cf64b4a0710026865
   docs/sdks/admin/README.md:
     id: 9b9f6bced239
     last_write_checksum: sha1:43af83434f86bcbc0aa1f64465ca037c759bc776
@@ -2028,12 +2032,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:1033978bc05a60bae81adc4cd31c4ec5b663d76e
-    pristine_git_object: 7103dcb8dc0463aa337ff0afe15bb836049a22a0
+    last_write_checksum: sha1:dafd8adc35166221677bb2a7ac8d072cbf675a2f
+    pristine_git_object: e6908b29066062532f65d8feee1ecf22f688e146
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:995e9d14fe7c9809bbf5ea1f78201861973249bc
-    pristine_git_object: 51696171a77406b6672e4f1efa4575a1c731833e
+    last_write_checksum: sha1:a6eaceecc79fad201b78f92ebbc07fe9c278c338
+    pristine_git_object: e26b109e3db96aaa134e7bd3db0a655bfd19be6a
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2216,8 +2220,8 @@ trackedFiles:
     pristine_git_object: dec7d6b727f41678f8f3dc5c55a6c3cc0b64e814
   src/funcs/activityStreamGlobalFeed.ts:
     id: 76edf7340d77
-    last_write_checksum: sha1:3ad5c3b74d9240f913f5f77d4eeeb1e2cb42bbd1
-    pristine_git_object: 99284f8b63988a94a90ca60b05cf2a65d48778fb
+    last_write_checksum: sha1:0a53ae6e704e487bd4fbd99b8010311beba64696
+    pristine_git_object: 8d3cd6dfa666d7158e0050b8614ae2be10969d05
   src/funcs/adminAddSteamApiKey.ts:
     id: b691940a4e21
     last_write_checksum: sha1:dd3efb4f90eec4bcea427a1091b497422d5f4a4e
@@ -2448,8 +2452,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:2888e7e8ff8362e7b136667338ec363b2be40c71
-    pristine_git_object: a24f87d1ac1992eb3e6e1b67d10e7b3dc232fb68
+    last_write_checksum: sha1:d126c08cdc5f66276c4b65c3ba216b3e25149a8a
+    pristine_git_object: ee2e72b543fe6effc1cfd4530eec28cec853056e
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3924,8 +3928,8 @@ trackedFiles:
     pristine_git_object: 1328dfe2454d368bac54b6b3ad25e9f50d2914cb
   src/models/operations/streamglobalfeed.ts:
     id: a8965d5084d9
-    last_write_checksum: sha1:9809dd00695a9cd5d7514b333de12b7beb8444b6
-    pristine_git_object: dec8bdebcbcf18ed7be52975d6805ced92e8ebf5
+    last_write_checksum: sha1:b4c00ad2ae2a4f77d9828599b09780f28e203ac6
+    pristine_git_object: 290cdd2d900d3c4ccabd7e6d0c8fd7eca5c5e66a
   src/models/operations/trackevent.ts:
     id: 93245e04982c
     last_write_checksum: sha1:ef254ace21aea873373b2b1d81c2195fa8b53a28
@@ -3936,8 +3940,8 @@ trackedFiles:
     pristine_git_object: 8c56b9307a289878ea8bf1d1b2cf22895a74ea31
   src/sdk/activity.ts:
     id: 87dddbbca815
-    last_write_checksum: sha1:2ecad07e9809bfef1072e7a7445b31028aa6b5f2
-    pristine_git_object: e9fc8be8a8f5e6b63e0ef1facee639af955f8215
+    last_write_checksum: sha1:86eeaed5657c5ebc7f80df70c83ddfa93a7ee7e8
+    pristine_git_object: 4635844aaffcec95301771786bc7a36133edaa84
   src/sdk/admin.ts:
     id: 953a3fbbcdcf
     last_write_checksum: sha1:4a51609aeffedce1da0a7a2ca41722ebf3663871
@@ -5013,6 +5017,9 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
   streamGlobalFeed:
     speakeasy-default-stream-global-feed:
+      parameters:
+        query:
+          since: "2026-09-30T07:13:00Z"
       responses:
         default:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -5706,10 +5713,6 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.activity.listAccountFeed()`:  `request` **Changed**
-  * `steamsets.activity.listGlobalFeed()`:  `request` **Changed**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

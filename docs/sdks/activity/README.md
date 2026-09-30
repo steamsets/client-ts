@@ -189,7 +189,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.activity.streamGlobalFeed();
+  const result = await steamSets.activity.streamGlobalFeed({
+    since: new Date("2026-09-30T07:13:00Z"),
+  });
 
   if (result.serverSentEvents == null) {
     throw new Error("failed to create stream: received null value");
@@ -217,7 +219,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await activityStreamGlobalFeed(steamSets);
+  const res = await activityStreamGlobalFeed(steamSets, {
+    since: new Date("2026-09-30T07:13:00Z"),
+  });
   if (res.ok) {
     const { value: result } = res;
     if (result.serverSentEvents == null) {
@@ -238,6 +242,7 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.StreamGlobalFeedRequest](../../models/operations/streamglobalfeedrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |

@@ -53,12 +53,14 @@ export class Activity extends ClientSDK {
    * Live server-sent-events stream of the global activity feed
    */
   async streamGlobalFeed(
+    request: operations.StreamGlobalFeedRequest,
     options?: RequestOptions & {
       acceptHeaderOverride?: StreamGlobalFeedAcceptEnum;
     },
   ): Promise<operations.StreamGlobalFeedResponse> {
     return unwrapAsync(activityStreamGlobalFeed(
       this,
+      request,
       options,
     ));
   }
