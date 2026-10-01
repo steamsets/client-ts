@@ -44,7 +44,7 @@ export type UpdateProgress = {
    */
   startedAt?: Date | undefined;
   /**
-   * The overall status: undefined, pending, in_progress, completed, or failed.
+   * The overall status: undefined, pending, in_progress, completed, or failed. A completed run can still list a skipped or failed step: the data was saved, and that step kept the existing data.
    */
   status: string;
   /**

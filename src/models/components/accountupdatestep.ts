@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type AccountUpdateStep = {
   finishedAt?: Date | undefined;
   name: string;
+  reason?: string | undefined;
   startedAt?: Date | undefined;
   status: string;
 };
@@ -23,6 +24,7 @@ export const AccountUpdateStep$inboundSchema: z.ZodMiniType<
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
   ),
   name: z.string(),
+  reason: z.optional(z.string()),
   startedAt: z.optional(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
   ),

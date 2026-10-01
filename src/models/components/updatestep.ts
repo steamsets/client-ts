@@ -17,6 +17,10 @@ export type UpdateStep = {
    */
   name: string;
   /**
+   * Why the step ended skipped or failed: private (Steam privacy settings hide the data), unavailable (the step failed after its retries), or not_run (the run stopped before this step). Absent for a step that is pending, running, or done.
+   */
+  reason?: string | undefined;
+  /**
    * The time this step started, in UTC.
    */
   startedAt?: Date | undefined;
@@ -33,6 +37,7 @@ export const UpdateStep$inboundSchema: z.ZodMiniType<UpdateStep, unknown> = z
       z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
     ),
     name: z.string(),
+    reason: z.optional(z.string()),
     startedAt: z.optional(
       z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
     ),
