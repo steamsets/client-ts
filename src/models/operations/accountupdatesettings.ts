@@ -11,6 +11,10 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountUpdateSettingsRequest = {
   xForwardedFor?: string | undefined;
+  /**
+   * ShieldShiba token the widget issued for exactly the new email. Required when email changes to a non-empty address. It is redeemed once and expires after 5 minutes
+   */
+  xShieldShibaToken?: string | undefined;
   v1AccountUpdateSettingsRequestBody:
     components.V1AccountUpdateSettingsRequestBody;
 };
@@ -22,6 +26,7 @@ export type AccountUpdateSettingsResponse = {
 /** @internal */
 export type AccountUpdateSettingsRequest$Outbound = {
   "X-Forwarded-For"?: string | undefined;
+  "X-Shield-Shiba-Token"?: string | undefined;
   V1AccountUpdateSettingsRequestBody:
     components.V1AccountUpdateSettingsRequestBody$Outbound;
 };
@@ -33,12 +38,14 @@ export const AccountUpdateSettingsRequest$outboundSchema: z.ZodMiniType<
 > = z.pipe(
   z.object({
     xForwardedFor: z.optional(z.string()),
+    xShieldShibaToken: z.optional(z.string()),
     v1AccountUpdateSettingsRequestBody:
       components.V1AccountUpdateSettingsRequestBody$outboundSchema,
   }),
   z.transform((v) => {
     return remap$(v, {
       xForwardedFor: "X-Forwarded-For",
+      xShieldShibaToken: "X-Shield-Shiba-Token",
       v1AccountUpdateSettingsRequestBody: "V1AccountUpdateSettingsRequestBody",
     });
   }),

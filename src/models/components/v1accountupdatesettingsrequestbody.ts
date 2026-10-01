@@ -35,7 +35,7 @@ export type V1AccountUpdateSettingsRequestBody = {
    */
   countryOverride?: string | null | undefined;
   /**
-   * The email the account should use. Empty string clears it, omit to leave unchanged
+   * The email the account should use. Empty string clears it, omit to leave unchanged. A new address needs the X-Shield-Shiba-Token header
    */
   email?: string | null | undefined;
   /**
