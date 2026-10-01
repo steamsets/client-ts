@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: a36dab2963def44276152038b1baf8db
+  docChecksum: ff71cf2630eecd4a4e55ca3960de9362
   docVersion: 1.0.0
   speakeasyVersion: 1.800.0
   generationVersion: 2.943.0
-  releaseVersion: 0.38.5
-  configChecksum: b8644f5af25892c15f76d939298a0b96
+  releaseVersion: 0.38.6
+  configChecksum: 86a21e51109ae5842580ca7bf88b3a88
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: ffcc9741-2a8d-4277-8fc2-6e0b60509c65
-  pristine_commit_hash: f11c78217378313d3576ec9fd9bf9e44c80cc438
-  pristine_tree_hash: ef1bdb968c42b125621ca0b96c649074bd025c89
+  generation_id: 318f4071-5d01-4627-a08c-546722b3fa0f
+  pristine_commit_hash: 2a5c8ce5d04cfa19f77a99e7f41143446ba52dcf
+  pristine_tree_hash: 6094a4b1a5318f488d7680c7419a3ebcb6584103
 features:
   go:
     additionalDependencies: 0.1.0
@@ -136,8 +136,8 @@ trackedFiles:
     pristine_git_object: dda91c97e1b7c8eb002eba4834e56f08933c9dca
   docs/models/components/accountupdatestep.md:
     id: 30e5b5163cae
-    last_write_checksum: sha1:b716e42a4252d6291ae76216c3cb88f443d9120f
-    pristine_git_object: 56e1d6004f7f38c24000d89eb900acb0248442df
+    last_write_checksum: sha1:4ad1c11af07431a4056e7faf433887f036c49544
+    pristine_git_object: e0a50b72d3ff5347bdef74aa34a63f5fab74136f
   docs/models/components/accountviewstats.md:
     id: 42f731e265b0
     last_write_checksum: sha1:aabe93606a70f85c7e25be3dc890a3f4bb675615
@@ -776,16 +776,16 @@ trackedFiles:
     pristine_git_object: 730b4bbdfb2210d624426eea6a3a4a66722d6db2
   docs/models/components/updateprogress.md:
     id: 5855359323de
-    last_write_checksum: sha1:185e15dfd1897d5f21cc36ffb862a5b7b5bb2822
-    pristine_git_object: c7b4232a503c4fa2bd181a8a3e35f5fba27d5643
+    last_write_checksum: sha1:36084d30226dfcea8d442a84a07c108e4a4c45b0
+    pristine_git_object: e205d3b17bfc04d937e23bb87a322aef7dcdca24
   docs/models/components/updaterequestbody.md:
     id: 02a1761b6638
     last_write_checksum: sha1:5f009fb5bebcbc453791f94af786979afb94128c
     pristine_git_object: dd63b89933d74fb9ac1ed723d1d1254a4d1079ad
   docs/models/components/updatestep.md:
     id: 35daceeb7de9
-    last_write_checksum: sha1:7ccb92321f789d580f05b1f7154986fc2eb2a61e
-    pristine_git_object: 28ce88744c93b5b6c065fb93b8a655ffa18c859a
+    last_write_checksum: sha1:84864b9263f84edec52672bfc8cd68d4c1329380
+    pristine_git_object: 33252147afeda4336c8c486a3bb8d2aaa5b0263d
   docs/models/components/v1accountapp.md:
     id: 0cc7072155b9
     last_write_checksum: sha1:c814e967d6da1ff534377f09c6d63cdf5001b6ba
@@ -2084,12 +2084,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:11e237bae8d6971df0d36a6e5abeb41c40f35b03
-    pristine_git_object: 2f6f990db8c19391d97073fddf92b81bcb801b58
+    last_write_checksum: sha1:d2998ca8aaf0eaa18e8c763e73c8727e986238ab
+    pristine_git_object: f6166d398ce09f42393a9902e35129fd9f20948b
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:822bfda059b48ba37efd73d5608a574308ab0f39
-    pristine_git_object: bc9b77c7a1c74c5a49043b5349862aa9e8579f58
+    last_write_checksum: sha1:0577dd829419d4c2a213476d0141034067329c80
+    pristine_git_object: 6001b576c820e1db321f5b699054f828b4d92697
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2508,8 +2508,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:875b112b9016e9ac85b73e742342281eced0fcdb
-    pristine_git_object: 67295d523674959006df770684e9de28edc61a7c
+    last_write_checksum: sha1:aedfa318dc8d8ff1aacf70fd064213ecef4b4303
+    pristine_git_object: 9edfe5b38798cd3708a7ca0cad013c5e6f7b8c9c
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -2596,8 +2596,8 @@ trackedFiles:
     pristine_git_object: 72b16a8f389e385dcd8cb102ede77ba6177e80dc
   src/models/components/accountupdatestep.ts:
     id: 753631dc6e66
-    last_write_checksum: sha1:ac6f71835b89c69c3b28df69d00ff7e018fd3f36
-    pristine_git_object: 0c5a1242ca23ac8bf77f56507f6504b296871b03
+    last_write_checksum: sha1:57759a6ab2b6cff1c92e3046731d93393fe12ea8
+    pristine_git_object: b4fafa578460b8d53629532e10f56a6b36207807
   src/models/components/accountviewstats.ts:
     id: f2ba2018392f
     last_write_checksum: sha1:2186de4840e79d1b4b6fc5a1ff0af5a9a378f79d
@@ -3044,16 +3044,16 @@ trackedFiles:
     pristine_git_object: a4785fffd20f2f7a217b4404342e61254cb0ab5a
   src/models/components/updateprogress.ts:
     id: 0cca635cae7a
-    last_write_checksum: sha1:e84fbd8a721552a70c8db7abbd42c6bdf731c45b
-    pristine_git_object: c30ffc7e7ea07da086e8865da7a057a438279b86
+    last_write_checksum: sha1:205121f73d719dabc99a52131c95106a963161cb
+    pristine_git_object: 02c3330d4c92af94fb956ad5eb758bdcbac7ec23
   src/models/components/updaterequestbody.ts:
     id: fc221e16fe7d
     last_write_checksum: sha1:4ef8fd7948870fcec75e5cdd77289edc2838f809
     pristine_git_object: 005668d8239a26d565cae21869a42a31cad66f5b
   src/models/components/updatestep.ts:
     id: db048742ba6a
-    last_write_checksum: sha1:088955a9292f6b0a458da3aa14fc19a266a61bdc
-    pristine_git_object: 0c71d183c7ae1d2f90ab4c3efae96c4674af1f7b
+    last_write_checksum: sha1:430264ce0939a899f0e91bb930b806d2f291ab9d
+    pristine_git_object: 8342ab1709f73a540d5e7d50171402d67d1ed47e
   src/models/components/v1accountapp.ts:
     id: 4349b42fa8b4
     last_write_checksum: sha1:aed82d73caaf8a7d4488f07e4f3d966568700591
@@ -5822,7 +5822,7 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `steamsets.account.updateProgress()`: **Added**
+  * `steamsets.account.updateProgress()`:  `response.progress.steps[].reason` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
