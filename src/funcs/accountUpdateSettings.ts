@@ -100,6 +100,11 @@ async function $do(
       payload["X-Forwarded-For"],
       { explode: false, charEncoding: "none" },
     ),
+    "X-Shield-Shiba-Token": encodeSimple(
+      "X-Shield-Shiba-Token",
+      payload["X-Shield-Shiba-Token"],
+      { explode: false, charEncoding: "none" },
+    ),
   }));
 
   const secConfig = await extractSecurity(client._options.token);
@@ -179,7 +184,7 @@ async function $do(
     M.jsonErr([400, 401, 403, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([500, 503], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),
