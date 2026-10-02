@@ -54,11 +54,13 @@ let value: V1AdminHiddenAccount = {
     xp: 123456,
   },
   accountId: 882337740,
+  blockedLogins: 3,
   feedback: {
     comment: "I don't want my inventory on a public site",
     reason: "privacy",
   },
   kind: "self",
+  lastBlockedLoginAt: new Date("2026-11-11T22:31:01.776Z"),
   reason: "Self-service opt-out (GDPR)",
   restrictedAt: new Date("2026-10-01T12:00:00Z"),
   restrictedBy: {
@@ -70,7 +72,7 @@ let value: V1AdminHiddenAccount = {
     awardsReceived: 123456,
     background: "<value>",
     badges: 123456,
-    bans: 954324,
+    bans: 727998,
     city: {
       name: "Bad Krozingen",
     },
@@ -83,7 +85,7 @@ let value: V1AdminHiddenAccount = {
     economyBan: "steam",
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 198837,
+    gameBans: 28025,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -96,16 +98,22 @@ let value: V1AdminHiddenAccount = {
     region: {
       name: "Europe",
     },
-    roles: null,
+    roles: [
+      {
+        extras: {},
+        rating: 138555,
+        role: "sapphire",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 791196,
+    steamSetsScore: 352916,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     themeColor: "#FF5733",
-    vacBans: 989867,
+    vacBans: 720947,
     xp: 123456,
   },
 };
@@ -117,8 +125,10 @@ let value: V1AdminHiddenAccount = {
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `account`                                                                                        | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                   | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |
 | `accountId`                                                                                      | *number*                                                                                         | :heavy_check_mark:                                                                               | The account id                                                                                   | 882337740                                                                                        |
+| `blockedLogins`                                                                                  | *number*                                                                                         | :heavy_check_mark:                                                                               | How many sign-ins account.login refused while the restriction was in force                       | 3                                                                                                |
 | `feedback`                                                                                       | [components.V1AdminOptOutFeedback](../../models/components/v1adminoptoutfeedback.md)             | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |
 | `kind`                                                                                           | [components.V1AdminHiddenAccountKind](../../models/components/v1adminhiddenaccountkind.md)       | :heavy_check_mark:                                                                               | owner when the owner hid the account, self for an opt-out, staff for a restriction staff applied | self                                                                                             |
+| `lastBlockedLoginAt`                                                                             | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)    | :heavy_check_mark:                                                                               | When account.login last refused a sign-in. Null when it never did                                |                                                                                                  |
 | `reason`                                                                                         | *string*                                                                                         | :heavy_check_mark:                                                                               | The stored restriction reason, staff-facing. Null when the owner hid the account                 | Self-service opt-out (GDPR)                                                                      |
 | `restrictedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)    | :heavy_check_mark:                                                                               | When the restriction was first applied. Null when the owner hid the account                      | 2026-10-01T12:00:00Z                                                                             |
 | `restrictedBy`                                                                                   | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                   | :heavy_check_mark:                                                                               | N/A                                                                                              |                                                                                                  |

@@ -59,6 +59,10 @@ export type V1AdminGetAccountResponseBody = {
    */
   avatar: string;
   /**
+   * How many sign-ins account.login refused while the restriction was in force
+   */
+  blockedLogins: number;
+  /**
    * The city of the account
    */
   city: string | null;
@@ -90,6 +94,10 @@ export type V1AdminGetAccountResponseBody = {
    * Whether the account has hidden itself from steamsets leaderboards
    */
   hidden: boolean;
+  /**
+   * When account.login last refused a sign-in
+   */
+  lastBlockedLoginAt: Date | null;
   /**
    * The location updates the account has
    */
@@ -182,6 +190,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
   z.object({
     $schema: z.optional(z.string()),
     avatar: z.string(),
+    blockedLogins: z.int(),
     city: z.nullable(z.string()),
     connections: z.nullable(z.array(Connection$inboundSchema)),
     country: z.nullable(z.string()),
@@ -190,6 +199,9 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
     donations: z.int(),
     email: z.nullable(z.string()),
     hidden: z.boolean(),
+    lastBlockedLoginAt: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
     locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
     name: z.string(),
     nameUpdates: z.nullable(z.array(V1AccountNameUpdate$inboundSchema)),
