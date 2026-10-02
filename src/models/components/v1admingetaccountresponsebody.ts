@@ -13,6 +13,10 @@ import {
   AdminAccountResource,
   AdminAccountResource$inboundSchema,
 } from "./adminaccountresource.js";
+import {
+  AdminTierOverride,
+  AdminTierOverride$inboundSchema,
+} from "./admintieroverride.js";
 import { Connection, Connection$inboundSchema } from "./connection.js";
 import { DeveloperApp, DeveloperApp$inboundSchema } from "./developerapp.js";
 import { Role, Role$inboundSchema } from "./role.js";
@@ -162,6 +166,7 @@ export type V1AdminGetAccountResponseBody = {
    * The state of the account
    */
   state: string | null;
+  tierOverride: AdminTierOverride | null;
   /**
    * The vanity of the account
    */
@@ -222,6 +227,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
     roles: z.nullable(z.array(Role$inboundSchema)),
     sessions: z.nullable(z.array(Session$inboundSchema)),
     state: z.nullable(z.string()),
+    tierOverride: z.nullable(AdminTierOverride$inboundSchema),
     vanity: z.nullable(z.string()),
     vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$inboundSchema)),
     visibilityUpdates: z.nullable(
