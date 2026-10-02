@@ -9,6 +9,7 @@ let value: V1AdminGetAccountResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json",
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+  blockedLogins: 0,
   city: "Bad Krozingen",
   connections: [],
   country: "Germany",
@@ -17,7 +18,32 @@ let value: V1AdminGetAccountResponseBody = {
   donations: 1000,
   email: "steamsets@example.com",
   hidden: false,
-  locationUpdates: [],
+  lastBlockedLoginAt: new Date("2024-06-01T20:38:59.512Z"),
+  locationUpdates: [
+    {
+      city: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      countryCode: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      countryName: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      region: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      state: {
+        new: "steamsets",
+        old: "steamsets",
+      },
+      updatedAt: new Date("2023-01-01T00:00:00Z"),
+    },
+  ],
   name: "steamsets",
   nameUpdates: [
     {
@@ -30,28 +56,21 @@ let value: V1AdminGetAccountResponseBody = {
   ],
   note: "<value>",
   noteAuthor: "<value>",
-  noteUpdatedAt: new Date("2025-09-07T08:15:42.939Z"),
+  noteUpdatedAt: new Date("2025-12-26T11:05:17.037Z"),
   privacy: "public",
   region: "Europe",
-  resources: [
-    {
-      inherited: {
-        role: "diamond",
-        value: "600000",
-      },
-      otherRoles: [],
-      override: null,
-      resource: "max_find_owners",
-      role: "diamond",
-      source: "role",
-      value: "600000",
-    },
-  ],
+  resources: [],
   restricted: false,
-  restrictedAt: new Date("2024-12-30T05:28:50.740Z"),
+  restrictedAt: null,
   restrictedByName: "<value>",
   restrictionReason: "<value>",
-  roles: [],
+  roles: [
+    {
+      extras: {},
+      rating: 138555,
+      role: "sapphire",
+    },
+  ],
   sessions: [],
   state: "Baden-Wurttemberg",
   vanity: "steamsets",
@@ -83,6 +102,7 @@ let value: V1AdminGetAccountResponseBody = {
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | `dollarSchema`                                                                                                     | *string*                                                                                                           | :heavy_minus_sign:                                                                                                 | A URL to the JSON Schema for this object.                                                                          | https://api.steamsets.com/schemas/V1AdminGetAccountResponseBody.json                                               |
 | `avatar`                                                                                                           | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The avatar of the account                                                                                          | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                                                                               |
+| `blockedLogins`                                                                                                    | *number*                                                                                                           | :heavy_check_mark:                                                                                                 | How many sign-ins account.login refused while the restriction was in force                                         | 0                                                                                                                  |
 | `city`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The city of the account                                                                                            | Bad Krozingen                                                                                                      |
 | `connections`                                                                                                      | [components.Connection](../../models/components/connection.md)[]                                                   | :heavy_check_mark:                                                                                                 | The connections the account has                                                                                    |                                                                                                                    |
 | `country`                                                                                                          | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The country code of the account                                                                                    | Germany                                                                                                            |
@@ -91,6 +111,7 @@ let value: V1AdminGetAccountResponseBody = {
 | `donations`                                                                                                        | *number*                                                                                                           | :heavy_check_mark:                                                                                                 | The Patreon-reported donation total in cents                                                                       | 1000                                                                                                               |
 | `email`                                                                                                            | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The email of the account                                                                                           | steamsets@example.com                                                                                              |
 | `hidden`                                                                                                           | *boolean*                                                                                                          | :heavy_check_mark:                                                                                                 | Whether the account has hidden itself from steamsets leaderboards                                                  | false                                                                                                              |
+| `lastBlockedLoginAt`                                                                                               | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                      | :heavy_check_mark:                                                                                                 | When account.login last refused a sign-in                                                                          |                                                                                                                    |
 | `locationUpdates`                                                                                                  | [components.V1AccountLocationUpdate](../../models/components/v1accountlocationupdate.md)[]                         | :heavy_check_mark:                                                                                                 | The location updates the account has                                                                               |                                                                                                                    |
 | `name`                                                                                                             | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The name of the account                                                                                            | steamsets                                                                                                          |
 | `nameUpdates`                                                                                                      | [components.V1AccountNameUpdate](../../models/components/v1accountnameupdate.md)[]                                 | :heavy_check_mark:                                                                                                 | The name updates the account has                                                                                   |                                                                                                                    |
