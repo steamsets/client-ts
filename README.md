@@ -93,6 +93,7 @@ run();
 * [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
+* [listCraftedLevels](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
@@ -681,6 +682,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListApps`](docs/sdks/account/README.md#listapps) - List account owned apps
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
+- [`accountListCraftedLevels`](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history

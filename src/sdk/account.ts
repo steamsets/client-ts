@@ -21,6 +21,7 @@ import { accountGetViewStats } from "../funcs/accountGetViewStats.js";
 import { accountListApps } from "../funcs/accountListApps.js";
 import { accountListBadgeBookmarks } from "../funcs/accountListBadgeBookmarks.js";
 import { accountListBadges } from "../funcs/accountListBadges.js";
+import { accountListCraftedLevels } from "../funcs/accountListCraftedLevels.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
 import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHistory.js";
@@ -312,6 +313,18 @@ export class Account extends ClientSDK {
     return unwrapResultIterator(accountListBadges(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * List crafted badge levels
+   */
+  async listCraftedLevels(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListCraftedLevelsResponse> {
+    return unwrapAsync(accountListCraftedLevels(
+      this,
       options,
     ));
   }

@@ -19,6 +19,7 @@ export * from "./accountgettrending.js";
 export * from "./accountlistapps.js";
 export * from "./accountlistbadgebookmarks.js";
 export * from "./accountlistbadges.js";
+export * from "./accountlistcraftedlevels.js";
 export * from "./accountlistfriends.js";
 export * from "./accountlistinventorysets.js";
 export * from "./accountlistleaderboardhistory.js";
