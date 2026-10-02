@@ -19,7 +19,7 @@ import {
 /**
  * The tier to set (tier_1, tier_2, tier_3, tier_mythic). Empty to remove override.
  */
-export const Tier = {
+export const V1AdminUpdateRoleOverrideRequestBodyTier = {
   Tier1: "tier_1",
   Tier2: "tier_2",
   Tier3: "tier_3",
@@ -29,7 +29,9 @@ export const Tier = {
 /**
  * The tier to set (tier_1, tier_2, tier_3, tier_mythic). Empty to remove override.
  */
-export type Tier = OpenEnum<typeof Tier>;
+export type V1AdminUpdateRoleOverrideRequestBodyTier = OpenEnum<
+  typeof V1AdminUpdateRoleOverrideRequestBodyTier
+>;
 
 export type V1AdminUpdateRoleOverrideRequestBody = {
   id?: IDSearch | undefined;
@@ -40,13 +42,14 @@ export type V1AdminUpdateRoleOverrideRequestBody = {
   /**
    * The tier to set (tier_1, tier_2, tier_3, tier_mythic). Empty to remove override.
    */
-  tier?: Tier | undefined;
+  tier?: V1AdminUpdateRoleOverrideRequestBodyTier | undefined;
   vanity?: VanitySearch | undefined;
 };
 
 /** @internal */
-export const Tier$outboundSchema: z.ZodMiniType<string, Tier> = openEnums
-  .outboundSchema(Tier);
+export const V1AdminUpdateRoleOverrideRequestBodyTier$outboundSchema:
+  z.ZodMiniType<string, V1AdminUpdateRoleOverrideRequestBodyTier> = openEnums
+    .outboundSchema(V1AdminUpdateRoleOverrideRequestBodyTier);
 
 /** @internal */
 export type V1AdminUpdateRoleOverrideRequestBody$Outbound = {
@@ -63,7 +66,7 @@ export const V1AdminUpdateRoleOverrideRequestBody$outboundSchema: z.ZodMiniType<
 > = z.object({
   id: z.optional(IDSearch$outboundSchema),
   reason: z.optional(z.string()),
-  tier: z.optional(Tier$outboundSchema),
+  tier: z.optional(V1AdminUpdateRoleOverrideRequestBodyTier$outboundSchema),
   vanity: z.optional(VanitySearch$outboundSchema),
 });
 

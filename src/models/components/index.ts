@@ -18,6 +18,7 @@ export * from "./adminaccountresource.js";
 export * from "./adminaccountresourceinherited.js";
 export * from "./adminaccountresourceoverride.js";
 export * from "./adminaccountresourcerolevalue.js";
+export * from "./admintieroverride.js";
 export * from "./analyticstrackeventrequestbody.js";
 export * from "./analyticstrackeventresponsebody.js";
 export * from "./applistownersentry.js";

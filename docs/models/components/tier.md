@@ -1,6 +1,6 @@
 # Tier
 
-The tier to set (tier_1, tier_2, tier_3, tier_mythic). Empty to remove override.
+The tier the override sets
 
 ## Example Usage
 
@@ -15,5 +15,5 @@ let value: Tier = "tier_2";
 ## Values
 
 ```typescript
-"tier_1" | "tier_2" | "tier_3" | "tier_mythic" | "" | Unrecognized<string>
+"tier_1" | "tier_2" | "tier_3" | "tier_mythic" | Unrecognized<string>
 ```
