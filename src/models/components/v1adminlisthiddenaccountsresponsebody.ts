@@ -11,6 +11,10 @@ import {
   V1AdminHiddenAccount,
   V1AdminHiddenAccount$inboundSchema,
 } from "./v1adminhiddenaccount.js";
+import {
+  V1AdminHiddenAccountsSummary,
+  V1AdminHiddenAccountsSummary$inboundSchema,
+} from "./v1adminhiddenaccountssummary.js";
 
 export type V1AdminListHiddenAccountsResponseBody = {
   /**
@@ -21,6 +25,7 @@ export type V1AdminListHiddenAccountsResponseBody = {
    * The accounts on this page: newest restriction first, then owner-hidden accounts by newest account id
    */
   accounts: Array<V1AdminHiddenAccount>;
+  summary: V1AdminHiddenAccountsSummary;
   /**
    * How many accounts match the kind
    */
@@ -35,6 +40,7 @@ export const V1AdminListHiddenAccountsResponseBody$inboundSchema: z.ZodMiniType<
   z.object({
     $schema: z.optional(z.string()),
     accounts: z.array(V1AdminHiddenAccount$inboundSchema),
+    summary: V1AdminHiddenAccountsSummary$inboundSchema,
     total: z.int(),
   }),
   z.transform((v) => {
