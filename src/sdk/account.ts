@@ -432,10 +432,12 @@ export class Account extends ClientSDK {
    * Opt out of SteamSets (hide account and stop processing)
    */
   async optOut(
+    request: components.AccountOptOutRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountOptOutResponse> {
     return unwrapAsync(accountOptOut(
       this,
+      request,
       options,
     ));
   }

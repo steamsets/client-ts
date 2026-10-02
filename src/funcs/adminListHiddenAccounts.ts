@@ -29,15 +29,15 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Opt out of SteamSets (hide account and stop processing)
+ * List hidden, opted-out and restricted accounts
  */
-export function accountOptOut(
+export function adminListHiddenAccounts(
   client: SteamSetsCore,
-  request: components.AccountOptOutRequestBody,
+  request: components.V1AdminListHiddenAccountsRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountOptOutResponse,
+    operations.AdminListHiddenAccountsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -58,12 +58,12 @@ export function accountOptOut(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.AccountOptOutRequestBody,
+  request: components.V1AdminListHiddenAccountsRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountOptOutResponse,
+      operations.AdminListHiddenAccountsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -80,7 +80,10 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      z.parse(components.AccountOptOutRequestBody$outboundSchema, value),
+      z.parse(
+        components.V1AdminListHiddenAccountsRequestBody$outboundSchema,
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -89,7 +92,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.optOut")();
+  const path = pathToFunc("/v1/admin.listHiddenAccounts")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -103,7 +106,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.optOut",
+    operationID: "admin.listHiddenAccounts",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -158,7 +161,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountOptOutResponse,
+    operations.AdminListHiddenAccountsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -169,10 +172,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountOptOutResponse$inboundSchema, {
-      key: "AccountOptOutResponseBody",
+    M.json(200, operations.AdminListHiddenAccountsResponse$inboundSchema, {
+      key: "V1AdminListHiddenAccountsResponseBody",
     }),
-    M.jsonErr([400, 401, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([401, 403, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

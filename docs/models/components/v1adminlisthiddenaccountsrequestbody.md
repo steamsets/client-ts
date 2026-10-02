@@ -1,0 +1,17 @@
+# V1AdminListHiddenAccountsRequestBody
+
+## Example Usage
+
+```typescript
+import { V1AdminListHiddenAccountsRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AdminListHiddenAccountsRequestBody = {};
+```
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                | Example                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `kind`                                                                                                                     | [components.V1AdminListHiddenAccountsRequestBodyKind](../../models/components/v1adminlisthiddenaccountsrequestbodykind.md) | :heavy_minus_sign:                                                                                                         | owner lists accounts the owner hid, self lists opt-outs, staff lists restrictions staff applied                            | all                                                                                                                        |
+| `limit`                                                                                                                    | *number*                                                                                                                   | :heavy_minus_sign:                                                                                                         | Rows per page                                                                                                              | 50                                                                                                                         |
+| `page`                                                                                                                     | *number*                                                                                                                   | :heavy_minus_sign:                                                                                                         | 1-based page number                                                                                                        | 1                                                                                                                          |

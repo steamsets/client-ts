@@ -134,6 +134,7 @@ run();
 * [findSteamApiKey](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+* [listHiddenAccounts](docs/sdks/admin/README.md#listhiddenaccounts) - List hidden, opted-out and restricted accounts
 * [listSteamApiKeys](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 * [removeVanity](docs/sdks/admin/README.md#removevanity) - Remove vanity URL
 * [restrictAccount](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
@@ -717,6 +718,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminFindSteamApiKey`](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
 - [`adminGetPlayerBanStatus`](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+- [`adminListHiddenAccounts`](docs/sdks/admin/README.md#listhiddenaccounts) - List hidden, opted-out and restricted accounts
 - [`adminListSteamApiKeys`](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 - [`adminMaintenanceCreate`](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
 - [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event

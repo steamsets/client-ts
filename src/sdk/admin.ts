@@ -9,6 +9,7 @@ import { adminExportSteamApiKeys } from "../funcs/adminExportSteamApiKeys.js";
 import { adminFindSteamApiKey } from "../funcs/adminFindSteamApiKey.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
+import { adminListHiddenAccounts } from "../funcs/adminListHiddenAccounts.js";
 import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
 import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
@@ -123,6 +124,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminGetPlayerBanStatusResponse> {
     return unwrapAsync(adminGetPlayerBanStatus(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List hidden, opted-out and restricted accounts
+   */
+  async listHiddenAccounts(
+    request: components.V1AdminListHiddenAccountsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListHiddenAccountsResponse> {
+    return unwrapAsync(adminListHiddenAccounts(
       this,
       request,
       options,
