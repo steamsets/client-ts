@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 75b4795914bef88879703fefa8ab4415
+  docChecksum: d647a91915036517b56027182783d06e
   docVersion: 1.0.0
   speakeasyVersion: 1.800.1
   generationVersion: 2.943.0
-  releaseVersion: 0.38.12
-  configChecksum: cae908cd65b0b2081c3e7a720dc7413c
+  releaseVersion: 0.38.13
+  configChecksum: c3635780d06929148ff48b0c1a0648d4
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 89e7d2d9-972e-4c76-a358-369a4caedef2
-  pristine_commit_hash: 01eac4375adac1099d0fbf8da0ba229b15ab9fc0
-  pristine_tree_hash: 5c889121b91c388e60946736bb146dddacf5b0db
+  generation_id: f88101f0-5cc1-4238-9dc8-ecf3f1ec9939
+  pristine_commit_hash: 1267e86f4627ccfc7af2cdafd2beb64a10d55a0a
+  pristine_tree_hash: fc028016fb7cc2f7bae2ae76b81ba8abf8d7841c
 features:
   go:
     additionalDependencies: 0.1.0
@@ -242,6 +242,22 @@ trackedFiles:
     id: 01206efb096b
     last_write_checksum: sha1:33d0ba007275c2ff9472751459c79a5f08ea815d
     pristine_git_object: 2b7f8f1f4d498b9f973fcce8f9b556a9fbaa873c
+  docs/models/components/badgegettagsrequestbody.md:
+    id: 03616d9c9260
+    last_write_checksum: sha1:e61543e48b8403e0a45346272e5d298b4cc3c5bd
+    pristine_git_object: 2a5d75c2aa2029f2107d95a3215b2780d2c0cafd
+  docs/models/components/badgegettagsresponsebody.md:
+    id: 6c417a97ce48
+    last_write_checksum: sha1:9be16e738c1bc9ad7a63a6b7df78ab13d81f8cae
+    pristine_git_object: 6de95b6aa5e4fb44bc2e33aa81294a9ff02108d7
+  docs/models/components/badgegettagstag.md:
+    id: 6492c022d938
+    last_write_checksum: sha1:b73f374add5826fb600f1e3ee39d7e0ad02e37df
+    pristine_git_object: de31e548f1877c26634cd0490bdb7b693c29b7c3
+  docs/models/components/badgegettagsvocabulary.md:
+    id: bf3728b09f3d
+    last_write_checksum: sha1:4865e4bf5f8eca06e1b7fd7218158b896b20f6c9
+    pristine_git_object: 2735f6ec4cf08a274b36fc3b6f0064f62555f660
   docs/models/components/badgelistcraftersentry.md:
     id: f44b55469431
     last_write_checksum: sha1:6ff9dff4cd27b7a2d95d6e68fade96e487ab82ba
@@ -278,6 +294,22 @@ trackedFiles:
     id: 709ff9d05afa
     last_write_checksum: sha1:113c7c52dd0cf3d4ffecfd4216edcf8eedad463f
     pristine_git_object: f49610c754d6cd8401ac97366555a687bd40c45a
+  docs/models/components/badgesettagsdesign.md:
+    id: 857780ed13bd
+    last_write_checksum: sha1:a279beca57d85167eb691bfa6e79498d5aeec06d
+    pristine_git_object: eb0db18e30fb0f825011c05d8488ac3e946fa8a2
+  docs/models/components/badgesettagsrequestbody.md:
+    id: 042a8d25b9ca
+    last_write_checksum: sha1:a20c62e8f4a7f857aa6764b646b4dbe72cdfd2e5
+    pristine_git_object: bc051cf9fbddeb157e1236679e2b7a294e513207
+  docs/models/components/badgesettagsresponsebody.md:
+    id: b0730ae1400e
+    last_write_checksum: sha1:9bb0cd8198be02a73695d7ef1c11c0ad86780a24
+    pristine_git_object: b50e66c73d2e98e4db6c15099b90a766c7aae6b0
+  docs/models/components/badgesettagstag.md:
+    id: e0d6ddb81142
+    last_write_checksum: sha1:b4e0a499b839f46a899d30f7af5f919a8dcf19fd
+    pristine_git_object: 25f3a2f8cb1e9692732ecc0056cc29aaa9ccc6d0
   docs/models/components/badgesubmittagreviewdesign.md:
     id: 961fb63fc3b1
     last_write_checksum: sha1:dc3d5453ed8b685b555dd248d04e8bfde2458bd4
@@ -702,6 +734,10 @@ trackedFiles:
     id: 9ee49ae01bd1
     last_write_checksum: sha1:61def784d77d5e74bfbc6ece500c76188a1be082
     pristine_git_object: bae7dccbaaa4f1d80ec59b16c35f101e3f1308fa
+  docs/models/components/reviewstatus.md:
+    id: 5bca76d03c5e
+    last_write_checksum: sha1:7788b057c6683cab802dd6d52e72f8dd61a35065
+    pristine_git_object: 55fbfa811662117339a0f924efa56945e26b9fd3
   docs/models/components/role.md:
     id: ab26d0e394ad
     last_write_checksum: sha1:ffb1a7e19762552524060c621c6df4a5912652b9
@@ -1842,6 +1878,10 @@ trackedFiles:
     id: 57d5f7aa2074
     last_write_checksum: sha1:ee3a53ee37c17e1d0c04fc5e24036e740d59502f
     pristine_git_object: aa3bbf918521d2f16a185e388e9b089a17ac7df1
+  docs/models/operations/badgegettagsresponse.md:
+    id: 315b20fc5836
+    last_write_checksum: sha1:5d0d4b0bdb81f44c9eb1eae59294be837ef5b99e
+    pristine_git_object: cb62bbd63e20fe18e11b62b5c438c07ac78e1405
   docs/models/operations/badgelistcraftersresponse.md:
     id: 18569fb33cc7
     last_write_checksum: sha1:7423306c619208600be025cce0e9584ec740ebe9
@@ -1862,6 +1902,10 @@ trackedFiles:
     id: e05e03dc8298
     last_write_checksum: sha1:fc9076f9be9802f06a93eb1d4d05d0f9341f2ac0
     pristine_git_object: ea1df12a7ca1f6a7712742bc534d847921ebb5fc
+  docs/models/operations/badgesettagsresponse.md:
+    id: d870f93bcb0f
+    last_write_checksum: sha1:727997cb7e8617bbc0bd8e047703e89592853e4d
+    pristine_git_object: af77aec4e106485ffa99cec92e8d2c8a81a1ab72
   docs/models/operations/badgesubmittagreviewresponse.md:
     id: 58a3986d79be
     last_write_checksum: sha1:aa7033339d162f50d62fcfa6fb374e21f1b71e55
@@ -2080,8 +2124,8 @@ trackedFiles:
     pristine_git_object: 74de5292bd22a5e6e821175b0169bd6072c6235b
   docs/sdks/badges/README.md:
     id: 1fc8ad0e1c4f
-    last_write_checksum: sha1:448f526a668ac0535a47c789027c9e718ac4a6b2
-    pristine_git_object: 92c574af92d309ee2bc6ba5446330b8a18c7653d
+    last_write_checksum: sha1:0b86a8055092ce694dace5dc72fbb8697adf3660
+    pristine_git_object: e6c8fba90bd2b80e9d07c6f4ac66eea9171fa6d6
   docs/sdks/donate/README.md:
     id: 21482ecf5423
     last_write_checksum: sha1:ed22fc4fb21c4d1f59c145161a81c82e1a0fde4b
@@ -2156,12 +2200,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:c0796944505cc996c87fed3866d7d174bcf8ab37
-    pristine_git_object: 4984eed99dea803b8dc7a1f0abb0a6527c7f07f9
+    last_write_checksum: sha1:e07d0d5d064dc8d02cef7e6280c8f945329197fb
+    pristine_git_object: 866b83a161701b29fe84e03cafd8d7e3c177658d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:372cd301c42f485084dffa95ac93803391b722bb
-    pristine_git_object: a426d0ca1801ecf1ac4712e3320a9dcbab44590d
+    last_write_checksum: sha1:14238e899e78fc637a0d8a8954f5a1ebeb65fb1d
+    pristine_git_object: 4a463fc1aa3cc18a4730af1cb1da89f2cd17b8da
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2466,6 +2510,10 @@ trackedFiles:
     id: b59dbff3b661
     last_write_checksum: sha1:adc5c150c1f0aee7753ba55bc9d42c37180d44f7
     pristine_git_object: 58d337f8392d1bfbe292fc36ad86ae52abf36658
+  src/funcs/badgesGetTags.ts:
+    id: 9baf68dcc14e
+    last_write_checksum: sha1:7c2be6e58405a0dd64bee50411f4c5c223a9ac32
+    pristine_git_object: 6bf1b12352ddddc031c95b5cbd63ba6a3924c61d
   src/funcs/badgesListCrafters.ts:
     id: f66c065e7e79
     last_write_checksum: sha1:7796ec2c5ddf09e4023bd668c917597af7ab3e9a
@@ -2478,6 +2526,10 @@ trackedFiles:
     id: f37a0fe4b393
     last_write_checksum: sha1:aea29ac0e6c7b32ad20df9b4d5eb59273a402e48
     pristine_git_object: 5edb2ee7431a6ca2f1f6509e4c1384f5176399e1
+  src/funcs/badgesSetTags.ts:
+    id: 05ab5b2c593b
+    last_write_checksum: sha1:b2a5d9e123f4e924c8c1291d46ba7e2eed12ae2a
+    pristine_git_object: d9a6c9375e413e48747b0f85945d8b4b38dd64ce
   src/funcs/badgesSubmitTagReview.ts:
     id: b83e284fd5be
     last_write_checksum: sha1:3ced96d9d9c838a65aa121743a03762a1b3e9b1d
@@ -2588,8 +2640,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:92684b7f5db20ebf7109ab6d639d0c0f7d00c332
-    pristine_git_object: b30108811fbb3c8905f6969b671b97ca81be209b
+    last_write_checksum: sha1:c77727f99ba5eee78345a531800d134d779e9840
+    pristine_git_object: 6203ba2ef45637a40b7fb5203bb98b58cf2f2751
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -2762,6 +2814,22 @@ trackedFiles:
     id: 49035a3ee00b
     last_write_checksum: sha1:7548f12414b712955d9c34ab38fc7a0a989ebd2c
     pristine_git_object: 7816c63359546045f8933305d8b85ac0825e93e0
+  src/models/components/badgegettagsrequestbody.ts:
+    id: 54c1fd4bba61
+    last_write_checksum: sha1:3a352acb8d6f4e737cb22e74f70216a8d9edc51c
+    pristine_git_object: 213d547136d5ea825dae5e554728ede202dadfac
+  src/models/components/badgegettagsresponsebody.ts:
+    id: aefe1bdcf939
+    last_write_checksum: sha1:7dc308fa2b83ad76400216d23411988b2076d74c
+    pristine_git_object: 0aa715d0220745257947c607e859471ee7524880
+  src/models/components/badgegettagstag.ts:
+    id: 39f8eaa6a30f
+    last_write_checksum: sha1:15ca49e432284975821149ab2e4d23a85b297e54
+    pristine_git_object: c654ed6fd3abec525d92c4f82198f06a4668e28a
+  src/models/components/badgegettagsvocabulary.ts:
+    id: 237a8174e96d
+    last_write_checksum: sha1:f34ce5dea61926e237ded366745244e299a54b8d
+    pristine_git_object: 5292df915ff3c2f516f32e0f8260b506e6761914
   src/models/components/badgelistcraftersentry.ts:
     id: 4f9473570eba
     last_write_checksum: sha1:fb80780b7a23cb5e9a9787029c2e06c6f9415953
@@ -2790,6 +2858,22 @@ trackedFiles:
     id: 1f01ffd95ead
     last_write_checksum: sha1:2e2973be93e423782872ccd7e5748fc2121af3bc
     pristine_git_object: d7b9287a419ce10841146dc2801561c8b041726a
+  src/models/components/badgesettagsdesign.ts:
+    id: 52125c5f376c
+    last_write_checksum: sha1:5d3c8f8e1ec23ca2cff232bea09f4140bddfd5d4
+    pristine_git_object: bbd763a336f34e80a65c28da2e9ee6480abea62b
+  src/models/components/badgesettagsrequestbody.ts:
+    id: 73b9b51b89ad
+    last_write_checksum: sha1:133d2b4d5aede3702edc18256ecb65e67f2acb75
+    pristine_git_object: c5cd08086f3dca7c225611f08cae5c6d3f69cf3e
+  src/models/components/badgesettagsresponsebody.ts:
+    id: b7c6326b460c
+    last_write_checksum: sha1:564d4fb34dc92c2b75ea2915a882cdc6f522487e
+    pristine_git_object: f690a8f3d1e0c83f22fa4711e14bb3783d382496
+  src/models/components/badgesettagstag.ts:
+    id: 531883ca64b3
+    last_write_checksum: sha1:582e3d8e0f89e9ea20cb06d2eca22fcf8ec4d102
+    pristine_git_object: bfb8bc8dff0637f094e76ba7857b43abce061404
   src/models/components/badgesubmittagreviewdesign.ts:
     id: 3bedcfb56385
     last_write_checksum: sha1:7f08ae59203e9e618ef3ab5e6809d5c0499d08b8
@@ -2972,8 +3056,8 @@ trackedFiles:
     pristine_git_object: 7cd7601da1973ca2256015754facff8484ee9c88
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:bfe90a2ee4b5f09d0228da859a7418c96d1d0a16
-    pristine_git_object: 87e91fe3d05184726b8c9893e5068f3900c2ba7a
+    last_write_checksum: sha1:7a497480977d01de71526ea66448fac07d150e2d
+    pristine_git_object: 3f953581cff4e084e943d16078d9dfc6d266acfc
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:0ecb916cddc7c2f319f8083cee2aa3240d572607
@@ -4026,6 +4110,10 @@ trackedFiles:
     id: 1a74979184a6
     last_write_checksum: sha1:889b2f1e9f020950f17eeec9c630ba36f9921340
     pristine_git_object: a78b04889cb50c682fdc36469e5a97ac36e11eb2
+  src/models/operations/badgegettags.ts:
+    id: 6798bd587dd6
+    last_write_checksum: sha1:1b04ee3aafd44bcc880a782e3cb740e4aff31358
+    pristine_git_object: 993616271521e37a4b91d5eeff34d5e33da0d2dc
   src/models/operations/badgelistcrafters.ts:
     id: d2a9c993c6cd
     last_write_checksum: sha1:d24772269f34a752d0621978fe380928b51f0734
@@ -4042,6 +4130,10 @@ trackedFiles:
     id: f7f1e4234dcf
     last_write_checksum: sha1:abb1cec9d159998061b36786f9e747d3a9893f72
     pristine_git_object: d4251ba0c953a2f9f1c49ded774b719593bcb3e7
+  src/models/operations/badgesettags.ts:
+    id: 062e14d2e88f
+    last_write_checksum: sha1:86e104fcf3142c1bd1b9f1f85c4c954721d56224
+    pristine_git_object: 1c7b7cb7265ad666df00296e22c09660a705824f
   src/models/operations/badgesubmittagreview.ts:
     id: 5d9435b9282d
     last_write_checksum: sha1:e06da3b23e3bd08d7cf2a765cfb98eb17d1c42fb
@@ -4076,8 +4168,8 @@ trackedFiles:
     pristine_git_object: 3b6babb7e52b75d746e12dbdf7a96fc3cd659614
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:d443e3ce7a885427ce45f45ec0c50b951324c734
-    pristine_git_object: 29f1e3e851e8c1060d436c7fca61020d4b18d75d
+    last_write_checksum: sha1:551836f0b4d0da16e8987890454ae197c8bdf706
+    pristine_git_object: e73502e2c7424c2c0976b9cdb5aeab9cf4920fc8
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:1dced8af5e78d8ecedfb50e446126076cb54b6e8
@@ -4188,8 +4280,8 @@ trackedFiles:
     pristine_git_object: d0e3f1fdfe3cf28eda401b28174c945faba6ce94
   src/sdk/badges.ts:
     id: 70ab00a5caba
-    last_write_checksum: sha1:bb9ed2d5e672e8738f84a4ef453fab4efa65a05b
-    pristine_git_object: 22eecef5573e2d690de60d2938e08820b708f2be
+    last_write_checksum: sha1:ed7d4fa2a22fe4c65cce3c57a44697c4daab8664
+    pristine_git_object: ab9f9a708a3aa8c07842842ab22be36966341524
   src/sdk/donate.ts:
     id: 5b7661a11242
     last_write_checksum: sha1:7467a13d259596478dc389764062017a6aaa6bd6
@@ -5970,11 +6062,34 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.getTags:
+    speakeasy-default-badge-get-tags:
+      requestBody:
+        application/json: {"badgeId": "<id>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeGetTagsResponseBody.json", "badgeId": "<id>", "colors": null, "designs": [], "metadata": [], "tagsVersion": "<value>", "vocabulary": {"colors": [{"hex": ["<value 1>", "<value 2>", "<value 3>"], "id": "<id>", "name": "<value>"}], "designs": [{"id": "<id>", "name": "<value>"}], "metadata": [{"id": "<id>", "name": "<value>"}]}}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  badge.setTags:
+    speakeasy-default-badge-set-tags:
+      requestBody:
+        application/json: {"badgeId": "<id>", "expectedTagsVersion": "<value>"}
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/BadgeSetTagsResponseBody.json", "closedReview": false, "colors": [{"id": "<id>", "name": "<value>"}], "designs": [], "metadata": [], "tagsVersion": "<value>"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `steamsets.admin.getAccount()`:  `response.tierOverride` **Added**
+  * `steamsets.badges.getTags()`: **Added**
+  * `steamsets.badges.setTags()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
