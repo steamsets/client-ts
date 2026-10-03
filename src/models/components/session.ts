@@ -6,6 +6,10 @@ import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  SessionLocation,
+  SessionLocation$inboundSchema,
+} from "./sessionlocation.js";
 
 export type Session = {
   /**
@@ -24,6 +28,7 @@ export type Session = {
    * The time the session was last seen
    */
   lastSeen: Date;
+  location?: SessionLocation | undefined;
   /**
    * The session id
    */
@@ -49,6 +54,7 @@ export const Session$inboundSchema: z.ZodMiniType<Session, unknown> = z.object({
     z.iso.datetime({ offset: true }),
     z.transform(v => new Date(v)),
   ),
+  location: z.optional(SessionLocation$inboundSchema),
   sessionId: z.string(),
   userAgent: z.string(),
 });
