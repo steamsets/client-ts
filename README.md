@@ -173,9 +173,11 @@ run();
 ### [Badges](docs/sdks/badges/README.md)
 
 * [claimTagReviews](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
+* [getTags](docs/sdks/badges/README.md#gettags) - Get a badge's tags for editing
 * [listCrafters](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
 * [listTags](docs/sdks/badges/README.md#listtags) - List badge tags
 * [reviseTagReview](docs/sdks/badges/README.md#revisetagreview) - Revise a completed badge tag review
+* [setTags](docs/sdks/badges/README.md#settags) - Replace a badge's tags
 * [submitTagReview](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 
 ### [Donate](docs/sdks/donate/README.md)
@@ -738,9 +740,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`appsListOwners`](docs/sdks/apps/README.md#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
 - [`badgesClaimTagReviews`](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
+- [`badgesGetTags`](docs/sdks/badges/README.md#gettags) - Get a badge's tags for editing
 - [`badgesListCrafters`](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
 - [`badgesListTags`](docs/sdks/badges/README.md#listtags) - List badge tags
 - [`badgesReviseTagReview`](docs/sdks/badges/README.md#revisetagreview) - Revise a completed badge tag review
+- [`badgesSetTags`](docs/sdks/badges/README.md#settags) - Replace a badge's tags
 - [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 - [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
 - [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress

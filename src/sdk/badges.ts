@@ -3,9 +3,11 @@
  */
 
 import { badgesClaimTagReviews } from "../funcs/badgesClaimTagReviews.js";
+import { badgesGetTags } from "../funcs/badgesGetTags.js";
 import { badgesListCrafters } from "../funcs/badgesListCrafters.js";
 import { badgesListTags } from "../funcs/badgesListTags.js";
 import { badgesReviseTagReview } from "../funcs/badgesReviseTagReview.js";
+import { badgesSetTags } from "../funcs/badgesSetTags.js";
 import { badgesSubmitTagReview } from "../funcs/badgesSubmitTagReview.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -22,6 +24,20 @@ export class Badges extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.BadgeClaimTagReviewsResponse> {
     return unwrapAsync(badgesClaimTagReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get a badge's tags for editing
+   */
+  async getTags(
+    request: components.BadgeGetTagsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeGetTagsResponse> {
+    return unwrapAsync(badgesGetTags(
       this,
       request,
       options,
@@ -64,6 +80,20 @@ export class Badges extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.BadgeReviseTagReviewResponse> {
     return unwrapAsync(badgesReviseTagReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Replace a badge's tags
+   */
+  async setTags(
+    request: components.BadgeSetTagsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.BadgeSetTagsResponse> {
+    return unwrapAsync(badgesSetTags(
       this,
       request,
       options,
