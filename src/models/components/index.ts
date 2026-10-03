@@ -126,6 +126,7 @@ export * from "./searchgettrendingrequestbody.js";
 export * from "./searchgettrendingresponsebody.js";
 export * from "./security.js";
 export * from "./session.js";
+export * from "./sessionlocation.js";
 export * from "./sitesubscribeheartbeat.js";
 export * from "./supporterstatus.js";
 export * from "./trendingaccount.js";
