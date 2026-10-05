@@ -1,13 +1,13 @@
 # Reason
 
-Why the account is leaving, from a preset list
+Deprecated. A preset reason, kept for older clients. Defaults to other
 
 ## Example Usage
 
 ```typescript
 import { Reason } from "@steamsets/client-ts/models/components";
 
-let value: Reason = "privacy";
+let value: Reason = "other";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```

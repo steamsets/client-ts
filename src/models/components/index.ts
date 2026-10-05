@@ -102,6 +102,7 @@ export * from "./kvlistresponsebody.js";
 export * from "./kvsetrequestbody.js";
 export * from "./leaderboardaccount.js";
 export * from "./leaderboardchange.js";
+export * from "./leaderboardchangepoint.js";
 export * from "./leaderboardcity.js";
 export * from "./leaderboardcountry.js";
 export * from "./leaderboardgetchangesrequestbody.js";
