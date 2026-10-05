@@ -7,7 +7,7 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
 /**
- * Why the account is leaving, from a preset list
+ * Deprecated. A preset reason, kept for older clients. Defaults to other
  */
 export const Reason = {
   Privacy: "privacy",
@@ -17,19 +17,19 @@ export const Reason = {
   Other: "other",
 } as const;
 /**
- * Why the account is leaving, from a preset list
+ * Deprecated. A preset reason, kept for older clients. Defaults to other
  */
 export type Reason = OpenEnum<typeof Reason>;
 
 export type AccountOptOutRequestBody = {
   /**
-   * Why the account is leaving, in its own words. Required when reason is other
+   * Why the account is leaving, in its own words. At least 10 characters, in words
    */
-  comment?: string | undefined;
+  comment: string;
   /**
-   * Why the account is leaving, from a preset list
+   * Deprecated. A preset reason, kept for older clients. Defaults to other
    */
-  reason: Reason;
+  reason?: Reason | undefined;
 };
 
 /** @internal */
@@ -38,8 +38,8 @@ export const Reason$outboundSchema: z.ZodMiniType<string, Reason> = openEnums
 
 /** @internal */
 export type AccountOptOutRequestBody$Outbound = {
-  comment?: string | undefined;
-  reason: string;
+  comment: string;
+  reason?: string | undefined;
 };
 
 /** @internal */
@@ -47,8 +47,8 @@ export const AccountOptOutRequestBody$outboundSchema: z.ZodMiniType<
   AccountOptOutRequestBody$Outbound,
   AccountOptOutRequestBody
 > = z.object({
-  comment: z.optional(z.string()),
-  reason: Reason$outboundSchema,
+  comment: z.string(),
+  reason: z.optional(Reason$outboundSchema),
 });
 
 export function accountOptOutRequestBodyToJSON(
