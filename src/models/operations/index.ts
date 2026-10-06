@@ -63,6 +63,7 @@ export * from "./adminrevealsteamapikey.js";
 export * from "./adminteststeamapikey.js";
 export * from "./adminunbanplayer.js";
 export * from "./adminupdateaccount.js";
+export * from "./adminupdatecosmetics.js";
 export * from "./adminupdateresources.js";
 export * from "./adminupdateroleoverride.js";
 export * from "./adminupdateroles.js";

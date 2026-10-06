@@ -1,0 +1,22 @@
+# V1AdminUpdateCosmeticsRequestBody
+
+## Example Usage
+
+```typescript
+import { V1AdminUpdateCosmeticsRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AdminUpdateCosmeticsRequestBody = {
+  nameEffect: "rainbow",
+  themeColor: "#FF5733",
+  vanity: "flo",
+};
+```
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      | Example                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                             | [components.IDSearch](../../models/components/idsearch.md)                                                                       | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |                                                                                                                                  |
+| `nameEffect`                                                                                                                     | [components.V1AdminUpdateCosmeticsRequestBodyNameEffect](../../models/components/v1adminupdatecosmeticsrequestbodynameeffect.md) | :heavy_minus_sign:                                                                                                               | The name effect. none clears it, omit to leave it alone                                                                          | rainbow                                                                                                                          |
+| `themeColor`                                                                                                                     | *string*                                                                                                                         | :heavy_minus_sign:                                                                                                               | The profile theme color as #RRGGBB (no alpha). Empty string clears it, omit to leave it alone                                    | #FF5733                                                                                                                          |
+| `vanity`                                                                                                                         | *string*                                                                                                                         | :heavy_minus_sign:                                                                                                               | The custom vanity. Empty string clears it, omit to leave it alone                                                                | flo                                                                                                                              |

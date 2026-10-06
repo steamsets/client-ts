@@ -111,6 +111,10 @@ export type V1AdminGetAccountResponseBody = {
    */
   name: string;
   /**
+   * The name effect, none when the account has none
+   */
+  nameEffect: string;
+  /**
    * The name updates the account has
    */
   nameUpdates: Array<V1AccountNameUpdate> | null;
@@ -166,6 +170,10 @@ export type V1AdminGetAccountResponseBody = {
    * The state of the account
    */
   state: string | null;
+  /**
+   * The profile theme color as #RRGGBB, or null when the account has none
+   */
+  themeColor: string | null;
   tierOverride: AdminTierOverride | null;
   /**
    * The vanity of the account
@@ -209,6 +217,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
     ),
     locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
     name: z.string(),
+    nameEffect: z.string(),
     nameUpdates: z.nullable(z.array(V1AccountNameUpdate$inboundSchema)),
     note: z.nullable(z.string()),
     noteAuthor: z.nullable(z.string()),
@@ -227,6 +236,7 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
     roles: z.nullable(z.array(Role$inboundSchema)),
     sessions: z.nullable(z.array(Session$inboundSchema)),
     state: z.nullable(z.string()),
+    themeColor: z.nullable(z.string()),
     tierOverride: z.nullable(AdminTierOverride$inboundSchema),
     vanity: z.nullable(z.string()),
     vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$inboundSchema)),
