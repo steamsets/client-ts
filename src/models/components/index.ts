@@ -250,6 +250,8 @@ export * from "./v1adminunbanplayerrequestbody.js";
 export * from "./v1adminunbanplayerresponsebody.js";
 export * from "./v1adminupdateaccountrequestbody.js";
 export * from "./v1adminupdateaccountresponsebody.js";
+export * from "./v1adminupdatecosmeticsrequestbody.js";
+export * from "./v1adminupdatecosmeticsresponsebody.js";
 export * from "./v1adminupdateresourcesrequestbody.js";
 export * from "./v1adminupdateroleoverriderequestbody.js";
 export * from "./v1adminupdaterolesrequestbody.js";

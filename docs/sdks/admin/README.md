@@ -21,6 +21,7 @@ Admin related operations, stay away from these.
 * [testSteamApiKey](#teststeamapikey) - Test a Steam Web API key against Steam
 * [unbanPlayer](#unbanplayer) - Remove a player's game ban
 * [updateAccount](#updateaccount) - Update staff-managed account fields (custom donations, staff note)
+* [updateCosmetics](#updatecosmetics) - Update an account's vanity, theme color and name effect
 * [updateResources](#updateresources) - Update account resources
 * [updateRoleOverride](#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](#updateroles) - Update account roles
@@ -1130,6 +1131,85 @@ run();
 ### Response
 
 **Promise\<[operations.AdminUpdateAccountResponse](../../models/operations/adminupdateaccountresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## updateCosmetics
+
+Update an account's vanity, theme color and name effect
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.updateCosmetics" method="post" path="/v1/admin.updateCosmetics" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.updateCosmetics({
+    nameEffect: "rainbow",
+    themeColor: "#FF5733",
+    vanity: "flo",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminUpdateCosmetics } from "@steamsets/client-ts/funcs/adminUpdateCosmetics.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminUpdateCosmetics(steamSets, {
+    nameEffect: "rainbow",
+    themeColor: "#FF5733",
+    vanity: "flo",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminUpdateCosmetics failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.V1AdminUpdateCosmeticsRequestBody](../../models/components/v1adminupdatecosmeticsrequestbody.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminUpdateCosmeticsResponse](../../models/operations/adminupdatecosmeticsresponse.md)\>**
 
 ### Errors
 

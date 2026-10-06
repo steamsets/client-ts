@@ -17,6 +17,7 @@ import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
 import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
 import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
+import { adminUpdateCosmetics } from "../funcs/adminUpdateCosmetics.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
 import { adminUpdateRoleOverride } from "../funcs/adminUpdateRoleOverride.js";
 import { adminUpdateRoles } from "../funcs/adminUpdateRoles.js";
@@ -234,6 +235,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminUpdateAccountResponse> {
     return unwrapAsync(adminUpdateAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an account's vanity, theme color and name effect
+   */
+  async updateCosmetics(
+    request: components.V1AdminUpdateCosmeticsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateCosmeticsResponse> {
+    return unwrapAsync(adminUpdateCosmetics(
       this,
       request,
       options,
