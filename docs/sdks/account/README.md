@@ -3082,6 +3082,7 @@ async function run() {
     v1AccountUpdateSettingsRequestBody: {
       email: "steamsets@example.com",
       hidden: true,
+      hiddenReason: "People keep messaging me about my badges",
       language: "en",
       nameEffect: "rainbow",
       themeColor: "#FF5733",
@@ -3114,6 +3115,7 @@ async function run() {
     v1AccountUpdateSettingsRequestBody: {
       email: "steamsets@example.com",
       hidden: true,
+      hiddenReason: "People keep messaging me about my badges",
       language: "en",
       nameEffect: "rainbow",
       themeColor: "#FF5733",

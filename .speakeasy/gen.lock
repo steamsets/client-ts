@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 907a5da45f1b30e5a4bc0dc0f4d6eb08
+  docChecksum: 2e61494453684ac5716326cb87c15383
   docVersion: 1.0.0
   speakeasyVersion: 1.800.1
   generationVersion: 2.943.0
-  releaseVersion: 0.38.15
-  configChecksum: a204e1fed85e8023662ab975622d411e
+  releaseVersion: 0.38.16
+  configChecksum: e1ad0160814fab3403d1ceef7bf459aa
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: ae59f1b6-cb40-4126-a418-f66df696dc4c
-  pristine_commit_hash: 3554efe12601e171a4d0aef03e278447c141bc0e
-  pristine_tree_hash: 53b408a7aea102f80458d66c132af052f632449b
+  generation_id: fb9ffe45-a906-46e4-a57e-f6fd52a31c1e
+  pristine_commit_hash: ab6efddaae960cb7e48ffb44667861a196406c44
+  pristine_tree_hash: 8058a77db35ef33f259648bc6643479c9532b118
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1136,8 +1136,8 @@ trackedFiles:
     pristine_git_object: 5fb136700e1f03189d09a77d84275b0ef1a3c5a3
   docs/models/components/v1accountupdatesettingsrequestbody.md:
     id: cb918ca18f32
-    last_write_checksum: sha1:3368ffdf8351b2219b904ae8bbc3be727e12668a
-    pristine_git_object: 26bc414797f6253bfc05144afc50bcbe7a83717d
+    last_write_checksum: sha1:0b28a61d2b1f1a1fe26637e8a863c19a4e209d86
+    pristine_git_object: 2d8de4566d43bd3d8e2116463404266d8005c808
   docs/models/components/v1accountupdatesettingsrequestbodynameeffect.md:
     id: 05cc240afff3
     last_write_checksum: sha1:729a2c1aeceefc1af4124cfe069ef076a8f83e77
@@ -1280,8 +1280,8 @@ trackedFiles:
     pristine_git_object: 18cc6b1a51613566a4f4622bd5f7e5ffbf975519
   docs/models/components/v1adminhiddenaccount.md:
     id: 32675ba20429
-    last_write_checksum: sha1:f9abef55b0e10bd8f019715e519d3d24821631b2
-    pristine_git_object: 3283d3d3281164c741dd3f29be68d72b5d64dccc
+    last_write_checksum: sha1:c5640c5f2489901898832db47022963d938b1e05
+    pristine_git_object: c0b5e87961994a56b1d00066c802b73b9a88ea0c
   docs/models/components/v1adminhiddenaccountkind.md:
     id: 4ed4728884d5
     last_write_checksum: sha1:cceef9cf54fb993cb6e2cfd93cc0649811409f33
@@ -1764,8 +1764,8 @@ trackedFiles:
     pristine_git_object: e3c7e2e35684ecc68b3e0f98c93e199600853fe3
   docs/models/operations/accountupdatesettingsrequest.md:
     id: 187468181b31
-    last_write_checksum: sha1:dc807740c201208836d6cebe365713e3c0f2395d
-    pristine_git_object: 272e55b3d96b27895167397263d60b40166bad58
+    last_write_checksum: sha1:906d9dfd555844f60ea36b5cdcdad52954c9929f
+    pristine_git_object: 47526a1b91874389e9a401dbbf43ae727fc5ad20
   docs/models/operations/accountupdatesettingsresponse.md:
     id: aa4598cc3f2d
     last_write_checksum: sha1:c626ca7ddcc09592280b79a0a8b429dd8d1d67cb
@@ -2104,8 +2104,8 @@ trackedFiles:
     pristine_git_object: 4a224c0f36ad0ff90ea3f8c7c825a1b766b0e51e
   docs/sdks/account/README.md:
     id: 2d1d67055b31
-    last_write_checksum: sha1:814b27f53f9445b9569bddba9b78a35617ecc0f7
-    pristine_git_object: 18b3d79e9e2d1da59f541a367540c68b1a2b6f66
+    last_write_checksum: sha1:e8b89c55ac6e5fe32eaab1178d725281ac3ae4f8
+    pristine_git_object: bae58af012e72208f242346fc067367d455bdef1
   docs/sdks/activity/README.md:
     id: f6e8241fca80
     last_write_checksum: sha1:58c665cd50edaa54affdf267e647e7766192708e
@@ -2208,12 +2208,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:b8c5ca3176b3c67e7588db4c0747b37fa97b04ca
-    pristine_git_object: d408ada617688e3758196b549c6f04c8e1a75070
+    last_write_checksum: sha1:0a2310c872e329b37f37e4bf20adc91d89f8f8f3
+    pristine_git_object: 136b9f32eb6074b3eb75d0d744ab312d9ffb0327
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:243fe088a624c9c4f6dbbc6daa5d4d15f9f63518
-    pristine_git_object: 1b30dc88f5f83f050347677183128ce463be94a1
+    last_write_checksum: sha1:b522c143ee6f788cf2b9b1b215d092ae1225c08f
+    pristine_git_object: 6135bb414261d08edbb0a05b8d60d192300c8e3e
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2648,8 +2648,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ac277ef1e5a33c1c82accb496ff31ff3d81f7722
-    pristine_git_object: e9da6a98ec3f6975979f2f76b4913c0f2e03f112
+    last_write_checksum: sha1:7ff7cd369bcb40202a837bdb5ad89c59e172499c
+    pristine_git_object: 2e0db96ce1d576c0c629f5e4a3bf372150be21c6
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3492,8 +3492,8 @@ trackedFiles:
     pristine_git_object: 182f5102db54a4631abc690488af42829cbaedce
   src/models/components/v1accountupdatesettingsrequestbody.ts:
     id: 4f43774c3dd5
-    last_write_checksum: sha1:caaf8897f0005c08031a3ec04bfc87a0bb0b4551
-    pristine_git_object: 1d1bbf30c896e8e3964ecb7337f60d8ce1aa9313
+    last_write_checksum: sha1:c9bd644c24ca638eb10fb6b8372a4a7784d5524b
+    pristine_git_object: 7689d136cb0ed77b291eea60216de7b11e4b58bd
   src/models/components/v1accountupdatevanityrequestbody.ts:
     id: 1038dc18ab9e
     last_write_checksum: sha1:6e49d574503808dfa7b9f8d26ef87810bda06613
@@ -3616,8 +3616,8 @@ trackedFiles:
     pristine_git_object: 1ad931c686634e826a19744fc1d12075236e44f2
   src/models/components/v1adminhiddenaccount.ts:
     id: 909bcf451d20
-    last_write_checksum: sha1:da3454db3cdb2ef34921a6c1105793104a66fe39
-    pristine_git_object: 14166bef48b2f2cb5f5d26640c36beb7d805afe2
+    last_write_checksum: sha1:5bba5c63c48c9f966906361210981e15aa2bd6b1
+    pristine_git_object: 695262819d6e2fd5d37a4124056838abad6c08fc
   src/models/components/v1adminhiddenaccountssummary.ts:
     id: 39eca39a0b82
     last_write_checksum: sha1:6c0c10c1161239d04eed633a3d865baa6d89123d
@@ -4763,7 +4763,7 @@ examples:
   account.updateSettings:
     speakeasy-default-account-update-settings:
       requestBody:
-        application/json: {"email": "steamsets@example.com", "hidden": true, "language": "en", "nameEffect": "rainbow", "themeColor": "#FF5733", "vanity": "flo"}
+        application/json: {"email": "steamsets@example.com", "hidden": true, "hiddenReason": "People keep messaging me about my badges", "language": "en", "nameEffect": "rainbow", "themeColor": "#FF5733", "vanity": "flo"}
       responses:
         "422":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
@@ -6073,7 +6073,7 @@ examples:
         application/json: {"kind": "all", "limit": 50, "page": 1}
       responses:
         "200":
-          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminListHiddenAccountsResponseBody.json", "accounts": [{"account": {"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 869585, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 92710, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 59472, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 86716, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 485387, "xp": 123456}, "accountId": 882337740, "blockedLogins": 3, "feedback": {"comment": "I don't want my inventory on a public site", "reason": "privacy"}, "kind": "self", "lastBlockedLoginAt": "2026-01-16T16:45:59.969Z", "reason": "Self-service opt-out (GDPR)", "restrictedAt": "2026-10-01T12:00:00Z", "restrictedBy": {"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 150501, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 866733, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 59472, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 292626, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 700210, "xp": 123456}}], "summary": {"owner": 1200, "reasons": [{"count": 12, "reason": "privacy"}], "self": 30, "staff": 4}, "total": 1234}
+          application/json: {"$schema": "https://api.steamsets.com/schemas/V1AdminListHiddenAccountsResponseBody.json", "accounts": [{"account": {"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 869585, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 92710, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 59472, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 86716, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 485387, "xp": 123456}, "accountId": 882337740, "blockedLogins": 3, "feedback": {"comment": "I don't want my inventory on a public site", "reason": "privacy"}, "hideReason": "People keep messaging me about my badges", "kind": "self", "lastBlockedLoginAt": "2026-01-16T16:45:59.969Z", "reason": "Self-service opt-out (GDPR)", "restrictedAt": "2026-10-01T12:00:00Z", "restrictedBy": {"animatedAvatar": "<value>", "apps": 123456, "avatar": "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9", "avatarFrame": "<value>", "awardsGiven": 123456, "awardsReceived": 123456, "background": "<value>", "badges": 123456, "bans": 150501, "city": {"name": "Bad Krozingen"}, "country": {"code": "DE", "name": "Germany"}, "createdAt": "2023-01-01T00:00:00Z", "donated": 123456, "economyBan": "steam", "foilBadges": 123456, "friends": 123456, "gameBans": 866733, "level": 123456, "miniBackground": "<value>", "name": "steamsets", "nameEffect": "rainbow", "normalBadges": 123456, "playtime": 123456, "pointsGiven": 123456, "pointsReceived": 123456, "privacy": "public", "region": {"name": "Europe"}, "roles": [{"extras": {}, "rating": 59472, "role": "sapphire"}], "state": {"name": "Baden-Wurttemberg"}, "steamId": "76561198842603734", "steamSetsScore": 292626, "steamSetsVanity": "steamsets", "steamVanity": "steamsets", "themeColor": "#FF5733", "vacBans": 700210, "xp": 123456}}], "summary": {"owner": 1200, "reasons": [{"count": 12, "reason": "privacy"}], "self": 30, "staff": 4}, "total": 1234}
         "401":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
@@ -6102,10 +6102,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.account.optOut()`:  `request` **Changed** (Breaking ⚠️)
-  * `steamsets.leaderboard.getChanges()`:  `response.changes[].history` **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.updateSettings()`: \n  *  `request.v1AccountUpdateSettingsRequestBody.hiddenReason` **Added**\n* `steamsets.admin.listHiddenAccounts()`:  `response.accounts[].hideReason` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
