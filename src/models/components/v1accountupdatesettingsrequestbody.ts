@@ -43,6 +43,10 @@ export type V1AccountUpdateSettingsRequestBody = {
    */
   hidden?: boolean | null | undefined;
   /**
+   * Why the account is hidden, in the user's own words. Required when hidden changes to true: at least 10 characters, in words
+   */
+  hiddenReason?: string | null | undefined;
+  /**
    * The language the account should use. Omit to leave unchanged
    */
   language?: string | null | undefined;
@@ -70,6 +74,7 @@ export type V1AccountUpdateSettingsRequestBody$Outbound = {
   countryOverride?: string | null | undefined;
   email?: string | null | undefined;
   hidden?: boolean | null | undefined;
+  hiddenReason?: string | null | undefined;
   language?: string | null | undefined;
   nameEffect?: string | null | undefined;
   themeColor?: string | null | undefined;
@@ -84,6 +89,7 @@ export const V1AccountUpdateSettingsRequestBody$outboundSchema: z.ZodMiniType<
   countryOverride: z.optional(z.nullable(z.string())),
   email: z.optional(z.nullable(z.string())),
   hidden: z.optional(z.nullable(z.boolean())),
+  hiddenReason: z.optional(z.nullable(z.string())),
   language: z.optional(z.nullable(z.string())),
   nameEffect: z.optional(
     z.nullable(V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema),

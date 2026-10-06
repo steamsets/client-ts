@@ -44,6 +44,10 @@ export type V1AdminHiddenAccount = {
   blockedLogins: number;
   feedback: V1AdminOptOutFeedback | null;
   /**
+   * What the account wrote when it last hid its profile. Null for hides from before the reason was required
+   */
+  hideReason: string | null;
+  /**
    * owner when the owner hid the account, self for an opt-out, staff for a restriction staff applied
    */
   kind: V1AdminHiddenAccountKind;
@@ -77,6 +81,7 @@ export const V1AdminHiddenAccount$inboundSchema: z.ZodMiniType<
   accountId: z.int(),
   blockedLogins: z.int(),
   feedback: z.nullable(V1AdminOptOutFeedback$inboundSchema),
+  hideReason: z.nullable(z.string()),
   kind: V1AdminHiddenAccountKind$inboundSchema,
   lastBlockedLoginAt: z.nullable(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
