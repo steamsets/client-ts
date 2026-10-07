@@ -11,7 +11,6 @@ import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
 import { adminListHiddenAccounts } from "../funcs/adminListHiddenAccounts.js";
 import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
-import { adminRemoveVanity } from "../funcs/adminRemoveVanity.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
 import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
 import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
@@ -153,20 +152,6 @@ export class Admin extends ClientSDK {
   ): Promise<operations.AdminListSteamApiKeysResponse> {
     return unwrapAsync(adminListSteamApiKeys(
       this,
-      options,
-    ));
-  }
-
-  /**
-   * Remove vanity URL
-   */
-  async removeVanity(
-    request: components.AccountSearch,
-    options?: RequestOptions,
-  ): Promise<operations.AdminRemoveVanityResponse> {
-    return unwrapAsync(adminRemoveVanity(
-      this,
-      request,
       options,
     ));
   }

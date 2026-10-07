@@ -237,7 +237,6 @@ export * from "./v1adminlisthiddenaccountsresponsebody.js";
 export * from "./v1adminliststeamapikeysresponsebody.js";
 export * from "./v1adminoptoutfeedback.js";
 export * from "./v1adminoptoutreasoncount.js";
-export * from "./v1adminremovevanityresponsebody.js";
 export * from "./v1adminrestrictaccountrequestbody.js";
 export * from "./v1adminrestrictaccountresponsebody.js";
 export * from "./v1adminrevealsteamapikeyrequestbody.js";
