@@ -45,6 +45,10 @@ export type CurrentLeaderboardRank = {
    */
   leaderboard: CurrentLeaderboardRankLeaderboard;
   /**
+   * The global rank from the latest daily snapshot 7 to 14 days ago. 0 when there is no snapshot in that range.
+   */
+  rankWeekAgo: number;
+  /**
    * The ranks in the leaderboard in csv global,regional,country,state,city
    */
   ranks: string;
@@ -66,6 +70,7 @@ export const CurrentLeaderboardRank$inboundSchema: z.ZodMiniType<
   unknown
 > = z.object({
   leaderboard: CurrentLeaderboardRankLeaderboard$inboundSchema,
+  rankWeekAgo: z.int(),
   ranks: z.string(),
   totals: z.string(),
 });

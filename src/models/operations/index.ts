@@ -57,7 +57,6 @@ export * from "./adminmaintenancecreate.js";
 export * from "./adminmaintenancedelete.js";
 export * from "./adminmaintenancelist.js";
 export * from "./adminmaintenanceupdate.js";
-export * from "./adminremovevanity.js";
 export * from "./adminrestrictaccount.js";
 export * from "./adminrevealsteamapikey.js";
 export * from "./adminteststeamapikey.js";
