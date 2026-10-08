@@ -7,6 +7,35 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
 /**
+ * The order direction
+ */
+export const V1AdminListUsersRequestBodyDirection = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * The order direction
+ */
+export type V1AdminListUsersRequestBodyDirection = OpenEnum<
+  typeof V1AdminListUsersRequestBodyDirection
+>;
+
+/**
+ * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+ */
+export const OrderBy = {
+  SignedUp: "signedUp",
+  LastSeen: "lastSeen",
+  Level: "level",
+  Games: "games",
+  Badges: "badges",
+} as const;
+/**
+ * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+ */
+export type OrderBy = OpenEnum<typeof OrderBy>;
+
+/**
  * new lists accounts by signup time, active lists them by their newest session activity
  */
 export const V1AdminListUsersRequestBodySort = {
@@ -37,9 +66,17 @@ export type V1AdminListUsersRequestBodyWindow = OpenEnum<
 
 export type V1AdminListUsersRequestBody = {
   /**
+   * The order direction
+   */
+  direction?: V1AdminListUsersRequestBodyDirection | undefined;
+  /**
    * Rows per page
    */
   limit?: number | undefined;
+  /**
+   * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+   */
+  orderBy?: OrderBy | undefined;
   /**
    * 1-based page number
    */
@@ -55,6 +92,16 @@ export type V1AdminListUsersRequestBody = {
 };
 
 /** @internal */
+export const V1AdminListUsersRequestBodyDirection$outboundSchema: z.ZodMiniType<
+  string,
+  V1AdminListUsersRequestBodyDirection
+> = openEnums.outboundSchema(V1AdminListUsersRequestBodyDirection);
+
+/** @internal */
+export const OrderBy$outboundSchema: z.ZodMiniType<string, OrderBy> = openEnums
+  .outboundSchema(OrderBy);
+
+/** @internal */
 export const V1AdminListUsersRequestBodySort$outboundSchema: z.ZodMiniType<
   string,
   V1AdminListUsersRequestBodySort
@@ -68,7 +115,9 @@ export const V1AdminListUsersRequestBodyWindow$outboundSchema: z.ZodMiniType<
 
 /** @internal */
 export type V1AdminListUsersRequestBody$Outbound = {
+  direction: string;
   limit: number;
+  orderBy?: string | undefined;
   page: number;
   sort: string;
   window: string;
@@ -79,7 +128,12 @@ export const V1AdminListUsersRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminListUsersRequestBody$Outbound,
   V1AdminListUsersRequestBody
 > = z.object({
+  direction: z._default(
+    V1AdminListUsersRequestBodyDirection$outboundSchema,
+    "desc",
+  ),
   limit: z._default(z.int(), 50),
+  orderBy: z.optional(OrderBy$outboundSchema),
   page: z._default(z.int(), 1),
   sort: z._default(V1AdminListUsersRequestBodySort$outboundSchema, "new"),
   window: z._default(V1AdminListUsersRequestBodyWindow$outboundSchema, "week"),

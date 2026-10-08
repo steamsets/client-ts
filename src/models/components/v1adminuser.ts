@@ -10,6 +10,10 @@ import {
   LeaderboardAccount,
   LeaderboardAccount$inboundSchema,
 } from "./leaderboardaccount.js";
+import {
+  V1AdminUserRestriction,
+  V1AdminUserRestriction$inboundSchema,
+} from "./v1adminuserrestriction.js";
 
 export type V1AdminUser = {
   account: LeaderboardAccount | null;
@@ -18,9 +22,14 @@ export type V1AdminUser = {
    */
   accountId: number;
   /**
+   * Whether the account is hidden site-wide. A restriction always forces this on
+   */
+  hidden: boolean;
+  /**
    * The newest session activity of the account
    */
   lastSeenAt: Date;
+  restriction: V1AdminUserRestriction;
   /**
    * When the account first signed in. Null for accounts from before signups were recorded that have no session left
    */
@@ -32,10 +41,12 @@ export const V1AdminUser$inboundSchema: z.ZodMiniType<V1AdminUser, unknown> = z
   .object({
     account: z.nullable(LeaderboardAccount$inboundSchema),
     accountId: z.int(),
+    hidden: z.boolean(),
     lastSeenAt: z.pipe(
       z.iso.datetime({ offset: true }),
       z.transform(v => new Date(v)),
     ),
+    restriction: V1AdminUserRestriction$inboundSchema,
     signedUpAt: z.nullable(
       z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
     ),

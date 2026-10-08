@@ -258,6 +258,7 @@ export * from "./v1adminupdateroleoverriderequestbody.js";
 export * from "./v1adminupdaterolesrequestbody.js";
 export * from "./v1adminuser.js";
 export * from "./v1adminusercounts.js";
+export * from "./v1adminuserrestriction.js";
 export * from "./v1adminuserssummary.js";
 export * from "./v1appbadge.js";
 export * from "./v1appfilters.js";

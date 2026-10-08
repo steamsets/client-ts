@@ -705,7 +705,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.admin.listUsers({});
+  const result = await steamSets.admin.listUsers({
+    orderBy: "level",
+  });
 
   console.log(result);
 }
@@ -728,7 +730,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await adminListUsers(steamSets, {});
+  const res = await adminListUsers(steamSets, {
+    orderBy: "level",
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
