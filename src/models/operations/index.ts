@@ -53,6 +53,7 @@ export * from "./admingetaccount.js";
 export * from "./admingetplayerbanstatus.js";
 export * from "./adminlisthiddenaccounts.js";
 export * from "./adminliststeamapikeys.js";
+export * from "./adminlistusers.js";
 export * from "./adminmaintenancecreate.js";
 export * from "./adminmaintenancedelete.js";
 export * from "./adminmaintenancelist.js";
