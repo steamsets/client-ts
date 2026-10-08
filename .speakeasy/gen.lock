@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 82c0818a6bc791d88b50a655e83343cb
+  docChecksum: 627001b8e50007a24924efa287bb0716
   docVersion: 1.0.0
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.38.20
-  configChecksum: 3258a45257e20ef29d278d1520eb375e
+  releaseVersion: 0.38.21
+  configChecksum: af2a2dc75e66e1cbe8027c3124616670
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: bcc0966c-cb33-4fd6-b982-d3af03ec2b65
-  pristine_commit_hash: f4c3b32619e5943c0cdfba755c65c90fd00ef094
-  pristine_tree_hash: 658267a7c0047388a1311ad69752eca830c4bc5e
+  generation_id: 50ecbf6e-b4de-4c9d-bbcd-dae13259d60b
+  pristine_commit_hash: 290052a1bb8aeb453ce448ee781e684eba92eb49
+  pristine_tree_hash: 5a00a027ff8d8a67ad92322d43036a2be121036a
 features:
   go:
     additionalDependencies: 0.1.0
@@ -2264,12 +2264,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:66e2e319ab6b54b2ae2df2575907b404d053c2ee
-    pristine_git_object: 56eb7ac3a0ecffabbfc8e148c918039d0adb4ec4
+    last_write_checksum: sha1:82dad44e45ca71b4497e9b977c6475a900b9065a
+    pristine_git_object: 47f4fa11b2bd7d22e5606f9211027b5aae1b4b7e
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:5e86146a98a44134110c780d143a14816b6ae9b4
-    pristine_git_object: 7d1bc922e499cdca19704637e2c9e2940329d16c
+    last_write_checksum: sha1:2ba308ec8c92e0ac5684e23095778f16dbab948c
+    pristine_git_object: c6332bc28f0552bd9bd004129171eb183bd27c18
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2708,8 +2708,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:90c3d94785e39d5de416229e6cefb527e52e4331
-    pristine_git_object: b934ace5b65292c6fce20b79186e6e202267102b
+    last_write_checksum: sha1:57cc2cb66ceed62f5e3aabfb31783aa9a802f3a5
+    pristine_git_object: ec22c4329ca50c23de7c4d97317f53a5454d5f86
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3780,8 +3780,8 @@ trackedFiles:
     pristine_git_object: 478481ea8042d89dbd40e1061b006b3f9f851b47
   src/models/components/v1adminuser.ts:
     id: ab47f422c614
-    last_write_checksum: sha1:e95887195f6f914a2b434214dfba5a1520b88c9a
-    pristine_git_object: 31fc812ba6f6414bd44c9aa1e8781018e6438490
+    last_write_checksum: sha1:b9749d170a92fc59a6487b05a6a5683b2b79bdea
+    pristine_git_object: fee158b07518f411e9485d4e1525b8bd9766c1ed
   src/models/components/v1adminusercounts.ts:
     id: 4cd30019f237
     last_write_checksum: sha1:573ff535dfa523a2c500d0134bc9df8d64a48d57
@@ -6216,7 +6216,9 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.listUsers()`: \n  *  `request` **Changed**\n  *  `response.users[]` **Changed**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `steamsets.admin.listUsers()`:  `response.users[].restriction` **Changed** (Breaking ⚠️)
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

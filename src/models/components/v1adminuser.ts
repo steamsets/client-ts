@@ -29,7 +29,7 @@ export type V1AdminUser = {
    * The newest session activity of the account
    */
   lastSeenAt: Date;
-  restriction: V1AdminUserRestriction;
+  restriction: V1AdminUserRestriction | null;
   /**
    * When the account first signed in. Null for accounts from before signups were recorded that have no session left
    */
@@ -46,7 +46,7 @@ export const V1AdminUser$inboundSchema: z.ZodMiniType<V1AdminUser, unknown> = z
       z.iso.datetime({ offset: true }),
       z.transform(v => new Date(v)),
     ),
-    restriction: V1AdminUserRestriction$inboundSchema,
+    restriction: z.nullable(V1AdminUserRestriction$inboundSchema),
     signedUpAt: z.nullable(
       z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
     ),
