@@ -11,6 +11,7 @@ import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
 import { adminListHiddenAccounts } from "../funcs/adminListHiddenAccounts.js";
 import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
+import { adminListUsers } from "../funcs/adminListUsers.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
 import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
 import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
@@ -152,6 +153,20 @@ export class Admin extends ClientSDK {
   ): Promise<operations.AdminListSteamApiKeysResponse> {
     return unwrapAsync(adminListSteamApiKeys(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * List new and active users
+   */
+  async listUsers(
+    request: components.V1AdminListUsersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListUsersResponse> {
+    return unwrapAsync(adminListUsers(
+      this,
+      request,
       options,
     ));
   }

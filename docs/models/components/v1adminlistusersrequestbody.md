@@ -1,0 +1,18 @@
+# V1AdminListUsersRequestBody
+
+## Example Usage
+
+```typescript
+import { V1AdminListUsersRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AdminListUsersRequestBody = {};
+```
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `limit`                                                                                                      | *number*                                                                                                     | :heavy_minus_sign:                                                                                           | Rows per page                                                                                                | 50                                                                                                           |
+| `page`                                                                                                       | *number*                                                                                                     | :heavy_minus_sign:                                                                                           | 1-based page number                                                                                          | 1                                                                                                            |
+| `sort`                                                                                                       | [components.V1AdminListUsersRequestBodySort](../../models/components/v1adminlistusersrequestbodysort.md)     | :heavy_minus_sign:                                                                                           | new lists accounts by signup time, active lists them by their newest session activity                        | new                                                                                                          |
+| `window`                                                                                                     | [components.V1AdminListUsersRequestBodyWindow](../../models/components/v1adminlistusersrequestbodywindow.md) | :heavy_minus_sign:                                                                                           | How far back the list goes                                                                                   | week                                                                                                         |
