@@ -128,11 +128,12 @@ let value: V1AdminSubmission = {
     xp: 123456,
   },
   reporterAccountId: 1216167888,
+  screenshotUrl: "https://talkative-knitting.biz/",
   staffReply: "<value>",
   status: "new",
   subject: null,
   subjectAccountId: 1216167888,
-  updatedAt: new Date("2026-07-01T18:38:27.591Z"),
+  updatedAt: new Date("2024-02-17T14:18:47.587Z"),
 };
 ```
 
@@ -153,6 +154,7 @@ let value: V1AdminSubmission = {
 | `replyFrom`                                                                                   | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `reporter`                                                                                    | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
 | `reporterAccountId`                                                                           | *number*                                                                                      | :heavy_check_mark:                                                                            | The account that sent the report. Null for an anonymous report                                | 1216167888                                                                                    |
+| `screenshotUrl`                                                                               | *string*                                                                                      | :heavy_check_mark:                                                                            | Signed link to the screenshot, valid for one hour. Null when the report has none              |                                                                                               |
 | `staffReply`                                                                                  | *string*                                                                                      | :heavy_check_mark:                                                                            | The answer staff gave. Null until staff reply                                                 |                                                                                               |
 | `status`                                                                                      | [components.V1AdminSubmissionStatus](../../models/components/v1adminsubmissionstatus.md)      | :heavy_check_mark:                                                                            | Where staff are with it                                                                       | new                                                                                           |
 | `subject`                                                                                     | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
