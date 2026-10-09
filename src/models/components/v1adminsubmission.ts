@@ -107,6 +107,10 @@ export type V1AdminSubmission = {
    */
   reporterAccountId: number | null;
   /**
+   * Signed link to the screenshot, valid for one hour. Null when the report has none
+   */
+  screenshotUrl: string | null;
+  /**
    * The answer staff gave. Null until staff reply
    */
   staffReply: string | null;
@@ -166,6 +170,7 @@ export const V1AdminSubmission$inboundSchema: z.ZodMiniType<
   replyFrom: z.nullable(LeaderboardAccount$inboundSchema),
   reporter: z.nullable(LeaderboardAccount$inboundSchema),
   reporterAccountId: z.nullable(z.int()),
+  screenshotUrl: z.nullable(z.string()),
   staffReply: z.nullable(z.string()),
   status: V1AdminSubmissionStatus$inboundSchema,
   subject: z.nullable(LeaderboardAccount$inboundSchema),

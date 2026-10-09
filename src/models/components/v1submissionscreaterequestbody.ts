@@ -64,6 +64,10 @@ export type V1SubmissionsCreateRequestBody = {
    */
   reason?: V1SubmissionsCreateRequestBodyReason | undefined;
   /**
+   * WebP or JPEG screenshot of the part of the page the report is about, at most 512 KB
+   */
+  screenshot?: string | undefined;
+  /**
    * The profile a broken_profile report is about. Required for broken_profile, ignored otherwise
    */
   subjectAccountId?: number | undefined;
@@ -88,6 +92,7 @@ export type V1SubmissionsCreateRequestBody$Outbound = {
   message: string;
   pageUrl: string;
   reason?: string | undefined;
+  screenshot?: string | undefined;
   subjectAccountId?: number | undefined;
 };
 
@@ -101,6 +106,7 @@ export const V1SubmissionsCreateRequestBody$outboundSchema: z.ZodMiniType<
   message: z.string(),
   pageUrl: z.string(),
   reason: z.optional(V1SubmissionsCreateRequestBodyReason$outboundSchema),
+  screenshot: z.optional(z.string()),
   subjectAccountId: z.optional(z.int()),
 });
 
