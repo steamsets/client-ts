@@ -52,6 +52,10 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     steamSetsScore: 877615,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
     themeColor: "#FF5733",
     vacBans: 425488,
     xp: 123456,
@@ -98,6 +102,10 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     steamSetsScore: 918735,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
     themeColor: "#FF5733",
     vacBans: 189497,
     xp: 123456,

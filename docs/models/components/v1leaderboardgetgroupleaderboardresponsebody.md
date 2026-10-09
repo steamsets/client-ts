@@ -64,6 +64,10 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
         steamSetsScore: 822365,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
+        supporter: {
+          active: true,
+          months: 3,
+        },
         themeColor: "#FF5733",
         vacBans: 887355,
         xp: 123456,
@@ -129,6 +133,10 @@ let value: V1LeaderboardGetGroupLeaderboardResponseBody = {
       steamSetsScore: 822365,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
+      supporter: {
+        active: true,
+        months: 3,
+      },
       themeColor: "#FF5733",
       vacBans: 887355,
       xp: 123456,

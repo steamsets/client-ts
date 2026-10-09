@@ -79,6 +79,10 @@ let value: V1LeaderboardGetAccountLeaderboardResponseBody = {
     steamSetsScore: 823597,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
     themeColor: "#FF5733",
     vacBans: 294927,
     xp: 123456,

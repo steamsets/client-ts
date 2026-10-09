@@ -52,6 +52,10 @@ let value: V1AccountListFriendsResponseBody = {
       steamSetsScore: 304640,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
+      supporter: {
+        active: true,
+        months: 3,
+      },
       themeColor: "#FF5733",
       vacBans: 258339,
       xp: 123456,

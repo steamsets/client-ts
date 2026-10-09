@@ -49,6 +49,10 @@ let value: V1ActivityEvent = {
     steamSetsScore: 634507,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
     themeColor: "#FF5733",
     vacBans: 121724,
     xp: 123456,

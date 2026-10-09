@@ -53,6 +53,10 @@ let value: BadgeListCraftersResponseBody = {
       steamSetsScore: 853316,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
+      supporter: {
+        active: true,
+        months: 3,
+      },
       themeColor: "#FF5733",
       vacBans: 867332,
       xp: 123456,
