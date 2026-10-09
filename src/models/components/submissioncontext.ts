@@ -21,6 +21,10 @@ export type SubmissionContext = {
    */
   ref?: string | undefined;
   /**
+   * The part of the page the reporter pointed at
+   */
+  section?: string | undefined;
+  /**
    * Browser user agent
    */
   userAgent?: string | undefined;
@@ -38,6 +42,7 @@ export const SubmissionContext$inboundSchema: z.ZodMiniType<
   build: z.optional(z.string()),
   locale: z.optional(z.string()),
   ref: z.optional(z.string()),
+  section: z.optional(z.string()),
   userAgent: z.optional(z.string()),
   viewport: z.optional(z.string()),
 });
@@ -46,6 +51,7 @@ export type SubmissionContext$Outbound = {
   build?: string | undefined;
   locale?: string | undefined;
   ref?: string | undefined;
+  section?: string | undefined;
   userAgent?: string | undefined;
   viewport?: string | undefined;
 };
@@ -58,6 +64,7 @@ export const SubmissionContext$outboundSchema: z.ZodMiniType<
   build: z.optional(z.string()),
   locale: z.optional(z.string()),
   ref: z.optional(z.string()),
+  section: z.optional(z.string()),
   userAgent: z.optional(z.string()),
   viewport: z.optional(z.string()),
 });

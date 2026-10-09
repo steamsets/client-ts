@@ -10,6 +10,7 @@ let value: V1SubmissionsCreateRequestBody = {
     build: "59d6b1a9",
     locale: "en",
     ref: "3f9a1c22",
+    section: "Choose a tier",
     viewport: "1440x900",
   },
   kind: "bug",

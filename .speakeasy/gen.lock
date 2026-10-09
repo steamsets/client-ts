@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 402a1729c79551a5bf69d7c0ed59c592
+  docChecksum: e4e531942ae4e0e4c76b81f44cba14da
   docVersion: 1.0.0
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.38.22
-  configChecksum: e778e7757aef8e6a8dd7175d754abbdb
+  releaseVersion: 0.38.23
+  configChecksum: 10a8d77e8453c272794b1a263d3446e2
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 59d21279-a48a-4a6e-b7ee-ea25793a0452
-  pristine_commit_hash: 045eb048c8e1e668866aec3d656f644bb1f13362
-  pristine_tree_hash: c6b0cefcaa9f63fd8d5caf7a98df9aa3bcd500e0
+  generation_id: 8271ebb2-8d94-48b0-b001-97245c6caa8f
+  pristine_commit_hash: a90a21eab024768d6018f57905c1f1eaedeaf52c
+  pristine_tree_hash: 1ed6c1b6944cbe70af0713d8e00c2e968a5d1cfa
 features:
   go:
     additionalDependencies: 0.1.0
@@ -808,8 +808,8 @@ trackedFiles:
     pristine_git_object: b595756fcb66696eac8d47aa4e4971425f2f06c1
   docs/models/components/submissioncontext.md:
     id: 2aa6918dee1b
-    last_write_checksum: sha1:331ec7f6adaad8459a64bf74f3d43fb8ad1a9a28
-    pristine_git_object: b1ea97dd44120bf54f6c848c356f347e8b652fe6
+    last_write_checksum: sha1:3db2929d9a804c67887c584e8e54bae620fd144e
+    pristine_git_object: e5b38bae16ca797b6c26b55be087004576e93ec7
   docs/models/components/submissionkind.md:
     id: 8148284da960
     last_write_checksum: sha1:b70718cec7ad0befbc84e910086ed6f0efcee2a5
@@ -1404,8 +1404,8 @@ trackedFiles:
     pristine_git_object: 5c00bdbce7a00e8012dd1a7a16a4f669c4448a83
   docs/models/components/v1adminsubmission.md:
     id: 892ace6d1484
-    last_write_checksum: sha1:d6fcabbd515b5ab39352b226baff49ed9fc3e4b4
-    pristine_git_object: 45b72004dad4b3bc4f91542e939734c87056598f
+    last_write_checksum: sha1:e2e658d8079b8568e1a4f698e4c90fadf2a2d157
+    pristine_git_object: 0da6cd50d180c35cc94b1a1fd6663b9416f7b916
   docs/models/components/v1adminsubmissionkind.md:
     id: 9ea1fbe0661e
     last_write_checksum: sha1:e7cedb7b83d6ba6ae09085f3e455efdca8c3f501
@@ -1668,8 +1668,8 @@ trackedFiles:
     pristine_git_object: 5eb0f6023552f3e6d428147de5181a83285f94cd
   docs/models/components/v1submissionscreaterequestbody.md:
     id: 01213980d8b3
-    last_write_checksum: sha1:8056eb9e37b48ee3bde9c6a8d74d8948eb89b69c
-    pristine_git_object: 7cbded0cc678ec16498251f94a35f762e3237615
+    last_write_checksum: sha1:cbadaaea0ba918179977b713d049b915e9b84d2e
+    pristine_git_object: baa90f437ce2e3302ce56f1d06d0596673f6081f
   docs/models/components/v1submissionscreaterequestbodykind.md:
     id: 673d4d5e328d
     last_write_checksum: sha1:d5cc63db576ea2af494ae8333a9ab944743ec265
@@ -2344,8 +2344,8 @@ trackedFiles:
     pristine_git_object: a02efc46b2f26eb126c50f6f1a40f754642c7d59
   docs/sdks/submissions/README.md:
     id: c1686d49deeb
-    last_write_checksum: sha1:09b09fbc331cc2d661d6a544e6f637e4ba401edd
-    pristine_git_object: 4c2d05ee6a15daec64215dc7f0da19ef37175944
+    last_write_checksum: sha1:38bc89e5065ac4b6bdebcf56d82a12879a0ff017
+    pristine_git_object: 0a3d05227765d52707b5c79d48c4a3ab40acef50
   eslint.config.mjs:
     id: 461c8d07f6da
     last_write_checksum: sha1:9398f326377fe47f67af2df6eb6370750c0790b4
@@ -2368,12 +2368,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:fc9c5b4c99281eab46038575647461ba0d7b4abe
-    pristine_git_object: 54a4014f1517432044fd763b317c0909180a15a1
+    last_write_checksum: sha1:637f531e86015e0c30d3061ee7db266219bfc9e0
+    pristine_git_object: 8c4289a781fa64f5b95355cb6eabb20f210cef89
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:f20943922228c8a7ec40e4d32c171ccf8eefe13b
-    pristine_git_object: 5668195601e338c8585dfcd048d96c312179cc0b
+    last_write_checksum: sha1:42e31ff5f1f2c0d8796834c83580e7358aa219f7
+    pristine_git_object: 27e6cd666194b7791691a60a8413415ed4a19bb5
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2828,8 +2828,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:e98c53cc1752109633ed299aace9720f26f2a4d2
-    pristine_git_object: 6ab042b1019a1b6cfeaf501a431a605537a3cdae
+    last_write_checksum: sha1:0be781dd22f5baefbe730cc68cfb857fb95bf593
+    pristine_git_object: c4071bd527224f54dacf6b113e7684faca40153b
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3396,8 +3396,8 @@ trackedFiles:
     pristine_git_object: f25a3291e76aa2b76f74411272bcb9a85f520846
   src/models/components/submissioncontext.ts:
     id: f27fb8e1d97e
-    last_write_checksum: sha1:d53c7c0e68aba316ac44879e97e546388ebf3972
-    pristine_git_object: 31ccf921d4d4469cbd333ce64a738af10bb02577
+    last_write_checksum: sha1:414b654eea5aef92dcf5bcbebf42c57d04c41f6f
+    pristine_git_object: 0349a1bbc83e566a1d2e0502d175905182db4a28
   src/models/components/supporterstatus.ts:
     id: 84d4b576d9ef
     last_write_checksum: sha1:0dfe4bbb7c5783ad254a0028c9a8b3e55eaefaf2
@@ -6417,7 +6417,7 @@ examples:
   submissions.create:
     speakeasy-default-submissions-create:
       requestBody:
-        application/json: {"context": {"build": "59d6b1a9", "locale": "en", "ref": "3f9a1c22", "viewport": "1440x900"}, "kind": "bug", "message": "The badge page shows 0 badges for my profile.", "pageUrl": "https://steamsets.com/profiles/flo", "reason": "not_updating", "subjectAccountId": 1216167888}
+        application/json: {"context": {"build": "59d6b1a9", "locale": "en", "ref": "3f9a1c22", "section": "Choose a tier", "viewport": "1440x900"}, "kind": "bug", "message": "The badge page shows 0 badges for my profile.", "pageUrl": "https://steamsets.com/profiles/flo", "reason": "not_updating", "subjectAccountId": 1216167888}
       responses:
         "200":
           application/json: {"$schema": "https://api.steamsets.com/schemas/Submission.json", "createdAt": "2025-08-10T02:52:33.204Z", "id": "sub_2bM9x0aQ", "kind": "bug", "message": "<value>", "pageUrl": "https://steamsets.com/profiles/flo", "reason": "wrong_games", "repliedAt": "2025-12-11T19:16:37.106Z", "staffReply": "<value>", "status": "new", "subjectAccountId": 1216167888, "updatedAt": "2025-10-30T18:04:22.099Z"}
@@ -6436,28 +6436,7 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes:
-  * `steamsets.admin.submissions.list()`: **Added**
-  * `steamsets.admin.submissions.update()`: **Added**
-  * `steamsets.submissions.create()`: **Added**
-  * `steamsets.submissions.listMine()`: **Added**
-  * `steamsets.account.findFriendPath()`:  `response.paths[].path[].supporter` **Added**
-  * `steamsets.account.getTrending()`:  `response.accounts[].account.supporter` **Added**
-  * `steamsets.account.listFriends()`:  `response.friends[].supporter` **Added**
-  * `steamsets.activity.listAccountFeed()`:  `response.events[].account.supporter` **Added**
-  * `steamsets.activity.listGlobalFeed()`:  `response.events[].account.supporter` **Added**
-  * `steamsets.admin.listHiddenAccounts()`:  `response.accounts[].account.supporter` **Added**
-  * `steamsets.admin.listUsers()`:  `response.users[].account.supporter` **Added**
-  * `steamsets.apps.listOwners()`:  `response.owners[].supporter` **Added**
-  * `steamsets.badges.listCrafters()`:  `response.crafters[].supporter` **Added**
-  * `steamsets.item.findOwners()`:  `response.items[].owners[].account.supporter` **Added**
-  * `steamsets.leaderboard.getAccount()`:  `response.accounts[].supporter` **Added**
-  * `steamsets.leaderboard.getBucketLeaders()`:  `response.[].account.supporter` **Added**
-  * `steamsets.leaderboard.getChanges()`:  `response.changes[].account.supporter` **Added**
-  * `steamsets.leaderboard.getGroup()`:  `response.groups[].owner.supporter` **Added**
-  * `steamsets.leaderboard.previewAccountRank()`:  `response.ownAccount.supporter` **Added**
-  * `steamsets.staff.list()`:  `response.[].supporter` **Added**
+releaseNotes: "## Typescript SDK Changes:\n* `steamsets.admin.submissions.list()`:  `response.submissions[].context.section` **Added**\n* `steamsets.submissions.create()`: \n  *  `request.context.section` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
