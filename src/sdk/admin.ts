@@ -26,11 +26,17 @@ import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 import { SteamSetsMaintenance } from "./steamsetsmaintenance.js";
+import { SteamSetsSubmissions } from "./steamsetssubmissions.js";
 
 export class Admin extends ClientSDK {
   private _maintenance?: SteamSetsMaintenance;
   get maintenance(): SteamSetsMaintenance {
     return (this._maintenance ??= new SteamSetsMaintenance(this._options));
+  }
+
+  private _submissions?: SteamSetsSubmissions;
+  get submissions(): SteamSetsSubmissions {
+    return (this._submissions ??= new SteamSetsSubmissions(this._options));
   }
 
   /**

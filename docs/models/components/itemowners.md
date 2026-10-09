@@ -52,6 +52,10 @@ let value: ItemOwners = {
         steamSetsScore: 634507,
         steamSetsVanity: "steamsets",
         steamVanity: "steamsets",
+        supporter: {
+          active: true,
+          months: 3,
+        },
         themeColor: "#FF5733",
         vacBans: 121724,
         xp: 123456,
@@ -108,6 +112,10 @@ let value: ItemOwners = {
           steamSetsScore: 291402,
           steamSetsVanity: "steamsets",
           steamVanity: "steamsets",
+          supporter: {
+            active: true,
+            months: 3,
+          },
           themeColor: "#FF5733",
           vacBans: 314179,
           xp: 123456,

@@ -57,6 +57,10 @@ let value: FriendPath = {
       steamSetsScore: 291402,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
+      supporter: {
+        active: true,
+        months: 3,
+      },
       themeColor: "#FF5733",
       vacBans: 314179,
       xp: 123456,

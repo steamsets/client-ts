@@ -154,6 +154,11 @@ run();
 * [list](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
 * [update](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 
+#### [Admin.Submissions](docs/sdks/steamsetssubmissions/README.md)
+
+* [list](docs/sdks/steamsetssubmissions/README.md#list) - List bug reports, feature requests and feedback
+* [update](docs/sdks/steamsetssubmissions/README.md#update) - Set the status of a submission and answer the reporter
+
 ### [Analytics](docs/sdks/analytics/README.md)
 
 * [trackEvent](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
@@ -237,6 +242,11 @@ run();
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
 * [subscribe](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
+
+### [Submissions](docs/sdks/submissions/README.md)
+
+* [create](docs/sdks/submissions/README.md#create) - Send a bug report, profile report, feature request or feedback
+* [listMine](docs/sdks/submissions/README.md#listmine) - List the reports the signed-in account sent
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -730,6 +740,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRestrictAccount`](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 - [`adminRevealSteamApiKey`](docs/sdks/admin/README.md#revealsteamapikey) - Reveal a Steam Web API key
+- [`adminSubmissionsList`](docs/sdks/steamsetssubmissions/README.md#list) - List bug reports, feature requests and feedback
+- [`adminSubmissionsUpdate`](docs/sdks/steamsetssubmissions/README.md#update) - Set the status of a submission and answer the reporter
 - [`adminTestSteamApiKey`](docs/sdks/admin/README.md#teststeamapikey) - Test a Steam Web API key against Steam
 - [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 - [`adminUpdateAccount`](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
@@ -770,6 +782,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
 - [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
+- [`submissionsCreate`](docs/sdks/submissions/README.md#create) - Send a bug report, profile report, feature request or feedback
+- [`submissionsListMine`](docs/sdks/submissions/README.md#listmine) - List the reports the signed-in account sent
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

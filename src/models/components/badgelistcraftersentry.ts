@@ -25,6 +25,10 @@ import {
   LeaderboardState$inboundSchema,
 } from "./leaderboardstate.js";
 import { Role, Role$inboundSchema } from "./role.js";
+import {
+  SupporterStatus,
+  SupporterStatus$inboundSchema,
+} from "./supporterstatus.js";
 
 /**
  * Donator name effect, none when unset or the account no longer holds an entitling role
@@ -189,6 +193,7 @@ export type BadgeListCraftersEntry = {
    * The vanity of the account
    */
   steamVanity: string;
+  supporter?: SupporterStatus | undefined;
   /**
    * Donator profile theme color as #RRGGBB (no alpha), null when unset or the account no longer holds an entitling role
    */
@@ -260,6 +265,7 @@ export const BadgeListCraftersEntry$inboundSchema: z.ZodMiniType<
   steamSetsScore: z.int(),
   steamSetsVanity: z.string(),
   steamVanity: z.string(),
+  supporter: z.optional(SupporterStatus$inboundSchema),
   themeColor: z.nullable(z.string()),
   vacBans: z.int(),
   xp: z.int(),

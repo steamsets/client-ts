@@ -23,6 +23,7 @@ import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
+import { Submissions } from "./submissions.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -123,5 +124,10 @@ export class SteamSets extends ClientSDK {
   private _stats?: Stats;
   get stats(): Stats {
     return (this._stats ??= new Stats(this._options));
+  }
+
+  private _submissions?: Submissions;
+  get submissions(): Submissions {
+    return (this._submissions ??= new Submissions(this._options));
   }
 }

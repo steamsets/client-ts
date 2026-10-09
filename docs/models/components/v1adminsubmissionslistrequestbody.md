@@ -1,0 +1,20 @@
+# V1AdminSubmissionsListRequestBody
+
+## Example Usage
+
+```typescript
+import { V1AdminSubmissionsListRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: V1AdminSubmissionsListRequestBody = {
+  status: "new",
+};
+```
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          | Example                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `kind`                                                                                                               | [components.V1AdminSubmissionsListRequestBodyKind](../../models/components/v1adminsubmissionslistrequestbodykind.md) | :heavy_minus_sign:                                                                                                   | Only submissions of this kind                                                                                        | all                                                                                                                  |
+| `limit`                                                                                                              | *number*                                                                                                             | :heavy_minus_sign:                                                                                                   | Rows per page                                                                                                        | 50                                                                                                                   |
+| `page`                                                                                                               | *number*                                                                                                             | :heavy_minus_sign:                                                                                                   | 1-based page number                                                                                                  | 1                                                                                                                    |
+| `status`                                                                                                             | [components.Status](../../models/components/status.md)                                                               | :heavy_minus_sign:                                                                                                   | Only submissions with this status                                                                                    | new                                                                                                                  |
