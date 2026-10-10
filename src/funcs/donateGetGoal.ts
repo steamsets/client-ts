@@ -28,7 +28,7 @@ import { Result } from "../types/fp.js";
  * Get this month's donation goal progress
  *
  * @remarks
- * Public — no auth required. Aggregated per calendar month (UTC). Carries no per-donor amounts.
+ * Public — no auth required. Aggregated per calendar month (UTC). Each supporter carries their own total for the month.
  */
 export function donateGetGoal(
   client: SteamSetsCore,

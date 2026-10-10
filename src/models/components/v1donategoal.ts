@@ -38,7 +38,7 @@ export type V1DonateGoal = {
    */
   supporterCount: number;
   /**
-   * Newest first, capped at 48. Carries no donation amounts.
+   * Newest first, capped at 48.
    */
   supporters: Array<DonateSupporter> | null;
 };
