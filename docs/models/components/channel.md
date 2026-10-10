@@ -5,7 +5,7 @@
 ```typescript
 import { Channel } from "@steamsets/client-ts/models/components";
 
-let value: Channel = "discord";
+let value: Channel = "email";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: Channel = "discord";
 ## Values
 
 ```typescript
-"discord" | "email" | Unrecognized<string>
+"discord" | "email" | "push" | Unrecognized<string>
 ```

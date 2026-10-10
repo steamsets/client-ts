@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @steamsets/client-ts SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx accountArchiveNotifications.example.ts
+ * npm run build && npx tsx accountAddPushSubscription.example.ts
  */
 
 import { SteamSets } from "@steamsets/client-ts";
@@ -18,7 +18,11 @@ const steamSets = new SteamSets({
 });
 
 async function main() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }

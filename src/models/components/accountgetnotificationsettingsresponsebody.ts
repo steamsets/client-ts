@@ -11,6 +11,10 @@ import {
   AccountGetNotificationSettingsEntry,
   AccountGetNotificationSettingsEntry$inboundSchema,
 } from "./accountgetnotificationsettingsentry.js";
+import {
+  AccountGetNotificationSettingsPushDevice,
+  AccountGetNotificationSettingsPushDevice$inboundSchema,
+} from "./accountgetnotificationsettingspushdevice.js";
 
 export type AccountGetNotificationSettingsResponseBody = {
   /**
@@ -18,6 +22,11 @@ export type AccountGetNotificationSettingsResponseBody = {
    */
   dollarSchema?: string | undefined;
   discordConnected: boolean;
+  pushDevices: Array<AccountGetNotificationSettingsPushDevice>;
+  /**
+   * The VAPID public key for PushManager.subscribe, base64url
+   */
+  pushPublicKey: string;
   /**
    * Every kind and channel the account can turn on or off, with defaults applied
    */
@@ -31,6 +40,10 @@ export const AccountGetNotificationSettingsResponseBody$inboundSchema:
     z.object({
       $schema: z.optional(z.string()),
       discordConnected: z.boolean(),
+      pushDevices: z.array(
+        AccountGetNotificationSettingsPushDevice$inboundSchema,
+      ),
+      pushPublicKey: z.string(),
       settings: z.array(AccountGetNotificationSettingsEntry$inboundSchema),
       watchWishlist: z.boolean(),
     }),

@@ -6,7 +6,7 @@
 import { AccountGetNotificationSettingsEntry } from "@steamsets/client-ts/models/components";
 
 let value: AccountGetNotificationSettingsEntry = {
-  channel: "discord",
+  channel: "email",
   enabled: false,
   kind: "card_acquired",
 };

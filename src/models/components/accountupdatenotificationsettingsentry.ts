@@ -9,6 +9,7 @@ import { OpenEnum } from "../../types/enums.js";
 export const AccountUpdateNotificationSettingsEntryChannel = {
   Discord: "discord",
   Email: "email",
+  Push: "push",
 } as const;
 export type AccountUpdateNotificationSettingsEntryChannel = OpenEnum<
   typeof AccountUpdateNotificationSettingsEntryChannel

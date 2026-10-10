@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountArchiveNotifications } from "@steamsets/client-ts/funcs/accountArchiveNotifications.js";
+import { accountAddPushSubscription } from "@steamsets/client-ts/funcs/accountAddPushSubscription.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -29,12 +29,16 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountArchiveNotifications(steamSets, {});
+  const res = await accountAddPushSubscription(steamSets, {
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountArchiveNotifications failed:", res.error);
+    console.log("accountAddPushSubscription failed:", res.error);
   }
 }
 
