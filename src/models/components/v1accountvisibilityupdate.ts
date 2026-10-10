@@ -13,7 +13,7 @@ import { HistoryValue, HistoryValue$inboundSchema } from "./historyvalue.js";
 /**
  * Which visibility changed: profile, apps and friends are Steam's three privacy settings, steamsets is the site-level hidden toggle
  */
-export const Kind = {
+export const V1AccountVisibilityUpdateKind = {
   Profile: "profile",
   Apps: "apps",
   Friends: "friends",
@@ -22,13 +22,15 @@ export const Kind = {
 /**
  * Which visibility changed: profile, apps and friends are Steam's three privacy settings, steamsets is the site-level hidden toggle
  */
-export type Kind = OpenEnum<typeof Kind>;
+export type V1AccountVisibilityUpdateKind = OpenEnum<
+  typeof V1AccountVisibilityUpdateKind
+>;
 
 export type V1AccountVisibilityUpdate = {
   /**
    * Which visibility changed: profile, apps and friends are Steam's three privacy settings, steamsets is the site-level hidden toggle
    */
-  kind: Kind;
+  kind: V1AccountVisibilityUpdateKind;
   /**
    * The time the visibility was changed
    */
@@ -37,15 +39,17 @@ export type V1AccountVisibilityUpdate = {
 };
 
 /** @internal */
-export const Kind$inboundSchema: z.ZodMiniType<Kind, unknown> = openEnums
-  .inboundSchema(Kind);
+export const V1AccountVisibilityUpdateKind$inboundSchema: z.ZodMiniType<
+  V1AccountVisibilityUpdateKind,
+  unknown
+> = openEnums.inboundSchema(V1AccountVisibilityUpdateKind);
 
 /** @internal */
 export const V1AccountVisibilityUpdate$inboundSchema: z.ZodMiniType<
   V1AccountVisibilityUpdate,
   unknown
 > = z.object({
-  kind: Kind$inboundSchema,
+  kind: V1AccountVisibilityUpdateKind$inboundSchema,
   updatedAt: z.pipe(
     z.iso.datetime({ offset: true }),
     z.transform(v => new Date(v)),

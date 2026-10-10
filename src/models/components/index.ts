@@ -3,17 +3,26 @@
  */
 
 export * from "./accountbadgeinfo.js";
+export * from "./accountgetnotificationsettingsentry.js";
+export * from "./accountgetnotificationsettingsresponsebody.js";
 export * from "./accountgettrendingrequestbody.js";
 export * from "./accountgettrendingresponsebody.js";
 export * from "./accountleaderboardhistory.js";
+export * from "./accountlistcardwatchescard.js";
+export * from "./accountlistcardwatchesresponsebody.js";
 export * from "./accountoptoutrequestbody.js";
 export * from "./accountoptoutresponsebody.js";
 export * from "./accountsearch.js";
 export * from "./accountsubscribeheartbeat.js";
 export * from "./accountupdateerror.js";
+export * from "./accountupdatenotificationsettingsentry.js";
+export * from "./accountupdatenotificationsettingsrequestbody.js";
+export * from "./accountupdatenotificationsettingsresponsebody.js";
 export * from "./accountupdateprogress.js";
 export * from "./accountupdatestep.js";
 export * from "./accountviewstats.js";
+export * from "./accountwatchcardrequestbody.js";
+export * from "./accountwatchcardresponsebody.js";
 export * from "./adminaccountresource.js";
 export * from "./adminaccountresourceinherited.js";
 export * from "./adminaccountresourceoverride.js";
