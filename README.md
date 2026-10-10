@@ -116,6 +116,7 @@ run();
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [removePushSubscription](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
+* [sendTestPush](docs/sdks/account/README.md#sendtestpush) - Send a test push notification
 * [setWishlistWatch](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
@@ -735,6 +736,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountRemovePushSubscription`](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
+- [`accountSendTestPush`](docs/sdks/account/README.md#sendtestpush) - Send a test push notification
 - [`accountSetWishlistWatch`](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications

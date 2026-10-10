@@ -41,6 +41,7 @@ export * from "./accountrefreshinventory.js";
 export * from "./accountrefreshsession.js";
 export * from "./accountremovepushsubscription.js";
 export * from "./accountsendemailverification.js";
+export * from "./accountsendtestpush.js";
 export * from "./accountsetwishlistwatch.js";
 export * from "./accountsubscribe.js";
 export * from "./accountsubscribeemail.js";

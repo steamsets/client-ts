@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: b0b00a1df6585eaa6dd9c52ee9a13f4c
+  docChecksum: 6a721aa5d365761d742487b2fa445062
   docVersion: 1.0.0
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.38.29
-  configChecksum: db4ef063aeecad0b69328bdb28507d0c
+  releaseVersion: 0.38.30
+  configChecksum: 70f86e52cea31d3ddd45f8fd404c5835
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 03d81399-e1c8-4fa9-bfd0-87615310a75a
-  pristine_commit_hash: 2d9eaba8dd94a2e199e22bb36eac830992a06cd0
-  pristine_tree_hash: 827af6b8e92b66ba13f717f5bb5a60cdf9060872
+  generation_id: dd696bf9-c701-49a7-8c2a-71f951829194
+  pristine_commit_hash: fb93ec3e1ae62f3b9f06fb3dfa4b356854ee76e9
+  pristine_tree_hash: fa8c6a870a1afe269a0c6aa5f87f48ad4d81bf6c
 features:
   go:
     additionalDependencies: 0.1.0
@@ -202,6 +202,10 @@ trackedFiles:
     id: ee74019acc73
     last_write_checksum: sha1:58191e1739b9c5f530d587235a635bd72746504f
     pristine_git_object: 9706eed4a21fe7b4697be1eb445cd4a366765be4
+  docs/models/components/accountsendtestpushresponsebody.md:
+    id: 156ed66545e1
+    last_write_checksum: sha1:1f479decd86991028a5b6b543c911ad562cab5a5
+    pristine_git_object: d4b0eaf3ff864954c5bf65ff6f1cabe98266477e
   docs/models/components/accountsetwishlistwatchrequestbody.md:
     id: 18b2313616a7
     last_write_checksum: sha1:4d2a3ca03519622f1dcc4c3d81a15a11e4c5776d
@@ -2010,6 +2014,10 @@ trackedFiles:
     id: 14bc6a116573
     last_write_checksum: sha1:412d7a7560881bcac6722720e14f49bff71c03a0
     pristine_git_object: 76d579af9cb6040eea4c2f293fdd3426a4066248
+  docs/models/operations/accountsendtestpushresponse.md:
+    id: 3c0624beb617
+    last_write_checksum: sha1:eaf52078eb87c3c11a991da0f3da706a243330e1
+    pristine_git_object: e235b007b5696aaea0ad59a11977ce4396152e76
   docs/models/operations/accountsetwishlistwatchresponse.md:
     id: db5462077de1
     last_write_checksum: sha1:c9e57f929d5776b6b3adc652fd4e8e0ec7794dad
@@ -2420,8 +2428,8 @@ trackedFiles:
     pristine_git_object: 4a224c0f36ad0ff90ea3f8c7c825a1b766b0e51e
   docs/sdks/account/README.md:
     id: 2d1d67055b31
-    last_write_checksum: sha1:6d86bad34d77960393fd15722d7b2daabeb9b6e0
-    pristine_git_object: 93380e9511c335ae423a2310de372b9abbb3dd7b
+    last_write_checksum: sha1:aecfec58dd2c5c01bdfe58cb3f67854e641fa1e4
+    pristine_git_object: 05280f4b695926f0f379e963cad3cd974c0bf8f5
   docs/sdks/activity/README.md:
     id: f6e8241fca80
     last_write_checksum: sha1:58c665cd50edaa54affdf267e647e7766192708e
@@ -2532,12 +2540,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:be414fbab6df53cc2d51256e2be9cfde9de91f97
-    pristine_git_object: 139bb93adcac4b89861b50848eefa52611db9e57
+    last_write_checksum: sha1:4a5af17d54217f7264aaf1d7a1ee3c89f76b14e1
+    pristine_git_object: 2ecfcd591b33e4a544d9f17cab1df1ae8eaa913d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:45df14ed12e039bf35b8148ef8733df569130c43
-    pristine_git_object: e298e05e377444b7edc90497984967406e37bc07
+    last_write_checksum: sha1:488e8886e864c36733c023ba3fa39c1a8960b99d
+    pristine_git_object: 0819096f795437139e66fc0d97bc62da21cce3ba
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2706,6 +2714,10 @@ trackedFiles:
     id: f75ae48e88f3
     last_write_checksum: sha1:3ec5ee0a9f74145b110774a96fae731d9053345f
     pristine_git_object: 64afc734bad01d0347ead3575166790d635deeb7
+  src/funcs/accountSendTestPush.ts:
+    id: 69e236fc976b
+    last_write_checksum: sha1:b7ade538adc96ce10f1fcc7a66c170f9ee4c8b84
+    pristine_git_object: 1b15d431f520f5c377e1617d71852cf0718ffbf7
   src/funcs/accountSetWishlistWatch.ts:
     id: 9405d55d4e45
     last_write_checksum: sha1:ca075620996a622ede8642e46ae3ce0bc2e485f0
@@ -3032,8 +3044,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:9b48586892d749ee22a93ee8494551776733f6af
-    pristine_git_object: cf78bf833334ea8f3b071a9fff6d5a9d1f3be245
+    last_write_checksum: sha1:e976f8b0b62e36e7f500a09af0f89c3b92cf7f8a
+    pristine_git_object: 9c03ed5b131481634026e63654029c332a1a2a25
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3182,6 +3194,10 @@ trackedFiles:
     id: 4dc08554d886
     last_write_checksum: sha1:0372e91f526b0c133fcb7b31696b7a07eea83606
     pristine_git_object: db46fdd5a13eaaa52ed4f61cb6a68fdffe79d25b
+  src/models/components/accountsendtestpushresponsebody.ts:
+    id: 10c87ad75752
+    last_write_checksum: sha1:d1fdb42d65ccd3c04f827a801c8ed8bdcbd91df2
+    pristine_git_object: 1b6763f5df371b2eb06e946dbf8fde15bf480f92
   src/models/components/accountsetwishlistwatchrequestbody.ts:
     id: c261e5f595d8
     last_write_checksum: sha1:cf07a61996e910e2a7518343ca73ec1ff9572dc0
@@ -3548,8 +3564,8 @@ trackedFiles:
     pristine_git_object: 7cd7601da1973ca2256015754facff8484ee9c88
   src/models/components/index.ts:
     id: 0aa842dce54d
-    last_write_checksum: sha1:170213cc71584c3b3f807b6c6cbc4fb2fbe0f47b
-    pristine_git_object: b5e8bc671046c2b1d3c5ac634ff8d477e3ca5e55
+    last_write_checksum: sha1:59a4f521c4efab9cfe95b1eec2b8b78bd46e2c3c
+    pristine_git_object: 852ea9313ff445f74bc722354b35e1821799b61c
   src/models/components/inventoryset.ts:
     id: 63bc725be780
     last_write_checksum: sha1:0ecb916cddc7c2f319f8083cee2aa3240d572607
@@ -4558,6 +4574,10 @@ trackedFiles:
     id: 3d67066b1b1b
     last_write_checksum: sha1:ffeb7d0c1389d51e591ccbeea78936d1aa76b218
     pristine_git_object: 4a2de09f6021723bb3c9435eee63b4d6a80c61e7
+  src/models/operations/accountsendtestpush.ts:
+    id: 5c4fba14f08e
+    last_write_checksum: sha1:e9dae65c26de1d28724d1753f6fbbc00102ac5a1
+    pristine_git_object: bdd85df24adef53ebf2e799047f3df3f5e8b78fd
   src/models/operations/accountsetwishlistwatch.ts:
     id: 2c7b19dad953
     last_write_checksum: sha1:9cf8bb62fede2f24a624502587dbfd1138e61ffe
@@ -4784,8 +4804,8 @@ trackedFiles:
     pristine_git_object: 3b6babb7e52b75d746e12dbdf7a96fc3cd659614
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:9b7c5d38af52de21503c7e549e98aa674a9f4731
-    pristine_git_object: 2f5eb3c87635861a6e2217d85acb89487d86599d
+    last_write_checksum: sha1:8c181326f49c02a7ac0cf5634a6f1d0211008d22
+    pristine_git_object: b4eed2a267c225512999d0ae2cb881351c4582b9
   src/models/operations/itemfindowners.ts:
     id: 964d639ab7b0
     last_write_checksum: sha1:1dced8af5e78d8ecedfb50e446126076cb54b6e8
@@ -4876,8 +4896,8 @@ trackedFiles:
     pristine_git_object: 3124a01bc290556d29cd4259350792d12939dd1a
   src/sdk/account.ts:
     id: 2589b1a639bd
-    last_write_checksum: sha1:97926598c4c1f337f2fedcb5029a1411a34b70f8
-    pristine_git_object: 812af832c4be9906d0722a3f2322ee29973bbb7e
+    last_write_checksum: sha1:ffa316533e3cfcec4e4ef4566b72bdd27ae5ffec
+    pristine_git_object: 4a0368f4ddb7577ead2144b7724f4fe7b26c970f
   src/sdk/activity.ts:
     id: 87dddbbca815
     last_write_checksum: sha1:86eeaed5657c5ebc7f80df70c83ddfa93a7ee7e8
@@ -6886,9 +6906,20 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
         "500":
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+  account.sendTestPush:
+    speakeasy-default-account-send-test-push:
+      responses:
+        "200":
+          application/json: {"$schema": "https://api.steamsets.com/schemas/AccountSendTestPushResponseBody.json"}
+        "400":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
+        "500":
+          application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.addPushSubscription()`: **Added**\n* `steamsets.account.removePushSubscription()`: **Added**\n* `steamsets.account.getNotificationSettings()`:  `response` **Changed**\n* `steamsets.account.updateNotificationSettings()`: \n  *  `request.settings[].channel.enum(push)` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `steamsets.account.sendTestPush()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

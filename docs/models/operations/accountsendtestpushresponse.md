@@ -1,0 +1,16 @@
+# AccountSendTestPushResponse
+
+## Example Usage
+
+```typescript
+import { AccountSendTestPushResponse } from "@steamsets/client-ts/models/operations";
+
+let value: AccountSendTestPushResponse = {};
+```
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                               | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                       | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `accountSendTestPushResponseBody`                                                                        | [components.AccountSendTestPushResponseBody](../../models/components/accountsendtestpushresponsebody.md) | :heavy_minus_sign:                                                                                       | OK                                                                                                       |
