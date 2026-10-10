@@ -86,6 +86,7 @@ run();
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 * [getInfo](docs/sdks/account/README.md#getinfo) - Get account profile information
+* [getNotificationSettings](docs/sdks/account/README.md#getnotificationsettings) - Get the account's notification settings
 * [getSession](docs/sdks/account/README.md#getsession) - Get user session information
 * [getSettings](docs/sdks/account/README.md#getsettings) - Get account settings
 * [getTrending](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
@@ -93,6 +94,7 @@ run();
 * [listApps](docs/sdks/account/README.md#listapps) - List account owned apps
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
+* [listCardWatches](docs/sdks/account/README.md#listcardwatches) - List the trading cards the account watches
 * [listCraftedLevels](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
@@ -112,12 +114,14 @@ run();
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+* [updateNotificationSettings](docs/sdks/account/README.md#updatenotificationsettings) - Turn notifications on or off per channel
 * [updateProgress](docs/sdks/account/README.md#updateprogress) - Get the live progress of an account's most recent update.
 * [updateRole](docs/sdks/account/README.md#updaterole) - Update account role
 * [updateSettings](docs/sdks/account/README.md#updatesettings) - Update account settings
 * [updateVanity](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
 * [verifyConnection](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
+* [watchCard](docs/sdks/account/README.md#watchcard) - Watch or stop watching a trading card
 
 ### [Activity](docs/sdks/activity/README.md)
 
@@ -689,6 +693,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 - [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
 - [`accountGetInfo`](docs/sdks/account/README.md#getinfo) - Get account profile information
+- [`accountGetNotificationSettings`](docs/sdks/account/README.md#getnotificationsettings) - Get the account's notification settings
 - [`accountGetSession`](docs/sdks/account/README.md#getsession) - Get user session information
 - [`accountGetSettings`](docs/sdks/account/README.md#getsettings) - Get account settings
 - [`accountGetTrending`](docs/sdks/account/README.md#gettrending) - Top accounts by unique viewers in a window
@@ -696,6 +701,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListApps`](docs/sdks/account/README.md#listapps) - List account owned apps
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
+- [`accountListCardWatches`](docs/sdks/account/README.md#listcardwatches) - List the trading cards the account watches
 - [`accountListCraftedLevels`](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
@@ -715,12 +721,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
+- [`accountUpdateNotificationSettings`](docs/sdks/account/README.md#updatenotificationsettings) - Turn notifications on or off per channel
 - [`accountUpdateProgress`](docs/sdks/account/README.md#updateprogress) - Get the live progress of an account's most recent update.
 - [`accountUpdateRole`](docs/sdks/account/README.md#updaterole) - Update account role
 - [`accountUpdateSettings`](docs/sdks/account/README.md#updatesettings) - Update account settings
 - [`accountUpdateVanity`](docs/sdks/account/README.md#updatevanity) - Update account vanity URL
 - [`accountVerifyConnection`](docs/sdks/account/README.md#verifyconnection) - Verify OAuth connection
 - [`accountVerifyEmail`](docs/sdks/account/README.md#verifyemail) - Verify email address
+- [`accountWatchCard`](docs/sdks/account/README.md#watchcard) - Watch or stop watching a trading card
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed

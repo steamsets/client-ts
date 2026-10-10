@@ -14,6 +14,7 @@ import { accountGetBadgeHeatmap } from "../funcs/accountGetBadgeHeatmap.js";
 import { accountGetBadgeStats } from "../funcs/accountGetBadgeStats.js";
 import { accountGetDataPoints } from "../funcs/accountGetDataPoints.js";
 import { accountGetInfo } from "../funcs/accountGetInfo.js";
+import { accountGetNotificationSettings } from "../funcs/accountGetNotificationSettings.js";
 import { accountGetSession } from "../funcs/accountGetSession.js";
 import { accountGetSettings } from "../funcs/accountGetSettings.js";
 import { accountGetTrending } from "../funcs/accountGetTrending.js";
@@ -21,6 +22,7 @@ import { accountGetViewStats } from "../funcs/accountGetViewStats.js";
 import { accountListApps } from "../funcs/accountListApps.js";
 import { accountListBadgeBookmarks } from "../funcs/accountListBadgeBookmarks.js";
 import { accountListBadges } from "../funcs/accountListBadges.js";
+import { accountListCardWatches } from "../funcs/accountListCardWatches.js";
 import { accountListCraftedLevels } from "../funcs/accountListCraftedLevels.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
@@ -40,12 +42,14 @@ import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
+import { accountUpdateNotificationSettings } from "../funcs/accountUpdateNotificationSettings.js";
 import { accountUpdateProgress } from "../funcs/accountUpdateProgress.js";
 import { accountUpdateRole } from "../funcs/accountUpdateRole.js";
 import { accountUpdateSettings } from "../funcs/accountUpdateSettings.js";
 import { accountUpdateVanity } from "../funcs/accountUpdateVanity.js";
 import { accountVerifyConnection } from "../funcs/accountVerifyConnection.js";
 import { accountVerifyEmail } from "../funcs/accountVerifyEmail.js";
+import { accountWatchCard } from "../funcs/accountWatchCard.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -222,6 +226,18 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * Get the account's notification settings
+   */
+  async getNotificationSettings(
+    options?: RequestOptions,
+  ): Promise<operations.AccountGetNotificationSettingsResponse> {
+    return unwrapAsync(accountGetNotificationSettings(
+      this,
+      options,
+    ));
+  }
+
+  /**
    * Get user session information
    */
   async getSession(
@@ -313,6 +329,18 @@ export class Account extends ClientSDK {
     return unwrapResultIterator(accountListBadges(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * List the trading cards the account watches
+   */
+  async listCardWatches(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListCardWatchesResponse> {
+    return unwrapAsync(accountListCardWatches(
+      this,
       options,
     ));
   }
@@ -584,6 +612,20 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * Turn notifications on or off per channel
+   */
+  async updateNotificationSettings(
+    request: components.AccountUpdateNotificationSettingsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountUpdateNotificationSettingsResponse> {
+    return unwrapAsync(accountUpdateNotificationSettings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Get the live progress of an account's most recent update.
    */
   async updateProgress(
@@ -661,6 +703,23 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountVerifyEmailResponse> {
     return unwrapAsync(accountVerifyEmail(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Watch or stop watching a trading card
+   *
+   * @remarks
+   * A watched card sends a notification when another account gets it.
+   */
+  async watchCard(
+    request: components.AccountWatchCardRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountWatchCardResponse> {
+    return unwrapAsync(accountWatchCard(
       this,
       request,
       options,
