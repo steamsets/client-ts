@@ -99,10 +99,12 @@ run();
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+* [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
+* [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read
 * [optOut](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 * [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
@@ -110,6 +112,7 @@ run();
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
+* [setWishlistWatch](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
@@ -706,10 +709,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+- [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
+- [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read
 - [`accountOptOut`](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 - [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
@@ -717,6 +722,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
+- [`accountSetWishlistWatch`](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection

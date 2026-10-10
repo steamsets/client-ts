@@ -2509,3 +2509,13 @@ Based on:
 - [typescript v0.38.26] .
 ### Releases
 - [NPM v0.38.26] https://www.npmjs.com/package/@steamsets/client-ts/v/0.38.26 - .
+
+## 2026-10-10 16:46:00
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.801.0 (2.946.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.38.27] .
+### Releases
+- [NPM v0.38.27] https://www.npmjs.com/package/@steamsets/client-ts/v/0.38.27 - .

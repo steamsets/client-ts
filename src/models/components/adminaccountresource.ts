@@ -51,7 +51,7 @@ export type AdminAccountResourceResource = OpenEnum<
 /**
  * Where the value comes from
  */
-export const Source = {
+export const AdminAccountResourceSource = {
   Override: "override",
   Role: "role",
   Default: "default",
@@ -59,7 +59,9 @@ export const Source = {
 /**
  * Where the value comes from
  */
-export type Source = OpenEnum<typeof Source>;
+export type AdminAccountResourceSource = OpenEnum<
+  typeof AdminAccountResourceSource
+>;
 
 export type AdminAccountResource = {
   inherited: AdminAccountResourceInherited;
@@ -79,7 +81,7 @@ export type AdminAccountResource = {
   /**
    * Where the value comes from
    */
-  source: Source;
+  source: AdminAccountResourceSource;
   /**
    * The value that applies, or null when no override or held role grants the resource and the code default applies
    */
@@ -93,8 +95,10 @@ export const AdminAccountResourceResource$inboundSchema: z.ZodMiniType<
 > = openEnums.inboundSchema(AdminAccountResourceResource);
 
 /** @internal */
-export const Source$inboundSchema: z.ZodMiniType<Source, unknown> = openEnums
-  .inboundSchema(Source);
+export const AdminAccountResourceSource$inboundSchema: z.ZodMiniType<
+  AdminAccountResourceSource,
+  unknown
+> = openEnums.inboundSchema(AdminAccountResourceSource);
 
 /** @internal */
 export const AdminAccountResource$inboundSchema: z.ZodMiniType<
@@ -106,7 +110,7 @@ export const AdminAccountResource$inboundSchema: z.ZodMiniType<
   override: z.nullable(AdminAccountResourceOverride$inboundSchema),
   resource: AdminAccountResourceResource$inboundSchema,
   role: z.nullable(z.string()),
-  source: Source$inboundSchema,
+  source: AdminAccountResourceSource$inboundSchema,
   value: z.nullable(z.string()),
 });
 
