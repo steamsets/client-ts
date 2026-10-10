@@ -17,6 +17,10 @@ export type DonateSupporter = {
    */
   avatar: string;
   /**
+   * What this account donated this month, in cents
+   */
+  monthCents: number;
+  /**
    * The account's display name
    */
   name: string;
@@ -33,6 +37,7 @@ export const DonateSupporter$inboundSchema: z.ZodMiniType<
 > = z.object({
   accountId: z.int(),
   avatar: z.string(),
+  monthCents: z.int(),
   name: z.string(),
   vanity: z.nullable(z.string()),
 });

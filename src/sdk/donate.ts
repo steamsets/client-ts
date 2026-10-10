@@ -12,7 +12,7 @@ export class Donate extends ClientSDK {
    * Get this month's donation goal progress
    *
    * @remarks
-   * Public — no auth required. Aggregated per calendar month (UTC). Carries no per-donor amounts.
+   * Public — no auth required. Aggregated per calendar month (UTC). Each supporter carries their own total for the month.
    */
   async getGoal(
     options?: RequestOptions,

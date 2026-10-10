@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 95d4d11c-e322-4e38-9ede-6e6dcc472d64
 management:
-  docChecksum: 5a7ed33db05b83499ea3df3a35de06db
+  docChecksum: 02256d1c10daef6045819e7305a2fed4
   docVersion: 1.0.0
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.38.25
-  configChecksum: 25b939b1ec146fc36cb1574c43760372
+  releaseVersion: 0.38.26
+  configChecksum: bf64b8c4005d3ff716172051af6e0835
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: de779b88-db23-4deb-b5b5-1f35cb63ac65
-  pristine_commit_hash: 68323ae4ec129cf63ab5f20a5cb6f2373fee66d5
-  pristine_tree_hash: 551ae3b97592c5f2dbfb2029d63c8d363562af11
+  generation_id: f29bd591-97e2-4434-83b8-bfb5e2b3c10c
+  pristine_commit_hash: 624a04a38c816c4111c05f5474d274fc0ccd915d
+  pristine_tree_hash: 2b3ab3179c538f103622814a9a2a032cb832087f
 features:
   go:
     additionalDependencies: 0.1.0
@@ -488,8 +488,8 @@ trackedFiles:
     pristine_git_object: 66a3626a5409107873a6072655d5cca445f76d43
   docs/models/components/donatesupporter.md:
     id: 73f6e2e4b161
-    last_write_checksum: sha1:5ea6c3dfc3b8426b7db83b6d5dc0ebaca3a08791
-    pristine_git_object: 5209675d79a93922421786432765c19ebe7d8843
+    last_write_checksum: sha1:7f4e38f7e265dbae88d2fedfa9d6c2674ed852bf
+    pristine_git_object: 3be0f940598a36962c2caea97c49016c71dd2d58
   docs/models/components/environment.md:
     id: 2bbd505fcb39
     last_write_checksum: sha1:e648b94949a42eeff8314f1dba7ccf5efd3c4c07
@@ -1620,8 +1620,8 @@ trackedFiles:
     pristine_git_object: a11e5322983f3b65eca70c11fdecd3ed685e6c1a
   docs/models/components/v1donategoal.md:
     id: 9e4b69d77ce7
-    last_write_checksum: sha1:092cd58cecc28eb380e5e68d8d019da7ecda5f01
-    pristine_git_object: 8a50765f3e6180ef8f8b29e5bc2d47fd505d2f08
+    last_write_checksum: sha1:15615b7f8983a1f795bf3804e2fe30368040f79c
+    pristine_git_object: 723f9a003534cc7a5bbec63bb502e94e4ed9b010
   docs/models/components/v1groupleaderboardgroup.md:
     id: cee293aad89b
     last_write_checksum: sha1:c57950bda7845321a03c729f418726b3ee96d9aa
@@ -2356,8 +2356,8 @@ trackedFiles:
     pristine_git_object: e6c8fba90bd2b80e9d07c6f4ac66eea9171fa6d6
   docs/sdks/donate/README.md:
     id: 21482ecf5423
-    last_write_checksum: sha1:ed22fc4fb21c4d1f59c145161a81c82e1a0fde4b
-    pristine_git_object: e59fe24b9cd3ae4944f4c708323836d2fb1b3243
+    last_write_checksum: sha1:9c46a1453913b77804e6907c7cadb5fec99fa2da
+    pristine_git_object: ffa292b873dada2e45b40ec5baaf7af98f5e4723
   docs/sdks/exchange/README.md:
     id: 573f7bfe4d31
     last_write_checksum: sha1:d93b4b8798cc65d8a610e53357310fb5dd8b2675
@@ -2436,12 +2436,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:dbac804f5a36f47552d945f673e6b399ff38d318
-    pristine_git_object: dff7ba87e2580f4405a39885f9aafef06b52e50c
+    last_write_checksum: sha1:cadf15ecaa7a992c23053ea99ae363eb46760e53
+    pristine_git_object: 09ae47a7b788f36efaf57dcac782761b5fe78633
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:c8184f2c2c02636e001f36b11bebf5c81b64df17
-    pristine_git_object: 16a2cb30382ea32ba4aac18fd299104abaeb0027
+    last_write_checksum: sha1:92f0c329df06a97f2e3c845611321158c4de00dc
+    pristine_git_object: fd37859fc821701bd02f5ec69f389d407f6da658
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -2800,8 +2800,8 @@ trackedFiles:
     pristine_git_object: 3e77895b74a0116d8efeb6146f4c99587cf923b9
   src/funcs/donateGetGoal.ts:
     id: c50ecca3c93d
-    last_write_checksum: sha1:4511db71c78008b0c5532324dd03f0ff045d1883
-    pristine_git_object: 49223c0057f316ded3c787d01ca054202267143b
+    last_write_checksum: sha1:45fc08954659db7ebd14e0c96d0756d8dea6c117
+    pristine_git_object: 819fea551541ab5f6fe5a73f273116095f06bebf
   src/funcs/exchangeCardPrices.ts:
     id: 7dcb26ecbb93
     last_write_checksum: sha1:85653d2bc3e7bbabaa757731e48a370e48fe5902
@@ -2912,8 +2912,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:8ac3646b703cff64a140df7595e366902eb6ae34
-    pristine_git_object: 229ccf2c2d73ce0d27940bd85ec882265b8a3349
+    last_write_checksum: sha1:ef0654708466d2c7db0bda4a75a344abc994d970
+    pristine_git_object: 86c1c2e4053cf698d5289dc4e56a13c7e0de8e4a
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -3280,8 +3280,8 @@ trackedFiles:
     pristine_git_object: 174b79a91d4f505d49b952d5c29d8274f2f3d243
   src/models/components/donatesupporter.ts:
     id: 8484495531f6
-    last_write_checksum: sha1:d12f7321f7cb0b9b48470b645d1beb09b13f8077
-    pristine_git_object: a2f0a75ba6901e2a245addf486d9550ccbf47cc8
+    last_write_checksum: sha1:905d849dfd8e141d0f493577fea0947134301305
+    pristine_git_object: eb8b61cc955efa45f934dc650383276321a36079
   src/models/components/errordetail.ts:
     id: d2bb39b6f332
     last_write_checksum: sha1:c698ae3f7cc8b5fdcd25064dcea4c9f4f5c4edd3
@@ -4100,8 +4100,8 @@ trackedFiles:
     pristine_git_object: 65976a4e619d0927e8fb1e0ddcf0f54b7cf21c75
   src/models/components/v1donategoal.ts:
     id: 44b9c3c1963f
-    last_write_checksum: sha1:515eebb1a95ecb978f9e4107c8b1856eeaf13eab
-    pristine_git_object: 2c7c5c781a5b2d3366c7117bff50e419c6225765
+    last_write_checksum: sha1:4863dd70dcf9fdc663e9104eea5425c76eeecedc
+    pristine_git_object: 12eb775e2ea7267837c225f495e240d3668c6681
   src/models/components/v1groupleaderboardgroup.ts:
     id: 1357ba2bc11f
     last_write_checksum: sha1:989e21661ce46ec1bca1ac7e52234864f236f822
@@ -4700,8 +4700,8 @@ trackedFiles:
     pristine_git_object: ab9f9a708a3aa8c07842842ab22be36966341524
   src/sdk/donate.ts:
     id: 5b7661a11242
-    last_write_checksum: sha1:7467a13d259596478dc389764062017a6aaa6bd6
-    pristine_git_object: fbd4b4951d5d2089fba3a3a077390f548b13be34
+    last_write_checksum: sha1:6448cc8567e953f3814af48be481679d6d21ea1b
+    pristine_git_object: ec9ff243fadea21a6c0b254a484985e245f24abc
   src/sdk/exchange.ts:
     id: f2e51a1275b2
     last_write_checksum: sha1:2bcabb2b03cceb615c3e0a726f98ff889dd1d3a4
@@ -6614,10 +6614,7 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes:
-  * `steamsets.account.getNotificationSettings()`: **Added**
-  * `steamsets.account.listCardWatches()`: **Added**
-  * `steamsets.account.updateNotificationSettings()`: **Added**
-  * `steamsets.account.watchCard()`: **Added**
+  * `steamsets.donate.getGoal()`:  `response.supporters[].monthCents` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
