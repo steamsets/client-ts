@@ -6,6 +6,7 @@ All Requests related to account(s) are grouped here.
 
 ### Available Operations
 
+* [addPushSubscription](#addpushsubscription) - Get push notifications in this browser
 * [archiveNotifications](#archivenotifications) - Archive notifications or move them back to the inbox
 * [bookmarkBadge](#bookmarkbadge) - Bookmark or unbookmark a badge
 * [compareBadges](#comparebadges) - Compare badge collections between accounts
@@ -44,6 +45,7 @@ All Requests related to account(s) are grouped here.
 * [reconnectConnection](#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](#refreshinventory) - Refresh inventory
 * [refreshSession](#refreshsession) - Refresh session token
+* [removePushSubscription](#removepushsubscription) - Stop push notifications on one device
 * [sendEmailVerification](#sendemailverification) - Send email verification
 * [setWishlistWatch](#setwishlistwatch) - Watch every trading card on the wishlist
 * [subscribe](#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
@@ -58,6 +60,85 @@ All Requests related to account(s) are grouped here.
 * [verifyConnection](#verifyconnection) - Verify OAuth connection
 * [verifyEmail](#verifyemail) - Verify email address
 * [watchCard](#watchcard) - Watch or stop watching a trading card
+
+## addPushSubscription
+
+Saves the browser's push subscription. The account's first subscription also turns push on for every notification that can go to push.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.addPushSubscription" method="post" path="/v1/account.addPushSubscription" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountAddPushSubscription } from "@steamsets/client-ts/funcs/accountAddPushSubscription.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountAddPushSubscription(steamSets, {
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountAddPushSubscription failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountAddPushSubscriptionRequestBody](../../models/components/accountaddpushsubscriptionrequestbody.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountAddPushSubscriptionResponse](../../models/operations/accountaddpushsubscriptionresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## archiveNotifications
 
@@ -2884,6 +2965,77 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## removePushSubscription
+
+Removes one push subscription, by id or by endpoint.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.removePushSubscription" method="post" path="/v1/account.removePushSubscription" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.removePushSubscription({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountRemovePushSubscription } from "@steamsets/client-ts/funcs/accountRemovePushSubscription.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountRemovePushSubscription(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountRemovePushSubscription failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountRemovePushSubscriptionRequestBody](../../models/components/accountremovepushsubscriptionrequestbody.md)                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountRemovePushSubscriptionResponse](../../models/operations/accountremovepushsubscriptionresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

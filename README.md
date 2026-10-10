@@ -53,7 +53,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
@@ -71,6 +75,7 @@ run();
 
 ### [Account](docs/sdks/account/README.md)
 
+* [addPushSubscription](docs/sdks/account/README.md#addpushsubscription) - Get push notifications in this browser
 * [archiveNotifications](docs/sdks/account/README.md#archivenotifications) - Archive notifications or move them back to the inbox
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 * [compareBadges](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
@@ -109,6 +114,7 @@ run();
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
+* [removePushSubscription](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [setWishlistWatch](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 * [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
@@ -343,7 +349,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({}, {
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  }, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -382,7 +392,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
@@ -415,7 +429,11 @@ const steamSets = new SteamSets({
 
 async function run() {
   try {
-    const result = await steamSets.account.archiveNotifications({});
+    const result = await steamSets.account.addPushSubscription({
+      auth: "<value>",
+      endpoint: "<value>",
+      p256dh: "<value>",
+    });
 
     console.log(result);
   } catch (error) {
@@ -490,7 +508,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
@@ -511,7 +533,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
@@ -594,7 +620,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
@@ -664,6 +694,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountAddPushSubscription`](docs/sdks/account/README.md#addpushsubscription) - Get push notifications in this browser
 - [`accountArchiveNotifications`](docs/sdks/account/README.md#archivenotifications) - Archive notifications or move them back to the inbox
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
@@ -702,6 +733,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
 - [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
+- [`accountRemovePushSubscription`](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
 - [`accountSetWishlistWatch`](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
 - [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).

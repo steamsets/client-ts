@@ -12,6 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export const Channel = {
   Discord: "discord",
   Email: "email",
+  Push: "push",
 } as const;
 export type Channel = OpenEnum<typeof Channel>;
 

@@ -13,5 +13,5 @@ let value: AccountUpdateNotificationSettingsEntryChannel = "email";
 ## Values
 
 ```typescript
-"discord" | "email" | Unrecognized<string>
+"discord" | "email" | "push" | Unrecognized<string>
 ```

@@ -7,7 +7,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.archiveNotifications({});
+  const result = await steamSets.account.addPushSubscription({
+    auth: "<value>",
+    endpoint: "<value>",
+    p256dh: "<value>",
+  });
 
   console.log(result);
 }
