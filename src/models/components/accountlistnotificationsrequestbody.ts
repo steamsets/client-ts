@@ -6,6 +6,10 @@ import * as z from "zod/v4-mini";
 
 export type AccountListNotificationsRequestBody = {
   /**
+   * List archived notifications instead of the inbox
+   */
+  archived?: boolean | undefined;
+  /**
    * Cursor: the nextCursor of the page before. Leave it out for the first page
    */
   before?: number | undefined;
@@ -17,6 +21,7 @@ export type AccountListNotificationsRequestBody = {
 
 /** @internal */
 export type AccountListNotificationsRequestBody$Outbound = {
+  archived?: boolean | undefined;
   before?: number | undefined;
   limit: number;
 };
@@ -26,6 +31,7 @@ export const AccountListNotificationsRequestBody$outboundSchema: z.ZodMiniType<
   AccountListNotificationsRequestBody$Outbound,
   AccountListNotificationsRequestBody
 > = z.object({
+  archived: z.optional(z.boolean()),
   before: z.optional(z.int()),
   limit: z._default(z.int(), 20),
 });
