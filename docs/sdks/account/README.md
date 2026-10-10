@@ -6,6 +6,7 @@ All Requests related to account(s) are grouped here.
 
 ### Available Operations
 
+* [archiveNotifications](#archivenotifications) - Archive notifications or move them back to the inbox
 * [bookmarkBadge](#bookmarkbadge) - Bookmark or unbookmark a badge
 * [compareBadges](#comparebadges) - Compare badge collections between accounts
 * [createConnection](#createconnection) - Create OAuth or domain connection
@@ -31,12 +32,12 @@ All Requests related to account(s) are grouped here.
 * [listFriends](#listfriends) - List account friends
 * [listInventorySets](#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
-* [listNotifications](#listnotifications) - List the account's inbox
+* [listNotifications](#listnotifications) - List the account's inbox or archive
 * [listOwnedBadges](#listownedbadges) - List owned badges
 * [listOwnedGroups](#listownedgroups) - List groups owned by account
 * [login](#login) - Login with Steam
 * [logout](#logout) - Logout from session
-* [markNotificationsRead](#marknotificationsread) - Mark notifications read
+* [markNotificationsRead](#marknotificationsread) - Mark notifications read or unread
 * [optOut](#optout) - Opt out of SteamSets (hide account and stop processing)
 * [queueInventoryRefresh](#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](#queueupdate) - Queue account update
@@ -57,6 +58,77 @@ All Requests related to account(s) are grouped here.
 * [verifyConnection](#verifyconnection) - Verify OAuth connection
 * [verifyEmail](#verifyemail) - Verify email address
 * [watchCard](#watchcard) - Watch or stop watching a trading card
+
+## archiveNotifications
+
+Archiving also marks a notification read.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.archiveNotifications" method="post" path="/v1/account.archiveNotifications" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.archiveNotifications({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountArchiveNotifications } from "@steamsets/client-ts/funcs/accountArchiveNotifications.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountArchiveNotifications(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountArchiveNotifications failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountArchiveNotificationsRequestBody](../../models/components/accountarchivenotificationsrequestbody.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountArchiveNotificationsResponse](../../models/operations/accountarchivenotificationsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
 ## bookmarkBadge
 
@@ -1899,7 +1971,7 @@ run();
 
 ## listNotifications
 
-List the account's inbox
+List the account's inbox or archive
 
 ### Example Usage
 
@@ -2283,7 +2355,7 @@ run();
 
 ## markNotificationsRead
 
-Mark notifications read
+Mark notifications read or unread
 
 ### Example Usage
 
@@ -2348,7 +2420,7 @@ run();
 
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 401, 404, 422            | application/problem+json |
+| errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 

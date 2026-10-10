@@ -24,6 +24,10 @@ export const AccountNotificationKind = {
 export type AccountNotificationKind = OpenEnum<typeof AccountNotificationKind>;
 
 export type AccountNotification = {
+  /**
+   * When the account archived it, null in the inbox
+   */
+  archivedAt: Date | null;
   cardAcquired?: AccountNotificationCardAcquired | null | undefined;
   connectionBroken?: AccountNotificationConnectionBroken | null | undefined;
   createdAt: Date;
@@ -46,6 +50,9 @@ export const AccountNotification$inboundSchema: z.ZodMiniType<
   AccountNotification,
   unknown
 > = z.object({
+  archivedAt: z.nullable(
+    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+  ),
   cardAcquired: z.optional(
     z.nullable(AccountNotificationCardAcquired$inboundSchema),
   ),

@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { accountBookmarkBadge } from "@steamsets/client-ts/funcs/accountBookmarkBadge.js";
+import { accountArchiveNotifications } from "@steamsets/client-ts/funcs/accountArchiveNotifications.js";
 
 // Use `SteamSetsCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -29,15 +29,12 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountBookmarkBadge(steamSets, {
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const res = await accountArchiveNotifications(steamSets, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("accountBookmarkBadge failed:", res.error);
+    console.log("accountArchiveNotifications failed:", res.error);
   }
 }
 

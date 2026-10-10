@@ -53,10 +53,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }
@@ -74,6 +71,7 @@ run();
 
 ### [Account](docs/sdks/account/README.md)
 
+* [archiveNotifications](docs/sdks/account/README.md#archivenotifications) - Archive notifications or move them back to the inbox
 * [bookmarkBadge](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 * [compareBadges](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 * [createConnection](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -99,12 +97,12 @@ run();
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
-* [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox
+* [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
-* [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read
+* [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
 * [optOut](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 * [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
@@ -345,10 +343,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  }, {
+  const result = await steamSets.account.archiveNotifications({}, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -387,10 +382,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }
@@ -423,10 +415,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   try {
-    const result = await steamSets.account.bookmarkBadge({
-      badgeId: "bdg_123",
-      bookmark: true,
-    });
+    const result = await steamSets.account.archiveNotifications({});
 
     console.log(result);
   } catch (error) {
@@ -501,10 +490,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }
@@ -525,10 +511,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }
@@ -611,10 +594,7 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }
@@ -684,6 +664,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`accountArchiveNotifications`](docs/sdks/account/README.md#archivenotifications) - Archive notifications or move them back to the inbox
 - [`accountBookmarkBadge`](docs/sdks/account/README.md#bookmarkbadge) - Bookmark or unbookmark a badge
 - [`accountCompareBadges`](docs/sdks/account/README.md#comparebadges) - Compare badge collections between accounts
 - [`accountCreateConnection`](docs/sdks/account/README.md#createconnection) - Create OAuth or domain connection
@@ -709,12 +690,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
-- [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox
+- [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
-- [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read
+- [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
 - [`accountOptOut`](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
 - [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update

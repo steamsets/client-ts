@@ -29,15 +29,18 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Mark notifications read or unread
+ * Archive notifications or move them back to the inbox
+ *
+ * @remarks
+ * Archiving also marks a notification read.
  */
-export function accountMarkNotificationsRead(
+export function accountArchiveNotifications(
   client: SteamSetsCore,
-  request: components.AccountMarkNotificationsReadRequestBody,
+  request: components.AccountArchiveNotificationsRequestBody,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AccountMarkNotificationsReadResponse,
+    operations.AccountArchiveNotificationsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -58,12 +61,12 @@ export function accountMarkNotificationsRead(
 
 async function $do(
   client: SteamSetsCore,
-  request: components.AccountMarkNotificationsReadRequestBody,
+  request: components.AccountArchiveNotificationsRequestBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.AccountMarkNotificationsReadResponse,
+      operations.AccountArchiveNotificationsResponse,
       | errors.ErrorModel
       | SteamSetsError
       | ResponseValidationError
@@ -81,7 +84,7 @@ async function $do(
     request,
     (value) =>
       z.parse(
-        components.AccountMarkNotificationsReadRequestBody$outboundSchema,
+        components.AccountArchiveNotificationsRequestBody$outboundSchema,
         value,
       ),
     "Input validation failed",
@@ -92,7 +95,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/v1/account.markNotificationsRead")();
+  const path = pathToFunc("/v1/account.archiveNotifications")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -106,7 +109,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "account.markNotificationsRead",
+    operationID: "account.archiveNotifications",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -161,7 +164,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AccountMarkNotificationsReadResponse,
+    operations.AccountArchiveNotificationsResponse,
     | errors.ErrorModel
     | SteamSetsError
     | ResponseValidationError
@@ -172,8 +175,8 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.AccountMarkNotificationsReadResponse$inboundSchema, {
-      key: "AccountMarkNotificationsReadResponseBody",
+    M.json(200, operations.AccountArchiveNotificationsResponse$inboundSchema, {
+      key: "AccountArchiveNotificationsResponseBody",
     }),
     M.jsonErr([400, 401, 404, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",

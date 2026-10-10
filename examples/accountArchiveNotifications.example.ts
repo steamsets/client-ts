@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @steamsets/client-ts SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx accountBookmarkBadge.example.ts
+ * npm run build && npx tsx accountArchiveNotifications.example.ts
  */
 
 import { SteamSets } from "@steamsets/client-ts";
@@ -18,10 +18,7 @@ const steamSets = new SteamSets({
 });
 
 async function main() {
-  const result = await steamSets.account.bookmarkBadge({
-    badgeId: "bdg_123",
-    bookmark: true,
-  });
+  const result = await steamSets.account.archiveNotifications({});
 
   console.log(result);
 }

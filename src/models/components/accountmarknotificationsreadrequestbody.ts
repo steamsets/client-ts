@@ -6,14 +6,19 @@ import * as z from "zod/v4-mini";
 
 export type AccountMarkNotificationsReadRequestBody = {
   /**
-   * The notifications to mark read. Leave it out to mark every notification read
+   * The notifications to change. Leave it out to mark every inbox notification read
    */
   ids?: Array<number> | null | undefined;
+  /**
+   * false marks the given notifications unread
+   */
+  read?: boolean | undefined;
 };
 
 /** @internal */
 export type AccountMarkNotificationsReadRequestBody$Outbound = {
   ids?: Array<number> | null | undefined;
+  read: boolean;
 };
 
 /** @internal */
@@ -23,6 +28,7 @@ export const AccountMarkNotificationsReadRequestBody$outboundSchema:
     AccountMarkNotificationsReadRequestBody
   > = z.object({
     ids: z.optional(z.nullable(z.array(z.int()))),
+    read: z._default(z.boolean(), true),
   });
 
 export function accountMarkNotificationsReadRequestBodyToJSON(
