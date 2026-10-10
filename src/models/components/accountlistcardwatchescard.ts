@@ -4,8 +4,22 @@
 
 import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * manual: watched with the bell. wishlist: watched because it is on the wishlist
+ */
+export const Source = {
+  Manual: "manual",
+  Wishlist: "wishlist",
+} as const;
+/**
+ * manual: watched with the bell. wishlist: watched because it is on the wishlist
+ */
+export type Source = OpenEnum<typeof Source>;
 
 export type AccountListCardWatchesCard = {
   appId: number;
@@ -17,8 +31,16 @@ export type AccountListCardWatchesCard = {
   isFoil: boolean;
   itemId: string;
   name: string;
+  /**
+   * manual: watched with the bell. wishlist: watched because it is on the wishlist
+   */
+  source: Source;
   watchedAt: Date;
 };
+
+/** @internal */
+export const Source$inboundSchema: z.ZodMiniType<Source, unknown> = openEnums
+  .inboundSchema(Source);
 
 /** @internal */
 export const AccountListCardWatchesCard$inboundSchema: z.ZodMiniType<
@@ -31,6 +53,7 @@ export const AccountListCardWatchesCard$inboundSchema: z.ZodMiniType<
   isFoil: z.boolean(),
   itemId: z.string(),
   name: z.string(),
+  source: Source$inboundSchema,
   watchedAt: z.pipe(
     z.iso.datetime({ offset: true }),
     z.transform(v => new Date(v)),

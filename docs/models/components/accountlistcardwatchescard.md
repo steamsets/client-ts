@@ -12,7 +12,8 @@ let value: AccountListCardWatchesCard = {
   isFoil: false,
   itemId: "<id>",
   name: "<value>",
-  watchedAt: new Date("2024-07-24T14:27:47.617Z"),
+  source: "manual",
+  watchedAt: new Date("2026-09-13T07:12:24.303Z"),
 };
 ```
 
@@ -26,4 +27,5 @@ let value: AccountListCardWatchesCard = {
 | `isFoil`                                                                                      | *boolean*                                                                                     | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `itemId`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `name`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `source`                                                                                      | [components.Source](../../models/components/source.md)                                        | :heavy_check_mark:                                                                            | manual: watched with the bell. wishlist: watched because it is on the wishlist                |
 | `watchedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |

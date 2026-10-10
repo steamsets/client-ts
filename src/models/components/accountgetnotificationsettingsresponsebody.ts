@@ -22,6 +22,7 @@ export type AccountGetNotificationSettingsResponseBody = {
    * Every kind and channel the account can turn on or off, with defaults applied
    */
   settings: Array<AccountGetNotificationSettingsEntry>;
+  watchWishlist: boolean;
 };
 
 /** @internal */
@@ -31,6 +32,7 @@ export const AccountGetNotificationSettingsResponseBody$inboundSchema:
       $schema: z.optional(z.string()),
       discordConnected: z.boolean(),
       settings: z.array(AccountGetNotificationSettingsEntry$inboundSchema),
+      watchWishlist: z.boolean(),
     }),
     z.transform((v) => {
       return remap$(v, {

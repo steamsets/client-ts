@@ -27,10 +27,12 @@ import { accountListCraftedLevels } from "../funcs/accountListCraftedLevels.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
 import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHistory.js";
+import { accountListNotifications } from "../funcs/accountListNotifications.js";
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountListOwnedGroups } from "../funcs/accountListOwnedGroups.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
+import { accountMarkNotificationsRead } from "../funcs/accountMarkNotificationsRead.js";
 import { accountOptOut } from "../funcs/accountOptOut.js";
 import { accountQueueInventoryRefresh } from "../funcs/accountQueueInventoryRefresh.js";
 import { accountQueueUpdate } from "../funcs/accountQueueUpdate.js";
@@ -38,6 +40,7 @@ import { accountReconnectConnection } from "../funcs/accountReconnectConnection.
 import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
+import { accountSetWishlistWatch } from "../funcs/accountSetWishlistWatch.js";
 import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
@@ -403,6 +406,20 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * List the account's inbox
+   */
+  async listNotifications(
+    request: components.AccountListNotificationsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountListNotificationsResponse> {
+    return unwrapAsync(accountListNotifications(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List owned badges
    */
   async listOwnedBadges(
@@ -452,6 +469,20 @@ export class Account extends ClientSDK {
   ): Promise<operations.AccountLogoutResponse> {
     return unwrapAsync(accountLogout(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Mark notifications read
+   */
+  async markNotificationsRead(
+    request: components.AccountMarkNotificationsReadRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountMarkNotificationsReadResponse> {
+    return unwrapAsync(accountMarkNotificationsRead(
+      this,
+      request,
       options,
     ));
   }
@@ -549,6 +580,23 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountSendEmailVerificationResponse> {
     return unwrapAsync(accountSendEmailVerification(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Watch every trading card on the wishlist
+   *
+   * @remarks
+   * On, every trading card on the account's wishlist is watched, and cards added later are watched too. Off removes those watches; cards watched with the bell stay watched.
+   */
+  async setWishlistWatch(
+    request: components.AccountSetWishlistWatchRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountSetWishlistWatchResponse> {
+    return unwrapAsync(accountSetWishlistWatch(
       this,
       request,
       options,
