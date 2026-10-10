@@ -43,6 +43,7 @@ import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
 import { accountRemovePushSubscription } from "../funcs/accountRemovePushSubscription.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
+import { accountSendTestPush } from "../funcs/accountSendTestPush.js";
 import { accountSetWishlistWatch } from "../funcs/accountSetWishlistWatch.js";
 import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
@@ -636,6 +637,21 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountSendEmailVerification(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * Send a test push notification
+   *
+   * @remarks
+   * Sends a test notification to every push device of the account within about 20 seconds. One test a minute; a second request in the same minute sends nothing.
+   */
+  async sendTestPush(
+    options?: RequestOptions,
+  ): Promise<operations.AccountSendTestPushResponse> {
+    return unwrapAsync(accountSendTestPush(
+      this,
       options,
     ));
   }

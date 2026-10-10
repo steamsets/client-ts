@@ -27,6 +27,7 @@ export * from "./accountoptoutresponsebody.js";
 export * from "./accountremovepushsubscriptionrequestbody.js";
 export * from "./accountremovepushsubscriptionresponsebody.js";
 export * from "./accountsearch.js";
+export * from "./accountsendtestpushresponsebody.js";
 export * from "./accountsetwishlistwatchrequestbody.js";
 export * from "./accountsetwishlistwatchresponsebody.js";
 export * from "./accountsubscribeheartbeat.js";
