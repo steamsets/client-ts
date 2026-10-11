@@ -19,6 +19,7 @@ import { Kv } from "./kv.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Maintenance } from "./maintenance.js";
+import { Packs } from "./packs.js";
 import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
@@ -104,6 +105,11 @@ export class SteamSets extends ClientSDK {
   private _maintenance?: Maintenance;
   get maintenance(): Maintenance {
     return (this._maintenance ??= new Maintenance(this._options));
+  }
+
+  private _packs?: Packs;
+  get packs(): Packs {
+    return (this._packs ??= new Packs(this._options));
   }
 
   private _search?: Search;

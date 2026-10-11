@@ -239,6 +239,10 @@ run();
 
 * [list](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 
+### [Packs](docs/sdks/packs/README.md)
+
+* [open](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
+
 ### [Search](docs/sdks/search/README.md)
 
 * [getTrending](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
@@ -808,6 +812,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
+- [`packsOpen`](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
 - [`searchGetTrending`](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
 - [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
