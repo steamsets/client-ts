@@ -10,6 +10,7 @@ import { accountCreateConnection } from "../funcs/accountCreateConnection.js";
 import { accountCreateDeveloperApp } from "../funcs/accountCreateDeveloperApp.js";
 import { accountDeleteConnection } from "../funcs/accountDeleteConnection.js";
 import { accountDeleteDeveloperApp } from "../funcs/accountDeleteDeveloperApp.js";
+import { accountDeleteNotifications } from "../funcs/accountDeleteNotifications.js";
 import { accountDeleteSession } from "../funcs/accountDeleteSession.js";
 import { accountFindFriendPath } from "../funcs/accountFindFriendPath.js";
 import { accountGetBadgeHeatmap } from "../funcs/accountGetBadgeHeatmap.js";
@@ -176,6 +177,23 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountDeleteDeveloperAppResponse> {
     return unwrapAsync(accountDeleteDeveloperApp(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Delete notifications
+   *
+   * @remarks
+   * A deleted notification no longer shows in the inbox or the archive. The event it was about does not notify again.
+   */
+  async deleteNotifications(
+    request: components.AccountDeleteNotificationsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountDeleteNotificationsResponse> {
+    return unwrapAsync(accountDeleteNotifications(
       this,
       request,
       options,
