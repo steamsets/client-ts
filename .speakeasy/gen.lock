@@ -5,15 +5,15 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.38.32
-  configChecksum: 269a548d362b75b669e0bb884ffcac4d
+  releaseVersion: 0.38.33
+  configChecksum: 57e51d7a35baaf3839db121acd327c09
   repoURL: https://github.com/steamsets/client-ts.git
   installationURL: https://github.com/steamsets/client-ts
   published: true
 persistentEdits:
-  generation_id: 313424f7-b78d-4004-8a54-9285b19e1b9b
-  pristine_commit_hash: 12e1e8c9b606fbb7e69f4afba8653375291531ec
-  pristine_tree_hash: d9b7a5304b6aff337e48b75fdd73054cec304a69
+  generation_id: fb8b6ef5-4a70-4903-9c8c-193fb19070bd
+  pristine_commit_hash: eba010365614e29273e7753ae3b65038e06b9897
+  pristine_tree_hash: 4eed4380da5e00c3e351b94845cfa6606568956f
 features:
   go:
     additionalDependencies: 0.1.0
@@ -2592,12 +2592,12 @@ trackedFiles:
     pristine_git_object: 61d9c4b7a11fb38946490af37be9bace8300506a
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:5ea1614e2732b491a8096b9c4d59cbb8844a3163
-    pristine_git_object: 7f2ec1be5d435f8b7c4d1d60a8b7a5dd19069a2a
+    last_write_checksum: sha1:90da9ce14ebf0bd03bd82e9701d2d9f87fb64c51
+    pristine_git_object: 4edc6ce485cc55253b817a4fce7baf7a1b505b18
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:062650276088c5c1c6e745f39a4e4ae264f93b62
-    pristine_git_object: f0950915321ab2d3cf80e0421983ed2a8cf23d12
+    last_write_checksum: sha1:11d8c0c5a5cda8b031b093b37981c30556b3cd26
+    pristine_git_object: 595446723231da5cbb7ed537cbba922e94309618
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:ee8e3cd72c5f196ebbca1bb6704a8e9e89261594
@@ -3104,8 +3104,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:f80a77aa915a5a58c7f177468ea38657188ef9cd
-    pristine_git_object: b0653ccf3253516f20f804cf8c61f07c9a8b86c5
+    last_write_checksum: sha1:49e06e91bf9d9f108160742bd5120c3f662c3575
+    pristine_git_object: 67707854e30816be19e545c6ca6c802b0dc5a0fa
   src/lib/encodings.ts:
     id: 3bd8ead98afd
     last_write_checksum: sha1:a257d6f6108693db2197617c579400bc8f0da914
@@ -7033,7 +7033,6 @@ examples:
           application/problem+json: {"$schema": "https://api.steamsets.com/schemas/ErrorModel.json", "detail": "Property foo is required but is missing.", "instance": "https://example.com/error-log/abc123", "status": 400, "title": "Bad Request", "type": "https://example.com/errors/example"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `steamsets.account.createConnection()`: \n  *  `request.provider.enum(kick)` **Removed** (Breaking ⚠️)\n* `steamsets.account.getInfo()`:  `response.connections[].provider.enum(kick)` **Removed** (Breaking ⚠️)\n* `steamsets.account.getSettings()`:  `response.connections[].provider.enum(kick)` **Removed** (Breaking ⚠️)\n* `steamsets.admin.getAccount()`:  `response.connections[].provider.enum(kick)` **Removed** (Breaking ⚠️)\n* `steamsets.packs.open()`: **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
