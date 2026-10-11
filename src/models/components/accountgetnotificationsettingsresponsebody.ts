@@ -22,6 +22,7 @@ export type AccountGetNotificationSettingsResponseBody = {
    */
   dollarSchema?: string | undefined;
   discordConnected: boolean;
+  emailVerified: boolean;
   pushDevices: Array<AccountGetNotificationSettingsPushDevice>;
   /**
    * The VAPID public key for PushManager.subscribe, base64url
@@ -40,6 +41,7 @@ export const AccountGetNotificationSettingsResponseBody$inboundSchema:
     z.object({
       $schema: z.optional(z.string()),
       discordConnected: z.boolean(),
+      emailVerified: z.boolean(),
       pushDevices: z.array(
         AccountGetNotificationSettingsPushDevice$inboundSchema,
       ),

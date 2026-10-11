@@ -17,6 +17,7 @@ export type AccountUpdateNotificationSettingsEntryChannel = OpenEnum<
 
 export const AccountUpdateNotificationSettingsEntryKind = {
   CardAcquired: "card_acquired",
+  SubmissionReplied: "submission_replied",
 } as const;
 export type AccountUpdateNotificationSettingsEntryKind = OpenEnum<
   typeof AccountUpdateNotificationSettingsEntryKind

@@ -16,10 +16,15 @@ import {
   AccountNotificationConnectionBroken,
   AccountNotificationConnectionBroken$inboundSchema,
 } from "./accountnotificationconnectionbroken.js";
+import {
+  AccountNotificationSubmissionReplied,
+  AccountNotificationSubmissionReplied$inboundSchema,
+} from "./accountnotificationsubmissionreplied.js";
 
 export const AccountNotificationKind = {
   CardAcquired: "card_acquired",
   ConnectionBroken: "connection_broken",
+  SubmissionReplied: "submission_replied",
 } as const;
 export type AccountNotificationKind = OpenEnum<typeof AccountNotificationKind>;
 
@@ -37,6 +42,7 @@ export type AccountNotification = {
    * When the account read it, null while unread
    */
   readAt: Date | null;
+  submissionReplied?: AccountNotificationSubmissionReplied | null | undefined;
 };
 
 /** @internal */
@@ -67,6 +73,9 @@ export const AccountNotification$inboundSchema: z.ZodMiniType<
   kind: AccountNotificationKind$inboundSchema,
   readAt: z.nullable(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+  ),
+  submissionReplied: z.optional(
+    z.nullable(AccountNotificationSubmissionReplied$inboundSchema),
   ),
 });
 

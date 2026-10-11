@@ -83,6 +83,7 @@ run();
 * [createDeveloperApp](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 * [deleteConnection](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
 * [deleteDeveloperApp](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
+* [deleteNotifications](docs/sdks/account/README.md#deletenotifications) - Delete notifications
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
 * [findFriendPath](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
 * [getBadgeHeatmap](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
@@ -703,6 +704,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountCreateDeveloperApp`](docs/sdks/account/README.md#createdeveloperapp) - Create developer application
 - [`accountDeleteConnection`](docs/sdks/account/README.md#deleteconnection) - Delete OAuth or domain connection
 - [`accountDeleteDeveloperApp`](docs/sdks/account/README.md#deletedeveloperapp) - Delete developer application
+- [`accountDeleteNotifications`](docs/sdks/account/README.md#deletenotifications) - Delete notifications
 - [`accountDeleteSession`](docs/sdks/account/README.md#deletesession) - Delete user session
 - [`accountFindFriendPath`](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
 - [`accountGetBadgeHeatmap`](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account

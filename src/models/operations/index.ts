@@ -9,6 +9,7 @@ export * from "./accountcreateconnection.js";
 export * from "./accountcreatedeveloperapp.js";
 export * from "./accountdeleteconnection.js";
 export * from "./accountdeletedeveloperapp.js";
+export * from "./accountdeletenotifications.js";
 export * from "./accountdeletesession.js";
 export * from "./accountfindfriendpath.js";
 export * from "./accountgetbadgeheatmap.js";

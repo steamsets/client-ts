@@ -18,6 +18,7 @@ export type Channel = OpenEnum<typeof Channel>;
 
 export const Kind = {
   CardAcquired: "card_acquired",
+  SubmissionReplied: "submission_replied",
 } as const;
 export type Kind = OpenEnum<typeof Kind>;
 

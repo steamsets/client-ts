@@ -13,5 +13,5 @@ let value: Kind = "card_acquired";
 ## Values
 
 ```typescript
-"card_acquired" | Unrecognized<string>
+"card_acquired" | "submission_replied" | Unrecognized<string>
 ```
