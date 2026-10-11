@@ -15,5 +15,5 @@ let value: ConnectionProvider = "discord";
 ## Values
 
 ```typescript
-"discord" | "patreon" | "kick" | "reddit" | "twitch" | "youtube" | "x" | "domain" | Unrecognized<string>
+"discord" | "patreon" | "reddit" | "twitch" | "youtube" | "x" | "domain" | Unrecognized<string>
 ```

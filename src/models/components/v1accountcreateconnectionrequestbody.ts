@@ -12,7 +12,6 @@ import { OpenEnum } from "../../types/enums.js";
 export const Provider = {
   Discord: "discord",
   Patreon: "patreon",
-  Kick: "kick",
   Reddit: "reddit",
   Twitch: "twitch",
   Youtube: "youtube",

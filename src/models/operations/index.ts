@@ -112,6 +112,7 @@ export * from "./leaderboardpreviewaccountrank.js";
 export * from "./listaccountfeed.js";
 export * from "./listglobalfeed.js";
 export * from "./maintenancelist.js";
+export * from "./packsopen.js";
 export * from "./searchgettrending.js";
 export * from "./sitesubscribe.js";
 export * from "./staffliststaff.js";

@@ -15,7 +15,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export const ConnectionProvider = {
   Discord: "discord",
   Patreon: "patreon",
-  Kick: "kick",
   Reddit: "reddit",
   Twitch: "twitch",
   Youtube: "youtube",
