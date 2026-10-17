@@ -17,7 +17,7 @@ let value: FriendPath = {
       awardsReceived: 123456,
       background: "<value>",
       badges: 123456,
-      bans: 28798,
+      bans: 34892,
       city: {
         name: "Bad Krozingen",
       },
@@ -30,7 +30,7 @@ let value: FriendPath = {
       economyBan: "steam",
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 708752,
+      gameBans: 809650,
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -43,18 +43,12 @@ let value: FriendPath = {
       region: {
         name: "Europe",
       },
-      roles: [
-        {
-          extras: {},
-          rating: 138555,
-          role: "sapphire",
-        },
-      ],
+      roles: null,
       state: {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 291402,
+      steamSetsScore: 681590,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
       supporter: {
@@ -62,7 +56,7 @@ let value: FriendPath = {
         months: 3,
       },
       themeColor: "#FF5733",
-      vacBans: 314179,
+      vacBans: 922010,
       xp: 123456,
     },
   ],

@@ -103,9 +103,11 @@ run();
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+* [listNeededCards](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 * [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+* [listSpareCards](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
@@ -215,6 +217,8 @@ run();
 ### [Item](docs/sdks/item/README.md)
 
 * [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+* [findSpareHolders](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+* [findWanters](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
 
 ### [Kv](docs/sdks/kv/README.md)
 
@@ -728,9 +732,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+- [`accountListNeededCards`](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 - [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+- [`accountListSpareCards`](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
 - [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
@@ -801,6 +807,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`exchangeClassifyInventory`](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+- [`itemFindSpareHolders`](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+- [`itemFindWanters`](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
 - [`kvList`](docs/sdks/kv/README.md#list) - List a user's stored key/value entries
 - [`kvSet`](docs/sdks/kv/README.md#set) - Set a user's key/value entry

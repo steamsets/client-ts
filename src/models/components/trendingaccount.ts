@@ -15,7 +15,7 @@ export type TrendingAccount = {
   account?: LeaderboardAccount | null | undefined;
   accountId: number;
   /**
-   * Total profile loads in the window
+   * Profile views in the window, counting each viewer once per day
    */
   totalViews: number;
   /**
