@@ -14,15 +14,15 @@ export type AccountViewStats = {
    */
   dollarSchema?: string | undefined;
   /**
-   * Total profile loads in the last 24 hours
+   * Profile views in the last 24 hours, counting each viewer once per day
    */
   total24h: number;
   /**
-   * Total profile loads in the last 30 days
+   * Profile views in the last 30 days, counting each viewer once per day
    */
   total30d: number;
   /**
-   * Total profile loads in the last 7 days
+   * Profile views in the last 7 days, counting each viewer once per day
    */
   total7d: number;
   /**
