@@ -25,10 +25,16 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { CustomRoles } from "./customroles.js";
 import { SteamSetsMaintenance } from "./steamsetsmaintenance.js";
 import { SteamSetsSubmissions } from "./steamsetssubmissions.js";
 
 export class Admin extends ClientSDK {
+  private _customRoles?: CustomRoles;
+  get customRoles(): CustomRoles {
+    return (this._customRoles ??= new CustomRoles(this._options));
+  }
+
   private _maintenance?: SteamSetsMaintenance;
   get maintenance(): SteamSetsMaintenance {
     return (this._maintenance ??= new SteamSetsMaintenance(this._options));
