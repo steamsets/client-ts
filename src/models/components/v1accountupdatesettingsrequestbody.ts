@@ -12,15 +12,29 @@ import { OpenEnum } from "../../types/enums.js";
 export const V1AccountUpdateSettingsRequestBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
 } as const;
 /**
  * The name effect. none clears it, omit to leave unchanged
@@ -59,6 +73,10 @@ export type V1AccountUpdateSettingsRequestBody = {
    */
   themeColor?: string | null | undefined;
   /**
+   * The account's Steam trade offer link. Its partner must be the signed-in account. Only the token is stored. Empty string removes it, omit to leave unchanged
+   */
+  tradeUrl?: string | null | undefined;
+  /**
    * The vanity the account should use. Empty string clears it, omit to leave unchanged
    */
   vanity?: string | null | undefined;
@@ -78,6 +96,7 @@ export type V1AccountUpdateSettingsRequestBody$Outbound = {
   language?: string | null | undefined;
   nameEffect?: string | null | undefined;
   themeColor?: string | null | undefined;
+  tradeUrl?: string | null | undefined;
   vanity?: string | null | undefined;
 };
 
@@ -95,6 +114,7 @@ export const V1AccountUpdateSettingsRequestBody$outboundSchema: z.ZodMiniType<
     z.nullable(V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema),
   ),
   themeColor: z.optional(z.nullable(z.string())),
+  tradeUrl: z.optional(z.nullable(z.string())),
   vanity: z.optional(z.nullable(z.string())),
 });
 

@@ -30,9 +30,11 @@ import { accountListCraftedLevels } from "../funcs/accountListCraftedLevels.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
 import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHistory.js";
+import { accountListNeededCards } from "../funcs/accountListNeededCards.js";
 import { accountListNotifications } from "../funcs/accountListNotifications.js";
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountListOwnedGroups } from "../funcs/accountListOwnedGroups.js";
+import { accountListSpareCards } from "../funcs/accountListSpareCards.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
 import { accountMarkNotificationsRead } from "../funcs/accountMarkNotificationsRead.js";
@@ -462,6 +464,21 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * List the cards the account misses to finish sets it almost has
+   *
+   * @remarks
+   * A set counts when the account owns all but one or two of its cards, its badge is below the top level and the card has few owners. Each card says how many accounts have a spare copy. Use item.findSpareHolders to see who.
+   */
+  async listNeededCards(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListNeededCardsResponse> {
+    return unwrapAsync(accountListNeededCards(
+      this,
+      options,
+    ));
+  }
+
+  /**
    * List the account's inbox or archive
    */
   async listNotifications(
@@ -499,6 +516,21 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountListOwnedGroups(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * List the account's spare trading cards that another account wants
+   *
+   * @remarks
+   * A spare is a copy the account's badge does not need: owned copies minus the sets still needed to reach level 5, or level 1 for foil. Only cards that at least one other account wants are returned: it watches the card, has it on its wishlist or needs it to finish a set. Use item.findWanters to see who wants a card.
+   */
+  async listSpareCards(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListSpareCardsResponse> {
+    return unwrapAsync(accountListSpareCards(
+      this,
       options,
     ));
   }

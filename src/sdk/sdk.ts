@@ -20,6 +20,7 @@ import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Maintenance } from "./maintenance.js";
 import { Packs } from "./packs.js";
+import { Roles } from "./roles.js";
 import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
@@ -110,6 +111,11 @@ export class SteamSets extends ClientSDK {
   private _packs?: Packs;
   get packs(): Packs {
     return (this._packs ??= new Packs(this._options));
+  }
+
+  private _roles?: Roles;
+  get roles(): Roles {
+    return (this._roles ??= new Roles(this._options));
   }
 
   private _search?: Search;
