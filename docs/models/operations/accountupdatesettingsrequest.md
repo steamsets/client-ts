@@ -13,6 +13,8 @@ let value: AccountUpdateSettingsRequest = {
     language: "en",
     nameEffect: "rainbow",
     themeColor: "#FF5733",
+    tradeUrl:
+      "https://steamcommunity.com/tradeoffer/new/?partner=1216167888&token=AbC12xyz",
     vanity: "flo",
   },
 };

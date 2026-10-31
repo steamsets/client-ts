@@ -80,15 +80,29 @@ export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 export const V1AccountGetInfoResponseBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
 } as const;
 /**
  * Donator name effect, none when unset or the account no longer holds an entitling role
@@ -237,6 +251,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   normalBadges: number;
   /**
+   * The unix second the profile share video was last rendered. Null when the account has no video. The video is at https://static.steamsets.com/og/profiles/{steamId}.mp4?v={ogVideoRenderedAt}
+   */
+  ogVideoRenderedAt: number | null;
+  /**
    * The playtime of the account
    */
   playtime: number;
@@ -374,6 +392,7 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodMiniType<
       z.transform(v => new Date(v)),
     ),
     normalBadges: z.int(),
+    ogVideoRenderedAt: z.nullable(z.int()),
     playtime: z.int(),
     pointsGiven: z.int(),
     pointsReceived: z.int(),

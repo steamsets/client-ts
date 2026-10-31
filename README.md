@@ -103,9 +103,11 @@ run();
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
 * [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+* [listNeededCards](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 * [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 * [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+* [listSpareCards](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
@@ -159,6 +161,13 @@ run();
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
 * [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
+
+#### [Admin.CustomRoles](docs/sdks/customroles/README.md)
+
+* [create](docs/sdks/customroles/README.md#create) - Create a custom role
+* [delete](docs/sdks/customroles/README.md#delete) - Delete a custom role
+* [update](docs/sdks/customroles/README.md#update) - Update a custom role
+* [uploadIcon](docs/sdks/customroles/README.md#uploadicon) - Upload a custom role icon
 
 #### [Admin.Maintenance](docs/sdks/steamsetsmaintenance/README.md)
 
@@ -215,6 +224,8 @@ run();
 ### [Item](docs/sdks/item/README.md)
 
 * [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+* [findSpareHolders](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+* [findWanters](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
 
 ### [Kv](docs/sdks/kv/README.md)
 
@@ -242,6 +253,10 @@ run();
 ### [Packs](docs/sdks/packs/README.md)
 
 * [open](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
+
+### [Roles](docs/sdks/roles/README.md)
+
+* [listCustom](docs/sdks/roles/README.md#listcustom) - List custom roles
 
 ### [Search](docs/sdks/search/README.md)
 
@@ -728,9 +743,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
 - [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+- [`accountListNeededCards`](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 - [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
 - [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+- [`accountListSpareCards`](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
 - [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
@@ -761,6 +778,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAddSteamApiKey`](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 - [`adminBanPlayer`](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
+- [`adminCustomRolesCreate`](docs/sdks/customroles/README.md#create) - Create a custom role
+- [`adminCustomRolesDelete`](docs/sdks/customroles/README.md#delete) - Delete a custom role
+- [`adminCustomRolesUpdate`](docs/sdks/customroles/README.md#update) - Update a custom role
+- [`adminCustomRolesUploadIcon`](docs/sdks/customroles/README.md#uploadicon) - Upload a custom role icon
 - [`adminDeleteSteamApiKey`](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
 - [`adminExportSteamApiKeys`](docs/sdks/admin/README.md#exportsteamapikeys) - Export Steam Web API keys in plaintext
 - [`adminFindSteamApiKey`](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
@@ -801,6 +822,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`exchangeClassifyInventory`](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+- [`itemFindSpareHolders`](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+- [`itemFindWanters`](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
 - [`kvList`](docs/sdks/kv/README.md#list) - List a user's stored key/value entries
 - [`kvSet`](docs/sdks/kv/README.md#set) - Set a user's key/value entry
@@ -813,6 +836,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 - [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
 - [`packsOpen`](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
+- [`rolesListCustom`](docs/sdks/roles/README.md#listcustom) - List custom roles
 - [`searchGetTrending`](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
 - [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
