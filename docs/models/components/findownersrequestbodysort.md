@@ -1,6 +1,6 @@
 # FindOwnersRequestBodySort
 
-Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
 
 ## Example Usage
 
