@@ -3,8 +3,6 @@
  */
 
 import * as z from "zod/v4-mini";
-import * as openEnums from "../../types/enums.js";
-import { OpenEnum } from "../../types/enums.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -16,40 +14,14 @@ import {
   VanitySearch$outboundSchema,
 } from "./vanitysearch.js";
 
-export const Roles = {
-  User: "user",
-  Donator: "donator",
-  Staff: "staff",
-  Developer: "developer",
-  Partner: "partner",
-  Owner: "owner",
-  Amethyst: "amethyst",
-  Amber: "amber",
-  Emerald: "emerald",
-  Sapphire: "sapphire",
-  Ruby: "ruby",
-  Diamond: "diamond",
-  Contributor: "contributor",
-  EarlySupporter: "early_supporter",
-  Beta: "beta",
-  Translator: "translator",
-  Top100: "top_100",
-  BadgeScout: "badge_scout",
-  NitroBooster: "nitro_booster",
-  Astral: "astral",
-  Nebula: "nebula",
-} as const;
-export type Roles = OpenEnum<typeof Roles>;
-
 export type V1AdminUpdateRolesRequestBody = {
   id?: IDSearch | undefined;
-  roles: Array<Roles> | null;
+  /**
+   * Every role the account should hold, built-in or custom
+   */
+  roles: Array<string> | null;
   vanity?: VanitySearch | undefined;
 };
-
-/** @internal */
-export const Roles$outboundSchema: z.ZodMiniType<string, Roles> = openEnums
-  .outboundSchema(Roles);
 
 /** @internal */
 export type V1AdminUpdateRolesRequestBody$Outbound = {
@@ -64,7 +36,7 @@ export const V1AdminUpdateRolesRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUpdateRolesRequestBody
 > = z.object({
   id: z.optional(IDSearch$outboundSchema),
-  roles: z.nullable(z.array(Roles$outboundSchema)),
+  roles: z.nullable(z.array(z.string())),
   vanity: z.optional(VanitySearch$outboundSchema),
 });
 

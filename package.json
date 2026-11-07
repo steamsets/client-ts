@@ -1,6 +1,6 @@
 {
   "name": "@steamsets/client-ts",
-  "version": "0.38.32",
+  "version": "0.38.33",
   "author": "Speakeasy",
   "type": "module",
   "tshy": {

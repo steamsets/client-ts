@@ -26,7 +26,7 @@ export type V1PacksOpenResponseBody = {
    */
   cards: Array<V1PacksOpenCard> | null;
   /**
-   * Whether Page Not Found is the foil, in about 1 pack of 100
+   * Whether Page Not Found is the foil, in about 1 pack of 33
    */
   foil: boolean;
   mine: V1PacksOpenTotals;
