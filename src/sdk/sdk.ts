@@ -11,6 +11,7 @@ import { App } from "./app.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
+import { Bot } from "./bot.js";
 import { Donate } from "./donate.js";
 import { Exchange } from "./exchange.js";
 import { Group } from "./group.js";
@@ -20,6 +21,7 @@ import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
 import { Maintenance } from "./maintenance.js";
 import { Packs } from "./packs.js";
+import { Roles } from "./roles.js";
 import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
@@ -67,6 +69,11 @@ export class SteamSets extends ClientSDK {
     return (this._badge ??= new Badge(this._options));
   }
 
+  private _bot?: Bot;
+  get bot(): Bot {
+    return (this._bot ??= new Bot(this._options));
+  }
+
   private _donate?: Donate;
   get donate(): Donate {
     return (this._donate ??= new Donate(this._options));
@@ -110,6 +117,11 @@ export class SteamSets extends ClientSDK {
   private _packs?: Packs;
   get packs(): Packs {
     return (this._packs ??= new Packs(this._options));
+  }
+
+  private _roles?: Roles;
+  get roles(): Roles {
+    return (this._roles ??= new Roles(this._options));
   }
 
   private _search?: Search;

@@ -17,14 +17,24 @@ import {
   AccountNotificationConnectionBroken$inboundSchema,
 } from "./accountnotificationconnectionbroken.js";
 import {
+  AccountNotificationMessage,
+  AccountNotificationMessage$inboundSchema,
+} from "./accountnotificationmessage.js";
+import {
   AccountNotificationSubmissionReplied,
   AccountNotificationSubmissionReplied$inboundSchema,
 } from "./accountnotificationsubmissionreplied.js";
+import {
+  AccountNotificationTradeMatch,
+  AccountNotificationTradeMatch$inboundSchema,
+} from "./accountnotificationtradematch.js";
 
 export const AccountNotificationKind = {
   CardAcquired: "card_acquired",
   ConnectionBroken: "connection_broken",
   SubmissionReplied: "submission_replied",
+  TradeMatchNeeded: "trade_match_needed",
+  TradeMatchSpare: "trade_match_spare",
 } as const;
 export type AccountNotificationKind = OpenEnum<typeof AccountNotificationKind>;
 
@@ -38,11 +48,13 @@ export type AccountNotification = {
   createdAt: Date;
   id: number;
   kind: AccountNotificationKind;
+  message: AccountNotificationMessage;
   /**
    * When the account read it, null while unread
    */
   readAt: Date | null;
   submissionReplied?: AccountNotificationSubmissionReplied | null | undefined;
+  tradeMatch?: AccountNotificationTradeMatch | null | undefined;
 };
 
 /** @internal */
@@ -71,11 +83,15 @@ export const AccountNotification$inboundSchema: z.ZodMiniType<
   ),
   id: z.int(),
   kind: AccountNotificationKind$inboundSchema,
+  message: AccountNotificationMessage$inboundSchema,
   readAt: z.nullable(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
   ),
   submissionReplied: z.optional(
     z.nullable(AccountNotificationSubmissionReplied$inboundSchema),
+  ),
+  tradeMatch: z.optional(
+    z.nullable(AccountNotificationTradeMatch$inboundSchema),
   ),
 });
 
