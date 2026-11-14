@@ -57,14 +57,13 @@ let value: LeaderboardChange = {
     vacBans: 121724,
     xp: 123456,
   },
-  accountId: 245808,
-  latestDate: new Date("2024-01-14T22:53:32.408Z"),
-  newRank: 927743,
-  newScore: 520105,
-  oldRank: 797573,
-  oldScore: 368492,
-  rankDelta: 802386,
-  scoreDelta: 774545,
+  latestDate: new Date("2024-09-26T09:44:35.989Z"),
+  newRank: 12731,
+  newScore: 927743,
+  oldRank: 520105,
+  oldScore: 797573,
+  rankDelta: 368492,
+  scoreDelta: 802386,
 };
 ```
 
@@ -72,8 +71,7 @@ let value: LeaderboardChange = {
 
 | Field                                                                                                                                                                             | Type                                                                                                                                                                              | Required                                                                                                                                                                          | Description                                                                                                                                                                       |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `account`                                                                                                                                                                         | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                                                                                                    | :heavy_minus_sign:                                                                                                                                                                | N/A                                                                                                                                                                               |
-| `accountId`                                                                                                                                                                       | *number*                                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                | N/A                                                                                                                                                                               |
+| `account`                                                                                                                                                                         | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                                                                                                    | :heavy_check_mark:                                                                                                                                                                | N/A                                                                                                                                                                               |
 | `history`                                                                                                                                                                         | [components.LeaderboardChangePoint](../../models/components/leaderboardchangepoint.md)[]                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The account's daily rank and score on this leaderboard inside the window, ordered by date and downsampled to at most 24 points. The first and last snapshots are always included. |
 | `latestDate`                                                                                                                                                                      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                                                     | :heavy_check_mark:                                                                                                                                                                | N/A                                                                                                                                                                               |
 | `newRank`                                                                                                                                                                         | *number*                                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                | N/A                                                                                                                                                                               |

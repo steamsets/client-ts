@@ -28,15 +28,29 @@ import {
 export const V1AccountGetSettingsBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
 } as const;
 /**
  * The stored name effect
@@ -120,6 +134,14 @@ export type V1AccountGetSettingsBody = {
    */
   themeColor: string | null;
   /**
+   * The account's Steam trade offer link, null when it has not added one
+   */
+  tradeUrl: string | null;
+  /**
+   * The name effects the account's roles unlock, in picker order, without none
+   */
+  unlockedNameEffects?: Array<string> | null | undefined;
+  /**
    * The vanity the account is using
    */
   vanity: string;
@@ -162,6 +184,8 @@ export const V1AccountGetSettingsBody$inboundSchema: z.ZodMiniType<
     sessions: z.nullable(z.array(Session$inboundSchema)),
     subscribed: z.boolean(),
     themeColor: z.nullable(z.string()),
+    tradeUrl: z.nullable(z.string()),
+    unlockedNameEffects: z.optional(z.nullable(z.array(z.string()))),
     vanity: z.string(),
     vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
   }),

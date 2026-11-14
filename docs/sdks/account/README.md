@@ -34,21 +34,25 @@ All Requests related to account(s) are grouped here.
 * [listFriends](#listfriends) - List account friends
 * [listInventorySets](#listinventorysets) - List inventory sets
 * [listLeaderboardHistory](#listleaderboardhistory) - Get leaderboard history
+* [listNeededCards](#listneededcards) - List the cards the account misses to finish sets it almost has
 * [listNotifications](#listnotifications) - List the account's inbox or archive
 * [listOwnedBadges](#listownedbadges) - List owned badges
 * [listOwnedGroups](#listownedgroups) - List groups owned by account
+* [listSpareCards](#listsparecards) - List the account's spare trading cards that another account wants
 * [login](#login) - Login with Steam
 * [logout](#logout) - Logout from session
 * [markNotificationsRead](#marknotificationsread) - Mark notifications read or unread
-* [optOut](#optout) - Opt out of SteamSets (hide account and stop processing)
+* [optOut](#optout) - Opt out of SteamSets (hide account and stop processing after 30 days)
 * [queueInventoryRefresh](#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](#queueupdate) - Queue account update
 * [reconnectConnection](#reconnectconnection) - Reconnect OAuth connection
 * [refreshInventory](#refreshinventory) - Refresh inventory
 * [refreshSession](#refreshsession) - Refresh session token
 * [removePushSubscription](#removepushsubscription) - Stop push notifications on one device
+* [resolveMany](#resolvemany) - Resolve SteamIDs and vanities to accounts
 * [sendEmailVerification](#sendemailverification) - Send email verification
 * [sendTestPush](#sendtestpush) - Send a test push notification
+* [setTradeMatchVisibility](#settradematchvisibility) - Show or hide the account in other accounts' trade matches
 * [setWishlistWatch](#setwishlistwatch) - Watch every trading card on the wishlist
 * [subscribe](#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](#subscribeemail) - Subscribe to email notifications
@@ -446,11 +450,11 @@ run();
 
 ### Errors
 
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 403, 422, 429  | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.ErrorModel            | 400, 401, 403, 409, 422, 429 | application/problem+json     |
+| errors.ErrorModel            | 500                          | application/problem+json     |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
 
 ## createDeveloperApp
 
@@ -2123,6 +2127,76 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## listNeededCards
+
+A set counts when the account owns all but one or two of its cards, its badge is below the top level and the card has few owners. Each card says how many accounts have a spare copy. Use item.findSpareHolders to see who.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.listNeededCards" method="post" path="/v1/account.listNeededCards" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.listNeededCards();
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountListNeededCards } from "@steamsets/client-ts/funcs/accountListNeededCards.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountListNeededCards(steamSets);
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListNeededCards failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountListNeededCardsResponse](../../models/operations/accountlistneededcardsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 404                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## listNotifications
 
 List the account's inbox or archive
@@ -2337,6 +2411,76 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## listSpareCards
+
+A spare is a copy the account's badge does not need: owned copies minus the sets still needed to reach level 5, or level 1 for foil. Only cards that at least one other account wants are returned: it watches the card, has it on its wishlist or needs it to finish a set. Use item.findWanters to see who wants a card.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.listSpareCards" method="post" path="/v1/account.listSpareCards" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.listSpareCards();
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountListSpareCards } from "@steamsets/client-ts/funcs/accountListSpareCards.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountListSpareCards(steamSets);
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountListSpareCards failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountListSpareCardsResponse](../../models/operations/accountlistsparecardsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 404                 | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -2580,7 +2724,7 @@ run();
 
 ## optOut
 
-Opt out of SteamSets (hide account and stop processing)
+Opt out of SteamSets (hide account and stop processing after 30 days)
 
 ### Example Usage
 
@@ -3043,7 +3187,7 @@ run();
 
 ## removePushSubscription
 
-Removes one push subscription, by id or by endpoint.
+Removes one push subscription by its endpoint.
 
 ### Example Usage
 
@@ -3056,7 +3200,9 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.removePushSubscription({});
+  const result = await steamSets.account.removePushSubscription({
+    endpoint: "<value>",
+  });
 
   console.log(result);
 }
@@ -3079,7 +3225,9 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await accountRemovePushSubscription(steamSets, {});
+  const res = await accountRemovePushSubscription(steamSets, {
+    endpoint: "<value>",
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -3109,6 +3257,87 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## resolveMany
+
+Looks up to 50 SteamID64s and Steam vanities at once. Accounts SteamSets knows come from its database; Steam is asked only for the rest.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.resolveMany" method="post" path="/v1/account.resolveMany" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.resolveMany({
+    inputs: [
+      "76561199756787903",
+      "gabelogannewell",
+    ],
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountResolveMany } from "@steamsets/client-ts/funcs/accountResolveMany.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountResolveMany(steamSets, {
+    inputs: [
+      "76561199756787903",
+      "gabelogannewell",
+    ],
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountResolveMany failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountResolveManyRequestBody](../../models/components/accountresolvemanyrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountResolveManyResponse](../../models/operations/accountresolvemanyresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 422, 429       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -3250,6 +3479,81 @@ run();
 | Error Type               | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | errors.ErrorModel        | 400, 401, 404            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## setTradeMatchVisibility
+
+Hidden, the account is not named to other accounts as a holder with a spare card or as an account that needs a card, in digests and on card pages. The account still gets its own trade matches.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="account.setTradeMatchVisibility" method="post" path="/v1/account.setTradeMatchVisibility" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.account.setTradeMatchVisibility({
+    hidden: true,
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { accountSetTradeMatchVisibility } from "@steamsets/client-ts/funcs/accountSetTradeMatchVisibility.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await accountSetTradeMatchVisibility(steamSets, {
+    hidden: true,
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountSetTradeMatchVisibility failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AccountSetTradeMatchVisibilityRequestBody](../../models/components/accountsettradematchvisibilityrequestbody.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AccountSetTradeMatchVisibilityResponse](../../models/operations/accountsettradematchvisibilityresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 404, 422            | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
@@ -3892,6 +4196,7 @@ async function run() {
       language: "en",
       nameEffect: "rainbow",
       themeColor: "#FF5733",
+      tradeUrl: "https://steamcommunity.com/tradeoffer/new/?partner=1216167888&token=AbC12xyz",
       vanity: "flo",
     },
   });
@@ -3925,6 +4230,7 @@ async function run() {
       language: "en",
       nameEffect: "rainbow",
       themeColor: "#FF5733",
+      tradeUrl: "https://steamcommunity.com/tradeoffer/new/?partner=1216167888&token=AbC12xyz",
       vanity: "flo",
     },
   });

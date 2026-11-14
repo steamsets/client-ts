@@ -170,7 +170,7 @@ async function $do(
     | SDKValidationError
   >(
     M.nil(204, operations.AdminUpdateRolesResponse$inboundSchema),
-    M.jsonErr([400, 401, 403, 404, 422], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 403, 404, 409, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

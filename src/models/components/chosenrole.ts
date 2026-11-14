@@ -4,38 +4,14 @@
 
 import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
-import * as openEnums from "../../types/enums.js";
-import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const ChosenRoleRole = {
-  User: "user",
-  Donator: "donator",
-  Staff: "staff",
-  Developer: "developer",
-  Partner: "partner",
-  Owner: "owner",
-  Amethyst: "amethyst",
-  Amber: "amber",
-  Emerald: "emerald",
-  Sapphire: "sapphire",
-  Ruby: "ruby",
-  Diamond: "diamond",
-  Contributor: "contributor",
-  EarlySupporter: "early_supporter",
-  Beta: "beta",
-  Translator: "translator",
-  Top100: "top_100",
-  BadgeScout: "badge_scout",
-  NitroBooster: "nitro_booster",
-  Astral: "astral",
-  Nebula: "nebula",
-} as const;
-export type ChosenRoleRole = OpenEnum<typeof ChosenRoleRole>;
-
 export type ChosenRole = {
-  role: ChosenRoleRole;
+  /**
+   * The role slug
+   */
+  role: string;
   /**
    * The tier of the donation
    */
@@ -43,15 +19,9 @@ export type ChosenRole = {
 };
 
 /** @internal */
-export const ChosenRoleRole$inboundSchema: z.ZodMiniType<
-  ChosenRoleRole,
-  unknown
-> = openEnums.inboundSchema(ChosenRoleRole);
-
-/** @internal */
 export const ChosenRole$inboundSchema: z.ZodMiniType<ChosenRole, unknown> = z
   .object({
-    role: ChosenRoleRole$inboundSchema,
+    role: z.string(),
     tier: z.string(),
   });
 

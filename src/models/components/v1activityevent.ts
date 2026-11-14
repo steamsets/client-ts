@@ -25,8 +25,7 @@ import {
 import { V1AppBadge, V1AppBadge$inboundSchema } from "./v1appbadge.js";
 
 export type V1ActivityEvent = {
-  account?: LeaderboardAccount | null | undefined;
-  accountId: number;
+  account: LeaderboardAccount | null;
   appBadge?: V1AppBadge | undefined;
   /**
    * badge_crafted | level_milestone | rank_milestone | scarcity_milestone
@@ -43,8 +42,7 @@ export const V1ActivityEvent$inboundSchema: z.ZodMiniType<
   V1ActivityEvent,
   unknown
 > = z.object({
-  account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-  accountId: z.int(),
+  account: z.nullable(LeaderboardAccount$inboundSchema),
   appBadge: z.optional(V1AppBadge$inboundSchema),
   eventType: z.string(),
   level: z.optional(V1ActivityLevelChange$inboundSchema),

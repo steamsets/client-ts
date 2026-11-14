@@ -13,5 +13,5 @@ let value: Channel = "email";
 ## Values
 
 ```typescript
-"discord" | "email" | "push" | Unrecognized<string>
+"discord" | "email" | "push" | "inbox" | Unrecognized<string>
 ```

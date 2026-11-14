@@ -1,0 +1,22 @@
+# AdminBotCreateScrapeRequestBody
+
+## Example Usage
+
+```typescript
+import { AdminBotCreateScrapeRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminBotCreateScrapeRequestBody = {
+  name: "<value>",
+  steamId: "76561199756787903",
+};
+```
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      | Example                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `brandId`                                                                                                        | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | Public id of the bot's brand.                                                                                    |                                                                                                                  |
+| `name`                                                                                                           | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |                                                                                                                  |
+| `ownerSteamId`                                                                                                   | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | SteamID64 of the bot's owner.                                                                                    |                                                                                                                  |
+| `steamId`                                                                                                        | *string*                                                                                                         | :heavy_check_mark:                                                                                               | SteamID64 of the bot account.                                                                                    | 76561199756787903                                                                                                |
+| `type`                                                                                                           | [components.AdminBotCreateScrapeRequestBodyType](../../models/components/adminbotcreatescraperequestbodytype.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |                                                                                                                  |

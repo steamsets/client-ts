@@ -4,19 +4,25 @@
 
 import { adminAddSteamApiKey } from "../funcs/adminAddSteamApiKey.js";
 import { adminBanPlayer } from "../funcs/adminBanPlayer.js";
+import { adminCreateScrapeBot } from "../funcs/adminCreateScrapeBot.js";
 import { adminDeleteSteamApiKey } from "../funcs/adminDeleteSteamApiKey.js";
 import { adminExportSteamApiKeys } from "../funcs/adminExportSteamApiKeys.js";
 import { adminFindSteamApiKey } from "../funcs/adminFindSteamApiKey.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
+import { adminListBotBrands } from "../funcs/adminListBotBrands.js";
+import { adminListBots } from "../funcs/adminListBots.js";
 import { adminListHiddenAccounts } from "../funcs/adminListHiddenAccounts.js";
 import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
 import { adminListUsers } from "../funcs/adminListUsers.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
 import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
+import { adminSaveBotBrand } from "../funcs/adminSaveBotBrand.js";
 import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
 import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
+import { adminUpdateBot } from "../funcs/adminUpdateBot.js";
+import { adminUpdateBots } from "../funcs/adminUpdateBots.js";
 import { adminUpdateCosmetics } from "../funcs/adminUpdateCosmetics.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
 import { adminUpdateRoleOverride } from "../funcs/adminUpdateRoleOverride.js";
@@ -25,13 +31,31 @@ import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { Crawler } from "./crawler.js";
+import { SteamSetsFlags } from "./steamsetsflags.js";
 import { SteamSetsMaintenance } from "./steamsetsmaintenance.js";
+import { SteamSetsRoles } from "./steamsetsroles.js";
 import { SteamSetsSubmissions } from "./steamsetssubmissions.js";
 
 export class Admin extends ClientSDK {
+  private _crawler?: Crawler;
+  get crawler(): Crawler {
+    return (this._crawler ??= new Crawler(this._options));
+  }
+
+  private _flags?: SteamSetsFlags;
+  get flags(): SteamSetsFlags {
+    return (this._flags ??= new SteamSetsFlags(this._options));
+  }
+
   private _maintenance?: SteamSetsMaintenance;
   get maintenance(): SteamSetsMaintenance {
     return (this._maintenance ??= new SteamSetsMaintenance(this._options));
+  }
+
+  private _roles?: SteamSetsRoles;
+  get roles(): SteamSetsRoles {
+    return (this._roles ??= new SteamSetsRoles(this._options));
   }
 
   private _submissions?: SteamSetsSubmissions;
@@ -61,6 +85,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminBanPlayerResponse> {
     return unwrapAsync(adminBanPlayer(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Add a directory bot measured by the inventory scraper
+   */
+  async createScrapeBot(
+    request: components.AdminBotCreateScrapeRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminCreateScrapeBotResponse> {
+    return unwrapAsync(adminCreateScrapeBot(
       this,
       request,
       options,
@@ -138,6 +176,32 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * List every bot brand
+   */
+  async listBotBrands(
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotBrandsResponse> {
+    return unwrapAsync(adminListBotBrands(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * List directory bots by status
+   */
+  async listBots(
+    request: components.AdminBotListRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotsResponse> {
+    return unwrapAsync(adminListBots(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List hidden, opted-out and restricted accounts
    */
   async listHiddenAccounts(
@@ -206,6 +270,20 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Create or edit a bot brand and its sponsorship
+   */
+  async saveBotBrand(
+    request: components.AdminBotBrandSaveRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminSaveBotBrandResponse> {
+    return unwrapAsync(adminSaveBotBrand(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Test a Steam Web API key against Steam
    */
   async testSteamApiKey(
@@ -241,6 +319,40 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminUpdateAccountResponse> {
     return unwrapAsync(adminUpdateAccount(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Edit a directory bot
+   *
+   * @remarks
+   * Every field but `id` is optional; a missing field keeps its value. Approving a push bot needs its listing fee paid, in this request or before.
+   */
+  async updateBot(
+    request: components.AdminBotUpdateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateBotResponse> {
+    return unwrapAsync(adminUpdateBot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Edit many directory bots
+   *
+   * @remarks
+   * Applies one edit to up to 100 bots, as admin.updateBot does to one. Every field but `ids` is optional; a missing field keeps each bot's value. A bot the edit would approve without a paid listing fee is left alone and listed in `feeUnpaid`.
+   */
+  async updateBots(
+    request: components.AdminBotUpdateManyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateBotsResponse> {
+    return unwrapAsync(adminUpdateBots(
       this,
       request,
       options,

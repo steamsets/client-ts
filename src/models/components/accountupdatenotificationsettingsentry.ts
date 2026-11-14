@@ -6,11 +6,18 @@ import * as z from "zod/v4-mini";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
+/**
+ * inbox is only for the kinds that can leave the inbox, the trade match digests
+ */
 export const AccountUpdateNotificationSettingsEntryChannel = {
   Discord: "discord",
   Email: "email",
   Push: "push",
+  Inbox: "inbox",
 } as const;
+/**
+ * inbox is only for the kinds that can leave the inbox, the trade match digests
+ */
 export type AccountUpdateNotificationSettingsEntryChannel = OpenEnum<
   typeof AccountUpdateNotificationSettingsEntryChannel
 >;
@@ -18,12 +25,17 @@ export type AccountUpdateNotificationSettingsEntryChannel = OpenEnum<
 export const AccountUpdateNotificationSettingsEntryKind = {
   CardAcquired: "card_acquired",
   SubmissionReplied: "submission_replied",
+  TradeMatchNeeded: "trade_match_needed",
+  TradeMatchSpare: "trade_match_spare",
 } as const;
 export type AccountUpdateNotificationSettingsEntryKind = OpenEnum<
   typeof AccountUpdateNotificationSettingsEntryKind
 >;
 
 export type AccountUpdateNotificationSettingsEntry = {
+  /**
+   * inbox is only for the kinds that can leave the inbox, the trade match digests
+   */
   channel: AccountUpdateNotificationSettingsEntryChannel;
   enabled: boolean;
   kind: AccountUpdateNotificationSettingsEntryKind;

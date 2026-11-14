@@ -11,11 +11,24 @@ let value: V1AccountGetSessionBody = {
   accountId: 123456,
   avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
   email: "flo@example.com",
+  flags: [],
+  grants: [
+    "admin.access",
+  ],
   isNew: true,
   level: 1,
   name: "flo",
   resources: [],
-  roles: [],
+  roles: [
+    {
+      extras: {
+        "key": "<value>",
+        "key1": "<value>",
+      },
+      rating: 66480,
+      role: "donator",
+    },
+  ],
   sessionData: {
     createdAt: new Date("2023-01-01T00:00:00Z"),
     expiresAt: new Date("2023-01-01T00:00:00Z"),
@@ -44,6 +57,8 @@ let value: V1AccountGetSessionBody = {
 | `accountId`                                                    | *number*                                                       | :heavy_check_mark:                                             | The account id                                                 | 123456                                                         |
 | `avatar`                                                       | *string*                                                       | :heavy_check_mark:                                             | The avatar of the account                                      | f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg                           |
 | `email`                                                        | *string*                                                       | :heavy_minus_sign:                                             | The email of the account                                       | flo@example.com                                                |
+| `flags`                                                        | *string*[]                                                     | :heavy_check_mark:                                             | The feature flags that are on for this account                 |                                                                |
+| `grants`                                                       | *string*[]                                                     | :heavy_check_mark:                                             | The grants the account holds through its roles, sorted         | [<br/>"admin.access"<br/>]                                     |
 | `isNew`                                                        | *boolean*                                                      | :heavy_check_mark:                                             | Whether the account is new                                     | true                                                           |
 | `level`                                                        | *number*                                                       | :heavy_check_mark:                                             | The level of the account                                       | 1                                                              |
 | `name`                                                         | *string*                                                       | :heavy_check_mark:                                             | The name of the account                                        | flo                                                            |

@@ -6,28 +6,17 @@ import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 export type DonateSupporter = {
-  /**
-   * The account id
-   */
-  accountId: number;
-  /**
-   * The avatar hash
-   */
-  avatar: string;
+  account: LeaderboardAccount | null;
   /**
    * What this account donated this month, in cents
    */
   monthCents: number;
-  /**
-   * The account's display name
-   */
-  name: string;
-  /**
-   * The account's vanity, null if it has none
-   */
-  vanity: string | null;
 };
 
 /** @internal */
@@ -35,11 +24,8 @@ export const DonateSupporter$inboundSchema: z.ZodMiniType<
   DonateSupporter,
   unknown
 > = z.object({
-  accountId: z.int(),
-  avatar: z.string(),
+  account: z.nullable(LeaderboardAccount$inboundSchema),
   monthCents: z.int(),
-  name: z.string(),
-  vanity: z.nullable(z.string()),
 });
 
 export function donateSupporterFromJSON(

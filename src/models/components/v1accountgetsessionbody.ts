@@ -29,6 +29,14 @@ export type V1AccountGetSessionBody = {
    */
   email?: string | null | undefined;
   /**
+   * The feature flags that are on for this account
+   */
+  flags: Array<string> | null;
+  /**
+   * The grants the account holds through its roles, sorted
+   */
+  grants: Array<string>;
+  /**
    * Whether the account is new
    */
   isNew: boolean;
@@ -69,6 +77,8 @@ export const V1AccountGetSessionBody$inboundSchema: z.ZodMiniType<
     accountId: z.int(),
     avatar: z.string(),
     email: z.optional(z.nullable(z.string())),
+    flags: z.nullable(z.array(z.string())),
+    grants: z.array(z.string()),
     isNew: z.boolean(),
     level: z.int(),
     name: z.string(),

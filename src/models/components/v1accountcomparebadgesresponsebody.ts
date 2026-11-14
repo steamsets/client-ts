@@ -9,16 +9,19 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { ComparedTuple, ComparedTuple$inboundSchema } from "./comparedtuple.js";
 import {
-  ResolvedAccount,
-  ResolvedAccount$inboundSchema,
-} from "./resolvedaccount.js";
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 export type V1AccountCompareBadgesResponseBody = {
   /**
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
-  accounts: Array<ResolvedAccount> | null;
+  /**
+   * The compared accounts, in the order they were requested
+   */
+  accounts: Array<LeaderboardAccount | null> | null;
   /**
    * The number of pages
    */
@@ -37,7 +40,7 @@ export const V1AccountCompareBadgesResponseBody$inboundSchema: z.ZodMiniType<
 > = z.pipe(
   z.object({
     $schema: z.optional(z.string()),
-    accounts: z.nullable(z.array(ResolvedAccount$inboundSchema)),
+    accounts: z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
     pages: z.int(),
     totalHits: z.int(),
     tuples: z.nullable(z.array(ComparedTuple$inboundSchema)),

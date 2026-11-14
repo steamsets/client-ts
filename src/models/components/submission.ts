@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 /**
  * What kind of submission this is
@@ -96,10 +100,7 @@ export type Submission = {
    * Where staff are with it
    */
   status: SubmissionStatus;
-  /**
-   * The profile a broken_profile report is about. Null for other kinds
-   */
-  subjectAccountId: number | null;
+  subject: LeaderboardAccount | null;
   /**
    * When the report last changed
    */
@@ -143,7 +144,7 @@ export const Submission$inboundSchema: z.ZodMiniType<Submission, unknown> = z
       ),
       staffReply: z.nullable(z.string()),
       status: SubmissionStatus$inboundSchema,
-      subjectAccountId: z.nullable(z.int()),
+      subject: z.nullable(LeaderboardAccount$inboundSchema),
       updatedAt: z.pipe(
         z.iso.datetime({ offset: true }),
         z.transform(v => new Date(v)),

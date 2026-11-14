@@ -23,6 +23,10 @@ export type AccountGetNotificationSettingsResponseBody = {
   dollarSchema?: string | undefined;
   discordConnected: boolean;
   emailVerified: boolean;
+  /**
+   * Whether the account is left out of other accounts' trade matches
+   */
+  hideFromTradeMatches: boolean;
   pushDevices: Array<AccountGetNotificationSettingsPushDevice>;
   /**
    * The VAPID public key for PushManager.subscribe, base64url
@@ -42,6 +46,7 @@ export const AccountGetNotificationSettingsResponseBody$inboundSchema:
       $schema: z.optional(z.string()),
       discordConnected: z.boolean(),
       emailVerified: z.boolean(),
+      hideFromTradeMatches: z.boolean(),
       pushDevices: z.array(
         AccountGetNotificationSettingsPushDevice$inboundSchema,
       ),

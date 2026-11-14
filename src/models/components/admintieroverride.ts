@@ -8,6 +8,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 /**
  * The tier the override sets
@@ -28,14 +32,7 @@ export type AdminTierOverride = {
    * When staff set the override
    */
   createdAt: Date;
-  /**
-   * Account id of the staff member who set the override
-   */
-  createdBy: number;
-  /**
-   * Name of the staff member who set the override
-   */
-  createdByName: string | null;
+  createdBy: LeaderboardAccount | null;
   /**
    * The staff-facing reason for the override, empty when none was given
    */
@@ -59,8 +56,7 @@ export const AdminTierOverride$inboundSchema: z.ZodMiniType<
     z.iso.datetime({ offset: true }),
     z.transform(v => new Date(v)),
   ),
-  createdBy: z.int(),
-  createdByName: z.nullable(z.string()),
+  createdBy: z.nullable(LeaderboardAccount$inboundSchema),
   reason: z.string(),
   tier: Tier$inboundSchema,
 });

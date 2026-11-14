@@ -35,10 +35,6 @@ export type V1AdminHiddenAccountKind = OpenEnum<
 export type V1AdminHiddenAccount = {
   account: LeaderboardAccount | null;
   /**
-   * The account id
-   */
-  accountId: number;
-  /**
    * How many sign-ins account.login refused while the restriction was in force
    */
   blockedLogins: number;
@@ -78,7 +74,6 @@ export const V1AdminHiddenAccount$inboundSchema: z.ZodMiniType<
   unknown
 > = z.object({
   account: z.nullable(LeaderboardAccount$inboundSchema),
-  accountId: z.int(),
   blockedLogins: z.int(),
   feedback: z.nullable(V1AdminOptOutFeedback$inboundSchema),
   hideReason: z.nullable(z.string()),

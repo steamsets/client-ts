@@ -61,9 +61,8 @@ let value: AccountGetTrendingResponseBody = {
         vacBans: 121724,
         xp: 123456,
       },
-      accountId: 325508,
-      totalViews: 530223,
-      uniqueViews: 763004,
+      totalViews: 325508,
+      uniqueViews: 530223,
     },
   ],
 };

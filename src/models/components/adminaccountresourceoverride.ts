@@ -6,20 +6,17 @@ import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 export type AdminAccountResourceOverride = {
   /**
    * When staff set the override. Null on overrides set before this was recorded
    */
   updatedAt: Date | null;
-  /**
-   * Account id of the staff member who set the override. Null on overrides set before this was recorded
-   */
-  updatedBy: number | null;
-  /**
-   * Name of the staff member who set the override
-   */
-  updatedByName: string | null;
+  updatedBy: LeaderboardAccount | null;
   /**
    * The override value
    */
@@ -34,8 +31,7 @@ export const AdminAccountResourceOverride$inboundSchema: z.ZodMiniType<
   updatedAt: z.nullable(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
   ),
-  updatedBy: z.nullable(z.int()),
-  updatedByName: z.nullable(z.string()),
+  updatedBy: z.nullable(LeaderboardAccount$inboundSchema),
   value: z.string(),
 });
 

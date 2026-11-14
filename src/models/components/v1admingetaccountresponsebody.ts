@@ -37,6 +37,26 @@ import {
   V1AccountVisibilityUpdate,
   V1AccountVisibilityUpdate$inboundSchema,
 } from "./v1accountvisibilityupdate.js";
+import {
+  V1AdminGetAccountCosmetics,
+  V1AdminGetAccountCosmetics$inboundSchema,
+} from "./v1admingetaccountcosmetics.js";
+import {
+  V1AdminGetAccountDonations,
+  V1AdminGetAccountDonations$inboundSchema,
+} from "./v1admingetaccountdonations.js";
+import {
+  V1AdminGetAccountLocation,
+  V1AdminGetAccountLocation$inboundSchema,
+} from "./v1admingetaccountlocation.js";
+import {
+  V1AdminGetAccountNote,
+  V1AdminGetAccountNote$inboundSchema,
+} from "./v1admingetaccountnote.js";
+import {
+  V1AdminGetAccountRestriction,
+  V1AdminGetAccountRestriction$inboundSchema,
+} from "./v1admingetaccountrestriction.js";
 
 /**
  * The privacy of the account
@@ -63,33 +83,15 @@ export type V1AdminGetAccountResponseBody = {
    */
   avatar: string;
   /**
-   * How many sign-ins account.login refused while the restriction was in force
-   */
-  blockedLogins: number;
-  /**
-   * The city of the account
-   */
-  city: string | null;
-  /**
    * The connections the account has
    */
   connections: Array<Connection> | null;
-  /**
-   * The country code of the account
-   */
-  country: string | null;
-  /**
-   * The staff-granted donation total in cents
-   */
-  customDonations: number;
+  cosmetics: V1AdminGetAccountCosmetics;
   /**
    * The developer apps the account has
    */
   developerApps: Array<DeveloperApp> | null;
-  /**
-   * The Patreon-reported donation total in cents
-   */
-  donations: number;
+  donations: V1AdminGetAccountDonations;
   /**
    * The email of the account
    */
@@ -98,10 +100,7 @@ export type V1AdminGetAccountResponseBody = {
    * Whether the account has hidden itself from steamsets leaderboards
    */
   hidden: boolean;
-  /**
-   * When account.login last refused a sign-in
-   */
-  lastBlockedLoginAt: Date | null;
+  location: V1AdminGetAccountLocation;
   /**
    * The location updates the account has
    */
@@ -111,53 +110,19 @@ export type V1AdminGetAccountResponseBody = {
    */
   name: string;
   /**
-   * The name effect, none when the account has none
-   */
-  nameEffect: string;
-  /**
    * The name updates the account has
    */
   nameUpdates: Array<V1AccountNameUpdate> | null;
-  /**
-   * The staff note on this account, if any
-   */
-  note: string | null;
-  /**
-   * Name of the staff member who last wrote the note
-   */
-  noteAuthor: string | null;
-  /**
-   * When the staff note was last written
-   */
-  noteUpdatedAt: Date | null;
+  note: V1AdminGetAccountNote | null;
   /**
    * The privacy of the account
    */
   privacy: V1AdminGetAccountResponseBodyPrivacy;
   /**
-   * The region of the account
-   */
-  region: string | null;
-  /**
    * Every resource, one entry each, with the value that applies and where it comes from
    */
   resources: Array<AdminAccountResource> | null;
-  /**
-   * Whether staff has hidden this account site-wide and locked it out of login
-   */
-  restricted: boolean;
-  /**
-   * When the restriction was applied
-   */
-  restrictedAt: Date | null;
-  /**
-   * Name of the staff member who applied the restriction
-   */
-  restrictedByName: string | null;
-  /**
-   * The staff-facing reason for the restriction, if any
-   */
-  restrictionReason: string | null;
+  restriction: V1AdminGetAccountRestriction | null;
   /**
    * The roles the account has
    */
@@ -166,14 +131,6 @@ export type V1AdminGetAccountResponseBody = {
    * The sessions the account has
    */
   sessions: Array<Session> | null;
-  /**
-   * The state of the account
-   */
-  state: string | null;
-  /**
-   * The profile theme color as #RRGGBB, or null when the account has none
-   */
-  themeColor: string | null;
   tierOverride: AdminTierOverride | null;
   /**
    * The vanity of the account
@@ -203,40 +160,22 @@ export const V1AdminGetAccountResponseBody$inboundSchema: z.ZodMiniType<
   z.object({
     $schema: z.optional(z.string()),
     avatar: z.string(),
-    blockedLogins: z.int(),
-    city: z.nullable(z.string()),
     connections: z.nullable(z.array(Connection$inboundSchema)),
-    country: z.nullable(z.string()),
-    customDonations: z.int(),
+    cosmetics: V1AdminGetAccountCosmetics$inboundSchema,
     developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
-    donations: z.int(),
+    donations: V1AdminGetAccountDonations$inboundSchema,
     email: z.nullable(z.string()),
     hidden: z.boolean(),
-    lastBlockedLoginAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
+    location: V1AdminGetAccountLocation$inboundSchema,
     locationUpdates: z.nullable(z.array(V1AccountLocationUpdate$inboundSchema)),
     name: z.string(),
-    nameEffect: z.string(),
     nameUpdates: z.nullable(z.array(V1AccountNameUpdate$inboundSchema)),
-    note: z.nullable(z.string()),
-    noteAuthor: z.nullable(z.string()),
-    noteUpdatedAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
+    note: z.nullable(V1AdminGetAccountNote$inboundSchema),
     privacy: V1AdminGetAccountResponseBodyPrivacy$inboundSchema,
-    region: z.nullable(z.string()),
     resources: z.nullable(z.array(AdminAccountResource$inboundSchema)),
-    restricted: z.boolean(),
-    restrictedAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    restrictedByName: z.nullable(z.string()),
-    restrictionReason: z.nullable(z.string()),
+    restriction: z.nullable(V1AdminGetAccountRestriction$inboundSchema),
     roles: z.nullable(z.array(Role$inboundSchema)),
     sessions: z.nullable(z.array(Session$inboundSchema)),
-    state: z.nullable(z.string()),
-    themeColor: z.nullable(z.string()),
     tierOverride: z.nullable(AdminTierOverride$inboundSchema),
     vanity: z.nullable(z.string()),
     vanityUpdates: z.nullable(z.array(V1AccountVanityUpdate$inboundSchema)),

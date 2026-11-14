@@ -9,6 +9,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { TupleAccount, TupleAccount$inboundSchema } from "./tupleaccount.js";
 
 export type ComparedTuple = {
+  /**
+   * One entry per compared account, in the same order as the top-level accounts
+   */
   accounts: Array<TupleAccount> | null;
   appId: number;
   appImage: string;

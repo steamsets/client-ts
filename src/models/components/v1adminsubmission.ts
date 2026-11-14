@@ -96,16 +96,8 @@ export type V1AdminSubmission = {
    * When staff replied. Null until staff reply
    */
   repliedAt: Date | null;
-  /**
-   * The staff account that replied. Null until staff reply
-   */
-  repliedBy: number | null;
   replyFrom: LeaderboardAccount | null;
   reporter: LeaderboardAccount | null;
-  /**
-   * The account that sent the report. Null for an anonymous report
-   */
-  reporterAccountId: number | null;
   /**
    * Signed link to the screenshot, valid for one hour. Null when the report has none
    */
@@ -119,10 +111,6 @@ export type V1AdminSubmission = {
    */
   status: V1AdminSubmissionStatus;
   subject: LeaderboardAccount | null;
-  /**
-   * The profile a broken_profile report is about. Null for other kinds
-   */
-  subjectAccountId: number | null;
   /**
    * When the report last changed
    */
@@ -166,15 +154,12 @@ export const V1AdminSubmission$inboundSchema: z.ZodMiniType<
   repliedAt: z.nullable(
     z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
   ),
-  repliedBy: z.nullable(z.int()),
   replyFrom: z.nullable(LeaderboardAccount$inboundSchema),
   reporter: z.nullable(LeaderboardAccount$inboundSchema),
-  reporterAccountId: z.nullable(z.int()),
   screenshotUrl: z.nullable(z.string()),
   staffReply: z.nullable(z.string()),
   status: V1AdminSubmissionStatus$inboundSchema,
   subject: z.nullable(LeaderboardAccount$inboundSchema),
-  subjectAccountId: z.nullable(z.int()),
   updatedAt: z.pipe(
     z.iso.datetime({ offset: true }),
     z.transform(v => new Date(v)),

@@ -1,0 +1,215 @@
+# AdminBotUpdateManyResponseBody
+
+## Example Usage
+
+```typescript
+import { AdminBotUpdateManyResponseBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminBotUpdateManyResponseBody = {
+  dollarSchema:
+    "https://api.steamsets.com/schemas/AdminBotUpdateManyResponseBody.json",
+  bots: [
+    {
+      account: {
+        animatedAvatar: "<value>",
+        apps: 123456,
+        avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+        avatarFrame: "<value>",
+        awardsGiven: 123456,
+        awardsReceived: 123456,
+        background: "<value>",
+        badges: 123456,
+        bans: 337406,
+        city: {
+          name: "Bad Krozingen",
+        },
+        country: {
+          code: "DE",
+          name: "Germany",
+        },
+        createdAt: new Date("2023-01-01T00:00:00Z"),
+        donated: 123456,
+        economyBan: "steam",
+        foilBadges: 123456,
+        friends: 123456,
+        gameBans: 747187,
+        level: 123456,
+        miniBackground: "<value>",
+        name: "steamsets",
+        nameEffect: "rainbow",
+        normalBadges: 123456,
+        playtime: 123456,
+        pointsGiven: 123456,
+        pointsReceived: 123456,
+        privacy: "public",
+        region: {
+          name: "Europe",
+        },
+        roles: [],
+        state: {
+          name: "Baden-Wurttemberg",
+        },
+        steamId: "76561198842603734",
+        steamSetsScore: 634507,
+        steamSetsVanity: "steamsets",
+        steamVanity: "steamsets",
+        supporter: {
+          active: true,
+          months: 3,
+        },
+        themeColor: "#FF5733",
+        vacBans: 121724,
+        xp: 123456,
+      },
+      avatarUrl: "https://genuine-quit.biz/",
+      brand: {
+        id: "bbr_5n7dZq1rFJx3WmPa",
+        logoUrl: "https://uncommon-outrun.net/",
+        name: "<value>",
+        sponsored: true,
+        websiteUrl: "https://polite-hyena.net/",
+      },
+      crypto: {
+        prices: [],
+      },
+      games: null,
+      gems: {
+        prices: {
+          cs2: null,
+          hydra: {
+            buy: 1399.45,
+            sell: 6787.06,
+          },
+          tf2: {
+            buy: 6956.24,
+            sell: 1826.38,
+          },
+          tod: {
+            buy: 8655.46,
+            sell: 6938.24,
+          },
+        },
+        stock: 217260,
+      },
+      id: "bot_3cVFAKxh8Q2ZqkTq",
+      keys: {
+        cs2: 760241,
+        hydra: 216631,
+        tf2: null,
+        tod: 459968,
+      },
+      name: "lvlupbot.com - legendary",
+      owner: {
+        animatedAvatar: "<value>",
+        apps: 123456,
+        avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+        avatarFrame: "<value>",
+        awardsGiven: 123456,
+        awardsReceived: 123456,
+        background: "<value>",
+        badges: 123456,
+        bans: 819180,
+        city: {
+          name: "Bad Krozingen",
+        },
+        country: {
+          code: "DE",
+          name: "Germany",
+        },
+        createdAt: new Date("2023-01-01T00:00:00Z"),
+        donated: 123456,
+        economyBan: "steam",
+        foilBadges: 123456,
+        friends: 123456,
+        gameBans: 339605,
+        level: 123456,
+        miniBackground: "<value>",
+        name: "steamsets",
+        nameEffect: "rainbow",
+        normalBadges: 123456,
+        playtime: 123456,
+        pointsGiven: 123456,
+        pointsReceived: 123456,
+        privacy: "public",
+        region: {
+          name: "Europe",
+        },
+        roles: [],
+        state: {
+          name: "Baden-Wurttemberg",
+        },
+        steamId: "76561198842603734",
+        steamSetsScore: 102001,
+        steamSetsVanity: "steamsets",
+        steamVanity: "steamsets",
+        supporter: {
+          active: true,
+          months: 3,
+        },
+        themeColor: "#FF5733",
+        vacBans: 572814,
+        xp: 123456,
+      },
+      sets: {
+        limits: {
+          maxPerApp: 678747,
+        },
+        prices: {
+          cs2: {
+            buy: 3575.04,
+            sell: 7944.62,
+          },
+          gems: {
+            buy: 5137.31,
+            sell: 8357.36,
+          },
+          hydra: {
+            buy: 1399.45,
+            sell: 6787.06,
+          },
+          tf2: {
+            buy: 6956.24,
+            sell: 1826.38,
+          },
+          tod: {
+            buy: 8655.46,
+            sell: 6938.24,
+          },
+        },
+        stock: {
+          apps: 192228,
+          foil: 622898,
+          maxLevel: 187921,
+          normal: 574620,
+        },
+      },
+      source: "scrape",
+      status: {
+        online: true,
+        stale: true,
+        updatedAt: new Date("2024-01-20T06:01:50.417Z"),
+      },
+      type: "crypto",
+    },
+  ],
+  feeUnpaid: [
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
+  ],
+  notFound: [
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `dollarSchema`                                                                                  | *string*                                                                                        | :heavy_minus_sign:                                                                              | A URL to the JSON Schema for this object.                                                       | https://api.steamsets.com/schemas/AdminBotUpdateManyResponseBody.json                           |
+| `bots`                                                                                          | [components.TradeBot](../../models/components/tradebot.md)[]                                    | :heavy_check_mark:                                                                              | The bots after the edit.                                                                        |                                                                                                 |
+| `feeUnpaid`                                                                                     | *string*[]                                                                                      | :heavy_check_mark:                                                                              | Ids not changed because the edit would approve a push bot whose listing fee is not marked paid. |                                                                                                 |
+| `notFound`                                                                                      | *string*[]                                                                                      | :heavy_check_mark:                                                                              | Ids that match no bot.                                                                          |                                                                                                 |

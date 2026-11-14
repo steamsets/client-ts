@@ -57,40 +57,39 @@ let value: V1ActivityEvent = {
     vacBans: 121724,
     xp: 123456,
   },
-  accountId: 327739,
   appBadge: {
     accountInfo: {
       completionTime: new Date("2023-01-01T00:00:00Z"),
       level: 123456,
       xp: 123456,
     },
-    appId: 267127,
+    appId: 255278,
     appImage: "<value>",
     appName: "<value>",
     badgeId: "<id>",
     badgeImage: "<value>",
-    baseLevel: 569677,
-    baseXp: 451732,
-    cardCount: 525700,
-    firstCompletion: new Date("2025-12-05T06:35:52.464Z"),
-    highestLevel: 892305,
-    isEvent: true,
+    baseLevel: 267127,
+    baseXp: 569677,
+    cardCount: 451732,
+    firstCompletion: new Date("2025-10-14T14:59:56.930Z"),
+    highestLevel: 642587,
+    isEvent: false,
     isFoil: true,
-    isNmc: false,
+    isNmc: true,
     isSale: false,
-    lastCompletion: new Date("2026-01-21T07:57:03.775Z"),
+    lastCompletion: new Date("2026-03-31T21:12:39.791Z"),
     name: "<value>",
-    noListing: true,
-    price: 499252,
-    scarcity: 372005,
-    steamId: 138718,
-    trackedHolders: 449229,
+    noListing: false,
+    price: 215870,
+    scarcity: 499252,
+    steamId: 372005,
+    trackedHolders: 138718,
   },
   eventType: "<value>",
-  occurredAt: new Date("2024-06-14T03:52:15.348Z"),
+  occurredAt: new Date("2024-12-25T04:50:30.295Z"),
   rank: {
     bucket: "<value>",
-    current: 524914,
+    current: 160121,
     leaderboard: "<value>",
     location: {
       countryCode: "DE",
@@ -98,7 +97,7 @@ let value: V1ActivityEvent = {
       region: "Europe",
       type: "<value>",
     },
-    previous: 751062,
+    previous: 524914,
   },
 };
 ```
@@ -107,8 +106,7 @@ let value: V1ActivityEvent = {
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `account`                                                                                     | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `accountId`                                                                                   | *number*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `account`                                                                                     | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `appBadge`                                                                                    | [components.V1AppBadge](../../models/components/v1appbadge.md)                                | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `eventType`                                                                                   | *string*                                                                                      | :heavy_check_mark:                                                                            | badge_crafted \| level_milestone \| rank_milestone \| scarcity_milestone                      |
 | `level`                                                                                       | [components.V1ActivityLevelChange](../../models/components/v1activitylevelchange.md)          | :heavy_minus_sign:                                                                            | N/A                                                                                           |
