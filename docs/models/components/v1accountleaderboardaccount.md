@@ -49,9 +49,12 @@ let value: V1AccountLeaderboardAccount = {
   },
   roles: [
     {
-      extras: {},
-      rating: 138555,
-      role: "sapphire",
+      extras: {
+        "key": "<value>",
+        "key1": "<value>",
+      },
+      rating: 66480,
+      role: "donator",
     },
   ],
   state: {

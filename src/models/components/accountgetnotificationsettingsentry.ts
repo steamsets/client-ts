@@ -13,12 +13,15 @@ export const Channel = {
   Discord: "discord",
   Email: "email",
   Push: "push",
+  Inbox: "inbox",
 } as const;
 export type Channel = OpenEnum<typeof Channel>;
 
 export const Kind = {
   CardAcquired: "card_acquired",
   SubmissionReplied: "submission_replied",
+  TradeMatchNeeded: "trade_match_needed",
+  TradeMatchSpare: "trade_match_spare",
 } as const;
 export type Kind = OpenEnum<typeof Kind>;
 

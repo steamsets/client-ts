@@ -15,5 +15,5 @@ let value: V1AccountGetInfoResponseBodyNameEffect = "rainbow";
 ## Values
 
 ```typescript
-"none" | "rainbow" | "glitch" | "shadow" | "neon" | "retro" | "stamped" | "shatter" | "typewriter" | "vaporwave" | "sunken" | Unrecognized<string>
+"none" | "rainbow" | "shadow" | "neon" | "shatter" | "vaporwave" | "stardust" | "cosmic" | "sakura" | "halo" | "molten" | "glass" | "amber_glint" | "amethyst_glint" | "emerald_depth" | "sapphire_depth" | "ruby_fire" | "diamond_fire" | "astral_sky" | "nebula_sky" | "staff_scan" | "developer_scan" | "crown" | "lens" | "boost" | Unrecognized<string>
 ```

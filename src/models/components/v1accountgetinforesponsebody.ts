@@ -80,15 +80,29 @@ export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 export const V1AccountGetInfoResponseBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
 } as const;
 /**
  * Donator name effect, none when unset or the account no longer holds an entitling role
@@ -237,6 +251,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   normalBadges: number;
   /**
+   * The unix second the profile share video was last rendered. Null when the account has no video. The video is at https://static.steamsets.com/og/profiles/{steamId}.mp4?v={ogVideoRenderedAt}
+   */
+  ogVideoRenderedAt: number | null;
+  /**
    * The playtime of the account
    */
   playtime: number;
@@ -257,6 +275,10 @@ export type V1AccountGetInfoResponseBody = {
    * The roles of the account
    */
   roles: Array<Role> | null;
+  /**
+   * Whether this profile has the share card and og video perk
+   */
+  sharePerk: boolean;
   /**
    * The shortlink domain of the account, is to be used with their steamsets vanity
    */
@@ -374,12 +396,14 @@ export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodMiniType<
       z.transform(v => new Date(v)),
     ),
     normalBadges: z.int(),
+    ogVideoRenderedAt: z.nullable(z.int()),
     playtime: z.int(),
     pointsGiven: z.int(),
     pointsReceived: z.int(),
     privacy: V1AccountGetInfoResponseBodyPrivacy$inboundSchema,
     region: z.optional(z.nullable(LeaderboardRegion$inboundSchema)),
     roles: z.nullable(z.array(Role$inboundSchema)),
+    sharePerk: z.boolean(),
     shortlinkDomain: z.nullable(z.string()),
     state: z.optional(z.nullable(LeaderboardState$inboundSchema)),
     steamId: z.string(),

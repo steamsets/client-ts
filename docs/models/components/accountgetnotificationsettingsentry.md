@@ -8,7 +8,7 @@ import { AccountGetNotificationSettingsEntry } from "@steamsets/client-ts/models
 let value: AccountGetNotificationSettingsEntry = {
   channel: "email",
   enabled: false,
-  kind: "submission_replied",
+  kind: "trade_match_needed",
 };
 ```
 

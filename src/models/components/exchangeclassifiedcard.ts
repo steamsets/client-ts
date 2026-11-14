@@ -12,7 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
  */
-export const Bucket = {
+export const ExchangeClassifiedCardBucket = {
   Dead: "dead",
   Surplus: "surplus",
   Keep: "keep",
@@ -20,7 +20,9 @@ export const Bucket = {
 /**
  * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
  */
-export type Bucket = OpenEnum<typeof Bucket>;
+export type ExchangeClassifiedCardBucket = OpenEnum<
+  typeof ExchangeClassifiedCardBucket
+>;
 
 export type ExchangeClassifiedCard = {
   /**
@@ -30,7 +32,7 @@ export type ExchangeClassifiedCard = {
   /**
    * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
    */
-  bucket: Bucket;
+  bucket: ExchangeClassifiedCardBucket;
   /**
    * Steam class id, the stable identity of the card
    */
@@ -106,8 +108,10 @@ export type ExchangeClassifiedCard = {
 };
 
 /** @internal */
-export const Bucket$inboundSchema: z.ZodMiniType<Bucket, unknown> = openEnums
-  .inboundSchema(Bucket);
+export const ExchangeClassifiedCardBucket$inboundSchema: z.ZodMiniType<
+  ExchangeClassifiedCardBucket,
+  unknown
+> = openEnums.inboundSchema(ExchangeClassifiedCardBucket);
 
 /** @internal */
 export const ExchangeClassifiedCard$inboundSchema: z.ZodMiniType<
@@ -115,7 +119,7 @@ export const ExchangeClassifiedCard$inboundSchema: z.ZodMiniType<
   unknown
 > = z.object({
   averagePriceCents: z.int(),
-  bucket: Bucket$inboundSchema,
+  bucket: ExchangeClassifiedCardBucket$inboundSchema,
   classId: z.int(),
   gemsGoo: z.int(),
   highestBuyOrderCents: z.int(),

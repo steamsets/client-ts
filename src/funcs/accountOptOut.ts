@@ -29,7 +29,7 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Opt out of SteamSets (hide account and stop processing)
+ * Opt out of SteamSets (hide account and stop processing after 30 days)
  */
 export function accountOptOut(
   client: SteamSetsCore,

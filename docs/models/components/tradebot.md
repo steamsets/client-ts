@@ -1,0 +1,236 @@
+# TradeBot
+
+## Example Usage
+
+```typescript
+import { TradeBot } from "@steamsets/client-ts/models/components";
+
+let value: TradeBot = {
+  account: {
+    animatedAvatar: "<value>",
+    apps: 123456,
+    avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+    avatarFrame: "<value>",
+    awardsGiven: 123456,
+    awardsReceived: 123456,
+    background: "<value>",
+    badges: 123456,
+    bans: 337406,
+    city: {
+      name: "Bad Krozingen",
+    },
+    country: {
+      code: "DE",
+      name: "Germany",
+    },
+    createdAt: new Date("2023-01-01T00:00:00Z"),
+    donated: 123456,
+    economyBan: "steam",
+    foilBadges: 123456,
+    friends: 123456,
+    gameBans: 747187,
+    level: 123456,
+    miniBackground: "<value>",
+    name: "steamsets",
+    nameEffect: "rainbow",
+    normalBadges: 123456,
+    playtime: 123456,
+    pointsGiven: 123456,
+    pointsReceived: 123456,
+    privacy: "public",
+    region: {
+      name: "Europe",
+    },
+    roles: [],
+    state: {
+      name: "Baden-Wurttemberg",
+    },
+    steamId: "76561198842603734",
+    steamSetsScore: 634507,
+    steamSetsVanity: "steamsets",
+    steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
+    themeColor: "#FF5733",
+    vacBans: 121724,
+    xp: 123456,
+  },
+  avatarUrl: "https://nutritious-offset.name",
+  brand: {
+    id: "bbr_5n7dZq1rFJx3WmPa",
+    logoUrl: "https://uncommon-outrun.net/",
+    name: "<value>",
+    sponsored: true,
+    websiteUrl: "https://polite-hyena.net/",
+  },
+  crypto: {
+    prices: [],
+  },
+  games: {
+    prices: {
+      cs2: {
+        buy: 3575.04,
+        sell: 7944.62,
+      },
+      gems: {
+        buy: 5137.31,
+        sell: 8357.36,
+      },
+      hydra: {
+        buy: 1399.45,
+        sell: 6787.06,
+      },
+      tf2: {
+        buy: 6956.24,
+        sell: 1826.38,
+      },
+      tod: null,
+    },
+    stock: {
+      copies: 533897,
+      games: 558404,
+    },
+  },
+  gems: {
+    prices: {
+      cs2: null,
+      hydra: {
+        buy: 1399.45,
+        sell: 6787.06,
+      },
+      tf2: {
+        buy: 6956.24,
+        sell: 1826.38,
+      },
+      tod: {
+        buy: 8655.46,
+        sell: 6938.24,
+      },
+    },
+    stock: 217260,
+  },
+  id: "bot_3cVFAKxh8Q2ZqkTq",
+  keys: {
+    cs2: 760241,
+    hydra: 216631,
+    tf2: null,
+    tod: 459968,
+  },
+  name: "lvlupbot.com - legendary",
+  owner: {
+    animatedAvatar: "<value>",
+    apps: 123456,
+    avatar: "f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9",
+    avatarFrame: "<value>",
+    awardsGiven: 123456,
+    awardsReceived: 123456,
+    background: "<value>",
+    badges: 123456,
+    bans: 819180,
+    city: {
+      name: "Bad Krozingen",
+    },
+    country: {
+      code: "DE",
+      name: "Germany",
+    },
+    createdAt: new Date("2023-01-01T00:00:00Z"),
+    donated: 123456,
+    economyBan: "steam",
+    foilBadges: 123456,
+    friends: 123456,
+    gameBans: 339605,
+    level: 123456,
+    miniBackground: "<value>",
+    name: "steamsets",
+    nameEffect: "rainbow",
+    normalBadges: 123456,
+    playtime: 123456,
+    pointsGiven: 123456,
+    pointsReceived: 123456,
+    privacy: "public",
+    region: {
+      name: "Europe",
+    },
+    roles: [],
+    state: {
+      name: "Baden-Wurttemberg",
+    },
+    steamId: "76561198842603734",
+    steamSetsScore: 102001,
+    steamSetsVanity: "steamsets",
+    steamVanity: "steamsets",
+    supporter: {
+      active: true,
+      months: 3,
+    },
+    themeColor: "#FF5733",
+    vacBans: 572814,
+    xp: 123456,
+  },
+  sets: {
+    limits: {
+      maxPerApp: 678747,
+    },
+    prices: {
+      cs2: {
+        buy: 3575.04,
+        sell: 7944.62,
+      },
+      gems: {
+        buy: 5137.31,
+        sell: 8357.36,
+      },
+      hydra: {
+        buy: 1399.45,
+        sell: 6787.06,
+      },
+      tf2: {
+        buy: 6956.24,
+        sell: 1826.38,
+      },
+      tod: {
+        buy: 8655.46,
+        sell: 6938.24,
+      },
+    },
+    stock: {
+      apps: 192228,
+      foil: 622898,
+      maxLevel: 187921,
+      normal: 574620,
+    },
+  },
+  source: "push",
+  status: {
+    online: true,
+    stale: true,
+    updatedAt: new Date("2024-01-20T06:01:50.417Z"),
+  },
+  type: "swap",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                              | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        | Example                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `account`                                                                                                                                          | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                                                                     | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `avatarUrl`                                                                                                                                        | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `brand`                                                                                                                                            | [components.TradeBotBrand](../../models/components/tradebotbrand.md)                                                                               | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `crypto`                                                                                                                                           | [components.TradeBotCrypto](../../models/components/tradebotcrypto.md)                                                                             | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `games`                                                                                                                                            | [components.TradeBotGames](../../models/components/tradebotgames.md)                                                                               | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `gamesForYou`                                                                                                                                      | *number*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                 | Distinct games in this bot's stock that the logged-in caller does not own. Missing when logged out or when the bot stocks no games.                |                                                                                                                                                    |
+| `gems`                                                                                                                                             | [components.TradeBotGems](../../models/components/tradebotgems.md)                                                                                 | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `id`                                                                                                                                               | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | The bot's public id.                                                                                                                               | bot_3cVFAKxh8Q2ZqkTq                                                                                                                               |
+| `keys`                                                                                                                                             | [components.TradeBotKeys](../../models/components/tradebotkeys.md)                                                                                 | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `listing`                                                                                                                                          | [components.TradeBotListing](../../models/components/tradebotlisting.md)                                                                           | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `name`                                                                                                                                             | *string*                                                                                                                                           | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                | lvlupbot.com - legendary                                                                                                                           |
+| `owner`                                                                                                                                            | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                                                                     | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `sets`                                                                                                                                             | [components.TradeBotSets](../../models/components/tradebotsets.md)                                                                                 | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `setsForYou`                                                                                                                                       | *number*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                 | Sets this bot alone can sell the logged-in caller, given the badges they have crafted. Missing when logged out or when the bot does not sell sets. |                                                                                                                                                    |
+| `source`                                                                                                                                           | [components.TradeBotSource](../../models/components/tradebotsource.md)                                                                             | :heavy_check_mark:                                                                                                                                 | push: the bot reports its own data. scrape: we count its stock from its inventory.                                                                 |                                                                                                                                                    |
+| `status`                                                                                                                                           | [components.TradeBotStatus](../../models/components/tradebotstatus.md)                                                                             | :heavy_check_mark:                                                                                                                                 | N/A                                                                                                                                                |                                                                                                                                                    |
+| `type`                                                                                                                                             | [components.TradeBotType](../../models/components/tradebottype.md)                                                                                 | :heavy_check_mark:                                                                                                                                 | What the bot trades, in the categories other directories use.                                                                                      |                                                                                                                                                    |

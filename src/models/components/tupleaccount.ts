@@ -10,7 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type TupleAccount = {
   completedAt?: Date | undefined;
   level: number;
-  steamId: string;
   xp: number;
 };
 
@@ -21,7 +20,6 @@ export const TupleAccount$inboundSchema: z.ZodMiniType<TupleAccount, unknown> =
       z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
     ),
     level: z.int(),
-    steamId: z.string(),
     xp: z.int(),
   });
 

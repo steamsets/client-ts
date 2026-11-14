@@ -10,10 +10,9 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type AccountGetNotificationSettingsPushDevice = {
   createdAt: Date;
   /**
-   * Compare with the browser's own subscription to find this device
+   * Identifies the device. Compare with the browser's own subscription, and pass it to removePushSubscription
    */
   endpoint: string;
-  id: number;
   userAgent: string;
 };
 
@@ -25,7 +24,6 @@ export const AccountGetNotificationSettingsPushDevice$inboundSchema:
       z.transform(v => new Date(v)),
     ),
     endpoint: z.string(),
-    id: z.int(),
     userAgent: z.string(),
   });
 

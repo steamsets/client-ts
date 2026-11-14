@@ -27,10 +27,22 @@ let value: V1AccountGetSettingsBody = {
     },
   },
   chosenRole: {
-    role: "beta",
+    role: "amethyst",
     tier: "tier_1",
   },
-  connections: [],
+  connections: [
+    {
+      avatar:
+        "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/f1/f1a1d2c3d0c9d1e1f2f3f4f5f6f7f8f9.jpg",
+      connectionId: "123456",
+      externalId: "123456",
+      failed: true,
+      hide: true,
+      name: "steamsets",
+      provider: "discord",
+      verified: true,
+    },
+  ],
   developerApps: [
     {
       analytics: {
@@ -66,12 +78,29 @@ let value: V1AccountGetSettingsBody = {
   language: "en",
   nameEffect: "rainbow",
   privacy: "public",
-  sessions: [],
-  subscribed: false,
+  sessions: [
+    {
+      createdAt: new Date("2023-01-01T00:00:00Z"),
+      expiresAt: new Date("2023-01-01T00:00:00Z"),
+      ip: "127.0.0.1",
+      lastSeen: new Date("2023-01-01T00:00:00Z"),
+      location: {
+        city: "Berlin",
+        countryCode: "DE",
+        countryName: "Germany",
+        region: "Berlin",
+      },
+      sessionId: "123456",
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    },
+  ],
+  subscribed: true,
   themeColor: "#FF5733",
+  tradeUrl: "https://great-shipper.biz",
   vanity: "flo",
   vanityAnalytics: {
-    clicks: 335090,
+    clicks: 922723,
   },
 };
 ```
@@ -96,5 +125,7 @@ let value: V1AccountGetSettingsBody = {
 | `sessions`                                                                                                     | [components.Session](../../models/components/session.md)[]                                                     | :heavy_check_mark:                                                                                             | The sessions the account has                                                                                   |                                                                                                                |
 | `subscribed`                                                                                                   | *boolean*                                                                                                      | :heavy_check_mark:                                                                                             | Whether the account is subscribed to marketing emails                                                          |                                                                                                                |
 | `themeColor`                                                                                                   | *string*                                                                                                       | :heavy_check_mark:                                                                                             | The stored profile theme color as #RRGGBB, null when unset                                                     | #FF5733                                                                                                        |
+| `tradeUrl`                                                                                                     | *string*                                                                                                       | :heavy_check_mark:                                                                                             | The account's Steam trade offer link, null when it has not added one                                           |                                                                                                                |
+| `unlockedNameEffects`                                                                                          | *string*[]                                                                                                     | :heavy_minus_sign:                                                                                             | The name effects the account's roles unlock, in picker order, without none                                     |                                                                                                                |
 | `vanity`                                                                                                       | *string*                                                                                                       | :heavy_check_mark:                                                                                             | The vanity the account is using                                                                                | flo                                                                                                            |
 | `vanityAnalytics`                                                                                              | [components.V1VanityAnalytics](../../models/components/v1vanityanalytics.md)                                   | :heavy_check_mark:                                                                                             | N/A                                                                                                            |                                                                                                                |

@@ -18,10 +18,6 @@ import {
 export type V1AdminUser = {
   account: LeaderboardAccount | null;
   /**
-   * The account id
-   */
-  accountId: number;
-  /**
    * Whether the account is hidden site-wide. A restriction always forces this on
    */
   hidden: boolean;
@@ -40,7 +36,6 @@ export type V1AdminUser = {
 export const V1AdminUser$inboundSchema: z.ZodMiniType<V1AdminUser, unknown> = z
   .object({
     account: z.nullable(LeaderboardAccount$inboundSchema),
-    accountId: z.int(),
     hidden: z.boolean(),
     lastSeenAt: z.pipe(
       z.iso.datetime({ offset: true }),

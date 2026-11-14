@@ -5,7 +5,7 @@
 ```typescript
 import { AccountNotificationKind } from "@steamsets/client-ts/models/components";
 
-let value: AccountNotificationKind = "submission_replied";
+let value: AccountNotificationKind = "trade_match_needed";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: AccountNotificationKind = "submission_replied";
 ## Values
 
 ```typescript
-"card_acquired" | "connection_broken" | "submission_replied" | Unrecognized<string>
+"card_acquired" | "connection_broken" | "submission_replied" | "trade_match_needed" | "trade_match_spare" | Unrecognized<string>
 ```

@@ -7,14 +7,14 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
 /**
- * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
  */
 export const FindOwnersRequestBodySort = {
   Owned: "owned",
   Closest: "closest",
 } as const;
 /**
- * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
  */
 export type FindOwnersRequestBodySort = OpenEnum<
   typeof FindOwnersRequestBodySort
@@ -22,7 +22,7 @@ export type FindOwnersRequestBodySort = OpenEnum<
 
 export type FindOwnersRequestBody = {
   /**
-   * Opaque pagination cursor from the previous page's nextCursor. Pages to any depth at constant cost, and requires exactly one entry in itemIds. Omit for the first page.
+   * Opaque pagination cursor from the previous page's nextCursor. Requires exactly one entry in itemIds. A cursor from a 'closest' page continues that order, with or without sort. Omit for the first page.
    */
   cursor?: string | undefined;
   /**
@@ -42,7 +42,7 @@ export type FindOwnersRequestBody = {
    */
   ownersPerItem?: number | undefined;
   /**
-   * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+   * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
    */
   sort?: FindOwnersRequestBodySort | undefined;
 };

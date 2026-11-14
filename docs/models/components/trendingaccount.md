@@ -57,9 +57,8 @@ let value: TrendingAccount = {
     vacBans: 121724,
     xp: 123456,
   },
-  accountId: 1103,
-  totalViews: 722712,
-  uniqueViews: 220440,
+  totalViews: 1103,
+  uniqueViews: 722712,
 };
 ```
 
@@ -67,7 +66,6 @@ let value: TrendingAccount = {
 
 | Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `account`                                                                      | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `accountId`                                                                    | *number*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
-| `totalViews`                                                                   | *number*                                                                       | :heavy_check_mark:                                                             | Total profile loads in the window                                              |
+| `account`                                                                      | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `totalViews`                                                                   | *number*                                                                       | :heavy_check_mark:                                                             | Profile views in the window, counting each viewer once per day                 |
 | `uniqueViews`                                                                  | *number*                                                                       | :heavy_check_mark:                                                             | Distinct viewers in the window                                                 |

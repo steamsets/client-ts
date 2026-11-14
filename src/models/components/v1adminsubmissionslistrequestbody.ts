@@ -26,7 +26,7 @@ export type V1AdminSubmissionsListRequestBodyKind = OpenEnum<
 /**
  * Only submissions with this status
  */
-export const Status = {
+export const V1AdminSubmissionsListRequestBodyStatus = {
   All: "all",
   New: "new",
   Triaged: "triaged",
@@ -37,7 +37,9 @@ export const Status = {
 /**
  * Only submissions with this status
  */
-export type Status = OpenEnum<typeof Status>;
+export type V1AdminSubmissionsListRequestBodyStatus = OpenEnum<
+  typeof V1AdminSubmissionsListRequestBodyStatus
+>;
 
 export type V1AdminSubmissionsListRequestBody = {
   /**
@@ -55,7 +57,7 @@ export type V1AdminSubmissionsListRequestBody = {
   /**
    * Only submissions with this status
    */
-  status?: Status | undefined;
+  status?: V1AdminSubmissionsListRequestBodyStatus | undefined;
 };
 
 /** @internal */
@@ -64,8 +66,9 @@ export const V1AdminSubmissionsListRequestBodyKind$outboundSchema:
     .outboundSchema(V1AdminSubmissionsListRequestBodyKind);
 
 /** @internal */
-export const Status$outboundSchema: z.ZodMiniType<string, Status> = openEnums
-  .outboundSchema(Status);
+export const V1AdminSubmissionsListRequestBodyStatus$outboundSchema:
+  z.ZodMiniType<string, V1AdminSubmissionsListRequestBodyStatus> = openEnums
+    .outboundSchema(V1AdminSubmissionsListRequestBodyStatus);
 
 /** @internal */
 export type V1AdminSubmissionsListRequestBody$Outbound = {
@@ -83,7 +86,10 @@ export const V1AdminSubmissionsListRequestBody$outboundSchema: z.ZodMiniType<
   kind: z._default(V1AdminSubmissionsListRequestBodyKind$outboundSchema, "all"),
   limit: z._default(z.int(), 50),
   page: z._default(z.int(), 1),
-  status: z._default(Status$outboundSchema, "all"),
+  status: z._default(
+    V1AdminSubmissionsListRequestBodyStatus$outboundSchema,
+    "all",
+  ),
 });
 
 export function v1AdminSubmissionsListRequestBodyToJSON(

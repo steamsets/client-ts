@@ -32,7 +32,7 @@ import { Result } from "../types/fp.js";
  * Stop push notifications on one device
  *
  * @remarks
- * Removes one push subscription, by id or by endpoint.
+ * Removes one push subscription by its endpoint.
  */
 export function accountRemovePushSubscription(
   client: SteamSetsCore,

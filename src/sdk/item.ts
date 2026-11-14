@@ -3,6 +3,8 @@
  */
 
 import { itemFindOwners } from "../funcs/itemFindOwners.js";
+import { itemFindSpareHolders } from "../funcs/itemFindSpareHolders.js";
+import { itemFindWanters } from "../funcs/itemFindWanters.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -17,6 +19,34 @@ export class Item extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.ItemFindOwnersResponse> {
     return unwrapAsync(itemFindOwners(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+   */
+  async findSpareHolders(
+    request: components.FindSpareHoldersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.ItemFindSpareHoldersResponse> {
+    return unwrapAsync(itemFindSpareHolders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
+   */
+  async findWanters(
+    request: components.FindWantersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.ItemFindWantersResponse> {
+    return unwrapAsync(itemFindWanters(
       this,
       request,
       options,

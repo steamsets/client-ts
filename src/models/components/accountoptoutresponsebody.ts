@@ -14,7 +14,11 @@ export type AccountOptOutResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * Whether the account is hidden site-wide after this call
+   * When the opt-out takes effect: the account is hidden, signed out and no longer processed. 30 days after the first request
+   */
+  effectiveAt: Date;
+  /**
+   * Whether the account is hidden site-wide after this call. False while the opt-out is pending
    */
   hidden: boolean;
   /**
@@ -22,7 +26,7 @@ export type AccountOptOutResponseBody = {
    */
   optedOut: boolean;
   /**
-   * How many live sessions this call killed
+   * How many live sessions this call killed. Always 0: sessions are revoked when the opt-out takes effect
    */
   sessionsRevoked: number;
 };
@@ -34,6 +38,10 @@ export const AccountOptOutResponseBody$inboundSchema: z.ZodMiniType<
 > = z.pipe(
   z.object({
     $schema: z.optional(z.string()),
+    effectiveAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
     hidden: z.boolean(),
     optedOut: z.boolean(),
     sessionsRevoked: z.int(),

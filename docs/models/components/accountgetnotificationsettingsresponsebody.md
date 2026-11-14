@@ -10,11 +10,11 @@ let value: AccountGetNotificationSettingsResponseBody = {
     "https://api.steamsets.com/schemas/AccountGetNotificationSettingsResponseBody.json",
   discordConnected: false,
   emailVerified: true,
+  hideFromTradeMatches: false,
   pushDevices: [
     {
-      createdAt: new Date("2025-10-30T17:03:26.496Z"),
+      createdAt: new Date("2024-08-24T00:00:24.796Z"),
       endpoint: "<value>",
-      id: 215328,
       userAgent: "<value>",
     },
   ],
@@ -23,7 +23,7 @@ let value: AccountGetNotificationSettingsResponseBody = {
     {
       channel: "discord",
       enabled: false,
-      kind: "submission_replied",
+      kind: "trade_match_needed",
     },
   ],
   watchWishlist: true,
@@ -37,6 +37,7 @@ let value: AccountGetNotificationSettingsResponseBody = {
 | `dollarSchema`                                                                                                               | *string*                                                                                                                     | :heavy_minus_sign:                                                                                                           | A URL to the JSON Schema for this object.                                                                                    | https://api.steamsets.com/schemas/AccountGetNotificationSettingsResponseBody.json                                            |
 | `discordConnected`                                                                                                           | *boolean*                                                                                                                    | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |                                                                                                                              |
 | `emailVerified`                                                                                                              | *boolean*                                                                                                                    | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |                                                                                                                              |
+| `hideFromTradeMatches`                                                                                                       | *boolean*                                                                                                                    | :heavy_check_mark:                                                                                                           | Whether the account is left out of other accounts' trade matches                                                             |                                                                                                                              |
 | `pushDevices`                                                                                                                | [components.AccountGetNotificationSettingsPushDevice](../../models/components/accountgetnotificationsettingspushdevice.md)[] | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |                                                                                                                              |
 | `pushPublicKey`                                                                                                              | *string*                                                                                                                     | :heavy_check_mark:                                                                                                           | The VAPID public key for PushManager.subscribe, base64url                                                                    |                                                                                                                              |
 | `settings`                                                                                                                   | [components.AccountGetNotificationSettingsEntry](../../models/components/accountgetnotificationsettingsentry.md)[]           | :heavy_check_mark:                                                                                                           | Every kind and channel the account can turn on or off, with defaults applied                                                 |                                                                                                                              |

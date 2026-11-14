@@ -12,10 +12,9 @@ import {
 } from "./leaderboardaccount.js";
 
 export type TrendingAccount = {
-  account?: LeaderboardAccount | null | undefined;
-  accountId: number;
+  account: LeaderboardAccount | null;
   /**
-   * Total profile loads in the window
+   * Profile views in the window, counting each viewer once per day
    */
   totalViews: number;
   /**
@@ -29,8 +28,7 @@ export const TrendingAccount$inboundSchema: z.ZodMiniType<
   TrendingAccount,
   unknown
 > = z.object({
-  account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-  accountId: z.int(),
+  account: z.nullable(LeaderboardAccount$inboundSchema),
   totalViews: z.int(),
   uniqueViews: z.int(),
 });

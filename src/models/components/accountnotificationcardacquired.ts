@@ -6,17 +6,16 @@ import * as z from "zod/v4-mini";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  LeaderboardAccount,
+  LeaderboardAccount$inboundSchema,
+} from "./leaderboardaccount.js";
 
 export type AccountNotificationCardAcquired = {
   appId: number;
   appName: string;
   cardName: string;
-  holderId: number;
-  holderName: string;
-  /**
-   * SteamID64 of the holder, for the profile link
-   */
-  holderSteamId: string;
+  holder: LeaderboardAccount | null;
   /**
    * Steam economy image hash, or a full URL
    */
@@ -33,9 +32,7 @@ export const AccountNotificationCardAcquired$inboundSchema: z.ZodMiniType<
   appId: z.int(),
   appName: z.string(),
   cardName: z.string(),
-  holderId: z.int(),
-  holderName: z.string(),
-  holderSteamId: z.string(),
+  holder: z.nullable(LeaderboardAccount$inboundSchema),
   icon: z.string(),
   isFoil: z.boolean(),
   itemId: z.string(),
