@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -28,17 +28,19 @@ export type LeaderboardGetChangesResponseBody = {
 export const LeaderboardGetChangesResponseBody$inboundSchema: z.ZodMiniType<
   LeaderboardGetChangesResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    changes: z.nullable(z.array(LeaderboardChange$inboundSchema)),
-    total: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      changes: z.nullable(z.array(LeaderboardChange$inboundSchema)),
+      total: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function leaderboardGetChangesResponseBodyFromJSON(

@@ -1,0 +1,15 @@
+# BotSetListedResponse
+
+## Example Usage
+
+```typescript
+import { BotSetListedResponse } from "@steamsets/client-ts/models/operations";
+
+let value: BotSetListedResponse = {};
+```
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `httpMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |

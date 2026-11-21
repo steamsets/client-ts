@@ -3,18 +3,19 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
 /**
- * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
  */
 export const FindOwnersRequestBodySort = {
   Owned: "owned",
   Closest: "closest",
 } as const;
 /**
- * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+ * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
  */
 export type FindOwnersRequestBodySort = OpenEnum<
   typeof FindOwnersRequestBodySort
@@ -22,7 +23,7 @@ export type FindOwnersRequestBodySort = OpenEnum<
 
 export type FindOwnersRequestBody = {
   /**
-   * Opaque pagination cursor from the previous page's nextCursor. Pages to any depth at constant cost, and requires exactly one entry in itemIds. Omit for the first page.
+   * Opaque pagination cursor from the previous page's nextCursor. Requires exactly one entry in itemIds. A cursor from a 'closest' page continues that order, with or without sort. Omit for the first page.
    */
   cursor?: string | undefined;
   /**
@@ -42,7 +43,7 @@ export type FindOwnersRequestBody = {
    */
   ownersPerItem?: number | undefined;
   /**
-   * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller and the first page (no offset, no cursor), and never returns a nextCursor.
+   * Owner order. 'owned' (default) returns the most copies owned first. 'closest' reranks a wider slice of owners by friend path length, nearest first; it needs a logged-in caller, takes no offset, and pages through that slice with nextCursor.
    */
   sort?: FindOwnersRequestBodySort | undefined;
 };
@@ -51,7 +52,9 @@ export type FindOwnersRequestBody = {
 export const FindOwnersRequestBodySort$outboundSchema: z.ZodMiniType<
   string,
   FindOwnersRequestBodySort
-> = openEnums.outboundSchema(FindOwnersRequestBodySort);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(FindOwnersRequestBodySort)
+);
 
 /** @internal */
 export type FindOwnersRequestBody$Outbound = {
@@ -67,14 +70,16 @@ export type FindOwnersRequestBody$Outbound = {
 export const FindOwnersRequestBody$outboundSchema: z.ZodMiniType<
   FindOwnersRequestBody$Outbound,
   FindOwnersRequestBody
-> = z.object({
-  cursor: z.optional(z.string()),
-  itemIds: z.nullable(z.array(z.int())),
-  maxDepth: z.optional(z.int()),
-  offset: z.optional(z.int()),
-  ownersPerItem: z.optional(z.int()),
-  sort: z.optional(FindOwnersRequestBodySort$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cursor: z.optional(z.string()),
+    itemIds: z.nullable(z.array(z.int())),
+    maxDepth: z.optional(z.int()),
+    offset: z.optional(z.int()),
+    ownersPerItem: z.optional(z.int()),
+    sort: z.optional(FindOwnersRequestBodySort$outboundSchema),
+  })
+);
 
 export function findOwnersRequestBodyToJSON(
   findOwnersRequestBody: FindOwnersRequestBody,

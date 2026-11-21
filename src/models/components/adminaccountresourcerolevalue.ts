@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,10 +22,12 @@ export type AdminAccountResourceRoleValue = {
 export const AdminAccountResourceRoleValue$inboundSchema: z.ZodMiniType<
   AdminAccountResourceRoleValue,
   unknown
-> = z.object({
-  role: z.string(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    role: z.string(),
+    value: z.string(),
+  })
+);
 
 export function adminAccountResourceRoleValueFromJSON(
   jsonString: string,

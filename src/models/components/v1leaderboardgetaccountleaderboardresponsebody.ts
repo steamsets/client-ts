@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -33,7 +33,9 @@ export type V1LeaderboardGetAccountLeaderboardResponseBody = {
   app?: V1LeaderboardAppInfo | null | undefined;
   badgeInfo?: V1LeaderboardBadgeInfo | null | undefined;
   /**
-   * The ranks that are hidden in the leaderboard
+   * Always empty. Hidden accounts appear in the rows with isHidden.
+   *
+   * @deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   hiddenRanks?: Array<number> | null | undefined;
   location?: Array<V1LeaderboardLocationInfo> | null | undefined;
@@ -46,29 +48,33 @@ export type V1LeaderboardGetAccountLeaderboardResponseBody = {
 
 /** @internal */
 export const V1LeaderboardGetAccountLeaderboardResponseBody$inboundSchema:
-  z.ZodMiniType<V1LeaderboardGetAccountLeaderboardResponseBody, unknown> = z
-    .pipe(
-      z.object({
-        $schema: z.optional(z.string()),
-        accounts: z.nullable(
-          z.array(z.nullable(V1AccountLeaderboardAccount$inboundSchema)),
-        ),
-        app: z.optional(z.nullable(V1LeaderboardAppInfo$inboundSchema)),
-        badgeInfo: z.optional(z.nullable(V1LeaderboardBadgeInfo$inboundSchema)),
-        hiddenRanks: z.optional(z.nullable(z.array(z.int()))),
-        location: z.optional(
-          z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema)),
-        ),
-        ownAccount: z.optional(
-          z.nullable(V1AccountLeaderboardAccount$inboundSchema),
-        ),
-        rankedOutOf: z._default(z.int(), 0),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "$schema": "dollarSchema",
-        });
-      }),
+  z.ZodMiniType<V1LeaderboardGetAccountLeaderboardResponseBody, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          $schema: z.optional(z.string()),
+          accounts: z.nullable(
+            z.array(z.nullable(V1AccountLeaderboardAccount$inboundSchema)),
+          ),
+          app: z.optional(z.nullable(V1LeaderboardAppInfo$inboundSchema)),
+          badgeInfo: z.optional(
+            z.nullable(V1LeaderboardBadgeInfo$inboundSchema),
+          ),
+          hiddenRanks: z.optional(z.nullable(z.array(z.int()))),
+          location: z.optional(
+            z.nullable(z.array(V1LeaderboardLocationInfo$inboundSchema)),
+          ),
+          ownAccount: z.optional(
+            z.nullable(V1AccountLeaderboardAccount$inboundSchema),
+          ),
+          rankedOutOf: z._default(z.int(), 0),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "$schema": "dollarSchema",
+          });
+        }),
+      )
     );
 
 export function v1LeaderboardGetAccountLeaderboardResponseBodyFromJSON(

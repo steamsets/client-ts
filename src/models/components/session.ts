@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -40,24 +40,27 @@ export type Session = {
 };
 
 /** @internal */
-export const Session$inboundSchema: z.ZodMiniType<Session, unknown> = z.object({
-  createdAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  expiresAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  ip: z.string(),
-  lastSeen: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  location: z.optional(SessionLocation$inboundSchema),
-  sessionId: z.string(),
-  userAgent: z.string(),
-});
+export const Session$inboundSchema: z.ZodMiniType<Session, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      createdAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      expiresAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      ip: z.string(),
+      lastSeen: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      location: z.optional(SessionLocation$inboundSchema),
+      sessionId: z.string(),
+      userAgent: z.string(),
+    })
+  );
 
 export function sessionFromJSON(
   jsonString: string,

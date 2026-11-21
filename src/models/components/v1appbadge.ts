@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -55,35 +55,37 @@ export type V1AppBadge = {
 };
 
 /** @internal */
-export const V1AppBadge$inboundSchema: z.ZodMiniType<V1AppBadge, unknown> = z
-  .object({
-    accountInfo: z.optional(z.nullable(AccountBadgeInfo$inboundSchema)),
-    appId: z.int(),
-    appImage: z.string(),
-    appName: z.string(),
-    badgeId: z.string(),
-    badgeImage: z.string(),
-    baseLevel: z.int(),
-    baseXp: z.int(),
-    cardCount: z.int(),
-    firstCompletion: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    highestLevel: z.int(),
-    isEvent: z.boolean(),
-    isFoil: z.boolean(),
-    isNmc: z.boolean(),
-    isSale: z.boolean(),
-    lastCompletion: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    name: z.string(),
-    noListing: z.boolean(),
-    price: z.int(),
-    scarcity: z.int(),
-    steamId: z.int(),
-    trackedHolders: z.int(),
-  });
+export const V1AppBadge$inboundSchema: z.ZodMiniType<V1AppBadge, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      accountInfo: z.optional(z.nullable(AccountBadgeInfo$inboundSchema)),
+      appId: z.int(),
+      appImage: z.string(),
+      appName: z.string(),
+      badgeId: z.string(),
+      badgeImage: z.string(),
+      baseLevel: z.int(),
+      baseXp: z.int(),
+      cardCount: z.int(),
+      firstCompletion: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      highestLevel: z.int(),
+      isEvent: z.boolean(),
+      isFoil: z.boolean(),
+      isNmc: z.boolean(),
+      isSale: z.boolean(),
+      lastCompletion: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      name: z.string(),
+      noListing: z.boolean(),
+      price: z.int(),
+      scarcity: z.int(),
+      steamId: z.int(),
+      trackedHolders: z.int(),
+    })
+  );
 
 export function v1AppBadgeFromJSON(
   jsonString: string,

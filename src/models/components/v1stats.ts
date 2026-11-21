@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -96,36 +96,39 @@ export type V1Stats = {
 };
 
 /** @internal */
-export const V1Stats$inboundSchema: z.ZodMiniType<V1Stats, unknown> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    accountsAdded: z.int(),
-    accountsUpdated: z.int(),
-    appPlaytime: z.int(),
-    apps: z.int(),
-    awardsGiven: z.int(),
-    awardsReceived: z.int(),
-    badges: z.int(),
-    bans: z.int(),
-    foilBadges: z.int(),
-    friends: z.int(),
-    gameBans: z.int(),
-    level: z.int(),
-    normalBadges: z.int(),
-    playtime: z.int(),
-    pointsGiven: z.int(),
-    pointsReceived: z.int(),
-    steamSetsScore: z.int(),
-    totalAccounts: z.int(),
-    vacBans: z.int(),
-    xp: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
-);
+export const V1Stats$inboundSchema: z.ZodMiniType<V1Stats, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        $schema: z.optional(z.string()),
+        accountsAdded: z.int(),
+        accountsUpdated: z.int(),
+        appPlaytime: z.int(),
+        apps: z.int(),
+        awardsGiven: z.int(),
+        awardsReceived: z.int(),
+        badges: z.int(),
+        bans: z.int(),
+        foilBadges: z.int(),
+        friends: z.int(),
+        gameBans: z.int(),
+        level: z.int(),
+        normalBadges: z.int(),
+        playtime: z.int(),
+        pointsGiven: z.int(),
+        pointsReceived: z.int(),
+        steamSetsScore: z.int(),
+        totalAccounts: z.int(),
+        vacBans: z.int(),
+        xp: z.int(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "$schema": "dollarSchema",
+        });
+      }),
+    )
+  );
 
 export function v1StatsFromJSON(
   jsonString: string,

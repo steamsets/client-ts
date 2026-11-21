@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -109,34 +109,38 @@ export type ExchangeCardPrice = {
 export const ExchangeCardPriceKind$inboundSchema: z.ZodMiniType<
   ExchangeCardPriceKind,
   unknown
-> = openEnums.inboundSchema(ExchangeCardPriceKind);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ExchangeCardPriceKind)
+);
 
 /** @internal */
 export const ExchangeCardPrice$inboundSchema: z.ZodMiniType<
   ExchangeCardPrice,
   unknown
-> = z.object({
-  appId: z.int(),
-  appImage: z.string(),
-  appName: z.string(),
-  classId: z.int(),
-  firstSeenAt: z.int(),
-  gemsGoo: z.int(),
-  highestBuyOrderCents: z.int(),
-  icon: z.string(),
-  isFoil: z.boolean(),
-  kind: ExchangeCardPriceKind$inboundSchema,
-  listed: z.int(),
-  marketable: z.boolean(),
-  medianSaleCents: z.int(),
-  name: z.string(),
-  priceCents: z.int(),
-  priceMax4d: z.int(),
-  priceMin4d: z.int(),
-  saleDays30d: z.int(),
-  saleVolume30d: z.int(),
-  sellOrders: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    appImage: z.string(),
+    appName: z.string(),
+    classId: z.int(),
+    firstSeenAt: z.int(),
+    gemsGoo: z.int(),
+    highestBuyOrderCents: z.int(),
+    icon: z.string(),
+    isFoil: z.boolean(),
+    kind: ExchangeCardPriceKind$inboundSchema,
+    listed: z.int(),
+    marketable: z.boolean(),
+    medianSaleCents: z.int(),
+    name: z.string(),
+    priceCents: z.int(),
+    priceMax4d: z.int(),
+    priceMin4d: z.int(),
+    saleDays30d: z.int(),
+    saleVolume30d: z.int(),
+    sellOrders: z.int(),
+  })
+);
 
 export function exchangeCardPriceFromJSON(
   jsonString: string,

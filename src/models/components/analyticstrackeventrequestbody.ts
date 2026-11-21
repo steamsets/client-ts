@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -35,7 +36,9 @@ export type AnalyticsTrackEventRequestBody = {
 export const AnalyticsTrackEventRequestBodyType$outboundSchema: z.ZodMiniType<
   string,
   AnalyticsTrackEventRequestBodyType
-> = openEnums.outboundSchema(AnalyticsTrackEventRequestBodyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AnalyticsTrackEventRequestBodyType)
+);
 
 /** @internal */
 export type AnalyticsTrackEventRequestBody$Outbound = {
@@ -47,10 +50,12 @@ export type AnalyticsTrackEventRequestBody$Outbound = {
 export const AnalyticsTrackEventRequestBody$outboundSchema: z.ZodMiniType<
   AnalyticsTrackEventRequestBody$Outbound,
   AnalyticsTrackEventRequestBody
-> = z.object({
-  payload: z.record(z.string(), z.any()),
-  type: AnalyticsTrackEventRequestBodyType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    payload: z.record(z.string(), z.any()),
+    type: AnalyticsTrackEventRequestBodyType$outboundSchema,
+  })
+);
 
 export function analyticsTrackEventRequestBodyToJSON(
   analyticsTrackEventRequestBody: AnalyticsTrackEventRequestBody,

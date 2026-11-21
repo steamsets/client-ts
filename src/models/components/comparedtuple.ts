@@ -3,12 +3,15 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { TupleAccount, TupleAccount$inboundSchema } from "./tupleaccount.js";
 
 export type ComparedTuple = {
+  /**
+   * One entry per compared account, in the same order as the top-level accounts
+   */
   accounts: Array<TupleAccount> | null;
   appId: number;
   appImage: string;
@@ -29,22 +32,24 @@ export type ComparedTuple = {
 export const ComparedTuple$inboundSchema: z.ZodMiniType<
   ComparedTuple,
   unknown
-> = z.object({
-  accounts: z.nullable(z.array(TupleAccount$inboundSchema)),
-  appId: z.int(),
-  appImage: z.string(),
-  appName: z.string(),
-  appType: z.string(),
-  badgeImage: z.string(),
-  badgeName: z.string(),
-  isEvent: z.boolean(),
-  isFoil: z.boolean(),
-  isSale: z.boolean(),
-  maxLevel: z.int(),
-  scarcity: z.int(),
-  steamId: z.int(),
-  trackedHolders: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accounts: z.nullable(z.array(TupleAccount$inboundSchema)),
+    appId: z.int(),
+    appImage: z.string(),
+    appName: z.string(),
+    appType: z.string(),
+    badgeImage: z.string(),
+    badgeName: z.string(),
+    isEvent: z.boolean(),
+    isFoil: z.boolean(),
+    isSale: z.boolean(),
+    maxLevel: z.int(),
+    scarcity: z.int(),
+    steamId: z.int(),
+    trackedHolders: z.int(),
+  })
+);
 
 export function comparedTupleFromJSON(
   jsonString: string,

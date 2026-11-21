@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -42,15 +42,17 @@ export type V1LeaderboardBadgeInfo = {
 export const V1LeaderboardBadgeInfo$inboundSchema: z.ZodMiniType<
   V1LeaderboardBadgeInfo,
   unknown
-> = z.object({
-  appId: z.int(),
-  appImage: z.string(),
-  appName: z.string(),
-  image: z.string(),
-  isFoil: z.boolean(),
-  level: z.int(),
-  name: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    appImage: z.string(),
+    appName: z.string(),
+    image: z.string(),
+    isFoil: z.boolean(),
+    level: z.int(),
+    name: z.string(),
+  })
+);
 
 export function v1LeaderboardBadgeInfoFromJSON(
   jsonString: string,

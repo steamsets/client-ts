@@ -29,6 +29,7 @@ let value: V1AdminHiddenAccount = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 747187,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -41,23 +42,29 @@ let value: V1AdminHiddenAccount = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: [
+      {
+        extras: {},
+        rating: 418270,
+        role: "donator",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 634507,
+    steamSetsScore: 121724,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 121724,
+    vacBans: 325508,
     xp: 123456,
   },
-  accountId: 882337740,
   blockedLogins: 3,
   feedback: {
     comment: "I don't want my inventory on a public site",
@@ -77,10 +84,8 @@ let value: V1AdminHiddenAccount = {
     awardsReceived: 123456,
     background: "<value>",
     badges: 123456,
-    bans: 727998,
-    city: {
-      name: "Bad Krozingen",
-    },
+    bans: 916174,
+    city: null,
     country: {
       code: "DE",
       name: "Germany",
@@ -90,7 +95,8 @@ let value: V1AdminHiddenAccount = {
     economyBan: "steam",
     foilBadges: 123456,
     friends: 123456,
-    gameBans: 28025,
+    gameBans: 902086,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -103,26 +109,21 @@ let value: V1AdminHiddenAccount = {
     region: {
       name: "Europe",
     },
-    roles: [
-      {
-        extras: {},
-        rating: 138555,
-        role: "sapphire",
-      },
-    ],
+    roles: [],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 352916,
+    steamSetsScore: 338120,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 720947,
+    vacBans: 702050,
     xp: 123456,
   },
 };
@@ -133,7 +134,6 @@ let value: V1AdminHiddenAccount = {
 | Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             | Example                                                                                                 |
 | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `account`                                                                                               | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)                          | :heavy_check_mark:                                                                                      | N/A                                                                                                     |                                                                                                         |
-| `accountId`                                                                                             | *number*                                                                                                | :heavy_check_mark:                                                                                      | The account id                                                                                          | 882337740                                                                                               |
 | `blockedLogins`                                                                                         | *number*                                                                                                | :heavy_check_mark:                                                                                      | How many sign-ins account.login refused while the restriction was in force                              | 3                                                                                                       |
 | `feedback`                                                                                              | [components.V1AdminOptOutFeedback](../../models/components/v1adminoptoutfeedback.md)                    | :heavy_check_mark:                                                                                      | N/A                                                                                                     |                                                                                                         |
 | `hideReason`                                                                                            | *string*                                                                                                | :heavy_check_mark:                                                                                      | What the account wrote when it last hid its profile. Null for hides from before the reason was required | People keep messaging me about my badges                                                                |

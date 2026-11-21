@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,9 +18,11 @@ export type AccountNotificationConnectionBroken = {
 export const AccountNotificationConnectionBroken$inboundSchema: z.ZodMiniType<
   AccountNotificationConnectionBroken,
   unknown
-> = z.object({
-  provider: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    provider: z.string(),
+  })
+);
 
 export function accountNotificationConnectionBrokenFromJSON(
   jsonString: string,

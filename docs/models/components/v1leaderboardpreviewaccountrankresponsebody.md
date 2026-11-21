@@ -30,6 +30,7 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 731056,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -43,7 +44,7 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: null,
     score: 100,
     state: {
       name: "Baden-Wurttemberg",
@@ -55,6 +56,7 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
     vacBans: 425488,
@@ -82,6 +84,7 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 976681,
+    isHidden: true,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -93,21 +96,28 @@ let value: V1LeaderboardPreviewAccountRankResponseBody = {
     privacy: "public",
     rank: 1,
     region: null,
-    roles: null,
+    roles: [
+      {
+        extras: {},
+        rating: 418270,
+        role: "donator",
+      },
+    ],
     score: 100,
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 918735,
+    steamSetsScore: 747341,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 189497,
+    vacBans: 875939,
     xp: 123456,
   },
 };

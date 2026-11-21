@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type KvDeleteRequestBody = {
   /**
@@ -25,10 +26,12 @@ export type KvDeleteRequestBody$Outbound = {
 export const KvDeleteRequestBody$outboundSchema: z.ZodMiniType<
   KvDeleteRequestBody$Outbound,
   KvDeleteRequestBody
-> = z.object({
-  key: z.string(),
-  namespace: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    key: z.string(),
+    namespace: z.string(),
+  })
+);
 
 export function kvDeleteRequestBodyToJSON(
   kvDeleteRequestBody: KvDeleteRequestBody,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -23,20 +23,22 @@ export type AccountArchiveNotificationsResponse = {
 export const AccountArchiveNotificationsResponse$inboundSchema: z.ZodMiniType<
   AccountArchiveNotificationsResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    AccountArchiveNotificationsResponseBody: z.optional(
-      components.AccountArchiveNotificationsResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "AccountArchiveNotificationsResponseBody":
-        "accountArchiveNotificationsResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      AccountArchiveNotificationsResponseBody: z.optional(
+        components.AccountArchiveNotificationsResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "AccountArchiveNotificationsResponseBody":
+          "accountArchiveNotificationsResponseBody",
+      });
+    }),
+  )
 );
 
 export function accountArchiveNotificationsResponseFromJSON(

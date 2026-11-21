@@ -86,6 +86,7 @@ run();
 * [deleteNotifications](docs/sdks/account/README.md#deletenotifications) - Delete notifications
 * [deleteSession](docs/sdks/account/README.md#deletesession) - Delete user session
 * [findFriendPath](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
+* [get](docs/sdks/account/README.md#get) - Get Steam accounts
 * [getBadgeHeatmap](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
 * [getBadgeStats](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 * [getDataPoints](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
@@ -99,27 +100,34 @@ run();
 * [listBadgeBookmarks](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 * [listBadges](docs/sdks/account/README.md#listbadges) - List account badges
 * [listCardWatches](docs/sdks/account/README.md#listcardwatches) - List the trading cards the account watches
-* [listCraftedLevels](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
+* [~~listCraftedLevels~~](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels :warning: **Deprecated**
 * [listFriends](docs/sdks/account/README.md#listfriends) - List account friends
-* [listInventorySets](docs/sdks/account/README.md#listinventorysets) - List inventory sets
+* [listInventoryItems](docs/sdks/account/README.md#listinventoryitems) - List the community items in your inventory
+* [~~listInventorySets~~](docs/sdks/account/README.md#listinventorysets) - List inventory sets :warning: **Deprecated**
+* [listJoinedGroups](docs/sdks/account/README.md#listjoinedgroups) - List the groups you are a member of
 * [listLeaderboardHistory](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+* [listNeededCards](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 * [listNotifications](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
-* [listOwnedBadges](docs/sdks/account/README.md#listownedbadges) - List owned badges
+* [~~listOwnedAppIds~~](docs/sdks/account/README.md#listownedappids) - List owned app ids :warning: **Deprecated**
+* [~~listOwnedBadges~~](docs/sdks/account/README.md#listownedbadges) - List owned badges :warning: **Deprecated**
 * [listOwnedGroups](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+* [listSpareCards](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 * [login](docs/sdks/account/README.md#login) - Login with Steam
 * [logout](docs/sdks/account/README.md#logout) - Logout from session
 * [markNotificationsRead](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
-* [optOut](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
+* [optOut](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing after 30 days)
 * [queueInventoryRefresh](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 * [queueUpdate](docs/sdks/account/README.md#queueupdate) - Queue account update
 * [reconnectConnection](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
-* [refreshInventory](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
+* [~~refreshInventory~~](docs/sdks/account/README.md#refreshinventory) - Refresh inventory :warning: **Deprecated**
 * [refreshSession](docs/sdks/account/README.md#refreshsession) - Refresh session token
 * [removePushSubscription](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
+* [resolveMany](docs/sdks/account/README.md#resolvemany) - Resolve SteamIDs and vanities to accounts
+* [search](docs/sdks/account/README.md#search) - Search accounts
 * [sendEmailVerification](docs/sdks/account/README.md#sendemailverification) - Send email verification
 * [sendTestPush](docs/sdks/account/README.md#sendtestpush) - Send a test push notification
+* [setTradeMatchVisibility](docs/sdks/account/README.md#settradematchvisibility) - Show or hide the account in other accounts' trade matches
 * [setWishlistWatch](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
-* [subscribe](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 * [subscribeEmail](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 * [updateConnection](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 * [updateDeveloperApp](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
@@ -132,45 +140,103 @@ run();
 * [verifyEmail](docs/sdks/account/README.md#verifyemail) - Verify email address
 * [watchCard](docs/sdks/account/README.md#watchcard) - Watch or stop watching a trading card
 
+#### [Account.Me](docs/sdks/me/README.md)
+
+* [listAppIds](docs/sdks/me/README.md#listappids) - List the apps you own
+* [listBadges](docs/sdks/me/README.md#listbadges) - List your crafted badges
+* [listInventorySets](docs/sdks/me/README.md#listinventorysets) - List the card sets in your inventory
+* [refreshInventory](docs/sdks/me/README.md#refreshinventory) - Refresh your inventory
+
 ### [Activity](docs/sdks/activity/README.md)
 
 * [listAccountFeed](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 * [listGlobalFeed](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
-* [streamGlobalFeed](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
 ### [Admin](docs/sdks/admin/README.md)
 
 * [addSteamApiKey](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
 * [banPlayer](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
+* [createScrapeBot](docs/sdks/admin/README.md#createscrapebot) - Add a directory bot measured by the inventory scraper
 * [deleteSteamApiKey](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
 * [exportSteamApiKeys](docs/sdks/admin/README.md#exportsteamapikeys) - Export Steam Web API keys in plaintext
 * [findSteamApiKey](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 * [getAccount](docs/sdks/admin/README.md#getaccount) - Get account for admin
+* [getBot](docs/sdks/admin/README.md#getbot) - Get everything stored about a directory bot
 * [getPlayerBanStatus](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+* [listBotBrands](docs/sdks/admin/README.md#listbotbrands) - List every bot brand
+* [listBotChanges](docs/sdks/admin/README.md#listbotchanges) - List a directory bot's changes
+* [listBotPushIssues](docs/sdks/admin/README.md#listbotpushissues) - List bot push issues by client version
+* [listBots](docs/sdks/admin/README.md#listbots) - List and search directory bots
 * [listHiddenAccounts](docs/sdks/admin/README.md#listhiddenaccounts) - List hidden, opted-out and restricted accounts
 * [listSteamApiKeys](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 * [listUsers](docs/sdks/admin/README.md#listusers) - List new and active users
 * [restrictAccount](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 * [revealSteamApiKey](docs/sdks/admin/README.md#revealsteamapikey) - Reveal a Steam Web API key
+* [saveBotBrand](docs/sdks/admin/README.md#savebotbrand) - Create or edit a bot brand and its sponsorship
 * [testSteamApiKey](docs/sdks/admin/README.md#teststeamapikey) - Test a Steam Web API key against Steam
 * [unbanPlayer](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 * [updateAccount](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
-* [updateCosmetics](docs/sdks/admin/README.md#updatecosmetics) - Update an account's vanity, theme color and name effect
+* [updateBot](docs/sdks/admin/README.md#updatebot) - Edit a directory bot
+* [updateBots](docs/sdks/admin/README.md#updatebots) - Edit many directory bots
+* [updateCosmetics](docs/sdks/admin/README.md#updatecosmetics) - Update an account's vanity, theme color, name effect and supporter streak
 * [updateResources](docs/sdks/admin/README.md#updateresources) - Update account resources
 * [updateRoleOverride](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](docs/sdks/admin/README.md#updateroles) - Update account roles
 
+#### [Admin.Announcement](docs/sdks/announcement/README.md)
+
+* [create](docs/sdks/announcement/README.md#create) - Create an announcement
+* [list](docs/sdks/announcement/README.md#list) - Admin: list every announcement including disabled and scheduled
+* [update](docs/sdks/announcement/README.md#update) - Update an announcement (any subset of fields)
+
+#### [Admin.Audit](docs/sdks/audit/README.md)
+
+* [list](docs/sdks/audit/README.md#list) - List the admin audit log
+
+#### [Admin.BadgeTags](docs/sdks/badgetags/README.md)
+
+* [activity](docs/sdks/badgetags/README.md#activity) - List badge tag activity
+* [overview](docs/sdks/badgetags/README.md#overview) - Badge tagging dashboard
+* [queue](docs/sdks/badgetags/README.md#queue) - Show the badge tag review queue
+* [releaseClaim](docs/sdks/badgetags/README.md#releaseclaim) - Release badge tag claims
+* [requeue](docs/sdks/badgetags/README.md#requeue) - Put badges back in the tag review queue
+* [taggers](docs/sdks/badgetags/README.md#taggers) - List badge scouts and their work
+
+#### [Admin.Crawler](docs/sdks/crawler/README.md)
+
+* [stats](docs/sdks/crawler/README.md#stats) - Admin: crawler cursors, queue and run history
+
+#### [Admin.Flags](docs/sdks/steamsetsflags/README.md)
+
+* [delete](docs/sdks/steamsetsflags/README.md#delete) - Delete a feature flag
+* [deleteOverride](docs/sdks/steamsetsflags/README.md#deleteoverride) - Delete a flag override for an account
+* [getAccount](docs/sdks/steamsetsflags/README.md#getaccount) - Get the flags for an account
+* [list](docs/sdks/steamsetsflags/README.md#list) - List feature flags
+* [setOverride](docs/sdks/steamsetsflags/README.md#setoverride) - Set a flag override for an account
+* [update](docs/sdks/steamsetsflags/README.md#update) - Update a feature flag
+
 #### [Admin.Maintenance](docs/sdks/steamsetsmaintenance/README.md)
 
 * [create](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
-* [delete](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event
+* [delete](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event or an announcement
 * [list](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
+* [listAudit](docs/sdks/steamsetsmaintenance/README.md#listaudit) - Admin: the audit log of maintenance events and announcements, newest first
 * [update](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 
-#### [Admin.Submissions](docs/sdks/steamsetssubmissions/README.md)
+#### [Admin.Roles](docs/sdks/steamsetsroles/README.md)
 
-* [list](docs/sdks/steamsetssubmissions/README.md#list) - List bug reports, feature requests and feedback
-* [update](docs/sdks/steamsetssubmissions/README.md#update) - Set the status of a submission and answer the reporter
+* [addHolder](docs/sdks/steamsetsroles/README.md#addholder) - Add a role member
+* [create](docs/sdks/steamsetsroles/README.md#create) - Create a role
+* [delete](docs/sdks/steamsetsroles/README.md#delete) - Delete a role
+* [list](docs/sdks/steamsetsroles/README.md#list) - List roles
+* [listHolders](docs/sdks/steamsetsroles/README.md#listholders) - List role members
+* [removeHolder](docs/sdks/steamsetsroles/README.md#removeholder) - Remove a role member
+* [reorder](docs/sdks/steamsetsroles/README.md#reorder) - Reorder roles
+* [setGrants](docs/sdks/steamsetsroles/README.md#setgrants) - Set a role's grants
+* [setResources](docs/sdks/steamsetsroles/README.md#setresources) - Set a role's resources
+* [setSettings](docs/sdks/steamsetsroles/README.md#setsettings) - Set a role's settings
+* [update](docs/sdks/steamsetsroles/README.md#update) - Update a role
+* [uploadIcon](docs/sdks/steamsetsroles/README.md#uploadicon) - Upload a role icon
 
 ### [Analytics](docs/sdks/analytics/README.md)
 
@@ -178,16 +244,20 @@ run();
 
 ### [App](docs/sdks/app/README.md)
 
+* [get](docs/sdks/app/README.md#get) - Get the trading card badges of apps
+* [list](docs/sdks/app/README.md#list) - List every app with trading cards
 * [queueUpdate](docs/sdks/app/README.md#queueupdate) - Queue app update
+* [appBadgesFile](docs/sdks/app/README.md#appbadgesfile) - Download every app's card count and name
+* [appBadgesSlimFile](docs/sdks/app/README.md#appbadgesslimfile) - Download every app's card count
 
 ### [Apps](docs/sdks/apps/README.md)
 
-* [listBadges](docs/sdks/apps/README.md#listbadges) - List app badges
+* [~~listBadges~~](docs/sdks/apps/README.md#listbadges) - List app badges :warning: **Deprecated**
 * [listOwners](docs/sdks/apps/README.md#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
 
 ### [Badge](docs/sdks/badge/README.md)
 
-* [streamPricing](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
+* [plan](docs/sdks/badge/README.md#plan) - Plan which Steam Market sets to craft to reach a level
 
 ### [Badges](docs/sdks/badges/README.md)
 
@@ -199,22 +269,51 @@ run();
 * [setTags](docs/sdks/badges/README.md#settags) - Replace a badge's tags
 * [submitTagReview](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
 
+### [Bot](docs/sdks/bot/README.md)
+
+* [claim](docs/sdks/bot/README.md#claim) - List or claim a bot by signing in to Steam as it
+* [createKey](docs/sdks/bot/README.md#createkey) - Make a push key for all your bots
+* [delete](docs/sdks/bot/README.md#delete) - Delete a directory bot
+* [deleteMany](docs/sdks/bot/README.md#deletemany) - Delete many directory bots
+* [get](docs/sdks/bot/README.md#get) - Get one bot with its set stock and history
+* [list](docs/sdks/bot/README.md#list) - List the bots in the bot directory
+* [listMine](docs/sdks/bot/README.md#listmine) - List your own directory bots
+* [plan](docs/sdks/bot/README.md#plan) - Plan which sets to buy from which bots to reach a level
+* [push](docs/sdks/bot/README.md#push) - Push a bot's status, prices, stock and features
+* [register](docs/sdks/bot/README.md#register) - List a bot in the bot directory
+* [registerMany](docs/sdks/bot/README.md#registermany) - List many bots in the bot directory
+* [rotateKey](docs/sdks/bot/README.md#rotatekey) - Rotate a bot's API key
+* [setListed](docs/sdks/bot/README.md#setlisted) - Show or hide one of your bots
+* [stats](docs/sdks/bot/README.md#stats) - Get a directory bot's daily unique visitors
+* [track](docs/sdks/bot/README.md#track) - Record directory bots a visitor saw, opened or clicked through to
+* [~~update~~](docs/sdks/bot/README.md#update) - Report a bot's status, prices and stock :warning: **Deprecated**
+
 ### [Donate](docs/sdks/donate/README.md)
 
 * [getGoal](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+* [getPrepaid](docs/sdks/donate/README.md#getprepaid) - Get your prepaid supporter balance
+* [updatePrepaid](docs/sdks/donate/README.md#updateprepaid) - Choose the tier your prepaid balance pays for
 
 ### [Exchange](docs/sdks/exchange/README.md)
 
 * [cardPrices](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
 * [classifyInventory](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
 
+### [Flags](docs/sdks/flags/README.md)
+
+* [getDefaults](docs/sdks/flags/README.md#getdefaults) - Get the flags for an anonymous caller
+
 ### [Group](docs/sdks/group/README.md)
 
+* [get](docs/sdks/group/README.md#get) - Get Steam groups by id
 * [queueUpdate](docs/sdks/group/README.md#queueupdate) - Queue group update
 
 ### [Item](docs/sdks/item/README.md)
 
 * [findOwners](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+* [findSpareHolders](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+* [findWanters](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
+* [get](docs/sdks/item/README.md#get) - Get trading items by class id or app
 
 ### [Kv](docs/sdks/kv/README.md)
 
@@ -235,13 +334,25 @@ run();
 
 * [list](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
 
+### [Live](docs/sdks/live/README.md)
+
+* [subscribe](docs/sdks/live/README.md#subscribe) - Stream live topics: wakes for the caller's own data and the values of public topics
+
 ### [Maintenance](docs/sdks/maintenance/README.md)
 
-* [list](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
+* [list](docs/sdks/maintenance/README.md#list) - List currently active maintenance events and announcements
+
+### [Market](docs/sdks/market/README.md)
+
+* [listCurrencies](docs/sdks/market/README.md#listcurrencies) - List Steam currency rates
 
 ### [Packs](docs/sdks/packs/README.md)
 
 * [open](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
+
+### [Roles](docs/sdks/roles/README.md)
+
+* [listCustom](docs/sdks/roles/README.md#listcustom) - List roles
 
 ### [Search](docs/sdks/search/README.md)
 
@@ -249,7 +360,7 @@ run();
 
 ### [Site](docs/sdks/site/README.md)
 
-* [subscribe](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
+* [announceVersion](docs/sdks/site/README.md#announceversion) - Announce the build a frontend app runs, so its open tabs can offer a refresh. Frontend API key only.
 
 ### [Staff](docs/sdks/staff/README.md)
 
@@ -258,12 +369,6 @@ run();
 ### [Stats](docs/sdks/stats/README.md)
 
 * [get](docs/sdks/stats/README.md#get) - Get platform statistics
-* [subscribe](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
-
-### [Submissions](docs/sdks/submissions/README.md)
-
-* [create](docs/sdks/submissions/README.md#create) - Send a bug report, profile report, feature request or feedback
-* [listMine](docs/sdks/submissions/README.md#listmine) - List the reports the signed-in account sent
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -285,8 +390,8 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.account.subscribe({
-    accountId: 442779,
+  const result = await steamSets.live.subscribe({
+    topics: null,
   });
 
   if (result.serverSentEvents == null) {
@@ -469,7 +574,7 @@ run();
 ### Error Classes
 **Primary errors:**
 * [`SteamSetsError`](./src/models/errors/steamsetserror.ts): The base class for HTTP error responses.
-  * [`ErrorModel`](./src/models/errors/errormodel.ts): *
+  * [`ErrorModel`](./src/models/errors/errormodel.ts): Generic error.
 
 <details><summary>Less common errors (6)</summary>
 
@@ -487,8 +592,6 @@ run();
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
-
-\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -683,6 +786,26 @@ yarn add @steamsets/client-ts
 ## Requirements
 
 For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
+
+### Lazy operation loading in Node.js
+
+The `/node` entry point and its lazy SDK classes are generated for every SDK. No `gen.yaml` flag is needed; Node.js applications opt in to loading operation functions on first use by changing their import:
+
+```typescript
+import { SteamSets } from "@steamsets/client-ts/node";
+
+const sdk = new SteamSets();
+```
+
+The `/node` entry point keeps the same method signatures, pagination behaviour, and response helpers. Operation modules load through dynamic imports when a method is called. Models and error classes are shared with the standard entry points, rather than bundled into separate copies.
+
+The standard package entry point and SDK subpaths retain their static imports. Keep using those entry points in browser bundles, including IIFE and UMD builds, to avoid dynamic-import chunks. Custom root exports may still load additional modules.
+
+The Node SDK classes live in `src/sdk/*.lazy.ts`. Custom code regions in the standard SDK classes are not copied to these classes; apply any required customisations to their separate regions. Accept-header enums have the same values, but their enum objects are specific to each entry point.
+
+Generated model schemas are constructed synchronously and cached on first use with either entry point. Importing a model does not construct its schema; parsing or inspecting a schema does. This does not require changing the configured Zod version.
+
+`Object.freeze`, `Object.seal`, and `Object.preventExtensions` construct the schema and apply to the cached Zod object. Zod's own restrictions on frozen schemas still apply, including methods that install properties on first access.
 <!-- End Requirements [requirements] -->
 
 <!-- Start Standalone functions [standalone-funcs] -->
@@ -711,6 +834,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountDeleteNotifications`](docs/sdks/account/README.md#deletenotifications) - Delete notifications
 - [`accountDeleteSession`](docs/sdks/account/README.md#deletesession) - Delete user session
 - [`accountFindFriendPath`](docs/sdks/account/README.md#findfriendpath) - Find up to N shortest friend paths between two accounts
+- [`accountGet`](docs/sdks/account/README.md#get) - Get Steam accounts
 - [`accountGetBadgeHeatmap`](docs/sdks/account/README.md#getbadgeheatmap) - Get monthly badge crafting counts for an account
 - [`accountGetBadgeStats`](docs/sdks/account/README.md#getbadgestats) - Get account badge statistics
 - [`accountGetDataPoints`](docs/sdks/account/README.md#getdatapoints) - Get account data points for charts
@@ -724,27 +848,33 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountListBadgeBookmarks`](docs/sdks/account/README.md#listbadgebookmarks) - List bookmarked badges
 - [`accountListBadges`](docs/sdks/account/README.md#listbadges) - List account badges
 - [`accountListCardWatches`](docs/sdks/account/README.md#listcardwatches) - List the trading cards the account watches
-- [`accountListCraftedLevels`](docs/sdks/account/README.md#listcraftedlevels) - List crafted badge levels
 - [`accountListFriends`](docs/sdks/account/README.md#listfriends) - List account friends
-- [`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets) - List inventory sets
+- [`accountListInventoryItems`](docs/sdks/account/README.md#listinventoryitems) - List the community items in your inventory
+- [`accountListJoinedGroups`](docs/sdks/account/README.md#listjoinedgroups) - List the groups you are a member of
 - [`accountListLeaderboardHistory`](docs/sdks/account/README.md#listleaderboardhistory) - Get leaderboard history
+- [`accountListNeededCards`](docs/sdks/account/README.md#listneededcards) - List the cards the account misses to finish sets it almost has
 - [`accountListNotifications`](docs/sdks/account/README.md#listnotifications) - List the account's inbox or archive
-- [`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges) - List owned badges
 - [`accountListOwnedGroups`](docs/sdks/account/README.md#listownedgroups) - List groups owned by account
+- [`accountListSpareCards`](docs/sdks/account/README.md#listsparecards) - List the account's spare trading cards that another account wants
 - [`accountLogin`](docs/sdks/account/README.md#login) - Login with Steam
 - [`accountLogout`](docs/sdks/account/README.md#logout) - Logout from session
 - [`accountMarkNotificationsRead`](docs/sdks/account/README.md#marknotificationsread) - Mark notifications read or unread
-- [`accountOptOut`](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing)
+- [`accountMeListAppIds`](docs/sdks/me/README.md#listappids) - List the apps you own
+- [`accountMeListBadges`](docs/sdks/me/README.md#listbadges) - List your crafted badges
+- [`accountMeListInventorySets`](docs/sdks/me/README.md#listinventorysets) - List the card sets in your inventory
+- [`accountMeRefreshInventory`](docs/sdks/me/README.md#refreshinventory) - Refresh your inventory
+- [`accountOptOut`](docs/sdks/account/README.md#optout) - Opt out of SteamSets (hide account and stop processing after 30 days)
 - [`accountQueueInventoryRefresh`](docs/sdks/account/README.md#queueinventoryrefresh) - Queue inventory refresh
 - [`accountQueueUpdate`](docs/sdks/account/README.md#queueupdate) - Queue account update
 - [`accountReconnectConnection`](docs/sdks/account/README.md#reconnectconnection) - Reconnect OAuth connection
-- [`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory) - Refresh inventory
 - [`accountRefreshSession`](docs/sdks/account/README.md#refreshsession) - Refresh session token
 - [`accountRemovePushSubscription`](docs/sdks/account/README.md#removepushsubscription) - Stop push notifications on one device
+- [`accountResolveMany`](docs/sdks/account/README.md#resolvemany) - Resolve SteamIDs and vanities to accounts
+- [`accountSearch`](docs/sdks/account/README.md#search) - Search accounts
 - [`accountSendEmailVerification`](docs/sdks/account/README.md#sendemailverification) - Send email verification
 - [`accountSendTestPush`](docs/sdks/account/README.md#sendtestpush) - Send a test push notification
+- [`accountSetTradeMatchVisibility`](docs/sdks/account/README.md#settradematchvisibility) - Show or hide the account in other accounts' trade matches
 - [`accountSetWishlistWatch`](docs/sdks/account/README.md#setwishlistwatch) - Watch every trading card on the wishlist
-- [`accountSubscribe`](docs/sdks/account/README.md#subscribe) - Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
 - [`accountSubscribeEmail`](docs/sdks/account/README.md#subscribeemail) - Subscribe to email notifications
 - [`accountUpdateConnection`](docs/sdks/account/README.md#updateconnection) - Update OAuth connection
 - [`accountUpdateDeveloperApp`](docs/sdks/account/README.md#updatedeveloperapp) - Update developer application
@@ -758,36 +888,76 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountWatchCard`](docs/sdks/account/README.md#watchcard) - Watch or stop watching a trading card
 - [`activityListAccountFeed`](docs/sdks/activity/README.md#listaccountfeed) - List the activity feed for a single account (profile timeline)
 - [`activityListGlobalFeed`](docs/sdks/activity/README.md#listglobalfeed) - List the global activity feed
-- [`activityStreamGlobalFeed`](docs/sdks/activity/README.md#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 - [`adminAddSteamApiKey`](docs/sdks/admin/README.md#addsteamapikey) - Add a Steam Web API key
+- [`adminAnnouncementCreate`](docs/sdks/announcement/README.md#create) - Create an announcement
+- [`adminAnnouncementList`](docs/sdks/announcement/README.md#list) - Admin: list every announcement including disabled and scheduled
+- [`adminAnnouncementUpdate`](docs/sdks/announcement/README.md#update) - Update an announcement (any subset of fields)
+- [`adminAuditList`](docs/sdks/audit/README.md#list) - List the admin audit log
+- [`adminBadgeTagsActivity`](docs/sdks/badgetags/README.md#activity) - List badge tag activity
+- [`adminBadgeTagsOverview`](docs/sdks/badgetags/README.md#overview) - Badge tagging dashboard
+- [`adminBadgeTagsQueue`](docs/sdks/badgetags/README.md#queue) - Show the badge tag review queue
+- [`adminBadgeTagsReleaseClaim`](docs/sdks/badgetags/README.md#releaseclaim) - Release badge tag claims
+- [`adminBadgeTagsRequeue`](docs/sdks/badgetags/README.md#requeue) - Put badges back in the tag review queue
+- [`adminBadgeTagsTaggers`](docs/sdks/badgetags/README.md#taggers) - List badge scouts and their work
 - [`adminBanPlayer`](docs/sdks/admin/README.md#banplayer) - Ban a player from the configured game
+- [`adminCrawlerStats`](docs/sdks/crawler/README.md#stats) - Admin: crawler cursors, queue and run history
+- [`adminCreateScrapeBot`](docs/sdks/admin/README.md#createscrapebot) - Add a directory bot measured by the inventory scraper
 - [`adminDeleteSteamApiKey`](docs/sdks/admin/README.md#deletesteamapikey) - Delete a Steam Web API key
 - [`adminExportSteamApiKeys`](docs/sdks/admin/README.md#exportsteamapikeys) - Export Steam Web API keys in plaintext
 - [`adminFindSteamApiKey`](docs/sdks/admin/README.md#findsteamapikey) - Find a stored Steam Web API key by its plaintext
+- [`adminFlagsDelete`](docs/sdks/steamsetsflags/README.md#delete) - Delete a feature flag
+- [`adminFlagsDeleteOverride`](docs/sdks/steamsetsflags/README.md#deleteoverride) - Delete a flag override for an account
+- [`adminFlagsGetAccount`](docs/sdks/steamsetsflags/README.md#getaccount) - Get the flags for an account
+- [`adminFlagsList`](docs/sdks/steamsetsflags/README.md#list) - List feature flags
+- [`adminFlagsSetOverride`](docs/sdks/steamsetsflags/README.md#setoverride) - Set a flag override for an account
+- [`adminFlagsUpdate`](docs/sdks/steamsetsflags/README.md#update) - Update a feature flag
 - [`adminGetAccount`](docs/sdks/admin/README.md#getaccount) - Get account for admin
+- [`adminGetBot`](docs/sdks/admin/README.md#getbot) - Get everything stored about a directory bot
 - [`adminGetPlayerBanStatus`](docs/sdks/admin/README.md#getplayerbanstatus) - Get a player's game-ban status
+- [`adminListBotBrands`](docs/sdks/admin/README.md#listbotbrands) - List every bot brand
+- [`adminListBotChanges`](docs/sdks/admin/README.md#listbotchanges) - List a directory bot's changes
+- [`adminListBotPushIssues`](docs/sdks/admin/README.md#listbotpushissues) - List bot push issues by client version
+- [`adminListBots`](docs/sdks/admin/README.md#listbots) - List and search directory bots
 - [`adminListHiddenAccounts`](docs/sdks/admin/README.md#listhiddenaccounts) - List hidden, opted-out and restricted accounts
 - [`adminListSteamApiKeys`](docs/sdks/admin/README.md#liststeamapikeys) - List Steam Web API keys
 - [`adminListUsers`](docs/sdks/admin/README.md#listusers) - List new and active users
 - [`adminMaintenanceCreate`](docs/sdks/steamsetsmaintenance/README.md#create) - Create a maintenance event
-- [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event
+- [`adminMaintenanceDelete`](docs/sdks/steamsetsmaintenance/README.md#delete) - Hard-delete a maintenance event or an announcement
 - [`adminMaintenanceList`](docs/sdks/steamsetsmaintenance/README.md#list) - Admin: list every maintenance event including disabled and scheduled
+- [`adminMaintenanceListAudit`](docs/sdks/steamsetsmaintenance/README.md#listaudit) - Admin: the audit log of maintenance events and announcements, newest first
 - [`adminMaintenanceUpdate`](docs/sdks/steamsetsmaintenance/README.md#update) - Update a maintenance event (any subset of fields)
 - [`adminRestrictAccount`](docs/sdks/admin/README.md#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 - [`adminRevealSteamApiKey`](docs/sdks/admin/README.md#revealsteamapikey) - Reveal a Steam Web API key
-- [`adminSubmissionsList`](docs/sdks/steamsetssubmissions/README.md#list) - List bug reports, feature requests and feedback
-- [`adminSubmissionsUpdate`](docs/sdks/steamsetssubmissions/README.md#update) - Set the status of a submission and answer the reporter
+- [`adminRolesAddHolder`](docs/sdks/steamsetsroles/README.md#addholder) - Add a role member
+- [`adminRolesCreate`](docs/sdks/steamsetsroles/README.md#create) - Create a role
+- [`adminRolesDelete`](docs/sdks/steamsetsroles/README.md#delete) - Delete a role
+- [`adminRolesList`](docs/sdks/steamsetsroles/README.md#list) - List roles
+- [`adminRolesListHolders`](docs/sdks/steamsetsroles/README.md#listholders) - List role members
+- [`adminRolesRemoveHolder`](docs/sdks/steamsetsroles/README.md#removeholder) - Remove a role member
+- [`adminRolesReorder`](docs/sdks/steamsetsroles/README.md#reorder) - Reorder roles
+- [`adminRolesSetGrants`](docs/sdks/steamsetsroles/README.md#setgrants) - Set a role's grants
+- [`adminRolesSetResources`](docs/sdks/steamsetsroles/README.md#setresources) - Set a role's resources
+- [`adminRolesSetSettings`](docs/sdks/steamsetsroles/README.md#setsettings) - Set a role's settings
+- [`adminRolesUpdate`](docs/sdks/steamsetsroles/README.md#update) - Update a role
+- [`adminRolesUploadIcon`](docs/sdks/steamsetsroles/README.md#uploadicon) - Upload a role icon
+- [`adminSaveBotBrand`](docs/sdks/admin/README.md#savebotbrand) - Create or edit a bot brand and its sponsorship
 - [`adminTestSteamApiKey`](docs/sdks/admin/README.md#teststeamapikey) - Test a Steam Web API key against Steam
 - [`adminUnbanPlayer`](docs/sdks/admin/README.md#unbanplayer) - Remove a player's game ban
 - [`adminUpdateAccount`](docs/sdks/admin/README.md#updateaccount) - Update staff-managed account fields (custom donations, staff note)
-- [`adminUpdateCosmetics`](docs/sdks/admin/README.md#updatecosmetics) - Update an account's vanity, theme color and name effect
+- [`adminUpdateBot`](docs/sdks/admin/README.md#updatebot) - Edit a directory bot
+- [`adminUpdateBots`](docs/sdks/admin/README.md#updatebots) - Edit many directory bots
+- [`adminUpdateCosmetics`](docs/sdks/admin/README.md#updatecosmetics) - Update an account's vanity, theme color, name effect and supporter streak
 - [`adminUpdateResources`](docs/sdks/admin/README.md#updateresources) - Update account resources
 - [`adminUpdateRoleOverride`](docs/sdks/admin/README.md#updateroleoverride) - Set or remove a tier role override for an account
 - [`adminUpdateRoles`](docs/sdks/admin/README.md#updateroles) - Update account roles
 - [`analyticsTrackEvent`](docs/sdks/analytics/README.md#trackevent) - Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+- [`appAppBadgesFile`](docs/sdks/app/README.md#appbadgesfile) - Download every app's card count and name
+- [`appAppBadgesSlimFile`](docs/sdks/app/README.md#appbadgesslimfile) - Download every app's card count
+- [`appGet`](docs/sdks/app/README.md#get) - Get the trading card badges of apps
+- [`appList`](docs/sdks/app/README.md#list) - List every app with trading cards
 - [`appQueueUpdate`](docs/sdks/app/README.md#queueupdate) - Queue app update
-- [`appsListBadges`](docs/sdks/apps/README.md#listbadges) - List app badges
 - [`appsListOwners`](docs/sdks/apps/README.md#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
+- [`badgePlan`](docs/sdks/badge/README.md#plan) - Plan which Steam Market sets to craft to reach a level
 - [`badgesClaimTagReviews`](docs/sdks/badges/README.md#claimtagreviews) - Claim badge tag reviews
 - [`badgesGetTags`](docs/sdks/badges/README.md#gettags) - Get a badge's tags for editing
 - [`badgesListCrafters`](docs/sdks/badges/README.md#listcrafters) - List accounts that own a badge (earliest completion first). Donator perk — page size scales with Patreon tier.
@@ -795,12 +965,33 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`badgesReviseTagReview`](docs/sdks/badges/README.md#revisetagreview) - Revise a completed badge tag review
 - [`badgesSetTags`](docs/sdks/badges/README.md#settags) - Replace a badge's tags
 - [`badgesSubmitTagReview`](docs/sdks/badges/README.md#submittagreview) - Submit a badge tag review
-- [`badgeStreamPricing`](docs/sdks/badge/README.md#streampricing) - Server-sent-events stream of badge pricing ticks. Forwards every tick — filter client-side.
+- [`botClaim`](docs/sdks/bot/README.md#claim) - List or claim a bot by signing in to Steam as it
+- [`botCreateKey`](docs/sdks/bot/README.md#createkey) - Make a push key for all your bots
+- [`botDelete`](docs/sdks/bot/README.md#delete) - Delete a directory bot
+- [`botDeleteMany`](docs/sdks/bot/README.md#deletemany) - Delete many directory bots
+- [`botGet`](docs/sdks/bot/README.md#get) - Get one bot with its set stock and history
+- [`botList`](docs/sdks/bot/README.md#list) - List the bots in the bot directory
+- [`botListMine`](docs/sdks/bot/README.md#listmine) - List your own directory bots
+- [`botPlan`](docs/sdks/bot/README.md#plan) - Plan which sets to buy from which bots to reach a level
+- [`botPush`](docs/sdks/bot/README.md#push) - Push a bot's status, prices, stock and features
+- [`botRegister`](docs/sdks/bot/README.md#register) - List a bot in the bot directory
+- [`botRegisterMany`](docs/sdks/bot/README.md#registermany) - List many bots in the bot directory
+- [`botRotateKey`](docs/sdks/bot/README.md#rotatekey) - Rotate a bot's API key
+- [`botSetListed`](docs/sdks/bot/README.md#setlisted) - Show or hide one of your bots
+- [`botStats`](docs/sdks/bot/README.md#stats) - Get a directory bot's daily unique visitors
+- [`botTrack`](docs/sdks/bot/README.md#track) - Record directory bots a visitor saw, opened or clicked through to
 - [`donateGetGoal`](docs/sdks/donate/README.md#getgoal) - Get this month's donation goal progress
+- [`donateGetPrepaid`](docs/sdks/donate/README.md#getprepaid) - Get your prepaid supporter balance
+- [`donateUpdatePrepaid`](docs/sdks/donate/README.md#updateprepaid) - Choose the tier your prepaid balance pays for
 - [`exchangeCardPrices`](docs/sdks/exchange/README.md#cardprices) - Read market prices for cards by class id
 - [`exchangeClassifyInventory`](docs/sdks/exchange/README.md#classifyinventory) - Classify an inventory for the card exchange
+- [`flagsGetDefaults`](docs/sdks/flags/README.md#getdefaults) - Get the flags for an anonymous caller
+- [`groupGet`](docs/sdks/group/README.md#get) - Get Steam groups by id
 - [`groupQueueUpdate`](docs/sdks/group/README.md#queueupdate) - Queue group update
 - [`itemFindOwners`](docs/sdks/item/README.md#findowners) - Find owners of one or more trading cards or booster packs. Friend paths from the requester are included for logged-in callers.
+- [`itemFindSpareHolders`](docs/sdks/item/README.md#findspareholders) - Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+- [`itemFindWanters`](docs/sdks/item/README.md#findwanters) - Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
+- [`itemGet`](docs/sdks/item/README.md#get) - Get trading items by class id or app
 - [`kvDelete`](docs/sdks/kv/README.md#delete) - Delete a user's key/value entry
 - [`kvList`](docs/sdks/kv/README.md#list) - List a user's stored key/value entries
 - [`kvSet`](docs/sdks/kv/README.md#set) - Set a user's key/value entry
@@ -811,15 +1002,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`leaderboardGetLowestRanks`](docs/sdks/leaderboard/README.md#getlowestranks) - Get lowest ranked accounts
 - [`leaderboardPreviewAccountRank`](docs/sdks/leaderboard/README.md#previewaccountrank) - Preview account rank
 - [`leaderboardsList`](docs/sdks/leaderboards/README.md#list) - List leaderboard badges
-- [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events
+- [`liveSubscribe`](docs/sdks/live/README.md#subscribe) - Stream live topics: wakes for the caller's own data and the values of public topics
+- [`maintenanceList`](docs/sdks/maintenance/README.md#list) - List currently active maintenance events and announcements
+- [`marketListCurrencies`](docs/sdks/market/README.md#listcurrencies) - List Steam currency rates
 - [`packsOpen`](docs/sdks/packs/README.md#open) - Open the booster pack on the 404 page
+- [`rolesListCustom`](docs/sdks/roles/README.md#listcustom) - List roles
 - [`searchGetTrending`](docs/sdks/search/README.md#gettrending) - Top search queries in a window, by unique searcher count
-- [`siteSubscribe`](docs/sdks/site/README.md#subscribe) - Server-sent-events stream of site-wide broadcasts (maintenance, announcements, etc).
+- [`siteAnnounceVersion`](docs/sdks/site/README.md#announceversion) - Announce the build a frontend app runs, so its open tabs can offer a refresh. Frontend API key only.
 - [`staffList`](docs/sdks/staff/README.md#list) - List staff members
 - [`statsGet`](docs/sdks/stats/README.md#get) - Get platform statistics
-- [`statsSubscribe`](docs/sdks/stats/README.md#subscribe) - Server-sent-events stream of platform stats. Emits a snapshot, then deltas as the queues commit them.
-- [`submissionsCreate`](docs/sdks/submissions/README.md#create) - Send a bug report, profile report, feature request or feedback
-- [`submissionsListMine`](docs/sdks/submissions/README.md#listmine) - List the reports the signed-in account sent
+- ~~[`accountListCraftedLevels`](docs/sdks/account/README.md#listcraftedlevels)~~ - List crafted badge levels :warning: **Deprecated**
+- ~~[`accountListInventorySets`](docs/sdks/account/README.md#listinventorysets)~~ - List inventory sets :warning: **Deprecated**
+- ~~[`accountListOwnedAppIds`](docs/sdks/account/README.md#listownedappids)~~ - List owned app ids :warning: **Deprecated**
+- ~~[`accountListOwnedBadges`](docs/sdks/account/README.md#listownedbadges)~~ - List owned badges :warning: **Deprecated**
+- ~~[`accountRefreshInventory`](docs/sdks/account/README.md#refreshinventory)~~ - Refresh inventory :warning: **Deprecated**
+- ~~[`appsListBadges`](docs/sdks/apps/README.md#listbadges)~~ - List app badges :warning: **Deprecated**
+- ~~[`botUpdate`](docs/sdks/bot/README.md#update)~~ - Report a bot's status, prices and stock :warning: **Deprecated**
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

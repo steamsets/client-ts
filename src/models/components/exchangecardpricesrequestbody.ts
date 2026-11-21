@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ExchangeCardPricesRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type ExchangeCardPricesRequestBody$Outbound = {
 export const ExchangeCardPricesRequestBody$outboundSchema: z.ZodMiniType<
   ExchangeCardPricesRequestBody$Outbound,
   ExchangeCardPricesRequestBody
-> = z.object({
-  classIds: z.nullable(z.array(z.int())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    classIds: z.nullable(z.array(z.int())),
+  })
+);
 
 export function exchangeCardPricesRequestBodyToJSON(
   exchangeCardPricesRequestBody: ExchangeCardPricesRequestBody,

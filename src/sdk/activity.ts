@@ -4,17 +4,10 @@
 
 import { activityListAccountFeed } from "../funcs/activityListAccountFeed.js";
 import { activityListGlobalFeed } from "../funcs/activityListGlobalFeed.js";
-import {
-  activityStreamGlobalFeed,
-  StreamGlobalFeedAcceptEnum,
-} from "../funcs/activityStreamGlobalFeed.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
-import { unwrapAsync } from "../types/fp.js";
 import { PageIterator, unwrapResultIterator } from "../types/operations.js";
-
-export { StreamGlobalFeedAcceptEnum } from "../funcs/activityStreamGlobalFeed.js";
 
 export class Activity extends ClientSDK {
   /**
@@ -43,22 +36,6 @@ export class Activity extends ClientSDK {
     PageIterator<operations.ListGlobalFeedResponse, { cursor: string }>
   > {
     return unwrapResultIterator(activityListGlobalFeed(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Live server-sent-events stream of the global activity feed
-   */
-  async streamGlobalFeed(
-    request: operations.StreamGlobalFeedRequest,
-    options?: RequestOptions & {
-      acceptHeaderOverride?: StreamGlobalFeedAcceptEnum;
-    },
-  ): Promise<operations.StreamGlobalFeedResponse> {
-    return unwrapAsync(activityStreamGlobalFeed(
       this,
       request,
       options,

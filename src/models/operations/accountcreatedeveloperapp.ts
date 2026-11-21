@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -23,20 +23,22 @@ export type AccountCreateDeveloperAppResponse = {
 export const AccountCreateDeveloperAppResponse$inboundSchema: z.ZodMiniType<
   AccountCreateDeveloperAppResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1AccountCreateDeveloperAppResponseBody: z.optional(
-      components.V1AccountCreateDeveloperAppResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1AccountCreateDeveloperAppResponseBody":
-        "v1AccountCreateDeveloperAppResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1AccountCreateDeveloperAppResponseBody: z.optional(
+        components.V1AccountCreateDeveloperAppResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1AccountCreateDeveloperAppResponseBody":
+          "v1AccountCreateDeveloperAppResponseBody",
+      });
+    }),
+  )
 );
 
 export function accountCreateDeveloperAppResponseFromJSON(

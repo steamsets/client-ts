@@ -4,9 +4,23 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+/**
+ * The product the event closes
+ */
+export const MaintenanceEventProduct = {
+  Steamsets: "steamsets",
+  Levels: "levels",
+} as const;
+/**
+ * The product the event closes
+ */
+export type MaintenanceEventProduct = OpenEnum<typeof MaintenanceEventProduct>;
 
 export type MaintenanceEvent = {
   /**
@@ -32,6 +46,10 @@ export type MaintenanceEvent = {
    */
   paths: Array<string> | null;
   /**
+   * The product the event closes
+   */
+  product: MaintenanceEventProduct;
+  /**
    * Optional scheduled start
    */
   startsAt?: Date | undefined;
@@ -47,38 +65,49 @@ export type MaintenanceEvent = {
 };
 
 /** @internal */
+export const MaintenanceEventProduct$inboundSchema: z.ZodMiniType<
+  MaintenanceEventProduct,
+  unknown
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MaintenanceEventProduct)
+);
+
+/** @internal */
 export const MaintenanceEvent$inboundSchema: z.ZodMiniType<
   MaintenanceEvent,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    createdAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    createdBy: z.optional(z.int()),
-    enabled: z.boolean(),
-    endsAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    message: z.string(),
-    paths: z.nullable(z.array(z.string())),
-    startsAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    title: z.string(),
-    uid: z.string(),
-    updatedAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      createdAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      createdBy: z.optional(z.int()),
+      enabled: z.boolean(),
+      endsAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      message: z.string(),
+      paths: z.nullable(z.array(z.string())),
+      product: MaintenanceEventProduct$inboundSchema,
+      startsAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      title: z.string(),
+      uid: z.string(),
+      updatedAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function maintenanceEventFromJSON(

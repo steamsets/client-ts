@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -17,15 +18,31 @@ import {
 export const V1AdminUpdateCosmeticsRequestBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
+  DeathSmoke: "death_smoke",
+  StasikRose: "stasik_rose",
 } as const;
 /**
  * The name effect. none clears it, omit to leave it alone
@@ -41,6 +58,10 @@ export type V1AdminUpdateCosmeticsRequestBody = {
    */
   nameEffect?: V1AdminUpdateCosmeticsRequestBodyNameEffect | null | undefined;
   /**
+   * The support streak to show instead of the one the months earn, 1 to 10. 0 follows the months again, omit to leave it alone
+   */
+  supporterStreak?: number | null | undefined;
+  /**
    * The profile theme color as #RRGGBB (no alpha). Empty string clears it, omit to leave it alone
    */
   themeColor?: string | null | undefined;
@@ -52,13 +73,16 @@ export type V1AdminUpdateCosmeticsRequestBody = {
 
 /** @internal */
 export const V1AdminUpdateCosmeticsRequestBodyNameEffect$outboundSchema:
-  z.ZodMiniType<string, V1AdminUpdateCosmeticsRequestBodyNameEffect> = openEnums
-    .outboundSchema(V1AdminUpdateCosmeticsRequestBodyNameEffect);
+  z.ZodMiniType<string, V1AdminUpdateCosmeticsRequestBodyNameEffect> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminUpdateCosmeticsRequestBodyNameEffect)
+    );
 
 /** @internal */
 export type V1AdminUpdateCosmeticsRequestBody$Outbound = {
   id?: IDSearch$Outbound | undefined;
   nameEffect?: string | null | undefined;
+  supporterStreak?: number | null | undefined;
   themeColor?: string | null | undefined;
   vanity?: string | null | undefined;
 };
@@ -67,14 +91,17 @@ export type V1AdminUpdateCosmeticsRequestBody$Outbound = {
 export const V1AdminUpdateCosmeticsRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUpdateCosmeticsRequestBody$Outbound,
   V1AdminUpdateCosmeticsRequestBody
-> = z.object({
-  id: z.optional(IDSearch$outboundSchema),
-  nameEffect: z.optional(
-    z.nullable(V1AdminUpdateCosmeticsRequestBodyNameEffect$outboundSchema),
-  ),
-  themeColor: z.optional(z.nullable(z.string())),
-  vanity: z.optional(z.nullable(z.string())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(IDSearch$outboundSchema),
+    nameEffect: z.optional(
+      z.nullable(V1AdminUpdateCosmeticsRequestBodyNameEffect$outboundSchema),
+    ),
+    supporterStreak: z.optional(z.nullable(z.int())),
+    themeColor: z.optional(z.nullable(z.string())),
+    vanity: z.optional(z.nullable(z.string())),
+  })
+);
 
 export function v1AdminUpdateCosmeticsRequestBodyToJSON(
   v1AdminUpdateCosmeticsRequestBody: V1AdminUpdateCosmeticsRequestBody,

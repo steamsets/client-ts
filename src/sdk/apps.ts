@@ -13,6 +13,11 @@ import { PageIterator, unwrapResultIterator } from "../types/operations.js";
 export class Apps extends ClientSDK {
   /**
    * List app badges
+   *
+   * @remarks
+   * Deprecated: use app.get for the badges and account.me.listBadges for your own progress.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listBadges(
     request: components.V1AppListBadgesRequestBody,

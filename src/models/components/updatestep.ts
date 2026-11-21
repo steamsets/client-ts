@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,18 +31,20 @@ export type UpdateStep = {
 };
 
 /** @internal */
-export const UpdateStep$inboundSchema: z.ZodMiniType<UpdateStep, unknown> = z
-  .object({
-    finishedAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    name: z.string(),
-    reason: z.optional(z.string()),
-    startedAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    status: z.string(),
-  });
+export const UpdateStep$inboundSchema: z.ZodMiniType<UpdateStep, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      finishedAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      name: z.string(),
+      reason: z.optional(z.string()),
+      startedAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      status: z.string(),
+    })
+  );
 
 export function updateStepFromJSON(
   jsonString: string,

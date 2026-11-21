@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,15 +17,17 @@ export type ColorTag = {
 };
 
 /** @internal */
-export const ColorTag$inboundSchema: z.ZodMiniType<ColorTag, unknown> = z
-  .object({
-    group: z.string(),
-    groupOwner: z.boolean(),
-    hex: z.nullable(z.string()),
-    hsl: z.string(),
-    id: z.string(),
-    name: z.string(),
-  });
+export const ColorTag$inboundSchema: z.ZodMiniType<ColorTag, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      group: z.string(),
+      groupOwner: z.boolean(),
+      hex: z.nullable(z.string()),
+      hsl: z.string(),
+      id: z.string(),
+      name: z.string(),
+    })
+  );
 
 export function colorTagFromJSON(
   jsonString: string,

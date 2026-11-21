@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AppListOwnersRequestBody = {
   /**
@@ -35,12 +36,14 @@ export type AppListOwnersRequestBody$Outbound = {
 export const AppListOwnersRequestBody$outboundSchema: z.ZodMiniType<
   AppListOwnersRequestBody$Outbound,
   AppListOwnersRequestBody
-> = z.object({
-  appId: z.int(),
-  cursor: z.optional(z.string()),
-  limit: z.optional(z.int()),
-  page: z.optional(z.int()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    cursor: z.optional(z.string()),
+    limit: z.optional(z.int()),
+    page: z.optional(z.int()),
+  })
+);
 
 export function appListOwnersRequestBodyToJSON(
   appListOwnersRequestBody: AppListOwnersRequestBody,

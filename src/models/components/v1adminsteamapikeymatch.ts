@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -39,17 +39,21 @@ export type V1AdminSteamApiKeyMatch = {
 export const V1AdminSteamApiKeyMatchType$inboundSchema: z.ZodMiniType<
   V1AdminSteamApiKeyMatchType,
   unknown
-> = openEnums.inboundSchema(V1AdminSteamApiKeyMatchType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminSteamApiKeyMatchType)
+);
 
 /** @internal */
 export const V1AdminSteamApiKeyMatch$inboundSchema: z.ZodMiniType<
   V1AdminSteamApiKeyMatch,
   unknown
-> = z.object({
-  keyId: z.string(),
-  last4: z.string(),
-  type: V1AdminSteamApiKeyMatchType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    keyId: z.string(),
+    last4: z.string(),
+    type: V1AdminSteamApiKeyMatchType$inboundSchema,
+  })
+);
 
 export function v1AdminSteamApiKeyMatchFromJSON(
   jsonString: string,

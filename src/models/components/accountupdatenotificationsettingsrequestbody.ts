@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   AccountUpdateNotificationSettingsEntry,
   AccountUpdateNotificationSettingsEntry$Outbound,
@@ -23,11 +24,13 @@ export const AccountUpdateNotificationSettingsRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountUpdateNotificationSettingsRequestBody$Outbound,
     AccountUpdateNotificationSettingsRequestBody
-  > = z.object({
-    settings: z.nullable(
-      z.array(AccountUpdateNotificationSettingsEntry$outboundSchema),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      settings: z.nullable(
+        z.array(AccountUpdateNotificationSettingsEntry$outboundSchema),
+      ),
+    })
+  );
 
 export function accountUpdateNotificationSettingsRequestBodyToJSON(
   accountUpdateNotificationSettingsRequestBody:

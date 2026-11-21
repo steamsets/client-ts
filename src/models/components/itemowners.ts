@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { Owner, Owner$inboundSchema } from "./owner.js";
@@ -22,13 +22,15 @@ export type ItemOwners = {
 };
 
 /** @internal */
-export const ItemOwners$inboundSchema: z.ZodMiniType<ItemOwners, unknown> = z
-  .object({
-    classId: z.int(),
-    nextCursor: z.optional(z.string()),
-    owners: z.nullable(z.array(Owner$inboundSchema)),
-    totalOwners: z.int(),
-  });
+export const ItemOwners$inboundSchema: z.ZodMiniType<ItemOwners, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      classId: z.int(),
+      nextCursor: z.optional(z.string()),
+      owners: z.nullable(z.array(Owner$inboundSchema)),
+      totalOwners: z.int(),
+    })
+  );
 
 export function itemOwnersFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,25 +35,27 @@ export type V1AccountRefreshSessionBody = {
 export const V1AccountRefreshSessionBody$inboundSchema: z.ZodMiniType<
   V1AccountRefreshSessionBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    refreshExpiresAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    refreshToken: z.string(),
-    sessionExpiresAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    sessionToken: z.string(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      refreshExpiresAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      refreshToken: z.string(),
+      sessionExpiresAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      sessionToken: z.string(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountRefreshSessionBodyFromJSON(

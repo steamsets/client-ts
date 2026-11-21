@@ -33,6 +33,8 @@ import { Result } from "../types/fp.js";
  *
  * @remarks
  * Returns the current ask, realized sales, and book depth for each requested card class. Service-only.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function exchangeCardPrices(
   client: SteamSetsCore,
@@ -101,7 +103,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

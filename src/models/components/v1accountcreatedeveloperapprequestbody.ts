@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -40,7 +41,7 @@ export type V1AccountCreateDeveloperAppRequestBody = {
 
 /** @internal */
 export const Environment$outboundSchema: z.ZodMiniType<string, Environment> =
-  openEnums.outboundSchema(Environment);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Environment));
 
 /** @internal */
 export type V1AccountCreateDeveloperAppRequestBody$Outbound = {
@@ -55,12 +56,14 @@ export const V1AccountCreateDeveloperAppRequestBody$outboundSchema:
   z.ZodMiniType<
     V1AccountCreateDeveloperAppRequestBody$Outbound,
     V1AccountCreateDeveloperAppRequestBody
-  > = z.object({
-    description: z.string(),
-    environment: Environment$outboundSchema,
-    generateKey: z.boolean(),
-    name: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      description: z.string(),
+      environment: Environment$outboundSchema,
+      generateKey: z.boolean(),
+      name: z.string(),
+    })
+  );
 
 export function v1AccountCreateDeveloperAppRequestBodyToJSON(
   v1AccountCreateDeveloperAppRequestBody:

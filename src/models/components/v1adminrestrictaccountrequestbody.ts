@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -17,7 +18,7 @@ import {
 export type V1AdminRestrictAccountRequestBody = {
   id?: IDSearch | undefined;
   /**
-   * Staff-facing reason for the restriction. Required when restricted is true, ignored when it is false.
+   * Staff-facing reason. Required when restricted is true. Optional when it is false, and then kept in the admin audit log as the reason for the lift.
    */
   reason?: string | undefined;
   /**
@@ -39,12 +40,14 @@ export type V1AdminRestrictAccountRequestBody$Outbound = {
 export const V1AdminRestrictAccountRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminRestrictAccountRequestBody$Outbound,
   V1AdminRestrictAccountRequestBody
-> = z.object({
-  id: z.optional(IDSearch$outboundSchema),
-  reason: z.optional(z.string()),
-  restricted: z.boolean(),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(IDSearch$outboundSchema),
+    reason: z.optional(z.string()),
+    restricted: z.boolean(),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AdminRestrictAccountRequestBodyToJSON(
   v1AdminRestrictAccountRequestBody: V1AdminRestrictAccountRequestBody,

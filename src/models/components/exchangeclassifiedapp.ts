@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -58,18 +58,20 @@ export type ExchangeClassifiedApp = {
 export const ExchangeClassifiedApp$inboundSchema: z.ZodMiniType<
   ExchangeClassifiedApp,
   unknown
-> = z.object({
-  appId: z.int(),
-  cards: z.nullable(z.array(ExchangeClassifiedCard$inboundSchema)),
-  cardsFirstSeenAt: z.int(),
-  foilCrafted: z.boolean(),
-  hasFoilBadge: z.boolean(),
-  image: z.string(),
-  missingBadgeData: z.boolean(),
-  name: z.string(),
-  normalRemaining: z.int(),
-  normalUncapped: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    cards: z.nullable(z.array(ExchangeClassifiedCard$inboundSchema)),
+    cardsFirstSeenAt: z.int(),
+    foilCrafted: z.boolean(),
+    hasFoilBadge: z.boolean(),
+    image: z.string(),
+    missingBadgeData: z.boolean(),
+    name: z.string(),
+    normalRemaining: z.int(),
+    normalUncapped: z.boolean(),
+  })
+);
 
 export function exchangeClassifiedAppFromJSON(
   jsonString: string,

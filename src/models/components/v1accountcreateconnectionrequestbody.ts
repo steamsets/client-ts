@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -40,7 +41,7 @@ export type V1AccountCreateConnectionRequestBody = {
 
 /** @internal */
 export const Provider$outboundSchema: z.ZodMiniType<string, Provider> =
-  openEnums.outboundSchema(Provider);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Provider));
 
 /** @internal */
 export type V1AccountCreateConnectionRequestBody$Outbound = {
@@ -53,11 +54,13 @@ export type V1AccountCreateConnectionRequestBody$Outbound = {
 export const V1AccountCreateConnectionRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountCreateConnectionRequestBody$Outbound,
   V1AccountCreateConnectionRequestBody
-> = z.object({
-  code: z.string(),
-  provider: Provider$outboundSchema,
-  redirectUri: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string(),
+    provider: Provider$outboundSchema,
+    redirectUri: z.optional(z.string()),
+  })
+);
 
 export function v1AccountCreateConnectionRequestBodyToJSON(
   v1AccountCreateConnectionRequestBody: V1AccountCreateConnectionRequestBody,

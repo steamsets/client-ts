@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -16,7 +17,11 @@ import {
 
 export type V1AdminUpdateAccountRequestBody = {
   /**
-   * Staff-granted donation total in cents (PayPal, crypto, gifts). Absolute, not a delta: 2500 means the account shows $25.00 of custom donations. Send null to zero it out, omit to leave it alone.
+   * Cents to add to the staff-granted donation total. The server adds them to the stored total under a row lock, so two staff edits cannot overwrite each other. Omit to leave the total alone. Cannot be combined with customDonations.
+   */
+  addCustomDonations?: number | null | undefined;
+  /**
+   * Staff-granted donation total in cents (PayPal, crypto, gifts). Absolute, not a delta: 2500 means the account shows $25.00 of custom donations. Send null to zero it out, omit to leave it alone. Cannot be combined with addCustomDonations.
    */
   customDonations?: number | null | undefined;
   id?: IDSearch | undefined;
@@ -29,6 +34,7 @@ export type V1AdminUpdateAccountRequestBody = {
 
 /** @internal */
 export type V1AdminUpdateAccountRequestBody$Outbound = {
+  addCustomDonations?: number | null | undefined;
   customDonations?: number | null | undefined;
   id?: IDSearch$Outbound | undefined;
   note?: string | null | undefined;
@@ -39,12 +45,15 @@ export type V1AdminUpdateAccountRequestBody$Outbound = {
 export const V1AdminUpdateAccountRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUpdateAccountRequestBody$Outbound,
   V1AdminUpdateAccountRequestBody
-> = z.object({
-  customDonations: z.optional(z.nullable(z.int())),
-  id: z.optional(IDSearch$outboundSchema),
-  note: z.optional(z.nullable(z.string())),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    addCustomDonations: z.optional(z.nullable(z.int())),
+    customDonations: z.optional(z.nullable(z.int())),
+    id: z.optional(IDSearch$outboundSchema),
+    note: z.optional(z.nullable(z.string())),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AdminUpdateAccountRequestBodyToJSON(
   v1AdminUpdateAccountRequestBody: V1AdminUpdateAccountRequestBody,

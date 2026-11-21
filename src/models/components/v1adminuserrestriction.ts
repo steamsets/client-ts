@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,20 +42,24 @@ export type V1AdminUserRestriction = {
 export const V1AdminUserRestrictionKind$inboundSchema: z.ZodMiniType<
   V1AdminUserRestrictionKind,
   unknown
-> = openEnums.inboundSchema(V1AdminUserRestrictionKind);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminUserRestrictionKind)
+);
 
 /** @internal */
 export const V1AdminUserRestriction$inboundSchema: z.ZodMiniType<
   V1AdminUserRestriction,
   unknown
-> = z.object({
-  kind: V1AdminUserRestrictionKind$inboundSchema,
-  reason: z.string(),
-  restrictedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    kind: V1AdminUserRestrictionKind$inboundSchema,
+    reason: z.string(),
+    restrictedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function v1AdminUserRestrictionFromJSON(
   jsonString: string,

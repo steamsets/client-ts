@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { V1AppBadge, V1AppBadge$inboundSchema } from "./v1appbadge.js";
@@ -24,16 +24,18 @@ export type V1AppListBadgesResponseBody = {
 export const V1AppListBadgesResponseBody$inboundSchema: z.ZodMiniType<
   V1AppListBadgesResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    badges: z.nullable(z.array(V1AppBadge$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      badges: z.nullable(z.array(V1AppBadge$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AppListBadgesResponseBodyFromJSON(

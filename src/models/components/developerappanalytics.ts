@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -24,10 +24,12 @@ export type DeveloperAppAnalytics = {
 export const DeveloperAppAnalytics$inboundSchema: z.ZodMiniType<
   DeveloperAppAnalytics,
   unknown
-> = z.object({
-  last24Hours: DeveloperAppAnalyticsLast24Hours$inboundSchema,
-  timeSeries: DeveloperAppAnalyticsTimeSeries$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    last24Hours: DeveloperAppAnalyticsLast24Hours$inboundSchema,
+    timeSeries: DeveloperAppAnalyticsTimeSeries$inboundSchema,
+  })
+);
 
 export function developerAppAnalyticsFromJSON(
   jsonString: string,

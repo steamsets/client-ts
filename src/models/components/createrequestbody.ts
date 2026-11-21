@@ -3,6 +3,23 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
+
+/**
+ * The product the event closes; steamsets when unset
+ */
+export const CreateRequestBodyProduct = {
+  Steamsets: "steamsets",
+  Levels: "levels",
+} as const;
+/**
+ * The product the event closes; steamsets when unset
+ */
+export type CreateRequestBodyProduct = OpenEnum<
+  typeof CreateRequestBodyProduct
+>;
 
 export type CreateRequestBody = {
   /**
@@ -18,6 +35,14 @@ export type CreateRequestBody = {
    * Path prefixes; "*" alone means whole site
    */
   paths: Array<string> | null;
+  /**
+   * The product the event closes; steamsets when unset
+   */
+  product?: CreateRequestBodyProduct | undefined;
+  /**
+   * Why, for the audit log
+   */
+  reason?: string | undefined;
   startsAt?: Date | undefined;
   /**
    * Short headline
@@ -26,11 +51,21 @@ export type CreateRequestBody = {
 };
 
 /** @internal */
+export const CreateRequestBodyProduct$outboundSchema: z.ZodMiniType<
+  string,
+  CreateRequestBodyProduct
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CreateRequestBodyProduct)
+);
+
+/** @internal */
 export type CreateRequestBody$Outbound = {
   enabled: boolean;
   endsAt?: string | undefined;
   message: string;
   paths: Array<string> | null;
+  product?: string | undefined;
+  reason?: string | undefined;
   startsAt?: string | undefined;
   title: string;
 };
@@ -39,14 +74,18 @@ export type CreateRequestBody$Outbound = {
 export const CreateRequestBody$outboundSchema: z.ZodMiniType<
   CreateRequestBody$Outbound,
   CreateRequestBody
-> = z.object({
-  enabled: z.boolean(),
-  endsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  message: z.string(),
-  paths: z.nullable(z.array(z.string())),
-  startsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  title: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    enabled: z.boolean(),
+    endsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+    message: z.string(),
+    paths: z.nullable(z.array(z.string())),
+    product: z.optional(CreateRequestBodyProduct$outboundSchema),
+    reason: z.optional(z.string()),
+    startsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+    title: z.string(),
+  })
+);
 
 export function createRequestBodyToJSON(
   createRequestBody: CreateRequestBody,

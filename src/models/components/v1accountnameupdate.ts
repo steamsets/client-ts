@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { HistoryValue, HistoryValue$inboundSchema } from "./historyvalue.js";
@@ -20,13 +20,15 @@ export type V1AccountNameUpdate = {
 export const V1AccountNameUpdate$inboundSchema: z.ZodMiniType<
   V1AccountNameUpdate,
   unknown
-> = z.object({
-  name: HistoryValue$inboundSchema,
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: HistoryValue$inboundSchema,
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function v1AccountNameUpdateFromJSON(
   jsonString: string,

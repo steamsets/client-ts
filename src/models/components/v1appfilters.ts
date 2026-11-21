@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { Range, Range$Outbound, Range$outboundSchema } from "./range.js";
 
 export type V1AppFilters = {
@@ -38,13 +39,15 @@ export type V1AppFilters$Outbound = {
 export const V1AppFilters$outboundSchema: z.ZodMiniType<
   V1AppFilters$Outbound,
   V1AppFilters
-> = z.object({
-  appType: z.optional(z.nullable(z.string())),
-  excludeEvents: z.optional(z.nullable(z.boolean())),
-  excludeSales: z.optional(z.nullable(z.boolean())),
-  hasBadge: z.optional(z.nullable(z.boolean())),
-  playtime: z.optional(Range$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appType: z.optional(z.nullable(z.string())),
+    excludeEvents: z.optional(z.nullable(z.boolean())),
+    excludeSales: z.optional(z.nullable(z.boolean())),
+    hasBadge: z.optional(z.nullable(z.boolean())),
+    playtime: z.optional(Range$outboundSchema),
+  })
+);
 
 export function v1AppFiltersToJSON(v1AppFilters: V1AppFilters): string {
   return JSON.stringify(V1AppFilters$outboundSchema.parse(v1AppFilters));

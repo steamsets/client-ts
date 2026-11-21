@@ -29,6 +29,13 @@ import { Result } from "../types/fp.js";
 
 /**
  * List owned badges
+ *
+ * @remarks
+ * Deprecated: use account.me.listBadges, which returns one badge per app and type with every crafted level's id in badgeIds.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountListOwnedBadges(
   client: SteamSetsCore,
@@ -100,7 +107,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

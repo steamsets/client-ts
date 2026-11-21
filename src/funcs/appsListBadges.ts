@@ -30,6 +30,13 @@ import { Result } from "../types/fp.js";
 
 /**
  * List app badges
+ *
+ * @remarks
+ * Deprecated: use app.get for the badges and account.me.listBadges for your own progress.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function appsListBadges(
   client: SteamSetsCore,
@@ -98,7 +105,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -60,12 +61,14 @@ export type V1AdminExportSteamApiKeysRequestBody = {
 
 /** @internal */
 export const V1AdminExportSteamApiKeysRequestBodyOrder$outboundSchema:
-  z.ZodMiniType<string, V1AdminExportSteamApiKeysRequestBodyOrder> = openEnums
-    .outboundSchema(V1AdminExportSteamApiKeysRequestBodyOrder);
+  z.ZodMiniType<string, V1AdminExportSteamApiKeysRequestBodyOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminExportSteamApiKeysRequestBodyOrder)
+    );
 
 /** @internal */
-export const Types$outboundSchema: z.ZodMiniType<string, Types> = openEnums
-  .outboundSchema(Types);
+export const Types$outboundSchema: z.ZodMiniType<string, Types> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Types));
 
 /** @internal */
 export type V1AdminExportSteamApiKeysRequestBody$Outbound = {
@@ -82,20 +85,24 @@ export type V1AdminExportSteamApiKeysRequestBody$Outbound = {
 export const V1AdminExportSteamApiKeysRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminExportSteamApiKeysRequestBody$Outbound,
   V1AdminExportSteamApiKeysRequestBody
-> = z.object({
-  createdAfter: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  createdBefore: z.optional(
-    z.pipe(z.date(), z.transform(v => v.toISOString())),
-  ),
-  keyIds: z.optional(z.nullable(z.array(z.string()))),
-  limit: z.optional(z.int()),
-  onlyWorking: z.optional(z.boolean()),
-  order: z._default(
-    V1AdminExportSteamApiKeysRequestBodyOrder$outboundSchema,
-    "newest",
-  ),
-  types: z.optional(z.nullable(z.array(Types$outboundSchema))),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAfter: z.optional(
+      z.pipe(z.date(), z.transform(v => v.toISOString())),
+    ),
+    createdBefore: z.optional(
+      z.pipe(z.date(), z.transform(v => v.toISOString())),
+    ),
+    keyIds: z.optional(z.nullable(z.array(z.string()))),
+    limit: z.optional(z.int()),
+    onlyWorking: z.optional(z.boolean()),
+    order: z._default(
+      V1AdminExportSteamApiKeysRequestBodyOrder$outboundSchema,
+      "newest",
+    ),
+    types: z.optional(z.nullable(z.array(Types$outboundSchema))),
+  })
+);
 
 export function v1AdminExportSteamApiKeysRequestBodyToJSON(
   v1AdminExportSteamApiKeysRequestBody: V1AdminExportSteamApiKeysRequestBody,

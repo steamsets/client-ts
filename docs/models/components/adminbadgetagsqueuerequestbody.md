@@ -1,0 +1,20 @@
+# AdminBadgeTagsQueueRequestBody
+
+## Example Usage
+
+```typescript
+import { AdminBadgeTagsQueueRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminBadgeTagsQueueRequestBody = {};
+```
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `accountId`                                                                                                        | *number*                                                                                                           | :heavy_minus_sign:                                                                                                 | Only badges this scout skipped.                                                                                    |
+| `cursor`                                                                                                           | *string*                                                                                                           | :heavy_minus_sign:                                                                                                 | nextCursor of the skipped page before. Empty for the newest page.                                                  |
+| `limit`                                                                                                            | *number*                                                                                                           | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `nextUp`                                                                                                           | *number*                                                                                                           | :heavy_minus_sign:                                                                                                 | How many next badges to name per priority band.                                                                    |
+| `query`                                                                                                            | *string*                                                                                                           | :heavy_minus_sign:                                                                                                 | Matches anywhere in the skip reason.                                                                               |
+| `window`                                                                                                           | [components.AdminBadgeTagsQueueRequestBodyWindow](../../models/components/adminbadgetagsqueuerequestbodywindow.md) | :heavy_minus_sign:                                                                                                 | How far back the skipped list looks.                                                                               |

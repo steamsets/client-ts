@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -68,29 +68,31 @@ export type BadgeGetTagsResponseBody = {
 
 /** @internal */
 export const ReviewStatus$inboundSchema: z.ZodMiniType<ReviewStatus, unknown> =
-  openEnums.inboundSchema(ReviewStatus);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ReviewStatus));
 
 /** @internal */
 export const BadgeGetTagsResponseBody$inboundSchema: z.ZodMiniType<
   BadgeGetTagsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    badgeId: z.string(),
-    colors: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
-    designs: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
-    metadata: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
-    reviewStatus: z.optional(ReviewStatus$inboundSchema),
-    suggestions: z.optional(BadgeClaimTagReviewsSuggestions$inboundSchema),
-    tagsVersion: z.string(),
-    vocabulary: BadgeGetTagsVocabulary$inboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      badgeId: z.string(),
+      colors: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
+      designs: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
+      metadata: z.nullable(z.array(BadgeGetTagsTag$inboundSchema)),
+      reviewStatus: z.optional(ReviewStatus$inboundSchema),
+      suggestions: z.optional(BadgeClaimTagReviewsSuggestions$inboundSchema),
+      tagsVersion: z.string(),
+      vocabulary: BadgeGetTagsVocabulary$inboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function badgeGetTagsResponseBodyFromJSON(

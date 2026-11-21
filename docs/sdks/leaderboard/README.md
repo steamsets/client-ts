@@ -373,6 +373,12 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.leaderboard.getLowestRanks({
+    keys: [
+      700,
+      800,
+      1000,
+      1300,
+    ],
     leaderboard: "xp",
   });
 
@@ -398,6 +404,12 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await leaderboardGetLowestRanks(steamSets, {
+    keys: [
+      700,
+      800,
+      1000,
+      1300,
+    ],
     leaderboard: "xp",
   });
   if (res.ok) {

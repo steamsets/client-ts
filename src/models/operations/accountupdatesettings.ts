@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -35,20 +35,23 @@ export type AccountUpdateSettingsRequest$Outbound = {
 export const AccountUpdateSettingsRequest$outboundSchema: z.ZodMiniType<
   AccountUpdateSettingsRequest$Outbound,
   AccountUpdateSettingsRequest
-> = z.pipe(
-  z.object({
-    xForwardedFor: z.optional(z.string()),
-    xShieldShibaToken: z.optional(z.string()),
-    v1AccountUpdateSettingsRequestBody:
-      components.V1AccountUpdateSettingsRequestBody$outboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      xForwardedFor: "X-Forwarded-For",
-      xShieldShibaToken: "X-Shield-Shiba-Token",
-      v1AccountUpdateSettingsRequestBody: "V1AccountUpdateSettingsRequestBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      xForwardedFor: z.optional(z.string()),
+      xShieldShibaToken: z.optional(z.string()),
+      v1AccountUpdateSettingsRequestBody:
+        components.V1AccountUpdateSettingsRequestBody$outboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        xForwardedFor: "X-Forwarded-For",
+        xShieldShibaToken: "X-Shield-Shiba-Token",
+        v1AccountUpdateSettingsRequestBody:
+          "V1AccountUpdateSettingsRequestBody",
+      });
+    }),
+  )
 );
 
 export function accountUpdateSettingsRequestToJSON(
@@ -65,15 +68,17 @@ export function accountUpdateSettingsRequestToJSON(
 export const AccountUpdateSettingsResponse$inboundSchema: z.ZodMiniType<
   AccountUpdateSettingsResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+      });
+    }),
+  )
 );
 
 export function accountUpdateSettingsResponseFromJSON(

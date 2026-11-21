@@ -34,6 +34,7 @@ let value: V1AccountListFriendsResponseBody = {
       friends: 123456,
       friendsSince: new Date("2026-04-28T14:25:35.331Z"),
       gameBans: 807137,
+      isHidden: false,
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -47,22 +48,25 @@ let value: V1AccountListFriendsResponseBody = {
         name: "Europe",
       },
       roles: [],
-      state: null,
+      state: {
+        name: "Baden-Wurttemberg",
+      },
       steamId: "76561198842603734",
-      steamSetsScore: 304640,
+      steamSetsScore: 258339,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
       supporter: {
         active: true,
         months: 3,
+        streak: 0,
       },
       themeColor: "#FF5733",
-      vacBans: 258339,
+      vacBans: 963908,
       xp: 123456,
     },
   ],
   nextCursor: "<value>",
-  total: 433782,
+  total: 190871,
 };
 ```
 

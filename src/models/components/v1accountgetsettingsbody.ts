@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -17,6 +17,7 @@ import {
   DeveloperAppAnalytics$inboundSchema,
 } from "./developerappanalytics.js";
 import { Session, Session$inboundSchema } from "./session.js";
+import { V1AccountHide, V1AccountHide$inboundSchema } from "./v1accounthide.js";
 import {
   V1VanityAnalytics,
   V1VanityAnalytics$inboundSchema,
@@ -28,15 +29,31 @@ import {
 export const V1AccountGetSettingsBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
+  DeathSmoke: "death_smoke",
+  StasikRose: "stasik_rose",
 } as const;
 /**
  * The stored name effect
@@ -66,6 +83,10 @@ export type V1AccountGetSettingsBody = {
    */
   dollarSchema?: string | undefined;
   analytics?: DeveloperAppAnalytics | undefined;
+  /**
+   * Whether the account's lifetime donations let it pick its support streak
+   */
+  canPickStreak: boolean;
   chosenRole: ChosenRole | null;
   /**
    * The connections the account has
@@ -95,6 +116,7 @@ export type V1AccountGetSettingsBody = {
    * Whether the account is hidden in the leaderboards
    */
   hidden: boolean;
+  hide?: V1AccountHide | null | undefined;
   /**
    * The language the account is using
    */
@@ -116,9 +138,21 @@ export type V1AccountGetSettingsBody = {
    */
   subscribed: boolean;
   /**
+   * The picked support streak, 1 to 10, or 0 when the months choose it
+   */
+  supporterStreak: number;
+  /**
    * The stored profile theme color as #RRGGBB, null when unset
    */
   themeColor: string | null;
+  /**
+   * The account's Steam trade offer link, null when it has not added one
+   */
+  tradeUrl: string | null;
+  /**
+   * The name effects the account's roles unlock, in picker order, without none
+   */
+  unlockedNameEffects?: Array<string> | null | undefined;
   /**
    * The vanity the account is using
    */
@@ -130,46 +164,57 @@ export type V1AccountGetSettingsBody = {
 export const V1AccountGetSettingsBodyNameEffect$inboundSchema: z.ZodMiniType<
   V1AccountGetSettingsBodyNameEffect,
   unknown
-> = openEnums.inboundSchema(V1AccountGetSettingsBodyNameEffect);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AccountGetSettingsBodyNameEffect)
+);
 
 /** @internal */
 export const V1AccountGetSettingsBodyPrivacy$inboundSchema: z.ZodMiniType<
   V1AccountGetSettingsBodyPrivacy,
   unknown
-> = openEnums.inboundSchema(V1AccountGetSettingsBodyPrivacy);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AccountGetSettingsBodyPrivacy)
+);
 
 /** @internal */
 export const V1AccountGetSettingsBody$inboundSchema: z.ZodMiniType<
   V1AccountGetSettingsBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
-    chosenRole: z.nullable(ChosenRole$inboundSchema),
-    connections: z.nullable(z.array(Connection$inboundSchema)),
-    countryOverrideCode: z.optional(z.nullable(z.string())),
-    countryOverrideName: z.optional(z.nullable(z.string())),
-    developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
-    email: z.string(),
-    emailVerifiedAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    hidden: z.boolean(),
-    language: z.string(),
-    nameEffect: V1AccountGetSettingsBodyNameEffect$inboundSchema,
-    privacy: V1AccountGetSettingsBodyPrivacy$inboundSchema,
-    sessions: z.nullable(z.array(Session$inboundSchema)),
-    subscribed: z.boolean(),
-    themeColor: z.nullable(z.string()),
-    vanity: z.string(),
-    vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
+      canPickStreak: z.boolean(),
+      chosenRole: z.nullable(ChosenRole$inboundSchema),
+      connections: z.nullable(z.array(Connection$inboundSchema)),
+      countryOverrideCode: z.optional(z.nullable(z.string())),
+      countryOverrideName: z.optional(z.nullable(z.string())),
+      developerApps: z.nullable(z.array(DeveloperApp$inboundSchema)),
+      email: z.string(),
+      emailVerifiedAt: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      hidden: z.boolean(),
+      hide: z.optional(z.nullable(V1AccountHide$inboundSchema)),
+      language: z.string(),
+      nameEffect: V1AccountGetSettingsBodyNameEffect$inboundSchema,
+      privacy: V1AccountGetSettingsBodyPrivacy$inboundSchema,
+      sessions: z.nullable(z.array(Session$inboundSchema)),
+      subscribed: z.boolean(),
+      supporterStreak: z.int(),
+      themeColor: z.nullable(z.string()),
+      tradeUrl: z.nullable(z.string()),
+      unlockedNameEffects: z.optional(z.nullable(z.array(z.string()))),
+      vanity: z.string(),
+      vanityAnalytics: z.nullable(V1VanityAnalytics$inboundSchema),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountGetSettingsBodyFromJSON(

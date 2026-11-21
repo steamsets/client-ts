@@ -8,20 +8,29 @@ Admin related operations, stay away from these.
 
 * [addSteamApiKey](#addsteamapikey) - Add a Steam Web API key
 * [banPlayer](#banplayer) - Ban a player from the configured game
+* [createScrapeBot](#createscrapebot) - Add a directory bot measured by the inventory scraper
 * [deleteSteamApiKey](#deletesteamapikey) - Delete a Steam Web API key
 * [exportSteamApiKeys](#exportsteamapikeys) - Export Steam Web API keys in plaintext
 * [findSteamApiKey](#findsteamapikey) - Find a stored Steam Web API key by its plaintext
 * [getAccount](#getaccount) - Get account for admin
+* [getBot](#getbot) - Get everything stored about a directory bot
 * [getPlayerBanStatus](#getplayerbanstatus) - Get a player's game-ban status
+* [listBotBrands](#listbotbrands) - List every bot brand
+* [listBotChanges](#listbotchanges) - List a directory bot's changes
+* [listBotPushIssues](#listbotpushissues) - List bot push issues by client version
+* [listBots](#listbots) - List and search directory bots
 * [listHiddenAccounts](#listhiddenaccounts) - List hidden, opted-out and restricted accounts
 * [listSteamApiKeys](#liststeamapikeys) - List Steam Web API keys
 * [listUsers](#listusers) - List new and active users
 * [restrictAccount](#restrictaccount) - Restrict an account: hide it site-wide and lock it out of login
 * [revealSteamApiKey](#revealsteamapikey) - Reveal a Steam Web API key
+* [saveBotBrand](#savebotbrand) - Create or edit a bot brand and its sponsorship
 * [testSteamApiKey](#teststeamapikey) - Test a Steam Web API key against Steam
 * [unbanPlayer](#unbanplayer) - Remove a player's game ban
 * [updateAccount](#updateaccount) - Update staff-managed account fields (custom donations, staff note)
-* [updateCosmetics](#updatecosmetics) - Update an account's vanity, theme color and name effect
+* [updateBot](#updatebot) - Edit a directory bot
+* [updateBots](#updatebots) - Edit many directory bots
+* [updateCosmetics](#updatecosmetics) - Update an account's vanity, theme color, name effect and supporter streak
 * [updateResources](#updateresources) - Update account resources
 * [updateRoleOverride](#updateroleoverride) - Set or remove a tier role override for an account
 * [updateRoles](#updateroles) - Update account roles
@@ -181,6 +190,83 @@ run();
 | errors.ErrorModel        | 400, 401, 403, 422       | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## createScrapeBot
+
+Add a directory bot measured by the inventory scraper
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.createScrapeBot" method="post" path="/v1/admin.createScrapeBot" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.createScrapeBot({
+    name: "<value>",
+    steamId: "76561199756787903",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminCreateScrapeBot } from "@steamsets/client-ts/funcs/adminCreateScrapeBot.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminCreateScrapeBot(steamSets, {
+    name: "<value>",
+    steamId: "76561199756787903",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminCreateScrapeBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminBotCreateScrapeRequestBody](../../models/components/adminbotcreatescraperequestbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminCreateScrapeBotResponse](../../models/operations/admincreatescrapebotresponse.md)\>**
+
+### Errors
+
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.ErrorModel            | 400, 401, 403, 404, 409, 422 | application/problem+json     |
+| errors.ErrorModel            | 500                          | application/problem+json     |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
 
 ## deleteSteamApiKey
 
@@ -474,6 +560,81 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## getBot
+
+One bot in any review state, with the fields the public routes leave out, its push clients and issues, and its recorded stock, price and online history.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.getBot" method="post" path="/v1/admin.getBot" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.getBot({
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminGetBot } from "@steamsets/client-ts/funcs/adminGetBot.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminGetBot(steamSets, {
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminGetBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminGetBotRequestBody](../../models/components/admingetbotrequestbody.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminGetBotResponse](../../models/operations/admingetbotresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## getPlayerBanStatus
 
 Get a player's game-ban status
@@ -549,6 +710,295 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## listBotBrands
+
+List every bot brand
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.listBotBrands" method="post" path="/v1/admin.listBotBrands" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.listBotBrands();
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminListBotBrands } from "@steamsets/client-ts/funcs/adminListBotBrands.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminListBotBrands(steamSets);
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminListBotBrands failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminListBotBrandsResponse](../../models/operations/adminlistbotbrandsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 403                 | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## listBotChanges
+
+Every field of the bot that a push, a staff edit, its owner or a listing fee payment changed, with the value before and after, newest first. Prices and stock are not in it; admin.getBot charts them.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.listBotChanges" method="post" path="/v1/admin.listBotChanges" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.listBotChanges({
+    field: "features",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminListBotChanges } from "@steamsets/client-ts/funcs/adminListBotChanges.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminListBotChanges(steamSets, {
+    field: "features",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminListBotChanges failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminListBotChangesRequestBody](../../models/components/adminlistbotchangesrequestbody.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminListBotChangesResponse](../../models/operations/adminlistbotchangesresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## listBotPushIssues
+
+Groups what bot pushes ignored or found wrong by the client name and version that sent them, with bot and push counts, so a plugin release that sends bad data stands out.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.listBotPushIssues" method="post" path="/v1/admin.listBotPushIssues" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.listBotPushIssues({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminListBotPushIssues } from "@steamsets/client-ts/funcs/adminListBotPushIssues.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminListBotPushIssues(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminListBotPushIssues failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminListBotPushIssuesRequestBody](../../models/components/adminlistbotpushissuesrequestbody.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminListBotPushIssuesResponse](../../models/operations/adminlistbotpushissuesresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 403, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
+## listBots
+
+List and search directory bots
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.listBots" method="post" path="/v1/admin.listBots" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.listBots({});
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminListBots } from "@steamsets/client-ts/funcs/adminListBots.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminListBots(steamSets, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminListBots failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminBotListRequestBody](../../models/components/adminbotlistrequestbody.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminListBotsResponse](../../models/operations/adminlistbotsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 403, 422            | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## listHiddenAccounts
 
 List hidden, opted-out and restricted accounts
@@ -564,7 +1014,11 @@ const steamSets = new SteamSets({
 });
 
 async function run() {
-  const result = await steamSets.admin.listHiddenAccounts({});
+  const result = await steamSets.admin.listHiddenAccounts({
+    accountIds: [
+      1216167888,
+    ],
+  });
 
   console.log(result);
 }
@@ -587,7 +1041,11 @@ const steamSets = new SteamSetsCore({
 });
 
 async function run() {
-  const res = await adminListHiddenAccounts(steamSets, {});
+  const res = await adminListHiddenAccounts(steamSets, {
+    accountIds: [
+      1216167888,
+    ],
+  });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -706,6 +1164,9 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.listUsers({
+    accountIds: [
+      1216167888,
+    ],
     orderBy: "level",
   });
 
@@ -731,6 +1192,9 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminListUsers(steamSets, {
+    accountIds: [
+      1216167888,
+    ],
     orderBy: "level",
   });
   if (res.ok) {
@@ -917,6 +1381,81 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## saveBotBrand
+
+Create or edit a bot brand and its sponsorship
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.saveBotBrand" method="post" path="/v1/admin.saveBotBrand" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.saveBotBrand({
+    name: "<value>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminSaveBotBrand } from "@steamsets/client-ts/funcs/adminSaveBotBrand.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminSaveBotBrand(steamSets, {
+    name: "<value>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminSaveBotBrand failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminBotBrandSaveRequestBody](../../models/components/adminbotbrandsaverequestbody.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminSaveBotBrandResponse](../../models/operations/adminsavebotbrandresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 401, 403, 404, 422       | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## testSteamApiKey
 
 Test a Steam Web API key against Steam
@@ -1083,6 +1622,7 @@ const steamSets = new SteamSets({
 
 async function run() {
   const result = await steamSets.admin.updateAccount({
+    addCustomDonations: 500,
     customDonations: 2500,
     note: "PayPal donation 2026-08-04, txn 4XY12345.",
   });
@@ -1109,6 +1649,7 @@ const steamSets = new SteamSetsCore({
 
 async function run() {
   const res = await adminUpdateAccount(steamSets, {
+    addCustomDonations: 500,
     customDonations: 2500,
     note: "PayPal donation 2026-08-04, txn 4XY12345.",
   });
@@ -1144,9 +1685,165 @@ run();
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
 
+## updateBot
+
+Every field but `id` is optional; a missing field keeps its value. Approving a push bot needs its listing fee paid, in this request or before. Marking the fee paid approves a pending push bot, unless the request sets `status`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.updateBot" method="post" path="/v1/admin.updateBot" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.updateBot({
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminUpdateBot } from "@steamsets/client-ts/funcs/adminUpdateBot.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminUpdateBot(steamSets, {
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminUpdateBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminBotUpdateRequestBody](../../models/components/adminbotupdaterequestbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminUpdateBotResponse](../../models/operations/adminupdatebotresponse.md)\>**
+
+### Errors
+
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.ErrorModel            | 400, 401, 403, 404, 409, 422 | application/problem+json     |
+| errors.ErrorModel            | 500                          | application/problem+json     |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
+
+## updateBots
+
+Applies one edit to up to 100 bots, as admin.updateBot does to one. Every field but `ids` is optional; a missing field keeps each bot's value. A bot the edit would approve without a paid listing fee is left alone and listed in `feeUnpaid`. Marking the fee paid approves each pending push bot, unless the edit sets `status`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="admin.updateBots" method="post" path="/v1/admin.updateBots" -->
+```typescript
+import { SteamSets } from "@steamsets/client-ts";
+
+const steamSets = new SteamSets({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const result = await steamSets.admin.updateBots({
+    ids: [
+      "<value 1>",
+      "<value 2>",
+    ],
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { SteamSetsCore } from "@steamsets/client-ts/core.js";
+import { adminUpdateBots } from "@steamsets/client-ts/funcs/adminUpdateBots.js";
+
+// Use `SteamSetsCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const steamSets = new SteamSetsCore({
+  token: "<YOUR_BEARER_TOKEN_HERE>",
+});
+
+async function run() {
+  const res = await adminUpdateBots(steamSets, {
+    ids: [
+      "<value 1>",
+      "<value 2>",
+    ],
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adminUpdateBots failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [components.AdminBotUpdateManyRequestBody](../../models/components/adminbotupdatemanyrequestbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AdminUpdateBotsResponse](../../models/operations/adminupdatebotsresponse.md)\>**
+
+### Errors
+
+| Error Type               | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
+| errors.ErrorModel        | 500                      | application/problem+json |
+| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+
 ## updateCosmetics
 
-Update an account's vanity, theme color and name effect
+Update an account's vanity, theme color, name effect and supporter streak
 
 ### Example Usage
 
@@ -1161,6 +1858,7 @@ const steamSets = new SteamSets({
 async function run() {
   const result = await steamSets.admin.updateCosmetics({
     nameEffect: "rainbow",
+    supporterStreak: 10,
     themeColor: "#FF5733",
     vanity: "flo",
   });
@@ -1188,6 +1886,7 @@ const steamSets = new SteamSetsCore({
 async function run() {
   const res = await adminUpdateCosmetics(steamSets, {
     nameEffect: "rainbow",
+    supporterStreak: 10,
     themeColor: "#FF5733",
     vanity: "flo",
   });
@@ -1448,8 +2147,8 @@ run();
 
 ### Errors
 
-| Error Type               | Status Code              | Content Type             |
-| ------------------------ | ------------------------ | ------------------------ |
-| errors.ErrorModel        | 400, 401, 403, 404, 422  | application/problem+json |
-| errors.ErrorModel        | 500                      | application/problem+json |
-| errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.ErrorModel            | 400, 401, 403, 404, 409, 422 | application/problem+json     |
+| errors.ErrorModel            | 500                          | application/problem+json     |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |

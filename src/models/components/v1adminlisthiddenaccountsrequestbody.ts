@@ -3,8 +3,23 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
+
+/**
+ * desc lists the newest restriction first, asc the oldest. Owner-hidden accounts come last either way
+ */
+export const V1AdminListHiddenAccountsRequestBodyDirection = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * desc lists the newest restriction first, asc the oldest. Owner-hidden accounts come last either way
+ */
+export type V1AdminListHiddenAccountsRequestBodyDirection = OpenEnum<
+  typeof V1AdminListHiddenAccountsRequestBodyDirection
+>;
 
 /**
  * owner lists accounts the owner hid, self lists opt-outs, staff lists restrictions staff applied
@@ -24,6 +39,14 @@ export type V1AdminListHiddenAccountsRequestBodyKind = OpenEnum<
 
 export type V1AdminListHiddenAccountsRequestBody = {
   /**
+   * Only these accounts, at most 100. The admin turns a name, vanity or SteamID64 search into account ids. Total then counts the matches
+   */
+  accountIds?: Array<number> | null | undefined;
+  /**
+   * desc lists the newest restriction first, asc the oldest. Owner-hidden accounts come last either way
+   */
+  direction?: V1AdminListHiddenAccountsRequestBodyDirection | undefined;
+  /**
    * owner lists accounts the owner hid, self lists opt-outs, staff lists restrictions staff applied
    */
   kind?: V1AdminListHiddenAccountsRequestBodyKind | undefined;
@@ -38,12 +61,23 @@ export type V1AdminListHiddenAccountsRequestBody = {
 };
 
 /** @internal */
+export const V1AdminListHiddenAccountsRequestBodyDirection$outboundSchema:
+  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyDirection> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminListHiddenAccountsRequestBodyDirection)
+    );
+
+/** @internal */
 export const V1AdminListHiddenAccountsRequestBodyKind$outboundSchema:
-  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyKind> = openEnums
-    .outboundSchema(V1AdminListHiddenAccountsRequestBodyKind);
+  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyKind> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminListHiddenAccountsRequestBodyKind)
+    );
 
 /** @internal */
 export type V1AdminListHiddenAccountsRequestBody$Outbound = {
+  accountIds?: Array<number> | null | undefined;
+  direction: string;
   kind: string;
   limit: number;
   page: number;
@@ -53,14 +87,21 @@ export type V1AdminListHiddenAccountsRequestBody$Outbound = {
 export const V1AdminListHiddenAccountsRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminListHiddenAccountsRequestBody$Outbound,
   V1AdminListHiddenAccountsRequestBody
-> = z.object({
-  kind: z._default(
-    V1AdminListHiddenAccountsRequestBodyKind$outboundSchema,
-    "all",
-  ),
-  limit: z._default(z.int(), 50),
-  page: z._default(z.int(), 1),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountIds: z.optional(z.nullable(z.array(z.int()))),
+    direction: z._default(
+      V1AdminListHiddenAccountsRequestBodyDirection$outboundSchema,
+      "desc",
+    ),
+    kind: z._default(
+      V1AdminListHiddenAccountsRequestBodyKind$outboundSchema,
+      "all",
+    ),
+    limit: z._default(z.int(), 50),
+    page: z._default(z.int(), 1),
+  })
+);
 
 export function v1AdminListHiddenAccountsRequestBodyToJSON(
   v1AdminListHiddenAccountsRequestBody: V1AdminListHiddenAccountsRequestBody,

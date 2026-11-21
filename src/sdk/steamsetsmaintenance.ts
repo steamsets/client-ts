@@ -5,6 +5,7 @@
 import { adminMaintenanceCreate } from "../funcs/adminMaintenanceCreate.js";
 import { adminMaintenanceDelete } from "../funcs/adminMaintenanceDelete.js";
 import { adminMaintenanceList } from "../funcs/adminMaintenanceList.js";
+import { adminMaintenanceListAudit } from "../funcs/adminMaintenanceListAudit.js";
 import { adminMaintenanceUpdate } from "../funcs/adminMaintenanceUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
@@ -27,7 +28,7 @@ export class SteamSetsMaintenance extends ClientSDK {
   }
 
   /**
-   * Hard-delete a maintenance event
+   * Hard-delete a maintenance event or an announcement
    */
   async delete(
     request: components.DeleteRequestBody,
@@ -44,10 +45,26 @@ export class SteamSetsMaintenance extends ClientSDK {
    * Admin: list every maintenance event including disabled and scheduled
    */
   async list(
+    request?: components.AdminMaintenanceListRequestBody | undefined,
     options?: RequestOptions,
   ): Promise<operations.AdminMaintenanceListResponse> {
     return unwrapAsync(adminMaintenanceList(
       this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Admin: the audit log of maintenance events and announcements, newest first
+   */
+  async listAudit(
+    request: components.AdminMaintenanceListAuditRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminMaintenanceListAuditResponse> {
+    return unwrapAsync(adminMaintenanceListAudit(
+      this,
+      request,
       options,
     ));
   }

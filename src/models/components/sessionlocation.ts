@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -30,12 +30,14 @@ export type SessionLocation = {
 export const SessionLocation$inboundSchema: z.ZodMiniType<
   SessionLocation,
   unknown
-> = z.object({
-  city: z.optional(z.string()),
-  countryCode: z.optional(z.string()),
-  countryName: z.optional(z.string()),
-  region: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    city: z.optional(z.string()),
+    countryCode: z.optional(z.string()),
+    countryName: z.optional(z.string()),
+    region: z.optional(z.string()),
+  })
+);
 
 export function sessionLocationFromJSON(
   jsonString: string,

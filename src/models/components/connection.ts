@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -65,20 +65,24 @@ export type Connection = {
 export const ConnectionProvider$inboundSchema: z.ZodMiniType<
   ConnectionProvider,
   unknown
-> = openEnums.inboundSchema(ConnectionProvider);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ConnectionProvider)
+);
 
 /** @internal */
-export const Connection$inboundSchema: z.ZodMiniType<Connection, unknown> = z
-  .object({
-    avatar: z.string(),
-    connectionId: z.string(),
-    externalId: z.string(),
-    failed: z.boolean(),
-    hide: z.boolean(),
-    name: z.string(),
-    provider: ConnectionProvider$inboundSchema,
-    verified: z.boolean(),
-  });
+export const Connection$inboundSchema: z.ZodMiniType<Connection, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      avatar: z.string(),
+      connectionId: z.string(),
+      externalId: z.string(),
+      failed: z.boolean(),
+      hide: z.boolean(),
+      name: z.string(),
+      provider: ConnectionProvider$inboundSchema,
+      verified: z.boolean(),
+    })
+  );
 
 export function connectionFromJSON(
   jsonString: string,

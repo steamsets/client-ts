@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -23,19 +23,21 @@ export type BadgeReviseTagReviewResponse = {
 export const BadgeReviseTagReviewResponse$inboundSchema: z.ZodMiniType<
   BadgeReviseTagReviewResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    BadgeReviseTagReviewResponseBody: z.optional(
-      components.BadgeReviseTagReviewResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "BadgeReviseTagReviewResponseBody": "badgeReviseTagReviewResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      BadgeReviseTagReviewResponseBody: z.optional(
+        components.BadgeReviseTagReviewResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "BadgeReviseTagReviewResponseBody": "badgeReviseTagReviewResponseBody",
+      });
+    }),
+  )
 );
 
 export function badgeReviseTagReviewResponseFromJSON(

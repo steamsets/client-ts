@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -17,10 +17,6 @@ import {
 
 export type V1AdminUser = {
   account: LeaderboardAccount | null;
-  /**
-   * The account id
-   */
-  accountId: number;
   /**
    * Whether the account is hidden site-wide. A restriction always forces this on
    */
@@ -37,20 +33,21 @@ export type V1AdminUser = {
 };
 
 /** @internal */
-export const V1AdminUser$inboundSchema: z.ZodMiniType<V1AdminUser, unknown> = z
-  .object({
-    account: z.nullable(LeaderboardAccount$inboundSchema),
-    accountId: z.int(),
-    hidden: z.boolean(),
-    lastSeenAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    restriction: z.nullable(V1AdminUserRestriction$inboundSchema),
-    signedUpAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-  });
+export const V1AdminUser$inboundSchema: z.ZodMiniType<V1AdminUser, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      account: z.nullable(LeaderboardAccount$inboundSchema),
+      hidden: z.boolean(),
+      lastSeenAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      restriction: z.nullable(V1AdminUserRestriction$inboundSchema),
+      signedUpAt: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+    })
+  );
 
 export function v1AdminUserFromJSON(
   jsonString: string,

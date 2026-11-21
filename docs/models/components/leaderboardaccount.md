@@ -28,6 +28,7 @@ let value: LeaderboardAccount = {
   foilBadges: 123456,
   friends: 123456,
   gameBans: 748882,
+  isHidden: false,
   level: 123456,
   miniBackground: "<value>",
   name: "steamsets",
@@ -45,15 +46,16 @@ let value: LeaderboardAccount = {
     name: "Baden-Wurttemberg",
   },
   steamId: "76561198842603734",
-  steamSetsScore: 835117,
+  steamSetsScore: 719219,
   steamSetsVanity: "steamsets",
   steamVanity: "steamsets",
   supporter: {
     active: true,
     months: 3,
+    streak: 0,
   },
   themeColor: "#FF5733",
-  vacBans: 719219,
+  vacBans: 508389,
   xp: 123456,
 };
 ```
@@ -79,6 +81,7 @@ let value: LeaderboardAccount = {
 | `foilBadges`                                                                                                        | *number*                                                                                                            | :heavy_check_mark:                                                                                                  | The number of foil badges the account has                                                                           | 123456                                                                                                              |
 | `friends`                                                                                                           | *number*                                                                                                            | :heavy_check_mark:                                                                                                  | The number of friends the account has                                                                               | 123456                                                                                                              |
 | `gameBans`                                                                                                          | *number*                                                                                                            | :heavy_check_mark:                                                                                                  | The number of game bans                                                                                             |                                                                                                                     |
+| `isHidden`                                                                                                          | *boolean*                                                                                                           | :heavy_check_mark:                                                                                                  | The account is hidden. Every other field is blank.                                                                  |                                                                                                                     |
 | `level`                                                                                                             | *number*                                                                                                            | :heavy_check_mark:                                                                                                  | The level of the account                                                                                            | 123456                                                                                                              |
 | `miniBackground`                                                                                                    | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The mini background of the account                                                                                  |                                                                                                                     |
 | `name`                                                                                                              | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | The name of the account                                                                                             | steamsets                                                                                                           |

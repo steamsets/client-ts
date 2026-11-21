@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountDeleteSessionRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AccountDeleteSessionRequestBody$Outbound = {
 export const V1AccountDeleteSessionRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountDeleteSessionRequestBody$Outbound,
   V1AccountDeleteSessionRequestBody
-> = z.object({
-  sessionId: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    sessionId: z.string(),
+  })
+);
 
 export function v1AccountDeleteSessionRequestBodyToJSON(
   v1AccountDeleteSessionRequestBody: V1AccountDeleteSessionRequestBody,

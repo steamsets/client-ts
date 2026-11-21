@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -21,21 +21,25 @@ export type LeaderboardGetGroupLeaderboardResponse = {
 
 /** @internal */
 export const LeaderboardGetGroupLeaderboardResponse$inboundSchema:
-  z.ZodMiniType<LeaderboardGetGroupLeaderboardResponse, unknown> = z.pipe(
-    z.object({
-      HttpMeta: components.HTTPMetadata$inboundSchema,
-      V1LeaderboardGetGroupLeaderboardResponseBody: z.optional(
-        components.V1LeaderboardGetGroupLeaderboardResponseBody$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "HttpMeta": "httpMeta",
-        "V1LeaderboardGetGroupLeaderboardResponseBody":
-          "v1LeaderboardGetGroupLeaderboardResponseBody",
-      });
-    }),
-  );
+  z.ZodMiniType<LeaderboardGetGroupLeaderboardResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          HttpMeta: components.HTTPMetadata$inboundSchema,
+          V1LeaderboardGetGroupLeaderboardResponseBody: z.optional(
+            components
+              .V1LeaderboardGetGroupLeaderboardResponseBody$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "HttpMeta": "httpMeta",
+            "V1LeaderboardGetGroupLeaderboardResponseBody":
+              "v1LeaderboardGetGroupLeaderboardResponseBody",
+          });
+        }),
+      )
+    );
 
 export function leaderboardGetGroupLeaderboardResponseFromJSON(
   jsonString: string,
