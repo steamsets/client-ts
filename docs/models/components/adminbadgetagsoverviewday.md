@@ -1,0 +1,24 @@
+# AdminBadgeTagsOverviewDay
+
+## Example Usage
+
+```typescript
+import { AdminBadgeTagsOverviewDay } from "@steamsets/client-ts/models/components";
+import { RFCDate } from "@steamsets/client-ts/types";
+
+let value: AdminBadgeTagsOverviewDay = {
+  date: new RFCDate("2026-11-19"),
+  reviews: 926698,
+  skips: 465435,
+  source: "approximate",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                       | Type                                                                                                                                        | Required                                                                                                                                    | Description                                                                                                                                 | Example                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `date`                                                                                                                                      | [RFCDate](../../types/rfcdate.md)                                                                                                           | :heavy_check_mark:                                                                                                                          | N/A                                                                                                                                         | 2026-11-19                                                                                                                                  |
+| `reviews`                                                                                                                                   | *number*                                                                                                                                    | :heavy_check_mark:                                                                                                                          | N/A                                                                                                                                         |                                                                                                                                             |
+| `skips`                                                                                                                                     | *number*                                                                                                                                    | :heavy_check_mark:                                                                                                                          | N/A                                                                                                                                         |                                                                                                                                             |
+| `source`                                                                                                                                    | [components.AdminBadgeTagsOverviewDaySource](../../models/components/adminbadgetagsoverviewdaysource.md)                                    | :heavy_check_mark:                                                                                                                          | log: counted from the review log. approximate: before the log, counted from the queue's reviewed_at, which a revision moves to its own day. |                                                                                                                                             |

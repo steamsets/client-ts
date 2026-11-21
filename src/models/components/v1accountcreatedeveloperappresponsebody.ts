@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,17 +21,20 @@ export type V1AccountCreateDeveloperAppResponseBody = {
 
 /** @internal */
 export const V1AccountCreateDeveloperAppResponseBody$inboundSchema:
-  z.ZodMiniType<V1AccountCreateDeveloperAppResponseBody, unknown> = z.pipe(
-    z.object({
-      $schema: z.optional(z.string()),
-      apiKey: z.nullable(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "$schema": "dollarSchema",
-      });
-    }),
-  );
+  z.ZodMiniType<V1AccountCreateDeveloperAppResponseBody, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          $schema: z.optional(z.string()),
+          apiKey: z.nullable(z.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "$schema": "dollarSchema",
+          });
+        }),
+      )
+    );
 
 export function v1AccountCreateDeveloperAppResponseBodyFromJSON(
   jsonString: string,

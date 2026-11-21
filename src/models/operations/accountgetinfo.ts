@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -38,21 +38,23 @@ export type AccountGetInfoRequest$Outbound = {
 export const AccountGetInfoRequest$outboundSchema: z.ZodMiniType<
   AccountGetInfoRequest$Outbound,
   AccountGetInfoRequest
-> = z.pipe(
-  z.object({
-    xForwardedFor: z.optional(z.string()),
-    userAgent: z.optional(z.string()),
-    xVisitorId: z.optional(z.string()),
-    accountSearch: components.AccountSearch$outboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      xForwardedFor: "X-Forwarded-For",
-      userAgent: "User-Agent",
-      xVisitorId: "X-Visitor-Id",
-      accountSearch: "AccountSearch",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      xForwardedFor: z.optional(z.string()),
+      userAgent: z.optional(z.string()),
+      xVisitorId: z.optional(z.string()),
+      accountSearch: components.AccountSearch$outboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        xForwardedFor: "X-Forwarded-For",
+        userAgent: "User-Agent",
+        xVisitorId: "X-Visitor-Id",
+        accountSearch: "AccountSearch",
+      });
+    }),
+  )
 );
 
 export function accountGetInfoRequestToJSON(
@@ -67,19 +69,21 @@ export function accountGetInfoRequestToJSON(
 export const AccountGetInfoResponse$inboundSchema: z.ZodMiniType<
   AccountGetInfoResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1AccountGetInfoResponseBody: z.optional(
-      components.V1AccountGetInfoResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1AccountGetInfoResponseBody": "v1AccountGetInfoResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1AccountGetInfoResponseBody: z.optional(
+        components.V1AccountGetInfoResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1AccountGetInfoResponseBody": "v1AccountGetInfoResponseBody",
+      });
+    }),
+  )
 );
 
 export function accountGetInfoResponseFromJSON(

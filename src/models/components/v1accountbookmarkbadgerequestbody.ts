@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountBookmarkBadgeRequestBody = {
   /**
@@ -25,10 +26,12 @@ export type V1AccountBookmarkBadgeRequestBody$Outbound = {
 export const V1AccountBookmarkBadgeRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountBookmarkBadgeRequestBody$Outbound,
   V1AccountBookmarkBadgeRequestBody
-> = z.object({
-  badgeId: z.string(),
-  bookmark: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    badgeId: z.string(),
+    bookmark: z.boolean(),
+  })
+);
 
 export function v1AccountBookmarkBadgeRequestBodyToJSON(
   v1AccountBookmarkBadgeRequestBody: V1AccountBookmarkBadgeRequestBody,

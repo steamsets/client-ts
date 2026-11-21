@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1LeaderboardLocation = {
   /**
@@ -35,12 +36,14 @@ export type V1LeaderboardLocation$Outbound = {
 export const V1LeaderboardLocation$outboundSchema: z.ZodMiniType<
   V1LeaderboardLocation$Outbound,
   V1LeaderboardLocation
-> = z.object({
-  city: z.optional(z.nullable(z.string())),
-  country: z.optional(z.nullable(z.string())),
-  region: z.optional(z.nullable(z.string())),
-  state: z.optional(z.nullable(z.string())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    city: z.optional(z.nullable(z.string())),
+    country: z.optional(z.nullable(z.string())),
+    region: z.optional(z.nullable(z.string())),
+    state: z.optional(z.nullable(z.string())),
+  })
+);
 
 export function v1LeaderboardLocationToJSON(
   v1LeaderboardLocation: V1LeaderboardLocation,

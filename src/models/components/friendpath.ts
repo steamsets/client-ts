@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,11 +23,13 @@ export type FriendPath = {
 };
 
 /** @internal */
-export const FriendPath$inboundSchema: z.ZodMiniType<FriendPath, unknown> = z
-  .object({
-    distance: z.int(),
-    path: z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
-  });
+export const FriendPath$inboundSchema: z.ZodMiniType<FriendPath, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      distance: z.int(),
+      path: z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
+    })
+  );
 
 export function friendPathFromJSON(
   jsonString: string,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AdminTestSteamApiKeyRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AdminTestSteamApiKeyRequestBody$Outbound = {
 export const V1AdminTestSteamApiKeyRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminTestSteamApiKeyRequestBody$Outbound,
   V1AdminTestSteamApiKeyRequestBody
-> = z.object({
-  keyId: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    keyId: z.string(),
+  })
+);
 
 export function v1AdminTestSteamApiKeyRequestBodyToJSON(
   v1AdminTestSteamApiKeyRequestBody: V1AdminTestSteamApiKeyRequestBody,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as components from "../components/index.js";
 import { SteamSetsError } from "./steamsetserror.js";
 
@@ -93,31 +94,33 @@ export class ErrorModel extends SteamSetsError {
 }
 
 /** @internal */
-export const ErrorModel$inboundSchema: z.ZodMiniType<ErrorModel, unknown> = z
-  .pipe(
-    z.object({
-      $schema: z.optional(z.string()),
-      detail: z.optional(z.string()),
-      errors: z.optional(
-        z.nullable(z.array(components.ErrorDetail$inboundSchema)),
-      ),
-      instance: z.optional(z.string()),
-      status: z.optional(z.int()),
-      title: z.optional(z.string()),
-      type: z._default(z.string(), "about:blank"),
-      request$: z.custom<Request>(x => x instanceof Request),
-      response$: z.custom<Response>(x => x instanceof Response),
-      body$: z.string(),
-    }),
-    z.transform((v) => {
-      const remapped = remap$(v, {
-        "$schema": "dollarSchema",
-      });
+export const ErrorModel$inboundSchema: z.ZodMiniType<ErrorModel, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        $schema: z.optional(z.string()),
+        detail: z.optional(z.string()),
+        errors: z.optional(
+          z.nullable(z.array(components.ErrorDetail$inboundSchema)),
+        ),
+        instance: z.optional(z.string()),
+        status: z.optional(z.int()),
+        title: z.optional(z.string()),
+        type: z._default(z.string(), "about:blank"),
+        request$: z.custom<Request>(x => x instanceof Request),
+        response$: z.custom<Response>(x => x instanceof Response),
+        body$: z.string(),
+      }),
+      z.transform((v) => {
+        const remapped = remap$(v, {
+          "$schema": "dollarSchema",
+        });
 
-      return new ErrorModel(remapped, {
-        request: v.request$,
-        response: v.response$,
-        body: v.body$,
-      });
-    }),
+        return new ErrorModel(remapped, {
+          request: v.request$,
+          response: v.response$,
+          body: v.body$,
+        });
+      }),
+    )
   );

@@ -1,0 +1,34 @@
+# Announcement
+
+## Example Usage
+
+```typescript
+import { Announcement } from "@steamsets/client-ts/models/components";
+
+let value: Announcement = {
+  dollarSchema: "https://api.steamsets.com/schemas/Announcement.json",
+  createdAt: new Date("2024-02-13T03:09:46.506Z"),
+  enabled: true,
+  level: "info",
+  product: "steamsets",
+  text: "<value>",
+  uid: "<id>",
+  updatedAt: new Date("2025-09-14T03:24:27.034Z"),
+};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `dollarSchema`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | A URL to the JSON Schema for this object.                                                     | https://api.steamsets.com/schemas/Announcement.json                                           |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |
+| `createdBy`                                                                                   | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |
+| `enabled`                                                                                     | *boolean*                                                                                     | :heavy_check_mark:                                                                            | Whether the toggle itself is on                                                               |                                                                                               |
+| `endsAt`                                                                                      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Optional scheduled end                                                                        |                                                                                               |
+| `level`                                                                                       | [components.AnnouncementLevel](../../models/components/announcementlevel.md)                  | :heavy_check_mark:                                                                            | How the banner looks                                                                          |                                                                                               |
+| `product`                                                                                     | [components.AnnouncementProduct](../../models/components/announcementproduct.md)              | :heavy_check_mark:                                                                            | The product that shows it                                                                     |                                                                                               |
+| `startsAt`                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Optional scheduled start                                                                      |                                                                                               |
+| `text`                                                                                        | *string*                                                                                      | :heavy_check_mark:                                                                            | The banner text, at most 280 characters                                                       |                                                                                               |
+| `uid`                                                                                         | *string*                                                                                      | :heavy_check_mark:                                                                            | Public announcement ID                                                                        |                                                                                               |
+| `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_check_mark:                                                                            | N/A                                                                                           |                                                                                               |

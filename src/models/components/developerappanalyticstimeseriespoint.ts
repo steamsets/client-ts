@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,11 +26,16 @@ export type DeveloperAppAnalyticsTimeSeriesPoint = {
 export const DeveloperAppAnalyticsTimeSeriesPoint$inboundSchema: z.ZodMiniType<
   DeveloperAppAnalyticsTimeSeriesPoint,
   unknown
-> = z.object({
-  count: z.int(),
-  outcome: z.string(),
-  time: z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    count: z.int(),
+    outcome: z.string(),
+    time: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function developerAppAnalyticsTimeSeriesPointFromJSON(
   jsonString: string,

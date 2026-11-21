@@ -3,13 +3,22 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type DeleteRequestBody = {
+  /**
+   * Why, for the audit log
+   */
+  reason?: string | undefined;
+  /**
+   * A maintenance event or an announcement
+   */
   uid: string;
 };
 
 /** @internal */
 export type DeleteRequestBody$Outbound = {
+  reason?: string | undefined;
   uid: string;
 };
 
@@ -17,9 +26,12 @@ export type DeleteRequestBody$Outbound = {
 export const DeleteRequestBody$outboundSchema: z.ZodMiniType<
   DeleteRequestBody$Outbound,
   DeleteRequestBody
-> = z.object({
-  uid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    reason: z.optional(z.string()),
+    uid: z.string(),
+  })
+);
 
 export function deleteRequestBodyToJSON(
   deleteRequestBody: DeleteRequestBody,

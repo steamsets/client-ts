@@ -12,7 +12,10 @@ let value: AccountUpdateSettingsRequest = {
     hiddenReason: "People keep messaging me about my badges",
     language: "en",
     nameEffect: "rainbow",
+    supporterStreak: 10,
     themeColor: "#FF5733",
+    tradeUrl:
+      "https://steamcommunity.com/tradeoffer/new/?partner=1216167888&token=AbC12xyz",
     vanity: "flo",
   },
 };

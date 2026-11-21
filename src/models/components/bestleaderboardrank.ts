@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -50,16 +50,18 @@ export type BestLeaderboardRank = {
 
 /** @internal */
 export const Leaderboard$inboundSchema: z.ZodMiniType<Leaderboard, unknown> =
-  openEnums.inboundSchema(Leaderboard);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Leaderboard));
 
 /** @internal */
 export const BestLeaderboardRank$inboundSchema: z.ZodMiniType<
   BestLeaderboardRank,
   unknown
-> = z.object({
-  leaderboard: Leaderboard$inboundSchema,
-  ranks: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    leaderboard: Leaderboard$inboundSchema,
+    ranks: z.string(),
+  })
+);
 
 export function bestLeaderboardRankFromJSON(
   jsonString: string,

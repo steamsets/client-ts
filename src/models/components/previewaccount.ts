@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -36,15 +36,31 @@ import {
 export const PreviewAccountNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
+  DeathSmoke: "death_smoke",
+  StasikRose: "stasik_rose",
 } as const;
 /**
  * Donator name effect, none when unset or the account no longer holds an entitling role
@@ -134,6 +150,10 @@ export type PreviewAccount = {
    */
   gameBans: number;
   /**
+   * The account is hidden. Every other field is blank.
+   */
+  isHidden: boolean;
+  /**
    * The level of the account
    */
   level: number;
@@ -218,63 +238,70 @@ export type PreviewAccount = {
 export const PreviewAccountNameEffect$inboundSchema: z.ZodMiniType<
   PreviewAccountNameEffect,
   unknown
-> = openEnums.inboundSchema(PreviewAccountNameEffect);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PreviewAccountNameEffect)
+);
 
 /** @internal */
 export const PreviewAccountPrivacy$inboundSchema: z.ZodMiniType<
   PreviewAccountPrivacy,
   unknown
-> = openEnums.inboundSchema(PreviewAccountPrivacy);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PreviewAccountPrivacy)
+);
 
 /** @internal */
 export const PreviewAccount$inboundSchema: z.ZodMiniType<
   PreviewAccount,
   unknown
-> = z.object({
-  animatedAvatar: z.string(),
-  apps: z.int(),
-  avatar: z.string(),
-  avatarFrame: z.string(),
-  awardsGiven: z.int(),
-  awardsReceived: z.int(),
-  background: z.string(),
-  badges: z.int(),
-  bans: z.int(),
-  city: z.optional(z.nullable(LeaderboardCity$inboundSchema)),
-  country: z.optional(z.nullable(LeaderboardCountry$inboundSchema)),
-  createdAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  differenceToUs: z.int(),
-  donated: z.int(),
-  economyBan: z.string(),
-  foilBadges: z.int(),
-  friends: z.int(),
-  gameBans: z.int(),
-  level: z.int(),
-  miniBackground: z.string(),
-  name: z.string(),
-  nameEffect: PreviewAccountNameEffect$inboundSchema,
-  normalBadges: z.int(),
-  playtime: z.int(),
-  pointsGiven: z.int(),
-  pointsReceived: z.int(),
-  privacy: PreviewAccountPrivacy$inboundSchema,
-  rank: z.int(),
-  region: z.optional(z.nullable(LeaderboardRegion$inboundSchema)),
-  roles: z.nullable(z.array(Role$inboundSchema)),
-  score: z.int(),
-  state: z.optional(z.nullable(LeaderboardState$inboundSchema)),
-  steamId: z.string(),
-  steamSetsScore: z.int(),
-  steamSetsVanity: z.string(),
-  steamVanity: z.string(),
-  supporter: z.optional(SupporterStatus$inboundSchema),
-  themeColor: z.nullable(z.string()),
-  vacBans: z.int(),
-  xp: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    animatedAvatar: z.string(),
+    apps: z.int(),
+    avatar: z.string(),
+    avatarFrame: z.string(),
+    awardsGiven: z.int(),
+    awardsReceived: z.int(),
+    background: z.string(),
+    badges: z.int(),
+    bans: z.int(),
+    city: z.optional(z.nullable(LeaderboardCity$inboundSchema)),
+    country: z.optional(z.nullable(LeaderboardCountry$inboundSchema)),
+    createdAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    differenceToUs: z.int(),
+    donated: z.int(),
+    economyBan: z.string(),
+    foilBadges: z.int(),
+    friends: z.int(),
+    gameBans: z.int(),
+    isHidden: z.boolean(),
+    level: z.int(),
+    miniBackground: z.string(),
+    name: z.string(),
+    nameEffect: PreviewAccountNameEffect$inboundSchema,
+    normalBadges: z.int(),
+    playtime: z.int(),
+    pointsGiven: z.int(),
+    pointsReceived: z.int(),
+    privacy: PreviewAccountPrivacy$inboundSchema,
+    rank: z.int(),
+    region: z.optional(z.nullable(LeaderboardRegion$inboundSchema)),
+    roles: z.nullable(z.array(Role$inboundSchema)),
+    score: z.int(),
+    state: z.optional(z.nullable(LeaderboardState$inboundSchema)),
+    steamId: z.string(),
+    steamSetsScore: z.int(),
+    steamSetsVanity: z.string(),
+    steamVanity: z.string(),
+    supporter: z.optional(SupporterStatus$inboundSchema),
+    themeColor: z.nullable(z.string()),
+    vacBans: z.int(),
+    xp: z.int(),
+  })
+);
 
 export function previewAccountFromJSON(
   jsonString: string,

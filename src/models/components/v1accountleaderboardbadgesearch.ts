@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountLeaderboardBadgeSearch = {
   /**
@@ -25,10 +26,12 @@ export type V1AccountLeaderboardBadgeSearch$Outbound = {
 export const V1AccountLeaderboardBadgeSearch$outboundSchema: z.ZodMiniType<
   V1AccountLeaderboardBadgeSearch$Outbound,
   V1AccountLeaderboardBadgeSearch
-> = z.object({
-  id: z.int(),
-  isFoil: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.int(),
+    isFoil: z.boolean(),
+  })
+);
 
 export function v1AccountLeaderboardBadgeSearchToJSON(
   v1AccountLeaderboardBadgeSearch: V1AccountLeaderboardBadgeSearch,

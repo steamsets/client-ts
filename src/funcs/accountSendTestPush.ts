@@ -29,6 +29,8 @@ import { Result } from "../types/fp.js";
  *
  * @remarks
  * Sends a test notification to every push device of the account within about 20 seconds. One test a minute; a second request in the same minute sends nothing.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function accountSendTestPush(
   client: SteamSetsCore,
@@ -81,7 +83,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

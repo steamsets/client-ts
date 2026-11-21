@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -31,8 +32,8 @@ export type AccountGetTrendingRequestBody = {
 };
 
 /** @internal */
-export const Window$outboundSchema: z.ZodMiniType<string, Window> = openEnums
-  .outboundSchema(Window);
+export const Window$outboundSchema: z.ZodMiniType<string, Window> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Window));
 
 /** @internal */
 export type AccountGetTrendingRequestBody$Outbound = {
@@ -44,10 +45,12 @@ export type AccountGetTrendingRequestBody$Outbound = {
 export const AccountGetTrendingRequestBody$outboundSchema: z.ZodMiniType<
   AccountGetTrendingRequestBody$Outbound,
   AccountGetTrendingRequestBody
-> = z.object({
-  limit: z.optional(z.int()),
-  window: Window$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.optional(z.int()),
+    window: Window$outboundSchema,
+  })
+);
 
 export function accountGetTrendingRequestBodyToJSON(
   accountGetTrendingRequestBody: AccountGetTrendingRequestBody,

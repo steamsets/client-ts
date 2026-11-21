@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountUpdateVanityRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AccountUpdateVanityRequestBody$Outbound = {
 export const V1AccountUpdateVanityRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountUpdateVanityRequestBody$Outbound,
   V1AccountUpdateVanityRequestBody
-> = z.object({
-  vanity: z.optional(z.nullable(z.string())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    vanity: z.optional(z.nullable(z.string())),
+  })
+);
 
 export function v1AccountUpdateVanityRequestBodyToJSON(
   v1AccountUpdateVanityRequestBody: V1AccountUpdateVanityRequestBody,

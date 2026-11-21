@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -59,8 +60,10 @@ export type V1LeaderboardPreviewAccountRankRequestBody = {
 /** @internal */
 export const V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema:
   z.ZodMiniType<string, V1LeaderboardPreviewAccountRankRequestBodyLeaderboard> =
-    openEnums.outboundSchema(
-      V1LeaderboardPreviewAccountRankRequestBodyLeaderboard,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(
+        V1LeaderboardPreviewAccountRankRequestBodyLeaderboard,
+      )
     );
 
 /** @internal */
@@ -76,13 +79,15 @@ export const V1LeaderboardPreviewAccountRankRequestBody$outboundSchema:
   z.ZodMiniType<
     V1LeaderboardPreviewAccountRankRequestBody$Outbound,
     V1LeaderboardPreviewAccountRankRequestBody
-  > = z.object({
-    id: z.optional(IDSearch$outboundSchema),
-    leaderboard:
-      V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema,
-    value: z.optional(z.nullable(z.int())),
-    vanity: z.optional(VanitySearch$outboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(IDSearch$outboundSchema),
+      leaderboard:
+        V1LeaderboardPreviewAccountRankRequestBodyLeaderboard$outboundSchema,
+      value: z.optional(z.nullable(z.int())),
+      vanity: z.optional(VanitySearch$outboundSchema),
+    })
+  );
 
 export function v1LeaderboardPreviewAccountRankRequestBodyToJSON(
   v1LeaderboardPreviewAccountRankRequestBody:

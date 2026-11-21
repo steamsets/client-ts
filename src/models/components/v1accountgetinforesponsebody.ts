@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -35,6 +35,15 @@ import {
   LeaderboardState$inboundSchema,
 } from "./leaderboardstate.js";
 import { Role, Role$inboundSchema } from "./role.js";
+import { SteamLevel, SteamLevel$inboundSchema } from "./steamlevel.js";
+import {
+  SteamProfileCustomization,
+  SteamProfileCustomization$inboundSchema,
+} from "./steamprofilecustomization.js";
+import {
+  SteamSetsScoreParts,
+  SteamSetsScoreParts$inboundSchema,
+} from "./steamsetsscoreparts.js";
 import {
   SupporterStatus,
   SupporterStatus$inboundSchema,
@@ -80,15 +89,31 @@ export type LastQueueStatus = OpenEnum<typeof LastQueueStatus>;
 export const V1AccountGetInfoResponseBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  StaffScan: "staff_scan",
+  DeveloperScan: "developer_scan",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
+  DeathSmoke: "death_smoke",
+  StasikRose: "stasik_rose",
 } as const;
 /**
  * Donator name effect, none when unset or the account no longer holds an entitling role
@@ -208,6 +233,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   gameBans: number;
   /**
+   * The account is hidden. Every other field is blank.
+   */
+  isHidden: boolean;
+  /**
    * The Last date the account got a ban on
    */
   lastBanDate: Date | null;
@@ -237,6 +266,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   normalBadges: number;
   /**
+   * The unix second the profile share video was last rendered. Null when the account has no video. The video is at https://static.steamsets.com/og/profiles/{steamId}.mp4?v={ogVideoRenderedAt}
+   */
+  ogVideoRenderedAt: number | null;
+  /**
    * The playtime of the account
    */
   playtime: number;
@@ -258,6 +291,10 @@ export type V1AccountGetInfoResponseBody = {
    */
   roles: Array<Role> | null;
   /**
+   * Whether this profile has the share card and og video perk
+   */
+  sharePerk: boolean;
+  /**
    * The shortlink domain of the account, is to be used with their steamsets vanity
    */
   shortlinkDomain: string | null;
@@ -266,10 +303,13 @@ export type V1AccountGetInfoResponseBody = {
    * The steam id
    */
   steamId: string;
+  steamLevel?: SteamLevel | undefined;
+  steamProfile?: SteamProfileCustomization | null | undefined;
   /**
    * The steam sets score
    */
   steamSetsScore: number;
+  steamSetsScoreParts: SteamSetsScoreParts;
   /**
    * The vanity of the account
    */
@@ -303,103 +343,117 @@ export type V1AccountGetInfoResponseBody = {
 
 /** @internal */
 export const AppPrivacy$inboundSchema: z.ZodMiniType<AppPrivacy, unknown> =
-  openEnums.inboundSchema(AppPrivacy);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AppPrivacy));
 
 /** @internal */
 export const FriendPrivacy$inboundSchema: z.ZodMiniType<
   FriendPrivacy,
   unknown
-> = openEnums.inboundSchema(FriendPrivacy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FriendPrivacy));
 
 /** @internal */
 export const LastQueueStatus$inboundSchema: z.ZodMiniType<
   LastQueueStatus,
   unknown
-> = openEnums.inboundSchema(LastQueueStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LastQueueStatus));
 
 /** @internal */
 export const V1AccountGetInfoResponseBodyNameEffect$inboundSchema:
-  z.ZodMiniType<V1AccountGetInfoResponseBodyNameEffect, unknown> = openEnums
-    .inboundSchema(V1AccountGetInfoResponseBodyNameEffect);
+  z.ZodMiniType<V1AccountGetInfoResponseBodyNameEffect, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(V1AccountGetInfoResponseBodyNameEffect)
+    );
 
 /** @internal */
 export const V1AccountGetInfoResponseBodyPrivacy$inboundSchema: z.ZodMiniType<
   V1AccountGetInfoResponseBodyPrivacy,
   unknown
-> = openEnums.inboundSchema(V1AccountGetInfoResponseBodyPrivacy);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AccountGetInfoResponseBodyPrivacy)
+);
 
 /** @internal */
 export const V1AccountGetInfoResponseBody$inboundSchema: z.ZodMiniType<
   V1AccountGetInfoResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    accountId: z.int(),
-    animatedAvatar: z.string(),
-    appPrivacy: AppPrivacy$inboundSchema,
-    apps: z.int(),
-    avatar: z.string(),
-    avatarFrame: z.string(),
-    awardsGiven: z.int(),
-    awardsReceived: z.int(),
-    background: z.string(),
-    badges: z.int(),
-    bans: z.int(),
-    city: z.optional(z.nullable(LeaderboardCity$inboundSchema)),
-    communityBan: z.boolean(),
-    connections: z.nullable(z.array(Connection$inboundSchema)),
-    country: z.optional(z.nullable(LeaderboardCountry$inboundSchema)),
-    createdAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    currentBestRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
-    currentRanks: z.nullable(z.array(CurrentLeaderboardRank$inboundSchema)),
-    donated: z.int(),
-    economyBan: z.string(),
-    foilBadges: z.int(),
-    friendPrivacy: FriendPrivacy$inboundSchema,
-    friends: z.int(),
-    gameBans: z.int(),
-    lastBanDate: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    lastQueueStatus: LastQueueStatus$inboundSchema,
-    level: z.int(),
-    miniBackground: z.string(),
-    name: z.string(),
-    nameEffect: V1AccountGetInfoResponseBodyNameEffect$inboundSchema,
-    nextAllowedTime: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    normalBadges: z.int(),
-    playtime: z.int(),
-    pointsGiven: z.int(),
-    pointsReceived: z.int(),
-    privacy: V1AccountGetInfoResponseBodyPrivacy$inboundSchema,
-    region: z.optional(z.nullable(LeaderboardRegion$inboundSchema)),
-    roles: z.nullable(z.array(Role$inboundSchema)),
-    shortlinkDomain: z.nullable(z.string()),
-    state: z.optional(z.nullable(LeaderboardState$inboundSchema)),
-    steamId: z.string(),
-    steamSetsScore: z.int(),
-    steamSetsVanity: z.string(),
-    steamVanity: z.string(),
-    supporter: SupporterStatus$inboundSchema,
-    theme: z.string(),
-    themeColor: z.nullable(z.string()),
-    updatedAt: z.nullable(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    vacBans: z.int(),
-    xp: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      accountId: z.int(),
+      animatedAvatar: z.string(),
+      appPrivacy: AppPrivacy$inboundSchema,
+      apps: z.int(),
+      avatar: z.string(),
+      avatarFrame: z.string(),
+      awardsGiven: z.int(),
+      awardsReceived: z.int(),
+      background: z.string(),
+      badges: z.int(),
+      bans: z.int(),
+      city: z.optional(z.nullable(LeaderboardCity$inboundSchema)),
+      communityBan: z.boolean(),
+      connections: z.nullable(z.array(Connection$inboundSchema)),
+      country: z.optional(z.nullable(LeaderboardCountry$inboundSchema)),
+      createdAt: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      currentBestRanks: z.nullable(z.array(BestLeaderboardRank$inboundSchema)),
+      currentRanks: z.nullable(z.array(CurrentLeaderboardRank$inboundSchema)),
+      donated: z.int(),
+      economyBan: z.string(),
+      foilBadges: z.int(),
+      friendPrivacy: FriendPrivacy$inboundSchema,
+      friends: z.int(),
+      gameBans: z.int(),
+      isHidden: z.boolean(),
+      lastBanDate: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      lastQueueStatus: LastQueueStatus$inboundSchema,
+      level: z.int(),
+      miniBackground: z.string(),
+      name: z.string(),
+      nameEffect: V1AccountGetInfoResponseBodyNameEffect$inboundSchema,
+      nextAllowedTime: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      normalBadges: z.int(),
+      ogVideoRenderedAt: z.nullable(z.int()),
+      playtime: z.int(),
+      pointsGiven: z.int(),
+      pointsReceived: z.int(),
+      privacy: V1AccountGetInfoResponseBodyPrivacy$inboundSchema,
+      region: z.optional(z.nullable(LeaderboardRegion$inboundSchema)),
+      roles: z.nullable(z.array(Role$inboundSchema)),
+      sharePerk: z.boolean(),
+      shortlinkDomain: z.nullable(z.string()),
+      state: z.optional(z.nullable(LeaderboardState$inboundSchema)),
+      steamId: z.string(),
+      steamLevel: z.optional(SteamLevel$inboundSchema),
+      steamProfile: z.optional(
+        z.nullable(SteamProfileCustomization$inboundSchema),
+      ),
+      steamSetsScore: z.int(),
+      steamSetsScoreParts: SteamSetsScoreParts$inboundSchema,
+      steamSetsVanity: z.string(),
+      steamVanity: z.string(),
+      supporter: SupporterStatus$inboundSchema,
+      theme: z.string(),
+      themeColor: z.nullable(z.string()),
+      updatedAt: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      vacBans: z.int(),
+      xp: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountGetInfoResponseBodyFromJSON(

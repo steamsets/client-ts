@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type Range = {
   /**
@@ -22,11 +23,13 @@ export type Range$Outbound = {
 };
 
 /** @internal */
-export const Range$outboundSchema: z.ZodMiniType<Range$Outbound, Range> = z
-  .object({
-    max: z.optional(z.int()),
-    min: z.optional(z.int()),
-  });
+export const Range$outboundSchema: z.ZodMiniType<Range$Outbound, Range> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      max: z.optional(z.int()),
+      min: z.optional(z.int()),
+    })
+  );
 
 export function rangeToJSON(range: Range): string {
   return JSON.stringify(Range$outboundSchema.parse(range));

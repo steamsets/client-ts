@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -30,15 +30,17 @@ export type PacksOpenRequest$Outbound = {
 export const PacksOpenRequest$outboundSchema: z.ZodMiniType<
   PacksOpenRequest$Outbound,
   PacksOpenRequest
-> = z.pipe(
-  z.object({
-    userAgent: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      userAgent: "User-Agent",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      userAgent: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        userAgent: "User-Agent",
+      });
+    }),
+  )
 );
 
 export function packsOpenRequestToJSON(
@@ -53,19 +55,21 @@ export function packsOpenRequestToJSON(
 export const PacksOpenResponse$inboundSchema: z.ZodMiniType<
   PacksOpenResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1PacksOpenResponseBody: z.optional(
-      components.V1PacksOpenResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1PacksOpenResponseBody": "v1PacksOpenResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1PacksOpenResponseBody: z.optional(
+        components.V1PacksOpenResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1PacksOpenResponseBody": "v1PacksOpenResponseBody",
+      });
+    }),
+  )
 );
 
 export function packsOpenResponseFromJSON(

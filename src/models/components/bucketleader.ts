@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -35,15 +35,17 @@ export type BucketLeader = {
 
 /** @internal */
 export const BucketLeader$inboundSchema: z.ZodMiniType<BucketLeader, unknown> =
-  z.object({
-    account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-    empty: z.boolean(),
-    from: z.int(),
-    open: z.boolean(),
-    rank: z.optional(z.int()),
-    score: z.optional(z.int()),
-    to: z.int(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
+      empty: z.boolean(),
+      from: z.int(),
+      open: z.boolean(),
+      rank: z.optional(z.int()),
+      score: z.optional(z.int()),
+      to: z.int(),
+    })
+  );
 
 export function bucketLeaderFromJSON(
   jsonString: string,

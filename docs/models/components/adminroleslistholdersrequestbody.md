@@ -1,0 +1,23 @@
+# AdminRolesListHoldersRequestBody
+
+## Example Usage
+
+```typescript
+import { AdminRolesListHoldersRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminRolesListHoldersRequestBody = {
+  accountIds: [
+    1216167888,
+  ],
+  role: "staff",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          | Example                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `accountIds`                                                                                                                         | *number*[]                                                                                                                           | :heavy_minus_sign:                                                                                                                   | Only these accounts, at most 100. The admin turns a name, vanity or SteamID64 search into account ids. Total then counts the matches | [<br/>1216167888<br/>]                                                                                                               |
+| `limit`                                                                                                                              | *number*                                                                                                                             | :heavy_minus_sign:                                                                                                                   | Rows per page                                                                                                                        | 50                                                                                                                                   |
+| `page`                                                                                                                               | *number*                                                                                                                             | :heavy_minus_sign:                                                                                                                   | 1-based page number                                                                                                                  | 1                                                                                                                                    |
+| `role`                                                                                                                               | *string*                                                                                                                             | :heavy_check_mark:                                                                                                                   | The role slug                                                                                                                        | staff                                                                                                                                |

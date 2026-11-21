@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -73,27 +73,31 @@ export type V1GroupLeaderboardGroup = {
 export const V1GroupLeaderboardGroupPrivacy$inboundSchema: z.ZodMiniType<
   V1GroupLeaderboardGroupPrivacy,
   unknown
-> = openEnums.inboundSchema(V1GroupLeaderboardGroupPrivacy);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1GroupLeaderboardGroupPrivacy)
+);
 
 /** @internal */
 export const V1GroupLeaderboardGroup$inboundSchema: z.ZodMiniType<
   V1GroupLeaderboardGroup,
   unknown
-> = z.object({
-  avatar: z.string(),
-  foundedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  id: z.int(),
-  members: z.int(),
-  name: z.string(),
-  owner: z.nullable(LeaderboardAccount$inboundSchema),
-  privacy: V1GroupLeaderboardGroupPrivacy$inboundSchema,
-  rank: z.int(),
-  tag: z.string(),
-  vanity: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avatar: z.string(),
+    foundedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    id: z.int(),
+    members: z.int(),
+    name: z.string(),
+    owner: z.nullable(LeaderboardAccount$inboundSchema),
+    privacy: V1GroupLeaderboardGroupPrivacy$inboundSchema,
+    rank: z.int(),
+    tag: z.string(),
+    vanity: z.string(),
+  })
+);
 
 export function v1GroupLeaderboardGroupFromJSON(
   jsonString: string,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   IDSearch,
   IDSearch$Outbound,
@@ -47,14 +48,16 @@ export type V1AccountListAppsRequestBody$Outbound = {
 export const V1AccountListAppsRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountListAppsRequestBody$Outbound,
   V1AccountListAppsRequestBody
-> = z.object({
-  filters: z.optional(V1AppFilters$outboundSchema),
-  id: z.optional(IDSearch$outboundSchema),
-  order: z.optional(z.nullable(V1AppOrder$outboundSchema)),
-  page: z._default(z.int(), 1),
-  search: z.optional(z.nullable(z.string())),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    filters: z.optional(V1AppFilters$outboundSchema),
+    id: z.optional(IDSearch$outboundSchema),
+    order: z.optional(z.nullable(V1AppOrder$outboundSchema)),
+    page: z._default(z.int(), 1),
+    search: z.optional(z.nullable(z.string())),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AccountListAppsRequestBodyToJSON(
   v1AccountListAppsRequestBody: V1AccountListAppsRequestBody,

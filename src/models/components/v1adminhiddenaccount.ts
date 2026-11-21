@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -34,10 +34,6 @@ export type V1AdminHiddenAccountKind = OpenEnum<
 
 export type V1AdminHiddenAccount = {
   account: LeaderboardAccount | null;
-  /**
-   * The account id
-   */
-  accountId: number;
   /**
    * How many sign-ins account.login refused while the restriction was in force
    */
@@ -70,28 +66,31 @@ export type V1AdminHiddenAccount = {
 export const V1AdminHiddenAccountKind$inboundSchema: z.ZodMiniType<
   V1AdminHiddenAccountKind,
   unknown
-> = openEnums.inboundSchema(V1AdminHiddenAccountKind);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminHiddenAccountKind)
+);
 
 /** @internal */
 export const V1AdminHiddenAccount$inboundSchema: z.ZodMiniType<
   V1AdminHiddenAccount,
   unknown
-> = z.object({
-  account: z.nullable(LeaderboardAccount$inboundSchema),
-  accountId: z.int(),
-  blockedLogins: z.int(),
-  feedback: z.nullable(V1AdminOptOutFeedback$inboundSchema),
-  hideReason: z.nullable(z.string()),
-  kind: V1AdminHiddenAccountKind$inboundSchema,
-  lastBlockedLoginAt: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  reason: z.nullable(z.string()),
-  restrictedAt: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  restrictedBy: z.nullable(LeaderboardAccount$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account: z.nullable(LeaderboardAccount$inboundSchema),
+    blockedLogins: z.int(),
+    feedback: z.nullable(V1AdminOptOutFeedback$inboundSchema),
+    hideReason: z.nullable(z.string()),
+    kind: V1AdminHiddenAccountKind$inboundSchema,
+    lastBlockedLoginAt: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    reason: z.nullable(z.string()),
+    restrictedAt: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    restrictedBy: z.nullable(LeaderboardAccount$inboundSchema),
+  })
+);
 
 export function v1AdminHiddenAccountFromJSON(
   jsonString: string,

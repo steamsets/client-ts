@@ -3,23 +3,26 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type Security = {
-  token: string;
+  token?: string | undefined;
 };
 
 /** @internal */
 export type Security$Outbound = {
-  token: string;
+  token?: string | undefined;
 };
 
 /** @internal */
 export const Security$outboundSchema: z.ZodMiniType<
   Security$Outbound,
   Security
-> = z.object({
-  token: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    token: z.optional(z.string()),
+  })
+);
 
 export function securityToJSON(security: Security): string {
   return JSON.stringify(Security$outboundSchema.parse(security));

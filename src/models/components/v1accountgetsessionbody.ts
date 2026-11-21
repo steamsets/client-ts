@@ -4,12 +4,17 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { Resource, Resource$inboundSchema } from "./resource.js";
 import { Role, Role$inboundSchema } from "./role.js";
 import { Session, Session$inboundSchema } from "./session.js";
+import { SteamLevel, SteamLevel$inboundSchema } from "./steamlevel.js";
+import {
+  V1AccountGetSessionActorToken,
+  V1AccountGetSessionActorToken$inboundSchema,
+} from "./v1accountgetsessionactortoken.js";
 
 export type V1AccountGetSessionBody = {
   /**
@@ -21,6 +26,10 @@ export type V1AccountGetSessionBody = {
    */
   accountId: number;
   /**
+   * One token per requested actorAudiences entry, carrying the account and the session's grants for that service
+   */
+  actorTokens?: Array<V1AccountGetSessionActorToken> | null | undefined;
+  /**
    * The avatar of the account
    */
   avatar: string;
@@ -28,6 +37,14 @@ export type V1AccountGetSessionBody = {
    * The email of the account
    */
   email?: string | null | undefined;
+  /**
+   * The feature flags that are on for this account
+   */
+  flags: Array<string> | null;
+  /**
+   * The grants the account holds through its roles, sorted
+   */
+  grants: Array<string>;
   /**
    * Whether the account is new
    */
@@ -53,6 +70,7 @@ export type V1AccountGetSessionBody = {
    * The steam id
    */
   steamId: string;
+  steamLevel?: SteamLevel | undefined;
   /**
    * The XP of the account
    */
@@ -63,26 +81,34 @@ export type V1AccountGetSessionBody = {
 export const V1AccountGetSessionBody$inboundSchema: z.ZodMiniType<
   V1AccountGetSessionBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    accountId: z.int(),
-    avatar: z.string(),
-    email: z.optional(z.nullable(z.string())),
-    isNew: z.boolean(),
-    level: z.int(),
-    name: z.string(),
-    resources: z.nullable(z.array(Resource$inboundSchema)),
-    roles: z.nullable(z.array(Role$inboundSchema)),
-    sessionData: Session$inboundSchema,
-    steamId: z.string(),
-    xp: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      accountId: z.int(),
+      actorTokens: z.optional(
+        z.nullable(z.array(V1AccountGetSessionActorToken$inboundSchema)),
+      ),
+      avatar: z.string(),
+      email: z.optional(z.nullable(z.string())),
+      flags: z.nullable(z.array(z.string())),
+      grants: z.array(z.string()),
+      isNew: z.boolean(),
+      level: z.int(),
+      name: z.string(),
+      resources: z.nullable(z.array(Resource$inboundSchema)),
+      roles: z.nullable(z.array(Role$inboundSchema)),
+      sessionData: Session$inboundSchema,
+      steamId: z.string(),
+      steamLevel: z.optional(SteamLevel$inboundSchema),
+      xp: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountGetSessionBodyFromJSON(

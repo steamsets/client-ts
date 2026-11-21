@@ -4,12 +4,14 @@
 
 ### Available Operations
 
-* [listBadges](#listbadges) - List app badges
+* [~~listBadges~~](#listbadges) - List app badges :warning: **Deprecated**
 * [listOwners](#listowners) - List accounts that own an app (highest playtime first). Donator perk — page size scales with Patreon tier.
 
-## listBadges
+## ~~listBadges~~
 
-List app badges
+Deprecated: use app.get for the badges and account.me.listBadges for your own progress.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

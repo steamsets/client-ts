@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountRefreshSessionRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AccountRefreshSessionRequestBody$Outbound = {
 export const V1AccountRefreshSessionRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountRefreshSessionRequestBody$Outbound,
   V1AccountRefreshSessionRequestBody
-> = z.object({
-  refreshToken: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    refreshToken: z.string(),
+  })
+);
 
 export function v1AccountRefreshSessionRequestBodyToJSON(
   v1AccountRefreshSessionRequestBody: V1AccountRefreshSessionRequestBody,

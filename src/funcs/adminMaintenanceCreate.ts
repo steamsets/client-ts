@@ -30,6 +30,8 @@ import { Result } from "../types/fp.js";
 
 /**
  * Create a maintenance event
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function adminMaintenanceCreate(
   client: SteamSetsCore,
@@ -97,7 +99,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
@@ -174,7 +176,7 @@ async function $do(
     M.jsonErr([400, 401, 403, 422], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
-    M.jsonErr(500, errors.ErrorModel$inboundSchema, {
+    M.jsonErr([500, 503], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.fail("4XX"),

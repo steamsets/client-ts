@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,7 +22,9 @@ export type BadgeValueFilter = {
 export const BadgeValueFilterType$outboundSchema: z.ZodMiniType<
   string,
   BadgeValueFilterType
-> = openEnums.outboundSchema(BadgeValueFilterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(BadgeValueFilterType)
+);
 
 /** @internal */
 export type BadgeValueFilter$Outbound = {
@@ -33,10 +36,12 @@ export type BadgeValueFilter$Outbound = {
 export const BadgeValueFilter$outboundSchema: z.ZodMiniType<
   BadgeValueFilter$Outbound,
   BadgeValueFilter
-> = z.object({
-  type: BadgeValueFilterType$outboundSchema,
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: BadgeValueFilterType$outboundSchema,
+    value: z.string(),
+  })
+);
 
 export function badgeValueFilterToJSON(
   badgeValueFilter: BadgeValueFilter,

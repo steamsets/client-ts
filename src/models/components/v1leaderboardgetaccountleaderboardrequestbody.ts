@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -83,8 +84,10 @@ export const V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard$outboundSc
   z.ZodMiniType<
     string,
     V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard
-  > = openEnums.outboundSchema(
-    V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard,
+    )
   );
 
 /** @internal */
@@ -103,20 +106,22 @@ export const V1LeaderboardGetAccountLeaderboardRequestBody$outboundSchema:
   z.ZodMiniType<
     V1LeaderboardGetAccountLeaderboardRequestBody$Outbound,
     V1LeaderboardGetAccountLeaderboardRequestBody
-  > = z.object({
-    app: z.optional(z.nullable(V1AccountLeaderboardAppSearch$outboundSchema)),
-    badge: z.optional(
-      z.nullable(V1AccountLeaderboardBadgeSearch$outboundSchema),
-    ),
-    end: z.optional(z.nullable(z.int())),
-    goToLeaderboardRank: z.optional(z.nullable(z.int())),
-    leaderboard:
-      V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard$outboundSchema,
-    location: z.optional(
-      z.nullable(z.array(z.nullable(V1LeaderboardLocation$outboundSchema))),
-    ),
-    start: z.optional(z.nullable(z.int())),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      app: z.optional(z.nullable(V1AccountLeaderboardAppSearch$outboundSchema)),
+      badge: z.optional(
+        z.nullable(V1AccountLeaderboardBadgeSearch$outboundSchema),
+      ),
+      end: z.optional(z.nullable(z.int())),
+      goToLeaderboardRank: z.optional(z.nullable(z.int())),
+      leaderboard:
+        V1LeaderboardGetAccountLeaderboardRequestBodyLeaderboard$outboundSchema,
+      location: z.optional(
+        z.nullable(z.array(z.nullable(V1LeaderboardLocation$outboundSchema))),
+      ),
+      start: z.optional(z.nullable(z.int())),
+    })
+  );
 
 export function v1LeaderboardGetAccountLeaderboardRequestBodyToJSON(
   v1LeaderboardGetAccountLeaderboardRequestBody:

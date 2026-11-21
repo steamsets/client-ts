@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -39,26 +39,28 @@ export type AccountListCardWatchesCard = {
 };
 
 /** @internal */
-export const Source$inboundSchema: z.ZodMiniType<Source, unknown> = openEnums
-  .inboundSchema(Source);
+export const Source$inboundSchema: z.ZodMiniType<Source, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Source));
 
 /** @internal */
 export const AccountListCardWatchesCard$inboundSchema: z.ZodMiniType<
   AccountListCardWatchesCard,
   unknown
-> = z.object({
-  appId: z.int(),
-  appName: z.string(),
-  icon: z.string(),
-  isFoil: z.boolean(),
-  itemId: z.string(),
-  name: z.string(),
-  source: Source$inboundSchema,
-  watchedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    appName: z.string(),
+    icon: z.string(),
+    isFoil: z.boolean(),
+    itemId: z.string(),
+    name: z.string(),
+    source: Source$inboundSchema,
+    watchedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function accountListCardWatchesCardFromJSON(
   jsonString: string,

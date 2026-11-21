@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,20 +42,24 @@ export type V1AccountVisibilityUpdate = {
 export const V1AccountVisibilityUpdateKind$inboundSchema: z.ZodMiniType<
   V1AccountVisibilityUpdateKind,
   unknown
-> = openEnums.inboundSchema(V1AccountVisibilityUpdateKind);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AccountVisibilityUpdateKind)
+);
 
 /** @internal */
 export const V1AccountVisibilityUpdate$inboundSchema: z.ZodMiniType<
   V1AccountVisibilityUpdate,
   unknown
-> = z.object({
-  kind: V1AccountVisibilityUpdateKind$inboundSchema,
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  visibility: HistoryValue$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    kind: V1AccountVisibilityUpdateKind$inboundSchema,
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    visibility: HistoryValue$inboundSchema,
+  })
+);
 
 export function v1AccountVisibilityUpdateFromJSON(
   jsonString: string,

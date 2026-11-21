@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   AccountSearch,
   AccountSearch$Outbound,
@@ -24,10 +25,12 @@ export type DifferenceFilter$Outbound = {
 export const DifferenceFilter$outboundSchema: z.ZodMiniType<
   DifferenceFilter$Outbound,
   DifferenceFilter
-> = z.object({
-  has: AccountSearch$outboundSchema,
-  lacks: AccountSearch$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    has: AccountSearch$outboundSchema,
+    lacks: AccountSearch$outboundSchema,
+  })
+);
 
 export function differenceFilterToJSON(
   differenceFilter: DifferenceFilter,

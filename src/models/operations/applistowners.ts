@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -21,19 +21,21 @@ export type AppListOwnersResponse = {
 export const AppListOwnersResponse$inboundSchema: z.ZodMiniType<
   AppListOwnersResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    AppListOwnersResponseBody: z.optional(
-      components.AppListOwnersResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "AppListOwnersResponseBody": "appListOwnersResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      AppListOwnersResponseBody: z.optional(
+        components.AppListOwnersResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "AppListOwnersResponseBody": "appListOwnersResponseBody",
+      });
+    }),
+  )
 );
 
 export function appListOwnersResponseFromJSON(

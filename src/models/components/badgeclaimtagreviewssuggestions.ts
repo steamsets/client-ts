@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -37,22 +37,24 @@ export type BadgeClaimTagReviewsSuggestions = {
 export const BadgeClaimTagReviewsSuggestions$inboundSchema: z.ZodMiniType<
   BadgeClaimTagReviewsSuggestions,
   unknown
-> = z.object({
-  autoAudit: z.boolean(),
-  autoColors: z.nullable(
-    z.array(BadgeClaimTagReviewsColorSuggestion$inboundSchema),
-  ),
-  autoDesigns: z.nullable(
-    z.array(BadgeClaimTagReviewsDesignSuggestion$inboundSchema),
-  ),
-  colors: z.nullable(
-    z.array(BadgeClaimTagReviewsColorSuggestion$inboundSchema),
-  ),
-  designs: z.nullable(
-    z.array(BadgeClaimTagReviewsDesignSuggestion$inboundSchema),
-  ),
-  proposedDesigns: z.nullable(z.array(z.string())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    autoAudit: z.boolean(),
+    autoColors: z.nullable(
+      z.array(BadgeClaimTagReviewsColorSuggestion$inboundSchema),
+    ),
+    autoDesigns: z.nullable(
+      z.array(BadgeClaimTagReviewsDesignSuggestion$inboundSchema),
+    ),
+    colors: z.nullable(
+      z.array(BadgeClaimTagReviewsColorSuggestion$inboundSchema),
+    ),
+    designs: z.nullable(
+      z.array(BadgeClaimTagReviewsDesignSuggestion$inboundSchema),
+    ),
+    proposedDesigns: z.nullable(z.array(z.string())),
+  })
+);
 
 export function badgeClaimTagReviewsSuggestionsFromJSON(
   jsonString: string,

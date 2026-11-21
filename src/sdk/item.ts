@@ -3,6 +3,9 @@
  */
 
 import { itemFindOwners } from "../funcs/itemFindOwners.js";
+import { itemFindSpareHolders } from "../funcs/itemFindSpareHolders.js";
+import { itemFindWanters } from "../funcs/itemFindWanters.js";
+import { itemGet } from "../funcs/itemGet.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -17,6 +20,87 @@ export class Item extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.ItemFindOwnersResponse> {
     return unwrapAsync(itemFindOwners(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Find accounts with a spare copy of one or more trading cards: a copy their badge does not need. Only cards with few owners are looked up. Every caller gets the totals. A donator gets the holders, nearest in the friend graph first.
+   */
+  async findSpareHolders(
+    request: components.FindSpareHoldersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.ItemFindSpareHoldersResponse> {
+    return unwrapAsync(itemFindSpareHolders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Find accounts that want one or more trading cards: they watch the card, have it on their wishlist, or need it to finish a set they almost have, and do not own it. Every caller gets the totals. A donator gets the wanters, nearest in the friend graph first.
+   */
+  async findWanters(
+    request: components.FindWantersRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.ItemFindWantersResponse> {
+    return unwrapAsync(itemFindWanters(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get trading items by class id or app
+   *
+   * @remarks
+   * Returns trading items: cards, foils, booster packs, backgrounds and emoticons.
+   *
+   * ## Request
+   *
+   * Send one of:
+   *
+   * - `classIds`: up to 100 Steam class ids. Items come back in request order.
+   * - `appIds`: up to 10 apps. Every item of each app comes back.
+   *
+   * Ids that match no item are in `missing.classIds` or `missing.appIds`.
+   *
+   * ## Freshness
+   *
+   * Items follow steamsets.com within about a minute.
+   *
+   * ## Cost
+   *
+   * Each item returned and each id that matches nothing uses one unit of the key's 20,000 daily units.
+   *
+   * ## Example
+   *
+   * ```json
+   * {
+   *   "items": [
+   *     {
+   *       "classId": 667924416,
+   *       "app": { "appId": 730, "name": "Counter-Strike 2" },
+   *       "name": "Phoenix",
+   *       "kind": "card",
+   *       "isFoil": false,
+   *       "isMarketable": true,
+   *       "priceCents": 9
+   *     }
+   *   ],
+   *   "missing": { "classIds": [], "appIds": [] }
+   * }
+   * ```
+   */
+  async get(
+    request: components.ItemGetRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.ItemGetResponse> {
+    return unwrapAsync(itemGet(
       this,
       request,
       options,

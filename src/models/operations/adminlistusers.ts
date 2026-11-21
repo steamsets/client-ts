@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -23,19 +23,21 @@ export type AdminListUsersResponse = {
 export const AdminListUsersResponse$inboundSchema: z.ZodMiniType<
   AdminListUsersResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1AdminListUsersResponseBody: z.optional(
-      components.V1AdminListUsersResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1AdminListUsersResponseBody": "v1AdminListUsersResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1AdminListUsersResponseBody: z.optional(
+        components.V1AdminListUsersResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1AdminListUsersResponseBody": "v1AdminListUsersResponseBody",
+      });
+    }),
+  )
 );
 
 export function adminListUsersResponseFromJSON(

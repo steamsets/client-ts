@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -35,13 +36,15 @@ export type V1BadgeOrder = {
 export const V1BadgeOrderBy$outboundSchema: z.ZodMiniType<
   string,
   V1BadgeOrderBy
-> = openEnums.outboundSchema(V1BadgeOrderBy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(V1BadgeOrderBy));
 
 /** @internal */
 export const V1BadgeOrderDirection$outboundSchema: z.ZodMiniType<
   string,
   V1BadgeOrderDirection
-> = openEnums.outboundSchema(V1BadgeOrderDirection);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1BadgeOrderDirection)
+);
 
 /** @internal */
 export type V1BadgeOrder$Outbound = {
@@ -53,10 +56,12 @@ export type V1BadgeOrder$Outbound = {
 export const V1BadgeOrder$outboundSchema: z.ZodMiniType<
   V1BadgeOrder$Outbound,
   V1BadgeOrder
-> = z.object({
-  by: z._default(V1BadgeOrderBy$outboundSchema, "xp"),
-  direction: z._default(V1BadgeOrderDirection$outboundSchema, "desc"),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    by: z._default(V1BadgeOrderBy$outboundSchema, "xp"),
+    direction: z._default(V1BadgeOrderDirection$outboundSchema, "desc"),
+  })
+);
 
 export function v1BadgeOrderToJSON(v1BadgeOrder: V1BadgeOrder): string {
   return JSON.stringify(V1BadgeOrder$outboundSchema.parse(v1BadgeOrder));

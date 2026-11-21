@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -41,16 +41,20 @@ export type V1AdminOptOutFeedback = {
 export const V1AdminOptOutFeedbackReason$inboundSchema: z.ZodMiniType<
   V1AdminOptOutFeedbackReason,
   unknown
-> = openEnums.inboundSchema(V1AdminOptOutFeedbackReason);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminOptOutFeedbackReason)
+);
 
 /** @internal */
 export const V1AdminOptOutFeedback$inboundSchema: z.ZodMiniType<
   V1AdminOptOutFeedback,
   unknown
-> = z.object({
-  comment: z.nullable(z.string()),
-  reason: z.nullable(V1AdminOptOutFeedbackReason$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    comment: z.nullable(z.string()),
+    reason: z.nullable(V1AdminOptOutFeedbackReason$inboundSchema),
+  })
+);
 
 export function v1AdminOptOutFeedbackFromJSON(
   jsonString: string,

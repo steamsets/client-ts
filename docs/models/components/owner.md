@@ -29,6 +29,7 @@ let value: Owner = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 747187,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -41,20 +42,27 @@ let value: Owner = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: [
+      {
+        extras: {},
+        rating: 418270,
+        role: "donator",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 634507,
+    steamSetsScore: 121724,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 121724,
+    vacBans: 325508,
     xp: 123456,
   },
   amount: 425941,
@@ -69,7 +77,7 @@ let value: Owner = {
       awardsReceived: 123456,
       background: "<value>",
       badges: 123456,
-      bans: 28798,
+      bans: 34892,
       city: {
         name: "Bad Krozingen",
       },
@@ -82,7 +90,8 @@ let value: Owner = {
       economyBan: "steam",
       foilBadges: 123456,
       friends: 123456,
-      gameBans: 708752,
+      gameBans: 809650,
+      isHidden: true,
       level: 123456,
       miniBackground: "<value>",
       name: "steamsets",
@@ -92,29 +101,28 @@ let value: Owner = {
       pointsGiven: 123456,
       pointsReceived: 123456,
       privacy: "public",
-      region: {
-        name: "Europe",
-      },
+      region: null,
       roles: [
         {
           extras: {},
-          rating: 138555,
-          role: "sapphire",
+          rating: 418270,
+          role: "donator",
         },
       ],
       state: {
         name: "Baden-Wurttemberg",
       },
       steamId: "76561198842603734",
-      steamSetsScore: 291402,
+      steamSetsScore: 579783,
       steamSetsVanity: "steamsets",
       steamVanity: "steamsets",
       supporter: {
         active: true,
         months: 3,
+        streak: 0,
       },
       themeColor: "#FF5733",
-      vacBans: 314179,
+      vacBans: 13269,
       xp: 123456,
     },
   ],
@@ -132,3 +140,4 @@ let value: Owner = {
 | `distance`                                                                                             | *number*                                                                                               | :heavy_minus_sign:                                                                                     | Number of hops from requester to owner                                                                 |
 | `path`                                                                                                 | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md)[]                       | :heavy_minus_sign:                                                                                     | Accounts from requester (first) to owner (last), inclusive                                             |
 | `pathFound`                                                                                            | *boolean*                                                                                              | :heavy_check_mark:                                                                                     | Whether a friend path was found within maxDepth                                                        |
+| `tradeUrl`                                                                                             | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The owner's Steam trade offer link, when the owner added one. Only sent to a logged-in caller          |

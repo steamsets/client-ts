@@ -3,7 +3,10 @@
  */
 
 import { donateGetGoal } from "../funcs/donateGetGoal.js";
+import { donateGetPrepaid } from "../funcs/donateGetPrepaid.js";
+import { donateUpdatePrepaid } from "../funcs/donateUpdatePrepaid.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
@@ -19,6 +22,35 @@ export class Donate extends ClientSDK {
   ): Promise<operations.DonateGetGoalResponse> {
     return unwrapAsync(donateGetGoal(
       this,
+      options,
+    ));
+  }
+
+  /**
+   * Get your prepaid supporter balance
+   *
+   * @remarks
+   * The balance that key donations filled, the tier it pays for, and how many months it buys at each tier.
+   */
+  async getPrepaid(
+    options?: RequestOptions,
+  ): Promise<operations.DonateGetPrepaidResponse> {
+    return unwrapAsync(donateGetPrepaid(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * Choose the tier your prepaid balance pays for
+   */
+  async updatePrepaid(
+    request: components.DonateUpdatePrepaidRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.DonateUpdatePrepaidResponse> {
+    return unwrapAsync(donateUpdatePrepaid(
+      this,
+      request,
       options,
     ));
   }

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,10 +22,12 @@ export type AdminAccountResourceInherited = {
 export const AdminAccountResourceInherited$inboundSchema: z.ZodMiniType<
   AdminAccountResourceInherited,
   unknown
-> = z.object({
-  role: z.nullable(z.string()),
-  value: z.nullable(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    role: z.nullable(z.string()),
+    value: z.nullable(z.string()),
+  })
+);
 
 export function adminAccountResourceInheritedFromJSON(
   jsonString: string,

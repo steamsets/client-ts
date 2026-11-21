@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -64,23 +64,27 @@ export type DeveloperApp = {
 export const DeveloperAppEnvironment$inboundSchema: z.ZodMiniType<
   DeveloperAppEnvironment,
   unknown
-> = openEnums.inboundSchema(DeveloperAppEnvironment);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DeveloperAppEnvironment)
+);
 
 /** @internal */
 export const DeveloperApp$inboundSchema: z.ZodMiniType<DeveloperApp, unknown> =
-  z.object({
-    analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
-    apiKey: z.nullable(z.string()),
-    createdAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    description: z.string(),
-    environment: DeveloperAppEnvironment$inboundSchema,
-    id: z.string(),
-    keyId: z.string(),
-    name: z.string(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
+      apiKey: z.nullable(z.string()),
+      createdAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      description: z.string(),
+      environment: DeveloperAppEnvironment$inboundSchema,
+      id: z.string(),
+      keyId: z.string(),
+      name: z.string(),
+    })
+  );
 
 export function developerAppFromJSON(
   jsonString: string,

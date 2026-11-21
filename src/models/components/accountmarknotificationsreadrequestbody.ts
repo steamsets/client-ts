@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountMarkNotificationsReadRequestBody = {
   /**
@@ -26,10 +27,12 @@ export const AccountMarkNotificationsReadRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountMarkNotificationsReadRequestBody$Outbound,
     AccountMarkNotificationsReadRequestBody
-  > = z.object({
-    ids: z.optional(z.nullable(z.array(z.int()))),
-    read: z._default(z.boolean(), true),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      ids: z.optional(z.nullable(z.array(z.int()))),
+      read: z._default(z.boolean(), true),
+    })
+  );
 
 export function accountMarkNotificationsReadRequestBodyToJSON(
   accountMarkNotificationsReadRequestBody:

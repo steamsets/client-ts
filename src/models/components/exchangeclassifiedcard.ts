@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -12,7 +12,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
  */
-export const Bucket = {
+export const ExchangeClassifiedCardBucket = {
   Dead: "dead",
   Surplus: "surplus",
   Keep: "keep",
@@ -20,7 +20,9 @@ export const Bucket = {
 /**
  * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
  */
-export type Bucket = OpenEnum<typeof Bucket>;
+export type ExchangeClassifiedCardBucket = OpenEnum<
+  typeof ExchangeClassifiedCardBucket
+>;
 
 export type ExchangeClassifiedCard = {
   /**
@@ -30,7 +32,7 @@ export type ExchangeClassifiedCard = {
   /**
    * dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
    */
-  bucket: Bucket;
+  bucket: ExchangeClassifiedCardBucket;
   /**
    * Steam class id, the stable identity of the card
    */
@@ -106,35 +108,41 @@ export type ExchangeClassifiedCard = {
 };
 
 /** @internal */
-export const Bucket$inboundSchema: z.ZodMiniType<Bucket, unknown> = openEnums
-  .inboundSchema(Bucket);
+export const ExchangeClassifiedCardBucket$inboundSchema: z.ZodMiniType<
+  ExchangeClassifiedCardBucket,
+  unknown
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ExchangeClassifiedCardBucket)
+);
 
 /** @internal */
 export const ExchangeClassifiedCard$inboundSchema: z.ZodMiniType<
   ExchangeClassifiedCard,
   unknown
-> = z.object({
-  averagePriceCents: z.int(),
-  bucket: Bucket$inboundSchema,
-  classId: z.int(),
-  gemsGoo: z.int(),
-  highestBuyOrderCents: z.int(),
-  icon: z.string(),
-  isFoil: z.boolean(),
-  listed: z.int(),
-  marketable: z.boolean(),
-  medianSaleCents: z.int(),
-  name: z.string(),
-  owned: z.int(),
-  priceCents: z.int(),
-  priceMax4d: z.int(),
-  priceMin4d: z.int(),
-  remaining: z.int(),
-  saleDays30d: z.int(),
-  saleVolume30d: z.int(),
-  sellOrders: z.int(),
-  surplus: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    averagePriceCents: z.int(),
+    bucket: ExchangeClassifiedCardBucket$inboundSchema,
+    classId: z.int(),
+    gemsGoo: z.int(),
+    highestBuyOrderCents: z.int(),
+    icon: z.string(),
+    isFoil: z.boolean(),
+    listed: z.int(),
+    marketable: z.boolean(),
+    medianSaleCents: z.int(),
+    name: z.string(),
+    owned: z.int(),
+    priceCents: z.int(),
+    priceMax4d: z.int(),
+    priceMin4d: z.int(),
+    remaining: z.int(),
+    saleDays30d: z.int(),
+    saleVolume30d: z.int(),
+    sellOrders: z.int(),
+    surplus: z.int(),
+  })
+);
 
 export function exchangeClassifiedCardFromJSON(
   jsonString: string,

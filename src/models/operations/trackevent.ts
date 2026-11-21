@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -39,22 +39,24 @@ export type TrackEventRequest$Outbound = {
 export const TrackEventRequest$outboundSchema: z.ZodMiniType<
   TrackEventRequest$Outbound,
   TrackEventRequest
-> = z.pipe(
-  z.object({
-    xForwardedFor: z.optional(z.string()),
-    userAgent: z.optional(z.string()),
-    xVisitorId: z.optional(z.string()),
-    analyticsTrackEventRequestBody:
-      components.AnalyticsTrackEventRequestBody$outboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      xForwardedFor: "X-Forwarded-For",
-      userAgent: "User-Agent",
-      xVisitorId: "X-Visitor-Id",
-      analyticsTrackEventRequestBody: "AnalyticsTrackEventRequestBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      xForwardedFor: z.optional(z.string()),
+      userAgent: z.optional(z.string()),
+      xVisitorId: z.optional(z.string()),
+      analyticsTrackEventRequestBody:
+        components.AnalyticsTrackEventRequestBody$outboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        xForwardedFor: "X-Forwarded-For",
+        userAgent: "User-Agent",
+        xVisitorId: "X-Visitor-Id",
+        analyticsTrackEventRequestBody: "AnalyticsTrackEventRequestBody",
+      });
+    }),
+  )
 );
 
 export function trackEventRequestToJSON(
@@ -69,19 +71,21 @@ export function trackEventRequestToJSON(
 export const TrackEventResponse$inboundSchema: z.ZodMiniType<
   TrackEventResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    AnalyticsTrackEventResponseBody: z.optional(
-      components.AnalyticsTrackEventResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "AnalyticsTrackEventResponseBody": "analyticsTrackEventResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      AnalyticsTrackEventResponseBody: z.optional(
+        components.AnalyticsTrackEventResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "AnalyticsTrackEventResponseBody": "analyticsTrackEventResponseBody",
+      });
+    }),
+  )
 );
 
 export function trackEventResponseFromJSON(

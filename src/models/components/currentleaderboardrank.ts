@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -62,18 +62,22 @@ export type CurrentLeaderboardRank = {
 export const CurrentLeaderboardRankLeaderboard$inboundSchema: z.ZodMiniType<
   CurrentLeaderboardRankLeaderboard,
   unknown
-> = openEnums.inboundSchema(CurrentLeaderboardRankLeaderboard);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CurrentLeaderboardRankLeaderboard)
+);
 
 /** @internal */
 export const CurrentLeaderboardRank$inboundSchema: z.ZodMiniType<
   CurrentLeaderboardRank,
   unknown
-> = z.object({
-  leaderboard: CurrentLeaderboardRankLeaderboard$inboundSchema,
-  rankWeekAgo: z.int(),
-  ranks: z.string(),
-  totals: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    leaderboard: CurrentLeaderboardRankLeaderboard$inboundSchema,
+    rankWeekAgo: z.int(),
+    ranks: z.string(),
+    totals: z.string(),
+  })
+);
 
 export function currentLeaderboardRankFromJSON(
   jsonString: string,

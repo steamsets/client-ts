@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,9 +18,11 @@ export type V1ActivityScarcity = {
 export const V1ActivityScarcity$inboundSchema: z.ZodMiniType<
   V1ActivityScarcity,
   unknown
-> = z.object({
-  globalCraftOrder: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    globalCraftOrder: z.int(),
+  })
+);
 
 export function v1ActivityScarcityFromJSON(
   jsonString: string,

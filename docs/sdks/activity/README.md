@@ -8,7 +8,6 @@ Activity feed events.
 
 * [listAccountFeed](#listaccountfeed) - List the activity feed for a single account (profile timeline)
 * [listGlobalFeed](#listglobalfeed) - List the global activity feed
-* [streamGlobalFeed](#streamglobalfeed) - Live server-sent-events stream of the global activity feed
 
 ## listAccountFeed
 
@@ -173,86 +172,3 @@ run();
 | errors.ErrorModel        | 400, 422                 | application/problem+json |
 | errors.ErrorModel        | 500                      | application/problem+json |
 | errors.SDKError          | 4XX, 5XX                 | \*/\*                    |
-
-## streamGlobalFeed
-
-Live server-sent-events stream of the global activity feed
-
-### Example Usage
-
-<!-- UsageSnippet language="typescript" operationID="streamGlobalFeed" method="get" path="/v1/activity.streamGlobalFeed" -->
-```typescript
-import { SteamSets } from "@steamsets/client-ts";
-
-const steamSets = new SteamSets({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const result = await steamSets.activity.streamGlobalFeed({
-    since: new Date("2026-09-30T07:13:00Z"),
-  });
-
-  if (result.serverSentEvents == null) {
-    throw new Error("failed to create stream: received null value");
-  }
-  for await (const event of result.serverSentEvents) {
-    console.log(event);
-  }
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { SteamSetsCore } from "@steamsets/client-ts/core.js";
-import { activityStreamGlobalFeed } from "@steamsets/client-ts/funcs/activityStreamGlobalFeed.js";
-
-// Use `SteamSetsCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const steamSets = new SteamSetsCore({
-  token: "<YOUR_BEARER_TOKEN_HERE>",
-});
-
-async function run() {
-  const res = await activityStreamGlobalFeed(steamSets, {
-    since: new Date("2026-09-30T07:13:00Z"),
-  });
-  if (res.ok) {
-    const { value: result } = res;
-    if (result.serverSentEvents == null) {
-    throw new Error("failed to create stream: received null value");
-  }
-  for await (const event of result.serverSentEvents) {
-    console.log(event);
-  }
-  } else {
-    console.log("activityStreamGlobalFeed failed:", res.error);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.StreamGlobalFeedRequest](../../models/operations/streamglobalfeedrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.StreamGlobalFeedResponse](../../models/operations/streamglobalfeedresponse.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |

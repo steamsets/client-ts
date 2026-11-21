@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountArchiveNotificationsRequestBody = {
   /**
@@ -26,10 +27,12 @@ export const AccountArchiveNotificationsRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountArchiveNotificationsRequestBody$Outbound,
     AccountArchiveNotificationsRequestBody
-  > = z.object({
-    archived: z._default(z.boolean(), true),
-    ids: z.optional(z.nullable(z.array(z.int()))),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      archived: z._default(z.boolean(), true),
+      ids: z.optional(z.nullable(z.array(z.int()))),
+    })
+  );
 
 export function accountArchiveNotificationsRequestBodyToJSON(
   accountArchiveNotificationsRequestBody:

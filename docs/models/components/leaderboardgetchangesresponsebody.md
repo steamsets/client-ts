@@ -11,17 +11,16 @@ let value: LeaderboardGetChangesResponseBody = {
   changes: [
     {
       account: null,
-      accountId: 45811,
-      latestDate: new Date("2025-07-16T06:40:07.994Z"),
-      newRank: 791467,
-      newScore: 250335,
-      oldRank: 303858,
-      oldScore: 316519,
-      rankDelta: 355391,
-      scoreDelta: 884464,
+      latestDate: new Date("2024-02-20T05:01:23.268Z"),
+      newRank: 513027,
+      newScore: 791467,
+      oldRank: 250335,
+      oldScore: 303858,
+      rankDelta: 316519,
+      scoreDelta: 355391,
     },
   ],
-  total: 269191,
+  total: 884464,
 };
 ```
 

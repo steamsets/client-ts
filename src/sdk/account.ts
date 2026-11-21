@@ -13,6 +13,7 @@ import { accountDeleteDeveloperApp } from "../funcs/accountDeleteDeveloperApp.js
 import { accountDeleteNotifications } from "../funcs/accountDeleteNotifications.js";
 import { accountDeleteSession } from "../funcs/accountDeleteSession.js";
 import { accountFindFriendPath } from "../funcs/accountFindFriendPath.js";
+import { accountGet } from "../funcs/accountGet.js";
 import { accountGetBadgeHeatmap } from "../funcs/accountGetBadgeHeatmap.js";
 import { accountGetBadgeStats } from "../funcs/accountGetBadgeStats.js";
 import { accountGetDataPoints } from "../funcs/accountGetDataPoints.js";
@@ -28,11 +29,16 @@ import { accountListBadges } from "../funcs/accountListBadges.js";
 import { accountListCardWatches } from "../funcs/accountListCardWatches.js";
 import { accountListCraftedLevels } from "../funcs/accountListCraftedLevels.js";
 import { accountListFriends } from "../funcs/accountListFriends.js";
+import { accountListInventoryItems } from "../funcs/accountListInventoryItems.js";
 import { accountListInventorySets } from "../funcs/accountListInventorySets.js";
+import { accountListJoinedGroups } from "../funcs/accountListJoinedGroups.js";
 import { accountListLeaderboardHistory } from "../funcs/accountListLeaderboardHistory.js";
+import { accountListNeededCards } from "../funcs/accountListNeededCards.js";
 import { accountListNotifications } from "../funcs/accountListNotifications.js";
+import { accountListOwnedAppIds } from "../funcs/accountListOwnedAppIds.js";
 import { accountListOwnedBadges } from "../funcs/accountListOwnedBadges.js";
 import { accountListOwnedGroups } from "../funcs/accountListOwnedGroups.js";
+import { accountListSpareCards } from "../funcs/accountListSpareCards.js";
 import { accountLogin } from "../funcs/accountLogin.js";
 import { accountLogout } from "../funcs/accountLogout.js";
 import { accountMarkNotificationsRead } from "../funcs/accountMarkNotificationsRead.js";
@@ -43,10 +49,12 @@ import { accountReconnectConnection } from "../funcs/accountReconnectConnection.
 import { accountRefreshInventory } from "../funcs/accountRefreshInventory.js";
 import { accountRefreshSession } from "../funcs/accountRefreshSession.js";
 import { accountRemovePushSubscription } from "../funcs/accountRemovePushSubscription.js";
+import { accountResolveMany } from "../funcs/accountResolveMany.js";
+import { accountSearch } from "../funcs/accountSearch.js";
 import { accountSendEmailVerification } from "../funcs/accountSendEmailVerification.js";
 import { accountSendTestPush } from "../funcs/accountSendTestPush.js";
+import { accountSetTradeMatchVisibility } from "../funcs/accountSetTradeMatchVisibility.js";
 import { accountSetWishlistWatch } from "../funcs/accountSetWishlistWatch.js";
-import { accountSubscribe } from "../funcs/accountSubscribe.js";
 import { accountSubscribeEmail } from "../funcs/accountSubscribeEmail.js";
 import { accountUpdateConnection } from "../funcs/accountUpdateConnection.js";
 import { accountUpdateDeveloperApp } from "../funcs/accountUpdateDeveloperApp.js";
@@ -63,8 +71,14 @@ import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 import { PageIterator, unwrapResultIterator } from "../types/operations.js";
+import { Me } from "./me.js";
 
 export class Account extends ClientSDK {
+  private _me?: Me;
+  get me(): Me {
+    return (this._me ??= new Me(this._options));
+  }
+
   /**
    * Get push notifications in this browser
    *
@@ -229,6 +243,64 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * Get Steam accounts
+   *
+   * @remarks
+   * Returns up to 100 Steam accounts that SteamSets already tracks, with level, badge counts and global leaderboard ranks.
+   *
+   * ## Request
+   *
+   * Each entry in `accounts` can be:
+   *
+   * - an account id, such as `882338006`
+   * - a SteamID64, such as `76561198842603734`
+   * - a SteamSets or Steam vanity, such as `steamsets`; a SteamSets vanity matches first
+   * - a `steamcommunity.com/profiles/<steamId64>` or `steamcommunity.com/id/<vanity>` URL
+   *
+   * ## Missing accounts
+   *
+   * This route never asks Steam. An account SteamSets has not seen, an account SteamSets hides, and an entry it cannot read are all in `missing`, as sent.
+   *
+   * ## Freshness
+   *
+   * Profile data is as fresh as the account's last refresh. Ranks are live.
+   *
+   * ## Cost
+   *
+   * Each entry uses one unit of the key's 10,000 daily units, found or not.
+   *
+   * ## Example
+   *
+   * ```json
+   * {
+   *   "accounts": [
+   *     {
+   *       "input": "steamsets",
+   *       "account": {
+   *         "accountId": 882338006,
+   *         "steamId64": "76561198842603734",
+   *         "name": "steamsets",
+   *         "level": 120,
+   *         "ranks": { "xp": { "rank": 1532, "score": 812345, "total": 2900000 } }
+   *       }
+   *     }
+   *   ],
+   *   "missing": []
+   * }
+   * ```
+   */
+  async get(
+    request: components.AccountGetRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountGetResponse> {
+    return unwrapAsync(accountGet(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Get monthly badge crafting counts for an account
    */
   async getBadgeHeatmap(
@@ -300,10 +372,12 @@ export class Account extends ClientSDK {
    * Get user session information
    */
   async getSession(
+    request?: components.V1AccountGetSessionRequestBody | undefined,
     options?: RequestOptions,
   ): Promise<operations.AccountGetSessionResponse> {
     return unwrapAsync(accountGetSession(
       this,
+      request,
       options,
     ));
   }
@@ -406,6 +480,11 @@ export class Account extends ClientSDK {
 
   /**
    * List crafted badge levels
+   *
+   * @remarks
+   * Deprecated: use account.me.listBadges, whose level is the highest level crafted per app and type.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listCraftedLevels(
     options?: RequestOptions,
@@ -431,10 +510,26 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * List the community items in your inventory
+   */
+  async listInventoryItems(
+    request: components.V1AccountListInventoryItemsRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountListInventoryItemsResponse> {
+    return unwrapAsync(accountListInventoryItems(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List inventory sets
    *
    * @remarks
-   * Get all trading card sets with ownership information for the authenticated user
+   * Deprecated: use account.me.listInventorySets, which pages with a body cursor and returns RFC 3339 times.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listInventorySets(
     request: operations.AccountListInventorySetsRequest,
@@ -443,6 +538,18 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountListInventorySets(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * List the groups you are a member of
+   */
+  async listJoinedGroups(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListJoinedGroupsResponse> {
+    return unwrapAsync(accountListJoinedGroups(
+      this,
       options,
     ));
   }
@@ -462,6 +569,21 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * List the cards the account misses to finish sets it almost has
+   *
+   * @remarks
+   * A set counts when the account owns all but one or two of its cards, its badge is below the top level and the card has few owners. Each card says how many accounts have a spare copy. Use item.findSpareHolders to see who.
+   */
+  async listNeededCards(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListNeededCardsResponse> {
+    return unwrapAsync(accountListNeededCards(
+      this,
+      options,
+    ));
+  }
+
+  /**
    * List the account's inbox or archive
    */
   async listNotifications(
@@ -476,7 +598,29 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * List owned app ids
+   *
+   * @remarks
+   * Deprecated: use account.me.listAppIds, which pages with a body cursor and returns appPrivacy in camelCase.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
+   */
+  async listOwnedAppIds(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListOwnedAppIdsResponse> {
+    return unwrapAsync(accountListOwnedAppIds(
+      this,
+      options,
+    ));
+  }
+
+  /**
    * List owned badges
+   *
+   * @remarks
+   * Deprecated: use account.me.listBadges, which returns one badge per app and type with every crafted level's id in badgeIds.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listOwnedBadges(
     request: operations.AccountListOwnedBadgesRequest,
@@ -499,6 +643,21 @@ export class Account extends ClientSDK {
     return unwrapAsync(accountListOwnedGroups(
       this,
       request,
+      options,
+    ));
+  }
+
+  /**
+   * List the account's spare trading cards that another account wants
+   *
+   * @remarks
+   * A spare is a copy the account's badge does not need: owned copies minus the sets still needed to reach level 5, or level 1 for foil. Only cards that at least one other account wants are returned: it watches the card, has it on its wishlist or needs it to finish a set. Use item.findWanters to see who wants a card.
+   */
+  async listSpareCards(
+    options?: RequestOptions,
+  ): Promise<operations.AccountListSpareCardsResponse> {
+    return unwrapAsync(accountListSpareCards(
+      this,
       options,
     ));
   }
@@ -544,7 +703,7 @@ export class Account extends ClientSDK {
   }
 
   /**
-   * Opt out of SteamSets (hide account and stop processing)
+   * Opt out of SteamSets (hide account and stop processing after 30 days)
    */
   async optOut(
     request: components.AccountOptOutRequestBody,
@@ -603,7 +762,9 @@ export class Account extends ClientSDK {
    * Refresh inventory
    *
    * @remarks
-   * Trigger a refresh of the authenticated user's Steam inventory. Rate limited based on account tier.
+   * Deprecated: use account.me.refreshInventory, which returns nextRefreshAt as an RFC 3339 time.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async refreshInventory(
     options?: RequestOptions,
@@ -632,13 +793,47 @@ export class Account extends ClientSDK {
    * Stop push notifications on one device
    *
    * @remarks
-   * Removes one push subscription, by id or by endpoint.
+   * Removes one push subscription by its endpoint.
    */
   async removePushSubscription(
     request: components.AccountRemovePushSubscriptionRequestBody,
     options?: RequestOptions,
   ): Promise<operations.AccountRemovePushSubscriptionResponse> {
     return unwrapAsync(accountRemovePushSubscription(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Resolve SteamIDs and vanities to accounts
+   *
+   * @remarks
+   * Looks up to 50 SteamID64s and Steam vanities at once. Accounts SteamSets knows come from its database; Steam is asked only for the rest.
+   */
+  async resolveMany(
+    request: components.AccountResolveManyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountResolveManyResponse> {
+    return unwrapAsync(accountResolveMany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Search accounts
+   *
+   * @remarks
+   * Finds up to 10 accounts by name, vanity or account id, best match first.
+   */
+  async search(
+    request: components.AccountSearchRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountSearchResponse> {
+    return unwrapAsync(accountSearch(
       this,
       request,
       options,
@@ -675,6 +870,23 @@ export class Account extends ClientSDK {
   }
 
   /**
+   * Show or hide the account in other accounts' trade matches
+   *
+   * @remarks
+   * Hidden, the account is not named to other accounts as a holder with a spare card or as an account that needs a card, in digests and on card pages. The account still gets its own trade matches.
+   */
+  async setTradeMatchVisibility(
+    request: components.AccountSetTradeMatchVisibilityRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AccountSetTradeMatchVisibilityResponse> {
+    return unwrapAsync(accountSetTradeMatchVisibility(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Watch every trading card on the wishlist
    *
    * @remarks
@@ -685,20 +897,6 @@ export class Account extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AccountSetWishlistWatchResponse> {
     return unwrapAsync(accountSetWishlistWatch(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Server-sent-events stream of per-account updates (queue status, view ticks, update progress).
-   */
-  async subscribe(
-    request: operations.AccountSubscribeRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AccountSubscribeResponse> {
-    return unwrapAsync(accountSubscribe(
       this,
       request,
       options,
