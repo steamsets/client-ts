@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { ColorTag, ColorTag$inboundSchema } from "./colortag.js";
@@ -33,18 +33,20 @@ export type V1BadgeListTagsResponseBody = {
 export const V1BadgeListTagsResponseBody$inboundSchema: z.ZodMiniType<
   V1BadgeListTagsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    colorTags: z.nullable(z.array(ColorTag$inboundSchema)),
-    designTags: z.nullable(z.array(DesignTag$inboundSchema)),
-    metadataTags: z.nullable(z.array(DesignTag$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      colorTags: z.nullable(z.array(ColorTag$inboundSchema)),
+      designTags: z.nullable(z.array(DesignTag$inboundSchema)),
+      metadataTags: z.nullable(z.array(DesignTag$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1BadgeListTagsResponseBodyFromJSON(

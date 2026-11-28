@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -35,7 +36,9 @@ export type V1AdminAddSteamApiKeyRequestBody = {
 export const V1AdminAddSteamApiKeyRequestBodyType$outboundSchema: z.ZodMiniType<
   string,
   V1AdminAddSteamApiKeyRequestBodyType
-> = openEnums.outboundSchema(V1AdminAddSteamApiKeyRequestBodyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AdminAddSteamApiKeyRequestBodyType)
+);
 
 /** @internal */
 export type V1AdminAddSteamApiKeyRequestBody$Outbound = {
@@ -47,10 +50,12 @@ export type V1AdminAddSteamApiKeyRequestBody$Outbound = {
 export const V1AdminAddSteamApiKeyRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminAddSteamApiKeyRequestBody$Outbound,
   V1AdminAddSteamApiKeyRequestBody
-> = z.object({
-  key: z.string(),
-  type: V1AdminAddSteamApiKeyRequestBodyType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    key: z.string(),
+    type: V1AdminAddSteamApiKeyRequestBodyType$outboundSchema,
+  })
+);
 
 export function v1AdminAddSteamApiKeyRequestBodyToJSON(
   v1AdminAddSteamApiKeyRequestBody: V1AdminAddSteamApiKeyRequestBody,

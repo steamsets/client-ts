@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,19 +13,26 @@ export type SupporterStatus = {
    */
   active: boolean;
   /**
-   * Total months with a donation
+   * Months supported so far, up to and including the current month
    */
   months: number;
+  /**
+   * The support streak the account picked, 1 to 10, shown instead of the one its months earn. 0 when it picked none
+   */
+  streak: number;
 };
 
 /** @internal */
 export const SupporterStatus$inboundSchema: z.ZodMiniType<
   SupporterStatus,
   unknown
-> = z.object({
-  active: z.boolean(),
-  months: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean(),
+    months: z.int(),
+    streak: z.int(),
+  })
+);
 
 export function supporterStatusFromJSON(
   jsonString: string,

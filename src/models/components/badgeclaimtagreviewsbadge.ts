@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -29,19 +29,21 @@ export type BadgeClaimTagReviewsBadge = {
 export const BadgeClaimTagReviewsBadge$inboundSchema: z.ZodMiniType<
   BadgeClaimTagReviewsBadge,
   unknown
-> = z.object({
-  badgeId: z.string(),
-  claimedUntil: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  imageUrl: z.string(),
-  isFoil: z.boolean(),
-  level: z.int(),
-  name: z.string(),
-  scarcity: z.int(),
-  suggestions: BadgeClaimTagReviewsSuggestions$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    badgeId: z.string(),
+    claimedUntil: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    imageUrl: z.string(),
+    isFoil: z.boolean(),
+    level: z.int(),
+    name: z.string(),
+    scarcity: z.int(),
+    suggestions: BadgeClaimTagReviewsSuggestions$inboundSchema,
+  })
+);
 
 export function badgeClaimTagReviewsBadgeFromJSON(
   jsonString: string,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1GroupQueueUpdateRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1GroupQueueUpdateRequestBody$Outbound = {
 export const V1GroupQueueUpdateRequestBody$outboundSchema: z.ZodMiniType<
   V1GroupQueueUpdateRequestBody$Outbound,
   V1GroupQueueUpdateRequestBody
-> = z.object({
-  groupIds: z.nullable(z.array(z.int())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    groupIds: z.nullable(z.array(z.int())),
+  })
+);
 
 export function v1GroupQueueUpdateRequestBodyToJSON(
   v1GroupQueueUpdateRequestBody: V1GroupQueueUpdateRequestBody,

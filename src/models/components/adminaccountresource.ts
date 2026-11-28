@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -92,27 +92,35 @@ export type AdminAccountResource = {
 export const AdminAccountResourceResource$inboundSchema: z.ZodMiniType<
   AdminAccountResourceResource,
   unknown
-> = openEnums.inboundSchema(AdminAccountResourceResource);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdminAccountResourceResource)
+);
 
 /** @internal */
 export const AdminAccountResourceSource$inboundSchema: z.ZodMiniType<
   AdminAccountResourceSource,
   unknown
-> = openEnums.inboundSchema(AdminAccountResourceSource);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdminAccountResourceSource)
+);
 
 /** @internal */
 export const AdminAccountResource$inboundSchema: z.ZodMiniType<
   AdminAccountResource,
   unknown
-> = z.object({
-  inherited: AdminAccountResourceInherited$inboundSchema,
-  otherRoles: z.nullable(z.array(AdminAccountResourceRoleValue$inboundSchema)),
-  override: z.nullable(AdminAccountResourceOverride$inboundSchema),
-  resource: AdminAccountResourceResource$inboundSchema,
-  role: z.nullable(z.string()),
-  source: AdminAccountResourceSource$inboundSchema,
-  value: z.nullable(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    inherited: AdminAccountResourceInherited$inboundSchema,
+    otherRoles: z.nullable(
+      z.array(AdminAccountResourceRoleValue$inboundSchema),
+    ),
+    override: z.nullable(AdminAccountResourceOverride$inboundSchema),
+    resource: AdminAccountResourceResource$inboundSchema,
+    role: z.nullable(z.string()),
+    source: AdminAccountResourceSource$inboundSchema,
+    value: z.nullable(z.string()),
+  })
+);
 
 export function adminAccountResourceFromJSON(
   jsonString: string,

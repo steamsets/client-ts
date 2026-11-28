@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountSetWishlistWatchRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type AccountSetWishlistWatchRequestBody$Outbound = {
 export const AccountSetWishlistWatchRequestBody$outboundSchema: z.ZodMiniType<
   AccountSetWishlistWatchRequestBody$Outbound,
   AccountSetWishlistWatchRequestBody
-> = z.object({
-  enabled: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    enabled: z.boolean(),
+  })
+);
 
 export function accountSetWishlistWatchRequestBodyToJSON(
   accountSetWishlistWatchRequestBody: AccountSetWishlistWatchRequestBody,

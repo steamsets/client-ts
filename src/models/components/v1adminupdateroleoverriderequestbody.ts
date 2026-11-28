@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -48,8 +49,10 @@ export type V1AdminUpdateRoleOverrideRequestBody = {
 
 /** @internal */
 export const V1AdminUpdateRoleOverrideRequestBodyTier$outboundSchema:
-  z.ZodMiniType<string, V1AdminUpdateRoleOverrideRequestBodyTier> = openEnums
-    .outboundSchema(V1AdminUpdateRoleOverrideRequestBodyTier);
+  z.ZodMiniType<string, V1AdminUpdateRoleOverrideRequestBodyTier> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminUpdateRoleOverrideRequestBodyTier)
+    );
 
 /** @internal */
 export type V1AdminUpdateRoleOverrideRequestBody$Outbound = {
@@ -63,12 +66,14 @@ export type V1AdminUpdateRoleOverrideRequestBody$Outbound = {
 export const V1AdminUpdateRoleOverrideRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUpdateRoleOverrideRequestBody$Outbound,
   V1AdminUpdateRoleOverrideRequestBody
-> = z.object({
-  id: z.optional(IDSearch$outboundSchema),
-  reason: z.optional(z.string()),
-  tier: z.optional(V1AdminUpdateRoleOverrideRequestBodyTier$outboundSchema),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(IDSearch$outboundSchema),
+    reason: z.optional(z.string()),
+    tier: z.optional(V1AdminUpdateRoleOverrideRequestBodyTier$outboundSchema),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AdminUpdateRoleOverrideRequestBodyToJSON(
   v1AdminUpdateRoleOverrideRequestBody: V1AdminUpdateRoleOverrideRequestBody,

@@ -29,6 +29,7 @@ let value: TrendingAccount = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 747187,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -41,25 +42,31 @@ let value: TrendingAccount = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: [
+      {
+        extras: {},
+        rating: 418270,
+        role: "donator",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 634507,
+    steamSetsScore: 121724,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 121724,
+    vacBans: 325508,
     xp: 123456,
   },
-  accountId: 1103,
-  totalViews: 722712,
-  uniqueViews: 220440,
+  totalViews: 1103,
+  uniqueViews: 722712,
 };
 ```
 
@@ -67,7 +74,6 @@ let value: TrendingAccount = {
 
 | Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `account`                                                                      | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
-| `accountId`                                                                    | *number*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
-| `totalViews`                                                                   | *number*                                                                       | :heavy_check_mark:                                                             | Total profile loads in the window                                              |
+| `account`                                                                      | [components.LeaderboardAccount](../../models/components/leaderboardaccount.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `totalViews`                                                                   | *number*                                                                       | :heavy_check_mark:                                                             | Profile views in the window, counting each viewer once per day                 |
 | `uniqueViews`                                                                  | *number*                                                                       | :heavy_check_mark:                                                             | Distinct viewers in the window                                                 |

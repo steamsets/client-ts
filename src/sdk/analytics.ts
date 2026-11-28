@@ -3,19 +3,55 @@
  */
 
 import { analyticsTrackEvent } from "../funcs/analyticsTrackEvent.js";
+import { analyticsTrackSearches } from "../funcs/analyticsTrackSearches.js";
+import { analyticsTrackSearchParse } from "../funcs/analyticsTrackSearchParse.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 
 export class Analytics extends ClientSDK {
   /**
-   * Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+   * Track a frontend-only profile view. Frontend API key + logged-in users only.
    */
   async trackEvent(
     request: operations.TrackEventRequest,
     options?: RequestOptions,
   ): Promise<operations.TrackEventResponse> {
     return unwrapAsync(analyticsTrackEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Record what the search parse model read from a settled query
+   *
+   * @remarks
+   * Feeds the admin's search query report and the distilled parser's training set. No account, session, visitor id or address is stored. Call it from the site's server with the visitor's request headers. The response is always empty.
+   */
+  async trackSearchParse(
+    request: operations.TrackSearchParseRequest,
+    options?: RequestOptions,
+  ): Promise<operations.TrackSearchParseResponse> {
+    return unwrapAsync(analyticsTrackSearchParse(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Record the site's settled searches and the results opened from them
+   *
+   * @remarks
+   * Feeds the admin's search query report. No account, session, visitor id or address is stored with an event. Send it from the browser after hydration, never from the server render. The response is always empty.
+   */
+  async trackSearches(
+    request: operations.TrackSearchesRequest,
+    options?: RequestOptions,
+  ): Promise<operations.TrackSearchesResponse> {
+    return unwrapAsync(analyticsTrackSearches(
       this,
       request,
       options,

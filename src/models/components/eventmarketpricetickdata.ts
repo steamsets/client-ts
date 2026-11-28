@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,16 +22,18 @@ export type EventMarketPriceTickData = {
 export const EventMarketPriceTickData$inboundSchema: z.ZodMiniType<
   EventMarketPriceTickData,
   unknown
-> = z.object({
-  appId: z.int(),
-  averageListings: z.int(),
-  badgeType: z.string(),
-  buyOrderAveragePrice: z.int(),
-  cardAveragePrice: z.int(),
-  setBuyOrderPrice: z.int(),
-  setPrice: z.int(),
-  updatedAt: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    averageListings: z.int(),
+    badgeType: z.string(),
+    buyOrderAveragePrice: z.int(),
+    cardAveragePrice: z.int(),
+    setBuyOrderPrice: z.int(),
+    setPrice: z.int(),
+    updatedAt: z.int(),
+  })
+);
 
 export function eventMarketPriceTickDataFromJSON(
   jsonString: string,

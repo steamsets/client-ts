@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Range, Range$Outbound, Range$outboundSchema } from "./range.js";
@@ -53,7 +54,9 @@ export type V1BadgeFilters = {
 export const ViewerOwnership$outboundSchema: z.ZodMiniType<
   string,
   ViewerOwnership
-> = openEnums.outboundSchema(ViewerOwnership);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ViewerOwnership)
+);
 
 /** @internal */
 export type V1BadgeFilters$Outbound = {
@@ -72,17 +75,19 @@ export type V1BadgeFilters$Outbound = {
 export const V1BadgeFilters$outboundSchema: z.ZodMiniType<
   V1BadgeFilters$Outbound,
   V1BadgeFilters
-> = z.object({
-  appIds: z.optional(z.nullable(z.array(z.int()))),
-  hasHighestLevel: z.optional(z.nullable(z.boolean())),
-  isEvent: z.optional(z.nullable(z.boolean())),
-  isFoil: z.optional(z.nullable(z.boolean())),
-  isSale: z.optional(z.nullable(z.boolean())),
-  level: z.optional(Range$outboundSchema),
-  scarcity: z.optional(Range$outboundSchema),
-  viewerLevel: z.optional(Range$outboundSchema),
-  viewerOwnership: z.optional(z.nullable(ViewerOwnership$outboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appIds: z.optional(z.nullable(z.array(z.int()))),
+    hasHighestLevel: z.optional(z.nullable(z.boolean())),
+    isEvent: z.optional(z.nullable(z.boolean())),
+    isFoil: z.optional(z.nullable(z.boolean())),
+    isSale: z.optional(z.nullable(z.boolean())),
+    level: z.optional(Range$outboundSchema),
+    scarcity: z.optional(Range$outboundSchema),
+    viewerLevel: z.optional(Range$outboundSchema),
+    viewerOwnership: z.optional(z.nullable(ViewerOwnership$outboundSchema)),
+  })
+);
 
 export function v1BadgeFiltersToJSON(v1BadgeFilters: V1BadgeFilters): string {
   return JSON.stringify(V1BadgeFilters$outboundSchema.parse(v1BadgeFilters));

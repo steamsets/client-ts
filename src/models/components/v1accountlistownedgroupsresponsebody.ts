@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { V1OwnedGroup, V1OwnedGroup$inboundSchema } from "./v1ownedgroup.js";
@@ -21,16 +21,18 @@ export type V1AccountListOwnedGroupsResponseBody = {
 export const V1AccountListOwnedGroupsResponseBody$inboundSchema: z.ZodMiniType<
   V1AccountListOwnedGroupsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    groups: z.nullable(z.array(V1OwnedGroup$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      groups: z.nullable(z.array(V1OwnedGroup$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountListOwnedGroupsResponseBodyFromJSON(

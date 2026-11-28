@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -54,8 +55,8 @@ export type V1AdminUpdateResourcesRequestBody = {
 };
 
 /** @internal */
-export const Reset$outboundSchema: z.ZodMiniType<string, Reset> = openEnums
-  .outboundSchema(Reset);
+export const Reset$outboundSchema: z.ZodMiniType<string, Reset> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Reset));
 
 /** @internal */
 export type V1AdminUpdateResourcesRequestBody$Outbound = {
@@ -69,12 +70,14 @@ export type V1AdminUpdateResourcesRequestBody$Outbound = {
 export const V1AdminUpdateResourcesRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUpdateResourcesRequestBody$Outbound,
   V1AdminUpdateResourcesRequestBody
-> = z.object({
-  id: z.optional(IDSearch$outboundSchema),
-  reset: z.optional(z.nullable(z.array(Reset$outboundSchema))),
-  resources: z.optional(z.nullable(z.array(Resource$outboundSchema))),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(IDSearch$outboundSchema),
+    reset: z.optional(z.nullable(z.array(Reset$outboundSchema))),
+    resources: z.optional(z.nullable(z.array(Resource$outboundSchema))),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AdminUpdateResourcesRequestBodyToJSON(
   v1AdminUpdateResourcesRequestBody: V1AdminUpdateResourcesRequestBody,

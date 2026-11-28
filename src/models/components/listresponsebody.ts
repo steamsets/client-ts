@@ -4,9 +4,10 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { Announcement, Announcement$inboundSchema } from "./announcement.js";
 import {
   MaintenanceEvent,
   MaintenanceEvent$inboundSchema,
@@ -17,6 +18,10 @@ export type ListResponseBody = {
    * A URL to the JSON Schema for this object.
    */
   dollarSchema?: string | undefined;
+  /**
+   * The active banners, warnings first, then newest first
+   */
+  announcements: Array<Announcement | null> | null;
   items: Array<MaintenanceEvent | null> | null;
 };
 
@@ -24,16 +29,21 @@ export type ListResponseBody = {
 export const ListResponseBody$inboundSchema: z.ZodMiniType<
   ListResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    items: z.nullable(z.array(z.nullable(MaintenanceEvent$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      announcements: z.nullable(
+        z.array(z.nullable(Announcement$inboundSchema)),
+      ),
+      items: z.nullable(z.array(z.nullable(MaintenanceEvent$inboundSchema))),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function listResponseBodyFromJSON(

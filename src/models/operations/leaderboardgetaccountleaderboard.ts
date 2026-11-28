@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -21,21 +21,25 @@ export type LeaderboardGetAccountLeaderboardResponse = {
 
 /** @internal */
 export const LeaderboardGetAccountLeaderboardResponse$inboundSchema:
-  z.ZodMiniType<LeaderboardGetAccountLeaderboardResponse, unknown> = z.pipe(
-    z.object({
-      HttpMeta: components.HTTPMetadata$inboundSchema,
-      V1LeaderboardGetAccountLeaderboardResponseBody: z.optional(
-        components.V1LeaderboardGetAccountLeaderboardResponseBody$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "HttpMeta": "httpMeta",
-        "V1LeaderboardGetAccountLeaderboardResponseBody":
-          "v1LeaderboardGetAccountLeaderboardResponseBody",
-      });
-    }),
-  );
+  z.ZodMiniType<LeaderboardGetAccountLeaderboardResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          HttpMeta: components.HTTPMetadata$inboundSchema,
+          V1LeaderboardGetAccountLeaderboardResponseBody: z.optional(
+            components
+              .V1LeaderboardGetAccountLeaderboardResponseBody$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "HttpMeta": "httpMeta",
+            "V1LeaderboardGetAccountLeaderboardResponseBody":
+              "v1LeaderboardGetAccountLeaderboardResponseBody",
+          });
+        }),
+      )
+    );
 
 export function leaderboardGetAccountLeaderboardResponseFromJSON(
   jsonString: string,

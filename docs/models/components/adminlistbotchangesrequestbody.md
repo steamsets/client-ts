@@ -1,0 +1,22 @@
+# AdminListBotChangesRequestBody
+
+## Example Usage
+
+```typescript
+import { AdminListBotChangesRequestBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminListBotChangesRequestBody = {
+  field: "features",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        | Example                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `cursor`                                                                                                           | *string*                                                                                                           | :heavy_minus_sign:                                                                                                 | nextCursor of the page before. Empty for the newest page.                                                          |                                                                                                                    |
+| `field`                                                                                                            | *string*                                                                                                           | :heavy_minus_sign:                                                                                                 | Only this field, or a group: profile, listing, client, or features for every features.<feature>.                   | features                                                                                                           |
+| `id`                                                                                                               | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | The bot's public id.                                                                                               |                                                                                                                    |
+| `limit`                                                                                                            | *number*                                                                                                           | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |                                                                                                                    |
+| `source`                                                                                                           | [components.AdminListBotChangesRequestBodySource](../../models/components/adminlistbotchangesrequestbodysource.md) | :heavy_minus_sign:                                                                                                 | Only changes from this source.                                                                                     |                                                                                                                    |

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountAddPushSubscriptionRequestBody = {
   /**
@@ -36,12 +37,14 @@ export const AccountAddPushSubscriptionRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountAddPushSubscriptionRequestBody$Outbound,
     AccountAddPushSubscriptionRequestBody
-  > = z.object({
-    auth: z.string(),
-    endpoint: z.string(),
-    p256dh: z.string(),
-    userAgent: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      auth: z.string(),
+      endpoint: z.string(),
+      p256dh: z.string(),
+      userAgent: z.optional(z.string()),
+    })
+  );
 
 export function accountAddPushSubscriptionRequestBodyToJSON(
   accountAddPushSubscriptionRequestBody: AccountAddPushSubscriptionRequestBody,

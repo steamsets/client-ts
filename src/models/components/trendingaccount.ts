@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -12,10 +12,9 @@ import {
 } from "./leaderboardaccount.js";
 
 export type TrendingAccount = {
-  account?: LeaderboardAccount | null | undefined;
-  accountId: number;
+  account: LeaderboardAccount | null;
   /**
-   * Total profile loads in the window
+   * Profile views in the window, counting each viewer once per day
    */
   totalViews: number;
   /**
@@ -28,12 +27,13 @@ export type TrendingAccount = {
 export const TrendingAccount$inboundSchema: z.ZodMiniType<
   TrendingAccount,
   unknown
-> = z.object({
-  account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-  accountId: z.int(),
-  totalViews: z.int(),
-  uniqueViews: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account: z.nullable(LeaderboardAccount$inboundSchema),
+    totalViews: z.int(),
+    uniqueViews: z.int(),
+  })
+);
 
 export function trendingAccountFromJSON(
   jsonString: string,

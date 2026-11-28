@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -13,12 +13,18 @@ export const Channel = {
   Discord: "discord",
   Email: "email",
   Push: "push",
+  Inbox: "inbox",
 } as const;
 export type Channel = OpenEnum<typeof Channel>;
 
 export const Kind = {
   CardAcquired: "card_acquired",
-  SubmissionReplied: "submission_replied",
+  TradeMatchNeeded: "trade_match_needed",
+  TradeMatchSpare: "trade_match_spare",
+  SteamsetsTicketReplied: "steamsets_ticket_replied",
+  LevelsTicketReplied: "levels_ticket_replied",
+  ListingRenewal: "listing_renewal",
+  SupportReportedAgain: "support_reported_again",
 } as const;
 export type Kind = OpenEnum<typeof Kind>;
 
@@ -29,22 +35,24 @@ export type AccountGetNotificationSettingsEntry = {
 };
 
 /** @internal */
-export const Channel$inboundSchema: z.ZodMiniType<Channel, unknown> = openEnums
-  .inboundSchema(Channel);
+export const Channel$inboundSchema: z.ZodMiniType<Channel, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Channel));
 
 /** @internal */
-export const Kind$inboundSchema: z.ZodMiniType<Kind, unknown> = openEnums
-  .inboundSchema(Kind);
+export const Kind$inboundSchema: z.ZodMiniType<Kind, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Kind));
 
 /** @internal */
 export const AccountGetNotificationSettingsEntry$inboundSchema: z.ZodMiniType<
   AccountGetNotificationSettingsEntry,
   unknown
-> = z.object({
-  channel: Channel$inboundSchema,
-  enabled: z.boolean(),
-  kind: Kind$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    channel: Channel$inboundSchema,
+    enabled: z.boolean(),
+    kind: Kind$inboundSchema,
+  })
+);
 
 export function accountGetNotificationSettingsEntryFromJSON(
   jsonString: string,

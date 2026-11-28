@@ -28,7 +28,9 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Track a frontend-only analytics event (profile view, search). Frontend API key + logged-in users only.
+ * Track a frontend-only profile view. Frontend API key + logged-in users only.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function analyticsTrackEvent(
   client: SteamSetsCore,
@@ -111,7 +113,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

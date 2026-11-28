@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +14,11 @@ export type AccountOptOutResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * Whether the account is hidden site-wide after this call
+   * When the opt-out takes effect: the account is hidden, signed out and no longer processed. 30 days after the first request
+   */
+  effectiveAt: Date;
+  /**
+   * Whether the account is hidden site-wide after this call. False while the opt-out is pending
    */
   hidden: boolean;
   /**
@@ -22,7 +26,7 @@ export type AccountOptOutResponseBody = {
    */
   optedOut: boolean;
   /**
-   * How many live sessions this call killed
+   * How many live sessions this call killed. Always 0: sessions are revoked when the opt-out takes effect
    */
   sessionsRevoked: number;
 };
@@ -31,18 +35,24 @@ export type AccountOptOutResponseBody = {
 export const AccountOptOutResponseBody$inboundSchema: z.ZodMiniType<
   AccountOptOutResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    hidden: z.boolean(),
-    optedOut: z.boolean(),
-    sessionsRevoked: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      effectiveAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      hidden: z.boolean(),
+      optedOut: z.boolean(),
+      sessionsRevoked: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function accountOptOutResponseBodyFromJSON(

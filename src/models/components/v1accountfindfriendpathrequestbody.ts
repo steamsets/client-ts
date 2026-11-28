@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import {
   AccountSearch,
   AccountSearch$Outbound,
@@ -34,12 +35,14 @@ export type V1AccountFindFriendPathRequestBody$Outbound = {
 export const V1AccountFindFriendPathRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountFindFriendPathRequestBody$Outbound,
   V1AccountFindFriendPathRequestBody
-> = z.object({
-  exclude: z.optional(z.nullable(z.array(AccountSearch$outboundSchema))),
-  from: AccountSearch$outboundSchema,
-  maxPaths: z.optional(z.int()),
-  to: AccountSearch$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    exclude: z.optional(z.nullable(z.array(AccountSearch$outboundSchema))),
+    from: AccountSearch$outboundSchema,
+    maxPaths: z.optional(z.int()),
+    to: AccountSearch$outboundSchema,
+  })
+);
 
 export function v1AccountFindFriendPathRequestBodyToJSON(
   v1AccountFindFriendPathRequestBody: V1AccountFindFriendPathRequestBody,

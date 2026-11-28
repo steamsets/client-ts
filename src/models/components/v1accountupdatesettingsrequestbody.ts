@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -12,15 +13,29 @@ import { OpenEnum } from "../../types/enums.js";
 export const V1AccountUpdateSettingsRequestBodyNameEffect = {
   None: "none",
   Rainbow: "rainbow",
-  Glitch: "glitch",
   Shadow: "shadow",
   Neon: "neon",
-  Retro: "retro",
-  Stamped: "stamped",
   Shatter: "shatter",
-  Typewriter: "typewriter",
   Vaporwave: "vaporwave",
-  Sunken: "sunken",
+  Stardust: "stardust",
+  Cosmic: "cosmic",
+  Sakura: "sakura",
+  Halo: "halo",
+  Molten: "molten",
+  Glass: "glass",
+  AmberGlint: "amber_glint",
+  AmethystGlint: "amethyst_glint",
+  EmeraldDepth: "emerald_depth",
+  SapphireDepth: "sapphire_depth",
+  RubyFire: "ruby_fire",
+  DiamondFire: "diamond_fire",
+  AstralSky: "astral_sky",
+  NebulaSky: "nebula_sky",
+  Crown: "crown",
+  Lens: "lens",
+  Boost: "boost",
+  DeathSmoke: "death_smoke",
+  StasikRose: "stasik_rose",
 } as const;
 /**
  * The name effect. none clears it, omit to leave unchanged
@@ -55,9 +70,17 @@ export type V1AccountUpdateSettingsRequestBody = {
    */
   nameEffect?: V1AccountUpdateSettingsRequestBodyNameEffect | null | undefined;
   /**
+   * The support streak to show instead of the one the months earn, 1 to 10. 0 follows the months again, omit to leave unchanged. Picking one needs $5,000 in lifetime donations
+   */
+  supporterStreak?: number | null | undefined;
+  /**
    * The profile theme color as #RRGGBB (no alpha). Empty string clears it, omit to leave unchanged
    */
   themeColor?: string | null | undefined;
+  /**
+   * The account's Steam trade offer link. Its partner must be the signed-in account. Only the token is stored. Empty string removes it, omit to leave unchanged
+   */
+  tradeUrl?: string | null | undefined;
   /**
    * The vanity the account should use. Empty string clears it, omit to leave unchanged
    */
@@ -67,7 +90,9 @@ export type V1AccountUpdateSettingsRequestBody = {
 /** @internal */
 export const V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema:
   z.ZodMiniType<string, V1AccountUpdateSettingsRequestBodyNameEffect> =
-    openEnums.outboundSchema(V1AccountUpdateSettingsRequestBodyNameEffect);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AccountUpdateSettingsRequestBodyNameEffect)
+    );
 
 /** @internal */
 export type V1AccountUpdateSettingsRequestBody$Outbound = {
@@ -77,7 +102,9 @@ export type V1AccountUpdateSettingsRequestBody$Outbound = {
   hiddenReason?: string | null | undefined;
   language?: string | null | undefined;
   nameEffect?: string | null | undefined;
+  supporterStreak?: number | null | undefined;
   themeColor?: string | null | undefined;
+  tradeUrl?: string | null | undefined;
   vanity?: string | null | undefined;
 };
 
@@ -85,18 +112,22 @@ export type V1AccountUpdateSettingsRequestBody$Outbound = {
 export const V1AccountUpdateSettingsRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountUpdateSettingsRequestBody$Outbound,
   V1AccountUpdateSettingsRequestBody
-> = z.object({
-  countryOverride: z.optional(z.nullable(z.string())),
-  email: z.optional(z.nullable(z.string())),
-  hidden: z.optional(z.nullable(z.boolean())),
-  hiddenReason: z.optional(z.nullable(z.string())),
-  language: z.optional(z.nullable(z.string())),
-  nameEffect: z.optional(
-    z.nullable(V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema),
-  ),
-  themeColor: z.optional(z.nullable(z.string())),
-  vanity: z.optional(z.nullable(z.string())),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    countryOverride: z.optional(z.nullable(z.string())),
+    email: z.optional(z.nullable(z.string())),
+    hidden: z.optional(z.nullable(z.boolean())),
+    hiddenReason: z.optional(z.nullable(z.string())),
+    language: z.optional(z.nullable(z.string())),
+    nameEffect: z.optional(
+      z.nullable(V1AccountUpdateSettingsRequestBodyNameEffect$outboundSchema),
+    ),
+    supporterStreak: z.optional(z.nullable(z.int())),
+    themeColor: z.optional(z.nullable(z.string())),
+    tradeUrl: z.optional(z.nullable(z.string())),
+    vanity: z.optional(z.nullable(z.string())),
+  })
+);
 
 export function v1AccountUpdateSettingsRequestBodyToJSON(
   v1AccountUpdateSettingsRequestBody: V1AccountUpdateSettingsRequestBody,

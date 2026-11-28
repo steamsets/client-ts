@@ -3,11 +3,15 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  DeveloperAppAccess,
+  DeveloperAppAccess$inboundSchema,
+} from "./developerappaccess.js";
 import {
   DeveloperAppAnalytics,
   DeveloperAppAnalytics$inboundSchema,
@@ -27,6 +31,7 @@ export const DeveloperAppEnvironment = {
 export type DeveloperAppEnvironment = OpenEnum<typeof DeveloperAppEnvironment>;
 
 export type DeveloperApp = {
+  access: DeveloperAppAccess;
   analytics?: DeveloperAppAnalytics | undefined;
   /**
    * The api key (deprecated, always null for security)
@@ -55,32 +60,49 @@ export type DeveloperApp = {
    */
   keyId: string;
   /**
+   * When the key was last used. Null when it never was, or when that is not known yet
+   */
+  lastUsedAt: Date | null;
+  /**
    * The name of the developer app
    */
   name: string;
+  /**
+   * The first characters of the key as Unkey stores them
+   */
+  start: string;
 };
 
 /** @internal */
 export const DeveloperAppEnvironment$inboundSchema: z.ZodMiniType<
   DeveloperAppEnvironment,
   unknown
-> = openEnums.inboundSchema(DeveloperAppEnvironment);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DeveloperAppEnvironment)
+);
 
 /** @internal */
 export const DeveloperApp$inboundSchema: z.ZodMiniType<DeveloperApp, unknown> =
-  z.object({
-    analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
-    apiKey: z.nullable(z.string()),
-    createdAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    description: z.string(),
-    environment: DeveloperAppEnvironment$inboundSchema,
-    id: z.string(),
-    keyId: z.string(),
-    name: z.string(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      access: DeveloperAppAccess$inboundSchema,
+      analytics: z.optional(DeveloperAppAnalytics$inboundSchema),
+      apiKey: z.nullable(z.string()),
+      createdAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      description: z.string(),
+      environment: DeveloperAppEnvironment$inboundSchema,
+      id: z.string(),
+      keyId: z.string(),
+      lastUsedAt: z.nullable(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      name: z.string(),
+      start: z.string(),
+    })
+  );
 
 export function developerAppFromJSON(
   jsonString: string,

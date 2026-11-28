@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountUpdateConnectionRequestBody = {
   /**
@@ -25,10 +26,12 @@ export type V1AccountUpdateConnectionRequestBody$Outbound = {
 export const V1AccountUpdateConnectionRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountUpdateConnectionRequestBody$Outbound,
   V1AccountUpdateConnectionRequestBody
-> = z.object({
-  connectionId: z.string(),
-  hidden: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    hidden: z.boolean(),
+  })
+);
 
 export function v1AccountUpdateConnectionRequestBodyToJSON(
   v1AccountUpdateConnectionRequestBody: V1AccountUpdateConnectionRequestBody,

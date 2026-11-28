@@ -14,9 +14,10 @@ let value: MaintenanceEvent = {
     "<value 1>",
     "<value 2>",
   ],
+  product: "levels",
   title: "<value>",
   uid: "<id>",
-  updatedAt: new Date("2026-07-09T00:23:07.912Z"),
+  updatedAt: new Date("2026-02-11T16:29:47.360Z"),
 };
 ```
 
@@ -31,6 +32,7 @@ let value: MaintenanceEvent = {
 | `endsAt`                                                                                      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Optional scheduled end                                                                        |                                                                                               |
 | `message`                                                                                     | *string*                                                                                      | :heavy_check_mark:                                                                            | Markdown body shown below the headline                                                        |                                                                                               |
 | `paths`                                                                                       | *string*[]                                                                                    | :heavy_check_mark:                                                                            | Path prefixes this event covers; "*" means whole site                                         |                                                                                               |
+| `product`                                                                                     | [components.MaintenanceEventProduct](../../models/components/maintenanceeventproduct.md)      | :heavy_check_mark:                                                                            | The product the event closes                                                                  |                                                                                               |
 | `startsAt`                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Optional scheduled start                                                                      |                                                                                               |
 | `title`                                                                                       | *string*                                                                                      | :heavy_check_mark:                                                                            | Short headline shown to users                                                                 |                                                                                               |
 | `uid`                                                                                         | *string*                                                                                      | :heavy_check_mark:                                                                            | Public maintenance event ID                                                                   |                                                                                               |

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,19 +35,21 @@ export type V1AdminTestSteamApiKeyResponseBody = {
 export const V1AdminTestSteamApiKeyResponseBody$inboundSchema: z.ZodMiniType<
   V1AdminTestSteamApiKeyResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    message: z.string(),
-    methods: z.int(),
-    ok: z.boolean(),
-    status: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      message: z.string(),
+      methods: z.int(),
+      ok: z.boolean(),
+      status: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AdminTestSteamApiKeyResponseBodyFromJSON(

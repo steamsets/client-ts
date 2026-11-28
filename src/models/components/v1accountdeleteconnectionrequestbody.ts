@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountDeleteConnectionRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AccountDeleteConnectionRequestBody$Outbound = {
 export const V1AccountDeleteConnectionRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountDeleteConnectionRequestBody$Outbound,
   V1AccountDeleteConnectionRequestBody
-> = z.object({
-  connectionId: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+  })
+);
 
 export function v1AccountDeleteConnectionRequestBodyToJSON(
   v1AccountDeleteConnectionRequestBody: V1AccountDeleteConnectionRequestBody,

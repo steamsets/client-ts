@@ -1,0 +1,24 @@
+# AdminSecurityKeysStepUpResponseBody
+
+## Example Usage
+
+```typescript
+import { AdminSecurityKeysStepUpResponseBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminSecurityKeysStepUpResponseBody = {
+  dollarSchema:
+    "https://api.steamsets.com/schemas/AdminSecurityKeysStepUpResponseBody.json",
+  aud: "config",
+  expiresAt: new Date("2024-02-25T11:40:31.803Z"),
+  token: "<value>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                             | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       | Example                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dollarSchema`                                                                                                                                    | *string*                                                                                                                                          | :heavy_minus_sign:                                                                                                                                | A URL to the JSON Schema for this object.                                                                                                         | https://api.steamsets.com/schemas/AdminSecurityKeysStepUpResponseBody.json                                                                        |
+| `aud`                                                                                                                                             | [components.AdminSecurityKeysStepUpResponseBodyAud](../../models/components/adminsecuritykeysstepupresponsebodyaud.md)                            | :heavy_check_mark:                                                                                                                                | The one service the token is good for                                                                                                             |                                                                                                                                                   |
+| `expiresAt`                                                                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                     | :heavy_check_mark:                                                                                                                                | When the token stops working, two minutes after it was minted                                                                                     |                                                                                                                                                   |
+| `token`                                                                                                                                           | *string*                                                                                                                                          | :heavy_check_mark:                                                                                                                                | An actor token that also approves the one write, sent as X-SteamSets-Actor with that write. The service takes it once. Never send it to a browser |                                                                                                                                                   |

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -12,6 +12,10 @@ import {
 } from "./developerappanalyticstimeseriespoint.js";
 
 export type DeveloperAppAnalyticsTimeSeries = {
+  /**
+   * Daily time series data for the last 7 UTC days, today included. Every day has a point for VALID and for each other outcome seen that week, zero when there were none
+   */
+  daily: Array<DeveloperAppAnalyticsTimeSeriesPoint>;
   /**
    * Hourly time series data for the last 24 hours
    */
@@ -22,11 +26,14 @@ export type DeveloperAppAnalyticsTimeSeries = {
 export const DeveloperAppAnalyticsTimeSeries$inboundSchema: z.ZodMiniType<
   DeveloperAppAnalyticsTimeSeries,
   unknown
-> = z.object({
-  hourly: z.nullable(
-    z.array(DeveloperAppAnalyticsTimeSeriesPoint$inboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    daily: z.array(DeveloperAppAnalyticsTimeSeriesPoint$inboundSchema),
+    hourly: z.nullable(
+      z.array(DeveloperAppAnalyticsTimeSeriesPoint$inboundSchema),
+    ),
+  })
+);
 
 export function developerAppAnalyticsTimeSeriesFromJSON(
   jsonString: string,

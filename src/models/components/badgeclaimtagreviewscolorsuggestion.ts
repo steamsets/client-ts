@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,10 +16,12 @@ export type BadgeClaimTagReviewsColorSuggestion = {
 export const BadgeClaimTagReviewsColorSuggestion$inboundSchema: z.ZodMiniType<
   BadgeClaimTagReviewsColorSuggestion,
   unknown
-> = z.object({
-  coverage: z.number(),
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    coverage: z.number(),
+    id: z.string(),
+  })
+);
 
 export function badgeClaimTagReviewsColorSuggestionFromJSON(
   jsonString: string,

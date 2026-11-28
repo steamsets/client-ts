@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountSubscribeEmailRequestBody = {
   /**
@@ -25,10 +26,12 @@ export type V1AccountSubscribeEmailRequestBody$Outbound = {
 export const V1AccountSubscribeEmailRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountSubscribeEmailRequestBody$Outbound,
   V1AccountSubscribeEmailRequestBody
-> = z.object({
-  email: z.optional(z.nullable(z.string())),
-  subscribed: z.boolean(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.optional(z.nullable(z.string())),
+    subscribed: z.boolean(),
+  })
+);
 
 export function v1AccountSubscribeEmailRequestBodyToJSON(
   v1AccountSubscribeEmailRequestBody: V1AccountSubscribeEmailRequestBody,

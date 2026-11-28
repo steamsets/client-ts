@@ -9,10 +9,10 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Maintenance extends ClientSDK {
   /**
-   * List currently active maintenance events
+   * List currently active maintenance events and announcements
    *
    * @remarks
-   * Returns events that are enabled and (if scheduled) within their time window. Public — no auth required. Use this from app loaders to decide whether to render the maintenance screen.
+   * Returns the SteamSets events and announcements that are enabled and (if scheduled) within their time window. Public, no auth required. Use this from app loaders to decide whether to render the maintenance screen and the banner.
    */
   async list(
     options?: RequestOptions,

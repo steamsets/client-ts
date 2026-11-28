@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -88,30 +88,32 @@ export type V1LeaderboardBadge = {
 export const V1LeaderboardBadge$inboundSchema: z.ZodMiniType<
   V1LeaderboardBadge,
   unknown
-> = z.object({
-  appId: z.int(),
-  appImage: z.string(),
-  appName: z.string(),
-  badgeId: z.string(),
-  firstCompletion: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  highestLevel: z.nullable(z.int()),
-  image: z.string(),
-  isEvent: z.boolean(),
-  isFoil: z.boolean(),
-  isSale: z.boolean(),
-  lastCompletion: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  level: z.int(),
-  name: z.string(),
-  price: z.int(),
-  scarcity: z.nullable(z.int()),
-  steamId: z.int(),
-  trackedHolders: z.nullable(z.int()),
-  xp: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    appImage: z.string(),
+    appName: z.string(),
+    badgeId: z.string(),
+    firstCompletion: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    highestLevel: z.nullable(z.int()),
+    image: z.string(),
+    isEvent: z.boolean(),
+    isFoil: z.boolean(),
+    isSale: z.boolean(),
+    lastCompletion: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    level: z.int(),
+    name: z.string(),
+    price: z.int(),
+    scarcity: z.nullable(z.int()),
+    steamId: z.int(),
+    trackedHolders: z.nullable(z.int()),
+    xp: z.int(),
+  })
+);
 
 export function v1LeaderboardBadgeFromJSON(
   jsonString: string,

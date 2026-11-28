@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -55,13 +56,17 @@ export type SearchGetTrendingRequestBody = {
 export const SearchGetTrendingRequestBodySource$outboundSchema: z.ZodMiniType<
   string,
   SearchGetTrendingRequestBodySource
-> = openEnums.outboundSchema(SearchGetTrendingRequestBodySource);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SearchGetTrendingRequestBodySource)
+);
 
 /** @internal */
 export const SearchGetTrendingRequestBodyWindow$outboundSchema: z.ZodMiniType<
   string,
   SearchGetTrendingRequestBodyWindow
-> = openEnums.outboundSchema(SearchGetTrendingRequestBodyWindow);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SearchGetTrendingRequestBodyWindow)
+);
 
 /** @internal */
 export type SearchGetTrendingRequestBody$Outbound = {
@@ -74,11 +79,13 @@ export type SearchGetTrendingRequestBody$Outbound = {
 export const SearchGetTrendingRequestBody$outboundSchema: z.ZodMiniType<
   SearchGetTrendingRequestBody$Outbound,
   SearchGetTrendingRequestBody
-> = z.object({
-  limit: z.optional(z.int()),
-  source: SearchGetTrendingRequestBodySource$outboundSchema,
-  window: SearchGetTrendingRequestBodyWindow$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.optional(z.int()),
+    source: SearchGetTrendingRequestBodySource$outboundSchema,
+    window: SearchGetTrendingRequestBodyWindow$outboundSchema,
+  })
+);
 
 export function searchGetTrendingRequestBodyToJSON(
   searchGetTrendingRequestBody: SearchGetTrendingRequestBody,

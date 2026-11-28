@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { Card, Card$inboundSchema } from "./card.js";
@@ -33,13 +33,15 @@ export type InventorySet = {
 
 /** @internal */
 export const InventorySet$inboundSchema: z.ZodMiniType<InventorySet, unknown> =
-  z.object({
-    appId: z.int(),
-    foil: z.nullable(z.array(Card$inboundSchema)),
-    foilSets: z.int(),
-    normal: z.nullable(z.array(Card$inboundSchema)),
-    normalSets: z.int(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      appId: z.int(),
+      foil: z.nullable(z.array(Card$inboundSchema)),
+      foilSets: z.int(),
+      normal: z.nullable(z.array(Card$inboundSchema)),
+      normalSets: z.int(),
+    })
+  );
 
 export function inventorySetFromJSON(
   jsonString: string,

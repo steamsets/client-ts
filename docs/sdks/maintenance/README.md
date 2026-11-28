@@ -6,11 +6,11 @@ Site-wide and path-scoped maintenance events.
 
 ### Available Operations
 
-* [list](#list) - List currently active maintenance events
+* [list](#list) - List currently active maintenance events and announcements
 
 ## list
 
-Returns events that are enabled and (if scheduled) within their time window. Public — no auth required. Use this from app loaders to decide whether to render the maintenance screen.
+Returns the SteamSets events and announcements that are enabled and (if scheduled) within their time window. Public, no auth required. Use this from app loaders to decide whether to render the maintenance screen and the banner.
 
 ### Example Usage
 

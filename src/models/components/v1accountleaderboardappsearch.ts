@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountLeaderboardAppSearch = {
   /**
@@ -20,9 +21,11 @@ export type V1AccountLeaderboardAppSearch$Outbound = {
 export const V1AccountLeaderboardAppSearch$outboundSchema: z.ZodMiniType<
   V1AccountLeaderboardAppSearch$Outbound,
   V1AccountLeaderboardAppSearch
-> = z.object({
-  appId: z.optional(z.int()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.optional(z.int()),
+  })
+);
 
 export function v1AccountLeaderboardAppSearchToJSON(
   v1AccountLeaderboardAppSearch: V1AccountLeaderboardAppSearch,

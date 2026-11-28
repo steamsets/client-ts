@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,13 +34,15 @@ export type V1AccountApp = {
 
 /** @internal */
 export const V1AccountApp$inboundSchema: z.ZodMiniType<V1AccountApp, unknown> =
-  z.object({
-    id: z.int(),
-    image: z.string(),
-    name: z.string(),
-    playtime: z.int(),
-    price: z.int(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.int(),
+      image: z.string(),
+      name: z.string(),
+      playtime: z.int(),
+      price: z.int(),
+    })
+  );
 
 export function v1AccountAppFromJSON(
   jsonString: string,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -16,8 +16,7 @@ import {
 } from "./leaderboardchangepoint.js";
 
 export type LeaderboardChange = {
-  account?: LeaderboardAccount | null | undefined;
-  accountId: number;
+  account: LeaderboardAccount | null;
   /**
    * The account's daily rank and score on this leaderboard inside the window, ordered by date and downsampled to at most 24 points. The first and last snapshots are always included.
    */
@@ -35,23 +34,24 @@ export type LeaderboardChange = {
 export const LeaderboardChange$inboundSchema: z.ZodMiniType<
   LeaderboardChange,
   unknown
-> = z.object({
-  account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-  accountId: z.int(),
-  history: z.optional(
-    z.nullable(z.array(LeaderboardChangePoint$inboundSchema)),
-  ),
-  latestDate: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  newRank: z.int(),
-  newScore: z.int(),
-  oldRank: z.int(),
-  oldScore: z.int(),
-  rankDelta: z.int(),
-  scoreDelta: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account: z.nullable(LeaderboardAccount$inboundSchema),
+    history: z.optional(
+      z.nullable(z.array(LeaderboardChangePoint$inboundSchema)),
+    ),
+    latestDate: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    newRank: z.int(),
+    newScore: z.int(),
+    oldRank: z.int(),
+    oldScore: z.int(),
+    rankDelta: z.int(),
+    scoreDelta: z.int(),
+  })
+);
 
 export function leaderboardChangeFromJSON(
   jsonString: string,

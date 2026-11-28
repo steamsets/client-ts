@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -21,19 +21,21 @@ export type AccountGetBadgeStatsResponse = {
 export const AccountGetBadgeStatsResponse$inboundSchema: z.ZodMiniType<
   AccountGetBadgeStatsResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1AccountBadgeStats: z.optional(
-      components.V1AccountBadgeStats$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1AccountBadgeStats": "v1AccountBadgeStats",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1AccountBadgeStats: z.optional(
+        components.V1AccountBadgeStats$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1AccountBadgeStats": "v1AccountBadgeStats",
+      });
+    }),
+  )
 );
 
 export function accountGetBadgeStatsResponseFromJSON(

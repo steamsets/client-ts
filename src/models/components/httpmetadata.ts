@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,17 +21,19 @@ export type HTTPMetadata = {
 
 /** @internal */
 export const HTTPMetadata$inboundSchema: z.ZodMiniType<HTTPMetadata, unknown> =
-  z.pipe(
-    z.object({
-      Response: z.custom<Response>(x => x instanceof Response),
-      Request: z.custom<Request>(x => x instanceof Request),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "Response": "response",
-        "Request": "request",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        Response: z.custom<Response>(x => x instanceof Response),
+        Request: z.custom<Request>(x => x instanceof Request),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "Response": "response",
+          "Request": "request",
+        });
+      }),
+    )
   );
 
 export function httpMetadataFromJSON(

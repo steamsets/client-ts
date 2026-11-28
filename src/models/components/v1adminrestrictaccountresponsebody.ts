@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,19 +35,21 @@ export type V1AdminRestrictAccountResponseBody = {
 export const V1AdminRestrictAccountResponseBody$inboundSchema: z.ZodMiniType<
   V1AdminRestrictAccountResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    hidden: z.boolean(),
-    reason: z.string(),
-    restricted: z.boolean(),
-    sessionsRevoked: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      hidden: z.boolean(),
+      reason: z.string(),
+      restricted: z.boolean(),
+      sessionsRevoked: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AdminRestrictAccountResponseBodyFromJSON(

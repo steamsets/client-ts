@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -21,17 +21,21 @@ export type AdminMaintenanceDeleteResponse = {
 export const AdminMaintenanceDeleteResponse$inboundSchema: z.ZodMiniType<
   AdminMaintenanceDeleteResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    DeleteResponseBody: z.optional(components.DeleteResponseBody$inboundSchema),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "DeleteResponseBody": "deleteResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      DeleteResponseBody: z.optional(
+        components.DeleteResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "DeleteResponseBody": "deleteResponseBody",
+      });
+    }),
+  )
 );
 
 export function adminMaintenanceDeleteResponseFromJSON(

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AdminUnbanPlayerRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AdminUnbanPlayerRequestBody$Outbound = {
 export const V1AdminUnbanPlayerRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminUnbanPlayerRequestBody$Outbound,
   V1AdminUnbanPlayerRequestBody
-> = z.object({
-  steamId64: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    steamId64: z.string(),
+  })
+);
 
 export function v1AdminUnbanPlayerRequestBodyToJSON(
   v1AdminUnbanPlayerRequestBody: V1AdminUnbanPlayerRequestBody,

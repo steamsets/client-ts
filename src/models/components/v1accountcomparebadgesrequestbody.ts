@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -71,20 +72,20 @@ export type V1AccountCompareBadgesRequestBody = {
 };
 
 /** @internal */
-export const Filter$outboundSchema: z.ZodMiniType<string, Filter> = openEnums
-  .outboundSchema(Filter);
+export const Filter$outboundSchema: z.ZodMiniType<string, Filter> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Filter));
 
 /** @internal */
-export const Ignore$outboundSchema: z.ZodMiniType<string, Ignore> = openEnums
-  .outboundSchema(Ignore);
+export const Ignore$outboundSchema: z.ZodMiniType<string, Ignore> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Ignore));
 
 /** @internal */
-export const Match$outboundSchema: z.ZodMiniType<string, Match> = openEnums
-  .outboundSchema(Match);
+export const Match$outboundSchema: z.ZodMiniType<string, Match> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Match));
 
 /** @internal */
-export const Mode$outboundSchema: z.ZodMiniType<string, Mode> = openEnums
-  .outboundSchema(Mode);
+export const Mode$outboundSchema: z.ZodMiniType<string, Mode> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Mode));
 
 /** @internal */
 export type V1AccountCompareBadgesRequestBody$Outbound = {
@@ -107,21 +108,23 @@ export type V1AccountCompareBadgesRequestBody$Outbound = {
 export const V1AccountCompareBadgesRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountCompareBadgesRequestBody$Outbound,
   V1AccountCompareBadgesRequestBody
-> = z.object({
-  accounts: z.nullable(z.array(AccountSearch$outboundSchema)),
-  appIds: z.optional(z.nullable(z.array(z.int()))),
-  appTypes: z.optional(z.nullable(z.array(z.string()))),
-  difference: z.optional(DifferenceFilter$outboundSchema),
-  excludeAppIds: z.optional(z.nullable(z.array(z.int()))),
-  filter: z._default(Filter$outboundSchema, "all"),
-  ignore: z.optional(z.nullable(z.array(Ignore$outboundSchema))),
-  match: z._default(Match$outboundSchema, "tuple"),
-  minLevel: z.optional(z.int()),
-  mode: z._default(Mode$outboundSchema, "missing"),
-  order: z.optional(Order$outboundSchema),
-  page: z._default(z.int(), 1),
-  ranges: z.optional(z.nullable(z.array(RangeFilter$outboundSchema))),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accounts: z.nullable(z.array(AccountSearch$outboundSchema)),
+    appIds: z.optional(z.nullable(z.array(z.int()))),
+    appTypes: z.optional(z.nullable(z.array(z.string()))),
+    difference: z.optional(DifferenceFilter$outboundSchema),
+    excludeAppIds: z.optional(z.nullable(z.array(z.int()))),
+    filter: z._default(Filter$outboundSchema, "all"),
+    ignore: z.optional(z.nullable(z.array(Ignore$outboundSchema))),
+    match: z._default(Match$outboundSchema, "tuple"),
+    minLevel: z.optional(z.int()),
+    mode: z._default(Mode$outboundSchema, "missing"),
+    order: z.optional(Order$outboundSchema),
+    page: z._default(z.int(), 1),
+    ranges: z.optional(z.nullable(z.array(RangeFilter$outboundSchema))),
+  })
+);
 
 export function v1AccountCompareBadgesRequestBodyToJSON(
   v1AccountCompareBadgesRequestBody: V1AccountCompareBadgesRequestBody,

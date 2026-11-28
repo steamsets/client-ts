@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type IDSearch = {
   /**
@@ -25,10 +26,12 @@ export type IDSearch$Outbound = {
 export const IDSearch$outboundSchema: z.ZodMiniType<
   IDSearch$Outbound,
   IDSearch
-> = z.object({
-  accountId: z.optional(z.int()),
-  steamId64: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.optional(z.int()),
+    steamId64: z.optional(z.string()),
+  })
+);
 
 export function idSearchToJSON(idSearch: IDSearch): string {
   return JSON.stringify(IDSearch$outboundSchema.parse(idSearch));

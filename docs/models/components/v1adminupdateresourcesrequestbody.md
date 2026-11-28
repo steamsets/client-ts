@@ -8,7 +8,7 @@ import { V1AdminUpdateResourcesRequestBody } from "@steamsets/client-ts/models/c
 let value: V1AdminUpdateResourcesRequestBody = {
   resources: [
     {
-      resource: "max_leaderboard_entries",
+      resource: "name_effect",
       value: "1",
     },
   ],

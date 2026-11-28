@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type UpdateRequestBody = {
   clearEndsAt?: boolean | undefined;
@@ -11,6 +12,10 @@ export type UpdateRequestBody = {
   endsAt?: Date | undefined;
   message?: string | undefined;
   paths?: Array<string> | undefined;
+  /**
+   * Why, for the audit log
+   */
+  reason?: string | undefined;
   startsAt?: Date | undefined;
   title?: string | undefined;
   uid: string;
@@ -24,6 +29,7 @@ export type UpdateRequestBody$Outbound = {
   endsAt?: string | undefined;
   message?: string | undefined;
   paths?: Array<string> | undefined;
+  reason?: string | undefined;
   startsAt?: string | undefined;
   title?: string | undefined;
   uid: string;
@@ -33,17 +39,20 @@ export type UpdateRequestBody$Outbound = {
 export const UpdateRequestBody$outboundSchema: z.ZodMiniType<
   UpdateRequestBody$Outbound,
   UpdateRequestBody
-> = z.object({
-  clearEndsAt: z.optional(z.boolean()),
-  clearStartsAt: z.optional(z.boolean()),
-  enabled: z.optional(z.boolean()),
-  endsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  message: z.optional(z.string()),
-  paths: z.optional(z.array(z.string())),
-  startsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  title: z.optional(z.string()),
-  uid: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    clearEndsAt: z.optional(z.boolean()),
+    clearStartsAt: z.optional(z.boolean()),
+    enabled: z.optional(z.boolean()),
+    endsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+    message: z.optional(z.string()),
+    paths: z.optional(z.array(z.string())),
+    reason: z.optional(z.string()),
+    startsAt: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+    title: z.optional(z.string()),
+    uid: z.string(),
+  })
+);
 
 export function updateRequestBodyToJSON(
   updateRequestBody: UpdateRequestBody,

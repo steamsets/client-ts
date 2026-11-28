@@ -18,9 +18,10 @@ let value: ListAllResponseBody = {
         "<value 2>",
         "<value 3>",
       ],
+      product: "levels",
       title: "<value>",
       uid: "<id>",
-      updatedAt: new Date("2026-02-08T17:26:20.959Z"),
+      updatedAt: new Date("2024-05-04T10:50:24.058Z"),
     },
   ],
 };

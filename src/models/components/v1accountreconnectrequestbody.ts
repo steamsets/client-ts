@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AccountReconnectRequestBody = {
   /**
@@ -30,11 +31,13 @@ export type V1AccountReconnectRequestBody$Outbound = {
 export const V1AccountReconnectRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountReconnectRequestBody$Outbound,
   V1AccountReconnectRequestBody
-> = z.object({
-  code: z.string(),
-  connectionId: z.string(),
-  redirectUri: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string(),
+    connectionId: z.string(),
+    redirectUri: z.optional(z.string()),
+  })
+);
 
 export function v1AccountReconnectRequestBodyToJSON(
   v1AccountReconnectRequestBody: V1AccountReconnectRequestBody,

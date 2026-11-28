@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -41,16 +41,20 @@ export type V1AdminOptOutReasonCount = {
 export const V1AdminOptOutReasonCountReason$inboundSchema: z.ZodMiniType<
   V1AdminOptOutReasonCountReason,
   unknown
-> = openEnums.inboundSchema(V1AdminOptOutReasonCountReason);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminOptOutReasonCountReason)
+);
 
 /** @internal */
 export const V1AdminOptOutReasonCount$inboundSchema: z.ZodMiniType<
   V1AdminOptOutReasonCount,
   unknown
-> = z.object({
-  count: z.int(),
-  reason: V1AdminOptOutReasonCountReason$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    count: z.int(),
+    reason: V1AdminOptOutReasonCountReason$inboundSchema,
+  })
+);
 
 export function v1AdminOptOutReasonCountFromJSON(
   jsonString: string,

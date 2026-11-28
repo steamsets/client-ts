@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -37,7 +38,9 @@ export type V1AccountUpdateRoleRequestBody = {
 export const V1AccountUpdateRoleRequestBodyRole$outboundSchema: z.ZodMiniType<
   string,
   V1AccountUpdateRoleRequestBodyRole
-> = openEnums.outboundSchema(V1AccountUpdateRoleRequestBodyRole);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AccountUpdateRoleRequestBodyRole)
+);
 
 /** @internal */
 export type V1AccountUpdateRoleRequestBody$Outbound = {
@@ -48,9 +51,11 @@ export type V1AccountUpdateRoleRequestBody$Outbound = {
 export const V1AccountUpdateRoleRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountUpdateRoleRequestBody$Outbound,
   V1AccountUpdateRoleRequestBody
-> = z.object({
-  role: z.optional(V1AccountUpdateRoleRequestBodyRole$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    role: z.optional(V1AccountUpdateRoleRequestBodyRole$outboundSchema),
+  })
+);
 
 export function v1AccountUpdateRoleRequestBodyToJSON(
   v1AccountUpdateRoleRequestBody: V1AccountUpdateRoleRequestBody,

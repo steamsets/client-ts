@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { V1AdminUser, V1AdminUser$inboundSchema } from "./v1adminuser.js";
@@ -20,7 +20,7 @@ export type V1AdminListUsersResponseBody = {
   dollarSchema?: string | undefined;
   summary: V1AdminUsersSummary;
   /**
-   * How many accounts match the sort and window
+   * How many accounts match the sort, window and accountIds
    */
   total: number;
   /**
@@ -33,18 +33,20 @@ export type V1AdminListUsersResponseBody = {
 export const V1AdminListUsersResponseBody$inboundSchema: z.ZodMiniType<
   V1AdminListUsersResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    summary: V1AdminUsersSummary$inboundSchema,
-    total: z.int(),
-    users: z.array(V1AdminUser$inboundSchema),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      summary: V1AdminUsersSummary$inboundSchema,
+      total: z.int(),
+      users: z.array(V1AdminUser$inboundSchema),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AdminListUsersResponseBodyFromJSON(

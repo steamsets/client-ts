@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -35,19 +35,21 @@ export type BadgeClaimTagReviewsResponseBody = {
 export const BadgeClaimTagReviewsResponseBody$inboundSchema: z.ZodMiniType<
   BadgeClaimTagReviewsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    apps: z.nullable(z.array(BadgeClaimTagReviewsApp$inboundSchema)),
-    colors: z.nullable(z.array(BadgeClaimTagReviewsColor$inboundSchema)),
-    designs: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
-    metadata: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      apps: z.nullable(z.array(BadgeClaimTagReviewsApp$inboundSchema)),
+      colors: z.nullable(z.array(BadgeClaimTagReviewsColor$inboundSchema)),
+      designs: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
+      metadata: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function badgeClaimTagReviewsResponseBodyFromJSON(

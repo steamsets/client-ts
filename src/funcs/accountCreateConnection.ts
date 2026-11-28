@@ -30,6 +30,8 @@ import { Result } from "../types/fp.js";
 
 /**
  * Create OAuth or domain connection
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function accountCreateConnection(
   client: SteamSetsCore,
@@ -101,7 +103,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
@@ -175,7 +177,7 @@ async function $do(
     M.json(200, operations.AccountCreateConnectionResponse$inboundSchema, {
       key: "V1AccountCreateConnectionResponseBody",
     }),
-    M.jsonErr([400, 401, 403, 422, 429], errors.ErrorModel$inboundSchema, {
+    M.jsonErr([400, 401, 403, 409, 422, 429], errors.ErrorModel$inboundSchema, {
       ctype: "application/problem+json",
     }),
     M.jsonErr(500, errors.ErrorModel$inboundSchema, {

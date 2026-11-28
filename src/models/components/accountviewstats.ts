@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,15 +14,15 @@ export type AccountViewStats = {
    */
   dollarSchema?: string | undefined;
   /**
-   * Total profile loads in the last 24 hours
+   * Profile views in the last 24 hours, counting each viewer once per day
    */
   total24h: number;
   /**
-   * Total profile loads in the last 30 days
+   * Profile views in the last 30 days, counting each viewer once per day
    */
   total30d: number;
   /**
-   * Total profile loads in the last 7 days
+   * Profile views in the last 7 days, counting each viewer once per day
    */
   total7d: number;
   /**
@@ -43,21 +43,23 @@ export type AccountViewStats = {
 export const AccountViewStats$inboundSchema: z.ZodMiniType<
   AccountViewStats,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    total24h: z.int(),
-    total30d: z.int(),
-    total7d: z.int(),
-    unique24h: z.int(),
-    unique30d: z.int(),
-    unique7d: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      total24h: z.int(),
+      total30d: z.int(),
+      total7d: z.int(),
+      unique24h: z.int(),
+      unique30d: z.int(),
+      unique7d: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function accountViewStatsFromJSON(

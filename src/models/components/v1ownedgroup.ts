@@ -3,13 +3,14 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type V1OwnedGroup = {
   avatar: string;
   foundedAt: Date;
+  headline: string;
   id: number;
   members: number;
   name: string;
@@ -20,19 +21,22 @@ export type V1OwnedGroup = {
 
 /** @internal */
 export const V1OwnedGroup$inboundSchema: z.ZodMiniType<V1OwnedGroup, unknown> =
-  z.object({
-    avatar: z.string(),
-    foundedAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    id: z.int(),
-    members: z.int(),
-    name: z.string(),
-    privacy: z.string(),
-    tag: z.string(),
-    vanity: z.string(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      avatar: z.string(),
+      foundedAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      headline: z.string(),
+      id: z.int(),
+      members: z.int(),
+      name: z.string(),
+      privacy: z.string(),
+      tag: z.string(),
+      vanity: z.string(),
+    })
+  );
 
 export function v1OwnedGroupFromJSON(
   jsonString: string,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,18 +40,25 @@ export type AccountLeaderboardHistory = {
 export const AccountLeaderboardHistoryLeaderboard$inboundSchema: z.ZodMiniType<
   AccountLeaderboardHistoryLeaderboard,
   unknown
-> = openEnums.inboundSchema(AccountLeaderboardHistoryLeaderboard);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountLeaderboardHistoryLeaderboard)
+);
 
 /** @internal */
 export const AccountLeaderboardHistory$inboundSchema: z.ZodMiniType<
   AccountLeaderboardHistory,
   unknown
-> = z.object({
-  date: z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  leaderboard: AccountLeaderboardHistoryLeaderboard$inboundSchema,
-  rank: z.int(),
-  score: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    date: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    leaderboard: AccountLeaderboardHistoryLeaderboard$inboundSchema,
+    rank: z.int(),
+    score: z.int(),
+  })
+);
 
 export function accountLeaderboardHistoryFromJSON(
   jsonString: string,

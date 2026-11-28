@@ -4,39 +4,96 @@
 
 import { adminAddSteamApiKey } from "../funcs/adminAddSteamApiKey.js";
 import { adminBanPlayer } from "../funcs/adminBanPlayer.js";
+import { adminCreateScrapeBot } from "../funcs/adminCreateScrapeBot.js";
 import { adminDeleteSteamApiKey } from "../funcs/adminDeleteSteamApiKey.js";
 import { adminExportSteamApiKeys } from "../funcs/adminExportSteamApiKeys.js";
+import { adminFeatureUsage } from "../funcs/adminFeatureUsage.js";
+import { adminFeatureUsageBreakdown } from "../funcs/adminFeatureUsageBreakdown.js";
+import { adminFeatureUsageClicks } from "../funcs/adminFeatureUsageClicks.js";
+import { adminFeatureUsageFlow } from "../funcs/adminFeatureUsageFlow.js";
 import { adminFindSteamApiKey } from "../funcs/adminFindSteamApiKey.js";
 import { adminGetAccount } from "../funcs/adminGetAccount.js";
+import { adminGetBot } from "../funcs/adminGetBot.js";
 import { adminGetPlayerBanStatus } from "../funcs/adminGetPlayerBanStatus.js";
+import { adminListBotBrands } from "../funcs/adminListBotBrands.js";
+import { adminListBotChanges } from "../funcs/adminListBotChanges.js";
+import { adminListBotPushIssues } from "../funcs/adminListBotPushIssues.js";
+import { adminListBots } from "../funcs/adminListBots.js";
 import { adminListHiddenAccounts } from "../funcs/adminListHiddenAccounts.js";
 import { adminListSteamApiKeys } from "../funcs/adminListSteamApiKeys.js";
 import { adminListUsers } from "../funcs/adminListUsers.js";
 import { adminRestrictAccount } from "../funcs/adminRestrictAccount.js";
 import { adminRevealSteamApiKey } from "../funcs/adminRevealSteamApiKey.js";
+import { adminSaveBotBrand } from "../funcs/adminSaveBotBrand.js";
+import { adminSearchQueries } from "../funcs/adminSearchQueries.js";
 import { adminTestSteamApiKey } from "../funcs/adminTestSteamApiKey.js";
 import { adminUnbanPlayer } from "../funcs/adminUnbanPlayer.js";
 import { adminUpdateAccount } from "../funcs/adminUpdateAccount.js";
+import { adminUpdateBot } from "../funcs/adminUpdateBot.js";
+import { adminUpdateBots } from "../funcs/adminUpdateBots.js";
 import { adminUpdateCosmetics } from "../funcs/adminUpdateCosmetics.js";
 import { adminUpdateResources } from "../funcs/adminUpdateResources.js";
 import { adminUpdateRoleOverride } from "../funcs/adminUpdateRoleOverride.js";
 import { adminUpdateRoles } from "../funcs/adminUpdateRoles.js";
+import { adminUpdateWebsite } from "../funcs/adminUpdateWebsite.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
+import { Announcement } from "./announcement.js";
+import { Audit } from "./audit.js";
+import { BadgeTags } from "./badgetags.js";
+import { Crawler } from "./crawler.js";
+import { Events } from "./events.js";
+import { SecurityKeys } from "./securitykeys.js";
+import { SteamSetsFlags } from "./steamsetsflags.js";
 import { SteamSetsMaintenance } from "./steamsetsmaintenance.js";
-import { SteamSetsSubmissions } from "./steamsetssubmissions.js";
+import { SteamSetsRoles } from "./steamsetsroles.js";
 
 export class Admin extends ClientSDK {
+  private _announcement?: Announcement;
+  get announcement(): Announcement {
+    return (this._announcement ??= new Announcement(this._options));
+  }
+
+  private _audit?: Audit;
+  get audit(): Audit {
+    return (this._audit ??= new Audit(this._options));
+  }
+
+  private _badgeTags?: BadgeTags;
+  get badgeTags(): BadgeTags {
+    return (this._badgeTags ??= new BadgeTags(this._options));
+  }
+
+  private _crawler?: Crawler;
+  get crawler(): Crawler {
+    return (this._crawler ??= new Crawler(this._options));
+  }
+
+  private _events?: Events;
+  get events(): Events {
+    return (this._events ??= new Events(this._options));
+  }
+
+  private _flags?: SteamSetsFlags;
+  get flags(): SteamSetsFlags {
+    return (this._flags ??= new SteamSetsFlags(this._options));
+  }
+
   private _maintenance?: SteamSetsMaintenance;
   get maintenance(): SteamSetsMaintenance {
     return (this._maintenance ??= new SteamSetsMaintenance(this._options));
   }
 
-  private _submissions?: SteamSetsSubmissions;
-  get submissions(): SteamSetsSubmissions {
-    return (this._submissions ??= new SteamSetsSubmissions(this._options));
+  private _roles?: SteamSetsRoles;
+  get roles(): SteamSetsRoles {
+    return (this._roles ??= new SteamSetsRoles(this._options));
+  }
+
+  private _securityKeys?: SecurityKeys;
+  get securityKeys(): SecurityKeys {
+    return (this._securityKeys ??= new SecurityKeys(this._options));
   }
 
   /**
@@ -61,6 +118,20 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminBanPlayerResponse> {
     return unwrapAsync(adminBanPlayer(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Add a directory bot measured by the inventory scraper
+   */
+  async createScrapeBot(
+    request: components.AdminBotCreateScrapeRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminCreateScrapeBotResponse> {
+    return unwrapAsync(adminCreateScrapeBot(
       this,
       request,
       options,
@@ -96,6 +167,62 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Admin: page views, sessions and custom events per feature, with trends and series
+   */
+  async featureUsage(
+    request: components.FeatureUsageScope,
+    options?: RequestOptions,
+  ): Promise<operations.AdminFeatureUsageResponse> {
+    return unwrapAsync(adminFeatureUsage(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Admin: one custom event's sends per property value, split by route, week, day, country or device
+   */
+  async featureUsageBreakdown(
+    request: components.AdminFeatureBreakdownRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminFeatureUsageBreakdownResponse> {
+    return unwrapAsync(adminFeatureUsageBreakdown(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Admin: the clicks on one page of a feature per section and target, and where the newest landed
+   */
+  async featureUsageClicks(
+    request: components.AdminFeatureClicksRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminFeatureUsageClicksResponse> {
+    return unwrapAsync(adminFeatureUsageClicks(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Admin: the steps sessions take through one feature's custom events after they view its pages
+   */
+  async featureUsageFlow(
+    request: components.AdminFeatureFlowRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminFeatureUsageFlowResponse> {
+    return unwrapAsync(adminFeatureUsageFlow(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Find a stored Steam Web API key by its plaintext
    */
   async findSteamApiKey(
@@ -124,6 +251,23 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Get everything stored about a directory bot
+   *
+   * @remarks
+   * One bot in any review state, with the fields the public routes leave out, its push clients and issues, and its recorded stock, price and online history.
+   */
+  async getBot(
+    request: components.AdminGetBotRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminGetBotResponse> {
+    return unwrapAsync(adminGetBot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Get a player's game-ban status
    */
   async getPlayerBanStatus(
@@ -131,6 +275,66 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminGetPlayerBanStatusResponse> {
     return unwrapAsync(adminGetPlayerBanStatus(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List every bot brand
+   */
+  async listBotBrands(
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotBrandsResponse> {
+    return unwrapAsync(adminListBotBrands(
+      this,
+      options,
+    ));
+  }
+
+  /**
+   * List a directory bot's changes
+   *
+   * @remarks
+   * Every field of the bot that a push, a staff edit, its owner or a listing fee payment changed, with the value before and after, newest first. Prices and stock are not in it; admin.getBot charts them.
+   */
+  async listBotChanges(
+    request: components.AdminListBotChangesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotChangesResponse> {
+    return unwrapAsync(adminListBotChanges(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List bot push issues by client version
+   *
+   * @remarks
+   * Groups what bot pushes ignored or found wrong by the client name and version that sent them, with bot and push counts, so a plugin release that sends bad data stands out.
+   */
+  async listBotPushIssues(
+    request: components.AdminListBotPushIssuesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotPushIssuesResponse> {
+    return unwrapAsync(adminListBotPushIssues(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List and search directory bots
+   */
+  async listBots(
+    request: components.AdminBotListRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminListBotsResponse> {
+    return unwrapAsync(adminListBots(
       this,
       request,
       options,
@@ -206,6 +410,34 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Create or edit a bot brand and its sponsorship
+   */
+  async saveBotBrand(
+    request: components.AdminBotBrandSaveRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminSaveBotBrandResponse> {
+    return unwrapAsync(adminSaveBotBrand(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Admin: what people search for, what finds nothing and which words no filter understood
+   */
+  async searchQueries(
+    request: components.AdminSearchQueriesRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminSearchQueriesResponse> {
+    return unwrapAsync(adminSearchQueries(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Test a Steam Web API key against Steam
    */
   async testSteamApiKey(
@@ -234,7 +466,7 @@ export class Admin extends ClientSDK {
   }
 
   /**
-   * Update staff-managed account fields (custom donations, staff note)
+   * Update staff-managed account fields (custom donations, staff note, country override)
    */
   async updateAccount(
     request: components.V1AdminUpdateAccountRequestBody,
@@ -248,7 +480,41 @@ export class Admin extends ClientSDK {
   }
 
   /**
-   * Update an account's vanity, theme color and name effect
+   * Edit a directory bot
+   *
+   * @remarks
+   * Every field but `id` is optional; a missing field keeps its value. Approving a push bot needs its listing fee paid, in this request or before. Marking the fee paid approves a pending push bot, unless the request sets `status`.
+   */
+  async updateBot(
+    request: components.AdminBotUpdateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateBotResponse> {
+    return unwrapAsync(adminUpdateBot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Edit many directory bots
+   *
+   * @remarks
+   * Applies one edit to up to 100 bots, as admin.updateBot does to one. Every field but `ids` is optional; a missing field keeps each bot's value. A bot the edit would approve without a paid listing fee is left alone and listed in `feeUnpaid`. Marking the fee paid approves each pending push bot, unless the edit sets `status`.
+   */
+  async updateBots(
+    request: components.AdminBotUpdateManyRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateBotsResponse> {
+    return unwrapAsync(adminUpdateBots(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an account's vanity, theme color, name effect and supporter streak
    */
   async updateCosmetics(
     request: components.V1AdminUpdateCosmeticsRequestBody,
@@ -297,6 +563,23 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AdminUpdateRolesResponse> {
     return unwrapAsync(adminUpdateRoles(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Edit a directory website
+   *
+   * @remarks
+   * Every field but `id` is optional; a missing field keeps its value. Approving a website needs its host proven and its first month paid, in this request or before. Marking the fee paid approves a pending website whose host is proven, unless the request sets `status`.
+   */
+  async updateWebsite(
+    request: components.AdminWebsiteUpdateRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.AdminUpdateWebsiteResponse> {
+    return unwrapAsync(adminUpdateWebsite(
       this,
       request,
       options,

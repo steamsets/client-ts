@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { SteamSetsCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -29,6 +29,8 @@ import { Result } from "../types/fp.js";
 
 /**
  * Get account profile information
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function accountGetInfo(
   client: SteamSetsCore,
@@ -89,6 +91,10 @@ async function $do(
 
   const path = pathToFunc("/v1/account.getInfo")();
 
+  const query = encodeFormQuery({
+    "withSteamProfile": payload.withSteamProfile,
+  }, { explode: false });
+
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -109,7 +115,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
@@ -142,6 +148,7 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
     body: body,
     uaHeader: "x-speakeasy-user-agent",
     userAgent: client._options.userAgent,

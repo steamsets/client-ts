@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type BadgeListCraftersRequestBody = {
   /**
@@ -35,12 +36,14 @@ export type BadgeListCraftersRequestBody$Outbound = {
 export const BadgeListCraftersRequestBody$outboundSchema: z.ZodMiniType<
   BadgeListCraftersRequestBody$Outbound,
   BadgeListCraftersRequestBody
-> = z.object({
-  badgeId: z.string(),
-  cursor: z.optional(z.string()),
-  limit: z.optional(z.int()),
-  page: z.optional(z.int()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    badgeId: z.string(),
+    cursor: z.optional(z.string()),
+    limit: z.optional(z.int()),
+    page: z.optional(z.int()),
+  })
+);
 
 export function badgeListCraftersRequestBodyToJSON(
   badgeListCraftersRequestBody: BadgeListCraftersRequestBody,

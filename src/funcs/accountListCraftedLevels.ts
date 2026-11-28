@@ -26,6 +26,13 @@ import { Result } from "../types/fp.js";
 
 /**
  * List crafted badge levels
+ *
+ * @remarks
+ * Deprecated: use account.me.listBadges, whose level is the highest level crafted per app and type.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountListCraftedLevels(
   client: SteamSetsCore,
@@ -78,7 +85,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
