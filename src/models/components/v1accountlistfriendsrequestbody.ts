@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -83,11 +84,13 @@ export type V1AccountListFriendsRequestBody = {
 export const V1AccountListFriendsRequestBodyOrder$outboundSchema: z.ZodMiniType<
   string,
   V1AccountListFriendsRequestBodyOrder
-> = openEnums.outboundSchema(V1AccountListFriendsRequestBodyOrder);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AccountListFriendsRequestBodyOrder)
+);
 
 /** @internal */
-export const Sort$outboundSchema: z.ZodMiniType<string, Sort> = openEnums
-  .outboundSchema(Sort);
+export const Sort$outboundSchema: z.ZodMiniType<string, Sort> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Sort));
 
 /** @internal */
 export type V1AccountListFriendsRequestBody$Outbound = {
@@ -106,20 +109,22 @@ export type V1AccountListFriendsRequestBody$Outbound = {
 export const V1AccountListFriendsRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountListFriendsRequestBody$Outbound,
   V1AccountListFriendsRequestBody
-> = z.object({
-  cursor: z.optional(z.string()),
-  id: z.optional(IDSearch$outboundSchema),
-  includeStats: z.optional(z.boolean()),
-  limit: z._default(z.int(), 100),
-  offset: z.optional(z.int()),
-  order: z._default(
-    V1AccountListFriendsRequestBodyOrder$outboundSchema,
-    "desc",
-  ),
-  search: z.optional(z.string()),
-  sort: z._default(Sort$outboundSchema, "friendsSince"),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cursor: z.optional(z.string()),
+    id: z.optional(IDSearch$outboundSchema),
+    includeStats: z.optional(z.boolean()),
+    limit: z._default(z.int(), 100),
+    offset: z.optional(z.int()),
+    order: z._default(
+      V1AccountListFriendsRequestBodyOrder$outboundSchema,
+      "desc",
+    ),
+    search: z.optional(z.string()),
+    sort: z._default(Sort$outboundSchema, "friendsSince"),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AccountListFriendsRequestBodyToJSON(
   v1AccountListFriendsRequestBody: V1AccountListFriendsRequestBody,

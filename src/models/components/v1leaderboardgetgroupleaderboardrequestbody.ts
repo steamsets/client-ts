@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -43,8 +44,10 @@ export const V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard$outboundSche
   z.ZodMiniType<
     string,
     V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard
-  > = openEnums.outboundSchema(
-    V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard,
+    )
   );
 
 /** @internal */
@@ -60,13 +63,15 @@ export const V1LeaderboardGetGroupLeaderboardRequestBody$outboundSchema:
   z.ZodMiniType<
     V1LeaderboardGetGroupLeaderboardRequestBody$Outbound,
     V1LeaderboardGetGroupLeaderboardRequestBody
-  > = z.object({
-    end: z.optional(z.nullable(z.int())),
-    goToLeaderboardRank: z.optional(z.nullable(z.int())),
-    leaderboard:
-      V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard$outboundSchema,
-    start: z.optional(z.nullable(z.int())),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      end: z.optional(z.nullable(z.int())),
+      goToLeaderboardRank: z.optional(z.nullable(z.int())),
+      leaderboard:
+        V1LeaderboardGetGroupLeaderboardRequestBodyLeaderboard$outboundSchema,
+      start: z.optional(z.nullable(z.int())),
+    })
+  );
 
 export function v1LeaderboardGetGroupLeaderboardRequestBodyToJSON(
   v1LeaderboardGetGroupLeaderboardRequestBody:

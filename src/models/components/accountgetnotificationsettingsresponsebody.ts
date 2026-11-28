@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,6 +23,10 @@ export type AccountGetNotificationSettingsResponseBody = {
   dollarSchema?: string | undefined;
   discordConnected: boolean;
   emailVerified: boolean;
+  /**
+   * Whether the account is left out of other accounts' trade matches
+   */
+  hideFromTradeMatches: boolean;
   pushDevices: Array<AccountGetNotificationSettingsPushDevice>;
   /**
    * The VAPID public key for PushManager.subscribe, base64url
@@ -37,24 +41,28 @@ export type AccountGetNotificationSettingsResponseBody = {
 
 /** @internal */
 export const AccountGetNotificationSettingsResponseBody$inboundSchema:
-  z.ZodMiniType<AccountGetNotificationSettingsResponseBody, unknown> = z.pipe(
-    z.object({
-      $schema: z.optional(z.string()),
-      discordConnected: z.boolean(),
-      emailVerified: z.boolean(),
-      pushDevices: z.array(
-        AccountGetNotificationSettingsPushDevice$inboundSchema,
-      ),
-      pushPublicKey: z.string(),
-      settings: z.array(AccountGetNotificationSettingsEntry$inboundSchema),
-      watchWishlist: z.boolean(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "$schema": "dollarSchema",
-      });
-    }),
-  );
+  z.ZodMiniType<AccountGetNotificationSettingsResponseBody, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          $schema: z.optional(z.string()),
+          discordConnected: z.boolean(),
+          emailVerified: z.boolean(),
+          hideFromTradeMatches: z.boolean(),
+          pushDevices: z.array(
+            AccountGetNotificationSettingsPushDevice$inboundSchema,
+          ),
+          pushPublicKey: z.string(),
+          settings: z.array(AccountGetNotificationSettingsEntry$inboundSchema),
+          watchWishlist: z.boolean(),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "$schema": "dollarSchema",
+          });
+        }),
+      )
+    );
 
 export function accountGetNotificationSettingsResponseBodyFromJSON(
   jsonString: string,

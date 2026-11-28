@@ -3,31 +3,32 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountGetNotificationSettingsPushDevice = {
   createdAt: Date;
   /**
-   * Compare with the browser's own subscription to find this device
+   * Identifies the device. Compare with the browser's own subscription, and pass it to removePushSubscription
    */
   endpoint: string;
-  id: number;
   userAgent: string;
 };
 
 /** @internal */
 export const AccountGetNotificationSettingsPushDevice$inboundSchema:
-  z.ZodMiniType<AccountGetNotificationSettingsPushDevice, unknown> = z.object({
-    createdAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    endpoint: z.string(),
-    id: z.int(),
-    userAgent: z.string(),
-  });
+  z.ZodMiniType<AccountGetNotificationSettingsPushDevice, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        createdAt: z.pipe(
+          z.iso.datetime({ offset: true }),
+          z.transform(v => new Date(v)),
+        ),
+        endpoint: z.string(),
+        userAgent: z.string(),
+      })
+    );
 
 export function accountGetNotificationSettingsPushDeviceFromJSON(
   jsonString: string,

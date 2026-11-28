@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,7 +22,9 @@ export type RangeFilter = {
 export const RangeFilterType$outboundSchema: z.ZodMiniType<
   string,
   RangeFilterType
-> = openEnums.outboundSchema(RangeFilterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(RangeFilterType)
+);
 
 /** @internal */
 export type RangeFilter$Outbound = {
@@ -34,11 +37,13 @@ export type RangeFilter$Outbound = {
 export const RangeFilter$outboundSchema: z.ZodMiniType<
   RangeFilter$Outbound,
   RangeFilter
-> = z.object({
-  max: z.optional(z.int()),
-  min: z.optional(z.int()),
-  type: RangeFilterType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    max: z.optional(z.int()),
+    min: z.optional(z.int()),
+    type: RangeFilterType$outboundSchema,
+  })
+);
 
 export function rangeFilterToJSON(rangeFilter: RangeFilter): string {
   return JSON.stringify(RangeFilter$outboundSchema.parse(rangeFilter));

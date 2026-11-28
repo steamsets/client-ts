@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -53,21 +53,23 @@ export type V1PacksOpenCard = {
 };
 
 /** @internal */
-export const Id$inboundSchema: z.ZodMiniType<Id, unknown> = openEnums
-  .inboundSchema(Id);
+export const Id$inboundSchema: z.ZodMiniType<Id, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Id));
 
 /** @internal */
-export const Rarity$inboundSchema: z.ZodMiniType<Rarity, unknown> = openEnums
-  .inboundSchema(Rarity);
+export const Rarity$inboundSchema: z.ZodMiniType<Rarity, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Rarity));
 
 /** @internal */
 export const V1PacksOpenCard$inboundSchema: z.ZodMiniType<
   V1PacksOpenCard,
   unknown
-> = z.object({
-  id: Id$inboundSchema,
-  rarity: Rarity$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: Id$inboundSchema,
+    rarity: Rarity$inboundSchema,
+  })
+);
 
 export function v1PacksOpenCardFromJSON(
   jsonString: string,

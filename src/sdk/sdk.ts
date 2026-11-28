@@ -11,20 +11,25 @@ import { App } from "./app.js";
 import { Apps } from "./apps.js";
 import { Badge } from "./badge.js";
 import { Badges } from "./badges.js";
+import { Bot } from "./bot.js";
 import { Donate } from "./donate.js";
 import { Exchange } from "./exchange.js";
+import { Flags } from "./flags.js";
 import { Group } from "./group.js";
 import { Item } from "./item.js";
 import { Kv } from "./kv.js";
 import { Leaderboard } from "./leaderboard.js";
 import { Leaderboards } from "./leaderboards.js";
+import { Live } from "./live.js";
 import { Maintenance } from "./maintenance.js";
+import { Market } from "./market.js";
 import { Packs } from "./packs.js";
+import { Roles } from "./roles.js";
 import { Search } from "./search.js";
 import { Site } from "./site.js";
 import { Staff } from "./staff.js";
 import { Stats } from "./stats.js";
-import { Submissions } from "./submissions.js";
+import { Website } from "./website.js";
 
 export class SteamSets extends ClientSDK {
   private _account?: Account;
@@ -47,14 +52,14 @@ export class SteamSets extends ClientSDK {
     return (this._analytics ??= new Analytics(this._options));
   }
 
-  private _apps?: Apps;
-  get apps(): Apps {
-    return (this._apps ??= new Apps(this._options));
-  }
-
   private _app?: App;
   get app(): App {
     return (this._app ??= new App(this._options));
+  }
+
+  private _apps?: Apps;
+  get apps(): Apps {
+    return (this._apps ??= new Apps(this._options));
   }
 
   private _badges?: Badges;
@@ -67,6 +72,11 @@ export class SteamSets extends ClientSDK {
     return (this._badge ??= new Badge(this._options));
   }
 
+  private _bot?: Bot;
+  get bot(): Bot {
+    return (this._bot ??= new Bot(this._options));
+  }
+
   private _donate?: Donate;
   get donate(): Donate {
     return (this._donate ??= new Donate(this._options));
@@ -75,6 +85,11 @@ export class SteamSets extends ClientSDK {
   private _exchange?: Exchange;
   get exchange(): Exchange {
     return (this._exchange ??= new Exchange(this._options));
+  }
+
+  private _flags?: Flags;
+  get flags(): Flags {
+    return (this._flags ??= new Flags(this._options));
   }
 
   private _group?: Group;
@@ -102,14 +117,29 @@ export class SteamSets extends ClientSDK {
     return (this._leaderboards ??= new Leaderboards(this._options));
   }
 
+  private _live?: Live;
+  get live(): Live {
+    return (this._live ??= new Live(this._options));
+  }
+
   private _maintenance?: Maintenance;
   get maintenance(): Maintenance {
     return (this._maintenance ??= new Maintenance(this._options));
   }
 
+  private _market?: Market;
+  get market(): Market {
+    return (this._market ??= new Market(this._options));
+  }
+
   private _packs?: Packs;
   get packs(): Packs {
     return (this._packs ??= new Packs(this._options));
+  }
+
+  private _roles?: Roles;
+  get roles(): Roles {
+    return (this._roles ??= new Roles(this._options));
   }
 
   private _search?: Search;
@@ -132,8 +162,8 @@ export class SteamSets extends ClientSDK {
     return (this._stats ??= new Stats(this._options));
   }
 
-  private _submissions?: Submissions;
-  get submissions(): Submissions {
-    return (this._submissions ??= new Submissions(this._options));
+  private _website?: Website;
+  get website(): Website {
+    return (this._website ??= new Website(this._options));
   }
 }

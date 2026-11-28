@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -17,14 +17,26 @@ import {
   AccountNotificationConnectionBroken$inboundSchema,
 } from "./accountnotificationconnectionbroken.js";
 import {
-  AccountNotificationSubmissionReplied,
-  AccountNotificationSubmissionReplied$inboundSchema,
-} from "./accountnotificationsubmissionreplied.js";
+  AccountNotificationListingRenewal,
+  AccountNotificationListingRenewal$inboundSchema,
+} from "./accountnotificationlistingrenewal.js";
+import {
+  AccountNotificationMessage,
+  AccountNotificationMessage$inboundSchema,
+} from "./accountnotificationmessage.js";
+import {
+  AccountNotificationTradeMatch,
+  AccountNotificationTradeMatch$inboundSchema,
+} from "./accountnotificationtradematch.js";
 
 export const AccountNotificationKind = {
   CardAcquired: "card_acquired",
   ConnectionBroken: "connection_broken",
-  SubmissionReplied: "submission_replied",
+  TradeMatchNeeded: "trade_match_needed",
+  TradeMatchSpare: "trade_match_spare",
+  SteamsetsTicketReplied: "steamsets_ticket_replied",
+  ListingRenewal: "listing_renewal",
+  SupportReportedAgain: "support_reported_again",
 } as const;
 export type AccountNotificationKind = OpenEnum<typeof AccountNotificationKind>;
 
@@ -38,46 +50,56 @@ export type AccountNotification = {
   createdAt: Date;
   id: number;
   kind: AccountNotificationKind;
+  listingRenewal?: AccountNotificationListingRenewal | null | undefined;
+  message: AccountNotificationMessage;
   /**
    * When the account read it, null while unread
    */
   readAt: Date | null;
-  submissionReplied?: AccountNotificationSubmissionReplied | null | undefined;
+  tradeMatch?: AccountNotificationTradeMatch | null | undefined;
 };
 
 /** @internal */
 export const AccountNotificationKind$inboundSchema: z.ZodMiniType<
   AccountNotificationKind,
   unknown
-> = openEnums.inboundSchema(AccountNotificationKind);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountNotificationKind)
+);
 
 /** @internal */
 export const AccountNotification$inboundSchema: z.ZodMiniType<
   AccountNotification,
   unknown
-> = z.object({
-  archivedAt: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  cardAcquired: z.optional(
-    z.nullable(AccountNotificationCardAcquired$inboundSchema),
-  ),
-  connectionBroken: z.optional(
-    z.nullable(AccountNotificationConnectionBroken$inboundSchema),
-  ),
-  createdAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  id: z.int(),
-  kind: AccountNotificationKind$inboundSchema,
-  readAt: z.nullable(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  submissionReplied: z.optional(
-    z.nullable(AccountNotificationSubmissionReplied$inboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    archivedAt: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    cardAcquired: z.optional(
+      z.nullable(AccountNotificationCardAcquired$inboundSchema),
+    ),
+    connectionBroken: z.optional(
+      z.nullable(AccountNotificationConnectionBroken$inboundSchema),
+    ),
+    createdAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    id: z.int(),
+    kind: AccountNotificationKind$inboundSchema,
+    listingRenewal: z.optional(
+      z.nullable(AccountNotificationListingRenewal$inboundSchema),
+    ),
+    message: AccountNotificationMessage$inboundSchema,
+    readAt: z.nullable(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    tradeMatch: z.optional(
+      z.nullable(AccountNotificationTradeMatch$inboundSchema),
+    ),
+  })
+);
 
 export function accountNotificationFromJSON(
   jsonString: string,

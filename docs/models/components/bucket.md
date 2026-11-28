@@ -1,13 +1,11 @@
 # Bucket
 
-dead: no remaining craft can use it. surplus: owned exceeds remaining. keep: still needed
-
 ## Example Usage
 
 ```typescript
 import { Bucket } from "@steamsets/client-ts/models/components";
 
-let value: Bucket = "keep";
+let value: Bucket = "day";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +13,5 @@ let value: Bucket = "keep";
 ## Values
 
 ```typescript
-"dead" | "surplus" | "keep" | Unrecognized<string>
+"hour" | "day" | Unrecognized<string>
 ```

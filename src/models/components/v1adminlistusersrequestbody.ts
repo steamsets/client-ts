@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,19 +22,24 @@ export type V1AdminListUsersRequestBodyDirection = OpenEnum<
 >;
 
 /**
- * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+ * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active. bans orders by the ban count, status by restricted, opted out, hidden, none
  */
-export const OrderBy = {
+export const V1AdminListUsersRequestBodyOrderBy = {
   SignedUp: "signedUp",
   LastSeen: "lastSeen",
   Level: "level",
   Games: "games",
   Badges: "badges",
+  Name: "name",
+  Bans: "bans",
+  Status: "status",
 } as const;
 /**
- * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+ * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active. bans orders by the ban count, status by restricted, opted out, hidden, none
  */
-export type OrderBy = OpenEnum<typeof OrderBy>;
+export type V1AdminListUsersRequestBodyOrderBy = OpenEnum<
+  typeof V1AdminListUsersRequestBodyOrderBy
+>;
 
 /**
  * new lists accounts by signup time, active lists them by their newest session activity
@@ -66,6 +72,10 @@ export type V1AdminListUsersRequestBodyWindow = OpenEnum<
 
 export type V1AdminListUsersRequestBody = {
   /**
+   * Only these accounts, at most 100. The admin turns a name, vanity or SteamID64 search into account ids. Total then counts the matches
+   */
+  accountIds?: Array<number> | null | undefined;
+  /**
    * The order direction
    */
   direction?: V1AdminListUsersRequestBodyDirection | undefined;
@@ -74,9 +84,9 @@ export type V1AdminListUsersRequestBody = {
    */
   limit?: number | undefined;
   /**
-   * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active
+   * The column the page is ordered by. Defaults to signedUp for new and lastSeen for active. bans orders by the ban count, status by restricted, opted out, hidden, none
    */
-  orderBy?: OrderBy | undefined;
+  orderBy?: V1AdminListUsersRequestBodyOrderBy | undefined;
   /**
    * 1-based page number
    */
@@ -95,26 +105,37 @@ export type V1AdminListUsersRequestBody = {
 export const V1AdminListUsersRequestBodyDirection$outboundSchema: z.ZodMiniType<
   string,
   V1AdminListUsersRequestBodyDirection
-> = openEnums.outboundSchema(V1AdminListUsersRequestBodyDirection);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AdminListUsersRequestBodyDirection)
+);
 
 /** @internal */
-export const OrderBy$outboundSchema: z.ZodMiniType<string, OrderBy> = openEnums
-  .outboundSchema(OrderBy);
+export const V1AdminListUsersRequestBodyOrderBy$outboundSchema: z.ZodMiniType<
+  string,
+  V1AdminListUsersRequestBodyOrderBy
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AdminListUsersRequestBodyOrderBy)
+);
 
 /** @internal */
 export const V1AdminListUsersRequestBodySort$outboundSchema: z.ZodMiniType<
   string,
   V1AdminListUsersRequestBodySort
-> = openEnums.outboundSchema(V1AdminListUsersRequestBodySort);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AdminListUsersRequestBodySort)
+);
 
 /** @internal */
 export const V1AdminListUsersRequestBodyWindow$outboundSchema: z.ZodMiniType<
   string,
   V1AdminListUsersRequestBodyWindow
-> = openEnums.outboundSchema(V1AdminListUsersRequestBodyWindow);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AdminListUsersRequestBodyWindow)
+);
 
 /** @internal */
 export type V1AdminListUsersRequestBody$Outbound = {
+  accountIds?: Array<number> | null | undefined;
   direction: string;
   limit: number;
   orderBy?: string | undefined;
@@ -127,17 +148,23 @@ export type V1AdminListUsersRequestBody$Outbound = {
 export const V1AdminListUsersRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminListUsersRequestBody$Outbound,
   V1AdminListUsersRequestBody
-> = z.object({
-  direction: z._default(
-    V1AdminListUsersRequestBodyDirection$outboundSchema,
-    "desc",
-  ),
-  limit: z._default(z.int(), 50),
-  orderBy: z.optional(OrderBy$outboundSchema),
-  page: z._default(z.int(), 1),
-  sort: z._default(V1AdminListUsersRequestBodySort$outboundSchema, "new"),
-  window: z._default(V1AdminListUsersRequestBodyWindow$outboundSchema, "week"),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountIds: z.optional(z.nullable(z.array(z.int()))),
+    direction: z._default(
+      V1AdminListUsersRequestBodyDirection$outboundSchema,
+      "desc",
+    ),
+    limit: z._default(z.int(), 50),
+    orderBy: z.optional(V1AdminListUsersRequestBodyOrderBy$outboundSchema),
+    page: z._default(z.int(), 1),
+    sort: z._default(V1AdminListUsersRequestBodySort$outboundSchema, "new"),
+    window: z._default(
+      V1AdminListUsersRequestBodyWindow$outboundSchema,
+      "week",
+    ),
+  })
+);
 
 export function v1AdminListUsersRequestBodyToJSON(
   v1AdminListUsersRequestBody: V1AdminListUsersRequestBody,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,11 +26,13 @@ export type V1AdminUserCounts = {
 export const V1AdminUserCounts$inboundSchema: z.ZodMiniType<
   V1AdminUserCounts,
   unknown
-> = z.object({
-  day: z.int(),
-  month: z.int(),
-  week: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    day: z.int(),
+    month: z.int(),
+    week: z.int(),
+  })
+);
 
 export function v1AdminUserCountsFromJSON(
   jsonString: string,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,19 +40,25 @@ export type Resource = {
 export const ResourceResource$inboundSchema: z.ZodMiniType<
   ResourceResource,
   unknown
-> = openEnums.inboundSchema(ResourceResource);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ResourceResource)
+);
 /** @internal */
 export const ResourceResource$outboundSchema: z.ZodMiniType<
   string,
   ResourceResource
-> = openEnums.outboundSchema(ResourceResource);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ResourceResource)
+);
 
 /** @internal */
-export const Resource$inboundSchema: z.ZodMiniType<Resource, unknown> = z
-  .object({
-    resource: ResourceResource$inboundSchema,
-    value: z.string(),
-  });
+export const Resource$inboundSchema: z.ZodMiniType<Resource, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      resource: ResourceResource$inboundSchema,
+      value: z.string(),
+    })
+  );
 /** @internal */
 export type Resource$Outbound = {
   resource: string;
@@ -63,10 +69,12 @@ export type Resource$Outbound = {
 export const Resource$outboundSchema: z.ZodMiniType<
   Resource$Outbound,
   Resource
-> = z.object({
-  resource: ResourceResource$outboundSchema,
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    resource: ResourceResource$outboundSchema,
+    value: z.string(),
+  })
+);
 
 export function resourceToJSON(resource: Resource): string {
   return JSON.stringify(Resource$outboundSchema.parse(resource));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,7 +26,7 @@ export type V1PacksOpenResponseBody = {
    */
   cards: Array<V1PacksOpenCard> | null;
   /**
-   * Whether Page Not Found is the foil, in about 1 pack of 100
+   * Whether Page Not Found is the foil, in about 1 pack of 33
    */
   foil: boolean;
   mine: V1PacksOpenTotals;
@@ -37,19 +37,21 @@ export type V1PacksOpenResponseBody = {
 export const V1PacksOpenResponseBody$inboundSchema: z.ZodMiniType<
   V1PacksOpenResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    cards: z.nullable(z.array(V1PacksOpenCard$inboundSchema)),
-    foil: z.boolean(),
-    mine: V1PacksOpenTotals$inboundSchema,
-    site: V1PacksOpenTotals$inboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      cards: z.nullable(z.array(V1PacksOpenCard$inboundSchema)),
+      foil: z.boolean(),
+      mine: V1PacksOpenTotals$inboundSchema,
+      site: V1PacksOpenTotals$inboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1PacksOpenResponseBodyFromJSON(

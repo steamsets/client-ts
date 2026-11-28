@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -34,29 +34,31 @@ export type AccountUpdateProgress = {
 export const AccountUpdateProgress$inboundSchema: z.ZodMiniType<
   AccountUpdateProgress,
   unknown
-> = z.object({
-  accountId: z.int(),
-  currentStep: z.string(),
-  error: z.optional(AccountUpdateError$inboundSchema),
-  finishedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  percent: z.int(),
-  queuePosition: z.optional(z.int()),
-  queuedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  runId: z.string(),
-  startedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  status: z.string(),
-  steps: z.nullable(z.array(AccountUpdateStep$inboundSchema)),
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.int(),
+    currentStep: z.string(),
+    error: z.optional(AccountUpdateError$inboundSchema),
+    finishedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    percent: z.int(),
+    queuePosition: z.optional(z.int()),
+    queuedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    runId: z.string(),
+    startedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    status: z.string(),
+    steps: z.nullable(z.array(AccountUpdateStep$inboundSchema)),
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function accountUpdateProgressFromJSON(
   jsonString: string,

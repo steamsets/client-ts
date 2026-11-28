@@ -3,18 +3,49 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import {
   AccountUpdateNotificationSettingsEntry,
   AccountUpdateNotificationSettingsEntry$Outbound,
   AccountUpdateNotificationSettingsEntry$outboundSchema,
 } from "./accountupdatenotificationsettingsentry.js";
 
+/**
+ * The site the settings belong to. A kind of another site is refused
+ */
+export const AccountUpdateNotificationSettingsRequestBodyProduct = {
+  Steamsets: "steamsets",
+  Levels: "levels",
+} as const;
+/**
+ * The site the settings belong to. A kind of another site is refused
+ */
+export type AccountUpdateNotificationSettingsRequestBodyProduct = OpenEnum<
+  typeof AccountUpdateNotificationSettingsRequestBodyProduct
+>;
+
 export type AccountUpdateNotificationSettingsRequestBody = {
+  /**
+   * The site the settings belong to. A kind of another site is refused
+   */
+  product?: AccountUpdateNotificationSettingsRequestBodyProduct | undefined;
   settings: Array<AccountUpdateNotificationSettingsEntry> | null;
 };
 
 /** @internal */
+export const AccountUpdateNotificationSettingsRequestBodyProduct$outboundSchema:
+  z.ZodMiniType<string, AccountUpdateNotificationSettingsRequestBodyProduct> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(
+        AccountUpdateNotificationSettingsRequestBodyProduct,
+      )
+    );
+
+/** @internal */
 export type AccountUpdateNotificationSettingsRequestBody$Outbound = {
+  product: string;
   settings: Array<AccountUpdateNotificationSettingsEntry$Outbound> | null;
 };
 
@@ -23,11 +54,17 @@ export const AccountUpdateNotificationSettingsRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountUpdateNotificationSettingsRequestBody$Outbound,
     AccountUpdateNotificationSettingsRequestBody
-  > = z.object({
-    settings: z.nullable(
-      z.array(AccountUpdateNotificationSettingsEntry$outboundSchema),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      product: z._default(
+        AccountUpdateNotificationSettingsRequestBodyProduct$outboundSchema,
+        "steamsets",
+      ),
+      settings: z.nullable(
+        z.array(AccountUpdateNotificationSettingsEntry$outboundSchema),
+      ),
+    })
+  );
 
 export function accountUpdateNotificationSettingsRequestBodyToJSON(
   accountUpdateNotificationSettingsRequestBody:

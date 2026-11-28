@@ -14,6 +14,7 @@ let value: DeveloperAppAnalytics = {
     totalRequests: 10234,
   },
   timeSeries: {
+    daily: [],
     hourly: [
       {
         count: 423,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -15,16 +15,18 @@ export type KvListEntry = {
 };
 
 /** @internal */
-export const KvListEntry$inboundSchema: z.ZodMiniType<KvListEntry, unknown> = z
-  .object({
-    key: z.string(),
-    namespace: z.string(),
-    updatedAt: z.pipe(
-      z.iso.datetime({ offset: true }),
-      z.transform(v => new Date(v)),
-    ),
-    value: z.string(),
-  });
+export const KvListEntry$inboundSchema: z.ZodMiniType<KvListEntry, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.string(),
+      namespace: z.string(),
+      updatedAt: z.pipe(
+        z.iso.datetime({ offset: true }),
+        z.transform(v => new Date(v)),
+      ),
+      value: z.string(),
+    })
+  );
 
 export function kvListEntryFromJSON(
   jsonString: string,

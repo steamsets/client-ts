@@ -7,6 +7,7 @@ import { AccountLoginRequest } from "@steamsets/client-ts/models/operations";
 
 let value: AccountLoginRequest = {
   loginRequestBody: {
+    loginBinding: "k3Jx9yQm2s0b1Zr8VtLw4uEo6pHc7nAfGdXiYjBqUsM",
     openidAssocHandle: "123456",
     openidClaimedId: "76561198842603734",
     openidIdentity: "https://steamsets.com/api/v1/openid/login",

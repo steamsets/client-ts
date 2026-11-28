@@ -29,7 +29,9 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Update an account's vanity, theme color and name effect
+ * Update an account's vanity, theme color, name effect and supporter streak
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function adminUpdateCosmetics(
   client: SteamSetsCore,
@@ -101,7 +103,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

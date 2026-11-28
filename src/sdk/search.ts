@@ -3,6 +3,7 @@
  */
 
 import { searchGetTrending } from "../funcs/searchGetTrending.js";
+import { searchParseQuery } from "../funcs/searchParseQuery.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -10,13 +11,30 @@ import { unwrapAsync } from "../types/fp.js";
 
 export class Search extends ClientSDK {
   /**
-   * Top search queries in a window, by unique searcher count
+   * Top search queries in a window, by search count
    */
   async getTrending(
     request: components.SearchGetTrendingRequestBody,
     options?: RequestOptions,
   ): Promise<operations.SearchGetTrendingResponse> {
     return unwrapAsync(searchGetTrending(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Read the filters a typed search asks for
+   *
+   * @remarks
+   * Asks a language model which filters of the page's schema a typed query asks for. The answer is unchecked JSON; the page checks it against its filter definitions.
+   */
+  async parseQuery(
+    request: components.SearchParseQueryRequestBody,
+    options?: RequestOptions,
+  ): Promise<operations.SearchParseQueryResponse> {
+    return unwrapAsync(searchParseQuery(
       this,
       request,
       options,

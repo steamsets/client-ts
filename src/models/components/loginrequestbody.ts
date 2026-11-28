@@ -4,8 +4,13 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type LoginRequestBody = {
+  /**
+   * The sign-in cookie of the browser that finished the sign-in. The login is refused unless it matches the state in openid_return_to.
+   */
+  loginBinding?: string | undefined;
   /**
    * The assoc handle of the login
    */
@@ -50,6 +55,7 @@ export type LoginRequestBody = {
 
 /** @internal */
 export type LoginRequestBody$Outbound = {
+  login_binding?: string | undefined;
   openid_assoc_handle: string;
   openid_claimed_id: string;
   openid_identity: string;
@@ -66,33 +72,37 @@ export type LoginRequestBody$Outbound = {
 export const LoginRequestBody$outboundSchema: z.ZodMiniType<
   LoginRequestBody$Outbound,
   LoginRequestBody
-> = z.pipe(
-  z.object({
-    openidAssocHandle: z.string(),
-    openidClaimedId: z.string(),
-    openidIdentity: z.string(),
-    openidMode: z.string(),
-    openidNs: z.string(),
-    openidOpEndpoint: z.string(),
-    openidResponseNonce: z.string(),
-    openidReturnTo: z.string(),
-    openidSig: z.string(),
-    openidSigned: z.string(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      openidAssocHandle: "openid_assoc_handle",
-      openidClaimedId: "openid_claimed_id",
-      openidIdentity: "openid_identity",
-      openidMode: "openid_mode",
-      openidNs: "openid_ns",
-      openidOpEndpoint: "openid_op_endpoint",
-      openidResponseNonce: "openid_response_nonce",
-      openidReturnTo: "openid_return_to",
-      openidSig: "openid_sig",
-      openidSigned: "openid_signed",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      loginBinding: z.optional(z.string()),
+      openidAssocHandle: z.string(),
+      openidClaimedId: z.string(),
+      openidIdentity: z.string(),
+      openidMode: z.string(),
+      openidNs: z.string(),
+      openidOpEndpoint: z.string(),
+      openidResponseNonce: z.string(),
+      openidReturnTo: z.string(),
+      openidSig: z.string(),
+      openidSigned: z.string(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        loginBinding: "login_binding",
+        openidAssocHandle: "openid_assoc_handle",
+        openidClaimedId: "openid_claimed_id",
+        openidIdentity: "openid_identity",
+        openidMode: "openid_mode",
+        openidNs: "openid_ns",
+        openidOpEndpoint: "openid_op_endpoint",
+        openidResponseNonce: "openid_response_nonce",
+        openidReturnTo: "openid_return_to",
+        openidSig: "openid_sig",
+        openidSigned: "openid_signed",
+      });
+    }),
+  )
 );
 
 export function loginRequestBodyToJSON(

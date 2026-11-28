@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -30,8 +31,8 @@ export type VanitySearch = {
 };
 
 /** @internal */
-export const Type$outboundSchema: z.ZodMiniType<string, Type> = openEnums
-  .outboundSchema(Type);
+export const Type$outboundSchema: z.ZodMiniType<string, Type> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Type));
 
 /** @internal */
 export type VanitySearch$Outbound = {
@@ -43,10 +44,12 @@ export type VanitySearch$Outbound = {
 export const VanitySearch$outboundSchema: z.ZodMiniType<
   VanitySearch$Outbound,
   VanitySearch
-> = z.object({
-  type: Type$outboundSchema,
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: Type$outboundSchema,
+    value: z.string(),
+  })
+);
 
 export function vanitySearchToJSON(vanitySearch: VanitySearch): string {
   return JSON.stringify(VanitySearch$outboundSchema.parse(vanitySearch));

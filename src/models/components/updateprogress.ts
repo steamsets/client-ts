@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { UpdateError, UpdateError$inboundSchema } from "./updateerror.js";
@@ -48,7 +48,7 @@ export type UpdateProgress = {
    */
   status: string;
   /**
-   * Every step in the pipeline, in run order, with its own status.
+   * Every step in the pipeline, in run order, with its own status. An achievements step can follow the last one: it is listed when the update queued the achievement crawl, which runs on after the update completes, or skipped it because the game details are private.
    */
   steps: Array<UpdateStep> | null;
   /**
@@ -61,29 +61,31 @@ export type UpdateProgress = {
 export const UpdateProgress$inboundSchema: z.ZodMiniType<
   UpdateProgress,
   unknown
-> = z.object({
-  accountId: z.int(),
-  currentStep: z.string(),
-  error: z.optional(UpdateError$inboundSchema),
-  finishedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  percent: z.int(),
-  queuePosition: z.optional(z.int()),
-  queuedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  runId: z.string(),
-  startedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  status: z.string(),
-  steps: z.nullable(z.array(UpdateStep$inboundSchema)),
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.int(),
+    currentStep: z.string(),
+    error: z.optional(UpdateError$inboundSchema),
+    finishedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    percent: z.int(),
+    queuePosition: z.optional(z.int()),
+    queuedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    runId: z.string(),
+    startedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    status: z.string(),
+    steps: z.nullable(z.array(UpdateStep$inboundSchema)),
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function updateProgressFromJSON(
   jsonString: string,

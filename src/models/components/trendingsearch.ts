@@ -3,21 +3,21 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TrendingSearch = {
   /**
-   * The search query as first typed
+   * The search query, lowercased
    */
   query: string;
   /**
-   * Total times this query was searched
+   * Searches of this query in the window that found something
    */
   totalSearches: number;
   /**
-   * Distinct searchers in the window
+   * Searches of this query in the window that found something. SteamSets stores no searcher identity, so this equals totalSearches.
    */
   uniqueSearchers: number;
 };
@@ -26,11 +26,13 @@ export type TrendingSearch = {
 export const TrendingSearch$inboundSchema: z.ZodMiniType<
   TrendingSearch,
   unknown
-> = z.object({
-  query: z.string(),
-  totalSearches: z.int(),
-  uniqueSearchers: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    query: z.string(),
+    totalSearches: z.int(),
+    uniqueSearchers: z.int(),
+  })
+);
 
 export function trendingSearchFromJSON(
   jsonString: string,

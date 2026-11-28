@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -111,7 +112,7 @@ export type LeaderboardGetChangesRequestBody = {
    */
   metric: Metric;
   /**
-   * Number of accounts to skip, for paging past the first page. Default 0. With topFilter='all' the full leaderboard is pageable, not just the top 1000.
+   * Number of accounts to skip, for paging past the first page. Default 0. With topFilter='all' the full leaderboard is pageable, not just the top 1000. With a developer API key, paging stops at offset+limit 5000.
    */
   offset?: number | undefined;
   /**
@@ -126,26 +127,32 @@ export type LeaderboardGetChangesRequestBody = {
 
 /** @internal */
 export const LeaderboardGetChangesRequestBodyDirection$outboundSchema:
-  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyDirection> = openEnums
-    .outboundSchema(LeaderboardGetChangesRequestBodyDirection);
+  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyDirection> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(LeaderboardGetChangesRequestBodyDirection)
+    );
 
 /** @internal */
 export const LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema:
-  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyLeaderboard> = openEnums
-    .outboundSchema(LeaderboardGetChangesRequestBodyLeaderboard);
+  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyLeaderboard> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(LeaderboardGetChangesRequestBodyLeaderboard)
+    );
 
 /** @internal */
-export const Metric$outboundSchema: z.ZodMiniType<string, Metric> = openEnums
-  .outboundSchema(Metric);
+export const Metric$outboundSchema: z.ZodMiniType<string, Metric> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Metric));
 
 /** @internal */
 export const TopFilter$outboundSchema: z.ZodMiniType<string, TopFilter> =
-  openEnums.outboundSchema(TopFilter);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TopFilter));
 
 /** @internal */
 export const LeaderboardGetChangesRequestBodyWindow$outboundSchema:
-  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyWindow> = openEnums
-    .outboundSchema(LeaderboardGetChangesRequestBodyWindow);
+  z.ZodMiniType<string, LeaderboardGetChangesRequestBodyWindow> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(LeaderboardGetChangesRequestBodyWindow)
+    );
 
 /** @internal */
 export type LeaderboardGetChangesRequestBody$Outbound = {
@@ -162,15 +169,17 @@ export type LeaderboardGetChangesRequestBody$Outbound = {
 export const LeaderboardGetChangesRequestBody$outboundSchema: z.ZodMiniType<
   LeaderboardGetChangesRequestBody$Outbound,
   LeaderboardGetChangesRequestBody
-> = z.object({
-  direction: LeaderboardGetChangesRequestBodyDirection$outboundSchema,
-  leaderboard: LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema,
-  limit: z.optional(z.int()),
-  metric: Metric$outboundSchema,
-  offset: z.optional(z.int()),
-  topFilter: z.optional(TopFilter$outboundSchema),
-  window: LeaderboardGetChangesRequestBodyWindow$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    direction: LeaderboardGetChangesRequestBodyDirection$outboundSchema,
+    leaderboard: LeaderboardGetChangesRequestBodyLeaderboard$outboundSchema,
+    limit: z.optional(z.int()),
+    metric: Metric$outboundSchema,
+    offset: z.optional(z.int()),
+    topFilter: z.optional(TopFilter$outboundSchema),
+    window: LeaderboardGetChangesRequestBodyWindow$outboundSchema,
+  })
+);
 
 export function leaderboardGetChangesRequestBodyToJSON(
   leaderboardGetChangesRequestBody: LeaderboardGetChangesRequestBody,

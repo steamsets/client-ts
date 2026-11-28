@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -25,8 +25,7 @@ import {
 import { V1AppBadge, V1AppBadge$inboundSchema } from "./v1appbadge.js";
 
 export type V1ActivityEvent = {
-  account?: LeaderboardAccount | null | undefined;
-  accountId: number;
+  account: LeaderboardAccount | null;
   appBadge?: V1AppBadge | undefined;
   /**
    * badge_crafted | level_milestone | rank_milestone | scarcity_milestone
@@ -42,19 +41,20 @@ export type V1ActivityEvent = {
 export const V1ActivityEvent$inboundSchema: z.ZodMiniType<
   V1ActivityEvent,
   unknown
-> = z.object({
-  account: z.optional(z.nullable(LeaderboardAccount$inboundSchema)),
-  accountId: z.int(),
-  appBadge: z.optional(V1AppBadge$inboundSchema),
-  eventType: z.string(),
-  level: z.optional(V1ActivityLevelChange$inboundSchema),
-  occurredAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  rank: z.optional(V1ActivityRankChange$inboundSchema),
-  scarcity: z.optional(V1ActivityScarcity$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account: z.nullable(LeaderboardAccount$inboundSchema),
+    appBadge: z.optional(V1AppBadge$inboundSchema),
+    eventType: z.string(),
+    level: z.optional(V1ActivityLevelChange$inboundSchema),
+    occurredAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    rank: z.optional(V1ActivityRankChange$inboundSchema),
+    scarcity: z.optional(V1ActivityScarcity$inboundSchema),
+  })
+);
 
 export function v1ActivityEventFromJSON(
   jsonString: string,

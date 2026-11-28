@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { HistoryValue, HistoryValue$inboundSchema } from "./historyvalue.js";
@@ -24,17 +24,19 @@ export type V1AccountLocationUpdate = {
 export const V1AccountLocationUpdate$inboundSchema: z.ZodMiniType<
   V1AccountLocationUpdate,
   unknown
-> = z.object({
-  city: HistoryValue$inboundSchema,
-  countryCode: HistoryValue$inboundSchema,
-  countryName: HistoryValue$inboundSchema,
-  region: HistoryValue$inboundSchema,
-  state: HistoryValue$inboundSchema,
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    city: HistoryValue$inboundSchema,
+    countryCode: HistoryValue$inboundSchema,
+    countryName: HistoryValue$inboundSchema,
+    region: HistoryValue$inboundSchema,
+    state: HistoryValue$inboundSchema,
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function v1AccountLocationUpdateFromJSON(
   jsonString: string,

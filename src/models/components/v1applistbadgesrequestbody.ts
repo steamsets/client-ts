@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AppListBadgesRequestBody = {
   /**
@@ -20,9 +21,11 @@ export type V1AppListBadgesRequestBody$Outbound = {
 export const V1AppListBadgesRequestBody$outboundSchema: z.ZodMiniType<
   V1AppListBadgesRequestBody$Outbound,
   V1AppListBadgesRequestBody
-> = z.object({
-  appId: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+  })
+);
 
 export function v1AppListBadgesRequestBodyToJSON(
   v1AppListBadgesRequestBody: V1AppListBadgesRequestBody,

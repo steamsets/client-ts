@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -39,17 +39,19 @@ export type DeveloperAppAnalyticsOutcome = {
 };
 
 /** @internal */
-export const Outcome$inboundSchema: z.ZodMiniType<Outcome, unknown> = openEnums
-  .inboundSchema(Outcome);
+export const Outcome$inboundSchema: z.ZodMiniType<Outcome, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Outcome));
 
 /** @internal */
 export const DeveloperAppAnalyticsOutcome$inboundSchema: z.ZodMiniType<
   DeveloperAppAnalyticsOutcome,
   unknown
-> = z.object({
-  count: z.int(),
-  outcome: Outcome$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    count: z.int(),
+    outcome: Outcome$inboundSchema,
+  })
+);
 
 export function developerAppAnalyticsOutcomeFromJSON(
   jsonString: string,

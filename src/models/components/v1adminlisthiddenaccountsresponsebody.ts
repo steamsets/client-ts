@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -22,12 +22,12 @@ export type V1AdminListHiddenAccountsResponseBody = {
    */
   dollarSchema?: string | undefined;
   /**
-   * The accounts on this page: newest restriction first, then owner-hidden accounts by newest account id
+   * The accounts on this page, in orderBy and direction, then by account id
    */
   accounts: Array<V1AdminHiddenAccount>;
   summary: V1AdminHiddenAccountsSummary;
   /**
-   * How many accounts match the kind
+   * How many accounts match the kind and accountIds
    */
   total: number;
 };
@@ -36,18 +36,20 @@ export type V1AdminListHiddenAccountsResponseBody = {
 export const V1AdminListHiddenAccountsResponseBody$inboundSchema: z.ZodMiniType<
   V1AdminListHiddenAccountsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    accounts: z.array(V1AdminHiddenAccount$inboundSchema),
-    summary: V1AdminHiddenAccountsSummary$inboundSchema,
-    total: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      accounts: z.array(V1AdminHiddenAccount$inboundSchema),
+      summary: V1AdminHiddenAccountsSummary$inboundSchema,
+      total: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AdminListHiddenAccountsResponseBodyFromJSON(

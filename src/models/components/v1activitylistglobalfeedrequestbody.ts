@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1ActivityListGlobalFeedRequestBody = {
   /**
@@ -40,13 +41,15 @@ export type V1ActivityListGlobalFeedRequestBody$Outbound = {
 export const V1ActivityListGlobalFeedRequestBody$outboundSchema: z.ZodMiniType<
   V1ActivityListGlobalFeedRequestBody$Outbound,
   V1ActivityListGlobalFeedRequestBody
-> = z.object({
-  cursor: z.optional(z.string()),
-  eventTypes: z.optional(z.nullable(z.array(z.string()))),
-  limit: z.optional(z.int()),
-  since: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-  until: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cursor: z.optional(z.string()),
+    eventTypes: z.optional(z.nullable(z.array(z.string()))),
+    limit: z.optional(z.int()),
+    since: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+    until: z.optional(z.pipe(z.date(), z.transform(v => v.toISOString()))),
+  })
+);
 
 export function v1ActivityListGlobalFeedRequestBodyToJSON(
   v1ActivityListGlobalFeedRequestBody: V1ActivityListGlobalFeedRequestBody,

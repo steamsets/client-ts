@@ -1,6 +1,6 @@
 {
   "name": "@steamsets/client-ts",
-  "version": "0.38.32",
+  "version": "0.39.0",
   "author": "Speakeasy",
   "type": "module",
   "tshy": {
@@ -10,6 +10,7 @@
     "exports": {
       ".": "./src/index.ts",
       "./package.json": "./package.json",
+      "./node": "./src/node.ts",
       "./types": "./src/types/index.ts",
       "./models/errors": "./src/models/errors/index.ts",
       "./models/components": "./src/models/components/index.ts",
@@ -38,7 +39,7 @@
     "typescript-eslint": "^8.26.0"
   },
   "dependencies": {
-    "zod": "^3.25.65 || ^4.0.0"
+    "zod": "^3.25.65 || ^4.6.6"
   },
   "exports": {
     ".": {
@@ -53,6 +54,17 @@
       }
     },
     "./package.json": "./package.json",
+    "./node": {
+      "import": {
+        "@steamsets/client-ts/source": "./src/node.ts",
+        "types": "./dist/esm/node.d.ts",
+        "default": "./dist/esm/node.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/node.d.ts",
+        "default": "./dist/commonjs/node.js"
+      }
+    },
     "./types": {
       "import": {
         "@steamsets/client-ts/source": "./src/types/index.ts",

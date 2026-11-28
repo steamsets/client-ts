@@ -28,7 +28,11 @@ import { Result } from "../types/fp.js";
  * Refresh inventory
  *
  * @remarks
- * Trigger a refresh of the authenticated user's Steam inventory. Rate limited based on account tier.
+ * Deprecated: use account.me.refreshInventory, which returns nextRefreshAt as an RFC 3339 time.
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountRefreshInventory(
   client: SteamSetsCore,
@@ -81,7 +85,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

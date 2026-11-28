@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -27,12 +28,12 @@ export type Order = {
 };
 
 /** @internal */
-export const By$outboundSchema: z.ZodMiniType<string, By> = openEnums
-  .outboundSchema(By);
+export const By$outboundSchema: z.ZodMiniType<string, By> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(By));
 
 /** @internal */
 export const Direction$outboundSchema: z.ZodMiniType<string, Direction> =
-  openEnums.outboundSchema(Direction);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Direction));
 
 /** @internal */
 export type Order$Outbound = {
@@ -41,11 +42,13 @@ export type Order$Outbound = {
 };
 
 /** @internal */
-export const Order$outboundSchema: z.ZodMiniType<Order$Outbound, Order> = z
-  .object({
-    by: z._default(By$outboundSchema, "scarcity"),
-    direction: z._default(Direction$outboundSchema, "desc"),
-  });
+export const Order$outboundSchema: z.ZodMiniType<Order$Outbound, Order> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      by: z._default(By$outboundSchema, "scarcity"),
+      direction: z._default(Direction$outboundSchema, "desc"),
+    })
+  );
 
 export function orderToJSON(order: Order): string {
   return JSON.stringify(Order$outboundSchema.parse(order));

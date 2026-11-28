@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,6 +17,10 @@ export type UpdateStep = {
    */
   name: string;
   /**
+   * How many items the step has processed, for a step that counts them: the games the achievements step has fetched. Absent when zero.
+   */
+  processed?: number | undefined;
+  /**
    * Why the step ended skipped or failed: private (Steam privacy settings hide the data), unavailable (the step failed after its retries), or not_run (the run stopped before this step). Absent for a step that is pending, running, or done.
    */
   reason?: string | undefined;
@@ -28,21 +32,29 @@ export type UpdateStep = {
    * The step's state: pending, running, done, skipped, or failed.
    */
   status: string;
+  /**
+   * How many items the step plans to process, for a step that counts them. Absent when unknown.
+   */
+  total?: number | undefined;
 };
 
 /** @internal */
-export const UpdateStep$inboundSchema: z.ZodMiniType<UpdateStep, unknown> = z
-  .object({
-    finishedAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    name: z.string(),
-    reason: z.optional(z.string()),
-    startedAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    status: z.string(),
-  });
+export const UpdateStep$inboundSchema: z.ZodMiniType<UpdateStep, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      finishedAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      name: z.string(),
+      processed: z.optional(z.int()),
+      reason: z.optional(z.string()),
+      startedAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      status: z.string(),
+      total: z.optional(z.int()),
+    })
+  );
 
 export function updateStepFromJSON(
   jsonString: string,

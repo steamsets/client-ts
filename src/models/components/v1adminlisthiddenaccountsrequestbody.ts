@@ -3,8 +3,23 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
+
+/**
+ * desc lists the highest or newest first, asc the lowest or oldest
+ */
+export const V1AdminListHiddenAccountsRequestBodyDirection = {
+  Asc: "asc",
+  Desc: "desc",
+} as const;
+/**
+ * desc lists the highest or newest first, asc the lowest or oldest
+ */
+export type V1AdminListHiddenAccountsRequestBodyDirection = OpenEnum<
+  typeof V1AdminListHiddenAccountsRequestBodyDirection
+>;
 
 /**
  * owner lists accounts the owner hid, self lists opt-outs, staff lists restrictions staff applied
@@ -22,7 +37,34 @@ export type V1AdminListHiddenAccountsRequestBodyKind = OpenEnum<
   typeof V1AdminListHiddenAccountsRequestBodyKind
 >;
 
+/**
+ * The column the page is ordered by. hidden orders every kind by its own time (hiddenAt), hiddenBy by kind (owner, self, staff), privacy public first and bans by the ban count. A missing value sorts last both ways
+ */
+export const OrderBy = {
+  Hidden: "hidden",
+  Name: "name",
+  HiddenBy: "hiddenBy",
+  Level: "level",
+  Games: "games",
+  Badges: "badges",
+  Privacy: "privacy",
+  Bans: "bans",
+  Restricted: "restricted",
+} as const;
+/**
+ * The column the page is ordered by. hidden orders every kind by its own time (hiddenAt), hiddenBy by kind (owner, self, staff), privacy public first and bans by the ban count. A missing value sorts last both ways
+ */
+export type OrderBy = OpenEnum<typeof OrderBy>;
+
 export type V1AdminListHiddenAccountsRequestBody = {
+  /**
+   * Only these accounts, at most 100. The admin turns a name, vanity or SteamID64 search into account ids. Total then counts the matches
+   */
+  accountIds?: Array<number> | null | undefined;
+  /**
+   * desc lists the highest or newest first, asc the lowest or oldest
+   */
+  direction?: V1AdminListHiddenAccountsRequestBodyDirection | undefined;
   /**
    * owner lists accounts the owner hid, self lists opt-outs, staff lists restrictions staff applied
    */
@@ -32,20 +74,40 @@ export type V1AdminListHiddenAccountsRequestBody = {
    */
   limit?: number | undefined;
   /**
+   * The column the page is ordered by. hidden orders every kind by its own time (hiddenAt), hiddenBy by kind (owner, self, staff), privacy public first and bans by the ban count. A missing value sorts last both ways
+   */
+  orderBy?: OrderBy | undefined;
+  /**
    * 1-based page number
    */
   page?: number | undefined;
 };
 
 /** @internal */
+export const V1AdminListHiddenAccountsRequestBodyDirection$outboundSchema:
+  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyDirection> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminListHiddenAccountsRequestBodyDirection)
+    );
+
+/** @internal */
 export const V1AdminListHiddenAccountsRequestBodyKind$outboundSchema:
-  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyKind> = openEnums
-    .outboundSchema(V1AdminListHiddenAccountsRequestBodyKind);
+  z.ZodMiniType<string, V1AdminListHiddenAccountsRequestBodyKind> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(V1AdminListHiddenAccountsRequestBodyKind)
+    );
+
+/** @internal */
+export const OrderBy$outboundSchema: z.ZodMiniType<string, OrderBy> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(OrderBy));
 
 /** @internal */
 export type V1AdminListHiddenAccountsRequestBody$Outbound = {
+  accountIds?: Array<number> | null | undefined;
+  direction: string;
   kind: string;
   limit: number;
+  orderBy: string;
   page: number;
 };
 
@@ -53,14 +115,22 @@ export type V1AdminListHiddenAccountsRequestBody$Outbound = {
 export const V1AdminListHiddenAccountsRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminListHiddenAccountsRequestBody$Outbound,
   V1AdminListHiddenAccountsRequestBody
-> = z.object({
-  kind: z._default(
-    V1AdminListHiddenAccountsRequestBodyKind$outboundSchema,
-    "all",
-  ),
-  limit: z._default(z.int(), 50),
-  page: z._default(z.int(), 1),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountIds: z.optional(z.nullable(z.array(z.int()))),
+    direction: z._default(
+      V1AdminListHiddenAccountsRequestBodyDirection$outboundSchema,
+      "desc",
+    ),
+    kind: z._default(
+      V1AdminListHiddenAccountsRequestBodyKind$outboundSchema,
+      "all",
+    ),
+    limit: z._default(z.int(), 50),
+    orderBy: z._default(OrderBy$outboundSchema, "hidden"),
+    page: z._default(z.int(), 1),
+  })
+);
 
 export function v1AdminListHiddenAccountsRequestBodyToJSON(
   v1AdminListHiddenAccountsRequestBody: V1AdminListHiddenAccountsRequestBody,

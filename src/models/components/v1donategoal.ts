@@ -4,9 +4,11 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import { DonateItems, DonateItems$inboundSchema } from "./donateitems.js";
+import { DonateKeys, DonateKeys$inboundSchema } from "./donatekeys.js";
 import {
   DonateSupporter,
   DonateSupporter$inboundSchema,
@@ -25,6 +27,8 @@ export type V1DonateGoal = {
    * Configured monthly goal in cents
    */
   goalCents: number;
+  items: DonateItems;
+  keys: DonateKeys;
   /**
    * Current calendar month, UTC
    */
@@ -45,21 +49,25 @@ export type V1DonateGoal = {
 
 /** @internal */
 export const V1DonateGoal$inboundSchema: z.ZodMiniType<V1DonateGoal, unknown> =
-  z.pipe(
-    z.object({
-      $schema: z.optional(z.string()),
-      anonymousCount: z.int(),
-      goalCents: z.int(),
-      month: z.string(),
-      raisedCents: z.int(),
-      supporterCount: z.int(),
-      supporters: z.nullable(z.array(DonateSupporter$inboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "$schema": "dollarSchema",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        $schema: z.optional(z.string()),
+        anonymousCount: z.int(),
+        goalCents: z.int(),
+        items: DonateItems$inboundSchema,
+        keys: DonateKeys$inboundSchema,
+        month: z.string(),
+        raisedCents: z.int(),
+        supporterCount: z.int(),
+        supporters: z.nullable(z.array(DonateSupporter$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "$schema": "dollarSchema",
+        });
+      }),
+    )
   );
 
 export function v1DonateGoalFromJSON(

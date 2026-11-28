@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,13 +34,15 @@ export type V1AccountBadgeOwnedBadge = {
 export const V1AccountBadgeOwnedBadge$inboundSchema: z.ZodMiniType<
   V1AccountBadgeOwnedBadge,
   unknown
-> = z.object({
-  appId: z.int(),
-  badgeId: z.string(),
-  isFoil: z.boolean(),
-  level: z.int(),
-  steamId: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    appId: z.int(),
+    badgeId: z.string(),
+    isFoil: z.boolean(),
+    level: z.int(),
+    steamId: z.int(),
+  })
+);
 
 export function v1AccountBadgeOwnedBadgeFromJSON(
   jsonString: string,

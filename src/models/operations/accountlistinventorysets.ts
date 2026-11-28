@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
@@ -40,10 +40,12 @@ export type AccountListInventorySetsRequest$Outbound = {
 export const AccountListInventorySetsRequest$outboundSchema: z.ZodMiniType<
   AccountListInventorySetsRequest$Outbound,
   AccountListInventorySetsRequest
-> = z.object({
-  cursor: z.optional(z.int()),
-  limit: z._default(z.int(), 100),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cursor: z.optional(z.int()),
+    limit: z._default(z.int(), 100),
+  })
+);
 
 export function accountListInventorySetsRequestToJSON(
   accountListInventorySetsRequest: AccountListInventorySetsRequest,
@@ -59,20 +61,22 @@ export function accountListInventorySetsRequestToJSON(
 export const AccountListInventorySetsResponse$inboundSchema: z.ZodMiniType<
   AccountListInventorySetsResponse,
   unknown
-> = z.pipe(
-  z.object({
-    HttpMeta: components.HTTPMetadata$inboundSchema,
-    V1AccountListInventorySetsResponseBody: z.optional(
-      components.V1AccountListInventorySetsResponseBody$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "HttpMeta": "httpMeta",
-      "V1AccountListInventorySetsResponseBody":
-        "v1AccountListInventorySetsResponseBody",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      HttpMeta: components.HTTPMetadata$inboundSchema,
+      V1AccountListInventorySetsResponseBody: z.optional(
+        components.V1AccountListInventorySetsResponseBody$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "HttpMeta": "httpMeta",
+        "V1AccountListInventorySetsResponseBody":
+          "v1AccountListInventorySetsResponseBody",
+      });
+    }),
+  )
 );
 
 export function accountListInventorySetsResponseFromJSON(

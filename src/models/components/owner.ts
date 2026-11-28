@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -33,19 +33,27 @@ export type Owner = {
    * Whether a friend path was found within maxDepth
    */
   pathFound: boolean;
+  /**
+   * The owner's Steam trade offer link, when the owner added one. Only sent to a logged-in caller
+   */
+  tradeUrl?: string | undefined;
 };
 
 /** @internal */
-export const Owner$inboundSchema: z.ZodMiniType<Owner, unknown> = z.object({
-  account: z.nullable(LeaderboardAccount$inboundSchema),
-  amount: z.int(),
-  assetId: z.int(),
-  distance: z.optional(z.int()),
-  path: z.optional(
-    z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
-  ),
-  pathFound: z.boolean(),
-});
+export const Owner$inboundSchema: z.ZodMiniType<Owner, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      account: z.nullable(LeaderboardAccount$inboundSchema),
+      amount: z.int(),
+      assetId: z.int(),
+      distance: z.optional(z.int()),
+      path: z.optional(
+        z.nullable(z.array(z.nullable(LeaderboardAccount$inboundSchema))),
+      ),
+      pathFound: z.boolean(),
+      tradeUrl: z.optional(z.string()),
+    })
+  );
 
 export function ownerFromJSON(
   jsonString: string,

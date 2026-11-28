@@ -3,22 +3,18 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountRemovePushSubscriptionRequestBody = {
   /**
-   * The endpoint of the browser's PushSubscription
+   * The endpoint of the push subscription, from the browser's PushSubscription or from getNotificationSettings
    */
-  endpoint?: string | undefined;
-  /**
-   * The id of the push subscription, from getNotificationSettings
-   */
-  id?: number | undefined;
+  endpoint: string;
 };
 
 /** @internal */
 export type AccountRemovePushSubscriptionRequestBody$Outbound = {
-  endpoint?: string | undefined;
-  id?: number | undefined;
+  endpoint: string;
 };
 
 /** @internal */
@@ -26,10 +22,11 @@ export const AccountRemovePushSubscriptionRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountRemovePushSubscriptionRequestBody$Outbound,
     AccountRemovePushSubscriptionRequestBody
-  > = z.object({
-    endpoint: z.optional(z.string()),
-    id: z.optional(z.int()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      endpoint: z.string(),
+    })
+  );
 
 export function accountRemovePushSubscriptionRequestBodyToJSON(
   accountRemovePushSubscriptionRequestBody:

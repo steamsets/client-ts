@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -27,16 +27,18 @@ export type ExchangeCardPricesResponseBody = {
 export const ExchangeCardPricesResponseBody$inboundSchema: z.ZodMiniType<
   ExchangeCardPricesResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    cards: z.nullable(z.array(ExchangeCardPrice$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      cards: z.nullable(z.array(ExchangeCardPrice$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function exchangeCardPricesResponseBodyFromJSON(

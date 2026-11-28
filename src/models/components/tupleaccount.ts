@@ -3,27 +3,27 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TupleAccount = {
   completedAt?: Date | undefined;
   level: number;
-  steamId: string;
   xp: number;
 };
 
 /** @internal */
 export const TupleAccount$inboundSchema: z.ZodMiniType<TupleAccount, unknown> =
-  z.object({
-    completedAt: z.optional(
-      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-    ),
-    level: z.int(),
-    steamId: z.string(),
-    xp: z.int(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      completedAt: z.optional(
+        z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+      ),
+      level: z.int(),
+      xp: z.int(),
+    })
+  );
 
 export function tupleAccountFromJSON(
   jsonString: string,

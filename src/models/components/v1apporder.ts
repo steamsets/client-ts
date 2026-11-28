@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -28,13 +29,15 @@ export type V1AppOrder = {
 
 /** @internal */
 export const V1AppOrderBy$outboundSchema: z.ZodMiniType<string, V1AppOrderBy> =
-  openEnums.outboundSchema(V1AppOrderBy);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(V1AppOrderBy));
 
 /** @internal */
 export const V1AppOrderDirection$outboundSchema: z.ZodMiniType<
   string,
   V1AppOrderDirection
-> = openEnums.outboundSchema(V1AppOrderDirection);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AppOrderDirection)
+);
 
 /** @internal */
 export type V1AppOrder$Outbound = {
@@ -46,10 +49,12 @@ export type V1AppOrder$Outbound = {
 export const V1AppOrder$outboundSchema: z.ZodMiniType<
   V1AppOrder$Outbound,
   V1AppOrder
-> = z.object({
-  by: V1AppOrderBy$outboundSchema,
-  direction: z._default(V1AppOrderDirection$outboundSchema, "desc"),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    by: V1AppOrderBy$outboundSchema,
+    direction: z._default(V1AppOrderDirection$outboundSchema, "desc"),
+  })
+);
 
 export function v1AppOrderToJSON(v1AppOrder: V1AppOrder): string {
   return JSON.stringify(V1AppOrder$outboundSchema.parse(v1AppOrder));

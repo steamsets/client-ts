@@ -1,0 +1,40 @@
+# AdminSecurityKeysListResponseBody
+
+## Example Usage
+
+```typescript
+import { AdminSecurityKeysListResponseBody } from "@steamsets/client-ts/models/components";
+
+let value: AdminSecurityKeysListResponseBody = {
+  dollarSchema:
+    "https://api.steamsets.com/schemas/AdminSecurityKeysListResponseBody.json",
+  canAddFirst: true,
+  firstKeyApproval: {
+    dollarSchema:
+      "https://api.steamsets.com/schemas/AdminSecurityKeysApproval.json",
+    expiresAt: new Date("2026-11-27T00:22:20.098Z"),
+  },
+  keys: [
+    {
+      backupEligible: true,
+      createdAt: new Date("2024-11-20T21:10:27.673Z"),
+      id: "skey_3vQe8bR1",
+      name: "YubiKey 5C",
+      transports: [
+        "<value 1>",
+        "<value 2>",
+      ],
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                           | Type                                                                                                                                                                                                            | Required                                                                                                                                                                                                        | Description                                                                                                                                                                                                     | Example                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dollarSchema`                                                                                                                                                                                                  | *string*                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                              | A URL to the JSON Schema for this object.                                                                                                                                                                       | https://api.steamsets.com/schemas/AdminSecurityKeysListResponseBody.json                                                                                                                                        |
+| `canAddFirst`                                                                                                                                                                                                   | *boolean*                                                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                                                              | True when the caller holds no key and an owner's approval for a first one is live, so admin.securityKeys.beginAdd takes no check                                                                                |                                                                                                                                                                                                                 |
+| `firstKeyApproval`                                                                                                                                                                                              | [components.AdminSecurityKeysApproval](../../models/components/adminsecuritykeysapproval.md)                                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                              | N/A                                                                                                                                                                                                             |                                                                                                                                                                                                                 |
+| `keys`                                                                                                                                                                                                          | [components.AdminSecurityKeysKey](../../models/components/adminsecuritykeyskey.md)[]                                                                                                                            | :heavy_check_mark:                                                                                                                                                                                              | The live keys, oldest first                                                                                                                                                                                     |                                                                                                                                                                                                                 |
+| `staff`                                                                                                                                                                                                         | *boolean*                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                              | Whether the listed account's roles give it a sensitive grant, so it holds security keys and an owner may approve its first one. Always present; optional only so an admin app built before it reads this answer |                                                                                                                                                                                                                 |

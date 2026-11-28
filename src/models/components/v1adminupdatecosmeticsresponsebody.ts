@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,6 +17,10 @@ export type V1AdminUpdateCosmeticsResponseBody = {
    * The stored name effect, none when the account has none
    */
   nameEffect: string;
+  /**
+   * The stored support streak, 0 when the months choose it
+   */
+  supporterStreak: number;
   /**
    * The stored theme color, or null when the account has none
    */
@@ -31,18 +35,21 @@ export type V1AdminUpdateCosmeticsResponseBody = {
 export const V1AdminUpdateCosmeticsResponseBody$inboundSchema: z.ZodMiniType<
   V1AdminUpdateCosmeticsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    nameEffect: z.string(),
-    themeColor: z.nullable(z.string()),
-    vanity: z.nullable(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      nameEffect: z.string(),
+      supporterStreak: z.int(),
+      themeColor: z.nullable(z.string()),
+      vanity: z.nullable(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AdminUpdateCosmeticsResponseBodyFromJSON(

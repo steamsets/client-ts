@@ -10,7 +10,7 @@ let value: TrackEventRequest = {
     payload: {
       "key": "<value>",
     },
-    type: "search",
+    type: "profile_view",
   },
 };
 ```

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -61,7 +62,9 @@ export type V1AccountListBadgesRequestBody = {
 export const V1AccountListBadgesRequestBodyFilter$outboundSchema: z.ZodMiniType<
   string,
   V1AccountListBadgesRequestBodyFilter
-> = openEnums.outboundSchema(V1AccountListBadgesRequestBodyFilter);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(V1AccountListBadgesRequestBodyFilter)
+);
 
 /** @internal */
 export type V1AccountListBadgesRequestBody$Outbound = {
@@ -79,18 +82,22 @@ export type V1AccountListBadgesRequestBody$Outbound = {
 export const V1AccountListBadgesRequestBody$outboundSchema: z.ZodMiniType<
   V1AccountListBadgesRequestBody$Outbound,
   V1AccountListBadgesRequestBody
-> = z.object({
-  filter: z.optional(
-    z.nullable(z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema)),
-  ),
-  filters: z.optional(V1BadgeFilters$outboundSchema),
-  id: z.optional(IDSearch$outboundSchema),
-  order: z.optional(z.nullable(V1BadgeOrder$outboundSchema)),
-  page: z._default(z.int(), 1),
-  search: z.optional(z.nullable(z.string())),
-  valueFilter: z.optional(z.nullable(z.array(BadgeValueFilter$outboundSchema))),
-  vanity: z.optional(VanitySearch$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    filter: z.optional(
+      z.nullable(z.array(V1AccountListBadgesRequestBodyFilter$outboundSchema)),
+    ),
+    filters: z.optional(V1BadgeFilters$outboundSchema),
+    id: z.optional(IDSearch$outboundSchema),
+    order: z.optional(z.nullable(V1BadgeOrder$outboundSchema)),
+    page: z._default(z.int(), 1),
+    search: z.optional(z.nullable(z.string())),
+    valueFilter: z.optional(
+      z.nullable(z.array(BadgeValueFilter$outboundSchema)),
+    ),
+    vanity: z.optional(VanitySearch$outboundSchema),
+  })
+);
 
 export function v1AccountListBadgesRequestBodyToJSON(
   v1AccountListBadgesRequestBody: V1AccountListBadgesRequestBody,

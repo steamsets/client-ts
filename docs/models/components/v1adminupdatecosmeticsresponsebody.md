@@ -9,6 +9,7 @@ let value: V1AdminUpdateCosmeticsResponseBody = {
   dollarSchema:
     "https://api.steamsets.com/schemas/V1AdminUpdateCosmeticsResponseBody.json",
   nameEffect: "rainbow",
+  supporterStreak: 10,
   themeColor: "#FF5733",
   vanity: "flo",
 };
@@ -20,5 +21,6 @@ let value: V1AdminUpdateCosmeticsResponseBody = {
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `dollarSchema`                                                            | *string*                                                                  | :heavy_minus_sign:                                                        | A URL to the JSON Schema for this object.                                 | https://api.steamsets.com/schemas/V1AdminUpdateCosmeticsResponseBody.json |
 | `nameEffect`                                                              | *string*                                                                  | :heavy_check_mark:                                                        | The stored name effect, none when the account has none                    | rainbow                                                                   |
+| `supporterStreak`                                                         | *number*                                                                  | :heavy_check_mark:                                                        | The stored support streak, 0 when the months choose it                    | 10                                                                        |
 | `themeColor`                                                              | *string*                                                                  | :heavy_check_mark:                                                        | The stored theme color, or null when the account has none                 | #FF5733                                                                   |
 | `vanity`                                                                  | *string*                                                                  | :heavy_check_mark:                                                        | The stored vanity, or null when the account has none                      | flo                                                                       |

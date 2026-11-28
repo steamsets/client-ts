@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -22,6 +23,10 @@ export type V1LeaderboardGetLowestRanksRequestBodyLeaderboard = OpenEnum<
 
 export type V1LeaderboardGetLowestRanksRequestBody = {
   /**
+   * Answer only these keys (Steam levels on xp, game counts on apps) instead of every one, e.g. the stops of a level timeline. A key with no rank is left out.
+   */
+  keys?: Array<number> | undefined;
+  /**
    * The leaderboard to get. Currently only supports XP and apps
    */
   leaderboard: V1LeaderboardGetLowestRanksRequestBodyLeaderboard;
@@ -30,10 +35,15 @@ export type V1LeaderboardGetLowestRanksRequestBody = {
 /** @internal */
 export const V1LeaderboardGetLowestRanksRequestBodyLeaderboard$outboundSchema:
   z.ZodMiniType<string, V1LeaderboardGetLowestRanksRequestBodyLeaderboard> =
-    openEnums.outboundSchema(V1LeaderboardGetLowestRanksRequestBodyLeaderboard);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(
+        V1LeaderboardGetLowestRanksRequestBodyLeaderboard,
+      )
+    );
 
 /** @internal */
 export type V1LeaderboardGetLowestRanksRequestBody$Outbound = {
+  keys?: Array<number> | undefined;
   leaderboard: string;
 };
 
@@ -42,10 +52,13 @@ export const V1LeaderboardGetLowestRanksRequestBody$outboundSchema:
   z.ZodMiniType<
     V1LeaderboardGetLowestRanksRequestBody$Outbound,
     V1LeaderboardGetLowestRanksRequestBody
-  > = z.object({
-    leaderboard:
-      V1LeaderboardGetLowestRanksRequestBodyLeaderboard$outboundSchema,
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      keys: z.optional(z.array(z.int())),
+      leaderboard:
+        V1LeaderboardGetLowestRanksRequestBodyLeaderboard$outboundSchema,
+    })
+  );
 
 export function v1LeaderboardGetLowestRanksRequestBodyToJSON(
   v1LeaderboardGetLowestRanksRequestBody:

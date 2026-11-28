@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type AccountDeleteNotificationsRequestBody = {
   /**
@@ -21,9 +22,11 @@ export const AccountDeleteNotificationsRequestBody$outboundSchema:
   z.ZodMiniType<
     AccountDeleteNotificationsRequestBody$Outbound,
     AccountDeleteNotificationsRequestBody
-  > = z.object({
-    ids: z.optional(z.nullable(z.array(z.int()))),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      ids: z.optional(z.nullable(z.array(z.int()))),
+    })
+  );
 
 export function accountDeleteNotificationsRequestBodyToJSON(
   accountDeleteNotificationsRequestBody: AccountDeleteNotificationsRequestBody,

@@ -29,6 +29,7 @@ let value: BucketLeader = {
     foilBadges: 123456,
     friends: 123456,
     gameBans: 747187,
+    isHidden: false,
     level: 123456,
     miniBackground: "<value>",
     name: "steamsets",
@@ -41,20 +42,27 @@ let value: BucketLeader = {
     region: {
       name: "Europe",
     },
-    roles: [],
+    roles: [
+      {
+        extras: {},
+        rating: 418270,
+        role: "donator",
+      },
+    ],
     state: {
       name: "Baden-Wurttemberg",
     },
     steamId: "76561198842603734",
-    steamSetsScore: 634507,
+    steamSetsScore: 121724,
     steamSetsVanity: "steamsets",
     steamVanity: "steamsets",
     supporter: {
       active: true,
       months: 3,
+      streak: 0,
     },
     themeColor: "#FF5733",
-    vacBans: 121724,
+    vacBans: 325508,
     xp: 123456,
   },
   empty: false,

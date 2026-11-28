@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -41,20 +41,22 @@ export type V1AccountListFriendsResponseBody = {
 export const V1AccountListFriendsResponseBody$inboundSchema: z.ZodMiniType<
   V1AccountListFriendsResponseBody,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    filteredTotal: z.int(),
-    friends: z.nullable(z.array(z.nullable(V1AccountFriend$inboundSchema))),
-    nextCursor: z.nullable(z.string()),
-    stats: z.optional(V1AccountListFriendsStats$inboundSchema),
-    total: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      filteredTotal: z.int(),
+      friends: z.nullable(z.array(z.nullable(V1AccountFriend$inboundSchema))),
+      nextCursor: z.nullable(z.string()),
+      stats: z.optional(V1AccountListFriendsStats$inboundSchema),
+      total: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountListFriendsResponseBodyFromJSON(

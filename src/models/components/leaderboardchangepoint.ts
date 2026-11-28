@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,11 +26,16 @@ export type LeaderboardChangePoint = {
 export const LeaderboardChangePoint$inboundSchema: z.ZodMiniType<
   LeaderboardChangePoint,
   unknown
-> = z.object({
-  date: z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  rank: z.int(),
-  score: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    date: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    rank: z.int(),
+    score: z.int(),
+  })
+);
 
 export function leaderboardChangePointFromJSON(
   jsonString: string,

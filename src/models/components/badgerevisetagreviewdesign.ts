@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type BadgeReviseTagReviewDesign = {
   id?: string | undefined;
@@ -19,10 +20,12 @@ export type BadgeReviseTagReviewDesign$Outbound = {
 export const BadgeReviseTagReviewDesign$outboundSchema: z.ZodMiniType<
   BadgeReviseTagReviewDesign$Outbound,
   BadgeReviseTagReviewDesign
-> = z.object({
-  id: z.optional(z.string()),
-  name: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(z.string()),
+    name: z.optional(z.string()),
+  })
+);
 
 export function badgeReviseTagReviewDesignToJSON(
   badgeReviseTagReviewDesign: BadgeReviseTagReviewDesign,

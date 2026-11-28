@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -35,20 +35,22 @@ export type V1AccountBadgeStats = {
 export const V1AccountBadgeStats$inboundSchema: z.ZodMiniType<
   V1AccountBadgeStats,
   unknown
-> = z.pipe(
-  z.object({
-    $schema: z.optional(z.string()),
-    count: V1AccountBadgeCountStats$inboundSchema,
-    levels: z.record(z.string(), z.int()),
-    scarcities: z.record(z.string(), z.int()),
-    totalBadges: z.int(),
-    xp: V1AccountBadgeXpStats$inboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "$schema": "dollarSchema",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      $schema: z.optional(z.string()),
+      count: V1AccountBadgeCountStats$inboundSchema,
+      levels: z.record(z.string(), z.int()),
+      scarcities: z.record(z.string(), z.int()),
+      totalBadges: z.int(),
+      xp: V1AccountBadgeXpStats$inboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "$schema": "dollarSchema",
+      });
+    }),
+  )
 );
 
 export function v1AccountBadgeStatsFromJSON(

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -25,11 +25,13 @@ export type BadgeGetTagsVocabulary = {
 export const BadgeGetTagsVocabulary$inboundSchema: z.ZodMiniType<
   BadgeGetTagsVocabulary,
   unknown
-> = z.object({
-  colors: z.nullable(z.array(BadgeClaimTagReviewsColor$inboundSchema)),
-  designs: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
-  metadata: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    colors: z.nullable(z.array(BadgeClaimTagReviewsColor$inboundSchema)),
+    designs: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
+    metadata: z.nullable(z.array(BadgeClaimTagReviewsDesign$inboundSchema)),
+  })
+);
 
 export function badgeGetTagsVocabularyFromJSON(
   jsonString: string,

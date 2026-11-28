@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -35,13 +35,15 @@ export type V1ActivityRankChange = {
 export const V1ActivityRankChange$inboundSchema: z.ZodMiniType<
   V1ActivityRankChange,
   unknown
-> = z.object({
-  bucket: z.string(),
-  current: z.int(),
-  leaderboard: z.string(),
-  location: V1ActivityLocation$inboundSchema,
-  previous: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bucket: z.string(),
+    current: z.int(),
+    leaderboard: z.string(),
+    location: V1ActivityLocation$inboundSchema,
+    previous: z.int(),
+  })
+);
 
 export function v1ActivityRankChangeFromJSON(
   jsonString: string,

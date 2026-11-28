@@ -29,7 +29,9 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Opt out of SteamSets (hide account and stop processing)
+ * Opt out of SteamSets (hide account and stop processing after 30 days)
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function accountOptOut(
   client: SteamSetsCore,
@@ -98,7 +100,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

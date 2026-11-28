@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,10 +16,12 @@ export type V1AccountBadgeXpStats = {
 export const V1AccountBadgeXpStats$inboundSchema: z.ZodMiniType<
   V1AccountBadgeXpStats,
   unknown
-> = z.object({
-  foil: z.int(),
-  normal: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    foil: z.int(),
+    normal: z.int(),
+  })
+);
 
 export function v1AccountBadgeXpStatsFromJSON(
   jsonString: string,

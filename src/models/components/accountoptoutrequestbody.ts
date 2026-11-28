@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -33,8 +34,8 @@ export type AccountOptOutRequestBody = {
 };
 
 /** @internal */
-export const Reason$outboundSchema: z.ZodMiniType<string, Reason> = openEnums
-  .outboundSchema(Reason);
+export const Reason$outboundSchema: z.ZodMiniType<string, Reason> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Reason));
 
 /** @internal */
 export type AccountOptOutRequestBody$Outbound = {
@@ -46,10 +47,12 @@ export type AccountOptOutRequestBody$Outbound = {
 export const AccountOptOutRequestBody$outboundSchema: z.ZodMiniType<
   AccountOptOutRequestBody$Outbound,
   AccountOptOutRequestBody
-> = z.object({
-  comment: z.string(),
-  reason: z.optional(Reason$outboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    comment: z.string(),
+    reason: z.optional(Reason$outboundSchema),
+  })
+);
 
 export function accountOptOutRequestBodyToJSON(
   accountOptOutRequestBody: AccountOptOutRequestBody,

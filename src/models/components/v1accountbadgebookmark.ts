@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,13 +22,15 @@ export type V1AccountBadgeBookmark = {
 export const V1AccountBadgeBookmark$inboundSchema: z.ZodMiniType<
   V1AccountBadgeBookmark,
   unknown
-> = z.object({
-  badgeId: z.string(),
-  bookmarkedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    badgeId: z.string(),
+    bookmarkedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function v1AccountBadgeBookmarkFromJSON(
   jsonString: string,

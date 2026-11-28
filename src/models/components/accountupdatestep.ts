@@ -3,33 +3,39 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountUpdateStep = {
   finishedAt?: Date | undefined;
   name: string;
+  processed?: number | undefined;
   reason?: string | undefined;
   startedAt?: Date | undefined;
   status: string;
+  total?: number | undefined;
 };
 
 /** @internal */
 export const AccountUpdateStep$inboundSchema: z.ZodMiniType<
   AccountUpdateStep,
   unknown
-> = z.object({
-  finishedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  name: z.string(),
-  reason: z.optional(z.string()),
-  startedAt: z.optional(
-    z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
-  ),
-  status: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    finishedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    name: z.string(),
+    processed: z.optional(z.int()),
+    reason: z.optional(z.string()),
+    startedAt: z.optional(
+      z.pipe(z.iso.datetime({ offset: true }), z.transform(v => new Date(v))),
+    ),
+    status: z.string(),
+    total: z.optional(z.int()),
+  })
+);
 
 export function accountUpdateStepFromJSON(
   jsonString: string,

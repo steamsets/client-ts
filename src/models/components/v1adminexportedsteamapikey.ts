@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -44,25 +44,29 @@ export type V1AdminExportedSteamApiKey = {
 export const V1AdminExportedSteamApiKeyType$inboundSchema: z.ZodMiniType<
   V1AdminExportedSteamApiKeyType,
   unknown
-> = openEnums.inboundSchema(V1AdminExportedSteamApiKeyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(V1AdminExportedSteamApiKeyType)
+);
 
 /** @internal */
 export const V1AdminExportedSteamApiKey$inboundSchema: z.ZodMiniType<
   V1AdminExportedSteamApiKey,
   unknown
-> = z.object({
-  createdAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  key: z.string(),
-  keyId: z.string(),
-  type: V1AdminExportedSteamApiKeyType$inboundSchema,
-  updatedAt: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    key: z.string(),
+    keyId: z.string(),
+    type: V1AdminExportedSteamApiKeyType$inboundSchema,
+    updatedAt: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+  })
+);
 
 export function v1AdminExportedSteamApiKeyFromJSON(
   jsonString: string,

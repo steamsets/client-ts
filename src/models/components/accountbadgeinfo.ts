@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,14 +26,16 @@ export type AccountBadgeInfo = {
 export const AccountBadgeInfo$inboundSchema: z.ZodMiniType<
   AccountBadgeInfo,
   unknown
-> = z.object({
-  completionTime: z.pipe(
-    z.iso.datetime({ offset: true }),
-    z.transform(v => new Date(v)),
-  ),
-  level: z.int(),
-  xp: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    completionTime: z.pipe(
+      z.iso.datetime({ offset: true }),
+      z.transform(v => new Date(v)),
+    ),
+    level: z.int(),
+    xp: z.int(),
+  })
+);
 
 export function accountBadgeInfoFromJSON(
   jsonString: string,

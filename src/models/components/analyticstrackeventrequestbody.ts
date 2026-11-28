@@ -3,18 +3,18 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
 /**
- * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows. search captures account/app searches that bypass the backend.
+ * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows.
  */
 export const AnalyticsTrackEventRequestBodyType = {
   ProfileView: "profile_view",
-  Search: "search",
 } as const;
 /**
- * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows. search captures account/app searches that bypass the backend.
+ * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows.
  */
 export type AnalyticsTrackEventRequestBodyType = OpenEnum<
   typeof AnalyticsTrackEventRequestBodyType
@@ -22,11 +22,11 @@ export type AnalyticsTrackEventRequestBodyType = OpenEnum<
 
 export type AnalyticsTrackEventRequestBody = {
   /**
-   * Per-type fields. profile_view: {accountId}. search: {source, query, resultCount}.
+   * Per-type fields. profile_view: {accountId}.
    */
   payload: { [k: string]: any };
   /**
-   * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows. search captures account/app searches that bypass the backend.
+   * Event class. profile_view is normally emitted server-side; this lets the frontend top it up for client-only flows.
    */
   type: AnalyticsTrackEventRequestBodyType;
 };
@@ -35,7 +35,9 @@ export type AnalyticsTrackEventRequestBody = {
 export const AnalyticsTrackEventRequestBodyType$outboundSchema: z.ZodMiniType<
   string,
   AnalyticsTrackEventRequestBodyType
-> = openEnums.outboundSchema(AnalyticsTrackEventRequestBodyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AnalyticsTrackEventRequestBodyType)
+);
 
 /** @internal */
 export type AnalyticsTrackEventRequestBody$Outbound = {
@@ -47,10 +49,12 @@ export type AnalyticsTrackEventRequestBody$Outbound = {
 export const AnalyticsTrackEventRequestBody$outboundSchema: z.ZodMiniType<
   AnalyticsTrackEventRequestBody$Outbound,
   AnalyticsTrackEventRequestBody
-> = z.object({
-  payload: z.record(z.string(), z.any()),
-  type: AnalyticsTrackEventRequestBodyType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    payload: z.record(z.string(), z.any()),
+    type: AnalyticsTrackEventRequestBodyType$outboundSchema,
+  })
+);
 
 export function analyticsTrackEventRequestBodyToJSON(
   analyticsTrackEventRequestBody: AnalyticsTrackEventRequestBody,

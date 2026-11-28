@@ -30,6 +30,8 @@ import { Result } from "../types/fp.js";
 
 /**
  * Verify OAuth connection
+ *
+ * If set, this operation will use {@link Security.token} from the global security.
  */
 export function accountVerifyConnection(
   client: SteamSetsCore,
@@ -101,7 +103,7 @@ async function $do(
 
   const secConfig = await extractSecurity(client._options.token);
   const securityInput = secConfig == null ? {} : { token: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,

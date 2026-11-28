@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type V1AdminBanPlayerRequestBody = {
   cheatDescription: string;
@@ -32,12 +33,14 @@ export type V1AdminBanPlayerRequestBody$Outbound = {
 export const V1AdminBanPlayerRequestBody$outboundSchema: z.ZodMiniType<
   V1AdminBanPlayerRequestBody$Outbound,
   V1AdminBanPlayerRequestBody
-> = z.object({
-  cheatDescription: z.string(),
-  durationSeconds: z.int(),
-  reporterSteamId64: z.optional(z.string()),
-  steamId64: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cheatDescription: z.string(),
+    durationSeconds: z.int(),
+    reporterSteamId64: z.optional(z.string()),
+    steamId64: z.string(),
+  })
+);
 
 export function v1AdminBanPlayerRequestBodyToJSON(
   v1AdminBanPlayerRequestBody: V1AdminBanPlayerRequestBody,

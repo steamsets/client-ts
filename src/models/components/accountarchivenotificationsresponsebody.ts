@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,16 +17,19 @@ export type AccountArchiveNotificationsResponseBody = {
 
 /** @internal */
 export const AccountArchiveNotificationsResponseBody$inboundSchema:
-  z.ZodMiniType<AccountArchiveNotificationsResponseBody, unknown> = z.pipe(
-    z.object({
-      $schema: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "$schema": "dollarSchema",
-      });
-    }),
-  );
+  z.ZodMiniType<AccountArchiveNotificationsResponseBody, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          $schema: z.optional(z.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "$schema": "dollarSchema",
+          });
+        }),
+      )
+    );
 
 export function accountArchiveNotificationsResponseBodyFromJSON(
   jsonString: string,
